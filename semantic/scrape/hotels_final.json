@@ -1,0 +1,5787 @@
+[
+    {
+        "id": "osm-node-1280041468",
+        "name": "Hotel Delta",
+        "city": "Medan",
+        "address": "Jalan Insinyur Haji Juanda , Medan",
+        "latitude": 3.5721501,
+        "longitude": 98.683227,
+        "tier": "Mid-Range",
+        "rating": 4.0,
+        "start_price": 493884,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 493884,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 642049,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel Delta adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-1280041468"
+    },
+    {
+        "id": "osm-node-1363204376",
+        "name": "Grand Sakura",
+        "city": "Medan",
+        "address": "Jalan Profesor H.M. Yamin 41, Medan",
+        "latitude": 3.5965149,
+        "longitude": 98.6857506,
+        "tier": "Mid-Range",
+        "rating": 3.9,
+        "start_price": 390000,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 390000,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 450000,
+                "capacity": 2
+            }
+        ],
+        "description": "Grand Sakura adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-1363204376"
+    },
+    {
+        "id": "osm-node-2323974355",
+        "name": "Grand Aston City Hall",
+        "city": "Medan",
+        "address": "Balaikota, Medan",
+        "latitude": 3.5902009,
+        "longitude": 98.6768623,
+        "tier": "Luxury",
+        "rating": 4.6,
+        "start_price": 650000,
+        "facilities": [
+            "AC",
+            "Spa",
+            "Gym",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 650000,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 850000,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 1300000,
+                "capacity": 4
+            }
+        ],
+        "description": "Grand Aston City Hall adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Spa, Gym dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-2323974355"
+    },
+    {
+        "id": "osm-node-2323974357",
+        "name": "Dharma Deli",
+        "city": "Medan",
+        "address": "Balaikota, Medan",
+        "latitude": 3.5911366,
+        "longitude": 98.676846,
+        "tier": "Mid-Range",
+        "rating": 4.1,
+        "start_price": 486838,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 486838,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 632889,
+                "capacity": 2
+            }
+        ],
+        "description": "Dharma Deli adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-2323974357"
+    },
+    {
+        "id": "osm-node-2324003746",
+        "name": "Hermes",
+        "city": "Medan",
+        "address": "Pemuda, Medan",
+        "latitude": 3.5819889,
+        "longitude": 98.6818072,
+        "tier": "Luxury",
+        "rating": 4.8,
+        "start_price": 1366157,
+        "facilities": [
+            "AC",
+            "Spa",
+            "Kolam Renang",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 1366157,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 1776004,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 2732314,
+                "capacity": 4
+            }
+        ],
+        "description": "Hermes adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Spa, Kolam Renang dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-2324003746"
+    },
+    {
+        "id": "osm-node-2725907606",
+        "name": "Hotel Semarak",
+        "city": "Medan",
+        "address": "Jalan Sisingamangaraja , Medan",
+        "latitude": 3.5665554,
+        "longitude": 98.6915131,
+        "tier": "Mid-Range",
+        "rating": 4.3,
+        "start_price": 586593,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 586593,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 762570,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel Semarak adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-2725907606"
+    },
+    {
+        "id": "osm-node-2817247147",
+        "name": "Pardede Hotel",
+        "city": "Medan",
+        "address": "Jalan Insinyur Haji Juanda , Medan",
+        "latitude": 3.5720828,
+        "longitude": 98.672438,
+        "tier": "Mid-Range",
+        "rating": 4.0,
+        "start_price": 608145,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 608145,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 790588,
+                "capacity": 2
+            }
+        ],
+        "description": "Pardede Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-2817247147"
+    },
+    {
+        "id": "osm-node-2921465798",
+        "name": "The Heroes Hotel",
+        "city": "Medan",
+        "address": "Jalan H.M. Joni , Medan",
+        "latitude": 3.5686826,
+        "longitude": 98.6920221,
+        "tier": "Mid-Range",
+        "rating": 4.4,
+        "start_price": 693882,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Laundry"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 693882,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 902046,
+                "capacity": 2
+            }
+        ],
+        "description": "The Heroes Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-2921465798"
+    },
+    {
+        "id": "osm-node-3227774067",
+        "name": "Wisma Sederhana",
+        "city": "Medan",
+        "address": "Jalan Selat Panjang , Medan",
+        "latitude": 3.5830935,
+        "longitude": 98.6847939,
+        "tier": "Mid-Range",
+        "rating": 4.0,
+        "start_price": 453145,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "Restoran"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 453145,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 589088,
+                "capacity": 2
+            }
+        ],
+        "description": "Wisma Sederhana adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-3227774067"
+    },
+    {
+        "id": "osm-node-3227825506",
+        "name": "Aryaduta Hotel",
+        "city": "Medan",
+        "address": "Kapten Maulana Lubis, Medan",
+        "latitude": 3.5899197,
+        "longitude": 98.6741791,
+        "tier": "Luxury",
+        "rating": 4.7,
+        "start_price": 750000,
+        "facilities": [
+            "AC",
+            "Spa",
+            "Restoran",
+            "Kolam Renang",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 750000,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 950000,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 1400000,
+                "capacity": 4
+            }
+        ],
+        "description": "Aryaduta Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Spa, Restoran dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-3227825506"
+    },
+    {
+        "id": "osm-node-3921823157",
+        "name": "Permata Inn",
+        "city": "Medan",
+        "address": "Jalan Guru Patimpus , Medan",
+        "latitude": 3.5934895,
+        "longitude": 98.6700821,
+        "tier": "Budget",
+        "rating": 3.2,
+        "start_price": 238438,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 238438,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 309969,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 357657,
+                "capacity": 4
+            }
+        ],
+        "description": "Permata Inn adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-3921823157"
+    },
+    {
+        "id": "osm-node-4187470490",
+        "name": "Amir Hamza 123",
+        "city": "Medan",
+        "address": "Jalan Tengku Amir Hamzah , Medan",
+        "latitude": 3.6051232,
+        "longitude": 98.6457197,
+        "tier": "Mid-Range",
+        "rating": 3.8,
+        "start_price": 470654,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 470654,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 611850,
+                "capacity": 2
+            }
+        ],
+        "description": "Amir Hamza 123 adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4187470490"
+    },
+    {
+        "id": "osm-node-4267093083",
+        "name": "Hotel Petisah",
+        "city": "Medan",
+        "address": "Jalan Nibung I , Medan",
+        "latitude": 3.5910044,
+        "longitude": 98.6641638,
+        "tier": "Mid-Range",
+        "rating": 3.9,
+        "start_price": 403364,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 403364,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 524373,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel Petisah adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4267093083"
+    },
+    {
+        "id": "osm-node-4267093084",
+        "name": "Super Hotel",
+        "city": "Medan",
+        "address": "Jalan Nibung II , Medan",
+        "latitude": 3.5909841,
+        "longitude": 98.6652642,
+        "tier": "Mid-Range",
+        "rating": 4.2,
+        "start_price": 621459,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Laundry"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 621459,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 807896,
+                "capacity": 2
+            }
+        ],
+        "description": "Super Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4267093084"
+    },
+    {
+        "id": "osm-node-4271458248",
+        "name": "Dhaksina Hotel",
+        "city": "Medan",
+        "address": "Jalan Sisingamangaraja , Medan",
+        "latitude": 3.5780836,
+        "longitude": 98.6864484,
+        "tier": "Mid-Range",
+        "rating": 4.2,
+        "start_price": 528554,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 528554,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 687120,
+                "capacity": 2
+            }
+        ],
+        "description": "Dhaksina Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4271458248"
+    },
+    {
+        "id": "osm-node-4271458251",
+        "name": "Garuda Citra Hotel",
+        "city": "Medan",
+        "address": "Jalan Sisingamangaraja , Medan",
+        "latitude": 3.5774492,
+        "longitude": 98.6871941,
+        "tier": "Mid-Range",
+        "rating": 3.8,
+        "start_price": 465124,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 465124,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 604661,
+                "capacity": 2
+            }
+        ],
+        "description": "Garuda Citra Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4271458251"
+    },
+    {
+        "id": "osm-node-4271458254",
+        "name": "Grand Sri Intan",
+        "city": "Medan",
+        "address": "Jalan Sisingamangaraja , Medan",
+        "latitude": 3.5771012,
+        "longitude": 98.687347,
+        "tier": "Luxury",
+        "rating": 4.5,
+        "start_price": 1297293,
+        "facilities": [
+            "AC",
+            "Spa",
+            "Gym",
+            "Kolam Renang",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 1297293,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 1686480,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 2594586,
+                "capacity": 4
+            }
+        ],
+        "description": "Grand Sri Intan adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Spa, Gym dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4271458254"
+    },
+    {
+        "id": "osm-node-4271458257",
+        "name": "Kama Hotel",
+        "city": "Medan",
+        "address": "Jalan Ahmad Yani , Medan",
+        "latitude": 3.5861591,
+        "longitude": 98.6798203,
+        "tier": "Mid-Range",
+        "rating": 4.1,
+        "start_price": 683979,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 683979,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 889172,
+                "capacity": 2
+            }
+        ],
+        "description": "Kama Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4271458257"
+    },
+    {
+        "id": "osm-node-4271458258",
+        "name": "Hotel Sumatera",
+        "city": "Medan",
+        "address": "Jalan Sisingamangaraja , Medan",
+        "latitude": 3.5777517,
+        "longitude": 98.6866,
+        "tier": "Mid-Range",
+        "rating": 3.9,
+        "start_price": 640360,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 640360,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 832468,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel Sumatera adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4271458258"
+    },
+    {
+        "id": "osm-node-4271458274",
+        "name": "Prudential",
+        "city": "Medan",
+        "address": "Jalan Taruma , Medan",
+        "latitude": 3.5860576,
+        "longitude": 98.6699822,
+        "tier": "Mid-Range",
+        "rating": 4.2,
+        "start_price": 470938,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 470938,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 612219,
+                "capacity": 2
+            }
+        ],
+        "description": "Prudential adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4271458274"
+    },
+    {
+        "id": "osm-node-4279623290",
+        "name": "Hotel Zakia",
+        "city": "Medan",
+        "address": "Jalan Sipiso Piso",
+        "latitude": 3.5743718,
+        "longitude": 98.6868522,
+        "tier": "Mid-Range",
+        "rating": 4.2,
+        "start_price": 587094,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Laundry"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 587094,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 763222,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel Zakia adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4279623290"
+    },
+    {
+        "id": "osm-node-4332236391",
+        "name": "Angel's",
+        "city": "Medan",
+        "address": "Jalan Sisingamangaraja , Medan",
+        "latitude": 3.5745022,
+        "longitude": 98.6883209,
+        "tier": "Mid-Range",
+        "rating": 4.1,
+        "start_price": 494325,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 494325,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 642622,
+                "capacity": 2
+            }
+        ],
+        "description": "Angel's adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4332236391"
+    },
+    {
+        "id": "osm-node-4353523089",
+        "name": "Roemah Moesi",
+        "city": "Medan",
+        "address": "Jalan Sei Musi",
+        "latitude": 3.5779193,
+        "longitude": 98.6459218,
+        "tier": "Mid-Range",
+        "rating": 4.1,
+        "start_price": 481536,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 481536,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 625996,
+                "capacity": 2
+            }
+        ],
+        "description": "Roemah Moesi adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4353523089"
+    },
+    {
+        "id": "osm-node-4364796019",
+        "name": "Royal Perintis Hotel",
+        "city": "Medan",
+        "address": "Jalan Perintis Kemerdekaan , Medan",
+        "latitude": 3.5979588,
+        "longitude": 98.6800985,
+        "tier": "Mid-Range",
+        "rating": 4.1,
+        "start_price": 551628,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 551628,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 717116,
+                "capacity": 2
+            }
+        ],
+        "description": "Royal Perintis Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4364796019"
+    },
+    {
+        "id": "osm-node-4412569864",
+        "name": "Hotel 61 Medan",
+        "city": "Medan",
+        "address": "Jalan Iskandar Muda, Medan",
+        "latitude": 3.5896598,
+        "longitude": 98.6612832,
+        "tier": "Mid-Range",
+        "rating": 4.3,
+        "start_price": 553614,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 553614,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 719698,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel 61 Medan adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4412569864"
+    },
+    {
+        "id": "osm-node-4412575644",
+        "name": "Wesly House",
+        "city": "Medan",
+        "address": "Jalan Sei Bengal, Medan",
+        "latitude": 3.5875413,
+        "longitude": 98.6606315,
+        "tier": "Mid-Range",
+        "rating": 4.0,
+        "start_price": 498646,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 498646,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 648239,
+                "capacity": 2
+            }
+        ],
+        "description": "Wesly House adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4412575644"
+    },
+    {
+        "id": "osm-node-4412577136",
+        "name": "Kanasha Hotel",
+        "city": "Medan",
+        "address": "Jalan Dolok Sanggul, Medan",
+        "latitude": 3.5786261,
+        "longitude": 98.6854291,
+        "tier": "Mid-Range",
+        "rating": 4.3,
+        "start_price": 555972,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 555972,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 722763,
+                "capacity": 2
+            }
+        ],
+        "description": "Kanasha Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4412577136"
+    },
+    {
+        "id": "osm-node-4412590838",
+        "name": "Airy Hotel Medan Petisah Waringin",
+        "city": "Medan",
+        "address": "Jalan Darussalam, Medan",
+        "latitude": 3.5880336,
+        "longitude": 98.6528064,
+        "tier": "Mid-Range",
+        "rating": 4.4,
+        "start_price": 687027,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 687027,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 893135,
+                "capacity": 2
+            }
+        ],
+        "description": "Airy Hotel Medan Petisah Waringin adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4412590838"
+    },
+    {
+        "id": "osm-node-4412604886",
+        "name": "Hanlis Hotel",
+        "city": "Medan",
+        "address": "Jalan Sei Kapuas, Medan",
+        "latitude": 3.5842096,
+        "longitude": 98.6520406,
+        "tier": "Mid-Range",
+        "rating": 4.3,
+        "start_price": 560032,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 560032,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 728041,
+                "capacity": 2
+            }
+        ],
+        "description": "Hanlis Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4412604886"
+    },
+    {
+        "id": "osm-node-4412608129",
+        "name": "K77 Guest House",
+        "city": "Medan",
+        "address": "Jalan Seto, Medan",
+        "latitude": 3.5735957,
+        "longitude": 98.7042649,
+        "tier": "Budget",
+        "rating": 3.9,
+        "start_price": 186555,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 186555,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 242521,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 279832,
+                "capacity": 4
+            }
+        ],
+        "description": "K77 Guest House adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4412608129"
+    },
+    {
+        "id": "osm-node-4412612579",
+        "name": "GM House",
+        "city": "Medan",
+        "address": "Jalan Setia Budi, Medan",
+        "latitude": 3.5799152,
+        "longitude": 98.6432214,
+        "tier": "Mid-Range",
+        "rating": 4.3,
+        "start_price": 441879,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 441879,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 574442,
+                "capacity": 2
+            }
+        ],
+        "description": "GM House adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4412612579"
+    },
+    {
+        "id": "osm-node-4412629827",
+        "name": "Hotel Syariah Al Jayri,",
+        "city": "Medan",
+        "address": "Jalan K. H. Wahid Hasyim, Medan",
+        "latitude": 3.5868782,
+        "longitude": 98.6573613,
+        "tier": "Mid-Range",
+        "rating": 3.8,
+        "start_price": 600106,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Laundry"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 600106,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 780137,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel Syariah Al Jayri, adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4412629827"
+    },
+    {
+        "id": "osm-node-4412637918",
+        "name": "Deal Guest House",
+        "city": "Medan",
+        "address": "Jalan Kenanga Raya, Medan",
+        "latitude": 3.5625561,
+        "longitude": 98.6414469,
+        "tier": "Budget",
+        "rating": 3.1,
+        "start_price": 173666,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 173666,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 225765,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 260499,
+                "capacity": 4
+            }
+        ],
+        "description": "Deal Guest House adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4412637918"
+    },
+    {
+        "id": "osm-node-4412640134",
+        "name": "Medan Hostel",
+        "city": "Medan",
+        "address": "Jalan Setia Luhur, Medan",
+        "latitude": 3.6018288,
+        "longitude": 98.633486,
+        "tier": "Budget",
+        "rating": 3.7,
+        "start_price": 230189,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 230189,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 299245,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 345283,
+                "capacity": 4
+            }
+        ],
+        "description": "Medan Hostel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4412640134"
+    },
+    {
+        "id": "osm-node-4464415289",
+        "name": "PURI STREET",
+        "city": "Medan",
+        "address": "Jalan Puri",
+        "latitude": 3.5780535,
+        "longitude": 98.6884535,
+        "tier": "Mid-Range",
+        "rating": 4.1,
+        "start_price": 483653,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Laundry"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 483653,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 628748,
+                "capacity": 2
+            }
+        ],
+        "description": "PURI STREET adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4464415289"
+    },
+    {
+        "id": "osm-node-4826572122",
+        "name": "Le Polonia Hotel & Convention",
+        "city": "Medan",
+        "address": "Jend. Sudirman",
+        "latitude": 3.5766388,
+        "longitude": 98.6750953,
+        "tier": "Mid-Range",
+        "rating": 4.4,
+        "start_price": 475740,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 475740,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 618462,
+                "capacity": 2
+            }
+        ],
+        "description": "Le Polonia Hotel & Convention adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4826572122"
+    },
+    {
+        "id": "osm-node-4835896721",
+        "name": "Hotel Grand Antares Indonesia",
+        "city": "Medan",
+        "address": "Sisingamangaraja",
+        "latitude": 3.5570247,
+        "longitude": 98.6943345,
+        "tier": "Luxury",
+        "rating": 4.8,
+        "start_price": 1319048,
+        "facilities": [
+            "AC",
+            "Restoran",
+            "Gym",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 1319048,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 1714762,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 2638096,
+                "capacity": 4
+            }
+        ],
+        "description": "Hotel Grand Antares Indonesia adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Restoran, Gym dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-4835896721"
+    },
+    {
+        "id": "osm-node-5586013353",
+        "name": "Perumahan Pertamina no 6H",
+        "city": "Medan",
+        "address": "jalan yos sudarso",
+        "latitude": 3.602738,
+        "longitude": 98.6750537,
+        "tier": "Mid-Range",
+        "rating": 4.1,
+        "start_price": 600599,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 600599,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 780778,
+                "capacity": 2
+            }
+        ],
+        "description": "Perumahan Pertamina no 6H adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-5586013353"
+    },
+    {
+        "id": "osm-node-6320292216",
+        "name": "Vivo Hotel",
+        "city": "Medan",
+        "address": "Jalan Surabaya , Medan",
+        "latitude": 3.5861759,
+        "longitude": 98.6840389,
+        "tier": "Mid-Range",
+        "rating": 4.3,
+        "start_price": 610396,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Laundry"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 610396,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 793514,
+                "capacity": 2
+            }
+        ],
+        "description": "Vivo Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-6320292216"
+    },
+    {
+        "id": "osm-node-6320373813",
+        "name": "Grand Sirao Hotel",
+        "city": "Medan",
+        "address": "Jalan Semarang , Medan",
+        "latitude": 3.5832165,
+        "longitude": 98.6861911,
+        "tier": "Luxury",
+        "rating": 4.5,
+        "start_price": 1473208,
+        "facilities": [
+            "AC",
+            "Spa",
+            "Kolam Renang",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 1473208,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 1915170,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 2946416,
+                "capacity": 4
+            }
+        ],
+        "description": "Grand Sirao Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Spa, Kolam Renang dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-6320373813"
+    },
+    {
+        "id": "osm-node-6321246754",
+        "name": "Grand Swiss-Bel",
+        "city": "Medan",
+        "address": "Jalan S. Parman , Medan",
+        "latitude": 3.5849747,
+        "longitude": 98.6673268,
+        "tier": "Luxury",
+        "rating": 4.6,
+        "start_price": 1432351,
+        "facilities": [
+            "AC",
+            "Spa",
+            "Restoran",
+            "Kolam Renang",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 1432351,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 1862056,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 2864702,
+                "capacity": 4
+            }
+        ],
+        "description": "Grand Swiss-Bel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Spa, Restoran dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-6321246754"
+    },
+    {
+        "id": "osm-node-7150301687",
+        "name": "Swiss Belinn Gajah Mada",
+        "city": "Medan",
+        "address": "Jalan Gajah Mada, Medan",
+        "latitude": 3.5844676,
+        "longitude": 98.658088,
+        "tier": "Mid-Range",
+        "rating": 3.9,
+        "start_price": 749936,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 749936,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 974916,
+                "capacity": 2
+            }
+        ],
+        "description": "Swiss Belinn Gajah Mada adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-7150301687"
+    },
+    {
+        "id": "osm-node-7158336785",
+        "name": "OYO 1030 Hotel Buni Asih",
+        "city": "Medan",
+        "address": "Jln. Sei Bahorok Baru",
+        "latitude": 3.5784193,
+        "longitude": 98.6563621,
+        "tier": "Budget",
+        "rating": 3.1,
+        "start_price": 172696,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 172696,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 224504,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 259044,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO 1030 Hotel Buni Asih adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-7158336785"
+    },
+    {
+        "id": "osm-node-7661706481",
+        "name": "Four Points by Sheraton Medan",
+        "city": "Medan",
+        "address": "Jalan Jendral Gatot Subroto, Medan",
+        "latitude": 3.5899012,
+        "longitude": 98.6513443,
+        "tier": "Luxury",
+        "rating": 4.6,
+        "start_price": 1607910,
+        "facilities": [
+            "AC",
+            "Spa",
+            "Gym",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 1607910,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 2090283,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 3215820,
+                "capacity": 4
+            }
+        ],
+        "description": "Four Points by Sheraton Medan adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Spa, Gym dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-7661706481"
+    },
+    {
+        "id": "osm-node-9468698535",
+        "name": "Hotel Karibia Boutique Medan",
+        "city": "Medan",
+        "address": "Jalan Timor Blok J, Medan",
+        "latitude": 3.5909369,
+        "longitude": 98.6824064,
+        "tier": "Mid-Range",
+        "rating": 4.3,
+        "start_price": 499632,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "Restoran"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 499632,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 649521,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel Karibia Boutique Medan adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-9468698535"
+    },
+    {
+        "id": "osm-node-9622817906",
+        "name": "HARPER Wahid Hasyim",
+        "city": "Medan",
+        "address": "Jalan Sei Mencirim , Medan",
+        "latitude": 3.5805773,
+        "longitude": 98.6573033,
+        "tier": "Mid-Range",
+        "rating": 4.2,
+        "start_price": 420794,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 420794,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 547032,
+                "capacity": 2
+            }
+        ],
+        "description": "HARPER Wahid Hasyim adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-9622817906"
+    },
+    {
+        "id": "osm-node-9671205316",
+        "name": "Aryaduta Hotel",
+        "city": "Medan",
+        "address": "Jalan Kapten Maulana Lubis 8, Medan",
+        "latitude": 3.5899875,
+        "longitude": 98.6743192,
+        "tier": "Luxury",
+        "rating": 4.6,
+        "start_price": 750000,
+        "facilities": [
+            "AC",
+            "Restoran",
+            "Gym",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 750000,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 950000,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 1400000,
+                "capacity": 4
+            }
+        ],
+        "description": "Aryaduta Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Restoran, Gym dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-9671205316"
+    },
+    {
+        "id": "osm-node-9776282503",
+        "name": "OYO 283 Helvetia Residence",
+        "city": "Medan",
+        "address": "Jalan Mesjid , Medan",
+        "latitude": 3.6140289,
+        "longitude": 98.647926,
+        "tier": "Budget",
+        "rating": 3.4,
+        "start_price": 190704,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 190704,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 247915,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 286056,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO 283 Helvetia Residence adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-9776282503"
+    },
+    {
+        "id": "osm-node-9800699156",
+        "name": "Raz Hotel & Convention Tanjung Rejo",
+        "city": "Medan",
+        "address": "Jalan Dokter Mansyur , Medan",
+        "latitude": 3.5680234,
+        "longitude": 98.6433963,
+        "tier": "Mid-Range",
+        "rating": 4.3,
+        "start_price": 439696,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 439696,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 571604,
+                "capacity": 2
+            }
+        ],
+        "description": "Raz Hotel & Convention Tanjung Rejo adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-9800699156"
+    },
+    {
+        "id": "osm-node-9801064035",
+        "name": "OYO 1009 Hotel Bumi Malaya",
+        "city": "Medan",
+        "address": "Jalan Jenderal Gatot Subroto , Medan",
+        "latitude": 3.5905794,
+        "longitude": 98.6406332,
+        "tier": "Budget",
+        "rating": 3.0,
+        "start_price": 210164,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 210164,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 273213,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 315246,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO 1009 Hotel Bumi Malaya adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-9801064035"
+    },
+    {
+        "id": "osm-node-9801868720",
+        "name": "D'Prima Hotel Stasiun Kereta Api Medan",
+        "city": "Medan",
+        "address": "Jalan Stasiun Kereta Api , Medan",
+        "latitude": 3.5910948,
+        "longitude": 98.6796304,
+        "tier": "Mid-Range",
+        "rating": 4.0,
+        "start_price": 669370,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "Restoran"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 669370,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 870181,
+                "capacity": 2
+            }
+        ],
+        "description": "D'Prima Hotel Stasiun Kereta Api Medan adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-9801868720"
+    },
+    {
+        "id": "osm-node-9802881543",
+        "name": "Blue Hostel Pandau Hulu I",
+        "city": "Medan",
+        "address": "Jalan Aceh , Medan",
+        "latitude": 3.5878128,
+        "longitude": 98.6930668,
+        "tier": "Budget",
+        "rating": 3.1,
+        "start_price": 236998,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 236998,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 308097,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 355497,
+                "capacity": 4
+            }
+        ],
+        "description": "Blue Hostel Pandau Hulu I adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-9802881543"
+    },
+    {
+        "id": "osm-node-9802973639",
+        "name": "Desatu Hotel Medan",
+        "city": "Medan",
+        "address": "Jalan Timor , Medan",
+        "latitude": 3.5927637,
+        "longitude": 98.6811753,
+        "tier": "Mid-Range",
+        "rating": 4.2,
+        "start_price": 616647,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 616647,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 801641,
+                "capacity": 2
+            }
+        ],
+        "description": "Desatu Hotel Medan adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-9802973639"
+    },
+    {
+        "id": "osm-node-9803361791",
+        "name": "Moumou Hostel",
+        "city": "Medan",
+        "address": "Jalan Asia Raya , Medan",
+        "latitude": 3.5864024,
+        "longitude": 98.7046698,
+        "tier": "Budget",
+        "rating": 3.0,
+        "start_price": 327441,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 327441,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 425673,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 491161,
+                "capacity": 4
+            }
+        ],
+        "description": "Moumou Hostel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-9803361791"
+    },
+    {
+        "id": "osm-node-9805081374",
+        "name": "OYO 839 Royal Guest House",
+        "city": "Medan",
+        "address": "Jalan Palang Merah , Medan",
+        "latitude": 3.5835022,
+        "longitude": 98.6785658,
+        "tier": "Budget",
+        "rating": 3.0,
+        "start_price": 253077,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 253077,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 329000,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 379615,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO 839 Royal Guest House adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-9805081374"
+    },
+    {
+        "id": "osm-node-9805259463",
+        "name": "Hotel Palace Inn",
+        "city": "Medan",
+        "address": "Jalan Mojopahit , Medan",
+        "latitude": 3.5862561,
+        "longitude": 98.6662736,
+        "tier": "Budget",
+        "rating": 3.5,
+        "start_price": 341199,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 341199,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 443558,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 511798,
+                "capacity": 4
+            }
+        ],
+        "description": "Hotel Palace Inn adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-9805259463"
+    },
+    {
+        "id": "osm-node-9805412332",
+        "name": "Hotel Gentala",
+        "city": "Medan",
+        "address": "Jalan Rahmadsyah , Medan",
+        "latitude": 3.5796344,
+        "longitude": 98.6912121,
+        "tier": "Mid-Range",
+        "rating": 3.9,
+        "start_price": 616613,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 616613,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 801596,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel Gentala adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-9805412332"
+    },
+    {
+        "id": "osm-node-9805617197",
+        "name": "Nidia Nugraha Hotel",
+        "city": "Medan",
+        "address": "Jalan Puri , Medan",
+        "latitude": 3.5781206,
+        "longitude": 98.6881765,
+        "tier": "Mid-Range",
+        "rating": 4.1,
+        "start_price": 615866,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 615866,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 800625,
+                "capacity": 2
+            }
+        ],
+        "description": "Nidia Nugraha Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-9805617197"
+    },
+    {
+        "id": "osm-node-9805715185",
+        "name": "Cambridge Condominium",
+        "city": "Medan",
+        "address": "Jalan Zainul Arifin , Medan",
+        "latitude": 3.5843195,
+        "longitude": 98.6675468,
+        "tier": "Mid-Range",
+        "rating": 4.4,
+        "start_price": 541763,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 541763,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 704291,
+                "capacity": 2
+            }
+        ],
+        "description": "Cambridge Condominium adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-9805715185"
+    },
+    {
+        "id": "osm-node-9805774952",
+        "name": "OYO 687 Residence Hotel Syariah",
+        "city": "Medan",
+        "address": "Jalan Tengah , Medan",
+        "latitude": 3.5745394,
+        "longitude": 98.6878039,
+        "tier": "Budget",
+        "rating": 3.6,
+        "start_price": 157031,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 157031,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 204140,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 235546,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO 687 Residence Hotel Syariah adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-9805774952"
+    },
+    {
+        "id": "osm-node-9807651275",
+        "name": "Hotel Binaka Medan",
+        "city": "Medan",
+        "address": "Jalan Brigjen Katamso , Medan",
+        "latitude": 3.571763,
+        "longitude": 98.6852373,
+        "tier": "Mid-Range",
+        "rating": 4.4,
+        "start_price": 633624,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 633624,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 823711,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel Binaka Medan adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-9807651275"
+    },
+    {
+        "id": "osm-node-9843865267",
+        "name": "OYO 1183 Papakoel",
+        "city": "Medan",
+        "address": "Jalan Pembangunan , Medan",
+        "latitude": 3.5645253,
+        "longitude": 98.6523508,
+        "tier": "Budget",
+        "rating": 3.3,
+        "start_price": 228911,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 228911,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 297584,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 343366,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO 1183 Papakoel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-9843865267"
+    },
+    {
+        "id": "osm-node-9843903131",
+        "name": "Red Doorz STM Medan Sitirejo II",
+        "city": "Medan",
+        "address": "Jalan Suka Indah , Medan",
+        "latitude": 3.5479556,
+        "longitude": 98.6922478,
+        "tier": "Mid-Range",
+        "rating": 4.0,
+        "start_price": 476596,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 476596,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 619574,
+                "capacity": 2
+            }
+        ],
+        "description": "Red Doorz STM Medan Sitirejo II adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-9843903131"
+    },
+    {
+        "id": "osm-node-9848263367",
+        "name": "OYO 621 Vania Residence",
+        "city": "Medan",
+        "address": "Jalan Periuk , Medan",
+        "latitude": 3.6000344,
+        "longitude": 98.6557256,
+        "tier": "Budget",
+        "rating": 3.5,
+        "start_price": 273679,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 273679,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 355782,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 410518,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO 621 Vania Residence adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-9848263367"
+    },
+    {
+        "id": "osm-node-9848273215",
+        "name": "OYO 1940 Cendana Homestay Syariah",
+        "city": "Medan",
+        "address": "Jalan Willem Iskandar , Medan",
+        "latitude": 3.6119613,
+        "longitude": 98.7069801,
+        "tier": "Budget",
+        "rating": 3.0,
+        "start_price": 277101,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 277101,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 360231,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 415651,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO 1940 Cendana Homestay Syariah adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-9848273215"
+    },
+    {
+        "id": "osm-node-11350366269",
+        "name": "TravelBiz",
+        "city": "Medan",
+        "address": "Jalan Sutrisno , Medan",
+        "latitude": 3.5821939,
+        "longitude": 98.7005087,
+        "tier": "Mid-Range",
+        "rating": 4.1,
+        "start_price": 617652,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "Restoran"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 617652,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 802947,
+                "capacity": 2
+            }
+        ],
+        "description": "TravelBiz adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-11350366269"
+    },
+    {
+        "id": "osm-node-11766729269",
+        "name": "Cordex Hotel Medan",
+        "city": "Medan",
+        "address": "Jalan Guru Patimpus , Medan",
+        "latitude": 3.5948777,
+        "longitude": 98.6733314,
+        "tier": "Mid-Range",
+        "rating": 4.3,
+        "start_price": 420571,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 420571,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 546742,
+                "capacity": 2
+            }
+        ],
+        "description": "Cordex Hotel Medan adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-11766729269"
+    },
+    {
+        "id": "osm-node-12012678469",
+        "name": "Romeah 28",
+        "city": "Medan",
+        "address": "Jalan Sei Kuala , Medan",
+        "latitude": 3.5722778,
+        "longitude": 98.6556137,
+        "tier": "Mid-Range",
+        "rating": 3.9,
+        "start_price": 519571,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 519571,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 675442,
+                "capacity": 2
+            }
+        ],
+        "description": "Romeah 28 adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-12012678469"
+    },
+    {
+        "id": "osm-node-13545975500",
+        "name": "M Hotel",
+        "city": "Medan",
+        "address": "Jalan Raden Saleh , Medan",
+        "latitude": 3.5896632,
+        "longitude": 98.6762336,
+        "tier": "Mid-Range",
+        "rating": 4.1,
+        "start_price": 492881,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "Restoran"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 492881,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 640745,
+                "capacity": 2
+            }
+        ],
+        "description": "M Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-13545975500"
+    },
+    {
+        "id": "osm-node-13838844256",
+        "name": "Dazhong Backpacker's hostel",
+        "city": "Medan",
+        "address": "Jalan Muara Takus , Medan",
+        "latitude": 3.5824944,
+        "longitude": 98.6690434,
+        "tier": "Budget",
+        "rating": 3.3,
+        "start_price": 334685,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 334685,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 435090,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 502027,
+                "capacity": 4
+            }
+        ],
+        "description": "Dazhong Backpacker's hostel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-13838844256"
+    },
+    {
+        "id": "osm-node-13994939405",
+        "name": "Merak Bestari",
+        "city": "Medan",
+        "address": "Jalan Merak , Medan",
+        "latitude": 3.5846895,
+        "longitude": 98.6324573,
+        "tier": "Mid-Range",
+        "rating": 4.3,
+        "start_price": 433617,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 433617,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 563702,
+                "capacity": 2
+            }
+        ],
+        "description": "Merak Bestari adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-13994939405"
+    },
+    {
+        "id": "osm-node-14162785724",
+        "name": "Wika Wiki",
+        "city": "Medan",
+        "address": "Jalan Darat , Medan",
+        "latitude": 3.5785795,
+        "longitude": 98.662494,
+        "tier": "Mid-Range",
+        "rating": 4.0,
+        "start_price": 442869,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 442869,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 575729,
+                "capacity": 2
+            }
+        ],
+        "description": "Wika Wiki adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-node-14162785724"
+    },
+    {
+        "id": "osm-way-60845711",
+        "name": "Tiara Hotel & Convention Centre",
+        "city": "Medan",
+        "address": "Jalan Cut Meutia, Medan",
+        "latitude": 3.5805063,
+        "longitude": 98.6752369,
+        "tier": "Mid-Range",
+        "rating": 4.0,
+        "start_price": 572504,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 572504,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 744255,
+                "capacity": 2
+            }
+        ],
+        "description": "Tiara Hotel & Convention Centre adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-60845711"
+    },
+    {
+        "id": "osm-way-228971034",
+        "name": "JW Marriott Hotel Medan",
+        "city": "Medan",
+        "address": "Jalan Putri Hijau, Medan",
+        "latitude": 3.5967046,
+        "longitude": 98.6757027,
+        "tier": "Luxury",
+        "rating": 4.9,
+        "start_price": 1200000,
+        "facilities": [
+            "AC",
+            "Spa",
+            "Restoran",
+            "Kolam Renang",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 1200000,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 1500000,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 2500000,
+                "capacity": 4
+            }
+        ],
+        "description": "JW Marriott Hotel Medan adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Spa, Restoran dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-228971034"
+    },
+    {
+        "id": "osm-way-246156689",
+        "name": "Radisson Medan",
+        "city": "Medan",
+        "address": "Jalan Adam Malik, Medan",
+        "latitude": 3.5939319,
+        "longitude": 98.668394,
+        "tier": "Luxury",
+        "rating": 4.8,
+        "start_price": 800000,
+        "facilities": [
+            "AC",
+            "Gym",
+            "Kolam Renang",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 800000,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 1000000,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 1500000,
+                "capacity": 4
+            }
+        ],
+        "description": "Radisson Medan adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Gym, Kolam Renang dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-246156689"
+    },
+    {
+        "id": "osm-way-267277782",
+        "name": "Grand Aston City Hall",
+        "city": "Medan",
+        "address": "Jalan Raden Saleh , Medan",
+        "latitude": 3.5902809,
+        "longitude": 98.6765295,
+        "tier": "Luxury",
+        "rating": 4.9,
+        "start_price": 650000,
+        "facilities": [
+            "AC",
+            "Restoran",
+            "Gym",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 650000,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 850000,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 1300000,
+                "capacity": 4
+            }
+        ],
+        "description": "Grand Aston City Hall adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Restoran, Gym dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-267277782"
+    },
+    {
+        "id": "osm-way-288437627",
+        "name": "Grand Mercure Maha Cipta Medan Angkasa",
+        "city": "Medan",
+        "address": "Jalan Sutomo, Medan",
+        "latitude": 3.5979589,
+        "longitude": 98.6821817,
+        "tier": "Luxury",
+        "rating": 4.8,
+        "start_price": 1099230,
+        "facilities": [
+            "AC",
+            "Spa",
+            "Kolam Renang",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 1099230,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 1428999,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 2198460,
+                "capacity": 4
+            }
+        ],
+        "description": "Grand Mercure Maha Cipta Medan Angkasa adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Spa, Kolam Renang dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-288437627"
+    },
+    {
+        "id": "osm-way-288438374",
+        "name": "OYO Festive Inn",
+        "city": "Medan",
+        "address": "Jalan Sambu , Medan",
+        "latitude": 3.5879867,
+        "longitude": 98.6826563,
+        "tier": "Budget",
+        "rating": 3.9,
+        "start_price": 166806,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 166806,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 216847,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 250209,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO Festive Inn adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-288438374"
+    },
+    {
+        "id": "osm-way-288438711",
+        "name": "OYO 741 Hotel Labuhan Raya",
+        "city": "Medan",
+        "address": "Jalan Gajah Mada , Medan",
+        "latitude": 3.5844423,
+        "longitude": 98.6599069,
+        "tier": "Budget",
+        "rating": 3.1,
+        "start_price": 192685,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 192685,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 250490,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 289027,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO 741 Hotel Labuhan Raya adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-288438711"
+    },
+    {
+        "id": "osm-way-288442139",
+        "name": "Madani Hotel",
+        "city": "Medan",
+        "address": "Jalan Medan Putera , Medan",
+        "latitude": 3.5765901,
+        "longitude": 98.6878845,
+        "tier": "Mid-Range",
+        "rating": 4.0,
+        "start_price": 534304,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 534304,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 694595,
+                "capacity": 2
+            }
+        ],
+        "description": "Madani Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-288442139"
+    },
+    {
+        "id": "osm-way-288442180",
+        "name": "Hotel Melati",
+        "city": "Medan",
+        "address": "Jalan Amaliun , Medan",
+        "latitude": 3.5758745,
+        "longitude": 98.6892478,
+        "tier": "Mid-Range",
+        "rating": 3.8,
+        "start_price": 447820,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Laundry"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 447820,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 582166,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel Melati adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-288442180"
+    },
+    {
+        "id": "osm-way-288596130",
+        "name": "Grand Inna Hotel Medan",
+        "city": "Medan",
+        "address": "Jl. Balai Kota, Medan",
+        "latitude": 3.5911821,
+        "longitude": 98.676805,
+        "tier": "Luxury",
+        "rating": 4.6,
+        "start_price": 1764843,
+        "facilities": [
+            "AC",
+            "Spa",
+            "Restoran",
+            "Kolam Renang",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 1764843,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 2294295,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 3529686,
+                "capacity": 4
+            }
+        ],
+        "description": "Grand Inna Hotel Medan adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Spa, Restoran dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-288596130"
+    },
+    {
+        "id": "osm-way-288597918",
+        "name": "Hotel Danau Toba International",
+        "city": "Medan",
+        "address": "Jalan Imam Bonjol , Medan",
+        "latitude": 3.5828887,
+        "longitude": 98.6763907,
+        "tier": "Luxury",
+        "rating": 4.8,
+        "start_price": 600000,
+        "facilities": [
+            "AC",
+            "Restoran",
+            "Kolam Renang",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 600000,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 750000,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 1100000,
+                "capacity": 4
+            }
+        ],
+        "description": "Hotel Danau Toba International adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Restoran, Kolam Renang dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-288597918"
+    },
+    {
+        "id": "osm-way-288605357",
+        "name": "Amaliun Hotel",
+        "city": "Medan",
+        "address": "Jalan Amaliun , Medan",
+        "latitude": 3.576382,
+        "longitude": 98.6898909,
+        "tier": "Mid-Range",
+        "rating": 4.0,
+        "start_price": 561049,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 561049,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 729363,
+                "capacity": 2
+            }
+        ],
+        "description": "Amaliun Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-288605357"
+    },
+    {
+        "id": "osm-way-288667317",
+        "name": "OYO 447 Hutasimo Residence",
+        "city": "Medan",
+        "address": "Jalan Sei Batang Kuis , Medan",
+        "latitude": 3.5814426,
+        "longitude": 98.6606791,
+        "tier": "Budget",
+        "rating": 3.8,
+        "start_price": 314879,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 314879,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 409342,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 472318,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO 447 Hutasimo Residence adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-288667317"
+    },
+    {
+        "id": "osm-way-288668406",
+        "name": "Reddoorz Near Jalan Gatot Subroto Medan No.29A",
+        "city": "Medan",
+        "address": "Jalan Sei Wampu , Medan",
+        "latitude": 3.5836067,
+        "longitude": 98.6540185,
+        "tier": "Budget",
+        "rating": 3.3,
+        "start_price": 324869,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 324869,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 422329,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 487303,
+                "capacity": 4
+            }
+        ],
+        "description": "Reddoorz Near Jalan Gatot Subroto Medan No.29A adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-288668406"
+    },
+    {
+        "id": "osm-way-288686698",
+        "name": "OYO 1371 Carofin Guest House",
+        "city": "Medan",
+        "address": "Jalan Sei Tuntung Baru , Medan",
+        "latitude": 3.5828481,
+        "longitude": 98.655163,
+        "tier": "Budget",
+        "rating": 3.2,
+        "start_price": 249048,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 249048,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 323762,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 373572,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO 1371 Carofin Guest House adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-288686698"
+    },
+    {
+        "id": "osm-way-288696562",
+        "name": "Jangga House",
+        "city": "Medan",
+        "address": "Jalan Sei Tuan , Medan",
+        "latitude": 3.5803967,
+        "longitude": 98.654135,
+        "tier": "Mid-Range",
+        "rating": 4.3,
+        "start_price": 433860,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Laundry"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 433860,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 564018,
+                "capacity": 2
+            }
+        ],
+        "description": "Jangga House adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-288696562"
+    },
+    {
+        "id": "osm-way-288720870",
+        "name": "Cherry Pink Hotel",
+        "city": "Medan",
+        "address": "Jalan K. Haji Wahid Hasyim , Medan",
+        "latitude": 3.5726925,
+        "longitude": 98.6598188,
+        "tier": "Mid-Range",
+        "rating": 4.1,
+        "start_price": 696101,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 696101,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 904931,
+                "capacity": 2
+            }
+        ],
+        "description": "Cherry Pink Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-288720870"
+    },
+    {
+        "id": "osm-way-288727551",
+        "name": "Citi International Palang Merah",
+        "city": "Medan",
+        "address": "Palang Merah, Medan",
+        "latitude": 3.5844401,
+        "longitude": 98.675892,
+        "tier": "Luxury",
+        "rating": 4.9,
+        "start_price": 995098,
+        "facilities": [
+            "AC",
+            "Restoran",
+            "Gym",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 995098,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 1293627,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 1990196,
+                "capacity": 4
+            }
+        ],
+        "description": "Citi International Palang Merah adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Restoran, Gym dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-288727551"
+    },
+    {
+        "id": "osm-way-288729227",
+        "name": "Antares",
+        "city": "Medan",
+        "address": "Jalan Sisingamangaraja , Medan",
+        "latitude": 3.5740258,
+        "longitude": 98.688159,
+        "tier": "Mid-Range",
+        "rating": 4.1,
+        "start_price": 466219,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 466219,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 606084,
+                "capacity": 2
+            }
+        ],
+        "description": "Antares adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-288729227"
+    },
+    {
+        "id": "osm-way-288729228",
+        "name": "Residential",
+        "city": "Medan",
+        "address": "Jalan Tengah , Medan",
+        "latitude": 3.5746161,
+        "longitude": 98.6878553,
+        "tier": "Mid-Range",
+        "rating": 4.4,
+        "start_price": 453846,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 453846,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 589999,
+                "capacity": 2
+            }
+        ],
+        "description": "Residential adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-288729228"
+    },
+    {
+        "id": "osm-way-289693003",
+        "name": "Hotel Polonia",
+        "city": "Medan",
+        "address": "Jalan Jenderal Sudirman 14, Medan",
+        "latitude": 3.5765942,
+        "longitude": 98.6751587,
+        "tier": "Mid-Range",
+        "rating": 4.0,
+        "start_price": 494507,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 494507,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 642859,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel Polonia adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-289693003"
+    },
+    {
+        "id": "osm-way-289693010",
+        "name": "hotel garuda plaza",
+        "city": "Medan",
+        "address": "Jalan Sisingamangaraja, Medan",
+        "latitude": 3.5785871,
+        "longitude": 98.6861175,
+        "tier": "Mid-Range",
+        "rating": 3.9,
+        "start_price": 430390,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 430390,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 559507,
+                "capacity": 2
+            }
+        ],
+        "description": "hotel garuda plaza adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-289693010"
+    },
+    {
+        "id": "osm-way-289694859",
+        "name": "Hotel Soechi International",
+        "city": "Medan",
+        "address": "Jalan Kotanopan I , Medan",
+        "latitude": 3.5828181,
+        "longitude": 98.6837805,
+        "tier": "Luxury",
+        "rating": 4.8,
+        "start_price": 550000,
+        "facilities": [
+            "AC",
+            "Spa",
+            "Restoran",
+            "Kolam Renang",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 550000,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 700000,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 1000000,
+                "capacity": 4
+            }
+        ],
+        "description": "Hotel Soechi International adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Spa, Restoran dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-289694859"
+    },
+    {
+        "id": "osm-way-292919793",
+        "name": "Hotel GranDhika Setiabudi Medan",
+        "city": "Medan",
+        "address": "Jalan Dokter Mansyur , Medan",
+        "latitude": 3.5671234,
+        "longitude": 98.642882,
+        "tier": "Luxury",
+        "rating": 4.6,
+        "start_price": 1272804,
+        "facilities": [
+            "AC",
+            "Restoran",
+            "Kolam Renang",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 1272804,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 1654645,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 2545608,
+                "capacity": 4
+            }
+        ],
+        "description": "Hotel GranDhika Setiabudi Medan adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Restoran, Kolam Renang dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-292919793"
+    },
+    {
+        "id": "osm-way-313916675",
+        "name": "Citi International Sun Yat Sen",
+        "city": "Medan",
+        "address": "Sun Yat Sen, Medan",
+        "latitude": 3.5831548,
+        "longitude": 98.6907601,
+        "tier": "Luxury",
+        "rating": 4.6,
+        "start_price": 1368464,
+        "facilities": [
+            "AC",
+            "Spa",
+            "Gym",
+            "Kolam Renang",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 1368464,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 1779003,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 2736928,
+                "capacity": 4
+            }
+        ],
+        "description": "Citi International Sun Yat Sen adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Spa, Gym dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-313916675"
+    },
+    {
+        "id": "osm-way-328403048",
+        "name": "Emerald Garden International Hotel",
+        "city": "Medan",
+        "address": "Jalan Bandar Negri , Medan",
+        "latitude": 3.602375,
+        "longitude": 98.672737,
+        "tier": "Luxury",
+        "rating": 4.6,
+        "start_price": 1551842,
+        "facilities": [
+            "AC",
+            "Restoran",
+            "Gym",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 1551842,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 2017394,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 3103684,
+                "capacity": 4
+            }
+        ],
+        "description": "Emerald Garden International Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Restoran, Gym dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-328403048"
+    },
+    {
+        "id": "osm-way-550932476",
+        "name": "Grand Central Hotel Medan",
+        "city": "Medan",
+        "address": "Jalan Sei Belutu , Medan",
+        "latitude": 3.5751434,
+        "longitude": 98.6534344,
+        "tier": "Luxury",
+        "rating": 4.9,
+        "start_price": 902806,
+        "facilities": [
+            "AC",
+            "Restoran",
+            "Gym",
+            "Kolam Renang",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 902806,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 1173647,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 1805612,
+                "capacity": 4
+            }
+        ],
+        "description": "Grand Central Hotel Medan adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Restoran, Gym dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-550932476"
+    },
+    {
+        "id": "osm-way-550932477",
+        "name": "Hotel Grand Darussalam Syariah",
+        "city": "Medan",
+        "address": "Jalan Darussalam , Medan",
+        "latitude": 3.5866697,
+        "longitude": 98.6529094,
+        "tier": "Luxury",
+        "rating": 4.8,
+        "start_price": 1643067,
+        "facilities": [
+            "AC",
+            "Spa",
+            "Restoran",
+            "Kolam Renang",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 1643067,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 2135987,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 3286134,
+                "capacity": 4
+            }
+        ],
+        "description": "Hotel Grand Darussalam Syariah adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Spa, Restoran dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-550932477"
+    },
+    {
+        "id": "osm-way-550932488",
+        "name": "Saka Hotel Medan",
+        "city": "Medan",
+        "address": "Jalan Pungguk , Medan",
+        "latitude": 3.5885447,
+        "longitude": 98.6265418,
+        "tier": "Mid-Range",
+        "rating": 4.1,
+        "start_price": 540906,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 540906,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 703177,
+                "capacity": 2
+            }
+        ],
+        "description": "Saka Hotel Medan adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-550932488"
+    },
+    {
+        "id": "osm-way-556457028",
+        "name": "Travellers' Suites",
+        "city": "Medan",
+        "address": "Jalan Imam Bonjol , Medan",
+        "latitude": 3.5856443,
+        "longitude": 98.674424,
+        "tier": "Mid-Range",
+        "rating": 4.2,
+        "start_price": 684587,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 684587,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 889963,
+                "capacity": 2
+            }
+        ],
+        "description": "Travellers' Suites adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-556457028"
+    },
+    {
+        "id": "osm-way-556512433",
+        "name": "The Batik Hotel Medan",
+        "city": "Medan",
+        "address": "Jalan Iskandar Muda , Medan",
+        "latitude": 3.5739349,
+        "longitude": 98.660603,
+        "tier": "Mid-Range",
+        "rating": 4.1,
+        "start_price": 586875,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 586875,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 762937,
+                "capacity": 2
+            }
+        ],
+        "description": "The Batik Hotel Medan adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-556512433"
+    },
+    {
+        "id": "osm-way-556524948",
+        "name": "Wisma Sudirman",
+        "city": "Medan",
+        "address": "Jalan Kapten Pattimura , Medan",
+        "latitude": 3.5740484,
+        "longitude": 98.664026,
+        "tier": "Mid-Range",
+        "rating": 4.0,
+        "start_price": 447646,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 447646,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 581939,
+                "capacity": 2
+            }
+        ],
+        "description": "Wisma Sudirman adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-556524948"
+    },
+    {
+        "id": "osm-way-556812792",
+        "name": "The Green Alam Indah Hotel",
+        "city": "Medan",
+        "address": "Jalan Jamin Ginting , Medan",
+        "latitude": 3.5305161,
+        "longitude": 98.642775,
+        "tier": "Mid-Range",
+        "rating": 3.9,
+        "start_price": 483609,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Laundry"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 483609,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 628691,
+                "capacity": 2
+            }
+        ],
+        "description": "The Green Alam Indah Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-556812792"
+    },
+    {
+        "id": "osm-way-599916579",
+        "name": "Danau Toba International Cottage Belawan",
+        "city": "Medan",
+        "address": "Jalan Sumatra , Medan",
+        "latitude": 3.7796644,
+        "longitude": 98.6900892,
+        "tier": "Luxury",
+        "rating": 4.7,
+        "start_price": 600000,
+        "facilities": [
+            "AC",
+            "Spa",
+            "Gym",
+            "Kolam Renang",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 600000,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 750000,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 1100000,
+                "capacity": 4
+            }
+        ],
+        "description": "Danau Toba International Cottage Belawan adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Spa, Gym dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-599916579"
+    },
+    {
+        "id": "osm-way-629367874",
+        "name": "Ibis Styles Medan Patimura",
+        "city": "Medan",
+        "address": "Jalan Kapten Pattimura , Medan",
+        "latitude": 3.5738286,
+        "longitude": 98.663665,
+        "tier": "Mid-Range",
+        "rating": 4.1,
+        "start_price": 350000,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 350000,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 450000,
+                "capacity": 2
+            }
+        ],
+        "description": "Ibis Styles Medan Patimura adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-629367874"
+    },
+    {
+        "id": "osm-way-629369135",
+        "name": "OYO 1522 Residence Anugrah",
+        "city": "Medan",
+        "address": "Jalan Mojopahit , Medan",
+        "latitude": 3.5760011,
+        "longitude": 98.6652148,
+        "tier": "Budget",
+        "rating": 3.5,
+        "start_price": 216972,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 216972,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 282063,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 325458,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO 1522 Residence Anugrah adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-629369135"
+    },
+    {
+        "id": "osm-way-629377783",
+        "name": "King Palace Medan",
+        "city": "Medan",
+        "address": "Jalan Abdullah Lubis , Medan",
+        "latitude": 3.5768784,
+        "longitude": 98.6615959,
+        "tier": "Mid-Range",
+        "rating": 3.9,
+        "start_price": 635138,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 635138,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 825679,
+                "capacity": 2
+            }
+        ],
+        "description": "King Palace Medan adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-629377783"
+    },
+    {
+        "id": "osm-way-629411850",
+        "name": "Grand Labana Hotel",
+        "city": "Medan",
+        "address": "Jalan Abdullah Lubis , Medan",
+        "latitude": 3.5772011,
+        "longitude": 98.6559163,
+        "tier": "Luxury",
+        "rating": 4.5,
+        "start_price": 1768409,
+        "facilities": [
+            "AC",
+            "Restoran",
+            "Gym",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 1768409,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 2298931,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 3536818,
+                "capacity": 4
+            }
+        ],
+        "description": "Grand Labana Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Restoran, Gym dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-629411850"
+    },
+    {
+        "id": "osm-way-629411899",
+        "name": "Deli Hotel",
+        "city": "Medan",
+        "address": "Jalan Abdullah Lubis, Medan",
+        "latitude": 3.5768051,
+        "longitude": 98.6535377,
+        "tier": "Mid-Range",
+        "rating": 4.1,
+        "start_price": 469113,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 469113,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 609846,
+                "capacity": 2
+            }
+        ],
+        "description": "Deli Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-629411899"
+    },
+    {
+        "id": "osm-way-629411930",
+        "name": "Hotel Bandara",
+        "city": "Medan",
+        "address": "Jalan Sei Putih , Medan",
+        "latitude": 3.5768142,
+        "longitude": 98.6566016,
+        "tier": "Mid-Range",
+        "rating": 4.0,
+        "start_price": 571018,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 571018,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 742323,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel Bandara adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-629411930"
+    },
+    {
+        "id": "osm-way-629426150",
+        "name": "Aresidencia Sei Putih Baru",
+        "city": "Medan",
+        "address": "Jalan Sei Putih Baru , Medan",
+        "latitude": 3.5789718,
+        "longitude": 98.6534869,
+        "tier": "Mid-Range",
+        "rating": 4.2,
+        "start_price": 464973,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 464973,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 604464,
+                "capacity": 2
+            }
+        ],
+        "description": "Aresidencia Sei Putih Baru adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-629426150"
+    },
+    {
+        "id": "osm-way-629458467",
+        "name": "Aceh House Hotel Setia Budi",
+        "city": "Medan",
+        "address": "Jalan Murni III , Medan",
+        "latitude": 3.5757026,
+        "longitude": 98.6396313,
+        "tier": "Mid-Range",
+        "rating": 3.8,
+        "start_price": 505481,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "Restoran"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 505481,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 657125,
+                "capacity": 2
+            }
+        ],
+        "description": "Aceh House Hotel Setia Budi adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-629458467"
+    },
+    {
+        "id": "osm-way-630067650",
+        "name": "Gereja Katolik Santo Mikael Medan Tembung",
+        "city": "Medan",
+        "address": "Jalan Durung , Medan",
+        "latitude": 3.6088495,
+        "longitude": 98.7053018,
+        "tier": "Mid-Range",
+        "rating": 4.4,
+        "start_price": 594551,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "Restoran"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 594551,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 772916,
+                "capacity": 2
+            }
+        ],
+        "description": "Gereja Katolik Santo Mikael Medan Tembung adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-630067650"
+    },
+    {
+        "id": "osm-way-630093199",
+        "name": "RedDoorz De Natio Cottage",
+        "city": "Medan",
+        "address": "Jalan Durung , Medan",
+        "latitude": 3.6091255,
+        "longitude": 98.7002385,
+        "tier": "Budget",
+        "rating": 3.9,
+        "start_price": 282425,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 282425,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 367152,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 423637,
+                "capacity": 4
+            }
+        ],
+        "description": "RedDoorz De Natio Cottage adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-630093199"
+    },
+    {
+        "id": "osm-way-631606529",
+        "name": "OYO 727 Merlion Hotel",
+        "city": "Medan",
+        "address": "Jalan Bayu , Medan",
+        "latitude": 3.5751002,
+        "longitude": 98.6271777,
+        "tier": "Budget",
+        "rating": 3.6,
+        "start_price": 337960,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 337960,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 439348,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 506940,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO 727 Merlion Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-631606529"
+    },
+    {
+        "id": "osm-way-632603673",
+        "name": "OYO 1585 Ring Road Residence",
+        "city": "Medan",
+        "address": "Jalan Gagak Hitam , Medan",
+        "latitude": 3.5742353,
+        "longitude": 98.6260409,
+        "tier": "Budget",
+        "rating": 3.4,
+        "start_price": 192392,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 192392,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 250109,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 288588,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO 1585 Ring Road Residence adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-632603673"
+    },
+    {
+        "id": "osm-way-632604793",
+        "name": "OYO 873 Kamani Homestay Syariah",
+        "city": "Medan",
+        "address": "Jalan Perjuangan , Medan",
+        "latitude": 3.571978,
+        "longitude": 98.628403,
+        "tier": "Budget",
+        "rating": 3.7,
+        "start_price": 187786,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 187786,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 244121,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 281679,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO 873 Kamani Homestay Syariah adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-632604793"
+    },
+    {
+        "id": "osm-way-633352730",
+        "name": "Medan City Homestay",
+        "city": "Medan",
+        "address": "Jalan Dokter Mansyur , Medan",
+        "latitude": 3.5672276,
+        "longitude": 98.6470607,
+        "tier": "Budget",
+        "rating": 3.5,
+        "start_price": 168630,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 168630,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 219219,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 252945,
+                "capacity": 4
+            }
+        ],
+        "description": "Medan City Homestay adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-633352730"
+    },
+    {
+        "id": "osm-way-633353516",
+        "name": "Mind Hostel",
+        "city": "Medan",
+        "address": "Jalan Dokter Mansyur , Medan",
+        "latitude": 3.5679765,
+        "longitude": 98.6495692,
+        "tier": "Budget",
+        "rating": 3.1,
+        "start_price": 319046,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 319046,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 414759,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 478569,
+                "capacity": 4
+            }
+        ],
+        "description": "Mind Hostel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-633353516"
+    },
+    {
+        "id": "osm-way-633721511",
+        "name": "Reddoorz Premium De Natio",
+        "city": "Medan",
+        "address": "Jalan Sempurna , Medan",
+        "latitude": 3.5529736,
+        "longitude": 98.634464,
+        "tier": "Budget",
+        "rating": 3.2,
+        "start_price": 193475,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 193475,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 251517,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 290212,
+                "capacity": 4
+            }
+        ],
+        "description": "Reddoorz Premium De Natio adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-633721511"
+    },
+    {
+        "id": "osm-way-636202543",
+        "name": "Penginapan Cahaya Amplas",
+        "city": "Medan",
+        "address": "Jalan Panglima Denai , Medan",
+        "latitude": 3.540573,
+        "longitude": 98.7175242,
+        "tier": "Mid-Range",
+        "rating": 4.2,
+        "start_price": 633866,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 633866,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 824025,
+                "capacity": 2
+            }
+        ],
+        "description": "Penginapan Cahaya Amplas adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-636202543"
+    },
+    {
+        "id": "osm-way-636226835",
+        "name": "Hotel Menara Lexus",
+        "city": "Medan",
+        "address": "Jalan Sisingamangaraja , Medan",
+        "latitude": 3.5570744,
+        "longitude": 98.6950889,
+        "tier": "Mid-Range",
+        "rating": 3.8,
+        "start_price": 437134,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Laundry"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 437134,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 568274,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel Menara Lexus adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-636226835"
+    },
+    {
+        "id": "osm-way-636494808",
+        "name": "Star Inn",
+        "city": "Medan",
+        "address": "Jalan Kapten Jumhana , Medan",
+        "latitude": 3.587075,
+        "longitude": 98.7024948,
+        "tier": "Budget",
+        "rating": 3.4,
+        "start_price": 168343,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 168343,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 218845,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 252514,
+                "capacity": 4
+            }
+        ],
+        "description": "Star Inn adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-636494808"
+    },
+    {
+        "id": "osm-way-636604424",
+        "name": "Hotel Gintas Tanjung Sari",
+        "city": "Medan",
+        "address": "Jalan Setiabudi , Medan",
+        "latitude": 3.5380146,
+        "longitude": 98.6219555,
+        "tier": "Mid-Range",
+        "rating": 3.9,
+        "start_price": 542433,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 542433,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 705162,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel Gintas Tanjung Sari adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-636604424"
+    },
+    {
+        "id": "osm-way-650634744",
+        "name": "Cordela Hotel",
+        "city": "Medan",
+        "address": "Jalan Asahan , Medan",
+        "latitude": 3.5964606,
+        "longitude": 98.6868842,
+        "tier": "Mid-Range",
+        "rating": 3.9,
+        "start_price": 578876,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 578876,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 752538,
+                "capacity": 2
+            }
+        ],
+        "description": "Cordela Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-650634744"
+    },
+    {
+        "id": "osm-way-650634772",
+        "name": "OYO 1457 Tmj Guest House",
+        "city": "Medan",
+        "address": "Jalan Asahan Dalam , Medan",
+        "latitude": 3.5961023,
+        "longitude": 98.6875362,
+        "tier": "Budget",
+        "rating": 3.5,
+        "start_price": 270523,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 270523,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 351679,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 405784,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO 1457 Tmj Guest House adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-650634772"
+    },
+    {
+        "id": "osm-way-650634954",
+        "name": "Grand Sakura Hotel",
+        "city": "Medan",
+        "address": "Jalan Profesor H.M. Yamin, Medan",
+        "latitude": 3.5965546,
+        "longitude": 98.6857653,
+        "tier": "Luxury",
+        "rating": 4.8,
+        "start_price": 390000,
+        "facilities": [
+            "AC",
+            "Spa",
+            "Restoran",
+            "Kolam Renang",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 390000,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 450000,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 650000,
+                "capacity": 4
+            }
+        ],
+        "description": "Grand Sakura Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Spa, Restoran dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-650634954"
+    },
+    {
+        "id": "osm-way-650843397",
+        "name": "OYO WBS Residence",
+        "city": "Medan",
+        "address": "Jalan Mohammad Idris , Medan",
+        "latitude": 3.593491,
+        "longitude": 98.6583719,
+        "tier": "Budget",
+        "rating": 3.3,
+        "start_price": 172704,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 172704,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 224515,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 259056,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO WBS Residence adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-650843397"
+    },
+    {
+        "id": "osm-way-650850716",
+        "name": "Alpha Inn",
+        "city": "Medan",
+        "address": "Jalan Sekip , Medan",
+        "latitude": 3.593249,
+        "longitude": 98.6678003,
+        "tier": "Budget",
+        "rating": 3.9,
+        "start_price": 312256,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 312256,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 405932,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 468384,
+                "capacity": 4
+            }
+        ],
+        "description": "Alpha Inn adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-650850716"
+    },
+    {
+        "id": "osm-way-650850933",
+        "name": "Prime Inn",
+        "city": "Medan",
+        "address": "Jalan Waru",
+        "latitude": 3.5956944,
+        "longitude": 98.6663387,
+        "tier": "Budget",
+        "rating": 3.4,
+        "start_price": 170621,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 170621,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 221807,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 255931,
+                "capacity": 4
+            }
+        ],
+        "description": "Prime Inn adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-650850933"
+    },
+    {
+        "id": "osm-way-674878982",
+        "name": "Swiss-Belinn Medan",
+        "city": "Medan",
+        "address": "Jalan Surabaya",
+        "latitude": 3.5833457,
+        "longitude": 98.6850039,
+        "tier": "Luxury",
+        "rating": 4.7,
+        "start_price": 450000,
+        "facilities": [
+            "AC",
+            "Restoran",
+            "Gym",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 450000,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 550000,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 800000,
+                "capacity": 4
+            }
+        ],
+        "description": "Swiss-Belinn Medan adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Restoran, Gym dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-674878982"
+    },
+    {
+        "id": "osm-way-680502776",
+        "name": "Hotel Adi Mulia",
+        "city": "Medan",
+        "address": "Jalan Candi Biara , Medan",
+        "latitude": 3.5852203,
+        "longitude": 98.6724388,
+        "tier": "Mid-Range",
+        "rating": 4.0,
+        "start_price": 632777,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 632777,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 822610,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel Adi Mulia adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-680502776"
+    },
+    {
+        "id": "osm-way-765587267",
+        "name": "Hotel Transit Syariah",
+        "city": "Medan",
+        "address": "Jl. Hotel Transit Syariah No. 57, Medan",
+        "latitude": 3.5849383,
+        "longitude": 98.6591125,
+        "tier": "Mid-Range",
+        "rating": 4.1,
+        "start_price": 640287,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 640287,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 832373,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel Transit Syariah adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-765587267"
+    },
+    {
+        "id": "osm-way-817876880",
+        "name": "Santika Premiere Dyandra Hotel & Convention",
+        "city": "Medan",
+        "address": "Jalan Candi Prambanan , Medan",
+        "latitude": 3.5889034,
+        "longitude": 98.672708,
+        "tier": "Mid-Range",
+        "rating": 4.0,
+        "start_price": 593002,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 593002,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 770902,
+                "capacity": 2
+            }
+        ],
+        "description": "Santika Premiere Dyandra Hotel & Convention adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-817876880"
+    },
+    {
+        "id": "osm-way-959597231",
+        "name": "OYO 723 Penginapan Nia Mandiri Syariah",
+        "city": "Medan",
+        "address": "Jalan Puri , Medan",
+        "latitude": 3.5781682,
+        "longitude": 98.6902632,
+        "tier": "Budget",
+        "rating": 3.4,
+        "start_price": 303437,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 303437,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 394468,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 455155,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO 723 Penginapan Nia Mandiri Syariah adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-959597231"
+    },
+    {
+        "id": "osm-way-959601086",
+        "name": "Hotel Semarak",
+        "city": "Medan",
+        "address": "Sisingamangaraja, medan",
+        "latitude": 3.5638195,
+        "longitude": 98.6923867,
+        "tier": "Mid-Range",
+        "rating": 4.3,
+        "start_price": 424317,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 424317,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 551612,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel Semarak adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-959601086"
+    },
+    {
+        "id": "osm-way-959619888",
+        "name": "OYO 279 Deli Homestay",
+        "city": "Medan",
+        "address": "Jalan Sei Deli , Medan",
+        "latitude": 3.5927084,
+        "longitude": 98.6720498,
+        "tier": "Budget",
+        "rating": 3.5,
+        "start_price": 210369,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 210369,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 273479,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 315553,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO 279 Deli Homestay adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-959619888"
+    },
+    {
+        "id": "osm-way-959929404",
+        "name": "Wisma Tiga Raja",
+        "city": "Medan",
+        "address": "Jalan Sei Bengawan , Medan",
+        "latitude": 3.5797334,
+        "longitude": 98.6469777,
+        "tier": "Mid-Range",
+        "rating": 4.0,
+        "start_price": 529411,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 529411,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 688234,
+                "capacity": 2
+            }
+        ],
+        "description": "Wisma Tiga Raja adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-959929404"
+    },
+    {
+        "id": "osm-way-959932863",
+        "name": "Hotel Cempaka Medan",
+        "city": "Medan",
+        "address": "Gang Swadaya , Medan",
+        "latitude": 3.5297437,
+        "longitude": 98.6399799,
+        "tier": "Mid-Range",
+        "rating": 4.2,
+        "start_price": 619545,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Laundry"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 619545,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 805408,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel Cempaka Medan adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-959932863"
+    },
+    {
+        "id": "osm-way-959942971",
+        "name": "Hotel Lonari Medan",
+        "city": "Medan",
+        "address": "Jalan Jamin Ginting , Medan",
+        "latitude": 3.5301433,
+        "longitude": 98.6415003,
+        "tier": "Mid-Range",
+        "rating": 4.2,
+        "start_price": 498501,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 498501,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 648051,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel Lonari Medan adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-959942971"
+    },
+    {
+        "id": "osm-way-960030333",
+        "name": "Hotel Syariah Grand Jamee",
+        "city": "Medan",
+        "address": "Jl. Hotel Syariah Grand Jamee No. 41, Medan",
+        "latitude": 3.5867498,
+        "longitude": 98.6273025,
+        "tier": "Luxury",
+        "rating": 4.6,
+        "start_price": 1503061,
+        "facilities": [
+            "AC",
+            "Spa",
+            "Gym",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 1503061,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 1953979,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 3006122,
+                "capacity": 4
+            }
+        ],
+        "description": "Hotel Syariah Grand Jamee adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Spa, Gym dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-960030333"
+    },
+    {
+        "id": "osm-way-960214025",
+        "name": "Golden Eleven Hotel",
+        "city": "Medan",
+        "address": "Jalan Jamin Ginting , Medan",
+        "latitude": 3.5246288,
+        "longitude": 98.6305823,
+        "tier": "Mid-Range",
+        "rating": 4.0,
+        "start_price": 542105,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 542105,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 704736,
+                "capacity": 2
+            }
+        ],
+        "description": "Golden Eleven Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-960214025"
+    },
+    {
+        "id": "osm-way-960617857",
+        "name": "Hotel Hawaii",
+        "city": "Medan",
+        "address": "Jalan Jamin Ginting , Medan",
+        "latitude": 3.5305129,
+        "longitude": 98.6419778,
+        "tier": "Mid-Range",
+        "rating": 4.4,
+        "start_price": 431664,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "Restoran"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 431664,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 561163,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel Hawaii adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-960617857"
+    },
+    {
+        "id": "osm-way-960618107",
+        "name": "Hotel Alam Indah",
+        "city": "Medan",
+        "address": "Jalan Jamin Ginting , Medan",
+        "latitude": 3.5316626,
+        "longitude": 98.6419166,
+        "tier": "Mid-Range",
+        "rating": 4.3,
+        "start_price": 631764,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 631764,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 821293,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel Alam Indah adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-960618107"
+    },
+    {
+        "id": "osm-way-960688649",
+        "name": "Orinko City Hotel",
+        "city": "Medan",
+        "address": "Jalan Darussalam , Medan",
+        "latitude": 3.5850664,
+        "longitude": 98.6529479,
+        "tier": "Mid-Range",
+        "rating": 4.4,
+        "start_price": 504806,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 504806,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 656247,
+                "capacity": 2
+            }
+        ],
+        "description": "Orinko City Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-960688649"
+    },
+    {
+        "id": "osm-way-960692128",
+        "name": "Lewi House",
+        "city": "Medan",
+        "address": "Jalan Sei Siguti , Medan",
+        "latitude": 3.5858581,
+        "longitude": 98.6563592,
+        "tier": "Mid-Range",
+        "rating": 4.1,
+        "start_price": 577577,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "Restoran"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 577577,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 750850,
+                "capacity": 2
+            }
+        ],
+        "description": "Lewi House adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-960692128"
+    },
+    {
+        "id": "osm-way-961497580",
+        "name": "favehotel S. Parman Medan",
+        "city": "Medan",
+        "address": "Gang Langgar , Medan",
+        "latitude": 3.5796158,
+        "longitude": 98.6678116,
+        "tier": "Mid-Range",
+        "rating": 4.2,
+        "start_price": 563670,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "Restoran"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 563670,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 732771,
+                "capacity": 2
+            }
+        ],
+        "description": "favehotel S. Parman Medan adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-961497580"
+    },
+    {
+        "id": "osm-way-961512484",
+        "name": "Serena Anggrek Syariah Hotel Sei Sikambing B",
+        "city": "Medan",
+        "address": "Jalan Jenderal Gatot Subroto , Medan",
+        "latitude": 3.5913232,
+        "longitude": 98.6247299,
+        "tier": "Mid-Range",
+        "rating": 4.1,
+        "start_price": 601878,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 601878,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 782441,
+                "capacity": 2
+            }
+        ],
+        "description": "Serena Anggrek Syariah Hotel Sei Sikambing B adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-961512484"
+    },
+    {
+        "id": "osm-way-961522117",
+        "name": "Depari Hotel Sei Sikambing B",
+        "city": "Medan",
+        "address": "Jalan Merak , Medan",
+        "latitude": 3.5851849,
+        "longitude": 98.6302247,
+        "tier": "Mid-Range",
+        "rating": 3.9,
+        "start_price": 658522,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 658522,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 856078,
+                "capacity": 2
+            }
+        ],
+        "description": "Depari Hotel Sei Sikambing B adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-961522117"
+    },
+    {
+        "id": "osm-way-961527551",
+        "name": "OYO 692 Hotel Graha Buana",
+        "city": "Medan",
+        "address": "Jalan K. Haji Wahid Hasyim , Medan",
+        "latitude": 3.5866592,
+        "longitude": 98.6570166,
+        "tier": "Budget",
+        "rating": 3.6,
+        "start_price": 254939,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 254939,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 331420,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 382408,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO 692 Hotel Graha Buana adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-961527551"
+    },
+    {
+        "id": "osm-way-961556264",
+        "name": "OYO 2345 HOMESTAY JAYA",
+        "city": "Medan",
+        "address": "Jalan Batang Kuis d/h Jambi , Medan",
+        "latitude": 3.5889188,
+        "longitude": 98.6921053,
+        "tier": "Budget",
+        "rating": 3.7,
+        "start_price": 187141,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 187141,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 243283,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 280711,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO 2345 HOMESTAY JAYA adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-961556264"
+    },
+    {
+        "id": "osm-way-961760200",
+        "name": "Hotel Istana",
+        "city": "Medan",
+        "address": "Jalan Insinyur Haji Juanda , Medan",
+        "latitude": 3.5727643,
+        "longitude": 98.685063,
+        "tier": "Mid-Range",
+        "rating": 4.0,
+        "start_price": 520625,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 520625,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 676812,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel Istana adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-961760200"
+    },
+    {
+        "id": "osm-way-961772483",
+        "name": "Reddoorz Tritura Inn Suka Maju",
+        "city": "Medan",
+        "address": "Jalan Abdul Haris Nasution , Medan",
+        "latitude": 3.5377484,
+        "longitude": 98.6924919,
+        "tier": "Budget",
+        "rating": 3.7,
+        "start_price": 341790,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 341790,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 444327,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 512685,
+                "capacity": 4
+            }
+        ],
+        "description": "Reddoorz Tritura Inn Suka Maju adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-961772483"
+    },
+    {
+        "id": "osm-way-961782726",
+        "name": "Roemah 54 Penginapan Harian & Bulanan",
+        "city": "Medan",
+        "address": "Jalan Sei Batang Hari , Medan",
+        "latitude": 3.5852732,
+        "longitude": 98.6499797,
+        "tier": "Mid-Range",
+        "rating": 4.2,
+        "start_price": 614296,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Laundry"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 614296,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 798584,
+                "capacity": 2
+            }
+        ],
+        "description": "Roemah 54 Penginapan Harian & Bulanan adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-961782726"
+    },
+    {
+        "id": "osm-way-961793570",
+        "name": "Hotel Halim Perdana",
+        "city": "Medan",
+        "address": "Jalan Laksana , Medan",
+        "latitude": 3.5801341,
+        "longitude": 98.691226,
+        "tier": "Mid-Range",
+        "rating": 4.1,
+        "start_price": 518020,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Laundry"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 518020,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 673426,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel Halim Perdana adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-961793570"
+    },
+    {
+        "id": "osm-way-961808720",
+        "name": "Putra Mulia Hotel",
+        "city": "Medan",
+        "address": "Jalan Jenderal Gatot Subroto , Medan",
+        "latitude": 3.5905819,
+        "longitude": 98.6539796,
+        "tier": "Mid-Range",
+        "rating": 4.3,
+        "start_price": 531062,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "Restoran"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 531062,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 690380,
+                "capacity": 2
+            }
+        ],
+        "description": "Putra Mulia Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-961808720"
+    },
+    {
+        "id": "osm-way-962103278",
+        "name": "Jabutta Guest House",
+        "city": "Medan",
+        "address": "Jalan Sampali , Medan",
+        "latitude": 3.5887365,
+        "longitude": 98.6982937,
+        "tier": "Budget",
+        "rating": 3.8,
+        "start_price": 247258,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 247258,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 321435,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 370887,
+                "capacity": 4
+            }
+        ],
+        "description": "Jabutta Guest House adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-962103278"
+    },
+    {
+        "id": "osm-way-963796879",
+        "name": "Hotel Cherry Garden",
+        "city": "Medan",
+        "address": "Jalan Sei Bekala , Medan",
+        "latitude": 3.5834677,
+        "longitude": 98.6573444,
+        "tier": "Mid-Range",
+        "rating": 4.3,
+        "start_price": 625959,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 625959,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 813746,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel Cherry Garden adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-963796879"
+    },
+    {
+        "id": "osm-way-963796892",
+        "name": "OYO 487 Gajah Mada Hotel",
+        "city": "Medan",
+        "address": "Jalan Gajah Mada , Medan",
+        "latitude": 3.584466,
+        "longitude": 98.6578156,
+        "tier": "Budget",
+        "rating": 3.3,
+        "start_price": 251249,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 251249,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 326623,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 376873,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO 487 Gajah Mada Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-963796892"
+    },
+    {
+        "id": "osm-way-967723249",
+        "name": "Guest House Michael & Agnesh Babura",
+        "city": "Medan",
+        "address": "Jl. Guest House Michael & Agnesh Babura No. 61, Medan",
+        "latitude": 3.5841408,
+        "longitude": 98.6455195,
+        "tier": "Budget",
+        "rating": 3.0,
+        "start_price": 302006,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 302006,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 392607,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 453009,
+                "capacity": 4
+            }
+        ],
+        "description": "Guest House Michael & Agnesh Babura adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-967723249"
+    },
+    {
+        "id": "osm-way-967776065",
+        "name": "Grand Nusantara Hotel",
+        "city": "Medan",
+        "address": "Gang Tentram , Medan",
+        "latitude": 3.5847432,
+        "longitude": 98.6247056,
+        "tier": "Luxury",
+        "rating": 4.8,
+        "start_price": 1250149,
+        "facilities": [
+            "AC",
+            "Spa",
+            "Gym",
+            "Kolam Renang",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 1250149,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 1625193,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 2500298,
+                "capacity": 4
+            }
+        ],
+        "description": "Grand Nusantara Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Spa, Gym dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-967776065"
+    },
+    {
+        "id": "osm-way-968006408",
+        "name": "Wisma Syailendra",
+        "city": "Medan",
+        "address": "Jalan Dokter Td. Pardede , Medan",
+        "latitude": 3.5794881,
+        "longitude": 98.6614395,
+        "tier": "Mid-Range",
+        "rating": 4.0,
+        "start_price": 698293,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 698293,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 907780,
+                "capacity": 2
+            }
+        ],
+        "description": "Wisma Syailendra adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-968006408"
+    },
+    {
+        "id": "osm-way-968036636",
+        "name": "Hotel Wisma Yuli",
+        "city": "Medan",
+        "address": "Jl. Hotel Wisma Yuli No. 76, Medan",
+        "latitude": 3.5753542,
+        "longitude": 98.6890061,
+        "tier": "Mid-Range",
+        "rating": 4.1,
+        "start_price": 572023,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 572023,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 743629,
+                "capacity": 2
+            }
+        ],
+        "description": "Hotel Wisma Yuli adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-968036636"
+    },
+    {
+        "id": "osm-way-968338353",
+        "name": "Residence Puri Hotel Medan",
+        "city": "Medan",
+        "address": "Jalan Puri , Medan",
+        "latitude": 3.5778214,
+        "longitude": 98.6886387,
+        "tier": "Mid-Range",
+        "rating": 4.2,
+        "start_price": 650969,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 650969,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 846259,
+                "capacity": 2
+            }
+        ],
+        "description": "Residence Puri Hotel Medan adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-968338353"
+    },
+    {
+        "id": "osm-way-993586931",
+        "name": "OYO 436 Raz Residence",
+        "city": "Medan",
+        "address": "Jalan Kemuning , Medan",
+        "latitude": 3.569575,
+        "longitude": 98.644525,
+        "tier": "Budget",
+        "rating": 3.6,
+        "start_price": 288745,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 288745,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 375368,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 433117,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO 436 Raz Residence adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-993586931"
+    },
+    {
+        "id": "osm-way-995098559",
+        "name": "Aresidencia Sei Padang",
+        "city": "Medan",
+        "address": "Jalan Sei Padang , Medan",
+        "latitude": 3.5701046,
+        "longitude": 98.64899,
+        "tier": "Mid-Range",
+        "rating": 3.8,
+        "start_price": 607360,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 607360,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 789568,
+                "capacity": 2
+            }
+        ],
+        "description": "Aresidencia Sei Padang adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-995098559"
+    },
+    {
+        "id": "osm-way-996521786",
+        "name": "OYO 1400 Barat Residence",
+        "city": "Medan",
+        "address": "Jalan Abdul Hakim , Medan",
+        "latitude": 3.5589446,
+        "longitude": 98.649401,
+        "tier": "Budget",
+        "rating": 3.1,
+        "start_price": 217932,
+        "facilities": [
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 217932,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 283311,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 326898,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO 1400 Barat Residence adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, WiFi, TV dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-996521786"
+    },
+    {
+        "id": "osm-way-1017050754",
+        "name": "Bobotel Gatot Subroto Medan",
+        "city": "Medan",
+        "address": "Jalan Waringin, Medan",
+        "latitude": 3.5937504,
+        "longitude": 98.668143,
+        "tier": "Mid-Range",
+        "rating": 4.2,
+        "start_price": 487696,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Laundry"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 487696,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 634004,
+                "capacity": 2
+            }
+        ],
+        "description": "Bobotel Gatot Subroto Medan adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-1017050754"
+    },
+    {
+        "id": "osm-way-1049502551",
+        "name": "Bukit Toedjoeh Residence",
+        "city": "Medan",
+        "address": "Jalan Bukit Barisan I , Medan",
+        "latitude": 3.6142815,
+        "longitude": 98.6774293,
+        "tier": "Mid-Range",
+        "rating": 3.9,
+        "start_price": 569012,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "TV"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 569012,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 739715,
+                "capacity": 2
+            }
+        ],
+        "description": "Bukit Toedjoeh Residence adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-1049502551"
+    },
+    {
+        "id": "osm-way-1050127062",
+        "name": "Novena Home Stay",
+        "city": "Medan",
+        "address": "Jl. Novena Home Stay No. 31, Medan",
+        "latitude": 3.5572965,
+        "longitude": 98.6295959,
+        "tier": "Mid-Range",
+        "rating": 4.4,
+        "start_price": 627365,
+        "facilities": [
+            "Restoran",
+            "AC",
+            "WiFi",
+            "Parkir"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 627365,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 815574,
+                "capacity": 2
+            }
+        ],
+        "description": "Novena Home Stay adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Restoran, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-1050127062"
+    },
+    {
+        "id": "osm-way-1051159478",
+        "name": "OYO 1377 Os Residence",
+        "city": "Medan",
+        "address": "Jalan Brigjen Katamso , Medan",
+        "latitude": 3.5686978,
+        "longitude": 98.6868578,
+        "tier": "Budget",
+        "rating": 3.6,
+        "start_price": 333146,
+        "facilities": [
+            "Laundry",
+            "AC",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 333146,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 433089,
+                "capacity": 2
+            },
+            {
+                "type": "Family",
+                "price": 499719,
+                "capacity": 4
+            }
+        ],
+        "description": "OYO 1377 Os Residence adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti Laundry, AC, WiFi dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-1051159478"
+    },
+    {
+        "id": "osm-way-1053186704",
+        "name": "Grand Kanaya Hotel",
+        "city": "Medan",
+        "address": "Jl. Grand Kanaya Hotel No. 45, Medan",
+        "latitude": 3.5891772,
+        "longitude": 98.6530323,
+        "tier": "Luxury",
+        "rating": 4.8,
+        "start_price": 1625220,
+        "facilities": [
+            "AC",
+            "Restoran",
+            "Gym",
+            "Kolam Renang",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 1625220,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 2112786,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 3250440,
+                "capacity": 4
+            }
+        ],
+        "description": "Grand Kanaya Hotel adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Restoran, Gym dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-1053186704"
+    },
+    {
+        "id": "osm-way-1454052550",
+        "name": "Grand Aston City Hall",
+        "city": "Medan",
+        "address": "Jalan Raden Saleh , Medan",
+        "latitude": 3.5900745,
+        "longitude": 98.6758652,
+        "tier": "Luxury",
+        "rating": 4.7,
+        "start_price": 650000,
+        "facilities": [
+            "AC",
+            "Spa",
+            "Gym",
+            "Kolam Renang",
+            "WiFi"
+        ],
+        "rooms": [
+            {
+                "type": "Standard",
+                "price": 650000,
+                "capacity": 2
+            },
+            {
+                "type": "Deluxe",
+                "price": 850000,
+                "capacity": 2
+            },
+            {
+                "type": "Suite",
+                "price": 1300000,
+                "capacity": 4
+            }
+        ],
+        "description": "Grand Aston City Hall adalah pilihan tepat untuk menginap di Medan. Menawarkan fasilitas lengkap seperti AC, Spa, Gym dengan pelayanan terbaik.",
+        "image_url": "https://source.unsplash.com/800x600/?hotel,room,interior&sig=osm-way-1454052550"
+    }
+]

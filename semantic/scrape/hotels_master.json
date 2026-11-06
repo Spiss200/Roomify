@@ -1,0 +1,4459 @@
+[
+  {
+    "id": "gmaps-1",
+    "name": "google-symbols (2)",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": null,
+    "review_count": null,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "google-symbols (2) adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-2",
+    "name": "",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5894617,
+    "longitude": 98.6741623,
+    "star": null,
+    "rating": null,
+    "review_count": null,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": " adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-3",
+    "name": "d'primahotel Kualanamu Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.599515,
+    "longitude": 98.833088,
+    "star": 4,
+    "rating": 4.5,
+    "review_count": 2880,
+    "start_price": 514240,
+    "facilities": [
+      "Kolam Renang",
+      "Parkir",
+      "WiFi",
+      "AC"
+    ],
+    "description": "d'primahotel Kualanamu Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-4",
+    "name": "Adimulia Hotel Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5852243,
+    "longitude": 98.6725896,
+    "star": 4,
+    "rating": 4.7,
+    "review_count": 11223,
+    "start_price": 1050000,
+    "facilities": [
+      "Kolam Renang",
+      "Spa",
+      "Gym",
+      "WiFi",
+      "Parkir",
+      "Sarapan"
+    ],
+    "description": "Hotel dengan restoran & kolam di atap",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-5",
+    "name": "Grand Central Premier Hotel Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.59423,
+    "longitude": 98.6777915,
+    "star": 4,
+    "rating": 4.5,
+    "review_count": 796,
+    "start_price": 742000,
+    "facilities": [
+      "Kolam Renang",
+      "WiFi",
+      "Parkir",
+      "AC",
+      "Sarapan"
+    ],
+    "description": "Grand Central Premier Hotel Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-6",
+    "name": "Hotel O Kapten Muslim Residence",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.6031232,
+    "longitude": 98.6455855,
+    "star": 3,
+    "rating": 4.6,
+    "review_count": 78,
+    "start_price": 86700,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Hotel O Kapten Muslim Residence adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-7",
+    "name": "Grand Sakura Hotel",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5965554,
+    "longitude": 98.6858052,
+    "star": 4,
+    "rating": 4.1,
+    "review_count": 2552,
+    "start_price": 360000,
+    "facilities": [
+      "Spa",
+      "Gym",
+      "WiFi",
+      "Parkir",
+      "Sarapan"
+    ],
+    "description": "Hotel mewah dengan resto, gym, dan spa",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-8",
+    "name": "Grand City Hall Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5902822,
+    "longitude": 98.6766576,
+    "star": 5,
+    "rating": 4.7,
+    "review_count": 11295,
+    "start_price": 1060000,
+    "facilities": [
+      "Kolam Renang",
+      "Spa",
+      "Gym",
+      "WiFi",
+      "Sarapan"
+    ],
+    "description": "Hotel mewah dengan restoran & spa",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-9",
+    "name": "Hotel Santika Premiere Dyandra - Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.589124,
+    "longitude": 98.6726951,
+    "star": 4,
+    "rating": 4.6,
+    "review_count": 15048,
+    "start_price": 833000,
+    "facilities": [
+      "Kolam Renang",
+      "Spa",
+      "Gym",
+      "Sarapan",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Hotel mewah dengan spa dan restoran",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-10",
+    "name": "SUPER OYO 91120 D'ritz Homestay",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.6040595,
+    "longitude": 98.6452775,
+    "star": 2,
+    "rating": 3.4,
+    "review_count": 59,
+    "start_price": 126000,
+    "facilities": [
+      "WiFi"
+    ],
+    "description": "SUPER OYO 91120 D'ritz Homestay adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-11",
+    "name": "Griya Hotel",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.6071696,
+    "longitude": 98.645492,
+    "star": 3,
+    "rating": 4.0,
+    "review_count": 1292,
+    "start_price": 280000,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "AC",
+      "Sarapan"
+    ],
+    "description": "Hotel simpel dengan resto dan Wi-Fi",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-12",
+    "name": "Harper Wahid Hasyim Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5805201,
+    "longitude": 98.6573282,
+    "star": 3,
+    "rating": 4.9,
+    "review_count": 6316,
+    "start_price": 679000,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir",
+      "AC"
+    ],
+    "description": "Hotel santai dengan resto & Wi-Fi gratis",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-13",
+    "name": "QINARA INN",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5973472,
+    "longitude": 98.7168123,
+    "star": 2,
+    "rating": 3.5,
+    "review_count": 82,
+    "start_price": 135000,
+    "facilities": [
+      "Hot Tub",
+      "WiFi",
+      "Parkir",
+      "AC"
+    ],
+    "description": "QINARA INN adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-14",
+    "name": "Hotel",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.6041349,
+    "longitude": 98.6504269,
+    "star": null,
+    "rating": 3.7,
+    "review_count": 92,
+    "start_price": 174000,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "AC"
+    ],
+    "description": "Hotel bujet simpel dengan Wi-Fi & parkir",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-15",
+    "name": "RedDoorz @ Sekip Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5963576,
+    "longitude": 98.6660721,
+    "star": 2,
+    "rating": 4.6,
+    "review_count": 189,
+    "start_price": 196000,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "AC"
+    ],
+    "description": "RedDoorz @ Sekip Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-16",
+    "name": "Swiss-Belinn Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5833579,
+    "longitude": 98.6849911,
+    "star": 3,
+    "rating": 4.5,
+    "review_count": 9366,
+    "start_price": 457000,
+    "facilities": [
+      "Spa",
+      "Gym",
+      "WiFi",
+      "AC"
+    ],
+    "description": "Hotel nyaman dengan restoran & spa",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-17",
+    "name": "JW Marriott Hotel Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5966004,
+    "longitude": 98.675827,
+    "star": 5,
+    "rating": 4.6,
+    "review_count": 13297,
+    "start_price": 1920000,
+    "facilities": [
+      "Kolam Renang",
+      "Spa",
+      "Hot Tub",
+      "Gym",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Hotel urban mewah dengan spa & restoran",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-18",
+    "name": "NEW DETONGA HOTEL",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.575689,
+    "longitude": 98.652389,
+    "star": 3,
+    "rating": 3.0,
+    "review_count": 643,
+    "start_price": 121000,
+    "facilities": [
+      "Kolam Renang",
+      "Spa",
+      "Sarapan",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "NEW DETONGA HOTEL adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-19",
+    "name": "AIHO Hotel Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.594058,
+    "longitude": 98.6683957,
+    "star": 4,
+    "rating": 4.7,
+    "review_count": 8025,
+    "start_price": 452000,
+    "facilities": [
+      "Kolam Renang",
+      "Gym",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Hotel santai dengan sarapan gratis",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-20",
+    "name": "Hotel murah & modern plus sarapan gratis",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5795862,
+    "longitude": 98.6677336,
+    "star": 3,
+    "rating": 4.7,
+    "review_count": 9166,
+    "start_price": 399000,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "AC",
+      "Sarapan"
+    ],
+    "description": "Hotel murah & modern plus sarapan gratis adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-21",
+    "name": "Batik Hotel Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5739846,
+    "longitude": 98.6606051,
+    "star": 3,
+    "rating": 4.1,
+    "review_count": 1714,
+    "start_price": 288000,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "AC",
+      "Sarapan"
+    ],
+    "description": "Hotel informal dengan restoran dan spa",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-22",
+    "name": "Hotel Grandhika Setiabudi Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5672036,
+    "longitude": 98.6428984,
+    "star": 4,
+    "rating": 4.4,
+    "review_count": 4974,
+    "start_price": 529000,
+    "facilities": [
+      "Kolam Renang",
+      "Spa",
+      "Gym",
+      "Sarapan",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Hotel santai dengan kolam renang & resto",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-23",
+    "name": "Hotel mewah, resto modern & kolam renang",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5898691,
+    "longitude": 98.674173,
+    "star": 4,
+    "rating": 4.5,
+    "review_count": 5931,
+    "start_price": 841000,
+    "facilities": [
+      "Kolam Renang",
+      "Gym",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Hotel mewah, resto modern & kolam renang adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-24",
+    "name": "Swasana Hotel Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5933034,
+    "longitude": 98.6649679,
+    "star": 1,
+    "rating": 3.8,
+    "review_count": 360,
+    "start_price": 321000,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir",
+      "AC"
+    ],
+    "description": "Swasana Hotel Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-25",
+    "name": "Hotel modern berkolam renang dan resto",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5830472,
+    "longitude": 98.6765708,
+    "star": 4,
+    "rating": 4.3,
+    "review_count": 7245,
+    "start_price": 469000,
+    "facilities": [
+      "Kolam Renang",
+      "Spa",
+      "Hot Tub",
+      "Gym"
+    ],
+    "description": "Hotel modern berkolam renang dan resto adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-26",
+    "name": "Deli Hotel",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5768386,
+    "longitude": 98.653444,
+    "star": 3,
+    "rating": 4.3,
+    "review_count": 1231,
+    "start_price": 307000,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "AC",
+      "Sarapan"
+    ],
+    "description": "Deli Hotel adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-27",
+    "name": "Hotel Grand Antares",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5570411,
+    "longitude": 98.6943634,
+    "star": 4,
+    "rating": 4.2,
+    "review_count": 3900,
+    "start_price": 369000,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "AC",
+      "Sarapan"
+    ],
+    "description": "Hotel kasual dengan restoran dan karaoke",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-28",
+    "name": "Grand Central Hotel",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5750078,
+    "longitude": 98.653414,
+    "star": 3,
+    "rating": 4.4,
+    "review_count": 1413,
+    "start_price": 377000,
+    "facilities": [
+      "Kolam Renang",
+      "WiFi",
+      "Parkir",
+      "AC"
+    ],
+    "description": "Hotel santai dengan gym dan restoran",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-29",
+    "name": "CordelaInn Millennium Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.599752,
+    "longitude": 98.644482,
+    "star": 1,
+    "rating": 4.5,
+    "review_count": 273,
+    "start_price": 276000,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "AC"
+    ],
+    "description": "CordelaInn Millennium Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-30",
+    "name": "Antares Hotel",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5739806,
+    "longitude": 98.6882629,
+    "star": 3,
+    "rating": 4.0,
+    "review_count": 1151,
+    "start_price": 341000,
+    "facilities": [
+      "Kolam Renang",
+      "WiFi",
+      "Parkir",
+      "AC"
+    ],
+    "description": "Hotel simpel dengan kafe dan restoran",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-31",
+    "name": "The Reiz Suites, ARTOTEL Curated - Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5920736,
+    "longitude": 98.6760792,
+    "star": 4,
+    "rating": 4.9,
+    "review_count": 6030,
+    "start_price": 662000,
+    "facilities": [
+      "Spa",
+      "WiFi",
+      "AC",
+      "Sarapan"
+    ],
+    "description": "The Reiz Suites, ARTOTEL Curated - Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-32",
+    "name": "Swiss-Belinn Gajah Mada Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5844712,
+    "longitude": 98.658061,
+    "star": 3,
+    "rating": 4.7,
+    "review_count": 10034,
+    "start_price": 656000,
+    "facilities": [
+      "Kolam Renang",
+      "Gym",
+      "Sarapan",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Hotel mewah dengan kolam dan bar atap",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-33",
+    "name": "Wisma Sederhana Medan Mitra RedDoorz",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5830366,
+    "longitude": 98.6849339,
+    "star": 2,
+    "rating": 4.1,
+    "review_count": 779,
+    "start_price": 133000,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "AC",
+      "Sarapan"
+    ],
+    "description": "Wisma Sederhana Medan Mitra RedDoorz adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-34",
+    "name": "Hotel Huber Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5721847,
+    "longitude": 98.6485573,
+    "star": null,
+    "rating": 4.0,
+    "review_count": 96,
+    "start_price": 160000,
+    "facilities": [
+      "Kolam Renang",
+      "WiFi",
+      "Parkir",
+      "AC"
+    ],
+    "description": "Fasilitas Hotel Huber Medan: Wi-Fi gratis, Parkir gratis, Kolam renang luar, Ber-AC, Restoran, Cocok untuk anak,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-35",
+    "name": "E Hotel Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5719975,
+    "longitude": 98.6831859,
+    "star": 4,
+    "rating": 4.2,
+    "review_count": 209,
+    "start_price": 446000,
+    "facilities": [
+      "Kolam Renang",
+      "Spa",
+      "Hot Tub",
+      "Gym"
+    ],
+    "description": "E Hotel Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-36",
+    "name": "NIVIA HOTEL",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5980731,
+    "longitude": 98.7091621,
+    "star": 3,
+    "rating": 4.3,
+    "review_count": 367,
+    "start_price": 356000,
+    "facilities": [
+      "Spa",
+      "Sarapan",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "NIVIA HOTEL adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-37",
+    "name": "M Hotel Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5896848,
+    "longitude": 98.6762813,
+    "star": 2,
+    "rating": 4.1,
+    "review_count": 321,
+    "start_price": 381000,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "AC",
+      "Sarapan"
+    ],
+    "description": "M Hotel Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-38",
+    "name": "Hermes Palace Hotel Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5820144,
+    "longitude": 98.6818614,
+    "star": 4,
+    "rating": 4.3,
+    "review_count": 4062,
+    "start_price": 520000,
+    "facilities": [
+      "Spa",
+      "Gym",
+      "Sarapan",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Hotel modern dengan restoran di atap",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-39",
+    "name": "Hotel kontemporer berkolam renang & gym",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5739002,
+    "longitude": 98.6635217,
+    "star": 3,
+    "rating": 4.4,
+    "review_count": 3244,
+    "start_price": 623000,
+    "facilities": [
+      "Kolam Renang",
+      "Gym",
+      "Sarapan",
+      "WiFi"
+    ],
+    "description": "Hotel kontemporer berkolam renang & gym adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-40",
+    "name": "Bobotel Gatot Subroto Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5937661,
+    "longitude": 98.6680178,
+    "star": 2,
+    "rating": 4.5,
+    "review_count": 499,
+    "start_price": 248000,
+    "facilities": [
+      "Kolam Renang",
+      "Gym",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Hotel bujet modern dengan Wi-Fi gratis",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-41",
+    "name": "Hotel Menara Lexus",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.55712,
+    "longitude": 98.6948725,
+    "star": 2,
+    "rating": 3.8,
+    "review_count": 832,
+    "start_price": 248000,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "AC",
+      "Sarapan"
+    ],
+    "description": "Penginapan sederhana dengan restoran/bar",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-42",
+    "name": "Cordela Hotel Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5965051,
+    "longitude": 98.6868982,
+    "star": 2,
+    "rating": 4.2,
+    "review_count": 1439,
+    "start_price": 263000,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "AC",
+      "Sarapan"
+    ],
+    "description": "Hotel simpel dengan restoran santai",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-43",
+    "name": "Odua Golden Mansyur Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5675835,
+    "longitude": 98.6561846,
+    "star": 2,
+    "rating": 3.8,
+    "review_count": 167,
+    "start_price": 255000,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "AC",
+      "Sarapan"
+    ],
+    "description": "Odua Golden Mansyur Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-44",
+    "name": "Hotel Emerald Garden",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.6025134,
+    "longitude": 98.6728257,
+    "star": 4,
+    "rating": 4.4,
+    "review_count": 4419,
+    "start_price": 523000,
+    "facilities": [
+      "Kolam Renang",
+      "Spa",
+      "Gym",
+      "WiFi",
+      "Sarapan",
+      "Parkir"
+    ],
+    "description": "Hotel mewah dengan restoran dan spa",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-45",
+    "name": "Residence Anugrah",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.576161,
+    "longitude": 98.6651508,
+    "star": 3,
+    "rating": 3.7,
+    "review_count": 158,
+    "start_price": 90500,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "AC"
+    ],
+    "description": "Hotel bujet simpel dengan Wi-Fi",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-46",
+    "name": "Putra Mulia Hotel",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5905293,
+    "longitude": 98.6539677,
+    "star": 2,
+    "rating": 4.0,
+    "review_count": 1059,
+    "start_price": 234000,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Hotel simpel dengan restoran dan gym",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-47",
+    "name": "Raz Hotel and Convention",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5679823,
+    "longitude": 98.6433793,
+    "star": 3,
+    "rating": 3.9,
+    "review_count": 1117,
+    "start_price": 159000,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "AC",
+      "Sarapan"
+    ],
+    "description": "Hotel kasual dengan restoran 24 jam",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-48",
+    "name": "deSatu Hotel Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5927777,
+    "longitude": 98.6811048,
+    "star": 3,
+    "rating": 4.3,
+    "review_count": 714,
+    "start_price": 409000,
+    "facilities": [
+      "WiFi",
+      "AC",
+      "Sarapan"
+    ],
+    "description": "Hotel santai dengan restoran",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-49",
+    "name": "Alam Hotel by Cordela",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5698532,
+    "longitude": 98.7033543,
+    "star": 3,
+    "rating": 4.4,
+    "review_count": 336,
+    "start_price": 282000,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "AC",
+      "Sarapan"
+    ],
+    "description": "Hotel santai dengan ruang acara",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-50",
+    "name": "RedDoorz Hostel @ Capsule Inn Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5840878,
+    "longitude": 98.6690191,
+    "star": 2,
+    "rating": 4.4,
+    "review_count": 279,
+    "start_price": 262000,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "AC",
+      "Sarapan"
+    ],
+    "description": "RedDoorz Hostel @ Capsule Inn Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-51",
+    "name": "OYO 92881 Nany Ayahanda Syariah",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5906161,
+    "longitude": 98.6481622,
+    "star": 2,
+    "rating": 3.0,
+    "review_count": 2,
+    "start_price": 80200,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "OYO 92881 Nany Ayahanda Syariah adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-52",
+    "name": "MBS HOTEL MEDAN",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5933503,
+    "longitude": 98.6695628,
+    "star": null,
+    "rating": 4.3,
+    "review_count": 120,
+    "start_price": 457000,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "MBS HOTEL MEDAN adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-53",
+    "name": "Madani Hotel Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.57645,
+    "longitude": 98.687863,
+    "star": 4,
+    "rating": 4.2,
+    "review_count": 3365,
+    "start_price": 388000,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "AC",
+      "Sarapan"
+    ],
+    "description": "Penginapan elegan dengan kafe & restoran",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-54",
+    "name": "RedDoorz Plus @ Simpang USU Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5680976,
+    "longitude": 98.6604704,
+    "star": null,
+    "rating": 4.0,
+    "review_count": 124,
+    "start_price": 144000,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Fasilitas RedDoorz Plus @ Simpang USU Medan: Wi-Fi gratis, Parkir gratis,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-55",
+    "name": "Alpha Inn Hotel Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5932135,
+    "longitude": 98.6677794,
+    "star": 3,
+    "rating": 3.7,
+    "review_count": 1151,
+    "start_price": 240000,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "AC",
+      "Sarapan"
+    ],
+    "description": "Hotel santai dengan restoran",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-56",
+    "name": "Cordex Hotel Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5948366,
+    "longitude": 98.6732504,
+    "star": null,
+    "rating": 4.5,
+    "review_count": 202,
+    "start_price": 269000,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Fasilitas Cordex Hotel Medan: Wi-Fi gratis, Parkir gratis,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-57",
+    "name": "Travelbiz hotel",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5821999,
+    "longitude": 98.7006066,
+    "star": 3,
+    "rating": 3.9,
+    "review_count": 249,
+    "start_price": 305000,
+    "facilities": [
+      "WiFi"
+    ],
+    "description": "Travelbiz hotel adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-58",
+    "name": "Hotel simpel berkolam renang & restoran",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5803938,
+    "longitude": 98.6541716,
+    "star": 2,
+    "rating": 4.3,
+    "review_count": 471,
+    "start_price": 217000,
+    "facilities": [
+      "Kolam Renang",
+      "Sarapan",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Hotel simpel berkolam renang & restoran adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-59",
+    "name": "Kama Hotel",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5861486,
+    "longitude": 98.6798717,
+    "star": 2,
+    "rating": 4.2,
+    "review_count": 2304,
+    "start_price": 345000,
+    "facilities": [
+      "WiFi",
+      "AC",
+      "Sarapan"
+    ],
+    "description": "Hotel modern dengan restoran",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-60",
+    "name": "OYO 90245 TRIDASA",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5579605,
+    "longitude": 98.6443256,
+    "star": 2,
+    "rating": 3.3,
+    "review_count": 60,
+    "start_price": 120000,
+    "facilities": [
+      "Kolam Renang",
+      "Parkir",
+      "AC",
+      "WiFi"
+    ],
+    "description": "OYO 90245 TRIDASA adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-61",
+    "name": "Hotel 61 Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5896121,
+    "longitude": 98.661214,
+    "star": 3,
+    "rating": 4.3,
+    "review_count": 1049,
+    "start_price": 381000,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir",
+      "AC"
+    ],
+    "description": "Hotel simpel dengan sarapan gratis",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-62",
+    "name": "HOTEL GRAND BANDARA",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5765781,
+    "longitude": 98.6565429,
+    "star": null,
+    "rating": 4.7,
+    "review_count": 355,
+    "start_price": 224000,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "AC"
+    ],
+    "description": "HOTEL GRAND BANDARA adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-63",
+    "name": "Motel Danau toba international",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.581662,
+    "longitude": 98.666326,
+    "star": 2,
+    "rating": 4.4,
+    "review_count": 21,
+    "start_price": 201000,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Motel Danau toba international adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-64",
+    "name": "Cherry pink hotel",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5726522,
+    "longitude": 98.6597405,
+    "star": 2,
+    "rating": 3.9,
+    "review_count": 263,
+    "start_price": 105000,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Cherry pink hotel adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-65",
+    "name": "Hotel O Juma Ciger Hotel",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5588911,
+    "longitude": 98.6458249,
+    "star": null,
+    "rating": 4.7,
+    "review_count": 31,
+    "start_price": 61000,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Hotel O Juma Ciger Hotel adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-66",
+    "name": "New Gentala Hotel RedPartner",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5795948,
+    "longitude": 98.6912824,
+    "star": 2,
+    "rating": 4.0,
+    "review_count": 281,
+    "start_price": 143000,
+    "facilities": [
+      "Parkir",
+      "AC",
+      "WiFi",
+      "Sarapan"
+    ],
+    "description": "Hotel bujet simpel dengan Wi-Fi",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-67",
+    "name": "Cambridge Hotel Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5851913,
+    "longitude": 98.6672929,
+    "star": 5,
+    "rating": 4.6,
+    "review_count": 5593,
+    "start_price": 1040000,
+    "facilities": [
+      "Kolam Renang",
+      "Spa",
+      "Gym",
+      "Sarapan",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Hotel kontemporer dengan kolam di atap",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-68",
+    "name": "x7VXS src (2)",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": null,
+    "review_count": null,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "x7VXS src (2) adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-69",
+    "name": "Penatu layanan lengkap",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 4,
+    "rating": 4.3,
+    "review_count": 12,
+    "start_price": 417184,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir",
+      "Kolam Renang"
+    ],
+    "description": "Fasilitas Cemara Inn: Sarapan, Wi-Fi gratis, Parkir gratis, Ber-AC, Restoran, Room service, Penatu layanan lengkap, Cocok untuk anak,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-70",
+    "name": "Grand Impression Hotel",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 3,
+    "rating": 4.3,
+    "review_count": 12,
+    "start_price": 324848,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Grand Impression Hotel adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-71",
+    "name": "Properti bebas rokok",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 3.5,
+    "review_count": 82,
+    "start_price": 134736,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "Hot Tub"
+    ],
+    "description": "Properti bebas rokok adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-72",
+    "name": "favehotel S. Parman - Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5796116,
+    "longitude": 98.6678137,
+    "star": 3,
+    "rating": 4.7,
+    "review_count": 92,
+    "start_price": 399136,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "favehotel S. Parman - Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-73",
+    "name": "Room service",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 3,
+    "rating": 4.3,
+    "review_count": 367,
+    "start_price": 356352,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir",
+      "Spa"
+    ],
+    "description": "Fasilitas Selecta: Sarapan, Wi-Fi gratis, Parkir gratis, Ber-AC, Restoran, Room service,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-74",
+    "name": "Apartemen 1 kamar berkapasitas 2 orang",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 2.9,
+    "review_count": 4,
+    "start_price": 404992,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Fasilitas Studio unit Deprima Apartemen: Apartemen, 2 orang, 1 kamar tidur, 1 kamar mandi, 2 tempat tidur, 24 m², Ber-AC, Elevator, Bebas asap rokok,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-75",
+    "name": "Cocok untuk anak",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 3,
+    "rating": 4.3,
+    "review_count": 310,
+    "start_price": 120287,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "Sarapan"
+    ],
+    "description": "Hotel O Aljadid Near Masjid Raya Al Mashun Sm Raja Medan",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-76",
+    "name": "Apartemen 1 kamar berkapasitas 4 orang",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.2,
+    "review_count": 34,
+    "start_price": 601728,
+    "facilities": [
+      "WiFi"
+    ],
+    "description": "Fasilitas CBD Studio3 next to Sun Plaza Real City Center! - One-Bedroom Apartment: Apartemen, 2 orang, 1 kamar tidur, 1 kamar mandi, 1 tempat tidur, 80 m², Ber-AC, Papan setrika, Dapur,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-77",
+    "name": "VfPpkd-vQzf8d (2)",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": null,
+    "review_count": null,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "VfPpkd-vQzf8d (2) adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-78",
+    "name": "Jemputan bandara",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 3,
+    "rating": 4.8,
+    "review_count": 8,
+    "start_price": 1480044,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Fasilitas Grand City Hall Hotel Serviced Residences: Apartemen, 3 orang, 1 kamar tidur, 1 kamar mandi, 2 tempat tidur, Ber-AC, Jemputan bandara, Cocok untuk anak, Papan setrika,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-79",
+    "name": "SANS FINEST HOTEL",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 3,
+    "rating": 4.1,
+    "review_count": 452,
+    "start_price": 172831,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "SANS FINEST HOTEL adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-80",
+    "name": "Lihat harga",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 3,
+    "rating": 3.9,
+    "review_count": 104,
+    "start_price": 119304,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "Sarapan",
+      "Kolam Renang"
+    ],
+    "description": "Super OYO Capital O 92066 Papakoel Hotel & Cafe",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-81",
+    "name": "Kolam renang di dalam ruangan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 4,
+    "rating": 5.0,
+    "review_count": 2,
+    "start_price": 445079,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir",
+      "Hot Tub",
+      "Spa"
+    ],
+    "description": "Fasilitas Studio unit Deprima Apartemen - One-Bedroom Apartment: Apartemen, 2 orang, 1 kamar tidur, 1 kamar mandi, 2 tempat tidur, Ber-AC, Cocok untuk anak, Elevator, Kolam renang di dalam ruangan,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-82",
+    "name": "Apartemen ramah hewan peliharaan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.1,
+    "review_count": 16,
+    "start_price": 512240,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Fasilitas CBD Studio1 Next to Sun Plaza City Center!: Apartemen, 2 orang, 1 kamar tidur, 1 kamar mandi, 1 tempat tidur, 60 m², Ber-AC, Papan setrika, Dapur,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-83",
+    "name": "Kolam renang luar",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 4,
+    "rating": 4.7,
+    "review_count": 80,
+    "start_price": 452096,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "Sarapan"
+    ],
+    "description": "Kolam renang luar adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-84",
+    "name": "Dapur di dalam kamar",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 3,
+    "rating": 4.0,
+    "review_count": 28,
+    "start_price": 350608,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir",
+      "Kolam Renang"
+    ],
+    "description": "Dapur di dalam kamar adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-85",
+    "name": "Staigo at SG Premium",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.8,
+    "review_count": 8,
+    "start_price": 85104,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Fasilitas Staigo at SG Premium: Wi-Fi gratis, Parkir gratis, Ber-AC,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-86",
+    "name": "Urbanview Hotel MD Residence",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.9,
+    "review_count": 15,
+    "start_price": 145808,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Urbanview Hotel MD Residence adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-87",
+    "name": "Boleh bawa hewan peliharaan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 4.8,
+    "review_count": 115,
+    "start_price": 180208,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Fasilitas Zakia Hotel: Wi-Fi gratis, Parkir gratis, Ber-AC, Boleh bawa hewan peliharaan, Cocok untuk anak,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-88",
+    "name": "LePolonia Hotel & Convention",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 4,
+    "rating": 4.3,
+    "review_count": 65,
+    "start_price": 464592,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir",
+      "Spa"
+    ],
+    "description": "LePolonia Hotel & Convention adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-89",
+    "name": "Karibia Boutique Hotel",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5909369,
+    "longitude": 98.6824064,
+    "star": 4,
+    "rating": 4.4,
+    "review_count": 57,
+    "start_price": 603616,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Spa"
+    ],
+    "description": "Karibia Boutique Hotel adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-90",
+    "name": "Apartemen 1 kamar berkapasitas 3 orang",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.3,
+    "review_count": 5,
+    "start_price": 736352,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Fasilitas The Reiz Private Suite, Premium Condo Medan - No Pets Allowed: Apartemen, 3 orang, 1 kamar tidur, 1 kamar mandi, 2 tempat tidur, Ber-AC, Dapur, Bebas asap rokok, Tidak ada ranjang bayi,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-91",
+    "name": "Kanasha Hotel Islami",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 3,
+    "rating": 4.3,
+    "review_count": 398,
+    "start_price": 237424,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Kanasha Hotel Islami adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-92",
+    "name": "Medan Baru Guest House",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 5.0,
+    "review_count": 3,
+    "start_price": 70544,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Medan Baru Guest House adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-93",
+    "name": "Adi Inn Homestay RedPartner",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 3.3,
+    "review_count": 12,
+    "start_price": 142272,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Adi Inn Homestay RedPartner adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-94",
+    "name": "Altair Hotel Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 3.8,
+    "review_count": 70,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Altair Hotel Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-95",
+    "name": "Sapadia Wisma Sei Silau",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 4.5,
+    "review_count": 211,
+    "start_price": 149544,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "Sarapan"
+    ],
+    "description": "Sapadia Wisma Sei Silau adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-96",
+    "name": "RedDoorz Plus @ Cemara Asri Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.1,
+    "review_count": 214,
+    "start_price": 181944,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "Kolam Renang"
+    ],
+    "description": "Fasilitas RedDoorz Plus @ Cemara Asri Medan: Wi-Fi gratis, Parkir gratis, Kolam renang,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-97",
+    "name": "RedDoorz @ Jalan Krakatau Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 3.8,
+    "review_count": 200,
+    "start_price": 148428,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "RedDoorz @ Jalan Krakatau Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-98",
+    "name": "RedDoorz Plus near RS USU Medan 2",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 3,
+    "rating": 4.4,
+    "review_count": 60,
+    "start_price": 130868,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "RedDoorz Plus near RS USU Medan 2 adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-99",
+    "name": "Wisma Syariah UINSU Medan RedPartner",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 4.6,
+    "review_count": 76,
+    "start_price": 109174,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Wisma Syariah UINSU Medan RedPartner adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-100",
+    "name": "OYO 1274 Prime Inn",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 3.9,
+    "review_count": 38,
+    "start_price": 193944,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Fasilitas OYO 1274 Prime Inn: Wi-Fi, Parkir gratis, Ber-AC,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-101",
+    "name": "Lexus Guest House Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.5,
+    "review_count": 101,
+    "start_price": 179984,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Lexus Guest House Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-102",
+    "name": "Nonie's Huis Guest House",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.5,
+    "review_count": 108,
+    "start_price": 380704,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "Sarapan"
+    ],
+    "description": "Fasilitas Nonie's Huis Guest House: Wi-Fi gratis, Parkir gratis, Ber-AC, Sarapan, Restoran, Ramah difabel,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-103",
+    "name": "d'primahotel Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5994811,
+    "longitude": 98.8331033,
+    "star": null,
+    "rating": 4.1,
+    "review_count": 12,
+    "start_price": null,
+    "facilities": [
+      "Sarapan",
+      "WiFi"
+    ],
+    "description": "Fasilitas d'primahotel Medan: Sarapan, Wi-Fi gratis, Tempat parkir, Ber-AC, Restoran, Room service, Cocok untuk anak,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-104",
+    "name": "RedDoorz near Hermes Place Polonia Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 4.2,
+    "review_count": 209,
+    "start_price": 194940,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "RedDoorz near Hermes Place Polonia Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-105",
+    "name": "RedDoorz Plus @ Jalan Letda Sujono Medan 2",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 2.9,
+    "review_count": 58,
+    "start_price": 126403,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "RedDoorz Plus @ Jalan Letda Sujono Medan 2 adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-106",
+    "name": "Travellers Suites Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.585645,
+    "longitude": 98.6744384,
+    "star": 4,
+    "rating": 4.6,
+    "review_count": 16,
+    "start_price": 781760,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Travellers Suites Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-107",
+    "name": "Hotel Citi International Sun Yat Sen",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5831548,
+    "longitude": 98.6907601,
+    "star": 3,
+    "rating": 4.1,
+    "review_count": 438,
+    "start_price": null,
+    "facilities": [
+      "Sarapan"
+    ],
+    "description": "Hotel Citi International Sun Yat Sen adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-108",
+    "name": "RedDoorz Premium near Centre Point Mall Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 3.3,
+    "review_count": 144,
+    "start_price": 181944,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Fasilitas RedDoorz Premium near Centre Point Mall Medan: Wi-Fi, Parkir gratis, Ber-AC,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-109",
+    "name": "RedDoorz @ Medan Johor",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5377484,
+    "longitude": 98.6924919,
+    "star": 2,
+    "rating": 3.6,
+    "review_count": 88,
+    "start_price": 145350,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "RedDoorz @ Medan Johor adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-110",
+    "name": "MB Apartments & Hotel",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.4,
+    "review_count": 54,
+    "start_price": 300000,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "MB Apartments & Hotel adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-111",
+    "name": "Lihat detail",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.2,
+    "review_count": 38,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "RedDoorz Plus near Universitas Darma Agung Medan",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-112",
+    "name": "Collection O Millenium Inn 2",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.0,
+    "review_count": 5,
+    "start_price": 130056,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Collection O Millenium Inn 2 adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-113",
+    "name": "OYO 92075 Sky Residence Mawar",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 3.7,
+    "review_count": 65,
+    "start_price": 63129,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "OYO 92075 Sky Residence Mawar adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-114",
+    "name": "Apartemen 2 kamar berkapasitas 4 orang",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 3.0,
+    "review_count": 1,
+    "start_price": 447776,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Fasilitas Casapedian 004 ( Mansyur Residence 2BR): Apartemen, 4 orang, 2 kamar tidur, 1 kamar mandi, 56 m², Balkon, Elevator, Dapur, Microwave,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-115",
+    "name": "Hotel O near Ringroad City Walk XXI",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 2.3,
+    "review_count": 8,
+    "start_price": 72924,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Hotel O near Ringroad City Walk XXI adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-116",
+    "name": "RedDoorz @ Jalan Japaris Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 3.8,
+    "review_count": 77,
+    "start_price": 104975,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "RedDoorz @ Jalan Japaris Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-117",
+    "name": "Skyview Setiabudi Apartment",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.1,
+    "review_count": 601,
+    "start_price": 226896,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Skyview Setiabudi Apartment adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-118",
+    "name": "EXPRESS O 91979 Penginapan Tondong Ta",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 3.3,
+    "review_count": 8,
+    "start_price": 61226,
+    "facilities": [
+      "WiFi"
+    ],
+    "description": "EXPRESS O 91979 Penginapan Tondong Ta adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-119",
+    "name": "Residence Puri Hotel Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5778214,
+    "longitude": 98.6886388,
+    "star": 2,
+    "rating": 4.0,
+    "review_count": 630,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "Kolam Renang"
+    ],
+    "description": "Residence Puri Hotel Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-120",
+    "name": "Hotel Cahaya",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5405591,
+    "longitude": 98.7175241,
+    "star": null,
+    "rating": 3.8,
+    "review_count": 228,
+    "start_price": null,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Fasilitas Hotel Cahaya: Sarapan, Wi-Fi gratis, Parkir gratis, Ber-AC,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-121",
+    "name": "Hotel Grand Lubuk Raya",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 4.1,
+    "review_count": 129,
+    "start_price": null,
+    "facilities": [
+      "Sarapan"
+    ],
+    "description": "Hotel Grand Lubuk Raya adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-122",
+    "name": "Kamani Homestay Syariah",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.571978,
+    "longitude": 98.628403,
+    "star": 2,
+    "rating": 4.3,
+    "review_count": 451,
+    "start_price": 79045,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Kamani Homestay Syariah adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-123",
+    "name": "Emerald Residence",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 3,
+    "rating": 4.2,
+    "review_count": 82,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Emerald Residence adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-124",
+    "name": "RedDoorz near Manhattan Times Square Medan 2",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 3.6,
+    "review_count": 103,
+    "start_price": 128104,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "RedDoorz near Manhattan Times Square Medan 2 adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-125",
+    "name": "Saudara Risidence",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.7,
+    "review_count": 11,
+    "start_price": 154654,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Saudara Risidence adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-126",
+    "name": "Vila berkapasitas 3 orang",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": null,
+    "review_count": null,
+    "start_price": 413968,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Fasilitas Maria Apartement Dr. Mansyur residence diamond: Vila, 3 orang,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-127",
+    "name": "RedDoorz @ Seindo Hotel Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 4.2,
+    "review_count": 182,
+    "start_price": 139536,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "RedDoorz @ Seindo Hotel Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-128",
+    "name": "RedDoorz @ Medan Johor 2",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 3.5,
+    "review_count": 55,
+    "start_price": 122424,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "RedDoorz @ Medan Johor 2 adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-129",
+    "name": "John’s Pardede Residence",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 3.7,
+    "review_count": 17,
+    "start_price": 133496,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "John’s Pardede Residence adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-130",
+    "name": "RedDoorz near UIN Sumatera Utara",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 3.6,
+    "review_count": 361,
+    "start_price": 124488,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "RedDoorz near UIN Sumatera Utara adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-131",
+    "name": "RedDoorz @ Teratai Homestay Medan Amplas",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 3.9,
+    "review_count": 14,
+    "start_price": 159752,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Fasilitas RedDoorz @ Teratai Homestay Medan Amplas: Wi-Fi gratis, Parkir gratis, Ber-AC,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-132",
+    "name": "RedDoorz near RS USU Medan 3",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 4.1,
+    "review_count": 16,
+    "start_price": 181944,
+    "facilities": [
+      "WiFi"
+    ],
+    "description": "RedDoorz near RS USU Medan 3 adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-133",
+    "name": "RedDoorz @ Sentosa Jaya Helvetia",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 4.7,
+    "review_count": 112,
+    "start_price": 108528,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "Sarapan"
+    ],
+    "description": "RedDoorz @ Sentosa Jaya Helvetia adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-134",
+    "name": "Capital O 1585 Ring Road Residence",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 3.2,
+    "review_count": 124,
+    "start_price": 99664,
+    "facilities": [
+      "WiFi"
+    ],
+    "description": "Capital O 1585 Ring Road Residence adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-135",
+    "name": "RedDoorz near UISU teladan Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 3.3,
+    "review_count": 29,
+    "start_price": 108528,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "RedDoorz near UISU teladan Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-136",
+    "name": "ACIRASA Hotel Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": null,
+    "review_count": null,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "ACIRASA Hotel Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-137",
+    "name": "RedDoorz Plus @ Jalan Adam Malik Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 3.9,
+    "review_count": 97,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "RedDoorz Plus @ Jalan Adam Malik Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-138",
+    "name": "Deli Homestay Medan City",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5927084,
+    "longitude": 98.6720498,
+    "star": null,
+    "rating": 4.0,
+    "review_count": 67,
+    "start_price": 192424,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Deli Homestay Medan City adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-139",
+    "name": "Tidak menyediakan jemputan bandara",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 3.0,
+    "review_count": 1,
+    "start_price": 279286,
+    "facilities": [
+      "Parkir",
+      "WiFi"
+    ],
+    "description": "Fasilitas No. 15 lorong pahlawan: Apartemen, 2 orang, 1 kamar tidur, 1 kamar mandi, 54 m², Mesin cuci, Tidak menyediakan jemputan bandara, Tidak ada Wi-Fi,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-140",
+    "name": "Apartemen 4 kamar berkapasitas 7 orang",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 5.0,
+    "review_count": 55,
+    "start_price": 1224015,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Fasilitas Apartemen Podomoro Type Lexington.Dm.081536734912: Apartemen, 7 orang, 4 kamar tidur, 3 kamar mandi, 92 m², Ber-AC, Balkon, Elevator, Gym,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-141",
+    "name": "Hotel Nidia Nugraha",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5781206,
+    "longitude": 98.6881765,
+    "star": 3,
+    "rating": 3.9,
+    "review_count": 139,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Hotel Nidia Nugraha adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-142",
+    "name": "Banana Homestay Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.2,
+    "review_count": 11,
+    "start_price": 141888,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Banana Homestay Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-143",
+    "name": "Rose House RedPartner",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 5.0,
+    "review_count": 3,
+    "start_price": 125970,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Rose House RedPartner adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-144",
+    "name": "Wisma Hari Kota",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 3,
+    "rating": 4.0,
+    "review_count": 13,
+    "start_price": 127072,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Wisma Hari Kota adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-145",
+    "name": "Nisura Homestay",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.5,
+    "review_count": 61,
+    "start_price": 114716,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Nisura Homestay adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-146",
+    "name": "RedDoorz @ Jamin Ginting Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 5.0,
+    "review_count": 1,
+    "start_price": 175091,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Fasilitas RedDoorz @ Jamin Ginting Medan: Wi-Fi gratis, Parkir gratis, Kolam renang luar, Ber-AC, Restoran, Cocok untuk anak,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-147",
+    "name": "Palem Mas Garden RedPartner",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 2.0,
+    "review_count": 17,
+    "start_price": 138567,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Palem Mas Garden RedPartner adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-148",
+    "name": "Hotel Syariah Grand Jamee",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5867498,
+    "longitude": 98.6273025,
+    "star": 3,
+    "rating": 4.1,
+    "review_count": 15,
+    "start_price": 278288,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "Sarapan"
+    ],
+    "description": "Hotel Syariah Grand Jamee adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-149",
+    "name": "OYO 1811 Citra Anggrek",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 3.1,
+    "review_count": 244,
+    "start_price": 75180,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "OYO 1811 Citra Anggrek adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-150",
+    "name": "Dapur di beberapa kamar",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 4.4,
+    "review_count": 152,
+    "start_price": 159600,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "Sarapan"
+    ],
+    "description": "Collection O near University of Sumatera Utara formerly Huber Apartment",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-151",
+    "name": "Cendana Homestay Syari'ah Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 4.5,
+    "review_count": 171,
+    "start_price": 158000,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Cendana Homestay Syari'ah Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-152",
+    "name": "Tidak ada kolam renang di dalam ruangan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": null,
+    "review_count": null,
+    "start_price": 514075,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Fasilitas Relaxing Studio At Apartment Skyview Medan: Apartemen, 2 orang, 1 kamar tidur, 1 tempat tidur, Elevator, Kolam renang luar, Bebas asap rokok, Tidak ada kolam renang di dalam ruangan, Tidak boleh membawa hewan,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-153",
+    "name": "Airy Medan Sunggal Sepakat 19",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.5,
+    "review_count": 128,
+    "start_price": 116952,
+    "facilities": [
+      "WiFi"
+    ],
+    "description": "Fasilitas Airy Medan Sunggal Sepakat 19: Wi-Fi gratis, Ber-AC, Cocok untuk anak, Properti bebas rokok,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-154",
+    "name": "RedDoorz Hotel JIMART @ Komplek MMTC",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 3.9,
+    "review_count": 30,
+    "start_price": 138852,
+    "facilities": [
+      "WiFi",
+      "Kolam Renang"
+    ],
+    "description": "RedDoorz Hotel JIMART @ Komplek MMTC adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-155",
+    "name": "RedDoorz Syariah near Stadion Teladan Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 4.4,
+    "review_count": 144,
+    "start_price": 153216,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "RedDoorz Syariah near Stadion Teladan Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-156",
+    "name": "RedDoorz near Waterpark Citra Garden Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 3.9,
+    "review_count": 26,
+    "start_price": 140182,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "Sarapan"
+    ],
+    "description": "Fasilitas RedDoorz near Waterpark Citra Garden Medan: Wi-Fi gratis, Parkir gratis, Ber-AC, Sarapan, Cocok untuk anak, Properti bebas rokok,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-157",
+    "name": "RedDoorz near RS Setiabudi Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 4.3,
+    "review_count": 73,
+    "start_price": 117572,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "RedDoorz near RS Setiabudi Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-158",
+    "name": "RedDoorz Plus near UNIMED Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 3,
+    "rating": 3.5,
+    "review_count": 183,
+    "start_price": 168538,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "RedDoorz Plus near UNIMED Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-159",
+    "name": "Hotel Binaka Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.571763,
+    "longitude": 98.6852373,
+    "star": 2,
+    "rating": 4.1,
+    "review_count": 53,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Hotel Binaka Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-160",
+    "name": "Capital O 90447 Kardopa Hotel Megapark",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 3.4,
+    "review_count": 78,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Fasilitas Capital O 90447 Kardopa Hotel Megapark: Wi-Fi gratis, Parkir gratis,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-161",
+    "name": "Hallo bisa daptkam nomor WA",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 3.6,
+    "review_count": 267,
+    "start_price": 65684,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Hallo bisa daptkam nomor WA adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-162",
+    "name": "Dancenter Clove Nari Homestay",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 3.1,
+    "review_count": 12,
+    "start_price": 113508,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Dancenter Clove Nari Homestay adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-163",
+    "name": "RedDoorz @ Theodore Homestay Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 2.2,
+    "review_count": 10,
+    "start_price": 142766,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "RedDoorz @ Theodore Homestay Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-164",
+    "name": "RedDoorz @ Jotel Guest House",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 4.3,
+    "review_count": 156,
+    "start_price": 120042,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "RedDoorz @ Jotel Guest House adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-165",
+    "name": "RESIDENCE MOJOPAHIT",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5760011,
+    "longitude": 98.6652149,
+    "star": 2,
+    "rating": 4.2,
+    "review_count": 202,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "RESIDENCE MOJOPAHIT adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-166",
+    "name": "Rumah 1 kamar berkapasitas 2 orang",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": null,
+    "review_count": null,
+    "start_price": 134759,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Fasilitas RedDoorz at Golden Cempaka Medan - Standard Double Room: Rumah, 2 orang, 1 kamar tidur, 1 kamar mandi, 1 tempat tidur, Ber-AC, Ranjang bayi, Elevator, Bebas asap rokok,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-167",
+    "name": "Urbanview Os Residence Medan By RedDoorz",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 3.4,
+    "review_count": 149,
+    "start_price": 96528,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Urbanview Os Residence Medan By RedDoorz adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-168",
+    "name": "RedDoorz @ Jalan Wahidin Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.2,
+    "review_count": 54,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "RedDoorz @ Jalan Wahidin Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-169",
+    "name": "Tempat parkir",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 3,
+    "rating": 3.8,
+    "review_count": 217,
+    "start_price": 196978,
+    "facilities": [
+      "WiFi"
+    ],
+    "description": "Tempat parkir adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-170",
+    "name": "Aceh House Hotel Setia Budi",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5757026,
+    "longitude": 98.6396313,
+    "star": 1,
+    "rating": 4.2,
+    "review_count": 72,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Aceh House Hotel Setia Budi adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-171",
+    "name": "DELTO GUEST HOUSE",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.9,
+    "review_count": 12,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "DELTO GUEST HOUSE adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-172",
+    "name": "RedDoorz @ Golden Cempaka Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 3.7,
+    "review_count": 3,
+    "start_price": 111672,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "RedDoorz @ Golden Cempaka Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-173",
+    "name": "RedDoorz @ CBD Polonia Medan.",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 3.9,
+    "review_count": 107,
+    "start_price": 104652,
+    "facilities": [
+      "WiFi"
+    ],
+    "description": "RedDoorz @ CBD Polonia Medan. adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-174",
+    "name": "RedDoorz @ Jalan Brigjend Katamso Medan 2",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 3.7,
+    "review_count": 59,
+    "start_price": 105815,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "RedDoorz @ Jalan Brigjend Katamso Medan 2 adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-175",
+    "name": "DnD Cafe and Guest House",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.1,
+    "review_count": 569,
+    "start_price": 224408,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Fasilitas DnD Cafe and Guest House: Wi-Fi gratis, Parkir gratis, Ber-AC, Restoran,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-176",
+    "name": "Hotel Halim Perdana",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5801341,
+    "longitude": 98.691226,
+    "star": 2,
+    "rating": 4.0,
+    "review_count": 153,
+    "start_price": null,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Hotel Halim Perdana adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-177",
+    "name": "Pondok Wisata Istana XI",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 3.6,
+    "review_count": 222,
+    "start_price": 272720,
+    "facilities": [
+      "WiFi"
+    ],
+    "description": "Pondok Wisata Istana XI adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-178",
+    "name": "Green Village Kost Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.8,
+    "review_count": 61,
+    "start_price": null,
+    "facilities": [
+      "Sarapan",
+      "WiFi"
+    ],
+    "description": "Fasilitas Green Village Kost Medan: Sarapan, Wi-Fi gratis, Restoran, Jemputan bandara, Properti bebas rokok,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-179",
+    "name": "RedDoorz @ Jalan HM Yamin Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.2,
+    "review_count": 29,
+    "start_price": 106252,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Fasilitas RedDoorz @ Jalan HM Yamin Medan: Ber-AC,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-180",
+    "name": "Batik Setia Budi",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 2.5,
+    "review_count": 13,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Batik Setia Budi adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-181",
+    "name": "RedDoorz near RS Royal Prima Medan 2",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 3.6,
+    "review_count": 68,
+    "start_price": 133488,
+    "facilities": [
+      "WiFi"
+    ],
+    "description": "RedDoorz near RS Royal Prima Medan 2 adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-182",
+    "name": "Apartemen 3 kamar berkapasitas 6 orang",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 3.9,
+    "review_count": 12,
+    "start_price": 1474944,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Fasilitas SheepDream Empire 28J DeliparkMall 3Bedroom: Apartemen, 6 orang, 3 kamar tidur, 3 kamar mandi, 4 tempat tidur, 90 m², Ber-AC, Elevator, Papan setrika,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-183",
+    "name": "Penginapan roemah_54",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5852732,
+    "longitude": 98.6499797,
+    "star": null,
+    "rating": 4.6,
+    "review_count": 70,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Fasilitas Penginapan roemah_54: Wi-Fi gratis, Parkir gratis, Ber-AC,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-184",
+    "name": "Kost Teratai",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.4,
+    "review_count": 135,
+    "start_price": 185222,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Kost Teratai adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-185",
+    "name": "GINTSUKA Hostel",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.2,
+    "review_count": 13,
+    "start_price": 250343,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "GINTSUKA Hostel adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-186",
+    "name": "Barat Residence",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5589447,
+    "longitude": 98.649401,
+    "star": 3,
+    "rating": 3.8,
+    "review_count": 166,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Barat Residence adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-187",
+    "name": "RedDoorz near Grand Palladium",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 3.8,
+    "review_count": 147,
+    "start_price": 102017,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "RedDoorz near Grand Palladium adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-188",
+    "name": "OYO 849 Palem Mas Garden",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 3.3,
+    "review_count": 79,
+    "start_price": 128984,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "OYO 849 Palem Mas Garden adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-189",
+    "name": "RedDoorz near Medan Amplas",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 3.8,
+    "review_count": 173,
+    "start_price": 144704,
+    "facilities": [
+      "WiFi"
+    ],
+    "description": "RedDoorz near Medan Amplas adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-190",
+    "name": "Kenanga City Hotel",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 3.7,
+    "review_count": 95,
+    "start_price": null,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Fasilitas Kenanga City Hotel: Sarapan, Wi-Fi gratis, Parkir gratis, Ber-AC, Cocok untuk anak,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-191",
+    "name": "GUEST HOUSE RESTU IBU",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 4.8,
+    "review_count": 561,
+    "start_price": 314992,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "GUEST HOUSE RESTU IBU adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-192",
+    "name": "511 Ideal Stay",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.5,
+    "review_count": 54,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "511 Ideal Stay adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-193",
+    "name": "OYO 94712 Surau Guest House",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 2.3,
+    "review_count": 7,
+    "start_price": 85144,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "OYO 94712 Surau Guest House adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-194",
+    "name": "Prime Inn near Jalan Sekip Mitra RedDoorz",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 4.6,
+    "review_count": 153,
+    "start_price": 179071,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Prime Inn near Jalan Sekip Mitra RedDoorz adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-195",
+    "name": "Hotel Mutiara Hawaii",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.0,
+    "review_count": 335,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Fasilitas Hotel Mutiara Hawaii: Wi-Fi, Parkir gratis,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-196",
+    "name": "Rumah 10 kamar yang luas",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": null,
+    "review_count": null,
+    "start_price": 152666,
+    "facilities": [
+      "Parkir",
+      "WiFi"
+    ],
+    "description": "Fasilitas OYO 99 Residence: Rumah, 15 orang, 10 kamar tidur, Ber-AC, Cocok untuk anak, Bebas asap rokok, TV Kabel, Parkir gratis, Wi-Fi gratis,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-197",
+    "name": "Hotel Danau Toba International",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5831387,
+    "longitude": 98.6764571,
+    "star": 4,
+    "rating": 4.3,
+    "review_count": 72,
+    "start_price": 468640,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir",
+      "Hot Tub",
+      "Spa"
+    ],
+    "description": "Hotel Danau Toba International adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-198",
+    "name": "Grand Mercure Maha Cipta Medan Angkasa",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.597982,
+    "longitude": 98.6821792,
+    "star": 5,
+    "rating": 4.6,
+    "review_count": 96,
+    "start_price": 865658,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Grand Mercure Maha Cipta Medan Angkasa adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-199",
+    "name": "Akhir pekan ini",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": null,
+    "review_count": null,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Akhir pekan ini adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-200",
+    "name": "Four Points by Sheraton Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5899012,
+    "longitude": 98.6513443,
+    "star": 4,
+    "rating": 4.5,
+    "review_count": 60,
+    "start_price": 988545,
+    "facilities": [
+      "WiFi"
+    ],
+    "description": "Four Points by Sheraton Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-201",
+    "name": "dengan kolam renang",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 3,
+    "rating": 4.6,
+    "review_count": 229,
+    "start_price": 171836,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "Kolam Renang",
+      "Sarapan"
+    ],
+    "description": "Fasilitas SANS Vibes Millenium Inn Medan: Wi-Fi gratis, Parkir gratis, Kolam renang, Ber-AC,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-202",
+    "name": "Hotel Grand Darussalam Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5891771,
+    "longitude": 98.6530323,
+    "star": 3,
+    "rating": 3.9,
+    "review_count": 767,
+    "start_price": 196328,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Hotel Grand Darussalam Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-203",
+    "name": "Hotel 0 Graha Aisyah",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": null,
+    "review_count": null,
+    "start_price": 74664,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Hotel 0 Graha Aisyah adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-204",
+    "name": "Tobali Guest House",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 3.8,
+    "review_count": 50,
+    "start_price": 219392,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Tobali Guest House adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-205",
+    "name": "Pia Hotel Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 3,
+    "rating": 4.6,
+    "review_count": 28,
+    "start_price": 414016,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "Sarapan"
+    ],
+    "description": "Pia Hotel Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-206",
+    "name": "RedDoorz @ Wika Wiki Homestay",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.8,
+    "review_count": 52,
+    "start_price": 114450,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "RedDoorz @ Wika Wiki Homestay adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-207",
+    "name": "Memiliki sertifikasi ramah lingkungan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 3,
+    "rating": 4.4,
+    "review_count": 32,
+    "start_price": 623136,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Memiliki sertifikasi ramah lingkungan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-208",
+    "name": "Grand Kanaya Hotel",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5891771,
+    "longitude": 98.6530323,
+    "star": 3,
+    "rating": 4.1,
+    "review_count": 922,
+    "start_price": null,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Grand Kanaya Hotel adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-209",
+    "name": "Sapadia Guest House HM Joni",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 1,
+    "rating": 4.2,
+    "review_count": 526,
+    "start_price": 190808,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "Sarapan"
+    ],
+    "description": "Sapadia Guest House HM Joni adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-210",
+    "name": "OYO 727 Merlion Hotel",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5751003,
+    "longitude": 98.6271778,
+    "star": null,
+    "rating": 4.3,
+    "review_count": 254,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Fasilitas OYO 727 Merlion Hotel: Wi-Fi gratis, Parkir gratis, Ber-AC,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-211",
+    "name": "HOTEL MUTIARA HIJAU SUITES",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.4,
+    "review_count": 102,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "HOTEL MUTIARA HIJAU SUITES adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-212",
+    "name": "Hotel Bumi Malaya RedPartner",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 3.9,
+    "review_count": 480,
+    "start_price": 160056,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Hotel Bumi Malaya RedPartner adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-213",
+    "name": "Urbanview Hotel Bilal Medan by RedDoorz",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 3.8,
+    "review_count": 24,
+    "start_price": 134064,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Urbanview Hotel Bilal Medan by RedDoorz adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-214",
+    "name": "Arabia Style Hotel Sriwijaya",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.0,
+    "review_count": 85,
+    "start_price": 3636352,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Arabia Style Hotel Sriwijaya adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-215",
+    "name": "King's Palace Medan RedPartner",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 4.4,
+    "review_count": 101,
+    "start_price": 268464,
+    "facilities": [
+      "WiFi"
+    ],
+    "description": "King's Palace Medan RedPartner adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-216",
+    "name": "Tokidoki x Amir Hamzah Residence 123",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 4.0,
+    "review_count": 291,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Tokidoki x Amir Hamzah Residence 123 adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-217",
+    "name": "Hotel O near Ring Road City Walks",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.1,
+    "review_count": 48,
+    "start_price": 61758,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Hotel O near Ring Road City Walks adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-218",
+    "name": "RedDoorz Premium @ Setiabudi Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 3,
+    "rating": 3.9,
+    "review_count": 484,
+    "start_price": 171836,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "Kolam Renang"
+    ],
+    "description": "RedDoorz Premium @ Setiabudi Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-219",
+    "name": "Premium Inn Cemara Asri",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 3,
+    "rating": 4.3,
+    "review_count": 26,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "Sarapan"
+    ],
+    "description": "Premium Inn Cemara Asri adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-220",
+    "name": "Sapadia Guest House Sindoro",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.6,
+    "review_count": 78,
+    "start_price": 172080,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Sapadia Guest House Sindoro adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-221",
+    "name": "Aresidencia - Sei Padang",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5701047,
+    "longitude": 98.64899,
+    "star": null,
+    "rating": 4.5,
+    "review_count": 141,
+    "start_price": 362672,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Fasilitas Aresidencia - Sei Padang: Sarapan gratis, Wi-Fi gratis, Parkir gratis, Ber-AC, Cocok untuk anak,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-222",
+    "name": "Golden Eleven Hotel Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": 3.5246285,
+    "longitude": 98.630583,
+    "star": null,
+    "rating": 4.8,
+    "review_count": 13,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "Kolam Renang"
+    ],
+    "description": "Fasilitas Golden Eleven Hotel Medan: Sarapan ($), Wi-Fi gratis, Parkir gratis, Kolam renang, Ber-AC, Bar, Restoran, Room service, Cocok untuk anak,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-223",
+    "name": "The Castle Medan - Villa",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.4,
+    "review_count": 12,
+    "start_price": 636352,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "The Castle Medan - Villa adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-224",
+    "name": "SUPER OYO 283 Helvetia Residence",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 3.8,
+    "review_count": 231,
+    "start_price": null,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "SUPER OYO 283 Helvetia Residence adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-225",
+    "name": "RedDoorz Plus @ Setiabudi Medan 4",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 3,
+    "rating": 4.0,
+    "review_count": 42,
+    "start_price": 138320,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "RedDoorz Plus @ Setiabudi Medan 4 adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-226",
+    "name": "RedDoorz Plus @ Sempurna Inn Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 3,
+    "rating": 4.9,
+    "review_count": 28,
+    "start_price": 159152,
+    "facilities": [
+      "WiFi"
+    ],
+    "description": "RedDoorz Plus @ Sempurna Inn Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-227",
+    "name": "RedDoorz Plus @ Centrium Katamso Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 3,
+    "rating": 4.3,
+    "review_count": 115,
+    "start_price": 172368,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "RedDoorz Plus @ Centrium Katamso Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-228",
+    "name": "Sapadia Clubhouse Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.1,
+    "review_count": 11,
+    "start_price": 216700,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Sapadia Clubhouse Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-229",
+    "name": "Strategic Apartment",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.7,
+    "review_count": 29,
+    "start_price": 470976,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Strategic Apartment adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-230",
+    "name": "Royal Suite Condotel",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 3,
+    "rating": 4.4,
+    "review_count": 19,
+    "start_price": 691322,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Royal Suite Condotel adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-231",
+    "name": "Apartemen 12 kamar berkapasitas 4 orang",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.8,
+    "review_count": 8,
+    "start_price": 298814,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Fasilitas MB Apartments Hotel Medan - Large Double Room: Apartemen, 4 orang, 12 kamar tidur, 12 kamar mandi, 2 tempat tidur, Ber-AC, Cocok untuk anak, Papan setrika, Dapur,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-232",
+    "name": "Vandolia Guest House Medan RedPartner",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 4.1,
+    "review_count": 57,
+    "start_price": 134368,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Vandolia Guest House Medan RedPartner adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-233",
+    "name": "RedDoorz Plus near Thamrin Plaza Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.3,
+    "review_count": 37,
+    "start_price": 163088,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Fasilitas RedDoorz Plus near Thamrin Plaza Medan: Wi-Fi gratis, Parkir gratis, Ber-AC,",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-234",
+    "name": "RedDoorz near Gajah Mada Park Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.8,
+    "review_count": 156,
+    "start_price": 98257,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "RedDoorz near Gajah Mada Park Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-235",
+    "name": "Hotel Islami Aceh House",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 2,
+    "rating": 3.9,
+    "review_count": 374,
+    "start_price": 116964,
+    "facilities": [
+      "Sarapan",
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Hotel Islami Aceh House adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-236",
+    "name": "RedDoorz @ Vania Residence Medan",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 4.4,
+    "review_count": 24,
+    "start_price": 158004,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "RedDoorz @ Vania Residence Medan adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-237",
+    "name": "Hotel O Medan Timur Near Rsu Madani",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 2.3,
+    "review_count": 28,
+    "start_price": 84476,
+    "facilities": [
+      "WiFi",
+      "AC"
+    ],
+    "description": "Hotel O Medan Timur Near Rsu Madani adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-238",
+    "name": "Sapadia Guest House Syailendra",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": 1,
+    "rating": 4.3,
+    "review_count": 258,
+    "start_price": 150712,
+    "facilities": [
+      "WiFi",
+      "Parkir",
+      "Sarapan"
+    ],
+    "description": "Sapadia Guest House Syailendra adalah pilihan menginap di Medan.",
+    "source": "google_maps"
+  },
+  {
+    "id": "gmaps-239",
+    "name": "Graha Aisyah",
+    "city": "Medan",
+    "address": "",
+    "latitude": null,
+    "longitude": null,
+    "star": null,
+    "rating": 3.3,
+    "review_count": 27,
+    "start_price": 94164,
+    "facilities": [
+      "WiFi",
+      "Parkir"
+    ],
+    "description": "Fasilitas Graha Aisyah: Wi-Fi gratis, Parkir gratis, Ber-AC,",
+    "source": "google_maps"
+  }
+]
