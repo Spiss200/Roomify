@@ -1,0 +1,80 @@
+# ============================================
+# QUERY 1: Hotel murah berkolam renang rating bagus
+# Demo: "Cariin hotel murah tapi ada kolam renang"
+# ============================================
+PREFIX roomify: <https://roomify.example/ontology#>
+
+SELECT ?namaHotel ?harga ?rating ?alamat WHERE {
+  ?h a roomify:Hotel ;
+     roomify:name ?namaHotel ;
+     roomify:startPrice ?harga ;
+     roomify:rating ?rating ;
+     roomify:address ?alamat ;
+     roomify:hasFacility roomify:fac-kolam-renang .
+  FILTER(?harga < 500000 && ?rating > 4.0)
+}
+ORDER BY ASC(?harga)
+LIMIT 10
+
+# ============================================
+# QUERY 2: Hotel di jalan tertentu (ingat jalan, lupa nama)
+# Demo: "Aku inget hotelnya di jalan Yamin, tapi lupa namanya"
+# ============================================
+PREFIX roomify: <https://roomify.example/ontology#>
+
+SELECT ?namaHotel ?alamat ?harga WHERE {
+  ?h a roomify:Hotel ;
+     roomify:name ?namaHotel ;
+     roomify:address ?alamat ;
+     roomify:startPrice ?harga .
+  FILTER(CONTAINS(LCASE(?alamat), "yamin"))
+}
+ORDER BY ?namaHotel
+
+# ============================================
+# QUERY 3: Daftar kamar + harga satu hotel
+# Demo: "Grand Sakura ada kamar apa aja?"
+# ============================================
+PREFIX roomify: <https://roomify.example/ontology#>
+
+SELECT ?tipeKamar ?harga ?kapasitas WHERE {
+  ?h a roomify:Hotel ;
+     roomify:name "Grand Sakura Hotel" ;
+     roomify:hasRoom ?r .
+  ?r roomify:roomType ?tipeKamar ;
+     roomify:pricePerNight ?harga ;
+     roomify:maxGuests ?kapasitas .
+}
+ORDER BY ASC(?harga)
+
+# ============================================
+# QUERY 4: Statistik fasilitas (aggregate)
+# Demo: "Fasilitas apa yang paling banyak dimiliki hotel di Medan?"
+# ============================================
+PREFIX roomify: <https://roomify.example/ontology#>
+
+SELECT ?fasilitas (COUNT(?h) AS ?jumlahHotel) WHERE {
+  ?h a roomify:Hotel ;
+     roomify:hasFacility ?f .
+  ?f roomify:name ?fasilitas .
+}
+GROUP BY ?fasilitas
+ORDER BY DESC(?jumlahHotel)
+LIMIT 10
+
+# ============================================
+# QUERY 5: Hotel + landmark terdekat + foto
+# Demo: "Hotel apa aja yang dekat Tjong A Fie Mansion?"
+# ============================================
+PREFIX roomify: <https://roomify.example/ontology#>
+
+SELECT ?namaHotel ?landmark ?foto WHERE {
+  ?h a roomify:Hotel ;
+     roomify:name ?namaHotel ;
+     roomify:nearLandmark ?lm ;
+     roomify:hasPhoto ?p .
+  ?lm roomify:name ?landmark .
+  ?p roomify:photoUrl ?foto .
+  FILTER(?landmark = "Tjong A Fie Mansion")
+}
+LIMIT 10

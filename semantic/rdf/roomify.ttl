@@ -1,4 +1,3 @@
-
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -7,96 +6,110 @@
 @prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix roomify: <https://roomify.example/ontology#> .
 
-roomify: a owl:Ontology ;
-    rdfs:label "Roomify Hotel Ontology" ;
-    rdfs:comment "Ontology for Semantic Hotel Search in Medan" .
+roomify: a owl:Ontology ; rdfs:label "Roomify Hotel Ontology" .
 
-# --- CLASSES (7) ---
-roomify:Hotel a owl:Class ; rdfs:subClassOf schema:Hotel ; rdfs:label "Hotel" .
-roomify:Room a owl:Class ; rdfs:subClassOf schema:HotelRoom ; rdfs:label "Room" .
-roomify:Facility a owl:Class ; rdfs:subClassOf schema:LocationFeatureSpecification ; rdfs:label "Facility" .
-roomify:City a owl:Class ; rdfs:subClassOf schema:City ; rdfs:label "City" .
-roomify:Review a owl:Class ; rdfs:subClassOf schema:Review ; rdfs:label "Review" .
-roomify:Photo a owl:Class ; rdfs:subClassOf schema:ImageObject ; rdfs:label "Photo" .
-roomify:Landmark a owl:Class ; rdfs:subClassOf schema:TouristAttraction ; rdfs:label "Landmark" .
+roomify:Hotel a owl:Class ; rdfs:subClassOf schema:Hotel .
+roomify:Room a owl:Class ; rdfs:subClassOf schema:HotelRoom .
+roomify:Facility a owl:Class ; rdfs:subClassOf schema:LocationFeatureSpecification .
+roomify:City a owl:Class ; rdfs:subClassOf schema:City .
+roomify:Review a owl:Class ; rdfs:subClassOf schema:Review .
+roomify:Photo a owl:Class ; rdfs:subClassOf schema:ImageObject .
+roomify:Landmark a owl:Class ; rdfs:subClassOf schema:TouristAttraction .
 
-# --- OBJECT PROPERTIES (13) ---
 roomify:hasRoom a owl:ObjectProperty ; rdfs:domain roomify:Hotel ; rdfs:range roomify:Room .
-roomify:roomOf a owl:ObjectProperty ; rdfs:domain roomify:Room ; rdfs:range roomify:Hotel ; owl:inverseOf roomify:hasRoom .
+roomify:roomOf a owl:ObjectProperty ; owl:inverseOf roomify:hasRoom .
 roomify:hasFacility a owl:ObjectProperty ; rdfs:domain roomify:Hotel ; rdfs:range roomify:Facility .
-roomify:facilityOf a owl:ObjectProperty ; rdfs:domain roomify:Facility ; rdfs:range roomify:Hotel ; owl:inverseOf roomify:hasFacility .
+roomify:facilityOf a owl:ObjectProperty ; owl:inverseOf roomify:hasFacility .
 roomify:hasFeature a owl:ObjectProperty ; rdfs:domain roomify:Room ; rdfs:range roomify:Facility .
 roomify:locatedInCity a owl:ObjectProperty ; rdfs:domain roomify:Hotel ; rdfs:range roomify:City .
-roomify:cityHasHotel a owl:ObjectProperty ; rdfs:domain roomify:City ; rdfs:range roomify:Hotel ; owl:inverseOf roomify:locatedInCity .
+roomify:cityHasHotel a owl:ObjectProperty ; owl:inverseOf roomify:locatedInCity .
 roomify:hasReview a owl:ObjectProperty ; rdfs:domain roomify:Hotel ; rdfs:range roomify:Review .
-roomify:reviewAbout a owl:ObjectProperty ; rdfs:domain roomify:Review ; rdfs:range roomify:Hotel ; owl:inverseOf roomify:hasReview .
+roomify:reviewAbout a owl:ObjectProperty ; owl:inverseOf roomify:hasReview .
 roomify:hasPhoto a owl:ObjectProperty ; rdfs:domain roomify:Hotel ; rdfs:range roomify:Photo .
-roomify:photoOf a owl:ObjectProperty ; rdfs:domain roomify:Photo ; rdfs:range roomify:Hotel ; owl:inverseOf roomify:hasPhoto .
+roomify:photoOf a owl:ObjectProperty ; owl:inverseOf roomify:hasPhoto .
 roomify:nearLandmark a owl:ObjectProperty ; rdfs:domain roomify:Hotel ; rdfs:range roomify:Landmark .
 roomify:landmarkInCity a owl:ObjectProperty ; rdfs:domain roomify:Landmark ; rdfs:range roomify:City .
 
-# --- DATA PROPERTIES (18) ---
 roomify:name a owl:DatatypeProperty ; rdfs:range xsd:string .
-roomify:address a owl:DatatypeProperty ; rdfs:domain roomify:Hotel ; rdfs:range xsd:string .
-roomify:description a owl:DatatypeProperty ; rdfs:domain roomify:Hotel ; rdfs:range xsd:string .
-roomify:starRating a owl:DatatypeProperty ; rdfs:domain roomify:Hotel ; rdfs:range xsd:integer .
-roomify:rating a owl:DatatypeProperty ; rdfs:domain roomify:Hotel ; rdfs:range xsd:decimal .
-roomify:reviewCount a owl:DatatypeProperty ; rdfs:domain roomify:Hotel ; rdfs:range xsd:integer .
-roomify:startPrice a owl:DatatypeProperty ; rdfs:domain roomify:Hotel ; rdfs:range xsd:integer .
-roomify:pricePerNight a owl:DatatypeProperty ; rdfs:domain roomify:Room ; rdfs:range xsd:integer .
-roomify:roomType a owl:DatatypeProperty ; rdfs:domain roomify:Room ; rdfs:range xsd:string .
-roomify:maxGuests a owl:DatatypeProperty ; rdfs:domain roomify:Room ; rdfs:range xsd:integer .
-roomify:latitude a owl:DatatypeProperty ; rdfs:range xsd:decimal ; rdfs:subPropertyOf geo:lat .
-roomify:longitude a owl:DatatypeProperty ; rdfs:range xsd:decimal ; rdfs:subPropertyOf geo:long .
-roomify:reviewText a owl:DatatypeProperty ; rdfs:domain roomify:Review ; rdfs:range xsd:string .
-roomify:reviewerName a owl:DatatypeProperty ; rdfs:domain roomify:Review ; rdfs:range xsd:string .
-roomify:reviewRating a owl:DatatypeProperty ; rdfs:domain roomify:Review ; rdfs:range xsd:decimal .
-roomify:reviewDate a owl:DatatypeProperty ; rdfs:domain roomify:Review ; rdfs:range xsd:date .
-roomify:photoUrl a owl:DatatypeProperty ; rdfs:domain roomify:Photo ; rdfs:range xsd:anyURI .
-roomify:photoCaption a owl:DatatypeProperty ; rdfs:domain roomify:Photo ; rdfs:range xsd:string .
-roomify:dataSource a owl:DatatypeProperty ; rdfs:domain roomify:Hotel ; rdfs:range xsd:string .
+roomify:address a owl:DatatypeProperty ; rdfs:range xsd:string .
+roomify:description a owl:DatatypeProperty ; rdfs:range xsd:string .
+roomify:starRating a owl:DatatypeProperty ; rdfs:range xsd:integer .
+roomify:rating a owl:DatatypeProperty ; rdfs:range xsd:decimal .
+roomify:reviewCount a owl:DatatypeProperty ; rdfs:range xsd:integer .
+roomify:startPrice a owl:DatatypeProperty ; rdfs:range xsd:integer .
+roomify:pricePerNight a owl:DatatypeProperty ; rdfs:range xsd:integer .
+roomify:roomType a owl:DatatypeProperty ; rdfs:range xsd:string .
+roomify:maxGuests a owl:DatatypeProperty ; rdfs:range xsd:integer .
+roomify:latitude a owl:DatatypeProperty ; rdfs:subPropertyOf geo:lat .
+roomify:longitude a owl:DatatypeProperty ; rdfs:subPropertyOf geo:long .
+roomify:reviewText a owl:DatatypeProperty ; rdfs:range xsd:string .
+roomify:reviewerName a owl:DatatypeProperty ; rdfs:range xsd:string .
+roomify:reviewRating a owl:DatatypeProperty ; rdfs:range xsd:decimal .
+roomify:reviewDate a owl:DatatypeProperty ; rdfs:range xsd:date .
+roomify:photoUrl a owl:DatatypeProperty ; rdfs:range xsd:anyURI .
+roomify:photoCaption a owl:DatatypeProperty ; rdfs:range xsd:string .
+roomify:dataSource a owl:DatatypeProperty ; rdfs:range xsd:string .
 
 
-# --- STATIC RESOURCES ---
-roomify:city-medan a roomify:City, schema:City ; roomify:name "Medan" .
+roomify:city-medan a roomify:City, schema:City ;
+    roomify:name "Medan" .
+
 roomify:lm-maimun a roomify:Landmark, schema:TouristAttraction ;
     roomify:name "Istana Maimun" ;
     roomify:latitude 3.5793 ;
     roomify:longitude 98.682 ;
     roomify:landmarkInCity roomify:city-medan .
+
 roomify:lm-tjong a roomify:Landmark, schema:TouristAttraction ;
     roomify:name "Tjong A Fie Mansion" ;
     roomify:latitude 3.592 ;
     roomify:longitude 98.6755 ;
     roomify:landmarkInCity roomify:city-medan .
+
 roomify:lm-mashun a roomify:Landmark, schema:TouristAttraction ;
     roomify:name "Masjid Raya Al Mashun" ;
     roomify:latitude 3.5786 ;
     roomify:longitude 98.6812 ;
     roomify:landmarkInCity roomify:city-medan .
+
 roomify:lm-merdeka a roomify:Landmark, schema:TouristAttraction ;
     roomify:name "Lapangan Merdeka" ;
     roomify:latitude 3.5928 ;
     roomify:longitude 98.6748 ;
     roomify:landmarkInCity roomify:city-medan .
+
 roomify:lm-velangkanni a roomify:Landmark, schema:TouristAttraction ;
     roomify:name "Graha Maria Annai Velangkanni" ;
     roomify:latitude 3.5536 ;
     roomify:longitude 98.6229 ;
     roomify:landmarkInCity roomify:city-medan .
 
-# --- FACILITIES ---
-roomify:fac-ac a roomify:Facility ; roomify:name "AC" .
-roomify:fac-gym a roomify:Facility ; roomify:name "Gym" .
-roomify:fac-hot-tub a roomify:Facility ; roomify:name "Hot Tub" .
-roomify:fac-kolam-renang a roomify:Facility ; roomify:name "Kolam Renang" .
-roomify:fac-parkir a roomify:Facility ; roomify:name "Parkir" .
-roomify:fac-sarapan a roomify:Facility ; roomify:name "Sarapan" .
-roomify:fac-spa a roomify:Facility ; roomify:name "Spa" .
-roomify:fac-tv a roomify:Facility ; roomify:name "TV" .
-roomify:fac-wifi a roomify:Facility ; roomify:name "WiFi" .
+roomify:fac-ac a roomify:Facility ;
+    roomify:name "AC" .
 
-# --- HOTELS & INSTANCES ---
+roomify:fac-gym a roomify:Facility ;
+    roomify:name "Gym" .
+
+roomify:fac-hot-tub a roomify:Facility ;
+    roomify:name "Hot Tub" .
+
+roomify:fac-kolam-renang a roomify:Facility ;
+    roomify:name "Kolam Renang" .
+
+roomify:fac-parkir a roomify:Facility ;
+    roomify:name "Parkir" .
+
+roomify:fac-sarapan a roomify:Facility ;
+    roomify:name "Sarapan" .
+
+roomify:fac-spa a roomify:Facility ;
+    roomify:name "Spa" .
+
+roomify:fac-tv a roomify:Facility ;
+    roomify:name "TV" .
+
+roomify:fac-wifi a roomify:Facility ;
+    roomify:name "WiFi" .
 
 roomify:hotel-001 a roomify:Hotel, schema:Hotel ;
     roomify:name "d'primahotel Kualanamu Medan" ;
@@ -152,7 +165,7 @@ roomify:hotel-001-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.5 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di d'primahotel Kualanamu Medan. Lokasi strategis dekat Istana Maimun." ;
+    roomify:reviewText "Penginapan nyaman di d'primahotel Kualanamu Medan, dekat Istana Maimun." ;
     roomify:reviewAbout roomify:hotel-001 .
 
 roomify:hotel-001-photo1 a roomify:Photo, schema:ImageObject ;
@@ -216,7 +229,7 @@ roomify:hotel-002-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.7 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Adimulia Hotel Medan. Lokasi strategis dekat Tjong A Fie Mansion." ;
+    roomify:reviewText "Penginapan nyaman di Adimulia Hotel Medan, dekat Tjong A Fie Mansion." ;
     roomify:reviewAbout roomify:hotel-002 .
 
 roomify:hotel-002-photo1 a roomify:Photo, schema:ImageObject ;
@@ -279,7 +292,7 @@ roomify:hotel-003-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.5 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Grand Central Premier Hotel Medan. Lokasi strategis dekat Tjong A Fie Mansion." ;
+    roomify:reviewText "Penginapan nyaman di Grand Central Premier Hotel Medan, dekat Tjong A Fie Mansion." ;
     roomify:reviewAbout roomify:hotel-003 .
 
 roomify:hotel-003-photo1 a roomify:Photo, schema:ImageObject ;
@@ -337,7 +350,7 @@ roomify:hotel-004-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.6 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hotel O Kapten Muslim Residence. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Hotel O Kapten Muslim Residence, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-004 .
 
 roomify:hotel-004-photo1 a roomify:Photo, schema:ImageObject ;
@@ -400,7 +413,7 @@ roomify:hotel-005-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.1 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Grand Sakura Hotel. Lokasi strategis dekat Tjong A Fie Mansion." ;
+    roomify:reviewText "Penginapan nyaman di Grand Sakura Hotel, dekat Tjong A Fie Mansion." ;
     roomify:reviewAbout roomify:hotel-005 .
 
 roomify:hotel-005-photo1 a roomify:Photo, schema:ImageObject ;
@@ -463,7 +476,7 @@ roomify:hotel-006-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.7 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Grand City Hall Medan. Lokasi strategis dekat Tjong A Fie Mansion." ;
+    roomify:reviewText "Penginapan nyaman di Grand City Hall Medan, dekat Tjong A Fie Mansion." ;
     roomify:reviewAbout roomify:hotel-006 .
 
 roomify:hotel-006-photo1 a roomify:Photo, schema:ImageObject ;
@@ -527,7 +540,7 @@ roomify:hotel-007-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.6 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hotel Santika Premiere Dyandra - Medan. Lokasi strategis dekat Tjong A Fie Mansion." ;
+    roomify:reviewText "Penginapan nyaman di Hotel Santika Premiere Dyandra - Medan, dekat Tjong A Fie Mansion." ;
     roomify:reviewAbout roomify:hotel-007 .
 
 roomify:hotel-007-photo1 a roomify:Photo, schema:ImageObject ;
@@ -584,7 +597,7 @@ roomify:hotel-008-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.4 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di SUPER OYO 91120 D'ritz Homestay. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di SUPER OYO 91120 D'ritz Homestay, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-008 .
 
 roomify:hotel-008-photo1 a roomify:Photo, schema:ImageObject ;
@@ -644,7 +657,7 @@ roomify:hotel-009-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.0 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Griya Hotel. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Griya Hotel, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-009 .
 
 roomify:hotel-009-photo1 a roomify:Photo, schema:ImageObject ;
@@ -704,7 +717,7 @@ roomify:hotel-010-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.9 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Harper Wahid Hasyim Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Harper Wahid Hasyim Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-010 .
 
 roomify:hotel-010-photo1 a roomify:Photo, schema:ImageObject ;
@@ -764,7 +777,7 @@ roomify:hotel-011-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.5 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di QINARA INN. Lokasi strategis dekat Istana Maimun." ;
+    roomify:reviewText "Penginapan nyaman di QINARA INN, dekat Istana Maimun." ;
     roomify:reviewAbout roomify:hotel-011 .
 
 roomify:hotel-011-photo1 a roomify:Photo, schema:ImageObject ;
@@ -823,7 +836,7 @@ roomify:hotel-012-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.6 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz @ Sekip Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz @ Sekip Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-012 .
 
 roomify:hotel-012-photo1 a roomify:Photo, schema:ImageObject ;
@@ -883,7 +896,7 @@ roomify:hotel-013-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.5 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Swiss-Belinn Medan. Lokasi strategis dekat Istana Maimun." ;
+    roomify:reviewText "Penginapan nyaman di Swiss-Belinn Medan, dekat Istana Maimun." ;
     roomify:reviewAbout roomify:hotel-013 .
 
 roomify:hotel-013-photo1 a roomify:Photo, schema:ImageObject ;
@@ -947,7 +960,7 @@ roomify:hotel-014-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.6 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di JW Marriott Hotel Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di JW Marriott Hotel Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-014 .
 
 roomify:hotel-014-photo1 a roomify:Photo, schema:ImageObject ;
@@ -1008,7 +1021,7 @@ roomify:hotel-015-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.0 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di NEW DETONGA HOTEL. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di NEW DETONGA HOTEL, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-015 .
 
 roomify:hotel-015-photo1 a roomify:Photo, schema:ImageObject ;
@@ -1070,7 +1083,7 @@ roomify:hotel-016-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.7 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di AIHO Hotel Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di AIHO Hotel Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-016 .
 
 roomify:hotel-016-photo1 a roomify:Photo, schema:ImageObject ;
@@ -1130,7 +1143,7 @@ roomify:hotel-017-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.1 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Batik Hotel Medan. Lokasi strategis dekat Masjid Raya Al Mashun." ;
+    roomify:reviewText "Penginapan nyaman di Batik Hotel Medan, dekat Masjid Raya Al Mashun." ;
     roomify:reviewAbout roomify:hotel-017 .
 
 roomify:hotel-017-photo1 a roomify:Photo, schema:ImageObject ;
@@ -1194,7 +1207,7 @@ roomify:hotel-018-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.4 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hotel Grandhika Setiabudi Medan. Lokasi strategis dekat Graha Maria Annai Velangkanni." ;
+    roomify:reviewText "Penginapan nyaman di Hotel Grandhika Setiabudi Medan, dekat Graha Maria Annai Velangkanni." ;
     roomify:reviewAbout roomify:hotel-018 .
 
 roomify:hotel-018-photo1 a roomify:Photo, schema:ImageObject ;
@@ -1254,7 +1267,7 @@ roomify:hotel-019-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.8 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Swasana Hotel Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Swasana Hotel Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-019 .
 
 roomify:hotel-019-photo1 a roomify:Photo, schema:ImageObject ;
@@ -1314,7 +1327,7 @@ roomify:hotel-020-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Deli Hotel. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Deli Hotel, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-020 .
 
 roomify:hotel-020-photo1 a roomify:Photo, schema:ImageObject ;
@@ -1376,7 +1389,7 @@ roomify:hotel-021-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.2 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hotel Grand Antares. Lokasi strategis dekat Masjid Raya Al Mashun." ;
+    roomify:reviewText "Penginapan nyaman di Hotel Grand Antares, dekat Masjid Raya Al Mashun." ;
     roomify:reviewAbout roomify:hotel-021 .
 
 roomify:hotel-021-photo1 a roomify:Photo, schema:ImageObject ;
@@ -1436,7 +1449,7 @@ roomify:hotel-022-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.4 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Grand Central Hotel. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Grand Central Hotel, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-022 .
 
 roomify:hotel-022-photo1 a roomify:Photo, schema:ImageObject ;
@@ -1495,7 +1508,7 @@ roomify:hotel-023-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.5 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di CordelaInn Millennium Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di CordelaInn Millennium Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-023 .
 
 roomify:hotel-023-photo1 a roomify:Photo, schema:ImageObject ;
@@ -1555,7 +1568,7 @@ roomify:hotel-024-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.0 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Antares Hotel. Lokasi strategis dekat Istana Maimun." ;
+    roomify:reviewText "Penginapan nyaman di Antares Hotel, dekat Istana Maimun." ;
     roomify:reviewAbout roomify:hotel-024 .
 
 roomify:hotel-024-photo1 a roomify:Photo, schema:ImageObject ;
@@ -1617,7 +1630,7 @@ roomify:hotel-025-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.9 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di The Reiz Suites, ARTOTEL Curated - Medan. Lokasi strategis dekat Tjong A Fie Mansion." ;
+    roomify:reviewText "Penginapan nyaman di The Reiz Suites, ARTOTEL Curated - Medan, dekat Tjong A Fie Mansion." ;
     roomify:reviewAbout roomify:hotel-025 .
 
 roomify:hotel-025-photo1 a roomify:Photo, schema:ImageObject ;
@@ -1678,7 +1691,7 @@ roomify:hotel-026-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.7 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Swiss-Belinn Gajah Mada Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Swiss-Belinn Gajah Mada Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-026 .
 
 roomify:hotel-026-photo1 a roomify:Photo, schema:ImageObject ;
@@ -1738,7 +1751,7 @@ roomify:hotel-027-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.1 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Wisma Sederhana Medan Mitra RedDoorz. Lokasi strategis dekat Istana Maimun." ;
+    roomify:reviewText "Penginapan nyaman di Wisma Sederhana Medan Mitra RedDoorz, dekat Istana Maimun." ;
     roomify:reviewAbout roomify:hotel-027 .
 
 roomify:hotel-027-photo1 a roomify:Photo, schema:ImageObject ;
@@ -1798,7 +1811,7 @@ roomify:hotel-028-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.0 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hotel Huber Medan. Lokasi strategis dekat Graha Maria Annai Velangkanni." ;
+    roomify:reviewText "Penginapan nyaman di Hotel Huber Medan, dekat Graha Maria Annai Velangkanni." ;
     roomify:reviewAbout roomify:hotel-028 .
 
 roomify:hotel-028-photo1 a roomify:Photo, schema:ImageObject ;
@@ -1860,7 +1873,7 @@ roomify:hotel-029-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.2 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di E Hotel Medan. Lokasi strategis dekat Masjid Raya Al Mashun." ;
+    roomify:reviewText "Penginapan nyaman di E Hotel Medan, dekat Masjid Raya Al Mashun." ;
     roomify:reviewAbout roomify:hotel-029 .
 
 roomify:hotel-029-photo1 a roomify:Photo, schema:ImageObject ;
@@ -1920,7 +1933,7 @@ roomify:hotel-030-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di NIVIA HOTEL. Lokasi strategis dekat Istana Maimun." ;
+    roomify:reviewText "Penginapan nyaman di NIVIA HOTEL, dekat Istana Maimun." ;
     roomify:reviewAbout roomify:hotel-030 .
 
 roomify:hotel-030-photo1 a roomify:Photo, schema:ImageObject ;
@@ -1980,7 +1993,7 @@ roomify:hotel-031-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.1 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di M Hotel Medan. Lokasi strategis dekat Tjong A Fie Mansion." ;
+    roomify:reviewText "Penginapan nyaman di M Hotel Medan, dekat Tjong A Fie Mansion." ;
     roomify:reviewAbout roomify:hotel-031 .
 
 roomify:hotel-031-photo1 a roomify:Photo, schema:ImageObject ;
@@ -2043,7 +2056,7 @@ roomify:hotel-032-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hermes Palace Hotel Medan. Lokasi strategis dekat Istana Maimun." ;
+    roomify:reviewText "Penginapan nyaman di Hermes Palace Hotel Medan, dekat Istana Maimun." ;
     roomify:reviewAbout roomify:hotel-032 .
 
 roomify:hotel-032-photo1 a roomify:Photo, schema:ImageObject ;
@@ -2103,7 +2116,7 @@ roomify:hotel-033-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.5 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Bobotel Gatot Subroto Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Bobotel Gatot Subroto Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-033 .
 
 roomify:hotel-033-photo1 a roomify:Photo, schema:ImageObject ;
@@ -2163,7 +2176,7 @@ roomify:hotel-034-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.8 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hotel Menara Lexus. Lokasi strategis dekat Masjid Raya Al Mashun." ;
+    roomify:reviewText "Penginapan nyaman di Hotel Menara Lexus, dekat Masjid Raya Al Mashun." ;
     roomify:reviewAbout roomify:hotel-034 .
 
 roomify:hotel-034-photo1 a roomify:Photo, schema:ImageObject ;
@@ -2223,7 +2236,7 @@ roomify:hotel-035-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.2 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Cordela Hotel Medan. Lokasi strategis dekat Tjong A Fie Mansion." ;
+    roomify:reviewText "Penginapan nyaman di Cordela Hotel Medan, dekat Tjong A Fie Mansion." ;
     roomify:reviewAbout roomify:hotel-035 .
 
 roomify:hotel-035-photo1 a roomify:Photo, schema:ImageObject ;
@@ -2283,7 +2296,7 @@ roomify:hotel-036-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.8 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Odua Golden Mansyur Medan. Lokasi strategis dekat Masjid Raya Al Mashun." ;
+    roomify:reviewText "Penginapan nyaman di Odua Golden Mansyur Medan, dekat Masjid Raya Al Mashun." ;
     roomify:reviewAbout roomify:hotel-036 .
 
 roomify:hotel-036-photo1 a roomify:Photo, schema:ImageObject ;
@@ -2347,7 +2360,7 @@ roomify:hotel-037-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.4 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hotel Emerald Garden. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Hotel Emerald Garden, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-037 .
 
 roomify:hotel-037-photo1 a roomify:Photo, schema:ImageObject ;
@@ -2406,7 +2419,7 @@ roomify:hotel-038-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.7 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Residence Anugrah. Lokasi strategis dekat Masjid Raya Al Mashun." ;
+    roomify:reviewText "Penginapan nyaman di Residence Anugrah, dekat Masjid Raya Al Mashun." ;
     roomify:reviewAbout roomify:hotel-038 .
 
 roomify:hotel-038-photo1 a roomify:Photo, schema:ImageObject ;
@@ -2465,7 +2478,7 @@ roomify:hotel-039-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.0 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Putra Mulia Hotel. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Putra Mulia Hotel, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-039 .
 
 roomify:hotel-039-photo1 a roomify:Photo, schema:ImageObject ;
@@ -2525,7 +2538,7 @@ roomify:hotel-040-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.9 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Raz Hotel and Convention. Lokasi strategis dekat Graha Maria Annai Velangkanni." ;
+    roomify:reviewText "Penginapan nyaman di Raz Hotel and Convention, dekat Graha Maria Annai Velangkanni." ;
     roomify:reviewAbout roomify:hotel-040 .
 
 roomify:hotel-040-photo1 a roomify:Photo, schema:ImageObject ;
@@ -2584,7 +2597,7 @@ roomify:hotel-041-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di deSatu Hotel Medan. Lokasi strategis dekat Tjong A Fie Mansion." ;
+    roomify:reviewText "Penginapan nyaman di deSatu Hotel Medan, dekat Tjong A Fie Mansion." ;
     roomify:reviewAbout roomify:hotel-041 .
 
 roomify:hotel-041-photo1 a roomify:Photo, schema:ImageObject ;
@@ -2644,7 +2657,7 @@ roomify:hotel-042-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.4 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Alam Hotel by Cordela. Lokasi strategis dekat Istana Maimun." ;
+    roomify:reviewText "Penginapan nyaman di Alam Hotel by Cordela, dekat Istana Maimun." ;
     roomify:reviewAbout roomify:hotel-042 .
 
 roomify:hotel-042-photo1 a roomify:Photo, schema:ImageObject ;
@@ -2704,7 +2717,7 @@ roomify:hotel-043-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.4 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz Hostel @ Capsule Inn Medan. Lokasi strategis dekat Tjong A Fie Mansion." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz Hostel @ Capsule Inn Medan, dekat Tjong A Fie Mansion." ;
     roomify:reviewAbout roomify:hotel-043 .
 
 roomify:hotel-043-photo1 a roomify:Photo, schema:ImageObject ;
@@ -2762,7 +2775,7 @@ roomify:hotel-044-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.0 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di OYO 92881 Nany Ayahanda Syariah. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di OYO 92881 Nany Ayahanda Syariah, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-044 .
 
 roomify:hotel-044-photo1 a roomify:Photo, schema:ImageObject ;
@@ -2820,7 +2833,7 @@ roomify:hotel-045-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di MBS HOTEL MEDAN. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di MBS HOTEL MEDAN, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-045 .
 
 roomify:hotel-045-photo1 a roomify:Photo, schema:ImageObject ;
@@ -2882,7 +2895,7 @@ roomify:hotel-046-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.2 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Madani Hotel Medan. Lokasi strategis dekat Istana Maimun." ;
+    roomify:reviewText "Penginapan nyaman di Madani Hotel Medan, dekat Istana Maimun." ;
     roomify:reviewAbout roomify:hotel-046 .
 
 roomify:hotel-046-photo1 a roomify:Photo, schema:ImageObject ;
@@ -2942,7 +2955,7 @@ roomify:hotel-047-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.7 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Alpha Inn Hotel Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Alpha Inn Hotel Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-047 .
 
 roomify:hotel-047-photo1 a roomify:Photo, schema:ImageObject ;
@@ -3000,7 +3013,7 @@ roomify:hotel-048-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.5 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Cordex Hotel Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Cordex Hotel Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-048 .
 
 roomify:hotel-048-photo1 a roomify:Photo, schema:ImageObject ;
@@ -3057,7 +3070,7 @@ roomify:hotel-049-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.9 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Travelbiz hotel. Lokasi strategis dekat Istana Maimun." ;
+    roomify:reviewText "Penginapan nyaman di Travelbiz hotel, dekat Istana Maimun." ;
     roomify:reviewAbout roomify:hotel-049 .
 
 roomify:hotel-049-photo1 a roomify:Photo, schema:ImageObject ;
@@ -3116,7 +3129,7 @@ roomify:hotel-050-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.2 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Kama Hotel. Lokasi strategis dekat Istana Maimun." ;
+    roomify:reviewText "Penginapan nyaman di Kama Hotel, dekat Istana Maimun." ;
     roomify:reviewAbout roomify:hotel-050 .
 
 roomify:hotel-050-photo1 a roomify:Photo, schema:ImageObject ;
@@ -3176,7 +3189,7 @@ roomify:hotel-051-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di OYO 90245 TRIDASA. Lokasi strategis dekat Graha Maria Annai Velangkanni." ;
+    roomify:reviewText "Penginapan nyaman di OYO 90245 TRIDASA, dekat Graha Maria Annai Velangkanni." ;
     roomify:reviewAbout roomify:hotel-051 .
 
 roomify:hotel-051-photo1 a roomify:Photo, schema:ImageObject ;
@@ -3236,7 +3249,7 @@ roomify:hotel-052-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hotel 61 Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Hotel 61 Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-052 .
 
 roomify:hotel-052-photo1 a roomify:Photo, schema:ImageObject ;
@@ -3295,7 +3308,7 @@ roomify:hotel-053-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.7 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di HOTEL GRAND BANDARA. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di HOTEL GRAND BANDARA, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-053 .
 
 roomify:hotel-053-photo1 a roomify:Photo, schema:ImageObject ;
@@ -3353,7 +3366,7 @@ roomify:hotel-054-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.4 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Motel Danau toba international. Lokasi strategis dekat Tjong A Fie Mansion." ;
+    roomify:reviewText "Penginapan nyaman di Motel Danau toba international, dekat Tjong A Fie Mansion." ;
     roomify:reviewAbout roomify:hotel-054 .
 
 roomify:hotel-054-photo1 a roomify:Photo, schema:ImageObject ;
@@ -3411,7 +3424,7 @@ roomify:hotel-055-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.9 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Cherry pink hotel. Lokasi strategis dekat Masjid Raya Al Mashun." ;
+    roomify:reviewText "Penginapan nyaman di Cherry pink hotel, dekat Masjid Raya Al Mashun." ;
     roomify:reviewAbout roomify:hotel-055 .
 
 roomify:hotel-055-photo1 a roomify:Photo, schema:ImageObject ;
@@ -3469,7 +3482,7 @@ roomify:hotel-056-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.7 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hotel O Juma Ciger Hotel. Lokasi strategis dekat Graha Maria Annai Velangkanni." ;
+    roomify:reviewText "Penginapan nyaman di Hotel O Juma Ciger Hotel, dekat Graha Maria Annai Velangkanni." ;
     roomify:reviewAbout roomify:hotel-056 .
 
 roomify:hotel-056-photo1 a roomify:Photo, schema:ImageObject ;
@@ -3529,7 +3542,7 @@ roomify:hotel-057-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.0 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di New Gentala Hotel RedPartner. Lokasi strategis dekat Istana Maimun." ;
+    roomify:reviewText "Penginapan nyaman di New Gentala Hotel RedPartner, dekat Istana Maimun." ;
     roomify:reviewAbout roomify:hotel-057 .
 
 roomify:hotel-057-photo1 a roomify:Photo, schema:ImageObject ;
@@ -3593,7 +3606,7 @@ roomify:hotel-058-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.6 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Cambridge Hotel Medan. Lokasi strategis dekat Tjong A Fie Mansion." ;
+    roomify:reviewText "Penginapan nyaman di Cambridge Hotel Medan, dekat Tjong A Fie Mansion." ;
     roomify:reviewAbout roomify:hotel-058 .
 
 roomify:hotel-058-photo1 a roomify:Photo, schema:ImageObject ;
@@ -3652,7 +3665,7 @@ roomify:hotel-059-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Grand Impression Hotel. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Grand Impression Hotel, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-059 .
 
 roomify:hotel-059-photo1 a roomify:Photo, schema:ImageObject ;
@@ -3711,7 +3724,7 @@ roomify:hotel-060-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.7 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di favehotel S. Parman - Medan. Lokasi strategis dekat Masjid Raya Al Mashun." ;
+    roomify:reviewText "Penginapan nyaman di favehotel S. Parman - Medan, dekat Masjid Raya Al Mashun." ;
     roomify:reviewAbout roomify:hotel-060 .
 
 roomify:hotel-060-photo1 a roomify:Photo, schema:ImageObject ;
@@ -3770,7 +3783,7 @@ roomify:hotel-061-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.1 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di SANS FINEST HOTEL. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di SANS FINEST HOTEL, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-061 .
 
 roomify:hotel-061-photo1 a roomify:Photo, schema:ImageObject ;
@@ -3828,7 +3841,7 @@ roomify:hotel-062-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.8 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Staigo at SG Premium. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Staigo at SG Premium, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-062 .
 
 roomify:hotel-062-photo1 a roomify:Photo, schema:ImageObject ;
@@ -3886,7 +3899,7 @@ roomify:hotel-063-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.9 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Urbanview Hotel MD Residence. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Urbanview Hotel MD Residence, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-063 .
 
 roomify:hotel-063-photo1 a roomify:Photo, schema:ImageObject ;
@@ -3947,7 +3960,7 @@ roomify:hotel-064-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.4 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Karibia Boutique Hotel. Lokasi strategis dekat Tjong A Fie Mansion." ;
+    roomify:reviewText "Penginapan nyaman di Karibia Boutique Hotel, dekat Tjong A Fie Mansion." ;
     roomify:reviewAbout roomify:hotel-064 .
 
 roomify:hotel-064-photo1 a roomify:Photo, schema:ImageObject ;
@@ -4006,7 +4019,7 @@ roomify:hotel-065-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Kanasha Hotel Islami. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Kanasha Hotel Islami, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-065 .
 
 roomify:hotel-065-photo1 a roomify:Photo, schema:ImageObject ;
@@ -4064,7 +4077,7 @@ roomify:hotel-066-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 5.0 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Medan Baru Guest House. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Medan Baru Guest House, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-066 .
 
 roomify:hotel-066-photo1 a roomify:Photo, schema:ImageObject ;
@@ -4122,7 +4135,7 @@ roomify:hotel-067-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Adi Inn Homestay RedPartner. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Adi Inn Homestay RedPartner, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-067 .
 
 roomify:hotel-067-photo1 a roomify:Photo, schema:ImageObject ;
@@ -4180,7 +4193,7 @@ roomify:hotel-068-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.8 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Altair Hotel Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Altair Hotel Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-068 .
 
 roomify:hotel-068-photo1 a roomify:Photo, schema:ImageObject ;
@@ -4239,7 +4252,7 @@ roomify:hotel-069-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.5 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Sapadia Wisma Sei Silau. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Sapadia Wisma Sei Silau, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-069 .
 
 roomify:hotel-069-photo1 a roomify:Photo, schema:ImageObject ;
@@ -4297,7 +4310,7 @@ roomify:hotel-070-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.8 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz @ Jalan Krakatau Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz @ Jalan Krakatau Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-070 .
 
 roomify:hotel-070-photo1 a roomify:Photo, schema:ImageObject ;
@@ -4355,7 +4368,7 @@ roomify:hotel-071-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.6 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Wisma Syariah UINSU Medan RedPartner. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Wisma Syariah UINSU Medan RedPartner, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-071 .
 
 roomify:hotel-071-photo1 a roomify:Photo, schema:ImageObject ;
@@ -4413,7 +4426,7 @@ roomify:hotel-072-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.9 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di OYO 1274 Prime Inn. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di OYO 1274 Prime Inn, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-072 .
 
 roomify:hotel-072-photo1 a roomify:Photo, schema:ImageObject ;
@@ -4471,7 +4484,7 @@ roomify:hotel-073-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.5 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Lexus Guest House Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Lexus Guest House Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-073 .
 
 roomify:hotel-073-photo1 a roomify:Photo, schema:ImageObject ;
@@ -4530,7 +4543,7 @@ roomify:hotel-074-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.5 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Nonie's Huis Guest House. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Nonie's Huis Guest House, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-074 .
 
 roomify:hotel-074-photo1 a roomify:Photo, schema:ImageObject ;
@@ -4588,7 +4601,7 @@ roomify:hotel-075-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.1 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di d'primahotel Medan. Lokasi strategis dekat Istana Maimun." ;
+    roomify:reviewText "Penginapan nyaman di d'primahotel Medan, dekat Istana Maimun." ;
     roomify:reviewAbout roomify:hotel-075 .
 
 roomify:hotel-075-photo1 a roomify:Photo, schema:ImageObject ;
@@ -4646,7 +4659,7 @@ roomify:hotel-076-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.2 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz near Hermes Place Polonia Medan. Lokasi strategis dekat Graha Maria Annai Velangkanni." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz near Hermes Place Polonia Medan, dekat Graha Maria Annai Velangkanni." ;
     roomify:reviewAbout roomify:hotel-076 .
 
 roomify:hotel-076-photo1 a roomify:Photo, schema:ImageObject ;
@@ -4707,7 +4720,7 @@ roomify:hotel-077-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.6 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Travellers Suites Medan. Lokasi strategis dekat Tjong A Fie Mansion." ;
+    roomify:reviewText "Penginapan nyaman di Travellers Suites Medan, dekat Tjong A Fie Mansion." ;
     roomify:reviewAbout roomify:hotel-077 .
 
 roomify:hotel-077-photo1 a roomify:Photo, schema:ImageObject ;
@@ -4764,7 +4777,7 @@ roomify:hotel-078-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.1 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hotel Citi International Sun Yat Sen. Lokasi strategis dekat Istana Maimun." ;
+    roomify:reviewText "Penginapan nyaman di Hotel Citi International Sun Yat Sen, dekat Istana Maimun." ;
     roomify:reviewAbout roomify:hotel-078 .
 
 roomify:hotel-078-photo1 a roomify:Photo, schema:ImageObject ;
@@ -4822,7 +4835,7 @@ roomify:hotel-079-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz Premium near Centre Point Mall Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz Premium near Centre Point Mall Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-079 .
 
 roomify:hotel-079-photo1 a roomify:Photo, schema:ImageObject ;
@@ -4880,7 +4893,7 @@ roomify:hotel-080-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.6 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz @ Medan Johor. Lokasi strategis dekat Masjid Raya Al Mashun." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz @ Medan Johor, dekat Masjid Raya Al Mashun." ;
     roomify:reviewAbout roomify:hotel-080 .
 
 roomify:hotel-080-photo1 a roomify:Photo, schema:ImageObject ;
@@ -4938,7 +4951,7 @@ roomify:hotel-081-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.0 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Collection O Millenium Inn 2. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Collection O Millenium Inn 2, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-081 .
 
 roomify:hotel-081-photo1 a roomify:Photo, schema:ImageObject ;
@@ -4996,7 +5009,7 @@ roomify:hotel-082-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.7 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di OYO 92075 Sky Residence Mawar. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di OYO 92075 Sky Residence Mawar, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-082 .
 
 roomify:hotel-082-photo1 a roomify:Photo, schema:ImageObject ;
@@ -5054,7 +5067,7 @@ roomify:hotel-083-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 2.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hotel O near Ringroad City Walk XXI. Lokasi strategis dekat Graha Maria Annai Velangkanni." ;
+    roomify:reviewText "Penginapan nyaman di Hotel O near Ringroad City Walk XXI, dekat Graha Maria Annai Velangkanni." ;
     roomify:reviewAbout roomify:hotel-083 .
 
 roomify:hotel-083-photo1 a roomify:Photo, schema:ImageObject ;
@@ -5112,7 +5125,7 @@ roomify:hotel-084-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.8 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz @ Jalan Japaris Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz @ Jalan Japaris Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-084 .
 
 roomify:hotel-084-photo1 a roomify:Photo, schema:ImageObject ;
@@ -5170,7 +5183,7 @@ roomify:hotel-085-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.1 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Skyview Setiabudi Apartment. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Skyview Setiabudi Apartment, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-085 .
 
 roomify:hotel-085-photo1 a roomify:Photo, schema:ImageObject ;
@@ -5227,7 +5240,7 @@ roomify:hotel-086-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di EXPRESS O 91979 Penginapan Tondong Ta. Lokasi strategis dekat Tjong A Fie Mansion." ;
+    roomify:reviewText "Penginapan nyaman di EXPRESS O 91979 Penginapan Tondong Ta, dekat Tjong A Fie Mansion." ;
     roomify:reviewAbout roomify:hotel-086 .
 
 roomify:hotel-086-photo1 a roomify:Photo, schema:ImageObject ;
@@ -5286,7 +5299,7 @@ roomify:hotel-087-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.0 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Residence Puri Hotel Medan. Lokasi strategis dekat Istana Maimun." ;
+    roomify:reviewText "Penginapan nyaman di Residence Puri Hotel Medan, dekat Istana Maimun." ;
     roomify:reviewAbout roomify:hotel-087 .
 
 roomify:hotel-087-photo1 a roomify:Photo, schema:ImageObject ;
@@ -5345,7 +5358,7 @@ roomify:hotel-088-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.8 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hotel Cahaya. Lokasi strategis dekat Istana Maimun." ;
+    roomify:reviewText "Penginapan nyaman di Hotel Cahaya, dekat Istana Maimun." ;
     roomify:reviewAbout roomify:hotel-088 .
 
 roomify:hotel-088-photo1 a roomify:Photo, schema:ImageObject ;
@@ -5402,7 +5415,7 @@ roomify:hotel-089-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.1 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hotel Grand Lubuk Raya. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Hotel Grand Lubuk Raya, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-089 .
 
 roomify:hotel-089-photo1 a roomify:Photo, schema:ImageObject ;
@@ -5460,7 +5473,7 @@ roomify:hotel-090-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Kamani Homestay Syariah. Lokasi strategis dekat Graha Maria Annai Velangkanni." ;
+    roomify:reviewText "Penginapan nyaman di Kamani Homestay Syariah, dekat Graha Maria Annai Velangkanni." ;
     roomify:reviewAbout roomify:hotel-090 .
 
 roomify:hotel-090-photo1 a roomify:Photo, schema:ImageObject ;
@@ -5518,7 +5531,7 @@ roomify:hotel-091-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.2 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Emerald Residence. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Emerald Residence, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-091 .
 
 roomify:hotel-091-photo1 a roomify:Photo, schema:ImageObject ;
@@ -5576,7 +5589,7 @@ roomify:hotel-092-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.6 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz near Manhattan Times Square Medan 2. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz near Manhattan Times Square Medan 2, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-092 .
 
 roomify:hotel-092-photo1 a roomify:Photo, schema:ImageObject ;
@@ -5634,7 +5647,7 @@ roomify:hotel-093-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.7 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Saudara Risidence. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Saudara Risidence, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-093 .
 
 roomify:hotel-093-photo1 a roomify:Photo, schema:ImageObject ;
@@ -5692,7 +5705,7 @@ roomify:hotel-094-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.2 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz @ Seindo Hotel Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz @ Seindo Hotel Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-094 .
 
 roomify:hotel-094-photo1 a roomify:Photo, schema:ImageObject ;
@@ -5750,7 +5763,7 @@ roomify:hotel-095-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.5 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz @ Medan Johor 2. Lokasi strategis dekat Masjid Raya Al Mashun." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz @ Medan Johor 2, dekat Masjid Raya Al Mashun." ;
     roomify:reviewAbout roomify:hotel-095 .
 
 roomify:hotel-095-photo1 a roomify:Photo, schema:ImageObject ;
@@ -5808,7 +5821,7 @@ roomify:hotel-096-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.7 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di John’s Pardede Residence. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di John’s Pardede Residence, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-096 .
 
 roomify:hotel-096-photo1 a roomify:Photo, schema:ImageObject ;
@@ -5866,7 +5879,7 @@ roomify:hotel-097-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.6 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz near UIN Sumatera Utara. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz near UIN Sumatera Utara, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-097 .
 
 roomify:hotel-097-photo1 a roomify:Photo, schema:ImageObject ;
@@ -5924,7 +5937,7 @@ roomify:hotel-098-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.9 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz @ Teratai Homestay Medan Amplas. Lokasi strategis dekat Masjid Raya Al Mashun." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz @ Teratai Homestay Medan Amplas, dekat Masjid Raya Al Mashun." ;
     roomify:reviewAbout roomify:hotel-098 .
 
 roomify:hotel-098-photo1 a roomify:Photo, schema:ImageObject ;
@@ -5981,7 +5994,7 @@ roomify:hotel-099-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.1 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz near RS USU Medan 3. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz near RS USU Medan 3, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-099 .
 
 roomify:hotel-099-photo1 a roomify:Photo, schema:ImageObject ;
@@ -6040,7 +6053,7 @@ roomify:hotel-100-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.7 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz @ Sentosa Jaya Helvetia. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz @ Sentosa Jaya Helvetia, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-100 .
 
 roomify:hotel-100-photo1 a roomify:Photo, schema:ImageObject ;
@@ -6097,7 +6110,7 @@ roomify:hotel-101-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.2 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Capital O 1585 Ring Road Residence. Lokasi strategis dekat Graha Maria Annai Velangkanni." ;
+    roomify:reviewText "Penginapan nyaman di Capital O 1585 Ring Road Residence, dekat Graha Maria Annai Velangkanni." ;
     roomify:reviewAbout roomify:hotel-101 .
 
 roomify:hotel-101-photo1 a roomify:Photo, schema:ImageObject ;
@@ -6155,7 +6168,7 @@ roomify:hotel-102-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz near UISU teladan Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz near UISU teladan Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-102 .
 
 roomify:hotel-102-photo1 a roomify:Photo, schema:ImageObject ;
@@ -6211,7 +6224,7 @@ roomify:hotel-103-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.0 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di ACIRASA Hotel Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di ACIRASA Hotel Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-103 .
 
 roomify:hotel-103-photo1 a roomify:Photo, schema:ImageObject ;
@@ -6269,7 +6282,7 @@ roomify:hotel-104-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.0 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Deli Homestay Medan City. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Deli Homestay Medan City, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-104 .
 
 roomify:hotel-104-photo1 a roomify:Photo, schema:ImageObject ;
@@ -6327,7 +6340,7 @@ roomify:hotel-105-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.9 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hotel Nidia Nugraha. Lokasi strategis dekat Istana Maimun." ;
+    roomify:reviewText "Penginapan nyaman di Hotel Nidia Nugraha, dekat Istana Maimun." ;
     roomify:reviewAbout roomify:hotel-105 .
 
 roomify:hotel-105-photo1 a roomify:Photo, schema:ImageObject ;
@@ -6385,7 +6398,7 @@ roomify:hotel-106-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.2 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Banana Homestay Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Banana Homestay Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-106 .
 
 roomify:hotel-106-photo1 a roomify:Photo, schema:ImageObject ;
@@ -6443,7 +6456,7 @@ roomify:hotel-107-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 5.0 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Rose House RedPartner. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Rose House RedPartner, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-107 .
 
 roomify:hotel-107-photo1 a roomify:Photo, schema:ImageObject ;
@@ -6501,7 +6514,7 @@ roomify:hotel-108-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.0 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Wisma Hari Kota. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Wisma Hari Kota, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-108 .
 
 roomify:hotel-108-photo1 a roomify:Photo, schema:ImageObject ;
@@ -6559,7 +6572,7 @@ roomify:hotel-109-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.5 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Nisura Homestay. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Nisura Homestay, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-109 .
 
 roomify:hotel-109-photo1 a roomify:Photo, schema:ImageObject ;
@@ -6617,7 +6630,7 @@ roomify:hotel-110-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 5.0 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz @ Jamin Ginting Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz @ Jamin Ginting Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-110 .
 
 roomify:hotel-110-photo1 a roomify:Photo, schema:ImageObject ;
@@ -6675,7 +6688,7 @@ roomify:hotel-111-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 2.0 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Palem Mas Garden RedPartner. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Palem Mas Garden RedPartner, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-111 .
 
 roomify:hotel-111-photo1 a roomify:Photo, schema:ImageObject ;
@@ -6734,7 +6747,7 @@ roomify:hotel-112-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.1 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hotel Syariah Grand Jamee. Lokasi strategis dekat Graha Maria Annai Velangkanni." ;
+    roomify:reviewText "Penginapan nyaman di Hotel Syariah Grand Jamee, dekat Graha Maria Annai Velangkanni." ;
     roomify:reviewAbout roomify:hotel-112 .
 
 roomify:hotel-112-photo1 a roomify:Photo, schema:ImageObject ;
@@ -6792,7 +6805,7 @@ roomify:hotel-113-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.1 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di OYO 1811 Citra Anggrek. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di OYO 1811 Citra Anggrek, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-113 .
 
 roomify:hotel-113-photo1 a roomify:Photo, schema:ImageObject ;
@@ -6850,7 +6863,7 @@ roomify:hotel-114-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.5 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Cendana Homestay Syari'ah Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Cendana Homestay Syari'ah Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-114 .
 
 roomify:hotel-114-photo1 a roomify:Photo, schema:ImageObject ;
@@ -6907,7 +6920,7 @@ roomify:hotel-115-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.5 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Airy Medan Sunggal Sepakat 19. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Airy Medan Sunggal Sepakat 19, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-115 .
 
 roomify:hotel-115-photo1 a roomify:Photo, schema:ImageObject ;
@@ -6965,7 +6978,7 @@ roomify:hotel-116-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.9 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz Hotel JIMART @ Komplek MMTC. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz Hotel JIMART @ Komplek MMTC, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-116 .
 
 roomify:hotel-116-photo1 a roomify:Photo, schema:ImageObject ;
@@ -7023,7 +7036,7 @@ roomify:hotel-117-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.4 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz Syariah near Stadion Teladan Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz Syariah near Stadion Teladan Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-117 .
 
 roomify:hotel-117-photo1 a roomify:Photo, schema:ImageObject ;
@@ -7082,7 +7095,7 @@ roomify:hotel-118-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.9 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz near Waterpark Citra Garden Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz near Waterpark Citra Garden Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-118 .
 
 roomify:hotel-118-photo1 a roomify:Photo, schema:ImageObject ;
@@ -7140,7 +7153,7 @@ roomify:hotel-119-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz near RS Setiabudi Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz near RS Setiabudi Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-119 .
 
 roomify:hotel-119-photo1 a roomify:Photo, schema:ImageObject ;
@@ -7198,7 +7211,7 @@ roomify:hotel-120-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.1 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hotel Binaka Medan. Lokasi strategis dekat Masjid Raya Al Mashun." ;
+    roomify:reviewText "Penginapan nyaman di Hotel Binaka Medan, dekat Masjid Raya Al Mashun." ;
     roomify:reviewAbout roomify:hotel-120 .
 
 roomify:hotel-120-photo1 a roomify:Photo, schema:ImageObject ;
@@ -7256,7 +7269,7 @@ roomify:hotel-121-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.4 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Capital O 90447 Kardopa Hotel Megapark. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Capital O 90447 Kardopa Hotel Megapark, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-121 .
 
 roomify:hotel-121-photo1 a roomify:Photo, schema:ImageObject ;
@@ -7314,7 +7327,7 @@ roomify:hotel-122-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.1 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Dancenter Clove Nari Homestay. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Dancenter Clove Nari Homestay, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-122 .
 
 roomify:hotel-122-photo1 a roomify:Photo, schema:ImageObject ;
@@ -7372,7 +7385,7 @@ roomify:hotel-123-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 2.2 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz @ Theodore Homestay Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz @ Theodore Homestay Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-123 .
 
 roomify:hotel-123-photo1 a roomify:Photo, schema:ImageObject ;
@@ -7430,7 +7443,7 @@ roomify:hotel-124-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz @ Jotel Guest House. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz @ Jotel Guest House, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-124 .
 
 roomify:hotel-124-photo1 a roomify:Photo, schema:ImageObject ;
@@ -7488,7 +7501,7 @@ roomify:hotel-125-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.2 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RESIDENCE MOJOPAHIT. Lokasi strategis dekat Masjid Raya Al Mashun." ;
+    roomify:reviewText "Penginapan nyaman di RESIDENCE MOJOPAHIT, dekat Masjid Raya Al Mashun." ;
     roomify:reviewAbout roomify:hotel-125 .
 
 roomify:hotel-125-photo1 a roomify:Photo, schema:ImageObject ;
@@ -7546,7 +7559,7 @@ roomify:hotel-126-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.4 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Urbanview Os Residence Medan By RedDoorz. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Urbanview Os Residence Medan By RedDoorz, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-126 .
 
 roomify:hotel-126-photo1 a roomify:Photo, schema:ImageObject ;
@@ -7604,7 +7617,7 @@ roomify:hotel-127-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.2 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz @ Jalan Wahidin Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz @ Jalan Wahidin Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-127 .
 
 roomify:hotel-127-photo1 a roomify:Photo, schema:ImageObject ;
@@ -7662,7 +7675,7 @@ roomify:hotel-128-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.2 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Aceh House Hotel Setia Budi. Lokasi strategis dekat Graha Maria Annai Velangkanni." ;
+    roomify:reviewText "Penginapan nyaman di Aceh House Hotel Setia Budi, dekat Graha Maria Annai Velangkanni." ;
     roomify:reviewAbout roomify:hotel-128 .
 
 roomify:hotel-128-photo1 a roomify:Photo, schema:ImageObject ;
@@ -7720,7 +7733,7 @@ roomify:hotel-129-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.9 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di DELTO GUEST HOUSE. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di DELTO GUEST HOUSE, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-129 .
 
 roomify:hotel-129-photo1 a roomify:Photo, schema:ImageObject ;
@@ -7778,7 +7791,7 @@ roomify:hotel-130-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.7 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz @ Golden Cempaka Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz @ Golden Cempaka Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-130 .
 
 roomify:hotel-130-photo1 a roomify:Photo, schema:ImageObject ;
@@ -7835,7 +7848,7 @@ roomify:hotel-131-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.9 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz @ CBD Polonia Medan.. Lokasi strategis dekat Graha Maria Annai Velangkanni." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz @ CBD Polonia Medan., dekat Graha Maria Annai Velangkanni." ;
     roomify:reviewAbout roomify:hotel-131 .
 
 roomify:hotel-131-photo1 a roomify:Photo, schema:ImageObject ;
@@ -7893,7 +7906,7 @@ roomify:hotel-132-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.7 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz @ Jalan Brigjend Katamso Medan 2. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz @ Jalan Brigjend Katamso Medan 2, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-132 .
 
 roomify:hotel-132-photo1 a roomify:Photo, schema:ImageObject ;
@@ -7951,7 +7964,7 @@ roomify:hotel-133-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.1 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di DnD Cafe and Guest House. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di DnD Cafe and Guest House, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-133 .
 
 roomify:hotel-133-photo1 a roomify:Photo, schema:ImageObject ;
@@ -8010,7 +8023,7 @@ roomify:hotel-134-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.0 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hotel Halim Perdana. Lokasi strategis dekat Istana Maimun." ;
+    roomify:reviewText "Penginapan nyaman di Hotel Halim Perdana, dekat Istana Maimun." ;
     roomify:reviewAbout roomify:hotel-134 .
 
 roomify:hotel-134-photo1 a roomify:Photo, schema:ImageObject ;
@@ -8067,7 +8080,7 @@ roomify:hotel-135-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.6 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Pondok Wisata Istana XI. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Pondok Wisata Istana XI, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-135 .
 
 roomify:hotel-135-photo1 a roomify:Photo, schema:ImageObject ;
@@ -8125,7 +8138,7 @@ roomify:hotel-136-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.8 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Green Village Kost Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Green Village Kost Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-136 .
 
 roomify:hotel-136-photo1 a roomify:Photo, schema:ImageObject ;
@@ -8183,7 +8196,7 @@ roomify:hotel-137-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.2 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz @ Jalan HM Yamin Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz @ Jalan HM Yamin Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-137 .
 
 roomify:hotel-137-photo1 a roomify:Photo, schema:ImageObject ;
@@ -8241,7 +8254,7 @@ roomify:hotel-138-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 2.5 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Batik Setia Budi. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Batik Setia Budi, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-138 .
 
 roomify:hotel-138-photo1 a roomify:Photo, schema:ImageObject ;
@@ -8298,7 +8311,7 @@ roomify:hotel-139-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.6 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz near RS Royal Prima Medan 2. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz near RS Royal Prima Medan 2, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-139 .
 
 roomify:hotel-139-photo1 a roomify:Photo, schema:ImageObject ;
@@ -8356,7 +8369,7 @@ roomify:hotel-140-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.6 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Penginapan roemah_54. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Penginapan roemah_54, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-140 .
 
 roomify:hotel-140-photo1 a roomify:Photo, schema:ImageObject ;
@@ -8414,7 +8427,7 @@ roomify:hotel-141-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.4 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Kost Teratai. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Kost Teratai, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-141 .
 
 roomify:hotel-141-photo1 a roomify:Photo, schema:ImageObject ;
@@ -8472,7 +8485,7 @@ roomify:hotel-142-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.2 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di GINTSUKA Hostel. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di GINTSUKA Hostel, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-142 .
 
 roomify:hotel-142-photo1 a roomify:Photo, schema:ImageObject ;
@@ -8530,7 +8543,7 @@ roomify:hotel-143-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.8 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Barat Residence. Lokasi strategis dekat Graha Maria Annai Velangkanni." ;
+    roomify:reviewText "Penginapan nyaman di Barat Residence, dekat Graha Maria Annai Velangkanni." ;
     roomify:reviewAbout roomify:hotel-143 .
 
 roomify:hotel-143-photo1 a roomify:Photo, schema:ImageObject ;
@@ -8588,7 +8601,7 @@ roomify:hotel-144-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.8 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz near Grand Palladium. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz near Grand Palladium, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-144 .
 
 roomify:hotel-144-photo1 a roomify:Photo, schema:ImageObject ;
@@ -8646,7 +8659,7 @@ roomify:hotel-145-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di OYO 849 Palem Mas Garden. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di OYO 849 Palem Mas Garden, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-145 .
 
 roomify:hotel-145-photo1 a roomify:Photo, schema:ImageObject ;
@@ -8703,7 +8716,7 @@ roomify:hotel-146-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.8 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz near Medan Amplas. Lokasi strategis dekat Masjid Raya Al Mashun." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz near Medan Amplas, dekat Masjid Raya Al Mashun." ;
     roomify:reviewAbout roomify:hotel-146 .
 
 roomify:hotel-146-photo1 a roomify:Photo, schema:ImageObject ;
@@ -8762,7 +8775,7 @@ roomify:hotel-147-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.7 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Kenanga City Hotel. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Kenanga City Hotel, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-147 .
 
 roomify:hotel-147-photo1 a roomify:Photo, schema:ImageObject ;
@@ -8820,7 +8833,7 @@ roomify:hotel-148-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.8 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di GUEST HOUSE RESTU IBU. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di GUEST HOUSE RESTU IBU, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-148 .
 
 roomify:hotel-148-photo1 a roomify:Photo, schema:ImageObject ;
@@ -8878,7 +8891,7 @@ roomify:hotel-149-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.5 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di 511 Ideal Stay. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di 511 Ideal Stay, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-149 .
 
 roomify:hotel-149-photo1 a roomify:Photo, schema:ImageObject ;
@@ -8936,7 +8949,7 @@ roomify:hotel-150-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 2.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di OYO 94712 Surau Guest House. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di OYO 94712 Surau Guest House, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-150 .
 
 roomify:hotel-150-photo1 a roomify:Photo, schema:ImageObject ;
@@ -8994,7 +9007,7 @@ roomify:hotel-151-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.6 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Prime Inn near Jalan Sekip Mitra RedDoorz. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Prime Inn near Jalan Sekip Mitra RedDoorz, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-151 .
 
 roomify:hotel-151-photo1 a roomify:Photo, schema:ImageObject ;
@@ -9052,7 +9065,7 @@ roomify:hotel-152-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.0 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hotel Mutiara Hawaii. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Hotel Mutiara Hawaii, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-152 .
 
 roomify:hotel-152-photo1 a roomify:Photo, schema:ImageObject ;
@@ -9115,7 +9128,7 @@ roomify:hotel-153-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hotel Danau Toba International. Lokasi strategis dekat Masjid Raya Al Mashun." ;
+    roomify:reviewText "Penginapan nyaman di Hotel Danau Toba International, dekat Masjid Raya Al Mashun." ;
     roomify:reviewAbout roomify:hotel-153 .
 
 roomify:hotel-153-photo1 a roomify:Photo, schema:ImageObject ;
@@ -9176,7 +9189,7 @@ roomify:hotel-154-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.6 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Grand Mercure Maha Cipta Medan Angkasa. Lokasi strategis dekat Tjong A Fie Mansion." ;
+    roomify:reviewText "Penginapan nyaman di Grand Mercure Maha Cipta Medan Angkasa, dekat Tjong A Fie Mansion." ;
     roomify:reviewAbout roomify:hotel-154 .
 
 roomify:hotel-154-photo1 a roomify:Photo, schema:ImageObject ;
@@ -9235,7 +9248,7 @@ roomify:hotel-155-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.5 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Four Points by Sheraton Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Four Points by Sheraton Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-155 .
 
 roomify:hotel-155-photo1 a roomify:Photo, schema:ImageObject ;
@@ -9294,7 +9307,7 @@ roomify:hotel-156-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.9 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hotel Grand Darussalam Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Hotel Grand Darussalam Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-156 .
 
 roomify:hotel-156-photo1 a roomify:Photo, schema:ImageObject ;
@@ -9350,7 +9363,7 @@ roomify:hotel-157-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.0 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hotel 0 Graha Aisyah. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Hotel 0 Graha Aisyah, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-157 .
 
 roomify:hotel-157-photo1 a roomify:Photo, schema:ImageObject ;
@@ -9408,7 +9421,7 @@ roomify:hotel-158-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.8 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Tobali Guest House. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Tobali Guest House, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-158 .
 
 roomify:hotel-158-photo1 a roomify:Photo, schema:ImageObject ;
@@ -9467,7 +9480,7 @@ roomify:hotel-159-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.6 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Pia Hotel Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Pia Hotel Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-159 .
 
 roomify:hotel-159-photo1 a roomify:Photo, schema:ImageObject ;
@@ -9525,7 +9538,7 @@ roomify:hotel-160-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.8 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz @ Wika Wiki Homestay. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz @ Wika Wiki Homestay, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-160 .
 
 roomify:hotel-160-photo1 a roomify:Photo, schema:ImageObject ;
@@ -9584,7 +9597,7 @@ roomify:hotel-161-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.1 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Grand Kanaya Hotel. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Grand Kanaya Hotel, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-161 .
 
 roomify:hotel-161-photo1 a roomify:Photo, schema:ImageObject ;
@@ -9643,7 +9656,7 @@ roomify:hotel-162-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.2 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Sapadia Guest House HM Joni. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Sapadia Guest House HM Joni, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-162 .
 
 roomify:hotel-162-photo1 a roomify:Photo, schema:ImageObject ;
@@ -9701,7 +9714,7 @@ roomify:hotel-163-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di OYO 727 Merlion Hotel. Lokasi strategis dekat Graha Maria Annai Velangkanni." ;
+    roomify:reviewText "Penginapan nyaman di OYO 727 Merlion Hotel, dekat Graha Maria Annai Velangkanni." ;
     roomify:reviewAbout roomify:hotel-163 .
 
 roomify:hotel-163-photo1 a roomify:Photo, schema:ImageObject ;
@@ -9759,7 +9772,7 @@ roomify:hotel-164-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.4 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di HOTEL MUTIARA HIJAU SUITES. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di HOTEL MUTIARA HIJAU SUITES, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-164 .
 
 roomify:hotel-164-photo1 a roomify:Photo, schema:ImageObject ;
@@ -9817,7 +9830,7 @@ roomify:hotel-165-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.9 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hotel Bumi Malaya RedPartner. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Hotel Bumi Malaya RedPartner, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-165 .
 
 roomify:hotel-165-photo1 a roomify:Photo, schema:ImageObject ;
@@ -9875,7 +9888,7 @@ roomify:hotel-166-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.8 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Urbanview Hotel Bilal Medan by RedDoorz. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Urbanview Hotel Bilal Medan by RedDoorz, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-166 .
 
 roomify:hotel-166-photo1 a roomify:Photo, schema:ImageObject ;
@@ -9933,7 +9946,7 @@ roomify:hotel-167-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.0 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Arabia Style Hotel Sriwijaya. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Arabia Style Hotel Sriwijaya, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-167 .
 
 roomify:hotel-167-photo1 a roomify:Photo, schema:ImageObject ;
@@ -9990,7 +10003,7 @@ roomify:hotel-168-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.4 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di King's Palace Medan RedPartner. Lokasi strategis dekat Tjong A Fie Mansion." ;
+    roomify:reviewText "Penginapan nyaman di King's Palace Medan RedPartner, dekat Tjong A Fie Mansion." ;
     roomify:reviewAbout roomify:hotel-168 .
 
 roomify:hotel-168-photo1 a roomify:Photo, schema:ImageObject ;
@@ -10048,7 +10061,7 @@ roomify:hotel-169-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.0 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Tokidoki x Amir Hamzah Residence 123. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Tokidoki x Amir Hamzah Residence 123, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-169 .
 
 roomify:hotel-169-photo1 a roomify:Photo, schema:ImageObject ;
@@ -10106,7 +10119,7 @@ roomify:hotel-170-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.1 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hotel O near Ring Road City Walks. Lokasi strategis dekat Graha Maria Annai Velangkanni." ;
+    roomify:reviewText "Penginapan nyaman di Hotel O near Ring Road City Walks, dekat Graha Maria Annai Velangkanni." ;
     roomify:reviewAbout roomify:hotel-170 .
 
 roomify:hotel-170-photo1 a roomify:Photo, schema:ImageObject ;
@@ -10165,7 +10178,7 @@ roomify:hotel-171-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.9 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz Premium @ Setiabudi Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz Premium @ Setiabudi Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-171 .
 
 roomify:hotel-171-photo1 a roomify:Photo, schema:ImageObject ;
@@ -10224,7 +10237,7 @@ roomify:hotel-172-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Premium Inn Cemara Asri. Lokasi strategis dekat Tjong A Fie Mansion." ;
+    roomify:reviewText "Penginapan nyaman di Premium Inn Cemara Asri, dekat Tjong A Fie Mansion." ;
     roomify:reviewAbout roomify:hotel-172 .
 
 roomify:hotel-172-photo1 a roomify:Photo, schema:ImageObject ;
@@ -10282,7 +10295,7 @@ roomify:hotel-173-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.6 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Sapadia Guest House Sindoro. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Sapadia Guest House Sindoro, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-173 .
 
 roomify:hotel-173-photo1 a roomify:Photo, schema:ImageObject ;
@@ -10341,7 +10354,7 @@ roomify:hotel-174-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.5 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Aresidencia - Sei Padang. Lokasi strategis dekat Graha Maria Annai Velangkanni." ;
+    roomify:reviewText "Penginapan nyaman di Aresidencia - Sei Padang, dekat Graha Maria Annai Velangkanni." ;
     roomify:reviewAbout roomify:hotel-174 .
 
 roomify:hotel-174-photo1 a roomify:Photo, schema:ImageObject ;
@@ -10400,7 +10413,7 @@ roomify:hotel-175-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.8 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Golden Eleven Hotel Medan. Lokasi strategis dekat Graha Maria Annai Velangkanni." ;
+    roomify:reviewText "Penginapan nyaman di Golden Eleven Hotel Medan, dekat Graha Maria Annai Velangkanni." ;
     roomify:reviewAbout roomify:hotel-175 .
 
 roomify:hotel-175-photo1 a roomify:Photo, schema:ImageObject ;
@@ -10458,7 +10471,7 @@ roomify:hotel-176-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.4 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di The Castle Medan - Villa. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di The Castle Medan - Villa, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-176 .
 
 roomify:hotel-176-photo1 a roomify:Photo, schema:ImageObject ;
@@ -10516,7 +10529,7 @@ roomify:hotel-177-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.8 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di SUPER OYO 283 Helvetia Residence. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di SUPER OYO 283 Helvetia Residence, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-177 .
 
 roomify:hotel-177-photo1 a roomify:Photo, schema:ImageObject ;
@@ -10574,7 +10587,7 @@ roomify:hotel-178-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.1 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Sapadia Clubhouse Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Sapadia Clubhouse Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-178 .
 
 roomify:hotel-178-photo1 a roomify:Photo, schema:ImageObject ;
@@ -10632,7 +10645,7 @@ roomify:hotel-179-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.7 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Strategic Apartment. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Strategic Apartment, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-179 .
 
 roomify:hotel-179-photo1 a roomify:Photo, schema:ImageObject ;
@@ -10691,7 +10704,7 @@ roomify:hotel-180-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.4 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Royal Suite Condotel. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Royal Suite Condotel, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-180 .
 
 roomify:hotel-180-photo1 a roomify:Photo, schema:ImageObject ;
@@ -10749,7 +10762,7 @@ roomify:hotel-181-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.1 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Vandolia Guest House Medan RedPartner. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Vandolia Guest House Medan RedPartner, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-181 .
 
 roomify:hotel-181-photo1 a roomify:Photo, schema:ImageObject ;
@@ -10807,7 +10820,7 @@ roomify:hotel-182-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.8 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz near Gajah Mada Park Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz near Gajah Mada Park Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-182 .
 
 roomify:hotel-182-photo1 a roomify:Photo, schema:ImageObject ;
@@ -10866,7 +10879,7 @@ roomify:hotel-183-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.9 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hotel Islami Aceh House. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Hotel Islami Aceh House, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-183 .
 
 roomify:hotel-183-photo1 a roomify:Photo, schema:ImageObject ;
@@ -10924,7 +10937,7 @@ roomify:hotel-184-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.4 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di RedDoorz @ Vania Residence Medan. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz @ Vania Residence Medan, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-184 .
 
 roomify:hotel-184-photo1 a roomify:Photo, schema:ImageObject ;
@@ -10982,7 +10995,7 @@ roomify:hotel-185-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 2.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Hotel O Medan Timur Near Rsu Madani. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Hotel O Medan Timur Near Rsu Madani, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-185 .
 
 roomify:hotel-185-photo1 a roomify:Photo, schema:ImageObject ;
@@ -11041,7 +11054,7 @@ roomify:hotel-186-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Sapadia Guest House Syailendra. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Sapadia Guest House Syailendra, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-186 .
 
 roomify:hotel-186-photo1 a roomify:Photo, schema:ImageObject ;
@@ -11099,7 +11112,7 @@ roomify:hotel-187-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Pengalaman menginap yang menyenangkan di Graha Aisyah. Lokasi strategis dekat Lapangan Merdeka." ;
+    roomify:reviewText "Penginapan nyaman di Graha Aisyah, dekat Lapangan Merdeka." ;
     roomify:reviewAbout roomify:hotel-187 .
 
 roomify:hotel-187-photo1 a roomify:Photo, schema:ImageObject ;

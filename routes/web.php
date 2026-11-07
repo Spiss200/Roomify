@@ -30,3 +30,32 @@ use App\Http\Controllers\SearchController;
 
 Route::get('/search', [SearchController::class, 'index'])->name('search');
 Route::get('/api/suggest', [SearchController::class, 'suggest']);
+
+Route::get('/tes-wikidata', function (WikidataClient $w) {
+    $data = $w->landmarksNear(3.5952, 98.6722, 3);
+
+    if (count($data) > 0) {
+        return response()->json($data);
+    }
+
+    // kalau masih kosong, tunjukkan error asli dari Wikidata
+    $res = $w->debug(3.5952, 98.6722, 3);
+    return response()->json([
+        'status' => $res->status(),
+        'error'  => substr($res->body(), 0, 400),
+    ]);
+});
+
+Route::get('/tes-wikidata', function (\App\Services\WikidataClient $w) {
+    $data = $w->landmarksNear(3.5952, 98.6722, 3);
+
+    if (count($data) > 0) {
+        return response()->json($data);
+    }
+
+    $res = $w->debug(3.5952, 98.6722, 3);
+    return response()->json([
+        'status' => $res->status(),
+        'error'  => substr($res->body(), 0, 500),
+    ]);
+});
