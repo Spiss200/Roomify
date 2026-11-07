@@ -37,7 +37,7 @@
                     <p class="text-sm">Rating {{ $h['rating'] ?? '-' }} | Bintang {{ $h['star'] ?? '-' }}</p>
                     <p class="text-red-600 font-bold">Rp {{ number_format((int) $h['harga'], 0, ',', '.') }}</p>
                     {{-- link detail aktif setelah S4 --}}
-                    <span class="text-xs text-slate-400">id: {{ $h['id'] }}</span>
+                    <span class="text-xs text-slate-400">id:<a href="/hotel/{{ $h['id'] }}" class="text-blue-600 text-sm underline">Lihat detail</a> {{ $h['id'] }}</span>
                 </div>
             </div>
         @endforeach
