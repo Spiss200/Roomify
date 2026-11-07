@@ -59,3 +59,5 @@ Route::get('/tes-wikidata', function (\App\Services\WikidataClient $w) {
         'error'  => substr($res->body(), 0, 500),
     ]);
 });
+
+Route::get('/tes-wikidata-ringan', fn (\App\Services\WikidataClient $w) => response()->json($w->queryRingan()));
