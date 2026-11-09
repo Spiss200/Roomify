@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="id" prefix="schema: https://schema.org/ roomify: http://roomify.example.org/ontology#">
 <head>
     <meta charset="utf-8">
@@ -68,7 +68,7 @@
                             <h4 class="text-xs font-bold uppercase text-slate-400 mb-2">Struktur Graf Entitas (JSON-LD)</h4>
                             <pre class="bg-slate-900 text-emerald-400 p-4 rounded-xl text-xs overflow-x-auto font-mono max-h-60 leading-relaxed">
                 {
-                "@context": {
+                "@@context": {
                     "roomify": "http://roomify.example.org/ontology#",
                     "schema": "https://schema.org/",
                     "rdfs": "http://www.w3.org/2000/01/rdf-schema#"

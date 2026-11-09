@@ -16,7 +16,7 @@ class HotelController extends Controller
     {
         $p = 'PREFIX roomify: <https://roomify.example/ontology#>';
 
-        $hotel = $this->fuseki->select("$p
+        $rows = $this->fuseki->select("$p
             SELECT ?nama ?alamat ?deskripsi ?bintang ?rating ?jumlahReview ?harga ?lat ?lon ?foto WHERE {
               roomify:$id a roomify:Hotel ;
                 roomify:name ?nama ;
@@ -31,8 +31,8 @@ class HotelController extends Controller
               OPTIONAL { roomify:$id roomify:hasPhoto ?ph . ?ph roomify:photoUrl ?foto }
             } LIMIT 1");
 
-        if (! $hotel) abort(404, 'Hotel tidak ditemukan di triplestore');
-        $h = $hotel[0];
+        if (! $rows) abort(404, 'Hotel tidak ditemukan di triplestore');
+        $h = $rows[0];
 
         $kamar = $this->fuseki->select("$p
             SELECT ?tipe ?harga ?kapasitas WHERE {
@@ -48,16 +48,31 @@ class HotelController extends Controller
               ?f roomify:name ?namaFasilitas .
             }");
 
-        $landmark = ($h['lat'] && $h['lon'])
-            ? $this->wikidata->landmarksNear((float) $h['lat'], (float) $h['lon'], 3)
+        $lat = $h['lat'] ?? null;
+        $lon = $h['lon'] ?? null;
+
+        $landmark = ($lat && $lon)
+            ? $this->wikidata->landmarksNear((float) $lat, (float) $lon, 3)
             : [];
 
+        $hotel = [
+            'nama'       => $h['nama'],
+            'alamat'     => $h['alamat'],
+            'deskripsi'  => $h['deskripsi'] ?? null,
+            'starRating' => $h['bintang'] ?? null,
+            'startPrice' => (int) $h['harga'],
+            'rating'     => $h['rating'] ?? null,
+            'foto'       => $h['foto'] ?? '/images/placeholder.svg',
+            'latitude'   => $lat,
+            'longitude'  => $lon,
+            'fasilitas'  => array_column($fasilitas, 'namaFasilitas'),
+            'kamar'      => $kamar,
+            'landmarks'  => array_column($landmark, 'nama'),
+        ];
+
         return view('hotel.show', [
-            'id'        => $id,
-            'hotel'     => $h,
-            'kamar'     => $kamar,
-            'fasilitas' => array_column($fasilitas, 'namaFasilitas'),
-            'landmark'  => $landmark,
+            'id'    => $id,
+            'hotel' => $hotel,
         ]);
     }
 }
