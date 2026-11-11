@@ -109,6 +109,21 @@
             </div>
         </div>
 
+        @if(!empty($hotel['galeri']))
+        <div class="mb-6">
+            <img id="foto-utama" src="{{ asset($hotel['galeri'][0]) }}" property="schema:image"
+                 alt="{{ $hotel['nama'] }}" class="w-full h-72 md:h-96 object-cover rounded-2xl border border-slate-200">
+            @if(count($hotel['galeri']) > 1)
+            <div class="flex gap-2 mt-3 overflow-x-auto">
+                @foreach($hotel['galeri'] as $g)
+                    <img src="{{ asset($g) }}" alt="" onclick="document.getElementById('foto-utama').src=this.src"
+                         class="h-16 w-24 object-cover rounded-lg border border-slate-200 cursor-pointer hover:opacity-80">
+                @endforeach
+            </div>
+            @endif
+        </div>
+        @endif
+        
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <!-- Kolom Kiri: Deskripsi, Fasilitas & Kamar -->
             <div class="lg:col-span-2 space-y-6">

@@ -63,6 +63,7 @@ class HotelController extends Controller
             'startPrice' => (int) $h['harga'],
             'rating'     => $h['rating'] ?? null,
             'foto'       => $h['foto'] ?? '/images/placeholder.svg',
+            'galeri'     => $this->galeri($h['foto'] ?? null),
             'latitude'   => $lat,
             'longitude'  => $lon,
             'fasilitas'  => array_column($fasilitas, 'namaFasilitas'),
@@ -74,5 +75,17 @@ class HotelController extends Controller
             'id'    => $id,
             'hotel' => $hotel,
         ]);
+    }
+        protected function galeri(?string $foto): array
+    {
+        if (! $foto || ! preg_match('#^/images/hotels/([^/]+)/#', $foto, $m)) {
+            return $foto ? [$foto] : [];
+        }
+        $out = [];
+        foreach (glob(public_path("images/hotels/{$m[1]}/*.jpg")) as $f) {
+            $out[] = "/images/hotels/{$m[1]}/" . basename($f);
+        }
+        natsort($out);
+        return array_values($out) ?: [$foto];
     }
 }
