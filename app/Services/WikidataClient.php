@@ -125,7 +125,7 @@ LIMIT 15";
             return Http::withHeaders([
                 'Accept'     => 'application/sparql-results+json',
                 'User-Agent' => 'Roomify-Tubes/1.0 (proyek kuliah)',
-            ])->timeout(20)->get($endpoint, ['query' => $sparql, 'format' => 'json']);
+            ])->connectTimeout(3)->timeout(5)->get($endpoint, ['query' => $sparql, 'format' => 'json']);
         } catch (\Throwable $e) {
             return null;
         }
