@@ -96,7 +96,10 @@
         .hero {
             padding: 58px 18px 64px;
             color: white;
-            background: linear-gradient(180deg,#2563eb,#1e40af);
+            background:
+                linear-gradient(180deg, rgba(10,18,45,.70) 0%, rgba(10,18,45,.45) 55%, rgba(10,18,45,.35) 100%),
+                url('{{ asset('images/hero-room.webp') }}') center 45% / cover no-repeat,
+                #1e40af;
         }
 
         .hero-inner {
