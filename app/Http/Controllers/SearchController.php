@@ -33,8 +33,8 @@ class SearchController extends Controller
         if ($request->filled('max_price'))  $b->maxPrice((int) $request->input('max_price'));
         if ($request->filled('min_rating')) $b->minRating((float) $request->input('min_rating'));
         if ($request->filled('star'))       $b->minStar((int) $request->input('star'));
-        if ($request->filled('rating'))   $b->minStar((int) $request->input('rating'));
-        if ($request->filled('landmark')) $b->landmark((string) $request->input('landmark'));
+        if ($request->filled('rating'))     $b->minStar((int) $request->input('rating'));
+        if ($request->filled('landmark'))   $b->landmark((string) $request->input('landmark'));
         foreach ((array) $request->input('facilities', []) as $f) {
             $b->facility('fac-' . \Illuminate\Support\Str::slug($f));
         }
@@ -64,6 +64,24 @@ class SearchController extends Controller
         ], $rows);
 
         return view('search.index', compact('hotels', 'q', 'query'));
+    }
+
+    public function suggest(Request $request)
+    {
+        $q = mb_strtolower(trim((string) $request->query('q', '')));
+        if (mb_strlen($q) < 3) return response()->json([]);
+
+        $rows = $this->fuseki->select(
+            'PREFIX roomify: <https://roomify.example/ontology#>
+             SELECT ?nama WHERE { ?h a roomify:Hotel ; roomify:name ?nama }'
+        );
+
+        $out = [];
+        foreach ($rows as $r) {
+            if (str_contains(mb_strtolower($r['nama']), $q)) $out[] = $r['nama'];
+            if (count($out) >= 5) break;
+        }
+        return response()->json($out);
     }
 
     protected function grouped(string $sparql): array

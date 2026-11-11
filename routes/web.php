@@ -11,5 +11,7 @@ Route::get('/', function () {
 // Arahkan /search ke SearchController
 Route::get('/search', [SearchController::class, 'index'])->name('search');
 
+Route::get('/suggest', [SearchController::class, 'suggest'])->name('suggest');
+
 // Detail Hotel tetap di HotelController
 Route::get('/hotel/{id}', [HotelController::class, 'show'])->name('hotel.detail');
