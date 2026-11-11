@@ -37,6 +37,13 @@ class SparqlBuilder
         return $this;
     }
 
+    public function landmark(string $name): self
+    {
+        $safe = addslashes($name);
+        $this->patterns[] = "?h roomify:nearLandmark ?lmf . ?lmf roomify:name \"$safe\" .";
+        return $this;
+    }
+
     public function build(int $limit = 30): string
     {
         $extra = implode("\n  ", $this->patterns);

@@ -33,6 +33,11 @@ class SearchController extends Controller
         if ($request->filled('max_price'))  $b->maxPrice((int) $request->input('max_price'));
         if ($request->filled('min_rating')) $b->minRating((float) $request->input('min_rating'));
         if ($request->filled('star'))       $b->minStar((int) $request->input('star'));
+        if ($request->filled('rating'))   $b->minStar((int) $request->input('rating'));
+        if ($request->filled('landmark')) $b->landmark((string) $request->input('landmark'));
+        foreach ((array) $request->input('facilities', []) as $f) {
+            $b->facility('fac-' . \Illuminate\Support\Str::slug($f));
+        }
 
         $rows = $this->fuseki->select($b->build(50));
 
