@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="rmfy-fav-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="50%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#EC4899"/>
+    </linearGradient>
+    <linearGradient id="rmfy-fav-star" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="url(#rmfy-fav-bg)"/>
+  <rect x="1" y="1" width="62" height="62" rx="17" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+  <path d="M16 48V30C16 21.1634 23.1634 14 32 14C40.8366 14 48 21.1634 48 30V48" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6"/>
+  <g filter="url(#shadow)">
+    <path d="M22 48V24H33C36.866 24 40 27.134 40 31C40 34.866 36.866 38 33 38H22M32 38L41 48" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+  <!-- Sparkle Star -->
+  <path d="M46 14L47.5 18L51.5 19.5L47.5 21L46 25L44.5 21L40.5 19.5L44.5 18Z" fill="url(#rmfy-fav-star)"/>
+  <circle cx="32" cy="42" r="2" fill="#FDE047"/>
+</svg>

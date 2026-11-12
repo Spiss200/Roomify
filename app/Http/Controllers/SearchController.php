@@ -59,11 +59,24 @@ class SearchController extends Controller
             'startPrice' => (int) $r['harga'],
             'rating'     => $r['rating'] ?? null,
             'foto'       => $r['foto'] ?? '/images/placeholder.svg',
+            'latitude'   => $r['lat'] ?? null,
+            'longitude'  => $r['lon'] ?? null,
             'fasilitas'  => $fac[$r['id']] ?? [],
             'landmarks'  => $lm[$r['id']] ?? [],
         ], $rows);
 
-        return view('search.index', compact('hotels', 'q', 'query'));
+        $selectedLandmark = (string) $request->input('landmark', '');
+        $landmarkInfo = null;
+        if ($selectedLandmark) {
+            foreach (FusekiClient::LANDMARKS as $lm) {
+                if (str_contains(strtolower($lm['name']), strtolower($selectedLandmark)) || str_contains(strtolower($selectedLandmark), strtolower($lm['name']))) {
+                    $landmarkInfo = $lm;
+                    break;
+                }
+            }
+        }
+
+        return view('search.index', compact('hotels', 'q', 'query', 'selectedLandmark', 'landmarkInfo'));
     }
 
     public function suggest(Request $request)

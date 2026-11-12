@@ -59,7 +59,7 @@ class SparqlBuilder
         }
 
         return "PREFIX roomify: <https://roomify.example/ontology#>
-SELECT ?id ?nama ?alamat ?harga ?rating ?star ?foto WHERE {
+SELECT ?id ?nama ?alamat ?harga ?rating ?star ?foto ?lat ?lon WHERE {
   ?h a roomify:Hotel ;
      roomify:name ?nama ;
      roomify:address ?alamat ;
@@ -67,6 +67,8 @@ SELECT ?id ?nama ?alamat ?harga ?rating ?star ?foto WHERE {
   OPTIONAL { ?h roomify:rating ?rating }
   OPTIONAL { ?h roomify:starRating ?star }
   OPTIONAL { ?h roomify:description ?desc }
+  OPTIONAL { ?h roomify:latitude ?lat }
+  OPTIONAL { ?h roomify:longitude ?lon }
   OPTIONAL { ?h roomify:hasPhoto ?p . ?p roomify:photoUrl ?foto }
   BIND(STRAFTER(STR(?h), \"#\") AS ?id)
   $extra

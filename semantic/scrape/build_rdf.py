@@ -19,6 +19,14 @@ LANDMARKS = [
     ("lm-mashun", "Masjid Raya Al Mashun", 3.5786, 98.6812),
     ("lm-merdeka", "Lapangan Merdeka", 3.5928, 98.6748),
     ("lm-velangkanni", "Graha Maria Annai Velangkanni", 3.5536, 98.6229),
+    ("lm-sunplaza", "Sun Plaza", 3.5857, 98.6722),
+    ("lm-rahmat", "Museum Rahmat", 3.5775, 98.6623),
+    ("lm-maitreya", "Maha Vihara Maitreya", 3.6264, 98.7028),
+    ("lm-merdekawalk", "Merdeka Walk", 3.5932, 98.6758),
+    ("lm-menaraair", "Menara Air Tirtanadi", 3.5802, 98.6836),
+    ("lm-centrepoint", "Centre Point Mall", 3.5915, 98.6789),
+    ("lm-medanzoo", "Kebun Binatang Medan", 3.5042, 98.6644),
+    ("lm-shrimariamman", "Kuil Shri Mariamman", 3.5859, 98.6717),
 ]
 
 ONTOLOGY_HEADER = """@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .

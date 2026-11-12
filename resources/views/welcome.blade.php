@@ -1,690 +1,1237 @@
 <!doctype html>
-<html lang="id" prefix="schema: https://schema.org/ roomify: http://roomify.example.org/ontology#">
+<html lang="id" prefix="schema: https://schema.org/ roomify: http://roomify.example.org/ontology# rdfs: http://www.w3.org/2000/01/rdf-schema#">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roomify - Pencarian Hotel</title>
+    <title>Roomify – Pencarian Hotel Berbasis Knowledge Graph & Google Maps</title>
+    <meta name="description" content="Temukan hotel terbaik di Medan dekat landmark terkenal. Roomify – platform pencarian hotel premium berbasis Semantic Web, Apache Jena Fuseki, dan Google Maps API.">
 
+    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
+    <link rel="alternate icon" href="{{ asset('favicon.ico') }}">
+
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome 6.5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CDN with custom config -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50:  '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delay': 'float 6s ease-in-out 2s infinite',
+                        'float-slow': 'float 8s ease-in-out 4s infinite',
+                        'pulse-glow': 'pulseGlow 4s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-14px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: 0.4, transform: 'scale(1)' },
+                            '50%': { opacity: 0.8, transform: 'scale(1.08)' },
+                        }
+                    }
+                }
+            }
+        }
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+    </script>
 
     <style>
-        * {
-            box-sizing: border-box;
+        * { font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; }
+        body { scroll-behavior: smooth; background-color: #0b0f19; color: #f1f5f9; }
+
+        /* ─── Hero Ambient Mesh with Authentic Landmark Backdrop ─── */
+        .hero-mesh {
+            background: linear-gradient(180deg, rgba(11, 15, 25, 0.72) 0%, rgba(11, 15, 25, 0.85) 60%, #0b0f19 100%),
+                        url('/images/landmarks/masjid-raya.jpg') center/cover no-repeat;
+            background-attachment: fixed;
         }
 
-        html {
-            scroll-behavior: smooth;
+        /* ─── Glassmorphism ─── */
+        .glass-nav {
+            background: rgba(11, 15, 25, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        body {
-            margin: 0;
-            background: #f8fafc;
-            color: #1e293b;
-            font-family: Arial, Helvetica, sans-serif;
+        .glass-card {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background: rgba(255,255,255,.97);
-            border-bottom: 1px solid #e2e8f0;
-            box-shadow: 0 2px 8px rgba(15,23,42,.06);
+        .glass-card-light {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.07);
         }
 
-        header > div {
-            width: 100%;
-            min-height: 82px;
-            padding: 14px 32px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
+        /* ─── Gradients & Typography ─── */
+        .text-gradient {
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        header a {
-            text-decoration: none;
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #fcd34d 0%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        header a:first-child {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .btn-gradient {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #ec4899 100%);
+            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 32px -5px rgba(99, 102, 241, 0.6);
+            filter: brightness(1.08);
         }
 
-        header a:first-child span:first-child {
-            color: #2563eb;
-            font-size: 38px;
-            font-weight: 900;
-            letter-spacing: 2px;
-        }
-
-        header a:first-child span:last-child {
-            color: #1d4ed8;
-            background: #eff6ff;
-            border: 1px solid #bfdbfe;
-            border-radius: 999px;
-            padding: 6px 13px;
-            font-size: 13px;
-            font-weight: 800;
-            text-transform: uppercase;
-        }
-
-        header nav {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        header nav a {
-            color: #475569;
-            font-size: 15px;
-            font-weight: 700;
-            padding: 12px 16px;
-            border-radius: 12px;
-        }
-
-        header nav a:last-child {
-            color: white;
-            background: #2563eb;
-        }
-
-        header nav a:last-child:hover {
-            background: #1d4ed8;
-        }
-
-        .hero {
-            padding: 58px 18px 64px;
-            color: white;
-            background:
-                linear-gradient(180deg, rgba(10,18,45,.70) 0%, rgba(10,18,45,.45) 55%, rgba(10,18,45,.35) 100%),
-                url('{{ asset('images/hero-room.webp') }}') center 45% / cover no-repeat,
-                #1e40af;
-        }
-
-        .hero-inner {
-            max-width: 900px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .hero h1 {
-            margin: 0 0 14px;
-            font-size: clamp(30px,4vw,46px);
-            line-height: 1.15;
-            font-weight: 800;
-        }
-
-        .hero-intro {
-            margin: 0;
-            color: #dbeafe;
-            font-size: 17px;
-            line-height: 1.6;
-        }
-
-        .search-form {
-            margin-top: 30px;
-            padding: 24px;
-            text-align: left;
-            color: #1e293b;
-            background: white;
-            border-radius: 18px;
-            box-shadow: 0 15px 35px rgba(15,23,42,.18);
-        }
-
-        .field-label {
-            display: block;
-            margin-bottom: 7px;
-            color: #64748b;
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: .05em;
-            text-transform: uppercase;
-        }
-
-        .search-form input[type="text"],
-        .search-form select {
-            width: 100%;
-            min-height: 46px;
-            padding: 10px 13px;
-            color: #0f172a;
-            background: #f8fafc;
-            border: 1px solid #cbd5e1;
-            border-radius: 10px;
-            font-size: 15px;
-        }
-
-        .search-form input:focus,
-        .search-form select:focus {
-            outline: 2px solid #93c5fd;
-            border-color: #3b82f6;
-        }
-
-        .filter-grid {
-            display: grid;
-            grid-template-columns: repeat(2,minmax(0,1fr));
-            gap: 16px;
-            margin-top: 17px;
-        }
-
-        .facility-block {
-            margin-top: 18px;
-        }
-
-        .facility-options {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .facility-options label {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 9px 12px;
-            color: #334155;
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 9px;
-            font-size: 14px;
-            cursor: pointer;
-        }
-
-        .facility-options input {
-            accent-color: #2563eb;
-        }
-
-        .search-button {
-            width: 100%;
-            margin-top: 20px;
-            padding: 14px 18px;
-            color: white;
-            background: #2563eb;
-            border: 0;
-            border-radius: 11px;
-            font-size: 16px;
-            font-weight: 800;
-            cursor: pointer;
-        }
-
-        .search-button:hover {
-            background: #1d4ed8;
-        }
-
-        .landmark-section {
-            max-width: 1200px;
-            margin: auto;
-            padding: 58px 24px 64px;
-        }
-
-        .section-heading {
-            margin-bottom: 34px;
-            text-align: center;
-        }
-
-        .section-heading h2 {
-            margin: 0 0 9px;
-            color: #0f172a;
-            font-size: clamp(25px,3vw,34px);
-            font-weight: 800;
-        }
-
-        .section-heading p {
-            margin: 0;
-            color: #64748b;
-            font-size: 15px;
-        }
-
-        .landmark-grid {
-            display: grid;
-            grid-template-columns: repeat(3,minmax(0,1fr));
-            gap: 24px;
-        }
-
+        /* ─── Landmark Card ─── */
         .landmark-card {
-            display: block;
+            border-radius: 22px;
             overflow: hidden;
-            padding: 16px;
-            color: inherit;
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 19px;
-            box-shadow: 0 2px 5px rgba(15,23,42,.05);
-            text-decoration: none;
-            transition: transform .2s, box-shadow .2s, border-color .2s;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
         }
-
         .landmark-card:hover {
-            transform: translateY(-4px);
-            border-color: #93c5fd;
-            box-shadow: 0 12px 25px rgba(15,23,42,.12);
+            transform: translateY(-8px);
+            box-shadow: 0 22px 45px -10px rgba(99, 102, 241, 0.35);
+            border-color: rgba(165, 180, 252, 0.4);
+            background: rgba(255, 255, 255, 0.07);
         }
-
-        .landmark-image-wrap {
-            width: 100%;
-            height: 205px;
-            margin-bottom: 16px;
+        .landmark-img-wrap {
+            position: relative;
             overflow: hidden;
-            background: #e2e8f0;
-            border-radius: 12px;
+            height: 210px;
         }
-
-        .landmark-image {
-            display: block;
+        .landmark-img-wrap img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform .4s;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .landmark-card:hover .landmark-img-wrap img {
+            transform: scale(1.08);
         }
 
-        .landmark-card:hover .landmark-image {
-            transform: scale(1.04);
-        }
-
-        .landmark-card h3 {
-            margin: 0;
+        /* ─── Form Inputs ─── */
+        .search-input {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1.5px solid #e2e8f0;
+            border-radius: 14px;
             color: #0f172a;
-            font-size: 20px;
-            line-height: 1.35;
-            font-weight: 800;
-        }
-
-        .landmark-card:hover h3 {
-            color: #2563eb;
-        }
-
-        .landmark-card p {
-            margin: 7px 0 0;
-            color: #64748b;
             font-size: 14px;
+            padding: 12px 16px;
+            transition: all 0.2s ease;
+            width: 100%;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+            background: #ffffff;
         }
 
-        .landmark-link {
-            display: inline-block;
-            margin-top: 16px;
-            color: #2563eb;
-            font-size: 14px;
-            font-weight: 700;
+        /* ─── Facility Chips ─── */
+        .fac-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1.5px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.06);
+            color: #e2e8f0;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+        .fac-chip input { display: none; }
+        .fac-chip.active {
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            border-color: #818cf8;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
         }
 
-        footer {
-            padding: 27px 16px;
-            color: #64748b;
-            background: white;
-            border-top: 1px solid #e2e8f0;
-            text-align: center;
+        /* ─── Autocomplete Dropdown ─── */
+        #suggest-box {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            margin-top: 6px;
+            background: #ffffff;
+            border-radius: 14px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.18);
+            z-index: 60;
+            overflow: hidden;
+            display: none;
+        }
+        .suggest-item {
+            padding: 12px 16px;
             font-size: 13px;
+            color: #1e293b;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.15s ease;
         }
-
-        @media (max-width: 800px) {
-            .landmark-grid {
-                grid-template-columns: repeat(2,minmax(0,1fr));
-            }
-
-            header > div {
-                padding: 12px 18px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            header > div {
-                align-items: flex-start;
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            header a:first-child span:first-child {
-                font-size: 30px;
-            }
-
-            header nav {
-                width: 100%;
-                justify-content: space-between;
-                gap: 4px;
-            }
-
-            header nav a {
-                padding: 9px 10px;
-                font-size: 13px;
-            }
-
-            .hero {
-                padding: 42px 15px;
-            }
-
-            .search-form {
-                padding: 17px;
-            }
-
-            .filter-grid,
-            .landmark-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .landmark-section {
-                padding: 42px 16px;
-            }
-
-            .landmark-image-wrap {
-                height: 210px;
-            }
+        .suggest-item:hover {
+            background: #f1f5f9;
+            color: #4f46e5;
         }
     </style>
 </head>
+<body class="text-slate-100 antialiased overflow-x-hidden">
 
-<body class="bg-slate-50 text-slate-800 antialiased font-sans min-h-screen">
+{{-- ═══════════════════════════════════════════════════════════
+     HEADER / STICKY GLASS NAVBAR
+═══════════════════════════════════════════════════════════ --}}
+<header class="glass-nav fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
 
-    <!-- NAVBAR -->
-    <header>
-        <div>
-            <a href="/">
-                <span>ROOMIFY</span>
-                <span>Medan</span>
+            {{-- BRAND LOGO --}}
+            <a href="{{ url('/') }}" class="flex items-center gap-3 group no-underline">
+                <div class="w-11 h-11 relative transform transition-transform duration-300 group-hover:scale-105">
+                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-lg">
+                        <defs>
+                            <linearGradient id="nb-bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#4F46E5"/>
+                                <stop offset="50%" stop-color="#7C3AED"/>
+                                <stop offset="100%" stop-color="#EC4899"/>
+                            </linearGradient>
+                            <linearGradient id="nb-gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#FCD34D"/>
+                                <stop offset="100%" stop-color="#F59E0B"/>
+                            </linearGradient>
+                        </defs>
+                        <rect width="48" height="48" rx="14" fill="url(#nb-bg-grad)"/>
+                        <rect x="0.75" y="0.75" width="46.5" height="46.5" rx="13.25" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                        <path d="M12 36V22C12 15.3726 17.3726 10 24 10C30.6274 10 36 15.3726 36 22V36" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M18 36V18H25.5C28 18 29.5 19.5 29.5 22C29.5 24.5 28 26 25.5 26H18M24 26L30 36" stroke="#FFFFFF" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M34 11L35.2 13.8L38 15L35.2 16.2L34 19L32.8 16.2L30 15L32.8 13.8L34 11Z" fill="url(#nb-gold-grad)"/>
+                        <circle cx="24" cy="31" r="1.5" fill="#FCD34D"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <div class="flex items-center gap-2">
+                        <span class="text-2xl font-black tracking-tight text-white group-hover:text-indigo-200 transition">
+                            Roomify
+                        </span>
+                    </div>
+                    <span class="text-[10px] font-semibold text-slate-400 tracking-wider uppercase">Semantic Hotel Discovery</span>
+                </div>
             </a>
 
-            <nav>
-                <a href="#landmark-section">
-                    Landmark Medan
+            {{-- NAV LINKS --}}
+            <nav class="hidden md:flex items-center gap-1 bg-white/5 p-1.5 rounded-2xl border border-white/10 backdrop-blur-md">
+                <a href="#destinasi" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition">
+                    <i class="fa-solid fa-map-location-dot mr-1.5 text-indigo-400"></i>Landmark Medan
                 </a>
-
-                <a href="{{ url('/search') }}">
-                    Cari Semua Hotel &rarr;
+                <a href="{{ url('/search') }}" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition">
+                    <i class="fa-solid fa-magnifying-glass mr-1.5 text-indigo-400"></i>Cari Hotel
+                </a>
+                <a href="#hotel-pilihan" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition">
+                    <i class="fa-solid fa-hotel mr-1.5 text-indigo-400"></i>Hotel Pilihan
+                </a>
+                <a href="#arsitektur" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition">
+                    <i class="fa-solid fa-circle-nodes mr-1.5 text-indigo-400"></i>Semantic Web
                 </a>
             </nav>
-        </div>
-    </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-inner">
-
-            <h1>
-                Temukan Hotel Ideal di Medan
-            </h1>
-
-            <p class="hero-intro">
-                Jelajahi penginapan terbaik di sekitar landmark terkenal Medan.
-                Gunakan filter untuk menemukan hotel sesuai kebutuhan Anda.
-            </p>
-
-            <!-- FORM PENCARIAN -->
-            <form action="{{ url('/search') }}"
-                  method="GET"
-                  class="search-form">
-
-                <div>
-                    <label for="q" class="field-label">
-                        Cari Hotel atau Alamat
-                    </label>
-
-                    <input
-                        type="text"
-                        id="q"
-                        name="q"
-                        value="{{ request('q') }}"
-                        placeholder="Contoh: Cambridge, JW Marriott, atau Jalan Palang Merah..."
-                    >
-                </div>
-
-                <div class="filter-grid">
-
-                    <!-- FILTER LANDMARK -->
-                    <div>
-                        <label for="landmark" class="field-label">
-                            Dekat Landmark Medan
-                        </label>
-
-                        <select id="landmark" name="landmark">
-                            <option value="">-- Pilih Semua Landmark --</option>
-
-                            <option value="Istana Maimun">
-                                Istana Maimun
-                            </option>
-
-                            <option value="Tjong A Fie Mansion">
-                                Tjong A Fie Mansion
-                            </option>
-
-                            <option value="Masjid Raya Al Mashun">
-                                Masjid Raya Al Mashun
-                            </option>
-
-                            <option value="Lapangan Merdeka">
-                                Lapangan Merdeka
-                            </option>
-
-                            <option value="Graha Maria Annai Velangkanni">
-                                Graha Maria Annai Velangkanni
-                            </option>
-                        </select>
-                    </div>
-
-                    <!-- FILTER BINTANG HOTEL -->
-                    <div>
-                        <label for="rating" class="field-label">
-                            Kelas Hotel (Bintang)
-                        </label>
-
-                        <select id="rating" name="rating">
-                            <option value="">Semua Bintang</option>
-                            <option value="5">Bintang 5</option>
-                            <option value="4">Bintang 4 atau lebih</option>
-                            <option value="3">Bintang 3 atau lebih</option>
-                        </select>
-                    </div>
-
-                </div>
-
-                <!-- FILTER FASILITAS -->
-                <div class="facility-block">
-
-                    <label class="field-label">
-                        Fasilitas Diinginkan
-                    </label>
-
-                    <div class="facility-options">
-
-                        <label>
-                            <input type="checkbox"
-                                   name="facilities[]"
-                                   value="WiFi">
-                            WiFi
-                        </label>
-
-                        <label>
-                            <input type="checkbox"
-                                   name="facilities[]"
-                                   value="Kolam Renang">
-                            Kolam Renang
-                        </label>
-
-                        <label>
-                            <input type="checkbox"
-                                   name="facilities[]"
-                                   value="AC">
-                            AC
-                        </label>
-
-                        <label>
-                            <input type="checkbox"
-                                   name="facilities[]"
-                                   value="Sarapan">
-                            Sarapan
-                        </label>
-
-                    </div>
-                </div>
-
-                <!-- TOMBOL PENCARIAN -->
-                <button type="submit" class="search-button">
-                    Cari Hotel Sekarang
+            {{-- ACTION BUTTONS --}}
+            <div class="flex items-center gap-3">
+                <button onclick="toggleTheme()" type="button" class="p-2.5 rounded-xl text-slate-300 hover:text-white bg-white/10 hover:bg-white/20 border border-white/10 transition" aria-label="Toggle theme">
+                    <i class="fa-solid fa-moon hidden dark:inline text-amber-300"></i>
+                    <i class="fa-solid fa-sun inline dark:hidden text-amber-400"></i>
                 </button>
+                @auth
+                    <a href="{{ url('/dashboard') }}" class="text-sm font-semibold text-slate-300 hover:text-white px-3 py-2 rounded-xl hover:bg-white/5 transition flex items-center gap-2">
+                        <i class="fa-solid fa-user-circle text-indigo-400 text-lg"></i>
+                        <span class="hidden sm:inline">{{ Auth::user()->name }}</span>
+                    </a>
+                    <a href="{{ url('/search') }}" class="btn-gradient text-white text-sm font-bold px-5 py-2.5 rounded-xl flex items-center gap-2">
+                        <i class="fa-solid fa-compass"></i>
+                        <span>Jelajahi</span>
+                    </a>
+                @else
+                    <a href="{{ route('login') }}" class="text-sm font-semibold text-slate-300 hover:text-white px-4 py-2 rounded-xl hover:bg-white/10 transition hidden sm:inline-flex items-center gap-1.5">
+                        <i class="fa-solid fa-right-to-bracket text-indigo-400"></i> Masuk
+                    </a>
+                    <a href="{{ route('register') }}" class="btn-gradient text-white text-sm font-bold px-5 py-2.5 rounded-xl flex items-center gap-1.5">
+                        <i class="fa-solid fa-user-plus"></i> Daftar
+                    </a>
+                @endauth
+                <!-- Mobile menu toggle -->
+                <button type="button" class="md:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition" onclick="document.getElementById('mobile-nav-welcome').classList.toggle('hidden')">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
 
+        </div>
+    </div>
+    <!-- Mobile dropdown menu -->
+    <div id="mobile-nav-welcome" class="hidden md:hidden px-4 py-3 bg-slate-900/95 border-b border-white/10 space-y-2 backdrop-blur-xl">
+        <a href="{{ url('/search') }}" class="block px-3 py-2 rounded-xl text-sm font-bold text-white bg-indigo-600/30 border border-indigo-500/40">
+            <i class="fa-solid fa-hotel mr-2 text-indigo-400"></i>Cari Seluruh 187 Hotel
+        </a>
+        <a href="#destinasi" class="block px-3 py-2 rounded-xl text-sm text-slate-300 hover:text-white">
+            <i class="fa-solid fa-map-location-dot mr-2 text-indigo-400"></i>13 Landmark Medan
+        </a>
+        <a href="#hotel-pilihan" class="block px-3 py-2 rounded-xl text-sm text-slate-300 hover:text-white">
+            <i class="fa-solid fa-star mr-2 text-amber-400"></i>Hotel Pilihan
+        </a>
+        <a href="#arsitektur" class="block px-3 py-2 rounded-xl text-sm text-slate-300 hover:text-white">
+            <i class="fa-solid fa-circle-nodes mr-2 text-indigo-400"></i>Semantic Web
+        </a>
+    </div>
+</header>
+
+{{-- ═══════════════════════════════════════════════════════════
+     HERO SECTION WITH GLOWING MESH & COMPREHENSIVE SEARCH
+═══════════════════════════════════════════════════════════ --}}
+<section class="hero-mesh pt-36 pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-[92vh] flex items-center">
+    <!-- Ambient Glowing Orbs -->
+    <div class="absolute top-1/4 left-10 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none animate-pulse-glow"></div>
+    <div class="absolute bottom-10 right-10 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl pointer-events-none animate-pulse-glow" style="animation-delay: 2s;"></div>
+
+    <div class="max-w-7xl mx-auto w-full relative z-10">
+
+        <!-- Hero Header -->
+        <div class="text-center max-w-4xl mx-auto mb-12">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 backdrop-blur-md mb-6 shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-indigo-400 animate-ping"></span>
+                <span class="text-xs font-bold uppercase tracking-wider text-indigo-200">
+                    Smart Knowledge Graph & Google Maps API
+                </span>
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-white mb-6">
+                Temukan Hotel Terbaik di <br class="hidden sm:inline">
+                <span class="text-gradient">Kota Medan</span> Dekat Landmark Ikonik
+            </h1>
+            <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+                Pencarian akomodasi cerdas berbasis ontologi semantik RDF/OWL dengan Apache Jena Fuseki dan integrasi peta presisi Google Maps.
+            </p>
+        </div>
+
+        <!-- Live Stats Floating Badges -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-10">
+            <div class="glass-card rounded-2xl p-4 text-center transform transition-transform hover:-translate-y-1">
+                <div class="text-2xl sm:text-3xl font-black text-indigo-400">187+</div>
+                <div class="text-xs text-slate-300 font-semibold uppercase tracking-wider mt-1">Hotel Medan</div>
+            </div>
+            <div class="glass-card rounded-2xl p-4 text-center transform transition-transform hover:-translate-y-1">
+                <div class="text-2xl sm:text-3xl font-black text-purple-400">13</div>
+                <div class="text-xs text-slate-300 font-semibold uppercase tracking-wider mt-1">Landmark Utama</div>
+            </div>
+            <div class="glass-card rounded-2xl p-4 text-center transform transition-transform hover:-translate-y-1">
+                <div class="text-2xl sm:text-3xl font-black text-gradient-gold">4.8★</div>
+                <div class="text-xs text-slate-300 font-semibold uppercase tracking-wider mt-1">Rating Kepuasan</div>
+            </div>
+            <div class="glass-card rounded-2xl p-4 text-center transform transition-transform hover:-translate-y-1">
+                <div class="text-2xl sm:text-3xl font-black text-pink-400">SPARQL</div>
+                <div class="text-xs text-slate-300 font-semibold uppercase tracking-wider mt-1">Jena Triplestore</div>
+            </div>
+        </div>
+
+        <!-- ── GLASS SEARCH BOX ── -->
+        <div class="glass-card rounded-3xl p-6 sm:p-8 max-w-4xl mx-auto shadow-2xl relative">
+            <form action="{{ url('/search') }}" method="GET" id="search-form">
+
+                <!-- Row 1: Keyword & Landmark Dropdown -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <!-- Keyword Autocomplete Input -->
+                    <div class="relative">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                            <i class="fa-solid fa-magnifying-glass text-indigo-400 mr-1.5"></i> Nama Hotel / Lokasi
+                        </label>
+                        <div class="relative">
+                            <input type="text"
+                                   id="search-q"
+                                   name="q"
+                                   value="{{ request('q') }}"
+                                   autocomplete="off"
+                                   placeholder="Contoh: Adimulia, Grand Mercure, wifi..."
+                                   class="search-input pl-11">
+                            <i class="fa-solid fa-hotel absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                        </div>
+                        <div id="suggest-box"></div>
+                    </div>
+
+                    <!-- Landmark Dropdown (All 13 Iconic Landmarks) -->
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                            <i class="fa-solid fa-landmark text-indigo-400 mr-1.5"></i> Dekat Landmark Medan
+                        </label>
+                        <div class="relative">
+                            <select name="landmark" class="search-input pl-11 appearance-none cursor-pointer">
+                                <option value="">Semua Landmark Medan</option>
+                                <option value="Istana Maimun" {{ request('landmark') == 'Istana Maimun' ? 'selected' : '' }}>🏛️ Istana Maimun (Medan Maimun)</option>
+                                <option value="Tjong A Fie Mansion" {{ request('landmark') == 'Tjong A Fie Mansion' ? 'selected' : '' }}>🏮 Tjong A Fie Mansion (Kesawan)</option>
+                                <option value="Masjid Raya Al Mashun" {{ request('landmark') == 'Masjid Raya Al Mashun' ? 'selected' : '' }}>🕌 Masjid Raya Al-Mashun (Medan Kota)</option>
+                                <option value="Lapangan Merdeka" {{ request('landmark') == 'Lapangan Merdeka' ? 'selected' : '' }}>🌳 Lapangan Merdeka & KM 0</option>
+                                <option value="Graha Maria Annai Velangkanni" {{ request('landmark') == 'Graha Maria Annai Velangkanni' ? 'selected' : '' }}>⛪ Graha Maria Annai Velangkanni</option>
+                                <option value="Sun Plaza" {{ request('landmark') == 'Sun Plaza' ? 'selected' : '' }}>🛍️ Sun Plaza Medan (Petisah)</option>
+                                <option value="Maha Vihara Maitreya" {{ request('landmark') == 'Maha Vihara Maitreya' ? 'selected' : '' }}>🪷 Maha Vihara Maitreya (Cemara Asri)</option>
+                                <option value="Museum Rahmat" {{ request('landmark') == 'Museum Rahmat' ? 'selected' : '' }}>🦁 Museum Rahmat International Gallery</option>
+                                <option value="Merdeka Walk" {{ request('landmark') == 'Merdeka Walk' ? 'selected' : '' }}>🍜 Merdeka Walk & Kesawan Heritage</option>
+                                <option value="Menara Air Tirtanadi" {{ request('landmark') == 'Menara Air Tirtanadi' ? 'selected' : '' }}>🗼 Menara Air Tirtanadi 1908</option>
+                                <option value="Centre Point Mall" {{ request('landmark') == 'Centre Point Mall' ? 'selected' : '' }}>🚆 Centre Point Mall & Stasiun KAI</option>
+                                <option value="Kebun Binatang Medan" {{ request('landmark') == 'Kebun Binatang Medan' ? 'selected' : '' }}>🐯 Medan Zoo (Simalingkar)</option>
+                                <option value="Kuil Shri Mariamman" {{ request('landmark') == 'Kuil Shri Mariamman' ? 'selected' : '' }}>🕉️ Kuil Shri Mariamman (Kampung Madras)</option>
+                            </select>
+                            <i class="fa-solid fa-location-dot absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                            <i class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-xs pointer-events-none"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2: Star Rating, Max Price, Dates -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-5">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                            <i class="fa-solid fa-star text-amber-400 mr-1"></i> Bintang
+                        </label>
+                        <select name="star" class="search-input">
+                            <option value="">Semua Bintang</option>
+                            <option value="5" {{ request('star') == '5' ? 'selected' : '' }}>⭐⭐⭐⭐⭐ 5 Bintang</option>
+                            <option value="4" {{ request('star') == '4' ? 'selected' : '' }}>⭐⭐⭐⭐ 4+ Bintang</option>
+                            <option value="3" {{ request('star') == '3' ? 'selected' : '' }}>⭐⭐⭐ 3+ Bintang</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                            <i class="fa-solid fa-tag text-emerald-400 mr-1"></i> Harga Maks.
+                        </label>
+                        <input type="number"
+                               name="max_price"
+                               value="{{ request('max_price') }}"
+                               placeholder="Contoh: 750000"
+                               step="50000"
+                               class="search-input">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                            <i class="fa-solid fa-calendar-check text-indigo-400 mr-1"></i> Check-in
+                        </label>
+                        <input type="date"
+                               name="checkin"
+                               value="{{ request('checkin', date('Y-m-d')) }}"
+                               class="search-input">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                            <i class="fa-solid fa-calendar-xmark text-pink-400 mr-1"></i> Check-out
+                        </label>
+                        <input type="date"
+                               name="checkout"
+                               value="{{ request('checkout', date('Y-m-d', strtotime('+1 day'))) }}"
+                               class="search-input">
+                    </div>
+                </div>
+
+                <!-- Row 3: Facilities Toggles -->
+                <div class="mb-6">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2.5">
+                        <i class="fa-solid fa-sliders text-indigo-400 mr-1"></i> Fasilitas Populer
+                    </label>
+                    <div class="flex flex-wrap gap-2">
+                        @php
+                            $facilities = [
+                                ['id' => 'wifi', 'name' => 'WiFi', 'icon' => 'fa-wifi'],
+                                ['id' => 'kolam-renang', 'name' => 'Kolam Renang', 'icon' => 'fa-person-swimming'],
+                                ['id' => 'ac', 'name' => 'AC', 'icon' => 'fa-snowflake'],
+                                ['id' => 'sarapan', 'name' => 'Sarapan', 'icon' => 'fa-utensils'],
+                                ['id' => 'gym', 'name' => 'Gym', 'icon' => 'fa-dumbbell'],
+                                ['id' => 'parkir', 'name' => 'Parkir', 'icon' => 'fa-square-parking'],
+                                ['id' => 'spa', 'name' => 'Spa', 'icon' => 'fa-spa'],
+                            ];
+                            $activeFacs = (array) request('facilities', []);
+                        @endphp
+                        @foreach($facilities as $f)
+                            <label class="fac-chip {{ in_array($f['name'], $activeFacs) ? 'active' : '' }}">
+                                <input type="checkbox" name="facilities[]" value="{{ $f['name'] }}" {{ in_array($f['name'], $activeFacs) ? 'checked' : '' }} onchange="this.parentElement.classList.toggle('active', this.checked)">
+                                <i class="fa-solid {{ $f['icon'] }}"></i>
+                                <span>{{ $f['name'] }}</span>
+                            </label>
+                        @endforeach
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-gradient w-full py-4 rounded-2xl text-white font-extrabold text-base flex items-center justify-center gap-3 tracking-wide">
+                    <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    <span>Cari Hotel di Medan Sekarang</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
             </form>
         </div>
-    </section>
 
-    <!-- SECTION LANDMARK -->
-    <section id="landmark-section" class="landmark-section">
+    </div>
+</section>
 
-        <div class="section-heading">
+{{-- ═══════════════════════════════════════════════════════════
+     DESTINASI LANDMARK MEDAN (13 ICONIC LANDMARKS)
+═══════════════════════════════════════════════════════════ --}}
+<section id="destinasi" class="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900/60 border-t border-b border-white/5 relative">
+    <div class="max-w-7xl mx-auto">
 
-            <h2>
-                Jelajahi Hotel Menurut Landmark
+        <!-- Section Title -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">
+                Pusat Daya Tarik Kota Medan
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-black text-white mt-3 mb-4 tracking-tight">
+                Jelajahi Hotel Berdasarkan <span class="text-gradient">Landmark Ikonik</span>
             </h2>
-
-            <p>
-                Pilih destinasi populer di Medan untuk menemukan penginapan terdekat
+            <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                Pilih landmark favorit Anda di Kota Medan dan temukan puluhan akomodasi terbaik di sekitarnya dengan jarak tempuh terdekat.
             </p>
+        </div>
+
+        <!-- Landmarks Grid (13 Cards) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+            <!-- 1. Istana Maimun -->
+            <a href="{{ url('/search?landmark=Istana+Maimun') }}" class="landmark-card group no-underline">
+                <div class="landmark-img-wrap">
+                    <img src="{{ asset('images/landmarks/istana-maimun.jpg') }}" alt="Istana Maimun Medan" loading="lazy">
+                    <span class="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-indigo-600/90 text-white backdrop-blur-md">
+                        <i class="fa-solid fa-crown mr-1"></i> Ikon Utama
+                    </span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-extrabold text-white text-lg group-hover:text-indigo-300 transition">Istana Maimun</h3>
+                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. Brigjend Katamso, Medan Maimun
+                        </p>
+                        <p class="text-xs text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                            Istana megah Kesultanan Deli peninggalan Sultan Ma'mun Al Rasyid (1888) dengan perpaduan arsitektur Melayu & Timur Tengah.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-indigo-400">
+                        <span>Lihat Hotel Terdekat</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 2. Tjong A Fie Mansion -->
+            <a href="{{ url('/search?landmark=Tjong+A+Fie+Mansion') }}" class="landmark-card group no-underline">
+                <div class="landmark-img-wrap">
+                    <img src="{{ asset('images/landmarks/tjong-a-fie.jpg') }}" alt="Tjong A Fie Mansion" loading="lazy">
+                    <span class="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-amber-600/90 text-white backdrop-blur-md">
+                        <i class="fa-solid fa-landmark mr-1"></i> Cagar Budaya
+                    </span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-extrabold text-white text-lg group-hover:text-indigo-300 transition">Tjong A Fie Mansion</h3>
+                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. Ahmad Yani, Kesawan
+                        </p>
+                        <p class="text-xs text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                            Manor megah bergaya Tionghoa-Eropa abad ke-19 milik tokoh terkemuka Medan di jantung heritage Kesawan.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-indigo-400">
+                        <span>Lihat Hotel Terdekat</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 3. Masjid Raya Al-Mashun -->
+            <a href="{{ url('/search?landmark=Masjid+Raya+Al+Mashun') }}" class="landmark-card group no-underline">
+                <div class="landmark-img-wrap">
+                    <img src="{{ asset('images/landmarks/masjid-raya.jpg') }}" alt="Masjid Raya Al Mashun" loading="lazy">
+                    <span class="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-600/90 text-white backdrop-blur-md">
+                        <i class="fa-solid fa-mosque mr-1"></i> Wisata Religi
+                    </span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-extrabold text-white text-lg group-hover:text-indigo-300 transition">Masjid Raya Al-Mashun</h3>
+                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. Mahkamah, Medan Kota
+                        </p>
+                        <p class="text-xs text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                            Mahakarya arsitektur Islam bernuansa Maroko dan Timur Tengah yang berdiri megah sejak tahun 1909.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-indigo-400">
+                        <span>Lihat Hotel Terdekat</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 4. Lapangan Merdeka & KM 0 -->
+            <a href="{{ url('/search?landmark=Lapangan+Merdeka') }}" class="landmark-card group no-underline">
+                <div class="landmark-img-wrap">
+                    <img src="{{ asset('images/landmarks/lapangan-merdeka.jpg') }}" alt="Lapangan Merdeka Medan" loading="lazy">
+                    <span class="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-blue-600/90 text-white backdrop-blur-md">
+                        <i class="fa-solid fa-map-pin mr-1"></i> KM 0 Medan
+                    </span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-extrabold text-white text-lg group-hover:text-indigo-300 transition">Lapangan Merdeka</h3>
+                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. Balai Kota, Kesawan
+                        </p>
+                        <p class="text-xs text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                            Alun-alun bersejarah titik nol Kota Medan, dikelilingi cagar budaya kolonial dan stasiun utama kota.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-indigo-400">
+                        <span>Lihat Hotel Terdekat</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 5. Graha Maria Annai Velangkanni -->
+            <a href="{{ url('/search?landmark=Graha+Maria+Annai+Velangkanni') }}" class="landmark-card group no-underline">
+                <div class="landmark-img-wrap">
+                    <img src="{{ asset('images/landmarks/graha-maria.jpg') }}" alt="Graha Maria Annai Velangkanni" loading="lazy">
+                    <span class="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-purple-600/90 text-white backdrop-blur-md">
+                        <i class="fa-solid fa-church mr-1"></i> Indo-Mogul
+                    </span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-extrabold text-white text-lg group-hover:text-indigo-300 transition">Graha Maria Velangkanni</h3>
+                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. Sakura III, Tanjung Selamat
+                        </p>
+                        <p class="text-xs text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                            Gereja Katolik berarsitektur kuil Indo-Mogul yang spektakuler, destinasi religi internasional unik di Medan.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-indigo-400">
+                        <span>Lihat Hotel Terdekat</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 6. Sun Plaza Medan -->
+            <a href="{{ url('/search?landmark=Sun+Plaza') }}" class="landmark-card group no-underline">
+                <div class="landmark-img-wrap">
+                    <img src="{{ asset('images/landmarks/sun-plaza.jpg') }}" alt="Sun Plaza Medan" loading="lazy">
+                    <span class="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-pink-600/90 text-white backdrop-blur-md">
+                        <i class="fa-solid fa-bag-shopping mr-1"></i> Mall & Lifestyle
+                    </span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-extrabold text-white text-lg group-hover:text-indigo-300 transition">Sun Plaza Medan</h3>
+                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. KH. Zainul Arifin, Medan Petisah
+                        </p>
+                        <p class="text-xs text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                            Pusat belanja mewah paling bergengsi di Medan dengan tenant internasional, bioskop premier, dan kuliner modern.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-indigo-400">
+                        <span>Lihat Hotel Terdekat</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 7. Maha Vihara Maitreya -->
+            <a href="{{ url('/search?landmark=Maha+Vihara+Maitreya') }}" class="landmark-card group no-underline">
+                <div class="landmark-img-wrap">
+                    <img src="{{ asset('images/landmarks/maha-vihara-maitreya.jpg') }}" alt="Maha Vihara Maitreya" loading="lazy">
+                    <span class="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-fuchsia-600/90 text-white backdrop-blur-md">
+                        <i class="fa-solid fa-spa mr-1"></i> Vihara Megah
+                    </span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-extrabold text-white text-lg group-hover:text-indigo-300 transition">Maha Vihara Maitreya</h3>
+                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-location-dot text-indigo-500"></i> Kompleks Cemara Asri, Medan
+                        </p>
+                        <p class="text-xs text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                            Salah satu vihara Buddha terbesar di Indonesia dengan danau bangau alami, pagoda megah, dan lingkungan asri.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-indigo-400">
+                        <span>Lihat Hotel Terdekat</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 8. Museum Rahmat International Gallery -->
+            <a href="{{ url('/search?landmark=Museum+Rahmat') }}" class="landmark-card group no-underline">
+                <div class="landmark-img-wrap">
+                    <img src="{{ asset('images/landmarks/museum-rahmat.jpg') }}" alt="Museum Rahmat Medan" loading="lazy">
+                    <span class="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-amber-700/90 text-white backdrop-blur-md">
+                        <i class="fa-solid fa-paw mr-1"></i> Galeri Satwa
+                    </span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-extrabold text-white text-lg group-hover:text-indigo-300 transition">Museum Rahmat</h3>
+                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. S. Parman No. 217, Petisah
+                        </p>
+                        <p class="text-xs text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                            Museum satwa liar internasional pertama di Asia Tenggara dengan koleksi ribuan spesimen fauna dari seluruh penjuru dunia.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-indigo-400">
+                        <span>Lihat Hotel Terdekat</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 9. Merdeka Walk & Kesawan -->
+            <a href="{{ url('/search?landmark=Merdeka+Walk') }}" class="landmark-card group no-underline">
+                <div class="landmark-img-wrap">
+                    <img src="{{ asset('images/landmarks/merdeka-walk.jpg') }}" alt="Merdeka Walk Medan" loading="lazy">
+                    <span class="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-cyan-600/90 text-white backdrop-blur-md">
+                        <i class="fa-solid fa-utensils mr-1"></i> Kuliner Heritage
+                    </span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-extrabold text-white text-lg group-hover:text-indigo-300 transition">Merdeka Walk Kesawan</h3>
+                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. Pos No. 1, Medan Barat
+                        </p>
+                        <p class="text-xs text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                            Kawasan kuliner legendaris bernuansa heritage di pusat kota Medan, tempat berkumpul dan mencicipi aneka sajian khas.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-indigo-400">
+                        <span>Lihat Hotel Terdekat</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 10. Menara Air Tirtanadi -->
+            <a href="{{ url('/search?landmark=Menara+Air+Tirtanadi') }}" class="landmark-card group no-underline">
+                <div class="landmark-img-wrap">
+                    <img src="{{ asset('images/landmarks/menara-air.jpg') }}" alt="Menara Air Tirtanadi" loading="lazy">
+                    <span class="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-teal-600/90 text-white backdrop-blur-md">
+                        <i class="fa-solid fa-tower-observation mr-1"></i> Kolonial 1908
+                    </span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-extrabold text-white text-lg group-hover:text-indigo-300 transition">Menara Air Tirtanadi</h3>
+                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. SM Raja No. 1, Medan Kota
+                        </p>
+                        <p class="text-xs text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                            Menara air ikonik peninggalan era kolonial Belanda tahun 1908 yang menjadi simbol identitas visual Kota Medan.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-indigo-400">
+                        <span>Lihat Hotel Terdekat</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 11. Centre Point Mall -->
+            <a href="{{ url('/search?landmark=Centre+Point+Mall') }}" class="landmark-card group no-underline">
+                <div class="landmark-img-wrap">
+                    <img src="{{ asset('images/landmarks/centre-point.jpg') }}" alt="Centre Point Mall Medan" loading="lazy">
+                    <span class="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-violet-600/90 text-white backdrop-blur-md">
+                        <i class="fa-solid fa-train mr-1"></i> Railink KAI
+                    </span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-extrabold text-white text-lg group-hover:text-indigo-300 transition">Centre Point Mall</h3>
+                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. Jawa No. 8, Gang Buntu
+                        </p>
+                        <p class="text-xs text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                            Pusat perbelanjaan terpadu yang terhubung dengan akses Kereta Api Bandara Kualanamu Railink dan kawasan bisnis.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-indigo-400">
+                        <span>Lihat Hotel Terdekat</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 12. Medan Zoo -->
+            <a href="{{ url('/search?landmark=Kebun+Binatang+Medan') }}" class="landmark-card group no-underline">
+                <div class="landmark-img-wrap">
+                    <img src="{{ asset('images/landmarks/kebun-binatang.jpg') }}" alt="Medan Zoo" loading="lazy">
+                    <span class="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-700/90 text-white backdrop-blur-md">
+                        <i class="fa-solid fa-tree mr-1"></i> Wisata Alam
+                    </span>
+                </div>
+                <div class="p-5 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-extrabold text-white text-lg group-hover:text-indigo-300 transition">Medan Zoo</h3>
+                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
+                            <i class="fa-solid fa-location-dot text-indigo-500"></i> Simalingkar, Medan Tuntungan
+                        </p>
+                        <p class="text-xs text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                            Kebun binatang seluas 30 hektar dengan koleksi satwa Harimau Sumatera dan kawasan rekreasi keluarga yang hijau.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-indigo-400">
+                        <span>Lihat Hotel Terdekat</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+                    </div>
+                </div>
+            </a>
 
         </div>
 
-        <div class="landmark-grid">
-
-            <!-- LANDMARK 1: ISTANA MAIMUN -->
-            <a href="{{ url('/search?landmark=Istana+Maimun') }}"
-               class="landmark-card">
-
-                <div class="landmark-image-wrap">
-                    <img
-                        src="{{ asset('images/landmarks/istana-maimun.jpg') }}"
-                        alt="Istana Maimun Medan"
-                        loading="lazy"
-                        class="landmark-image"
-                    >
-                </div>
-
-                <h3 property="rdfs:label">
-                    Istana Maimun
-                </h3>
-
-                <p>
-                    Medan Maimun, Kota Medan
-                </p>
-
-                <span class="landmark-link">
-                    Lihat Hotel Terdekat &rarr;
-                </span>
-
+        <!-- View All Destinations CTA -->
+        <div class="mt-12 text-center">
+            <a href="{{ url('/search') }}" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-white/10 hover:bg-white/15 text-white font-bold text-sm border border-white/20 transition-all hover:scale-105">
+                <i class="fa-solid fa-compass text-indigo-400"></i>
+                <span>Jelajahi Seluruh 187 Hotel di Kota Medan</span>
+                <i class="fa-solid fa-chevron-right text-xs"></i>
             </a>
+        </div>
 
-            <!-- LANDMARK 2: TJONG A FIE -->
-            <a href="{{ url('/search?landmark=Tjong+A+Fie+Mansion') }}"
-               class="landmark-card">
+    </div>
+</section>
 
-                <div class="landmark-image-wrap">
-                    <img
-                        src="{{ asset('images/landmarks/tjong-a-fie.jpg') }}"
-                        alt="Tjong A Fie Mansion Medan"
-                        loading="lazy"
-                        class="landmark-image"
-                    >
-                </div>
+{{-- ═══════════════════════════════════════════════════════════
+     HOTEL PILIHAN PREMIUM MEDAN (CURATED SHOWCASE)
+═══════════════════════════════════════════════════════════ --}}
+<section id="hotel-pilihan" class="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900 relative">
+    <div class="max-w-7xl mx-auto">
 
-                <h3 property="rdfs:label">
-                    Tjong A Fie Mansion
-                </h3>
-
-                <p>
-                    Kesawan, Kota Medan
-                </p>
-
-                <span class="landmark-link">
-                    Lihat Hotel Terdekat &rarr;
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+                <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">
+                    Akomodasi Unggulan
                 </span>
-
-            </a>
-
-            <!-- LANDMARK 3: MASJID RAYA -->
-            <a href="{{ url('/search?landmark=Masjid+Raya+Al+Mashun') }}"
-               class="landmark-card">
-
-                <div class="landmark-image-wrap">
-                    <img
-                        src="{{ asset('images/landmarks/masjid-raya.jpg') }}"
-                        alt="Masjid Raya Al Mashun Medan"
-                        loading="lazy"
-                        class="landmark-image"
-                    >
-                </div>
-
-                <h3 property="rdfs:label">
-                    Masjid Raya Al Mashun
-                </h3>
-
-                <p>
-                    Kota Matsum, Kota Medan
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-3 tracking-tight">
+                    Rekomendasi Hotel <span class="text-gradient">Terbaik di Medan</span>
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base mt-2">
+                    Koleksi hotel berbintang dengan fasilitas lengkap dan rating tertinggi dari wisatawan.
                 </p>
-
-                <span class="landmark-link">
-                    Lihat Hotel Terdekat &rarr;
-                </span>
-
+            </div>
+            <a href="{{ url('/search') }}" class="mt-4 md:mt-0 inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 font-bold text-sm">
+                Lihat Semua Hotel <i class="fa-solid fa-arrow-right text-xs"></i>
             </a>
+        </div>
 
-            <!-- LANDMARK 4: LAPANGAN MERDEKA -->
-            <a href="{{ url('/search?landmark=Lapangan+Merdeka') }}"
-               class="landmark-card">
+        @php
+            $featuredHotels = [
+                [
+                    'id' => 'hotel-005',
+                    'nama' => 'Adimulia Hotel Medan',
+                    'alamat' => 'Jl. Pangeran Diponegoro No. 8, Medan Petisah',
+                    'star' => 5,
+                    'rating' => 4.8,
+                    'reviews' => 4250,
+                    'harga' => 1250000,
+                    'foto' => '/images/hotels/adimulia-hotel-medan.jpg',
+                    'landmark' => 'Sun Plaza (350 m)',
+                    'facilities' => ['Kolam Renang', 'Gym', 'WiFi', 'Spa', 'Restoran']
+                ],
+                [
+                    'id' => 'hotel-001',
+                    'nama' => "d'primahotel Kualanamu Medan",
+                    'alamat' => 'Jalan Sultan Serdang No. 88, Medan',
+                    'star' => 4,
+                    'rating' => 4.5,
+                    'reviews' => 2880,
+                    'harga' => 514240,
+                    'foto' => '/images/hotels/dprimahotelkualanamumedan/1.jpg',
+                    'landmark' => 'Bandara & Railink',
+                    'facilities' => ['Kolam Renang', 'Parkir', 'WiFi', 'AC']
+                ],
+                [
+                    'id' => 'hotel-002',
+                    'nama' => 'Grand City Hall Medan',
+                    'alamat' => 'Jl. Balai Kota No. 1, Medan Barat',
+                    'star' => 5,
+                    'rating' => 4.7,
+                    'reviews' => 3120,
+                    'harga' => 1100000,
+                    'foto' => '/images/hotels/alam-hotel-by-cordela.jpg',
+                    'landmark' => 'Lapangan Merdeka (100 m)',
+                    'facilities' => ['Kolam Renang', 'Spa', 'Gym', 'WiFi', 'Sarapan']
+                ],
+                [
+                    'id' => 'hotel-003',
+                    'nama' => 'Santika Premiere Dyandra Hotel',
+                    'alamat' => 'Jl. Kapten Maulana Lubis No. 7, Medan Petisah',
+                    'star' => 4,
+                    'rating' => 4.6,
+                    'reviews' => 2640,
+                    'harga' => 785000,
+                    'foto' => '/images/hotels/antares-hotel.jpg',
+                    'landmark' => 'Tjong A Fie Mansion (800 m)',
+                    'facilities' => ['Kolam Renang', 'WiFi', 'Parkir', 'AC', 'Sarapan']
+                ],
+            ];
+        @endphp
 
-                <div class="landmark-image-wrap">
-                    <img
-                        src="{{ asset('images/landmarks/lapangan-merdeka.jpg') }}"
-                        alt="Lapangan Merdeka Medan"
-                        loading="lazy"
-                        class="landmark-image"
-                    >
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            @foreach($featuredHotels as $hotel)
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between group transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="{{ asset($hotel['foto']) }}" alt="{{ $hotel['nama'] }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" onerror="this.src='/images/placeholder.svg'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                        <div class="absolute top-3 left-3 flex items-center gap-1 bg-amber-500 text-white text-[11px] font-black px-2 py-0.5 rounded-lg shadow">
+                            <i class="fa-solid fa-star text-[10px]"></i> {{ $hotel['star'] }} Bintang
+                        </div>
+                        <div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-slate-800 text-[11px] font-bold px-2 py-0.5 rounded-lg">
+                            ⭐ {{ $hotel['rating'] }} <span class="text-slate-400">({{ $hotel['reviews'] }})</span>
+                        </div>
+                        <div class="absolute bottom-2 left-3 text-white text-xs font-semibold flex items-center gap-1">
+                            <i class="fa-solid fa-route text-indigo-400"></i> {{ $hotel['landmark'] }}
+                        </div>
+                    </div>
+
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-extrabold text-white text-base leading-snug group-hover:text-indigo-300 transition">
+                                <a href="{{ route('hotel.detail', ['id' => $hotel['id']]) }}" class="no-underline text-inherit">
+                                    {{ $hotel['nama'] }}
+                                </a>
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-1 line-clamp-1">
+                                <i class="fa-solid fa-location-dot text-indigo-500 mr-1"></i> {{ $hotel['alamat'] }}
+                            </p>
+
+                            <!-- Facility Chips -->
+                            <div class="flex flex-wrap gap-1 mt-3">
+                                @foreach(array_slice($hotel['facilities'], 0, 3) as $f)
+                                    <span class="text-[10px] font-semibold bg-white/10 text-slate-300 px-2 py-0.5 rounded-md">
+                                        {{ $f }}
+                                    </span>
+                                @endforeach
+                            </div>
+                        </div>
+
+                        <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-slate-400 block font-medium">Mulai dari</span>
+                                <span class="text-base font-black text-indigo-600">Rp {{ number_format($hotel['harga'], 0, ',', '.') }}</span>
+                                <span class="text-[10px] text-slate-400">/malam</span>
+                            </div>
+                            <a href="{{ route('hotel.detail', ['id' => $hotel['id']]) }}" class="px-3.5 py-2 rounded-xl bg-indigo-600 text-white font-bold text-xs hover:bg-indigo-700 transition flex items-center gap-1 shadow-sm">
+                                Detail <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
+            @endforeach
+        </div>
 
-                <h3 property="rdfs:label">
-                    Lapangan Merdeka
-                </h3>
+    </div>
+</section>
 
-                <p>
-                    Pusat Kota, Medan Barat
-                </p>
+{{-- ═══════════════════════════════════════════════════════════
+     SEMANTIC WEB & KNOWLEDGE GRAPH ARCHITECTURE
+═══════════════════════════════════════════════════════════ --}}
+<section id="arsitektur" class="py-24 px-4 sm:px-6 lg:px-8 bg-slate-950 border-t border-white/5 relative">
+    <div class="max-w-7xl mx-auto">
 
-                <span class="landmark-link">
-                    Lihat Hotel Terdekat &rarr;
-                </span>
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">
+                Teknologi Cerdas
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-black text-white mt-3 mb-4 tracking-tight">
+                Didukung <span class="text-gradient">Semantic Web & SPARQL</span>
+            </h2>
+            <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                Roomify memanfaatkan ontologi data terhubung (Linked Data) berbasis standar W3C untuk pencarian hotel yang lebih presisi dan kontekstual di Kota Medan.
+            </p>
+        </div>
 
-            </a>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-            <!-- LANDMARK 5: GRAHA MARIA -->
-            <a href="{{ url('/search?landmark=Graha+Maria+Annai+Velangkanni') }}"
-               class="landmark-card">
-
-                <div class="landmark-image-wrap">
-                    <img
-                        src="{{ asset('images/landmarks/graha-maria.jpg') }}"
-                        alt="Graha Maria Annai Velangkanni Medan"
-                        loading="lazy"
-                        class="landmark-image"
-                    >
+            <!-- Card 1: Apache Jena Fuseki -->
+            <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl mb-5 border border-indigo-500/30">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-white mb-2">Apache Jena Fuseki</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+                        Triplestore SPARQL 1.1 server yang melayani query terhubung antarentitas hotel, kamar, fasilitas, dan kedekatan koordinat geografis secara realtime.
+                    </p>
+                    <div class="bg-black/40 rounded-xl p-3 border border-white/10 text-[11px] font-mono text-emerald-400">
+                        <code>SELECT ?hotel ?harga WHERE {<br>
+                        &nbsp;&nbsp;?h a roomify:Hotel ;<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;roomify:nearLandmark ?lm .<br>
+                        }</code>
+                    </div>
                 </div>
+                <div class="mt-6 pt-4 border-t border-white/10 flex items-center gap-2 text-xs text-indigo-400 font-semibold">
+                    <i class="fa-solid fa-server"></i>
+                    <span>Endpoint: localhost:3030/Roomify</span>
+                </div>
+            </div>
 
-                <h3 property="rdfs:label">
-                    Graha Maria Annai Velangkanni
-                </h3>
+            <!-- Card 2: Protege Ontology Design -->
+            <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl mb-5 border border-purple-500/30">
+                        <i class="fa-solid fa-sitemap"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-white mb-2">Protégé Ontology</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+                        Pemodelan ontologi RDF/OWL hierarkis yang mendefinisikan kelas <code>roomify:Hotel</code>, <code>roomify:Landmark</code>, <code>roomify:Room</code>, serta pemetaan schema.org.
+                    </p>
+                    <div class="bg-black/40 rounded-xl p-3 border border-white/10 text-[11px] font-mono text-purple-300">
+                        <code>roomify:Hotel rdfs:subClassOf schema:Hotel .<br>
+                        roomify:nearLandmark a owl:ObjectProperty .</code>
+                    </div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/10 flex items-center gap-2 text-xs text-purple-400 font-semibold">
+                    <i class="fa-solid fa-cube"></i>
+                    <span>OWL DL Reasoning Ready</span>
+                </div>
+            </div>
 
-                <p>
-                    Tuntungan, Kota Medan
-                </p>
-
-                <span class="landmark-link">
-                    Lihat Hotel Terdekat &rarr;
-                </span>
-
-            </a>
+            <!-- Card 3: Google Maps JavaScript API -->
+            <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-xl mb-5 border border-pink-500/30">
+                        <i class="fa-solid fa-map-location"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-white mb-2">Google Maps API</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+                        Visualisasi spasial interaktif dengan penanda custom SVG pin, Street View panorama 360°, dan pencarian berbasis radius koordinat akurat di Kota Medan.
+                    </p>
+                    <div class="bg-black/40 rounded-xl p-3 border border-white/10 text-[11px] font-mono text-pink-300">
+                        <code>new google.maps.Map(elem, {<br>
+                        &nbsp;&nbsp;center: { lat: 3.5952, lng: 98.6722 },<br>
+                        &nbsp;&nbsp;zoom: 14<br>
+                        });</code>
+                    </div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/10 flex items-center gap-2 text-xs text-pink-400 font-semibold">
+                    <i class="fa-solid fa-location-crosshairs"></i>
+                    <span>Live Geolocation & Street View</span>
+                </div>
+            </div>
 
         </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>
-            © 2026 Roomify – Knowledge Graph Hotel Ontology Medan.
-        </p>
-    </footer>
+    </div>
+</section>
+
+{{-- ═══════════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════════ --}}
+<footer class="bg-slate-950 text-slate-400 border-t border-white/10 pt-16 pb-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+
+            <!-- Col 1: Brand Info -->
+            <div class="space-y-4">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-9 h-9">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow">
+                            <defs>
+                                <linearGradient id="ft-bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#4F46E5"/>
+                                    <stop offset="50%" stop-color="#7C3AED"/>
+                                    <stop offset="100%" stop-color="#EC4899"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="48" height="48" rx="14" fill="url(#ft-bg-grad)"/>
+                            <path d="M12 36V22C12 15.3726 17.3726 10 24 10C30.6274 10 36 15.3726 36 22V36" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M18 36V18H25.5C28 18 29.5 19.5 29.5 22C29.5 24.5 28 26 25.5 26H18M24 26L30 36" stroke="#FFFFFF" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-black text-white">Roomify</span>
+                </div>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                    Platform pencarian hotel cerdas di Kota Medan berbasis teknologi Semantic Web (RDF/OWL), SPARQL Apache Jena Fuseki, dan Google Maps API.
+                </p>
+                <div class="flex items-center gap-3 text-slate-400 text-sm">
+                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <!-- Col 2: Landmark Populer -->
+            <div>
+                <h4 class="text-white text-xs font-black uppercase tracking-wider mb-4">Landmark Populer</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="{{ url('/search?landmark=Istana+Maimun') }}" class="hover:text-white transition">Istana Maimun</a></li>
+                    <li><a href="{{ url('/search?landmark=Tjong+A+Fie+Mansion') }}" class="hover:text-white transition">Tjong A Fie Mansion</a></li>
+                    <li><a href="{{ url('/search?landmark=Masjid+Raya+Al+Mashun') }}" class="hover:text-white transition">Masjid Raya Al-Mashun</a></li>
+                    <li><a href="{{ url('/search?landmark=Lapangan+Merdeka') }}" class="hover:text-white transition">Lapangan Merdeka (KM 0)</a></li>
+                    <li><a href="{{ url('/search?landmark=Sun+Plaza') }}" class="hover:text-white transition">Sun Plaza Medan</a></li>
+                    <li><a href="{{ url('/search?landmark=Graha+Maria+Annai+Velangkanni') }}" class="hover:text-white transition">Graha Maria Velangkanni</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 3: Navigasi Cepat -->
+            <div>
+                <h4 class="text-white text-xs font-black uppercase tracking-wider mb-4">Navigasi Platform</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="{{ url('/search') }}" class="hover:text-white transition">Cari Semua Hotel</a></li>
+                    <li><a href="{{ route('login') }}" class="hover:text-white transition">Masuk Akun</a></li>
+                    <li><a href="{{ route('register') }}" class="hover:text-white transition">Daftar Akun Baru</a></li>
+                    <li><a href="#destinasi" class="hover:text-white transition">13 Landmark Medan</a></li>
+                    <li><a href="#arsitektur" class="hover:text-white transition">Arsitektur Semantic Web</a></li>
+                </ul>
+            </div>
+
+            <!-- Col 4: Teknologi Backend -->
+            <div>
+                <h4 class="text-white text-xs font-black uppercase tracking-wider mb-4">Teknologi Backend</h4>
+                <ul class="space-y-2 text-xs">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Apache Jena Fuseki SPARQL</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> Protégé OWL Ontology</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span> Schema.org & RDFa Metadata</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-pink-400"></span> Google Maps JS API (Live)</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span> Laravel 11 Full-Stack</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+            <p>© {{ date('Y') }} Roomify Medan. Hak cipta dilindungi undang-undang.</p>
+            <p class="flex items-center gap-1">
+                <span>Ditenagai oleh</span>
+                <span class="text-slate-300 font-semibold">Semantic Web & Triplestore Knowledge Graph</span>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════════════
+     SCRIPTS: AUTOCOMPLETE & SCROLL
+════════════════════════════════════════════════════════ -->
+<script>
+    // Autocomplete /suggest
+    const searchInput = document.getElementById('search-q');
+    const suggestBox = document.getElementById('suggest-box');
+
+    let debounceTimer;
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            clearTimeout(debounceTimer);
+            const q = this.value.trim();
+            if (q.length < 3) {
+                suggestBox.style.display = 'none';
+                return;
+            }
+
+            debounceTimer = setTimeout(() => {
+                fetch(`{{ url('/suggest') }}?q=${encodeURIComponent(q)}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data && data.length > 0) {
+                            suggestBox.innerHTML = data.map(item => `
+                                <div class="suggest-item" onclick="selectSuggest('${item.replace(/'/g, "\\'")}')">
+                                    <i class="fa-solid fa-hotel text-indigo-500 text-xs"></i>
+                                    <span>${item}</span>
+                                </div>
+                            `).join('');
+                            suggestBox.style.display = 'block';
+                        } else {
+                            suggestBox.style.display = 'none';
+                        }
+                    })
+                    .catch(() => {
+                        suggestBox.style.display = 'none';
+                    });
+            }, 250);
+        });
+
+        document.addEventListener('click', function(e) {
+            if (!searchInput.contains(e.target) && !suggestBox.contains(e.target)) {
+                suggestBox.style.display = 'none';
+            }
+        });
+    }
+
+    function selectSuggest(name) {
+        searchInput.value = name;
+        suggestBox.style.display = 'none';
+        document.getElementById('search-form').submit();
+    }
+</script>
 
 </body>
 </html>
