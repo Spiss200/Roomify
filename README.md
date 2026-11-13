@@ -1,58 +1,166 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Roomify: Semantic Hotel Search Engine Medan
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Tugas besar mata kuliah **Web Semantik** dan **Manajemen Sistem Basis Data**.
 
-## About Laravel
+Roomify adalah website pencarian hotel di Kota Medan. Data hotel hasil scraping diubah menjadi **RDF**, disimpan di **Apache Jena Fuseki**, lalu dicari lewat **SPARQL** dari aplikasi **Laravel**. Data transaksi (user dan booking) disimpan di **SQLite**.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Fitur
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+**Pencarian (SPARQL ke Fuseki)**
+- Kata kunci bebas pada nama, alamat, dan deskripsi. Kalimat diurai menjadi kata kunci, fasilitas, dan landmark, contoh: "hotel dekat Istana Maimun kolam"
+- Sinonim fasilitas: kolam/pool, sarapan/breakfast, gym/fitness, parkir, wifi
+- Filter sidebar: bintang (minimal N bintang), harga minimum dan maksimum, dekat landmark, fasilitas
+- Urutan: harga naik/turun, rating, nama, terdekat dari lokasi pengguna
+- Autocomplete nama hotel (`/suggest`)
+- Peta hasil pencarian (Google Maps)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+**Detail hotel**
+- Deskripsi, fasilitas, tipe kamar dan harga, galeri foto, peta
+- 5 landmark terdekat dengan jarak (dihitung lokal dari 13 landmark Medan, rumus haversine)
+- Metadata semantik: RDFa, Open Graph, dan tampilan JSON-LD
 
-## Learning Laravel
+**Transaksi**
+- Register, login, dashboard pengguna (Laravel Breeze)
+- Booking dan pembayaran (**simulasi**, tanpa payment gateway), riwayat di dashboard
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+**Chatbot**
+- Chatbot **berbasis aturan (rule-based)**: jadwal check-in, syarat KTP, metode bayar, hotel dekat landmark, hotel murah, hotel bintang 5. Chatbot membaca `hotels_complete.json`, bukan Fuseki.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Tech Stack
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+| Bagian | Teknologi |
+|---|---|
+| Backend | Laravel 13, PHP 8.3+ |
+| Triplestore | Apache Jena Fuseki 5.1.0 (SPARQL) |
+| Database aplikasi | SQLite |
+| Frontend | Blade, Tailwind CSS |
+| Peta | Google Maps JavaScript API |
+| Scraping dan konversi | Python |
+| Ontologi | OWL/RDF (Turtle), dipetakan ke schema.org |
 
-## Agentic Development
+## Arsitektur dan Alur Data
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
-
-```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+```
+Scraping (Google Maps, Traveloka, OSM) -> CSV
+   -> cleaning (Python) -> hotels_complete.json
+   -> build_rdf.py -> semantic/rdf/roomify.ttl
+   -> Fuseki (dataset "Roomify")
+   -> Laravel: SearchController -> SparqlBuilder -> FusekiClient
+   -> Halaman web
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+Data saat ini: **187 hotel**, **11.384 triple**. Sebaran bintang: 1 bintang (22), 2 (76), 3 (68), 4 (17), 5 (4).
 
-## Contributing
+### Fallback Fuseki
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+`FusekiClient` memakai `semantic/scrape/hotels_complete.json` sebagai cadangan **hanya jika Fuseki tidak bisa dihubungi**. Hasil SPARQL yang kosong tidak memicu cadangan.
 
-## Code of Conduct
+Untuk demo Web Semantik, matikan cadangan di `.env`:
+```
+FUSEKI_FALLBACK=false
+```
+Dengan nilai ini, jika Fuseki mati maka pencarian kosong, sehingga terbukti seluruh pencarian berjalan lewat SPARQL.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Ontologi
 
-## Security Vulnerabilities
+Namespace: `https://roomify.example/ontology#`
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- **Class:** Hotel, Room, Facility, City, Review, Photo, Landmark (turunan class schema.org)
+- **Relasi:** hasRoom, hasFacility, hasFeature, locatedInCity, hasReview, hasPhoto, nearLandmark (masing-masing punya inverse)
+- **Properti data:** name, address, description, starRating, rating, reviewCount, startPrice, pricePerNight, roomType, maxGuests, latitude, longitude, photoUrl, dataSource
 
-## License
+Lima contoh query SPARQL (hotel murah berkolam renang, hotel di jalan tertentu, kamar satu hotel, statistik fasilitas, hotel dekat landmark) ada di `semantic/rdf/queries/demo_queries.sparql`.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Cara Menjalankan (Windows)
+
+### Prasyarat
+PHP 8.3+ (ekstensi `pdo_sqlite`, `sqlite3`, `mbstring`, `openssl`, `curl`, `fileinfo` aktif di `php.ini`), Composer, Node.js, Java 17+, Apache Jena Fuseki 5.1.0.
+
+### 1. Instal aplikasi
+```bash
+git clone https://github.com/Spiss200/Roomify.git
+cd Roomify
+copy .env.example .env
+composer install
+npm install
+php artisan key:generate
+type nul > database\database.sqlite
+php artisan migrate
+```
+
+### 2. Isi `.env`
+```
+FUSEKI_ENDPOINT=http://localhost:3030/Roomify/query
+FUSEKI_FALLBACK=true
+GOOGLE_MAPS_KEY=isi_dengan_api_key_google_maps
+```
+`GOOGLE_MAPS_KEY` wajib diisi, jika kosong peta tidak tampil. Mintalah key kepada leader tim.
+
+### 3. Jalankan Fuseki
+```bash
+cd apache-jena-fuseki-5.1.0
+.\fuseki-server.bat
+```
+1. Buka http://localhost:3030
+2. **Manage datasets > New dataset**, nama `Roomify`, tipe **Persistent (TDB2)**
+3. Tab **add data**, unggah `semantic/rdf/roomify.ttl`
+4. Tab **query**, jalankan `SELECT (COUNT(*) AS ?n) WHERE { ?s ?p ?o }`. Hasil yang benar: **11384**
+
+Jika memperbarui `roomify.ttl`, kosongkan data lama lebih dulu dengan `CLEAR DEFAULT` di tab query, lalu unggah ulang.
+
+### 4. Jalankan web
+```bash
+php artisan serve
+```
+Buka http://localhost:8000. Fuseki harus tetap menyala.
+
+### 5. Tes otomatis
+```bash
+php artisan test
+```
+Terdapat 40 tes: autentikasi, alur booking dan pembayaran, filter bintang dan harga, `/suggest`, dan chatbot. Tes berjalan tanpa Fuseki (memakai data cadangan).
+
+## Rute
+
+| Rute | Fungsi |
+|---|---|
+| `/` | Beranda |
+| `/search` | Pencarian dan filter |
+| `/suggest?q=` | Autocomplete (JSON) |
+| `/api/ai-chat` | Chatbot (POST) |
+| `/hotel/{id}` | Detail hotel |
+| `/hotel/{id}/book` | Form booking |
+| `/payment` | Pembayaran (simulasi) |
+| `/dashboard` | Dashboard pengguna (perlu login) |
+
+## Struktur Folder
+
+```
+app/Http/Controllers   Search, Hotel, Booking, Payment, Chatbot
+app/Services           FusekiClient, SparqlBuilder, WikidataClient
+resources/views        Tampilan Blade
+semantic/scrape        Skrip scraping, cleaning, build_rdf.py, data JSON dan CSV
+semantic/rdf           roomify.ttl dan demo_queries.sparql
+public/images          Foto hotel dan landmark
+tests/Feature          Tes otomatis
+```
+
+## Keterbatasan
+
+- Ulasan di RDF dibuat otomatis oleh `build_rdf.py`, bukan ulasan asli.
+- Sebagian alamat hotel yang sama muncul berulang, dan harga tipe kamar tampak dihitung dari harga dasar. Data dasar (nama, koordinat, rating, harga mulai) berasal dari scraping, sedangkan kelengkapan lainnya perlu diverifikasi.
+- RDF menyimpan satu landmark terdekat per hotel (jarak lurus), sedangkan halaman detail menampilkan lima landmark terdekat (haversine).
+- `WikidataClient` masih ada di kode, tetapi halaman detail tidak lagi memakainya.
+- Pembayaran hanya simulasi, status langsung `paid`. Nomor KTP tersimpan tanpa enkripsi di SQLite.
+- Chatbot tidak memakai SPARQL, dan kata kunci "kolam renang" hanya dicocokkan pada nama, alamat, dan deskripsi.
+
+## Tim
+
+| NIM | Nama | Peran |
+|---|---|---|
+| 251402082 | Bintang Pamungkas | Leader, ontologi dan RDF, Fuseki, backend |
+| 251402092 | Muhammad Azkha Amorie | Backend, tes, dokumentasi |
+| 251402008 | Sina Mahdi | Frontend |
+| 251502129 | Mar'ie Rizqullah | Frontend |
+| 251402138 | Randi Abdiansyah | Backend |
+| 251402059 | Agi Aginta | Backend |
