@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="id" prefix="schema: https://schema.org/ roomify: http://roomify.example.org/ontology# rdfs: http://www.w3.org/2000/01/rdf-schema#">
 <head>
     <meta charset="utf-8">
@@ -1061,7 +1061,7 @@
     }
 </script>
 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoRCXpXYCd4Zo3K8LGs7FSswbr1qImHoQ&callback=initMap&libraries=places,geometry">
+    src="https://maps.googleapis.com/maps/api/js?key={{ config('services.google_maps.key') }}&callback=initMap&libraries=places,geometry">
 </script>
 
 <!-- ══════════════════════════════════════════════════════

@@ -23,7 +23,7 @@ class RoomifyFlowTest extends TestCase
         $response = $this->get('/search');
         $response->assertStatus(200);
         $response->assertSee('Roomify');
-        $response->assertSee('AIzaSyDoRCXpXYCd4Zo3K8LGs7FSswbr1qImHoQ');
+        $response->assertSee('maps.googleapis.com');
         $response->assertSee('maps.googleapis.com');
     }
 
@@ -38,7 +38,7 @@ class RoomifyFlowTest extends TestCase
         $response = $this->get('/hotel/hotel-001');
         $response->assertStatus(200);
         $response->assertSee("d'primahotel Kualanamu Medan");
-        $response->assertSee('AIzaSyDoRCXpXYCd4Zo3K8LGs7FSswbr1qImHoQ');
+        $response->assertSee('maps.googleapis.com');
         $response->assertSee('hotel-map');
     }
 
