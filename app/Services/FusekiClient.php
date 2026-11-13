@@ -41,26 +41,21 @@ class FusekiClient
 
                 if ($res->successful()) {
                     static::$fusekiOnline = true;
-                    $bindings = $res->json()['results']['bindings'] ?? [];
-                    if (!empty($bindings)) {
-                        return collect($bindings)
-                            ->map(function ($row) {
-                                $clean = [];
-                                foreach ($row as $key => $cell) {
-                                    $clean[$key] = $cell['value'] ?? null;
-                                }
-                                return $clean;
-                            })
-                            ->all();
-                    }
-                } else {
-                    static::$fusekiOnline = false;
+                    return collect($res->json()['results']['bindings'] ?? [])
+                        ->map(fn ($row) => array_map(fn ($cell) => $cell['value'] ?? null, $row))
+                        ->all();
                 }
+                static::$fusekiOnline = false;
             } catch (\Throwable $e) {
                 static::$fusekiOnline = false;
             }
         }
 
+        if (! env('FUSEKI_FALLBACK', true)) {
+            return [];
+        }
+
+        \Illuminate\Support\Facades\Log::warning('Fuseki tidak tersedia, memakai fallback hotels_complete.json');
         return $this->fallback($sparql);
     }
 
