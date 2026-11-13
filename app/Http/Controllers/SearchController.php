@@ -41,6 +41,8 @@ class SearchController extends Controller
         }
 
         if ($request->filled('max_price'))  $b->maxPrice((int) $request->input('max_price'));
+        if ($request->filled('price_max')) $b->maxPrice((int) $request->input('price_max'));
+        if ($request->filled('price_min')) $b->minPrice((int) $request->input('price_min'));
         if ($request->filled('min_rating')) $b->minRating((float) $request->input('min_rating'));
         if ($request->filled('star'))       $b->minStar((int) $request->input('star'));
         if ($request->filled('rating'))     $b->minStar((int) $request->input('rating'));

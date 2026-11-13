@@ -203,6 +203,12 @@ class FusekiClient
             });
         }
 
+        // Min price filter
+        if (preg_match('/FILTER\(\?harga\s*>=\s*([0-9]+)\)/i', $sparql, $mp)) {
+            $minPrice = (int) $mp[1];
+            $filtered = array_filter($filtered, fn ($h) => (int) ($h['start_price'] ?? 0) >= $minPrice);
+        }
+
         // Max price filter
         if (preg_match('/FILTER\(\?harga\s*<=\s*([0-9]+)\)/i', $sparql, $pm)) {
             $maxPrice = (int)$pm[1];

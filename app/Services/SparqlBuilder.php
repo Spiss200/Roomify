@@ -39,6 +39,12 @@ class SparqlBuilder
         return $this;
     }
 
+    public function minPrice(int $price): self
+    {
+        $this->patterns[] = "FILTER(?harga >= $price)";
+        return $this;
+    }
+
     public function minRating(float $r): self
     {
         $this->patterns[] = "FILTER(?rating >= " . number_format($r, 1, '.', '') . ")";
