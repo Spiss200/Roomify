@@ -665,133 +665,93 @@
         </div>
 
         <!-- ════════════════════════════════
-             RIGHT COLUMN: Sticky Booking Card
+             RIGHT COLUMN: Quick Reservation & Policy Highlights
         ════════════════════════════════ -->
         <div>
             <div id="booking-card" class="booking-card">
-                <div class="bg-white rounded-2xl shadow-lg border border-indigo-100 overflow-hidden">
+                <div class="bg-white dark:bg-slate-900 rounded-3xl shadow-xl border border-indigo-100 dark:border-slate-800 overflow-hidden">
                     <!-- Card header gradient -->
-                    <div class="hero-gradient px-5 py-4">
-                        <p class="text-indigo-200 text-xs font-semibold uppercase tracking-widest mb-1">Harga Per Malam</p>
-                        <div class="flex items-baseline gap-2">
-                            <span class="text-white text-3xl font-black">Rp {{ number_format($hotel['startPrice'] ?? 0, 0, ',', '.') }}</span>
+                    <div class="hero-gradient px-6 py-5 text-white">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-indigo-200">
+                                <i class="fa-solid fa-sparkles text-amber-300 mr-1"></i> Penawaran Terbaik
+                            </span>
+                            <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/80 text-white text-[10px] font-extrabold uppercase tracking-wide">
+                                Kamar Tersedia
+                            </span>
+                        </div>
+                        <div class="flex items-baseline gap-2 mt-1">
+                            <span class="text-3xl font-black">Rp {{ number_format($hotel['startPrice'] ?? 0, 0, ',', '.') }}</span>
+                            <span class="text-indigo-200 text-xs">/malam</span>
                         </div>
                         @if(!empty($hotel['rating']))
                         <div class="flex items-center gap-1.5 mt-2">
                             <i class="fa-solid fa-star text-amber-400 text-xs"></i>
-                            <span class="text-white text-xs font-semibold">{{ number_format((float)($hotel['rating'] ?? 0), 1) }}</span>
-                            <span class="text-indigo-300 text-xs">· {{ $hotel['jumlahReview'] ?? 0 }} ulasan</span>
+                            <span class="text-white text-xs font-bold">{{ number_format((float)($hotel['rating'] ?? 0), 1) }}</span>
+                            <span class="text-indigo-300 text-xs">· {{ $hotel['jumlahReview'] ?? 0 }} ulasan wisatawan</span>
                         </div>
                         @endif
                     </div>
 
-                    <!-- Form fields -->
-                    <form id="booking-form" action="{{ route('booking.form', ['id' => $id]) }}" method="GET" class="p-5 space-y-4">
-                        @csrf
-                        <!-- Check-in -->
-                        <div>
-                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wide mb-1.5">
-                                <i class="fa-solid fa-calendar-day text-indigo-400 mr-1"></i>Check-in
-                            </label>
-                            <input type="date" name="checkin" id="checkin"
-                                   value="{{ request('checkin', date('Y-m-d')) }}"
-                                   min="{{ date('Y-m-d') }}"
-                                   onchange="calcNights()"
-                                   class="w-full border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition">
-                        </div>
-
-                        <!-- Check-out -->
-                        <div>
-                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wide mb-1.5">
-                                <i class="fa-solid fa-calendar-check text-indigo-400 mr-1"></i>Check-out
-                            </label>
-                            <input type="date" name="checkout" id="checkout"
-                                   value="{{ request('checkout', date('Y-m-d', strtotime('+1 day'))) }}"
-                                   min="{{ date('Y-m-d', strtotime('+1 day')) }}"
-                                   onchange="calcNights()"
-                                   class="w-full border border-slate-200 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition">
-                        </div>
-
-                        <!-- Guests -->
-                        <div>
-                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wide mb-1.5">
-                                <i class="fa-solid fa-user-group text-indigo-400 mr-1"></i>Jumlah Tamu
-                            </label>
-                            <div class="flex items-center border border-slate-200 rounded-xl overflow-hidden">
-                                <button type="button" onclick="adjustGuests(-1)" class="px-4 py-2.5 text-indigo-600 font-bold hover:bg-indigo-50 transition text-lg leading-none">−</button>
-                                <input type="number" name="guests" id="guests" value="2" min="1" max="10" readonly
-                                       class="flex-1 text-center text-sm font-semibold text-slate-700 border-x border-slate-200 py-2.5 focus:outline-none bg-white">
-                                <button type="button" onclick="adjustGuests(1)" class="px-4 py-2.5 text-indigo-600 font-bold hover:bg-indigo-50 transition text-lg leading-none">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Price Summary -->
-                        <div class="bg-slate-50 rounded-xl p-4 space-y-2 border border-slate-100">
-                            <div class="flex justify-between text-sm">
-                                <span class="text-slate-500">
-                                    Rp {{ number_format($hotel['startPrice'] ?? 0, 0, ',', '.') }}
-                                    × <span id="nights-count">1</span> malam
-                                </span>
-                                <span class="font-semibold text-slate-700" id="subtotal">
-                                    Rp {{ number_format($hotel['startPrice'] ?? 0, 0, ',', '.') }}
+                    <!-- Clean Quick Summary Body -->
+                    <div class="p-6 space-y-5">
+                        <!-- Real-time Check-in / Check-out badges -->
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-100 dark:border-slate-700">
+                                <span class="text-[10px] text-slate-400 font-bold uppercase block tracking-wider">Jadwal Check-in</span>
+                                <span class="text-sm font-extrabold text-slate-900 dark:text-white flex items-center gap-1.5 mt-0.5">
+                                    <i class="fa-solid fa-clock text-indigo-500 text-xs"></i> 14.00 WIB
                                 </span>
                             </div>
-                            <div class="flex justify-between text-sm">
-                                <span class="text-slate-500">Pajak & biaya (10%)</span>
-                                <span class="font-semibold text-slate-700" id="tax-amt">
-                                    Rp {{ number_format(($hotel['startPrice'] ?? 0) * 0.1, 0, ',', '.') }}
-                                </span>
-                            </div>
-                            <div class="flex justify-between text-sm font-black text-slate-900 pt-2 border-t border-slate-200">
-                                <span>Total</span>
-                                <span id="total-price" class="text-indigo-700">
-                                    Rp {{ number_format(($hotel['startPrice'] ?? 0) * 1.1, 0, ',', '.') }}
+                            <div class="p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-100 dark:border-slate-700">
+                                <span class="text-[10px] text-slate-400 font-bold uppercase block tracking-wider">Jadwal Check-out</span>
+                                <span class="text-sm font-extrabold text-slate-900 dark:text-white flex items-center gap-1.5 mt-0.5">
+                                    <i class="fa-solid fa-clock-rotate-left text-pink-500 text-xs"></i> 12.00 WIB
                                 </span>
                             </div>
                         </div>
 
-                        <!-- Pesan Sekarang Button -->
-                        <button type="submit" class="btn-gradient w-full py-3.5 text-sm shadow-lg flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-calendar-check"></i>
-                            Pesan Sekarang
-                        </button>
-
-                        <p class="text-center text-xs text-slate-400">
-                            <i class="fa-solid fa-shield-halved text-green-500 mr-1"></i>
-                            Pembatalan gratis · Tanpa biaya tersembunyi
-                        </p>
-                    </form>
-
-                    <!-- Trust badges -->
-                    <div class="border-t border-slate-100 px-5 py-4 grid grid-cols-3 gap-2 text-center">
-                        <div class="text-xs text-slate-500">
-                            <i class="fa-solid fa-lock text-indigo-400 block text-base mb-1"></i>Aman
-                        </div>
-                        <div class="text-xs text-slate-500">
-                            <i class="fa-solid fa-headset text-indigo-400 block text-base mb-1"></i>24/7 Suport
-                        </div>
-                        <div class="text-xs text-slate-500">
-                            <i class="fa-solid fa-medal text-indigo-400 block text-base mb-1"></i>Terpercaya
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact card -->
-                <div class="mt-4 bg-white rounded-2xl shadow-sm border border-slate-100 p-5">
-                    <p class="text-sm font-bold text-slate-800 mb-3">Butuh Bantuan?</p>
-                    <div class="space-y-2.5">
-                        <a href="tel:+6261" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-700 transition">
-                            <div class="w-8 h-8 rounded-lg bg-green-50 border border-green-100 flex items-center justify-center">
-                                <i class="fa-solid fa-phone text-green-500 text-xs"></i>
+                        <!-- Roomify Policy & Guarantees -->
+                        <div class="space-y-2.5 text-xs text-slate-600 dark:text-slate-300">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 flex items-center justify-center text-[10px] shrink-0">
+                                    <i class="fa-solid fa-id-card"></i>
+                                </div>
+                                <span>Wajib NIK KTP Asli (16 digit) saat check-in</span>
                             </div>
-                            <span>Hubungi Hotel</span>
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 flex items-center justify-center text-[10px] shrink-0">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </div>
+                                <span>Konfirmasi Instan & Kode Booking Resmi Terverifikasi</span>
+                            </div>
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 flex items-center justify-center text-[10px] shrink-0">
+                                    <i class="fa-solid fa-shield-check"></i>
+                                </div>
+                                <span>Bebas Biaya Pemesanan Tambahan</span>
+                            </div>
+                        </div>
+
+                        <!-- Big CTA Button to Booking Form -->
+                        <a href="{{ route('booking.form', ['id' => $id]) }}"
+                           class="btn-gradient w-full py-4 rounded-2xl text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow-xl hover:shadow-2xl transition transform hover:-translate-y-0.5 no-underline">
+                            <span>Lanjut ke Formulir Pemesanan</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
                         </a>
-                        <a href="#" class="flex items-center gap-2.5 text-sm text-slate-600 hover:text-indigo-700 transition">
-                            <div class="w-8 h-8 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center">
-                                <i class="fa-solid fa-message text-blue-500 text-xs"></i>
+
+                        <!-- AI Concierge Quick Trigger & Support -->
+                        <div class="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-3">
+                            <button type="button" onclick="toggleChatbot()" class="w-full py-2.5 px-3 rounded-xl bg-indigo-50 hover:bg-indigo-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-indigo-700 dark:text-indigo-300 text-xs font-bold border border-indigo-200/60 dark:border-slate-700 transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-robot text-sm text-indigo-600 dark:text-indigo-400"></i>
+                                <span>Tanya AI Concierge tentang Hotel Ini</span>
+                            </button>
+                            <div class="flex items-center justify-center gap-4 text-[11px] text-slate-400">
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-qrcode text-indigo-500"></i> QRIS</span>
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-building-columns text-indigo-500"></i> Virtual Account</span>
+                                <span class="flex items-center gap-1"><i class="fa-solid fa-lock text-emerald-500"></i> 100% Aman</span>
                             </div>
-                            <span>Live Chat</span>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1226,15 +1186,11 @@
 
     // ── Init on load ──
     document.addEventListener('DOMContentLoaded', () => {
-        calcNights();
-        // Pre-fill dates from query string
-        const params = new URLSearchParams(window.location.search);
-        if (params.get('checkin')) document.getElementById('checkin').value = params.get('checkin');
-        if (params.get('checkout')) document.getElementById('checkout').value = params.get('checkout');
-        if (params.get('guests')) document.getElementById('guests').value = params.get('guests');
-        calcNights();
+        // Pre-fill dates from query string if any
     });
 </script>
+
+<x-ai-chat-widget />
 
 </body>
 </html>

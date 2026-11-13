@@ -6,10 +6,24 @@ class SparqlBuilder
 {
     protected array $patterns = [];
     protected string $keyword = '';
+    protected array $terms = [];
+    protected string $sort = 'harga_asc';
 
     public function keyword(string $q): self
     {
         $this->keyword = trim($q);
+        return $this;
+    }
+
+    public function terms(array $terms): self
+    {
+        $this->terms = array_filter(array_map('trim', $terms));
+        return $this;
+    }
+
+    public function sort(string $sort): self
+    {
+        $this->sort = $sort;
         return $this;
     }
 
@@ -44,12 +58,19 @@ class SparqlBuilder
         return $this;
     }
 
-    public function build(int $limit = 30): string
+    public function build(int $limit = 200): string
     {
         $extra = implode("\n  ", $this->patterns);
 
         $kwFilter = '';
-        if ($this->keyword !== '') {
+        if (!empty($this->terms)) {
+            $clauses = [];
+            foreach ($this->terms as $t) {
+                $safe = addslashes(strtolower($t));
+                $clauses[] = "(CONTAINS(LCASE(?nama), '$safe') || CONTAINS(LCASE(?alamat), '$safe') || CONTAINS(LCASE(?desc), '$safe'))";
+            }
+            $kwFilter = "FILTER(\n    " . implode(" &&\n    ", $clauses) . "\n  )";
+        } elseif ($this->keyword !== '') {
             $safe = addslashes(strtolower($this->keyword));
             $kwFilter = "FILTER(
       CONTAINS(LCASE(?nama), '$safe') ||
@@ -57,6 +78,13 @@ class SparqlBuilder
       CONTAINS(LCASE(?desc), '$safe')
     )";
         }
+
+        $orderBy = match ($this->sort) {
+            'harga_desc' => 'ORDER BY DESC(?harga)',
+            'rating'     => 'ORDER BY DESC(?rating)',
+            'nama'       => 'ORDER BY ASC(?nama)',
+            default      => 'ORDER BY ASC(?harga)',
+        };
 
         return "PREFIX roomify: <https://roomify.example/ontology#>
 SELECT ?id ?nama ?alamat ?harga ?rating ?star ?foto ?lat ?lon WHERE {
@@ -74,7 +102,7 @@ SELECT ?id ?nama ?alamat ?harga ?rating ?star ?foto ?lat ?lon WHERE {
   $extra
   $kwFilter
 }
-ORDER BY ASC(?harga)
+$orderBy
 LIMIT $limit";
     }
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\SearchController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ChatbotController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ Route::get('/', function () {
 // Search & Autocomplete
 Route::get('/search', [SearchController::class, 'index'])->name('search');
 Route::get('/suggest', [SearchController::class, 'suggest'])->name('suggest');
+Route::post('/api/ai-chat', [ChatbotController::class, 'respond'])->name('ai.chat');
 
 // Detail Hotel
 Route::get('/hotel/{id}', [HotelController::class, 'show'])->name('hotel.detail');

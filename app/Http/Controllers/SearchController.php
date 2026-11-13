@@ -21,14 +21,24 @@ class SearchController extends Controller
     {
         $q = (string) $request->input('q', '');
         $query = $q;
+        $sort = (string) $request->input('sort', 'relevansi');
 
         $b = new SparqlBuilder();
-        $keep = [];
-        foreach (preg_split('/\s+/', strtolower($q)) as $w) {
-            if (isset(self::SYNONYMS[$w])) $b->facility(self::SYNONYMS[$w]);
-            elseif ($w !== '') $keep[] = $w;
+        $b->sort($sort);
+
+        // Smart Natural Language & Significant Terms extraction
+        $extracted = $this->extractTermsAndFilters($q);
+        foreach ($extracted['facilities'] as $facSlug) {
+            $b->facility($facSlug);
         }
-        $b->keyword(implode(' ', $keep));
+        if (!empty($extracted['landmark']) && !$request->filled('landmark')) {
+            $request->merge(['landmark' => $extracted['landmark']]);
+        }
+        if (!empty($extracted['terms'])) {
+            $b->terms($extracted['terms']);
+        } elseif ($q !== '') {
+            $b->keyword($q);
+        }
 
         if ($request->filled('max_price'))  $b->maxPrice((int) $request->input('max_price'));
         if ($request->filled('min_rating')) $b->minRating((float) $request->input('min_rating'));
@@ -39,7 +49,8 @@ class SearchController extends Controller
             $b->facility('fac-' . \Illuminate\Support\Str::slug($f));
         }
 
-        $rows = $this->fuseki->select($b->build(50));
+        // Retrieve up to 200 hotels (entire Medan database of 187 hotels)
+        $rows = $this->fuseki->select($b->build(200));
 
         $p = 'PREFIX roomify: <https://roomify.example/ontology#>';
         $fac = $this->grouped("$p SELECT ?id (GROUP_CONCAT(DISTINCT ?n; separator='|') AS ?v) WHERE {
@@ -49,34 +60,124 @@ class SearchController extends Controller
             ?h roomify:nearLandmark ?l . ?l roomify:name ?n .
             BIND(STRAFTER(STR(?h), '#') AS ?id) } GROUP BY ?id");
 
-        $hotels = array_map(fn ($r) => [
-            'id'         => $r['id'],
-            'nama'       => $r['nama'],
-            'alamat'     => $r['alamat'],
-            'bintang'    => $r['star'] ?? null,
-            'starRating' => $r['star'] ?? null,
-            'harga'      => (int) $r['harga'],
-            'startPrice' => (int) $r['harga'],
-            'rating'     => $r['rating'] ?? null,
-            'foto'       => $r['foto'] ?? '/images/placeholder.svg',
-            'latitude'   => $r['lat'] ?? null,
-            'longitude'  => $r['lon'] ?? null,
-            'fasilitas'  => $fac[$r['id']] ?? [],
-            'landmarks'  => $lm[$r['id']] ?? [],
-        ], $rows);
+        $userLat = $request->filled('user_lat') ? (float)$request->input('user_lat') : null;
+        $userLng = $request->filled('user_lng') ? (float)$request->input('user_lng') : null;
+
+        $hotels = array_map(function ($r) use ($fac, $lm, $userLat, $userLng) {
+            $lat = $r['lat'] ?? null;
+            $lon = $r['lon'] ?? null;
+            $distanceKm = null;
+            $distFormatted = null;
+
+            if ($userLat && $userLng && $lat && $lon) {
+                $distanceKm = $this->haversineKm($userLat, $userLng, (float)$lat, (float)$lon);
+                $distFormatted = $distanceKm < 1 
+                    ? round($distanceKm * 1000) . ' m' 
+                    : number_format($distanceKm, 1, ',', '.') . ' km';
+            }
+
+            return [
+                'id'         => $r['id'],
+                'nama'       => $r['nama'],
+                'alamat'     => $r['alamat'],
+                'bintang'    => $r['star'] ?? null,
+                'starRating' => $r['star'] ?? null,
+                'harga'      => (int) $r['harga'],
+                'startPrice' => (int) $r['harga'],
+                'rating'     => $r['rating'] ?? null,
+                'foto'       => $r['foto'] ?? '/images/placeholder.svg',
+                'latitude'   => $lat,
+                'longitude'  => $lon,
+                'fasilitas'  => $fac[$r['id']] ?? [],
+                'landmarks'  => $lm[$r['id']] ?? [],
+                'jarak_km'   => $distanceKm,
+                'jarak'      => $distFormatted,
+            ];
+        }, $rows);
+
+        // If user requested sorting by nearest distance
+        if ($sort === 'terdekat' && $userLat && $userLng) {
+            usort($hotels, function ($a, $b) {
+                if ($a['jarak_km'] === null) return 1;
+                if ($b['jarak_km'] === null) return -1;
+                return $a['jarak_km'] <=> $b['jarak_km'];
+            });
+        }
 
         $selectedLandmark = (string) $request->input('landmark', '');
         $landmarkInfo = null;
         if ($selectedLandmark) {
-            foreach (FusekiClient::LANDMARKS as $lm) {
-                if (str_contains(strtolower($lm['name']), strtolower($selectedLandmark)) || str_contains(strtolower($selectedLandmark), strtolower($lm['name']))) {
-                    $landmarkInfo = $lm;
+            foreach (FusekiClient::LANDMARKS as $lmItem) {
+                if (str_contains(strtolower($lmItem['name']), strtolower($selectedLandmark)) || str_contains(strtolower($selectedLandmark), strtolower($lmItem['name']))) {
+                    $landmarkInfo = $lmItem;
                     break;
                 }
             }
         }
 
-        return view('search.index', compact('hotels', 'q', 'query', 'selectedLandmark', 'landmarkInfo'));
+        return view('search.index', compact('hotels', 'q', 'query', 'selectedLandmark', 'landmarkInfo', 'userLat', 'userLng', 'sort'));
+    }
+
+    protected function extractTermsAndFilters(string $q): array
+    {
+        $clean = mb_strtolower(trim($q));
+        if ($clean === '') {
+            return ['terms' => [], 'facilities' => [], 'landmark' => null];
+        }
+
+        $facilities = [];
+        $landmark = null;
+
+        // Check for landmark in query
+        foreach (FusekiClient::LANDMARKS as $lm) {
+            if (str_contains($clean, strtolower($lm['name']))) {
+                $landmark = $lm['name'];
+                $clean = str_replace(strtolower($lm['name']), '', $clean);
+                break;
+            }
+        }
+
+        $stopWords = [
+            'hotel', 'penginapan', 'villa', 'resort', 'homestay', 'kost', 'lodging',
+            'yang', 'itu', 'ini', 'di', 'jalan', 'jl', 'jln', 'daerah', 'kawasan',
+            'sekitar', 'dekat', 'ada', 'mau', 'cari', 'carikan', 'rekomendasi',
+            'mana', 'nih', 'dong', 'ke', 'kota', 'medan', 'pada', 'untuk', 'dengan',
+            'bagus', 'murah', 'mewah', 'paling', 'tolong'
+        ];
+
+        $tokens = preg_split('/[\s,]+/', $clean, -1, PREG_SPLIT_NO_EMPTY);
+        $terms = [];
+
+        foreach ($tokens as $token) {
+            $w = trim($token, ".,!?'\"()[]");
+            if ($w === '') continue;
+
+            if (isset(self::SYNONYMS[$w])) {
+                $facilities[] = self::SYNONYMS[$w];
+                continue;
+            }
+
+            if (!in_array($w, $stopWords)) {
+                $terms[] = $w;
+            }
+        }
+
+        return [
+            'terms'      => $terms,
+            'facilities' => array_unique($facilities),
+            'landmark'   => $landmark,
+        ];
+    }
+
+    protected function haversineKm(float $lat1, float $lon1, float $lat2, float $lon2): float
+    {
+        $earthRadius = 6371;
+        $dLat = deg2rad($lat2 - $lat1);
+        $dLon = deg2rad($lon2 - $lon1);
+        $a = sin($dLat / 2) * sin($dLat / 2) +
+             cos(deg2rad($lat1)) * cos(deg2rad($lat2)) *
+             sin($dLon / 2) * sin($dLon / 2);
+        return $earthRadius * 2 * atan2(sqrt($a), sqrt(1 - $a));
     }
 
     public function suggest(Request $request)

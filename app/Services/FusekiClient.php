@@ -180,13 +180,26 @@ class FusekiClient
         // 7. Search query
         $filtered = $data;
 
-        // Keyword filter
-        if (preg_match('/CONTAINS\(LCASE\(\?nama\),\s*\'([^\']+)\'\)/i', $sparql, $km)) {
-            $kw = strtolower($km[1]);
-            $filtered = array_filter($filtered, function ($h) use ($kw) {
-                return str_contains(strtolower($h['name'] ?? ''), $kw)
-                    || str_contains(strtolower($h['address'] ?? ''), $kw)
-                    || str_contains(strtolower($h['description'] ?? ''), $kw);
+        // Keyword filter (supports single or multiple significant terms)
+        if (preg_match_all('/CONTAINS\(LCASE\(\?nama\),\s*\'([^\']+)\'\)/i', $sparql, $kmAll) && !empty($kmAll[1])) {
+            $terms = array_map('strtolower', $kmAll[1]);
+            $filtered = array_filter($filtered, function ($h) use ($terms) {
+                $haystack = strtolower(
+                    ($h['name'] ?? '') . ' ' .
+                    ($h['address'] ?? '') . ' ' .
+                    ($h['description'] ?? '')
+                );
+                foreach ($terms as $t) {
+                    if (!str_contains($haystack, $t)) {
+                        // try without dot (e.g. hm vs h.m)
+                        $tNoDot = str_replace('.', '', $t);
+                        $haystackNoDot = str_replace('.', '', $haystack);
+                        if (!str_contains($haystackNoDot, $tNoDot)) {
+                            return false;
+                        }
+                    }
+                }
+                return true;
             });
         }
 
@@ -237,13 +250,19 @@ class FusekiClient
             }
         }
 
-        // Sort by start_price ASC
-        usort($filtered, function ($a, $b) {
-            return ($a['start_price'] ?? 0) <=> ($b['start_price'] ?? 0);
-        });
+        // Sort according to SPARQL ORDER BY
+        if (str_contains($sparql, 'ORDER BY DESC(?harga)')) {
+            usort($filtered, fn ($a, $b) => ($b['start_price'] ?? 0) <=> ($a['start_price'] ?? 0));
+        } elseif (str_contains($sparql, 'ORDER BY DESC(?rating)')) {
+            usort($filtered, fn ($a, $b) => ($b['rating'] ?? 0) <=> ($a['rating'] ?? 0));
+        } elseif (str_contains($sparql, 'ORDER BY ASC(?nama)')) {
+            usort($filtered, fn ($a, $b) => strcasecmp($a['name'] ?? '', $b['name'] ?? ''));
+        } else {
+            usort($filtered, fn ($a, $b) => ($a['start_price'] ?? 0) <=> ($b['start_price'] ?? 0));
+        }
 
-        // Limit
-        $limit = 50;
+        // Limit (default 200 to cover all 187 hotels in Medan)
+        $limit = 200;
         if (preg_match('/LIMIT\s+([0-9]+)/i', $sparql, $limMatch)) {
             $limit = (int)$limMatch[1];
         }

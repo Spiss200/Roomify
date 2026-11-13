@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Hasil Pencarian Hotel — Roomify</title>
     <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
     <link rel="alternate icon" href="{{ asset('favicon.ico') }}">
@@ -182,60 +183,148 @@
         }
         .pulse-btn { animation: pulse-blue 2s infinite; }
 
-        /* Dark mode cohesion */
+        /* Top Loader Progress Bar */
+        #top-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+            z-index: 99999;
+            transition: width 0.25s ease;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.7);
+        }
+
+        /* Page Entrance Animation */
+        main {
+            animation: pageFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes pageFadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Shimmer Effect for Skeleton Cards */
+        @keyframes shimmer {
+            100% { transform: translateX(100%); }
+        }
+        .shimmer-box {
+            position: relative;
+            overflow: hidden;
+            background: #e2e8f0;
+        }
+        html.dark .shimmer-box {
+            background: #1e293b;
+        }
+        .shimmer-box::after {
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            transform: translateX(-100%);
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+            animation: shimmer 1.5s infinite;
+            content: '';
+        }
+        html.dark .shimmer-box::after {
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0) 100%);
+        }
+
+        /* Custom Scrollbar */
+        .custom-scrollbar::-webkit-scrollbar { width: 5px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        html.dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #334155; }
+
+        /* Dark Mode Comprehensive Styling */
         html.dark body {
             background: #0b0f19 !important;
             color: #f1f5f9 !important;
         }
         html.dark .glass-nav {
-            background: rgba(11, 15, 25, 0.9) !important;
+            background: rgba(11, 15, 25, 0.92) !important;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
         }
         html.dark .filter-card {
-            background: rgba(15, 23, 42, 0.95) !important;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            background: #111827 !important;
+            border: 1px solid #1f2937 !important;
             color: #f1f5f9 !important;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
         }
         html.dark .filter-card label,
         html.dark .filter-card h2,
-        html.dark .filter-card span,
-        html.dark .filter-card p {
+        html.dark .filter-card .filter-label {
             color: #f1f5f9 !important;
         }
         html.dark .filter-card select,
         html.dark .filter-card input[type=text],
         html.dark .filter-card input[type=number] {
-            background: #1e293b !important;
+            background: #1f2937 !important;
             color: #ffffff !important;
-            border-color: #334155 !important;
+            border: 1px solid #374151 !important;
+        }
+        html.dark .filter-card select:focus,
+        html.dark .filter-card input:focus {
+            border-color: #60a5fa !important;
+        }
+        html.dark .facility-option {
+            background: #1f2937 !important;
+            border-color: #374151 !important;
+            color: #cbd5e1 !important;
+        }
+        html.dark .facility-option:hover {
+            background: #374151 !important;
+            border-color: #60a5fa !important;
         }
         html.dark .hotel-card {
-            background: rgba(15, 23, 42, 0.95) !important;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            background: #111827 !important;
+            border: 1px solid #1f2937 !important;
             color: #f1f5f9 !important;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) !important;
         }
-        html.dark .hotel-card h3,
-        html.dark .hotel-card h2 {
+        html.dark .hotel-card:hover {
+            border-color: #3b82f6 !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6) !important;
+        }
+        html.dark .hotel-card h3 a {
             color: #ffffff !important;
         }
-        html.dark .hotel-card p,
-        html.dark .hotel-card span {
-            color: #94a3b8;
+        html.dark .hotel-card h3 a:hover {
+            color: #60a5fa !important;
         }
-        html.dark .hotel-card .font-bold.text-slate-800,
-        html.dark .hotel-card .font-bold.text-slate-900 {
-            color: #ffffff !important;
+        html.dark .text-slate-900,
+        html.dark .text-slate-800,
+        html.dark .text-slate-700 {
+            color: #f8fafc !important;
+        }
+        html.dark .text-slate-600,
+        html.dark .text-slate-500 {
+            color: #94a3b8 !important;
+        }
+        html.dark .bg-slate-50 {
+            background-color: #111827 !important;
+        }
+        html.dark .border-slate-200,
+        html.dark .border-slate-100 {
+            border-color: #1f2937 !important;
+        }
+        html.dark #mobile-menu {
+            background: #111827 !important;
+            border-color: #1f2937 !important;
         }
         html.dark #map-toggle-btn {
-            background: #1e293b !important;
+            background: #1f2937 !important;
             color: #f1f5f9 !important;
-            border-color: #334155 !important;
+            border-color: #374151 !important;
+        }
+        html.dark .landmark-banner {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9)) !important;
+            border-color: #374151 !important;
         }
     </style>
 </head>
 <body class="antialiased min-h-screen">
+    <!-- Top Progress Bar -->
+    <div id="top-loader"></div>
 
     <!-- ============================================================
          STICKY GLASS NAVBAR
@@ -353,11 +442,15 @@
         <div class="flex flex-col lg:flex-row gap-7">
 
             <!-- =====================================================
-                 LEFT: FILTER SIDEBAR
+                 LEFT: FILTER SIDEBAR (SCROLLABLE INDEPENDENTLY)
             ===================================================== -->
             <aside class="w-full lg:w-72 xl:w-80 shrink-0">
-                <form action="{{ url('/search') }}" method="GET"
-                      class="filter-card rounded-2xl p-5 space-y-5 lg:sticky lg:top-20">
+                <form action="{{ url('/search') }}" method="GET" id="search-filter-form"
+                      class="filter-card rounded-2xl p-5 space-y-5 lg:sticky lg:top-20 lg:max-h-[calc(100vh-5.5rem)] lg:overflow-y-auto custom-scrollbar">
+
+                    <!-- Hidden Geolocation Coordinates for Real-Time Distance Filter -->
+                    <input type="hidden" name="user_lat" id="filter-user-lat" value="{{ request('user_lat', $userLat ?? '') }}">
+                    <input type="hidden" name="user_lng" id="filter-user-lng" value="{{ request('user_lng', $userLng ?? '') }}">
 
                     <!-- Sidebar Header -->
                     <div class="flex items-center justify-between pb-4 border-b border-slate-100">
@@ -475,7 +568,7 @@
                                 ];
                             @endphp
                             @foreach($facilityList as [$val, $icon, $label])
-                                <label class="flex items-center gap-2 px-2.5 py-2 rounded-xl border border-slate-200 cursor-pointer hover:border-blue-300 hover:bg-blue-50 transition {{ in_array($val, $selectedFacilities) ? 'border-blue-400 bg-blue-50' : '' }}">
+                                <label class="facility-option flex items-center gap-2 px-2.5 py-2 rounded-xl border border-slate-200 cursor-pointer hover:border-blue-300 hover:bg-blue-50 transition {{ in_array($val, $selectedFacilities) ? 'border-blue-400 bg-blue-50' : '' }}">
                                     <input type="checkbox" name="facilities[]" value="{{ $val }}"
                                            {{ in_array($val, $selectedFacilities) ? 'checked' : '' }}
                                            class="shrink-0">
@@ -497,6 +590,7 @@
                             <select id="sort" name="sort"
                                     class="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-3 py-2.5 pr-8 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 transition appearance-none">
                                 <option value=""          {{ !request('sort') ? 'selected' : '' }}>Relevansi</option>
+                                <option value="terdekat"  {{ request('sort') == 'terdekat' ? 'selected' : '' }}>📍 Terdekat dari Lokasi Saya</option>
                                 <option value="harga_asc" {{ request('sort') == 'harga_asc' ? 'selected' : '' }}>💲 Harga Terendah</option>
                                 <option value="harga_desc"{{ request('sort') == 'harga_desc' ? 'selected' : '' }}>💰 Harga Tertinggi</option>
                                 <option value="rating"    {{ request('sort') == 'rating' ? 'selected' : '' }}>⭐ Rating Tertinggi</option>
@@ -542,13 +636,31 @@
                         </div>
                     </div>
 
+                    <!-- Live Route Navigation Info Bar -->
+                    <div id="map-route-bar" class="hidden px-4 py-2.5 bg-indigo-950 text-white text-xs flex flex-wrap items-center justify-between gap-2 border-b border-indigo-800/60">
+                        <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                            <span class="font-extrabold text-indigo-200">Rute Aktif:</span>
+                            <span id="map-route-destination" class="font-bold text-white truncate max-w-[160px] sm:max-w-xs">Hotel Tujuan</span>
+                            <span id="map-route-stats" class="px-2 py-0.5 rounded-full bg-indigo-800 text-[11px] font-semibold text-emerald-300">0 km · 0 mnt</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <a id="btn-open-gmaps" href="#" target="_blank" rel="noopener" class="px-2.5 py-1 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-[10px] font-bold transition flex items-center gap-1">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Buka Google Maps
+                            </a>
+                            <button type="button" onclick="clearNavigationRoute()" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white text-[10px] font-bold transition">
+                                <i class="fa-solid fa-xmark mr-1"></i>Tutup Rute
+                            </button>
+                        </div>
+                    </div>
+
                     <!-- Map Container -->
                     <div id="search-map"></div>
                 </div>
 
                 <!-- LANDMARK INFO BANNER (IF FILTERED) -->
                 @if(!empty($landmarkInfo))
-                    <div class="rounded-2xl p-5 bg-gradient-to-r from-amber-500/10 via-indigo-500/10 to-purple-500/10 border border-amber-300/50 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="landmark-banner rounded-2xl p-5 bg-gradient-to-r from-amber-500/10 via-indigo-500/10 to-purple-500/10 border border-amber-300/50 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
                         <div class="flex items-center gap-3.5">
                             <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-500 to-amber-600 text-white flex items-center justify-center text-xl shadow-md shrink-0">
                                 <i class="fa-solid fa-landmark"></i>
@@ -571,14 +683,37 @@
                     <div class="flex items-center justify-between mb-4">
                         <div class="flex items-center gap-2">
                             <div class="section-line"></div>
-                            <h2 class="font-bold text-slate-800 text-base">Daftar Hotel</h2>
+                            <h2 class="font-bold text-slate-800 text-base">Daftar Hotel di Medan</h2>
                         </div>
                         <div class="text-xs text-slate-500">
                             Menampilkan <span class="font-semibold text-slate-700">{{ count($hotels ?? []) }}</span> hotel
                         </div>
                     </div>
 
-                    <!-- Grid -->
+                    <!-- SKELETON LOADING GRID (DISPLAYED ON FILTER/SORT/NAV) -->
+                    <div id="skeleton-grid" class="hidden grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 mb-5">
+                        @for($i = 0; $i < 6; $i++)
+                            <div class="rounded-2xl overflow-hidden bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col">
+                                <div class="h-48 shimmer-box"></div>
+                                <div class="p-4 space-y-3 flex-1 flex flex-col justify-between">
+                                    <div class="space-y-2">
+                                        <div class="h-4 w-3/4 shimmer-box rounded"></div>
+                                        <div class="h-3 w-1/2 shimmer-box rounded"></div>
+                                        <div class="flex gap-2 pt-2">
+                                            <div class="h-5 w-14 shimmer-box rounded-lg"></div>
+                                            <div class="h-5 w-16 shimmer-box rounded-lg"></div>
+                                        </div>
+                                    </div>
+                                    <div class="pt-3 border-t border-slate-100 dark:border-slate-700 flex justify-between items-center">
+                                        <div class="h-6 w-24 shimmer-box rounded"></div>
+                                        <div class="h-8 w-20 shimmer-box rounded-xl"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endfor
+                    </div>
+
+                    <!-- Results Grid -->
                     <div id="hotel-results-grid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
                         @forelse ($hotels ?? [] as $item)
                             {{-- RDFa: roomify:Hotel & schema:Hotel --}}
@@ -636,14 +771,20 @@
                                         </div>
                                     @endif
 
-                                    <!-- Map Pin Indicator Button -->
+                                    <!-- Map Action Buttons (Rute & Peta) -->
                                     @if(!empty($item['latitude']) && !empty($item['longitude']))
-                                        <div class="absolute bottom-3 right-3 z-10">
+                                        <div class="absolute bottom-3 right-3 z-10 flex items-center gap-1.5">
+                                            <button type="button"
+                                                    onclick="event.stopPropagation(); startNavigationToHotel({{ $item['latitude'] }}, {{ $item['longitude'] }}, '{{ addslashes($item['nama'] ?? 'Hotel') }}')"
+                                                    title="Petunjuk arah rute Google Maps"
+                                                    class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold bg-white/95 hover:bg-emerald-600 hover:text-white text-emerald-700 dark:bg-slate-900/90 dark:text-emerald-400 shadow transition">
+                                                <i class="fa-solid fa-diamond-turn-right text-emerald-500 text-[9px]"></i> Rute
+                                            </button>
                                             <button type="button"
                                                     onclick="event.stopPropagation(); focusHotelOnMap('{{ $item['id'] ?? $loop->index }}', {{ $item['latitude'] ?? 'null' }}, {{ $item['longitude'] ?? 'null' }})"
                                                     title="Fokuskan hotel di peta"
-                                                    class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold bg-white/95 hover:bg-blue-600 hover:text-white text-blue-700 shadow transition">
-                                                <i class="fa-solid fa-location-dot text-blue-500 hover:text-white text-[9px]"></i> Peta
+                                                    class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold bg-white/95 hover:bg-blue-600 hover:text-white text-blue-700 dark:bg-slate-900/90 dark:text-blue-400 shadow transition">
+                                                <i class="fa-solid fa-location-dot text-blue-500 text-[9px]"></i> Peta
                                             </button>
                                         </div>
                                     @endif
@@ -654,16 +795,16 @@
 
                                     <!-- Hotel Name -->
                                     <h3 property="rdfs:label schema:name"
-                                        class="font-bold text-slate-900 text-base leading-tight mb-1.5 line-clamp-1">
+                                        class="font-bold text-slate-900 dark:text-white text-base leading-tight mb-1.5 line-clamp-1">
                                         <a href="{{ route('hotel.detail', ['id' => $item['id'] ?? 1]) }}"
-                                           class="hover:text-blue-600 transition">
+                                           class="hover:text-blue-500 transition">
                                             {{ $item['nama'] ?? 'Nama Hotel' }}
                                         </a>
                                     </h3>
 
                                     <!-- Address -->
                                     <p property="roomify:address schema:address"
-                                       class="text-xs text-slate-500 flex items-start gap-1.5 mb-3">
+                                       class="text-xs text-slate-500 dark:text-slate-400 flex items-start gap-1.5 mb-2.5">
                                         <i class="fa-solid fa-location-dot text-blue-400 mt-0.5 shrink-0"></i>
                                         <span class="line-clamp-1">{{ $item['alamat'] ?? 'Medan, Sumatera Utara' }}</span>
                                     </p>
@@ -682,16 +823,16 @@
                                                 'Restaurant'   => 'fa-fork-knife',
                                             ];
                                         @endphp
-                                        <div class="flex flex-wrap gap-1.5 mb-3">
+                                        <div class="flex flex-wrap gap-1.5 mb-2.5">
                                             @foreach(array_slice($item['fasilitas'], 0, 4) as $fac)
                                                 <span rel="roomify:hasFacility"
-                                                      class="inline-flex items-center gap-1 bg-blue-50 text-blue-700 text-[10px] font-semibold px-2 py-1 rounded-lg">
+                                                      class="inline-flex items-center gap-1 bg-blue-50 dark:bg-slate-800 text-blue-700 dark:text-blue-300 text-[10px] font-semibold px-2 py-0.5 rounded-lg border border-blue-100/50 dark:border-slate-700">
                                                     <i class="fa-solid {{ $facIcons[$fac] ?? 'fa-check' }} text-blue-400 text-[9px]"></i>
                                                     <span property="rdfs:label">{{ $fac }}</span>
                                                 </span>
                                             @endforeach
                                             @if(count($item['fasilitas']) > 4)
-                                                <span class="inline-flex items-center text-[10px] text-slate-400 font-medium px-2 py-1 bg-slate-50 rounded-lg">
+                                                <span class="inline-flex items-center text-[10px] text-slate-400 font-medium px-2 py-0.5 bg-slate-50 dark:bg-slate-800/60 rounded-lg">
                                                     +{{ count($item['fasilitas']) - 4 }} lagi
                                                 </span>
                                             @endif
@@ -700,28 +841,31 @@
 
                                     <!-- Nearby Landmark -->
                                     @if(!empty($item['landmarks']))
-                                        <p class="text-[11px] text-slate-500 flex items-center gap-1.5 mb-2">
+                                        <p class="text-[11px] text-slate-500 dark:text-slate-400 flex items-center gap-1.5 mb-2">
                                             <i class="fa-solid fa-landmark text-purple-400 text-[10px]"></i>
                                             <span>Dekat: </span>
-                                            <span rel="roomify:nearLandmark" class="font-semibold text-slate-700">
+                                            <span rel="roomify:nearLandmark" class="font-semibold text-slate-700 dark:text-slate-200">
                                                 <span property="rdfs:label">{{ is_array($item['landmarks']) ? $item['landmarks'][0] : $item['landmarks'] }}</span>
                                             </span>
                                         </p>
                                     @endif
 
-                                    <!-- Distance Badge (Populated when user clicks 'Lokasi Saya') -->
-                                    <div class="dist-badge hidden mb-3 text-[11px] font-bold text-indigo-700 bg-indigo-50 border border-indigo-100 px-2 py-0.5 rounded-lg inline-flex items-center"></div>
+                                    <!-- Distance Badge (Populated when user coords exist or on GPS detection) -->
+                                    <div class="dist-badge {{ !empty($item['jarak']) ? '' : 'hidden' }} mb-2.5 text-[11px] font-bold text-indigo-700 dark:text-indigo-300 bg-indigo-50 dark:bg-indigo-950/70 border border-indigo-100 dark:border-indigo-800/80 px-2 py-0.5 rounded-lg inline-flex items-center gap-1">
+                                        <i class="fa-solid fa-location-crosshairs text-[10px]"></i>
+                                        <span class="dist-val">{{ $item['jarak'] ?? '' }}</span> dari lokasi Anda
+                                    </div>
 
                                     <!-- Spacer -->
                                     <div class="flex-1"></div>
 
                                     <!-- Price + CTA -->
-                                    <div class="pt-3 mt-2 border-t border-slate-100 flex items-end justify-between gap-2">
+                                    <div class="pt-3 mt-2 border-t border-slate-100 dark:border-slate-800 flex items-end justify-between gap-2">
                                         <div>
                                             <span class="text-[10px] text-slate-400 font-semibold uppercase block tracking-wide">Mulai dari</span>
                                             <span property="roomify:startPrice"
                                                   content="{{ $item['harga'] ?? $item['startPrice'] ?? 0 }}"
-                                                  class="text-lg font-black text-blue-600">
+                                                  class="text-lg font-black text-blue-600 dark:text-blue-400">
                                                 Rp&nbsp;{{ number_format((int)($item['harga'] ?? $item['startPrice'] ?? 0), 0, ',', '.') }}
                                             </span>
                                             <span class="text-[10px] text-slate-400">/malam</span>
@@ -804,10 +948,10 @@
     </footer>
 
     <!-- ============================================================
-         GOOGLE MAPS JAVASCRIPT API
+         GOOGLE MAPS JAVASCRIPT API & LIVE NAVIGATION
     ============================================================ -->
     <script>
-        // Hotel data from PHP (injected safely)
+        // Hotel data from PHP
         const hotelData = @json($hotels ?? []);
 
         let map = null;
@@ -815,8 +959,11 @@
         let infoWindows = [];
         let activeInfoWindow = null;
         let mapVisible = true;
+        let directionsService = null;
+        let directionsRenderer = null;
+        let currentUserCoords = @json(($userLat && $userLng) ? ['lat' => $userLat, 'lng' => $userLng] : null);
 
-        // Custom map styles (clean, modern)
+        // Custom map styles
         const mapStyles = [
             { featureType: "water",        elementType: "geometry",   stylers: [{ color: "#bfdbfe" }] },
             { featureType: "landscape",     elementType: "geometry",   stylers: [{ color: "#f8fafc" }] },
@@ -846,13 +993,23 @@
                 clickableIcons: false,
             });
 
+            directionsService = new google.maps.DirectionsService();
+            directionsRenderer = new google.maps.DirectionsRenderer({
+                map: map,
+                suppressMarkers: false,
+                polylineOptions: {
+                    strokeColor: '#4f46e5',
+                    strokeWeight: 5,
+                    strokeOpacity: 0.85
+                }
+            });
+
             // Add markers for hotels with coordinates
             hotelData.forEach((hotel, idx) => {
                 const lat = parseFloat(hotel.latitude);
                 const lng = parseFloat(hotel.longitude);
                 if (!lat || !lng || isNaN(lat) || isNaN(lng)) return;
 
-                // Custom marker SVG
                 const markerSvg = `
                     <svg xmlns="http://www.w3.org/2000/svg" width="38" height="50" viewBox="0 0 38 50">
                         <defs>
@@ -882,27 +1039,31 @@
                     animation: google.maps.Animation.DROP,
                 });
 
-                // Info Window content
                 const stars = parseInt(hotel.bintang ?? hotel.starRating ?? 0);
                 const starStr = '★'.repeat(Math.min(stars, 5));
                 const price = parseInt(hotel.harga ?? hotel.startPrice ?? 0);
-                const priceStr = price > 0
-                    ? 'Rp ' + price.toLocaleString('id-ID')
-                    : 'Hubungi kami';
+                const priceStr = price > 0 ? 'Rp ' + price.toLocaleString('id-ID') : 'Hubungi kami';
+                const safeName = (hotel.nama ?? 'Hotel').replace(/'/g, "\\'");
 
                 const infoContent = `
-                    <div style="font-family: Inter,sans-serif; min-width: 200px; max-width: 240px; padding: 4px 0;">
-                        <div style="font-size: 13px; font-weight: 800; color: #1e3a8a; margin-bottom: 4px; line-height: 1.3;">
+                    <div style="font-family:Inter,sans-serif; min-width:220px; max-width:260px; padding:4px 0;">
+                        <div style="font-size:13px; font-weight:800; color:#1e3a8a; margin-bottom:4px; line-height:1.3;">
                             ${hotel.nama ?? 'Hotel'}
                         </div>
-                        ${stars > 0 ? `<div style="color: #f59e0b; font-size: 12px; margin-bottom: 4px;">${starStr}</div>` : ''}
-                        <div style="font-size: 11px; color: #64748b; margin-bottom: 6px; display: flex; align-items: flex-start; gap: 4px;">
-                            <span style="color: #3b82f6;">📍</span>
+                        ${stars > 0 ? `<div style="color:#f59e0b; font-size:12px; margin-bottom:4px;">${starStr}</div>` : ''}
+                        <div style="font-size:11px; color:#64748b; margin-bottom:6px; display:flex; align-items:flex-start; gap:4px;">
+                            <span style="color:#3b82f6;">📍</span>
                             ${hotel.alamat ?? 'Medan, Sumatera Utara'}
                         </div>
-                        <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 8px; padding-top: 8px; border-top: 1px solid #e2e8f0;">
-                            <span style="font-size: 13px; font-weight: 900; color: #2563eb;">${priceStr}</span>
-                            <a href="/hotel/${hotel.id ?? ''}" style="background: linear-gradient(135deg, #2563eb, #4f46e5); color: white; font-size: 10px; font-weight: 700; padding: 4px 10px; border-radius: 8px; text-decoration: none;">Detail →</a>
+                        <div style="display:flex; align-items:center; justify-content:space-between; margin-top:8px; padding-top:8px; border-top:1px solid #e2e8f0;">
+                            <span style="font-size:13px; font-weight:900; color:#2563eb;">${priceStr}</span>
+                            <div style="display:flex; gap:4px;">
+                                <button type="button" onclick="startNavigationToHotel(${lat}, ${lng}, '${safeName}')"
+                                        style="background:#059669; color:white; font-size:10px; font-weight:700; padding:4px 8px; border-radius:8px; border:none; cursor:pointer;">
+                                    🧭 Rute
+                                </button>
+                                <a href="/hotel/${hotel.id ?? ''}" style="background:linear-gradient(135deg,#2563eb,#4f46e5); color:white; font-size:10px; font-weight:700; padding:4px 10px; border-radius:8px; text-decoration:none;">Detail →</a>
+                            </div>
                         </div>
                     </div>`;
 
@@ -912,12 +1073,9 @@
                 });
 
                 marker.addListener('click', () => {
-                    // Close any open info window
                     if (activeInfoWindow) activeInfoWindow.close();
                     infoWindow.open({ anchor: marker, map });
                     activeInfoWindow = infoWindow;
-
-                    // Highlight the hotel card
                     highlightCard(hotel.id ?? idx);
                 });
 
@@ -925,7 +1083,6 @@
                 infoWindows.push(infoWindow);
             });
 
-            // If we have hotels with coords, fit bounds
             if (markers.length > 0) {
                 const bounds = new google.maps.LatLngBounds();
                 markers.forEach(m => bounds.extend(m.marker.getPosition()));
@@ -983,15 +1140,59 @@
                     lmInfoWindow.open({ anchor: lmMarker, map });
                     activeInfoWindow = lmInfoWindow;
                 });
-                lmInfoWindow.open({ anchor: lmMarker, map });
-                activeInfoWindow = lmInfoWindow;
 
-                // Center map to landmark if bounds empty
                 if (markers.length === 0) {
                     map.setCenter(lmPos);
                     map.setZoom(15);
                 }
             }
+        }
+
+        // Live Route Navigation to Selected Hotel
+        function startNavigationToHotel(destLat, destLng, destName) {
+            if (!map || !directionsService || !directionsRenderer) return;
+
+            // Make map visible if hidden
+            if (!mapVisible) toggleMap();
+            document.getElementById('map-section')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            const origin = currentUserCoords || { lat: 3.5928, lng: 98.6748 }; // Default Stasiun Medan KM 0
+
+            directionsService.route(
+                {
+                    origin: origin,
+                    destination: { lat: parseFloat(destLat), lng: parseFloat(destLng) },
+                    travelMode: google.maps.TravelMode.DRIVING
+                },
+                function(result, status) {
+                    if (status === google.maps.DirectionsStatus.OK) {
+                        directionsRenderer.setDirections(result);
+
+                        const route = result.routes[0].legs[0];
+                        const routeBar = document.getElementById('map-route-bar');
+                        const destText = document.getElementById('map-route-destination');
+                        const statsText = document.getElementById('map-route-stats');
+                        const gmapsBtn = document.getElementById('btn-open-gmaps');
+
+                        if (routeBar) routeBar.classList.remove('hidden');
+                        if (destText) destText.innerText = destName;
+                        if (statsText) statsText.innerText = `${route.distance.text} · ${route.duration.text}`;
+                        if (gmapsBtn) {
+                            gmapsBtn.href = `https://www.google.com/maps/dir/?api=1&destination=${destLat},${destLng}&travelmode=driving`;
+                        }
+                    } else {
+                        alert('Tidak dapat membuat rute navigasi: ' + status);
+                    }
+                }
+            );
+        }
+
+        function clearNavigationRoute() {
+            if (directionsRenderer) {
+                directionsRenderer.setDirections({ routes: [] });
+            }
+            const routeBar = document.getElementById('map-route-bar');
+            if (routeBar) routeBar.classList.add('hidden');
         }
 
         // Detect user live location & calculate distances to all hotel cards
@@ -1009,7 +1210,15 @@
                 function(pos) {
                     const uLat = pos.coords.latitude;
                     const uLng = pos.coords.longitude;
-                    if (btn) btn.innerHTML = '<i class="fa-solid fa-check"></i> Lokasi Aktif';
+                    currentUserCoords = { lat: uLat, lng: uLng };
+
+                    if (btn) btn.innerHTML = '<i class="fa-solid fa-check text-emerald-400"></i> Lokasi Aktif';
+
+                    // Update hidden inputs for future filters
+                    const inLat = document.getElementById('filter-user-lat');
+                    const inLng = document.getElementById('filter-user-lng');
+                    if (inLat) inLat.value = uLat;
+                    if (inLng) inLng.value = uLng;
 
                     const userMarkerSvg = `
                         <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
@@ -1032,19 +1241,32 @@
                     map.panTo({ lat: uLat, lng: uLng });
                     map.setZoom(14);
 
-                    // Compute distance to each hotel card
-                    document.querySelectorAll('.hotel-card').forEach(card => {
+                    // Compute distance to each hotel card and dynamically reorder
+                    const grid = document.getElementById('hotel-results-grid');
+                    const cards = Array.from(document.querySelectorAll('.hotel-card'));
+
+                    cards.forEach(card => {
                         const hLat = parseFloat(card.dataset.lat);
                         const hLng = parseFloat(card.dataset.lng);
                         if (hLat && hLng) {
                             const d = calcDistanceKm(uLat, uLng, hLat, hLng);
+                            card.dataset.distKm = d;
                             const badge = card.querySelector('.dist-badge');
                             if (badge) {
-                                badge.innerHTML = `<i class="fa-solid fa-route text-indigo-500 mr-1"></i>${d.toFixed(1)} km dari posisi Anda`;
+                                const distStr = d < 1 ? Math.round(d * 1000) + ' m' : d.toFixed(1) + ' km';
+                                badge.innerHTML = `<i class="fa-solid fa-location-crosshairs text-[10px]"></i> ${distStr} dari posisi Anda`;
                                 badge.classList.remove('hidden');
                             }
                         }
                     });
+
+                    // Sort cards in DOM from closest to farthest
+                    cards.sort((a, b) => {
+                        const dA = parseFloat(a.dataset.distKm) || 999999;
+                        const dB = parseFloat(b.dataset.distKm) || 999999;
+                        return dA - dB;
+                    });
+                    cards.forEach(c => grid.appendChild(c));
                 },
                 function(err) {
                     alert('Izin akses lokasi tidak diaktifkan pada browser Anda.');
@@ -1064,7 +1286,6 @@
             return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
         }
 
-        // Highlight hotel card & pan map to marker
         function highlightCard(hotelId) {
             document.querySelectorAll('.hotel-card').forEach(card => {
                 card.classList.remove('highlighted');
@@ -1076,7 +1297,6 @@
             }
         }
 
-        // Click on card → pan map to marker & open info
         function focusHotelOnMap(hotelId, lat, lng) {
             if (!lat || !lng || !map) return;
             const target = markers.find(m => String(m.hotelId) === String(hotelId));
@@ -1084,13 +1304,11 @@
                 map.panTo({ lat: parseFloat(lat), lng: parseFloat(lng) });
                 map.setZoom(15);
                 if (activeInfoWindow) activeInfoWindow.close();
-                // Trigger marker click
                 google.maps.event.trigger(target.marker, 'click');
             }
             highlightCard(hotelId);
         }
 
-        // Toggle map visibility
         function toggleMap() {
             const section = document.getElementById('map-section');
             const label   = document.getElementById('map-toggle-label');
@@ -1103,6 +1321,41 @@
                 label.textContent = 'Tampilkan Peta';
             }
         }
+
+        // Top Loader & Skeleton Triggers
+        function triggerTopLoader() {
+            const bar = document.getElementById('top-loader');
+            if (bar) {
+                bar.style.width = '40%';
+                setTimeout(() => { bar.style.width = '80%'; }, 200);
+            }
+        }
+
+        window.addEventListener('beforeunload', () => {
+            triggerTopLoader();
+        });
+
+        document.getElementById('search-filter-form')?.addEventListener('submit', () => {
+            triggerTopLoader();
+            const skeleton = document.getElementById('skeleton-grid');
+            const results = document.getElementById('hotel-results-grid');
+            if (skeleton && results) {
+                skeleton.classList.remove('hidden');
+                results.classList.add('opacity-30');
+            }
+        });
+    </script>
+
+    <!-- Load Google Maps JS API -->
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoRCXpXYCd4Zo3K8LGs7FSswbr1qImHoQ&callback=initMap&libraries=places,geometry">
+    </script>
+
+    <!-- Roomify AI Chatbot Concierge Component -->
+    <x-ai-chat-widget />
+
+</body>
+</html>
     </script>
 
     <!-- Load Google Maps JS API (async + callback) -->
