@@ -1348,7 +1348,7 @@
 
     <!-- Load Google Maps JS API -->
     <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoRCXpXYCd4Zo3K8LGs7FSswbr1qImHoQ&callback=initMap&libraries=places,geometry">
+            src="https://maps.googleapis.com/maps/api/js?key={{ config('services.google_maps.key') }}&callback=initMap&libraries=places,geometry">
     </script>
 
     <!-- Roomify AI Chatbot Concierge Component -->
@@ -1360,7 +1360,7 @@
 
     <!-- Load Google Maps JS API (async + callback) -->
     <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoRCXpXYCd4Zo3K8LGs7FSswbr1qImHoQ&callback=initMap&libraries=places,geometry">
+            src="https://maps.googleapis.com/maps/api/js?key={{ config('services.google_maps.key') }}&callback=initMap&libraries=places,geometry">
     </script>
 
 </body>
