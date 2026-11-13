@@ -56,7 +56,7 @@
                 </div>
                 <div class="max-w-[85%] bg-white dark:bg-slate-800 p-3.5 rounded-2xl rounded-tl-sm border border-slate-200/80 dark:border-slate-700/80 shadow-sm text-slate-800 dark:text-slate-200 leading-relaxed">
                     <p class="font-bold text-indigo-600 dark:text-indigo-400 mb-1">Halo! Selamat datang di Roomify.</p>
-                    <p>Saya asisten pintar berbasis knowledge graph untuk 187 hotel di Medan. Anda bisa bertanya rekomendasi hotel terdekat, hotel di jalan tertentu, jadwal check-in, atau syarat booking.</p>
+                    <p>Saya asisten Roomify untuk 187 hotel di Medan. Anda bisa bertanya rekomendasi hotel terdekat, hotel di jalan tertentu, jadwal check-in, atau syarat booking.</p>
                 </div>
             </div>
 
