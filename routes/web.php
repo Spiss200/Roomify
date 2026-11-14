@@ -7,6 +7,7 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ChatbotController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +47,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+// Admin Panel Routes
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', [AdminController::class, 'index'])->name('dashboard');
+    Route::post('/users/{user}/toggle-role', [AdminController::class, 'toggleUserRole'])->name('users.toggle');
+    Route::delete('/users/{user}', [AdminController::class, 'deleteUser'])->name('users.delete');
+    Route::patch('/bookings/{booking}/status', [AdminController::class, 'updateBookingStatus'])->name('bookings.status');
+    Route::delete('/bookings/{booking}', [AdminController::class, 'deleteBooking'])->name('bookings.delete');
+    Route::delete('/reviews/{id}', [AdminController::class, 'deleteReview'])->name('reviews.delete');
 });
 
 require __DIR__ . '/auth.php';

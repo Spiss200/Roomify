@@ -327,9 +327,11 @@
     <div id="top-loader"></div>
 
     <!-- ============================================================
-         STICKY GLASS NAVBAR
+         STICKY TOP BAR: LIVE CLOCK & GLASS NAVBAR
     ============================================================ -->
-    <nav class="glass-nav sticky top-0 z-50">
+    <div class="sticky top-0 z-50">
+        <x-live-clock-bar />
+        <nav class="glass-nav">
         <div class="max-w-screen-xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
 
             <!-- Logo -->
@@ -402,6 +404,7 @@
             <a href="{{ url('/') }}#landmarks" class="block px-3 py-2 rounded-lg text-sm text-slate-700 hover:bg-slate-50">📍 Landmark Medan</a>
         </div>
     </nav>
+    </div>
 
     <!-- ============================================================
          MAIN CONTENT
@@ -645,6 +648,9 @@
                             <span id="map-route-stats" class="px-2 py-0.5 rounded-full bg-indigo-800 text-[11px] font-semibold text-emerald-300">0 km · 0 mnt</span>
                         </div>
                         <div class="flex items-center gap-2">
+                            <button type="button" onclick="toggleRouteSteps()" class="px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-[10px] font-bold transition flex items-center gap-1 shadow-sm">
+                                <i class="fa-solid fa-diamond-turn-right"></i> <span id="btn-steps-label">Petunjuk Belokan</span>
+                            </button>
                             <a id="btn-open-gmaps" href="#" target="_blank" rel="noopener" class="px-2.5 py-1 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-[10px] font-bold transition flex items-center gap-1">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i> Buka Google Maps
                             </a>
@@ -652,6 +658,18 @@
                                 <i class="fa-solid fa-xmark mr-1"></i>Tutup Rute
                             </button>
                         </div>
+                    </div>
+
+                    <!-- Turn-by-Turn Expandable Steps Drawer -->
+                    <div id="route-steps-drawer" class="hidden max-h-56 overflow-y-auto px-4 py-3 bg-slate-900 text-slate-200 text-xs border-b border-slate-800 space-y-2 custom-scrollbar">
+                        <div class="flex items-center justify-between pb-2 border-b border-slate-800 font-bold text-white text-xs">
+                            <span class="flex items-center gap-2">
+                                <i class="fa-solid fa-route text-emerald-400"></i>
+                                <span>Petunjuk Belokan Navigasi In-App</span>
+                            </span>
+                            <span id="route-steps-count" class="text-[10px] text-slate-400">0 Belokan</span>
+                        </div>
+                        <div id="route-steps-list" class="space-y-1.5 text-[11px]"></div>
                     </div>
 
                     <!-- Map Container -->
@@ -1148,6 +1166,21 @@
             }
         }
 
+        let routeStepsVisible = false;
+        function toggleRouteSteps() {
+            const drawer = document.getElementById('route-steps-drawer');
+            const label = document.getElementById('btn-steps-label');
+            if (!drawer) return;
+            routeStepsVisible = !routeStepsVisible;
+            if (routeStepsVisible) {
+                drawer.classList.remove('hidden');
+                if (label) label.innerText = 'Tutup Belokan';
+            } else {
+                drawer.classList.add('hidden');
+                if (label) label.innerText = 'Petunjuk Belokan';
+            }
+        }
+
         // Live Route Navigation to Selected Hotel
         function startNavigationToHotel(destLat, destLng, destName) {
             if (!map || !directionsService || !directionsRenderer) return;
@@ -1180,6 +1213,24 @@
                         if (gmapsBtn) {
                             gmapsBtn.href = `https://www.google.com/maps/dir/?api=1&destination=${destLat},${destLng}&travelmode=driving`;
                         }
+
+                        // Populate Turn-by-Turn Steps
+                        const stepsList = document.getElementById('route-steps-list');
+                        const stepsCount = document.getElementById('route-steps-count');
+                        if (stepsList && route.steps) {
+                            if (stepsCount) stepsCount.innerText = `${route.steps.length} Belokan`;
+                            stepsList.innerHTML = route.steps.map((st, i) => `
+                                <div class="p-2 rounded-lg bg-slate-800/80 border border-slate-700/60 flex items-start gap-2.5">
+                                    <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-[10px] flex items-center justify-center shrink-0 border border-emerald-500/30">
+                                        ${i + 1}
+                                    </span>
+                                    <div class="flex-1">
+                                        <div class="text-white font-medium">${st.instructions}</div>
+                                        <div class="text-[10px] text-slate-400 mt-0.5">${st.distance.text} · ${st.duration.text}</div>
+                                    </div>
+                                </div>
+                            `).join('');
+                        }
                     } else {
                         alert('Tidak dapat membuat rute navigasi: ' + status);
                     }
@@ -1192,7 +1243,12 @@
                 directionsRenderer.setDirections({ routes: [] });
             }
             const routeBar = document.getElementById('map-route-bar');
+            const drawer = document.getElementById('route-steps-drawer');
             if (routeBar) routeBar.classList.add('hidden');
+            if (drawer) drawer.classList.add('hidden');
+            routeStepsVisible = false;
+            const label = document.getElementById('btn-steps-label');
+            if (label) label.innerText = 'Petunjuk Belokan';
         }
 
         // Detect user live location & calculate distances to all hotel cards
@@ -1353,15 +1409,6 @@
 
     <!-- Roomify AI Chatbot Concierge Component -->
     <x-ai-chat-widget />
-
-</body>
-</html>
-    </script>
-
-    <!-- Load Google Maps JS API (async + callback) -->
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key={{ config('services.google_maps.key') }}&callback=initMap&libraries=places,geometry">
-    </script>
 
 </body>
 </html>

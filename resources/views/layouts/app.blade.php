@@ -79,10 +79,12 @@
 </head>
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col antialiased transition-colors duration-200">
 
-    <!-- NAVBAR -->
-    <header class="glass-nav sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-18 py-3">
+    <!-- STICKY TOP BAR: LIVE CLOCK & NAVBAR -->
+    <div class="sticky top-0 z-50">
+        <x-live-clock-bar />
+        <header class="glass-nav">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-18 py-3">
                 
                 <!-- Brand Logo -->
                 <a href="{{ url('/') }}" class="flex items-center gap-2.5 group no-underline">
@@ -146,22 +148,35 @@
                             </button>
 
                             <!-- Dropdown Menu -->
-                            <div id="user-dropdown" class="hidden absolute right-0 mt-2 w-56 bg-white rounded-2xl shadow-2xl border border-slate-100 py-2 z-50">
-                                <div class="px-4 py-3 border-b border-slate-100">
-                                    <p class="text-xs text-slate-400">Masuk sebagai</p>
-                                    <p class="text-sm font-bold text-slate-800 truncate">{{ Auth::user()->email }}</p>
+                            <div id="user-dropdown" class="hidden absolute right-0 mt-2 w-60 bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-slate-100 dark:border-slate-700 py-2 z-50">
+                                <div class="px-4 py-3 border-b border-slate-100 dark:border-slate-700">
+                                    <p class="text-[11px] text-slate-400">Masuk sebagai</p>
+                                    <p class="text-xs font-bold text-slate-800 dark:text-white truncate">{{ Auth::user()->email }}</p>
+                                    @if(Auth::user()->isAdmin())
+                                        <span class="inline-block mt-1 text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 dark:bg-purple-950/80 dark:text-purple-300">
+                                            Admin
+                                        </span>
+                                    @endif
                                 </div>
-                                <a href="{{ route('dashboard') }}" class="flex items-center gap-2.5 px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition">
+                                @if(Auth::user()->isAdmin())
+                                    <a href="{{ route('admin.dashboard') }}" class="flex items-center gap-2.5 px-4 py-2.5 text-xs font-bold text-purple-600 dark:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-950/40 transition">
+                                        <i class="fa-solid fa-shield-halved text-purple-500 w-4"></i> Admin Console
+                                    </a>
+                                @endif
+                                <a href="{{ route('dashboard') }}" class="flex items-center gap-2.5 px-4 py-2.5 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-700 transition">
                                     <i class="fa-solid fa-gauge text-indigo-500 w-4"></i> Dashboard Member
                                 </a>
-                                <a href="{{ url('/search') }}" class="flex items-center gap-2.5 px-4 py-2.5 text-xs font-semibold text-slate-700 hover:bg-indigo-50 hover:text-indigo-600 transition">
+                                <a href="{{ route('profile.edit') }}" class="flex items-center gap-2.5 px-4 py-2.5 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-700 transition">
+                                    <i class="fa-solid fa-user-pen text-indigo-500 w-4"></i> Edit Profil & Akun
+                                </a>
+                                <a href="{{ url('/search') }}" class="flex items-center gap-2.5 px-4 py-2.5 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-slate-700 transition">
                                     <i class="fa-solid fa-hotel text-indigo-500 w-4"></i> Cari Hotel di Medan
                                 </a>
-                                <div class="border-t border-slate-100 my-1"></div>
+                                <div class="border-t border-slate-100 dark:border-slate-700 my-1"></div>
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
-                                    <button type="submit" class="w-full text-left flex items-center gap-2.5 px-4 py-2.5 text-xs font-semibold text-red-600 hover:bg-red-50 transition">
-                                        <i class="fa-solid fa-right-from-bracket text-red-500 w-4"></i> Keluar (Logout)
+                                    <button type="submit" class="w-full text-left flex items-center gap-2.5 px-4 py-2.5 text-xs font-semibold text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/30 transition">
+                                        <i class="fa-solid fa-right-from-bracket text-rose-500 w-4"></i> Keluar (Logout)
                                     </button>
                                 </form>
                             </div>
@@ -175,6 +190,7 @@
             </div>
         </div>
     </header>
+    </div>
 
     <!-- CONTENT DINAMIS -->
     <main class="flex-1">
@@ -183,16 +199,19 @@
     </main>
 
     <!-- FOOTER KONSISTEN -->
-    <footer class="bg-white border-t border-slate-200 mt-auto py-8 px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500">
+    <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 mt-auto py-8 px-4 sm:px-6 lg:px-8 text-center text-xs text-slate-500 dark:text-slate-400">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-2">
-                <span class="font-extrabold text-slate-800">Roomify</span>
+                <span class="font-extrabold text-slate-800 dark:text-slate-100">Roomify</span>
                 <span>•</span>
-                <span>Platform Hotel Semantik & Google Maps</span>
+                <span>Platform Pemesanan Hotel & Navigasi Google Maps</span>
             </div>
             <p>© {{ date('Y') }} Roomify. Hak cipta dilindungi undang-undang.</p>
         </div>
     </footer>
+
+    <!-- Roomify AI Chatbot Concierge Component -->
+    <x-ai-chat-widget />
 
     <script>
         document.addEventListener('click', function(e) {

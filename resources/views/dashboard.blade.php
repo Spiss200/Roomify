@@ -22,9 +22,15 @@
                             <h1 class="text-2xl sm:text-3xl font-black tracking-tight">
                                 Halo, {{ Auth::user()->name }}! 👋
                             </h1>
-                            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-black uppercase bg-amber-400 text-slate-900 shadow">
-                                <i class="fa-solid fa-crown text-[10px]"></i> Member Aktif
-                            </span>
+                            @if(Auth::user()->isAdmin())
+                                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-black uppercase bg-purple-400 text-slate-900 shadow flex items-center gap-1">
+                                    <i class="fa-solid fa-crown text-[10px]"></i> Administrator
+                                </span>
+                            @else
+                                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-black uppercase bg-amber-400 text-slate-900 shadow flex items-center gap-1">
+                                    <i class="fa-solid fa-user-check text-[10px]"></i> Member Aktif
+                                </span>
+                            @endif
                         </div>
                         <p class="text-sm text-indigo-200 mt-1 flex items-center gap-2">
                             <i class="fa-solid fa-envelope text-xs opacity-75"></i> {{ Auth::user()->email }}
@@ -34,9 +40,19 @@
                     </div>
                 </div>
 
-                <!-- Quick Action Button -->
-                <div class="flex items-center gap-3">
-                    <a href="{{ url('/search') }}" class="btn-gradient text-white text-sm font-bold px-5 py-3 rounded-2xl flex items-center gap-2 shadow-lg">
+                <!-- Quick Action Buttons -->
+                <div class="flex items-center gap-2.5 flex-wrap">
+                    @if(Auth::user()->isAdmin())
+                        <a href="{{ route('admin.dashboard') }}" class="px-4 py-2.5 rounded-2xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-black shadow flex items-center gap-1.5 transition">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Admin Console</span>
+                        </a>
+                    @endif
+                    <a href="{{ route('profile.edit') }}" class="px-4 py-2.5 rounded-2xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold border border-white/20 shadow flex items-center gap-1.5 transition">
+                        <i class="fa-solid fa-user-pen"></i>
+                        <span>Edit Profil</span>
+                    </a>
+                    <a href="{{ url('/search') }}" class="btn-gradient text-white text-xs font-bold px-4 py-2.5 rounded-2xl flex items-center gap-1.5 shadow-lg">
                         <i class="fa-solid fa-magnifying-glass"></i>
                         <span>Cari Hotel</span>
                     </a>

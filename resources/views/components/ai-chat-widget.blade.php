@@ -15,13 +15,13 @@
         </div>
         <div class="text-left hidden sm:block pr-1">
             <span class="text-xs font-black tracking-wide block leading-tight">AI Concierge</span>
-            <span class="text-[10px] text-indigo-100 font-medium block leading-tight">Tanya Hotel & Rute</span>
+            <span class="text-[10px] text-indigo-100 font-medium block leading-tight">Cek Booking & Hotel</span>
         </div>
     </button>
 
     <!-- Chat Window Modal -->
     <div id="chat-window"
-         class="hidden fixed bottom-5 right-5 w-[92vw] sm:w-[400px] h-[580px] max-h-[85vh] rounded-3xl shadow-2xl flex flex-col overflow-hidden border transition-all duration-300 bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800"
+         class="hidden fixed bottom-5 right-5 w-[92vw] sm:w-[410px] h-[600px] max-h-[85vh] rounded-3xl shadow-2xl flex flex-col overflow-hidden border transition-all duration-300 bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800"
          style="box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.35);">
 
         <!-- Header -->
@@ -34,9 +34,9 @@
                 <div>
                     <h3 class="font-extrabold text-sm leading-tight flex items-center gap-1.5">
                         Roomify AI Concierge
-                        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                     </h3>
-                    <p class="text-[11px] text-indigo-100 font-medium">Asisten Cerdas Hotel & Landmark Medan</p>
+                    <p class="text-[11px] text-indigo-100 font-medium">Asisten Hotel & Pesanan Real-Time</p>
                 </div>
             </div>
             <button type="button"
@@ -55,27 +55,27 @@
                     <i class="fa-solid fa-robot"></i>
                 </div>
                 <div class="max-w-[85%] bg-white dark:bg-slate-800 p-3.5 rounded-2xl rounded-tl-sm border border-slate-200/80 dark:border-slate-700/80 shadow-sm text-slate-800 dark:text-slate-200 leading-relaxed">
-                    <p class="font-bold text-indigo-600 dark:text-indigo-400 mb-1">Halo! Selamat datang di Roomify.</p>
-                    <p>Saya asisten Roomify untuk 187 hotel di Medan. Anda bisa bertanya rekomendasi hotel terdekat, hotel di jalan tertentu, jadwal check-in, atau syarat booking.</p>
+                    <p class="font-bold text-indigo-600 dark:text-indigo-400 mb-1">Halo! Saya Roomify AI Concierge 🛎️</p>
+                    <p>Saya terhubung langsung dengan sistem reservasi Roomify. Anda dapat mengecek status tiket booking Anda, menanyakan rekomendasi hotel, rute Google Maps, atau aturan check-in (14:00) dan check-out (12:00).</p>
                 </div>
             </div>
 
             <!-- Quick Suggestion Chips -->
             <div id="chat-quick-chips" class="pt-1 flex flex-wrap gap-1.5">
+                <button type="button" onclick="sendQuickPrompt('cek pesanan saya')" class="px-2.5 py-1.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-indigo-700 dark:text-indigo-300 font-semibold text-[11px] border border-indigo-200/60 dark:border-slate-700 transition">
+                    📋 Cek Pesanan Saya
+                </button>
                 <button type="button" onclick="sendQuickPrompt('hotel yang cambridge itu')" class="px-2.5 py-1.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-indigo-700 dark:text-indigo-300 font-semibold text-[11px] border border-indigo-200/60 dark:border-slate-700 transition">
-                    🏨 Hotel yang Cambridge itu
+                    🏨 Hotel Cambridge
                 </button>
                 <button type="button" onclick="sendQuickPrompt('hotel di jalan h.m yamin')" class="px-2.5 py-1.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-indigo-700 dark:text-indigo-300 font-semibold text-[11px] border border-indigo-200/60 dark:border-slate-700 transition">
-                    📍 Hotel di Jalan H.M. Yamin
+                    📍 Hotel di Jl. H.M. Yamin
                 </button>
-                <button type="button" onclick="sendQuickPrompt('hotel dekat Istana Maimun')" class="px-2.5 py-1.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-indigo-700 dark:text-indigo-300 font-semibold text-[11px] border border-indigo-200/60 dark:border-slate-700 transition">
-                    🏛️ Dekat Istana Maimun
+                <button type="button" onclick="sendQuickPrompt('jam check in dan syarat ktp')" class="px-2.5 py-1.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-indigo-700 dark:text-indigo-300 font-semibold text-[11px] border border-indigo-200/60 dark:border-slate-700 transition">
+                    ⏰ Waktu Check-In & KTP
                 </button>
-                <button type="button" onclick="sendQuickPrompt('hotel bintang 5 mewah di Medan')" class="px-2.5 py-1.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-indigo-700 dark:text-indigo-300 font-semibold text-[11px] border border-indigo-200/60 dark:border-slate-700 transition">
-                    ⭐ Hotel Bintang 5 Mewah
-                </button>
-                <button type="button" onclick="sendQuickPrompt('check in jam berapa dan syaratnya apa')" class="px-2.5 py-1.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-indigo-700 dark:text-indigo-300 font-semibold text-[11px] border border-indigo-200/60 dark:border-slate-700 transition">
-                    ⏰ Jadwal Check-in & KTP
+                <button type="button" onclick="sendQuickPrompt('hotel dekat Stasiun Medan')" class="px-2.5 py-1.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 dark:bg-slate-800 dark:hover:bg-slate-700 text-indigo-700 dark:text-indigo-300 font-semibold text-[11px] border border-indigo-200/60 dark:border-slate-700 transition">
+                    🚆 Dekat Stasiun Medan
                 </button>
             </div>
         </div>
@@ -87,7 +87,7 @@
                 <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-bounce" style="animation-delay: 0.2s"></span>
                 <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-bounce" style="animation-delay: 0.4s"></span>
             </div>
-            <span>Roomify AI sedang menganalisis data hotel...</span>
+            <span>Roomify AI sedang mencari data...</span>
         </div>
 
         <!-- Chat Input Form -->
@@ -95,7 +95,7 @@
             <form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex items-center gap-2">
                 <input type="text"
                        id="chat-input"
-                       placeholder="Ketik pertanyaan (cth: hotel di jl hm yamin)..."
+                       placeholder="Tanya kode booking (RMF-...) atau nama hotel..."
                        autocomplete="off"
                        class="flex-1 bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 placeholder-slate-400 text-xs px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition">
                 <button type="submit"
@@ -168,10 +168,10 @@
 
             const data = await res.json();
             typing.classList.add('hidden');
-            appendBotReply(data.reply, data.hotels || []);
+            appendBotReply(data.reply, data.action, data.suggestions || []);
         } catch (err) {
             typing.classList.add('hidden');
-            appendBotReply('Maaf, terjadi gangguan saat menghubungkan ke server AI. Silakan coba kembali sesaat lagi.', []);
+            appendBotReply('Maaf, terjadi gangguan saat menghubungkan ke database/AI. Silakan coba kembali sesaat lagi.', null, ['Cek pesanan saya', 'Waktu check-in']);
         }
     }
 
@@ -189,47 +189,51 @@
         container.scrollTop = container.scrollHeight;
     }
 
-    function appendBotReply(replyText, hotels) {
+    function appendBotReply(replyText, action, suggestions) {
         const container = document.getElementById('chat-messages');
         const div = document.createElement('div');
         div.className = 'flex items-start gap-2.5';
 
-        // Format simple markdown bold and bullet points
+        // Format markdown bold, italic, code
         let formattedText = replyText
             .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
             .replace(/\*(.*?)\*/g, '<em>$1</em>')
+            .replace(/`([^`]+)`/g, '<code class="bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 px-1.5 py-0.5 rounded text-[11px] font-mono border border-indigo-200/50 dark:border-indigo-800">$1</code>')
             .replace(/\n/g, '<br>');
 
-        let hotelsHtml = '';
-        if (hotels && hotels.length > 0) {
-            hotelsHtml = '<div class="mt-3 space-y-2">';
-            hotels.forEach(h => {
-                hotelsHtml += `
-                    <div class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/80 flex items-center gap-3">
-                        <img src="${h.foto}" alt="${h.nama}" class="w-14 h-14 rounded-lg object-cover shrink-0 border border-slate-200 dark:border-slate-700" onerror="this.src='/images/placeholder.svg'">
-                        <div class="flex-1 min-w-0">
-                            <h4 class="font-bold text-slate-900 dark:text-white text-xs truncate">${h.nama}</h4>
-                            <p class="text-[10px] text-slate-500 dark:text-slate-400 truncate">${h.alamat}</p>
-                            <div class="flex items-center justify-between mt-1">
-                                <span class="font-black text-indigo-600 dark:text-indigo-400 text-xs">${h.harga}</span>
-                                <a href="${h.detail_url}" class="text-[10px] font-bold px-2 py-0.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white transition">
-                                    Detail →
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+        let actionHtml = '';
+        if (action && action.label && action.url) {
+            actionHtml = `
+                <div class="mt-3 pt-2.5 border-t border-slate-100 dark:border-slate-700">
+                    <a href="${action.url}" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-sm transition">
+                        <span>${escapeHtml(action.label)}</span>
+                        <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                    </a>
+                </div>
+            `;
+        }
+
+        let suggestionsHtml = '';
+        if (suggestions && suggestions.length > 0) {
+            suggestionsHtml = '<div class="mt-3 flex flex-wrap gap-1.5">';
+            suggestions.forEach(s => {
+                suggestionsHtml += `
+                    <button type="button" onclick="sendQuickPrompt('${escapeHtml(s)}')" class="px-2 py-1 rounded-lg bg-slate-100 hover:bg-indigo-50 dark:bg-slate-700/60 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-[10px] font-medium border border-slate-200 dark:border-slate-600 transition">
+                        ${escapeHtml(s)}
+                    </button>
                 `;
             });
-            hotelsHtml += '</div>';
+            suggestionsHtml += '</div>';
         }
 
         div.innerHTML = `
             <div class="w-7 h-7 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-xs shrink-0 mt-0.5 shadow-sm">
                 <i class="fa-solid fa-robot"></i>
             </div>
-            <div class="max-w-[85%] bg-white dark:bg-slate-800 p-3.5 rounded-2xl rounded-tl-sm border border-slate-200/80 dark:border-slate-700/80 shadow-sm text-slate-800 dark:text-slate-200 leading-relaxed">
+            <div class="max-w-[88%] bg-white dark:bg-slate-800 p-3.5 rounded-2xl rounded-tl-sm border border-slate-200/80 dark:border-slate-700/80 shadow-sm text-slate-800 dark:text-slate-200 leading-relaxed">
                 <div>${formattedText}</div>
-                ${hotelsHtml}
+                ${actionHtml}
+                ${suggestionsHtml}
             </div>
         `;
 

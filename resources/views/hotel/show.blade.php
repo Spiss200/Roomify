@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="id" prefix="schema: https://schema.org/ roomify: http://roomify.example.org/ontology# rdfs: http://www.w3.org/2000/01/rdf-schema#">
 <head>
     <meta charset="utf-8">
@@ -146,9 +146,11 @@
 <body class="bg-slate-50 antialiased min-h-screen" typeof="schema:Hotel roomify:Hotel" about="http://roomify.example.org/ontology#{{ $id }}">
 
 <!-- ══════════════════════════════════════════════════════
-     STICKY NAVBAR
+     STICKY TOP BAR: LIVE CLOCK & NAVBAR
 ════════════════════════════════════════════════════════ -->
-<nav class="navbar-glass sticky top-0 z-50 shadow-sm">
+<div class="sticky top-0 z-50">
+<x-live-clock-bar />
+<nav class="navbar-glass shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
         <!-- Logo -->
         <a href="{{ url('/') }}" class="flex items-center gap-2.5 group no-underline">
@@ -209,6 +211,7 @@
         <a href="{{ url('/search') }}" class="block text-sm font-medium text-slate-700 py-2">Cari Hotel</a>
     </div>
 </nav>
+</div>
 
 <!-- Breadcrumb -->
 <div class="bg-white border-b border-slate-100">
@@ -552,9 +555,26 @@
                                 <p id="route-origin-text" class="text-[11px] text-slate-500 mt-0.5"></p>
                             </div>
                         </div>
-                        <a id="btn-open-gmaps-nav" href="#" target="_blank" class="btn-gradient text-white text-xs font-extrabold px-3.5 py-2 rounded-xl text-center flex items-center justify-center gap-1.5 shrink-0 shadow">
-                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> Buka di Google Maps
-                        </a>
+                        <div class="flex items-center gap-2">
+                            <button type="button" onclick="toggleHotelRouteSteps()" class="px-3 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition flex items-center gap-1.5 shadow-sm">
+                                <i class="fa-solid fa-diamond-turn-right"></i> <span id="hotel-steps-btn-label">Petunjuk Belokan</span>
+                            </button>
+                            <a id="btn-open-gmaps-nav" href="#" target="_blank" class="btn-gradient text-white text-xs font-extrabold px-3.5 py-2 rounded-xl text-center flex items-center justify-center gap-1.5 shrink-0 shadow">
+                                <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i> Buka di Google Maps
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Turn-by-Turn Expandable Steps Drawer for Hotel Detail -->
+                    <div id="hotel-steps-drawer" class="hidden mt-3 max-h-56 overflow-y-auto p-3.5 rounded-xl bg-slate-900 text-slate-200 text-xs border border-slate-800 space-y-2 custom-scrollbar">
+                        <div class="flex items-center justify-between pb-2 border-b border-slate-800 font-bold text-white text-xs">
+                            <span class="flex items-center gap-2">
+                                <i class="fa-solid fa-route text-emerald-400"></i>
+                                <span>Petunjuk Belokan Navigasi In-App</span>
+                            </span>
+                            <span id="hotel-steps-count" class="text-[10px] text-slate-400">0 Belokan</span>
+                        </div>
+                        <div id="hotel-steps-list" class="space-y-1.5 text-[11px]"></div>
                     </div>
                 </div>
 
@@ -987,6 +1007,21 @@
         }
     }
 
+    let hotelRouteStepsVisible = false;
+    function toggleHotelRouteSteps() {
+        const drawer = document.getElementById('hotel-steps-drawer');
+        const label = document.getElementById('hotel-steps-btn-label');
+        if (!drawer) return;
+        hotelRouteStepsVisible = !hotelRouteStepsVisible;
+        if (hotelRouteStepsVisible) {
+            drawer.classList.remove('hidden');
+            if (label) label.innerText = 'Tutup Belokan';
+        } else {
+            drawer.classList.add('hidden');
+            if (label) label.innerText = 'Petunjuk Belokan';
+        }
+    }
+
     function drawRoute(originCoords, originName) {
         if (!map || !directionsService) return;
 
@@ -1025,6 +1060,24 @@
                 const gmapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${originCoords.lat},${originCoords.lng}&destination=${HOTEL_LAT},${HOTEL_LNG}&travelmode=${modeVal.toLowerCase()}`;
                 const gmapsBtn = document.getElementById('btn-open-gmaps-nav');
                 if (gmapsBtn) gmapsBtn.href = gmapsUrl;
+
+                // Populate In-App Turn Steps
+                const stepsList = document.getElementById('hotel-steps-list');
+                const stepsCount = document.getElementById('hotel-steps-count');
+                if (stepsList && leg.steps) {
+                    if (stepsCount) stepsCount.innerText = `${leg.steps.length} Belokan`;
+                    stepsList.innerHTML = leg.steps.map((st, i) => `
+                        <div class="p-2 rounded-lg bg-slate-800/80 border border-slate-700/60 flex items-start gap-2.5">
+                            <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-[10px] flex items-center justify-center shrink-0 border border-emerald-500/30">
+                                ${i + 1}
+                            </span>
+                            <div class="flex-1">
+                                <div class="text-white font-medium">${st.instructions}</div>
+                                <div class="text-[10px] text-slate-400 mt-0.5">${st.distance.text} · ${st.duration.text}</div>
+                            </div>
+                        </div>
+                    `).join('');
+                }
             } else {
                 console.error('Directions request failed due to ' + status);
             }

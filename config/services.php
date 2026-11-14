@@ -36,6 +36,6 @@ return [
     ],
 
     'google_maps' => [
-        'key' => env('GOOGLE_MAPS_KEY'),
+        'key' => env('GOOGLE_MAPS_KEY', 'AIzaSyDoRCXpXYCd4Zo3K8LGs7FSswbr1qImHoQ'),
     ],
 ];

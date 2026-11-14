@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="id" prefix="schema: https://schema.org/ roomify: http://roomify.example.org/ontology# rdfs: http://www.w3.org/2000/01/rdf-schema#">
+<html lang="id">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roomify – Pencarian Hotel Berbasis Knowledge Graph & Google Maps</title>
-    <meta name="description" content="Temukan hotel terbaik di Medan dekat landmark terkenal. Roomify – platform pencarian hotel premium berbasis Semantic Web, Apache Jena Fuseki, dan Google Maps API.">
+    <title>Roomify – Pesan Hotel Nyaman & Murah di Kota Medan</title>
+    <meta name="description" content="Temukan 187+ hotel terbaik di Medan dekat landmark populer seperti Istana Maimun, Sun Plaza, dan Stasiun Kereta Api. Garansi harga hemat, check-in instan, dan navigasi Google Maps.">
 
     <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
     <link rel="alternate icon" href="{{ asset('favicon.ico') }}">
@@ -245,113 +245,116 @@
 <body class="text-slate-100 antialiased overflow-x-hidden">
 
 {{-- ═══════════════════════════════════════════════════════════
-     HEADER / STICKY GLASS NAVBAR
+     TOP LIVE SYSTEM CLOCK & STICKY GLASS NAVBAR
 ═══════════════════════════════════════════════════════════ --}}
-<header class="glass-nav fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="navbar">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-20">
+<div class="fixed top-0 left-0 right-0 z-50">
+    <x-live-clock-bar />
+    <header class="glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
 
-            {{-- BRAND LOGO --}}
-            <a href="{{ url('/') }}" class="flex items-center gap-3 group no-underline">
-                <div class="w-11 h-11 relative transform transition-transform duration-300 group-hover:scale-105">
-                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-lg">
-                        <defs>
-                            <linearGradient id="nb-bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#4F46E5"/>
-                                <stop offset="50%" stop-color="#7C3AED"/>
-                                <stop offset="100%" stop-color="#EC4899"/>
-                            </linearGradient>
-                            <linearGradient id="nb-gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#FCD34D"/>
-                                <stop offset="100%" stop-color="#F59E0B"/>
-                            </linearGradient>
-                        </defs>
-                        <rect width="48" height="48" rx="14" fill="url(#nb-bg-grad)"/>
-                        <rect x="0.75" y="0.75" width="46.5" height="46.5" rx="13.25" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-                        <path d="M12 36V22C12 15.3726 17.3726 10 24 10C30.6274 10 36 15.3726 36 22V36" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
-                        <path d="M18 36V18H25.5C28 18 29.5 19.5 29.5 22C29.5 24.5 28 26 25.5 26H18M24 26L30 36" stroke="#FFFFFF" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M34 11L35.2 13.8L38 15L35.2 16.2L34 19L32.8 16.2L30 15L32.8 13.8L34 11Z" fill="url(#nb-gold-grad)"/>
-                        <circle cx="24" cy="31" r="1.5" fill="#FCD34D"/>
-                    </svg>
-                </div>
-                <div class="flex flex-col">
-                    <div class="flex items-center gap-2">
-                        <span class="text-2xl font-black tracking-tight text-white group-hover:text-indigo-200 transition">
-                            Roomify
-                        </span>
+                {{-- BRAND LOGO --}}
+                <a href="{{ url('/') }}" class="flex items-center gap-3 group no-underline">
+                    <div class="w-11 h-11 relative transform transition-transform duration-300 group-hover:scale-105">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-lg">
+                            <defs>
+                                <linearGradient id="nb-bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#4F46E5"/>
+                                    <stop offset="50%" stop-color="#7C3AED"/>
+                                    <stop offset="100%" stop-color="#EC4899"/>
+                                </linearGradient>
+                                <linearGradient id="nb-gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#FCD34D"/>
+                                    <stop offset="100%" stop-color="#F59E0B"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="48" height="48" rx="14" fill="url(#nb-bg-grad)"/>
+                            <rect x="0.75" y="0.75" width="46.5" height="46.5" rx="13.25" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+                            <path d="M12 36V22C12 15.3726 17.3726 10 24 10C30.6274 10 36 15.3726 36 22V36" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M18 36V18H25.5C28 18 29.5 19.5 29.5 22C29.5 24.5 28 26 25.5 26H18M24 26L30 36" stroke="#FFFFFF" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M34 11L35.2 13.8L38 15L35.2 16.2L34 19L32.8 16.2L30 15L32.8 13.8L34 11Z" fill="url(#nb-gold-grad)"/>
+                            <circle cx="24" cy="31" r="1.5" fill="#FCD34D"/>
+                        </svg>
                     </div>
-                    <span class="text-[10px] font-semibold text-slate-400 tracking-wider uppercase">Semantic Hotel Discovery</span>
+                    <div class="flex flex-col">
+                        <div class="flex items-center gap-2">
+                            <span class="text-2xl font-black tracking-tight text-white group-hover:text-indigo-200 transition">
+                                Roomify
+                            </span>
+                        </div>
+                        <span class="text-[10px] font-semibold text-slate-400 tracking-wider uppercase">Pemesanan Hotel Medan</span>
+                    </div>
+                </a>
+
+                {{-- NAV LINKS --}}
+                <nav class="hidden md:flex items-center gap-1 bg-white/5 p-1.5 rounded-2xl border border-white/10 backdrop-blur-md">
+                    <a href="#destinasi" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition">
+                        <i class="fa-solid fa-map-location-dot mr-1.5 text-indigo-400"></i>Landmark Medan
+                    </a>
+                    <a href="{{ url('/search') }}" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition">
+                        <i class="fa-solid fa-magnifying-glass mr-1.5 text-indigo-400"></i>Cari Hotel
+                    </a>
+                    <a href="#hotel-pilihan" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition">
+                        <i class="fa-solid fa-hotel mr-1.5 text-indigo-400"></i>Hotel Pilihan
+                    </a>
+                    <a href="#keunggulan" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition">
+                        <i class="fa-solid fa-shield-halved mr-1.5 text-indigo-400"></i>Keunggulan
+                    </a>
+                </nav>
+
+                {{-- ACTION BUTTONS --}}
+                <div class="flex items-center gap-3">
+                    <button onclick="toggleTheme()" type="button" class="p-2.5 rounded-xl text-slate-300 hover:text-white bg-white/10 hover:bg-white/20 border border-white/10 transition" aria-label="Toggle theme">
+                        <i class="fa-solid fa-moon hidden dark:inline text-amber-300"></i>
+                        <i class="fa-solid fa-sun inline dark:hidden text-amber-400"></i>
+                    </button>
+                    @auth
+                        <a href="{{ url('/dashboard') }}" class="text-sm font-semibold text-slate-300 hover:text-white px-3 py-2 rounded-xl hover:bg-white/5 transition flex items-center gap-2">
+                            <i class="fa-solid fa-user-circle text-indigo-400 text-lg"></i>
+                            <span class="hidden sm:inline">{{ Auth::user()->name }}</span>
+                        </a>
+                        <a href="{{ url('/search') }}" class="btn-gradient text-white text-sm font-bold px-5 py-2.5 rounded-xl flex items-center gap-2">
+                            <i class="fa-solid fa-compass"></i>
+                            <span>Jelajahi</span>
+                        </a>
+                    @else
+                        <a href="{{ route('login') }}" class="text-sm font-semibold text-slate-300 hover:text-white px-4 py-2 rounded-xl hover:bg-white/10 transition hidden sm:inline-flex items-center gap-1.5">
+                            <i class="fa-solid fa-right-to-bracket text-indigo-400"></i> Masuk
+                        </a>
+                        <a href="{{ route('register') }}" class="btn-gradient text-white text-sm font-bold px-5 py-2.5 rounded-xl flex items-center gap-1.5">
+                            <i class="fa-solid fa-user-plus"></i> Daftar
+                        </a>
+                    @endauth
+                    <!-- Mobile menu toggle -->
+                    <button type="button" class="md:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition" onclick="document.getElementById('mobile-nav-welcome').classList.toggle('hidden')">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
                 </div>
-            </a>
 
-            {{-- NAV LINKS --}}
-            <nav class="hidden md:flex items-center gap-1 bg-white/5 p-1.5 rounded-2xl border border-white/10 backdrop-blur-md">
-                <a href="#destinasi" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition">
-                    <i class="fa-solid fa-map-location-dot mr-1.5 text-indigo-400"></i>Landmark Medan
-                </a>
-                <a href="{{ url('/search') }}" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition">
-                    <i class="fa-solid fa-magnifying-glass mr-1.5 text-indigo-400"></i>Cari Hotel
-                </a>
-                <a href="#hotel-pilihan" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition">
-                    <i class="fa-solid fa-hotel mr-1.5 text-indigo-400"></i>Hotel Pilihan
-                </a>
-                <a href="#arsitektur" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition">
-                    <i class="fa-solid fa-circle-nodes mr-1.5 text-indigo-400"></i>Semantic Web
-                </a>
-            </nav>
-
-            {{-- ACTION BUTTONS --}}
-            <div class="flex items-center gap-3">
-                <button onclick="toggleTheme()" type="button" class="p-2.5 rounded-xl text-slate-300 hover:text-white bg-white/10 hover:bg-white/20 border border-white/10 transition" aria-label="Toggle theme">
-                    <i class="fa-solid fa-moon hidden dark:inline text-amber-300"></i>
-                    <i class="fa-solid fa-sun inline dark:hidden text-amber-400"></i>
-                </button>
-                @auth
-                    <a href="{{ url('/dashboard') }}" class="text-sm font-semibold text-slate-300 hover:text-white px-3 py-2 rounded-xl hover:bg-white/5 transition flex items-center gap-2">
-                        <i class="fa-solid fa-user-circle text-indigo-400 text-lg"></i>
-                        <span class="hidden sm:inline">{{ Auth::user()->name }}</span>
-                    </a>
-                    <a href="{{ url('/search') }}" class="btn-gradient text-white text-sm font-bold px-5 py-2.5 rounded-xl flex items-center gap-2">
-                        <i class="fa-solid fa-compass"></i>
-                        <span>Jelajahi</span>
-                    </a>
-                @else
-                    <a href="{{ route('login') }}" class="text-sm font-semibold text-slate-300 hover:text-white px-4 py-2 rounded-xl hover:bg-white/10 transition hidden sm:inline-flex items-center gap-1.5">
-                        <i class="fa-solid fa-right-to-bracket text-indigo-400"></i> Masuk
-                    </a>
-                    <a href="{{ route('register') }}" class="btn-gradient text-white text-sm font-bold px-5 py-2.5 rounded-xl flex items-center gap-1.5">
-                        <i class="fa-solid fa-user-plus"></i> Daftar
-                    </a>
-                @endauth
-                <!-- Mobile menu toggle -->
-                <button type="button" class="md:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition" onclick="document.getElementById('mobile-nav-welcome').classList.toggle('hidden')">
-                    <i class="fa-solid fa-bars text-lg"></i>
-                </button>
             </div>
-
         </div>
-    </div>
-    <!-- Mobile dropdown menu -->
-    <div id="mobile-nav-welcome" class="hidden md:hidden px-4 py-3 bg-slate-900/95 border-b border-white/10 space-y-2 backdrop-blur-xl">
-        <a href="{{ url('/search') }}" class="block px-3 py-2 rounded-xl text-sm font-bold text-white bg-indigo-600/30 border border-indigo-500/40">
-            <i class="fa-solid fa-hotel mr-2 text-indigo-400"></i>Cari Seluruh 187 Hotel
-        </a>
-        <a href="#destinasi" class="block px-3 py-2 rounded-xl text-sm text-slate-300 hover:text-white">
-            <i class="fa-solid fa-map-location-dot mr-2 text-indigo-400"></i>13 Landmark Medan
-        </a>
-        <a href="#hotel-pilihan" class="block px-3 py-2 rounded-xl text-sm text-slate-300 hover:text-white">
-            <i class="fa-solid fa-star mr-2 text-amber-400"></i>Hotel Pilihan
-        </a>
-        <a href="#arsitektur" class="block px-3 py-2 rounded-xl text-sm text-slate-300 hover:text-white">
-            <i class="fa-solid fa-circle-nodes mr-2 text-indigo-400"></i>Semantic Web
-        </a>
-    </div>
-</header>
+        <!-- Mobile dropdown menu -->
+        <div id="mobile-nav-welcome" class="hidden md:hidden px-4 py-3 bg-slate-900/95 border-b border-white/10 space-y-2 backdrop-blur-xl">
+            <a href="{{ url('/search') }}" class="block px-3 py-2 rounded-xl text-sm font-bold text-white bg-indigo-600/30 border border-indigo-500/40">
+                <i class="fa-solid fa-hotel mr-2 text-indigo-400"></i>Cari Seluruh 187 Hotel
+            </a>
+            <a href="#destinasi" class="block px-3 py-2 rounded-xl text-sm text-slate-300 hover:text-white">
+                <i class="fa-solid fa-map-location-dot mr-2 text-indigo-400"></i>13 Landmark Medan
+            </a>
+            <a href="#hotel-pilihan" class="block px-3 py-2 rounded-xl text-sm text-slate-300 hover:text-white">
+                <i class="fa-solid fa-star mr-2 text-amber-400"></i>Hotel Pilihan
+            </a>
+            <a href="#keunggulan" class="block px-3 py-2 rounded-xl text-sm text-slate-300 hover:text-white">
+                <i class="fa-solid fa-shield-halved mr-2 text-indigo-400"></i>Keunggulan Roomify
+            </a>
+        </div>
+    </header>
+</div>
 
 {{-- ═══════════════════════════════════════════════════════════
      HERO SECTION WITH GLOWING MESH & COMPREHENSIVE SEARCH
 ═══════════════════════════════════════════════════════════ --}}
-<section class="hero-mesh pt-36 pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-[92vh] flex items-center">
+<section class="hero-mesh pt-44 pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-[92vh] flex items-center">
     <!-- Ambient Glowing Orbs -->
     <div class="absolute top-1/4 left-10 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none animate-pulse-glow"></div>
     <div class="absolute bottom-10 right-10 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl pointer-events-none animate-pulse-glow" style="animation-delay: 2s;"></div>
@@ -361,17 +364,17 @@
         <!-- Hero Header -->
         <div class="text-center max-w-4xl mx-auto mb-12">
             <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 backdrop-blur-md mb-6 shadow-sm">
-                <span class="w-2 h-2 rounded-full bg-indigo-400 animate-ping"></span>
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                 <span class="text-xs font-bold uppercase tracking-wider text-indigo-200">
-                    Smart Knowledge Graph & Google Maps API
+                    Platform Pemesanan Hotel & Penginapan Resmi di Kota Medan
                 </span>
             </div>
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-white mb-6">
-                Temukan Hotel Terbaik di <br class="hidden sm:inline">
-                <span class="text-gradient">Kota Medan</span> Dekat Landmark Ikonik
+                Pesan Kamar Hotel Nyaman di <br class="hidden sm:inline">
+                <span class="text-gradient">Kota Medan</span> Dekat Landmark Favorit
             </h1>
             <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-                Pencarian akomodasi cerdas berbasis ontologi semantik RDF/OWL dengan Apache Jena Fuseki dan integrasi peta presisi Google Maps.
+                Pilihan akomodasi terlengkap mulai hotel hemat hingga bintang lima mewah dengan garansi harga terbaik, konfirmasi instan, dan navigasi rute Google Maps langsung.
             </p>
         </div>
 
@@ -379,19 +382,19 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-10">
             <div class="glass-card rounded-2xl p-4 text-center transform transition-transform hover:-translate-y-1">
                 <div class="text-2xl sm:text-3xl font-black text-indigo-400">187+</div>
-                <div class="text-xs text-slate-300 font-semibold uppercase tracking-wider mt-1">Hotel Medan</div>
+                <div class="text-xs text-slate-300 font-semibold uppercase tracking-wider mt-1">Hotel Pilihan</div>
             </div>
             <div class="glass-card rounded-2xl p-4 text-center transform transition-transform hover:-translate-y-1">
                 <div class="text-2xl sm:text-3xl font-black text-purple-400">13</div>
-                <div class="text-xs text-slate-300 font-semibold uppercase tracking-wider mt-1">Landmark Utama</div>
+                <div class="text-xs text-slate-300 font-semibold uppercase tracking-wider mt-1">Landmark Ikonik</div>
             </div>
             <div class="glass-card rounded-2xl p-4 text-center transform transition-transform hover:-translate-y-1">
                 <div class="text-2xl sm:text-3xl font-black text-gradient-gold">4.8★</div>
                 <div class="text-xs text-slate-300 font-semibold uppercase tracking-wider mt-1">Rating Kepuasan</div>
             </div>
             <div class="glass-card rounded-2xl p-4 text-center transform transition-transform hover:-translate-y-1">
-                <div class="text-2xl sm:text-3xl font-black text-pink-400">SPARQL</div>
-                <div class="text-xs text-slate-300 font-semibold uppercase tracking-wider mt-1">Jena Triplestore</div>
+                <div class="text-2xl sm:text-3xl font-black text-emerald-400">100%</div>
+                <div class="text-xs text-slate-300 font-semibold uppercase tracking-wider mt-1">Konfirmasi Instan</div>
             </div>
         </div>
 
@@ -1003,89 +1006,85 @@
 </section>
 
 {{-- ═══════════════════════════════════════════════════════════
-     SEMANTIC WEB & KNOWLEDGE GRAPH ARCHITECTURE
+     KEUNGGULAN MEMESAN DI ROOMIFY
 ═══════════════════════════════════════════════════════════ --}}
-<section id="arsitektur" class="py-24 px-4 sm:px-6 lg:px-8 bg-slate-950 border-t border-white/5 relative">
+<section id="keunggulan" class="py-24 px-4 sm:px-6 lg:px-8 bg-slate-950 border-t border-white/5 relative">
     <div class="max-w-7xl mx-auto">
 
         <div class="text-center max-w-3xl mx-auto mb-16">
             <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">
-                Teknologi Cerdas
+                Pengalaman Menginap Nyaman & Pasti
             </span>
             <h2 class="text-3xl sm:text-4xl font-black text-white mt-3 mb-4 tracking-tight">
-                Didukung <span class="text-gradient">Semantic Web & SPARQL</span>
+                Kenapa Memesan di <span class="text-gradient">Roomify</span>?
             </h2>
             <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-                Roomify memanfaatkan ontologi data terhubung (Linked Data) berbasis standar W3C untuk pencarian hotel yang lebih presisi dan kontekstual di Kota Medan.
+                Nikmati kemudahan reservasi hotel dengan harga transparan, navigasi rute Google Maps langsung dari ponsel Anda, serta jaminan check-in tepat waktu.
             </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-            <!-- Card 1: Apache Jena Fuseki -->
+            <!-- Card 1: Garansi Harga Hemat & Transparan -->
             <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
                 <div>
                     <div class="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl mb-5 border border-indigo-500/30">
-                        <i class="fa-solid fa-database"></i>
+                        <i class="fa-solid fa-tags"></i>
                     </div>
-                    <h3 class="text-xl font-black text-white mb-2">Apache Jena Fuseki</h3>
+                    <h3 class="text-xl font-black text-white mb-2">Garansi Harga Transparan</h3>
                     <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
-                        Triplestore SPARQL 1.1 server yang melayani query terhubung antarentitas hotel, kamar, fasilitas, dan kedekatan koordinat geografis secara realtime.
+                        Harga final tanpa biaya siluman. Pilihan metode pembayaran instan terlengkap via QRIS (BCA, Mandiri, BRI, GoPay, OVO), Transfer Virtual Account, dan Kartu Kredit.
                     </p>
-                    <div class="bg-black/40 rounded-xl p-3 border border-white/10 text-[11px] font-mono text-emerald-400">
-                        <code>SELECT ?hotel ?harga WHERE {<br>
-                        &nbsp;&nbsp;?h a roomify:Hotel ;<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;roomify:nearLandmark ?lm .<br>
-                        }</code>
+                    <div class="bg-black/40 rounded-xl p-3 border border-white/10 text-xs text-emerald-400 font-semibold flex items-center gap-2">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>E-Voucher & Bukti Pemesanan Terbit Instan</span>
                     </div>
                 </div>
                 <div class="mt-6 pt-4 border-t border-white/10 flex items-center gap-2 text-xs text-indigo-400 font-semibold">
-                    <i class="fa-solid fa-server"></i>
-                    <span>Endpoint: localhost:3030/Roomify</span>
+                    <i class="fa-solid fa-shield-check"></i>
+                    <span>Pembayaran 100% Aman & Terverifikasi</span>
                 </div>
             </div>
 
-            <!-- Card 2: Protege Ontology Design -->
-            <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
-                <div>
-                    <div class="w-12 h-12 rounded-2xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl mb-5 border border-purple-500/30">
-                        <i class="fa-solid fa-sitemap"></i>
-                    </div>
-                    <h3 class="text-xl font-black text-white mb-2">Protégé Ontology</h3>
-                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
-                        Pemodelan ontologi RDF/OWL hierarkis yang mendefinisikan kelas <code>roomify:Hotel</code>, <code>roomify:Landmark</code>, <code>roomify:Room</code>, serta pemetaan schema.org.
-                    </p>
-                    <div class="bg-black/40 rounded-xl p-3 border border-white/10 text-[11px] font-mono text-purple-300">
-                        <code>roomify:Hotel rdfs:subClassOf schema:Hotel .<br>
-                        roomify:nearLandmark a owl:ObjectProperty .</code>
-                    </div>
-                </div>
-                <div class="mt-6 pt-4 border-t border-white/10 flex items-center gap-2 text-xs text-purple-400 font-semibold">
-                    <i class="fa-solid fa-cube"></i>
-                    <span>OWL DL Reasoning Ready</span>
-                </div>
-            </div>
-
-            <!-- Card 3: Google Maps JavaScript API -->
+            <!-- Card 2: Navigasi Google Maps Presisi -->
             <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
                 <div>
                     <div class="w-12 h-12 rounded-2xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-xl mb-5 border border-pink-500/30">
-                        <i class="fa-solid fa-map-location"></i>
+                        <i class="fa-solid fa-route"></i>
                     </div>
-                    <h3 class="text-xl font-black text-white mb-2">Google Maps API</h3>
+                    <h3 class="text-xl font-black text-white mb-2">Navigasi Google Maps Presisi</h3>
                     <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
-                        Visualisasi spasial interaktif dengan penanda custom SVG pin, Street View panorama 360°, dan pencarian berbasis radius koordinat akurat di Kota Medan.
+                        Tak perlu tersesat mencari lobi hotel. Roomify dilengkapi panduan navigasi real-time langsung dari lokasi GPS Anda ke hotel yang Anda tuju di Kota Medan.
                     </p>
-                    <div class="bg-black/40 rounded-xl p-3 border border-white/10 text-[11px] font-mono text-pink-300">
-                        <code>new google.maps.Map(elem, {<br>
-                        &nbsp;&nbsp;center: { lat: 3.5952, lng: 98.6722 },<br>
-                        &nbsp;&nbsp;zoom: 14<br>
-                        });</code>
+                    <div class="bg-black/40 rounded-xl p-3 border border-white/10 text-xs text-pink-300 font-semibold flex items-center gap-2">
+                        <i class="fa-solid fa-diamond-turn-right"></i>
+                        <span>Turn-by-turn Navigation & Estimasi Waktu</span>
                     </div>
                 </div>
                 <div class="mt-6 pt-4 border-t border-white/10 flex items-center gap-2 text-xs text-pink-400 font-semibold">
-                    <i class="fa-solid fa-location-crosshairs"></i>
-                    <span>Live Geolocation & Street View</span>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Terintegrasi 13 Landmark Populer Medan</span>
+                </div>
+            </div>
+
+            <!-- Card 3: Waktu Pasti & AI Concierge -->
+            <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-2xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl mb-5 border border-purple-500/30">
+                        <i class="fa-solid fa-bell-concierge"></i>
+                    </div>
+                    <h3 class="text-xl font-black text-white mb-2">Waktu Pasti & AI Concierge</h3>
+                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+                        Waktu Check-In resmi pukul 14:00 WIB dan Check-Out pukul 12:00 WIB. Didampingi asisten cerdas Roomify AI untuk memantau status e-tiket pesanan Anda 24 jam nonstop.
+                    </p>
+                    <div class="bg-black/40 rounded-xl p-3 border border-white/10 text-xs text-purple-300 font-semibold flex items-center gap-2">
+                        <i class="fa-solid fa-id-card"></i>
+                        <span>Verifikasi NIK e-KTP 16 Digit Terenkripsi</span>
+                    </div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/10 flex items-center gap-2 text-xs text-purple-400 font-semibold">
+                    <i class="fa-solid fa-robot"></i>
+                    <span>Layanan AI Concierge Siap 24 Jam</span>
                 </div>
             </div>
 
@@ -1121,7 +1120,7 @@
                     <span class="text-xl font-black text-white">Roomify</span>
                 </div>
                 <p class="text-xs text-slate-400 leading-relaxed">
-                    Platform pencarian hotel cerdas di Kota Medan berbasis teknologi Semantic Web (RDF/OWL), SPARQL Apache Jena Fuseki, dan Google Maps API.
+                    Platform pemesanan hotel terbaik di Kota Medan. Temukan 187+ pilihan akomodasi nyaman dekat landmark bersejarah, pusat bisnis, dan kuliner khas Medan dengan garansi harga hemat dan navigasi Google Maps presisi.
                 </p>
                 <div class="flex items-center gap-3 text-slate-400 text-sm">
                     <a href="#" class="hover:text-white transition"><i class="fa-brands fa-github"></i></a>
@@ -1147,23 +1146,23 @@
             <div>
                 <h4 class="text-white text-xs font-black uppercase tracking-wider mb-4">Navigasi Platform</h4>
                 <ul class="space-y-2 text-xs">
-                    <li><a href="{{ url('/search') }}" class="hover:text-white transition">Cari Semua Hotel</a></li>
+                    <li><a href="{{ url('/search') }}" class="hover:text-white transition">Cari Semua Hotel (187)</a></li>
                     <li><a href="{{ route('login') }}" class="hover:text-white transition">Masuk Akun</a></li>
                     <li><a href="{{ route('register') }}" class="hover:text-white transition">Daftar Akun Baru</a></li>
                     <li><a href="#destinasi" class="hover:text-white transition">13 Landmark Medan</a></li>
-                    <li><a href="#arsitektur" class="hover:text-white transition">Arsitektur Semantic Web</a></li>
+                    <li><a href="#keunggulan" class="hover:text-white transition">Keunggulan Roomify</a></li>
                 </ul>
             </div>
 
-            <!-- Col 4: Teknologi Backend -->
+            <!-- Col 4: Layanan & Jam Operasional -->
             <div>
-                <h4 class="text-white text-xs font-black uppercase tracking-wider mb-4">Teknologi Backend</h4>
+                <h4 class="text-white text-xs font-black uppercase tracking-wider mb-4">Ketentuan & Layanan</h4>
                 <ul class="space-y-2 text-xs">
-                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Apache Jena Fuseki SPARQL</li>
-                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> Protégé OWL Ontology</li>
-                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span> Schema.org & RDFa Metadata</li>
-                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-pink-400"></span> Google Maps JS API (Live)</li>
-                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span> Laravel 11 Full-Stack</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Check-in: 14:00 WIB</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-pink-400"></span> Check-out: 12:00 WIB</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span> Wajib e-KTP 16 Digit</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> Navigasi Google Maps Real-time</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span> AI Concierge Siap 24/7</li>
                 </ul>
             </div>
 
@@ -1172,12 +1171,14 @@
         <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
             <p>© {{ date('Y') }} Roomify Medan. Hak cipta dilindungi undang-undang.</p>
             <p class="flex items-center gap-1">
-                <span>Ditenagai oleh</span>
-                <span class="text-slate-300 font-semibold">Semantic Web & Triplestore Knowledge Graph</span>
+                <span>Solusi Pemesanan Hotel & Navigasi Wisata Terpercaya di Kota Medan</span>
             </p>
         </div>
     </div>
 </footer>
+
+<!-- Floating AI Chatbot Widget -->
+<x-ai-chat-widget />
 
 <!-- ══════════════════════════════════════════════════════
      SCRIPTS: AUTOCOMPLETE & SCROLL
