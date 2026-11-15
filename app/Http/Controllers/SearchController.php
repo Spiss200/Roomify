@@ -97,13 +97,23 @@ class SearchController extends Controller
             ];
         }, $rows);
 
-        // If user requested sorting by nearest distance
-        if ($sort === 'terdekat' && $userLat && $userLng) {
+        // Algoritma Rekomendasi Pintar Roomify:
+        // 1. Jika koordinat lokasi user terdeteksi (atau sort 'terdekat' / relevansi), urutkan hotel terdekat dari user
+        if ($userLat && $userLng && ($sort === 'terdekat' || $sort === 'relevansi' || empty($request->input('sort')))) {
             usort($hotels, function ($a, $b) {
                 if ($a['jarak_km'] === null) return 1;
                 if ($b['jarak_km'] === null) return -1;
                 return $a['jarak_km'] <=> $b['jarak_km'];
             });
+        } elseif ($sort === 'terdekat' && $userLat && $userLng) {
+            usort($hotels, function ($a, $b) {
+                if ($a['jarak_km'] === null) return 1;
+                if ($b['jarak_km'] === null) return -1;
+                return $a['jarak_km'] <=> $b['jarak_km'];
+            });
+        } elseif (empty($q) && ! $request->filled('landmark') && ! $request->filled('star') && ! $request->filled('max_price') && ! $request->filled('price_max') && (! $request->filled('sort') || $sort === 'relevansi')) {
+            // 2. Pas tidak ada filter pencarian dan belum ada lokasi GPS: acak (shuffle) agar tampilan segar dan dinamis
+            shuffle($hotels);
         }
 
         $selectedLandmark = (string) $request->input('landmark', '');

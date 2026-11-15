@@ -41,12 +41,21 @@
                 }
             }
         }
-        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        function getAutoTimeTheme() {
+            const hour = new Date().getHours();
+            return (hour >= 6 && hour < 18) ? 'light' : 'dark';
+        }
+        const hasManualOverride = localStorage.getItem('theme_user_override') === 'true';
+        const savedTheme = localStorage.getItem('theme');
+        const effectiveTheme = hasManualOverride && savedTheme ? savedTheme : getAutoTimeTheme();
+
+        if (effectiveTheme === 'dark') {
             document.documentElement.classList.add('dark');
         } else {
             document.documentElement.classList.remove('dark');
         }
         function toggleTheme() {
+            localStorage.setItem('theme_user_override', 'true');
             if (document.documentElement.classList.contains('dark')) {
                 document.documentElement.classList.remove('dark');
                 localStorage.setItem('theme', 'light');
@@ -433,6 +442,11 @@
                     <i class="fa-solid fa-hotel text-blue-500"></i>
                     <span id="hotel-count-badge">{{ count($hotels ?? []) }}</span> Hotel Ditemukan
                 </div>
+                <!-- Mobile Filter Toggle Button -->
+                <button type="button" onclick="toggleMobileFilter()" class="lg:hidden inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-blue-600 text-white text-xs font-bold shadow-md hover:bg-blue-700 transition">
+                    <i class="fa-solid fa-sliders text-[11px]"></i>
+                    <span>Filter</span>
+                </button>
                 <!-- Toggle Map Button -->
                 <button onclick="toggleMap()" id="map-toggle-btn" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white border border-slate-200 text-sm font-medium text-slate-700 hover:border-blue-400 hover:text-blue-600 transition shadow-sm">
                     <i class="fa-solid fa-map-location-dot text-blue-500"></i>
@@ -447,7 +461,7 @@
             <!-- =====================================================
                  LEFT: FILTER SIDEBAR (SCROLLABLE INDEPENDENTLY)
             ===================================================== -->
-            <aside class="w-full lg:w-72 xl:w-80 shrink-0">
+            <aside id="filter-aside" class="w-full lg:w-72 xl:w-80 shrink-0 hidden lg:block">
                 <form action="{{ url('/search') }}" method="GET" id="search-filter-form"
                       class="filter-card rounded-2xl p-5 space-y-5 lg:sticky lg:top-20 lg:max-h-[calc(100vh-5.5rem)] lg:overflow-y-auto custom-scrollbar">
 
@@ -617,6 +631,30 @@
             ===================================================== -->
             <div class="flex-1 min-w-0 space-y-6">
 
+                <!-- Mandatory / Proactive Location Request Banner -->
+                <div id="location-prompt-banner" class="rounded-2xl p-4 sm:p-5 border border-amber-200/90 dark:border-amber-800/80 bg-gradient-to-r from-amber-50 via-orange-50 to-amber-50 dark:from-amber-950/40 dark:via-slate-900 dark:to-amber-950/40 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 transition">
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center shrink-0 shadow">
+                            <i class="fa-solid fa-location-crosshairs text-lg animate-bounce"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+                                <span>Aktifkan Lokasi Anda untuk Navigasi Terdekat</span>
+                                <span class="px-2 py-0.5 rounded-full text-[10px] bg-amber-200 dark:bg-amber-900 text-amber-900 dark:text-amber-200 font-extrabold uppercase tracking-wide">Penting</span>
+                            </h4>
+                            <p class="text-[11px] sm:text-xs text-slate-600 dark:text-slate-300 mt-0.5">
+                                Roomify menampilkan urutan hotel terdekat dan navigasi rute langsung ke hotel pilihan dari lokasi Anda saat ini.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 self-stretch sm:self-auto shrink-0">
+                        <button type="button" onclick="detectUserLocation()" class="w-full sm:w-auto px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold shadow transition flex items-center justify-center gap-1.5">
+                            <i class="fa-solid fa-crosshairs text-[11px]"></i>
+                            <span>Izinkan Lokasi Saya</span>
+                        </button>
+                    </div>
+                </div>
+
                 <!-- GOOGLE MAP SECTION -->
                 <div id="map-section" class="rounded-2xl overflow-hidden" style="box-shadow: 0 8px 32px rgba(37,99,235,0.1), 0 2px 8px rgba(0,0,0,0.06);">
                     <!-- Map Header -->
@@ -734,6 +772,9 @@
                     <!-- Results Grid -->
                     <div id="hotel-results-grid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
                         @forelse ($hotels ?? [] as $item)
+                            @php
+                                $pageIndex = (int)ceil($loop->iteration / 20);
+                            @endphp
                             {{-- RDFa: roomify:Hotel & schema:Hotel --}}
                             <article
                                 typeof="roomify:Hotel schema:Hotel"
@@ -742,7 +783,9 @@
                                 data-lat="{{ $item['latitude'] ?? '' }}"
                                 data-lng="{{ $item['longitude'] ?? '' }}"
                                 data-hotel-id="{{ $item['id'] ?? $loop->index }}"
+                                data-page="{{ $pageIndex }}"
                                 class="hotel-card rounded-2xl overflow-hidden flex flex-col cursor-pointer transition transform hover:-translate-y-1"
+                                style="{{ $pageIndex > 1 ? 'display: none;' : '' }}"
                                 onclick="window.location.href='{{ route('hotel.detail', ['id' => $item['id'] ?? 1]) }}'"
                             >
                                 <!-- Hotel Photo -->
@@ -774,17 +817,15 @@
                                         </div>
                                     @endif
 
-                                    <!-- Review Score Badge (top-right) -->
+                                    <!-- Clean Score Badge (top-right, no awkward 'kurang' label) -->
                                     @if(!empty($item['reviewScore']) || !empty($item['rating']))
                                         @php
                                             $score = (float)($item['reviewScore'] ?? $item['rating'] ?? 0);
-                                            $ratingClass = $score >= 8.5 ? 'rating-excellent' : ($score >= 7 ? 'rating-good' : ($score >= 5 ? 'rating-average' : 'rating-poor'));
-                                            $ratingLabel = $score >= 8.5 ? 'Luar Biasa' : ($score >= 7 ? 'Bagus' : ($score >= 5 ? 'Cukup' : 'Kurang'));
                                         @endphp
                                         <div class="absolute top-3 right-3">
-                                            <div class="flex flex-col items-center px-2.5 py-1.5 rounded-xl shadow-lg {{ $ratingClass }}">
-                                                <span class="text-sm font-black leading-none">{{ number_format($score, 1) }}</span>
-                                                <span class="text-[9px] font-semibold mt-0.5">{{ $ratingLabel }}</span>
+                                            <div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold text-white shadow-lg bg-emerald-600">
+                                                <i class="fa-solid fa-star text-[10px] text-amber-300"></i>
+                                                <span>{{ number_format($score, 1) }}</span>
                                             </div>
                                         </div>
                                     @endif
@@ -938,6 +979,32 @@
                             </div>
                         @endforelse
                     </div>
+
+                    <!-- Client-Side Slide Pagination Controls (20 Hotels per Slide) -->
+                    @php
+                        $totalHotels = count($hotels ?? []);
+                        $totalPages = (int)ceil($totalHotels / 20);
+                    @endphp
+                    @if($totalPages > 1)
+                        <div id="hotel-pagination-container" class="mt-8 pt-6 border-t border-slate-200/80 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                                Menampilkan <span id="pagination-range-text" class="font-bold text-slate-800 dark:text-white">1 - {{ min(20, $totalHotels) }}</span> dari <span class="font-bold text-blue-600 dark:text-blue-400">{{ $totalHotels }}</span> hotel
+                            </p>
+                            <div class="flex items-center gap-1.5 flex-wrap justify-center" id="pagination-buttons-bar">
+                                <button type="button" onclick="changeHotelPage(currentHotelPage - 1)" id="btn-page-prev" class="px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:border-blue-500 disabled:opacity-40 disabled:cursor-not-allowed transition" disabled>
+                                    <i class="fa-solid fa-chevron-left text-[10px] mr-1"></i> Sebelumnya
+                                </button>
+                                @for($p = 1; $p <= $totalPages; $p++)
+                                    <button type="button" onclick="changeHotelPage({{ $p }})" class="page-num-btn w-8 h-8 rounded-xl text-xs font-bold transition flex items-center justify-center {{ $p === 1 ? 'bg-blue-600 text-white shadow-md' : 'border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:border-blue-500' }}" data-page-btn="{{ $p }}">
+                                        {{ $p }}
+                                    </button>
+                                @endfor
+                                <button type="button" onclick="changeHotelPage(currentHotelPage + 1)" id="btn-page-next" class="px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:border-blue-500 disabled:opacity-40 disabled:cursor-not-allowed transition">
+                                    Selanjutnya <i class="fa-solid fa-chevron-right text-[10px] ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
@@ -1322,15 +1389,109 @@
                         const dB = parseFloat(b.dataset.distKm) || 999999;
                         return dA - dB;
                     });
-                    cards.forEach(c => grid.appendChild(c));
+                    cards.forEach((c, idx) => {
+                        c.dataset.page = Math.ceil((idx + 1) / hotelsPerPage);
+                        grid.appendChild(c);
+                    });
+
+                    // Hide prompt banner or update with success message
+                    const promptBanner = document.getElementById('location-prompt-banner');
+                    if (promptBanner) {
+                        promptBanner.innerHTML = `
+                            <div class="flex items-center gap-2.5 text-xs text-emerald-800 dark:text-emerald-300 font-semibold w-full">
+                                <i class="fa-solid fa-circle-check text-emerald-500 text-base shrink-0"></i>
+                                <span>Lokasi Aktif! Rekomendasi hotel telah diurutkan berdasarkan jarak terdekat dari posisi Anda saat ini.</span>
+                            </div>`;
+                        setTimeout(() => { promptBanner.style.display = 'none'; }, 4000);
+                    }
+
+                    changeHotelPage(1);
                 },
                 function(err) {
-                    alert('Izin akses lokasi tidak diaktifkan pada browser Anda.');
                     if (btn) btn.innerHTML = '<i class="fa-solid fa-location-crosshairs"></i> Lokasi Saya';
                 },
                 { enableHighAccuracy: true, timeout: 8000 }
             );
         }
+
+        // Pagination State & Slide Navigation (20 Hotels per Page)
+        let currentHotelPage = 1;
+        const hotelsPerPage = 20;
+
+        function changeHotelPage(pageNum) {
+            const allCards = Array.from(document.querySelectorAll('.hotel-card'));
+            const totalCards = allCards.length;
+            const totalPages = Math.ceil(totalCards / hotelsPerPage) || 1;
+
+            if (pageNum < 1) pageNum = 1;
+            if (pageNum > totalPages) pageNum = totalPages;
+            currentHotelPage = pageNum;
+
+            allCards.forEach((card, idx) => {
+                const cardPage = Math.ceil((idx + 1) / hotelsPerPage);
+                card.dataset.page = cardPage;
+                if (cardPage === currentHotelPage) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Update range text
+            const rangeText = document.getElementById('pagination-range-text');
+            if (rangeText) {
+                const start = (currentHotelPage - 1) * hotelsPerPage + 1;
+                const end = Math.min(currentHotelPage * hotelsPerPage, totalCards);
+                rangeText.innerText = `${start} - ${end}`;
+            }
+
+            // Update buttons
+            document.querySelectorAll('.page-num-btn').forEach(btn => {
+                const p = parseInt(btn.dataset.pageBtn);
+                if (p === currentHotelPage) {
+                    btn.className = 'page-num-btn w-8 h-8 rounded-xl text-xs font-bold transition flex items-center justify-center bg-blue-600 text-white shadow-md';
+                } else {
+                    btn.className = 'page-num-btn w-8 h-8 rounded-xl text-xs font-bold transition flex items-center justify-center border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:border-blue-500';
+                }
+            });
+
+            const prevBtn = document.getElementById('btn-page-prev');
+            const nextBtn = document.getElementById('btn-page-next');
+            if (prevBtn) prevBtn.disabled = (currentHotelPage <= 1);
+            if (nextBtn) nextBtn.disabled = (currentHotelPage >= totalPages);
+
+            // Smooth scroll up to results grid if user clicked pagination
+            const grid = document.getElementById('hotel-results-grid');
+            if (grid && window.scrollY > grid.offsetTop) {
+                grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        function toggleMobileFilter() {
+            const aside = document.getElementById('filter-aside');
+            if (aside) {
+                aside.classList.toggle('hidden');
+                if (!aside.classList.contains('hidden')) {
+                    aside.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        }
+
+        // Proactively ask for geolocation if not already set
+        window.addEventListener('DOMContentLoaded', () => {
+            const hasLat = document.getElementById('filter-user-lat')?.value;
+            if (!hasLat && navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    function(pos) {
+                        detectUserLocation();
+                    },
+                    function(err) {
+                        // User dismissed/denied: prompt banner remains visible for them to click
+                    },
+                    { enableHighAccuracy: true, timeout: 6000 }
+                );
+            }
+        });
 
         function calcDistanceKm(lat1, lon1, lat2, lon2) {
             const R = 6371;

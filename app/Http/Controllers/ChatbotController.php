@@ -12,6 +12,156 @@ use Illuminate\Support\Str;
 class ChatbotController extends Controller
 {
     /**
+     * Geographic database of Medan areas, campuses, landmarks and streets.
+     */
+    protected const KNOWN_LOCATIONS = [
+        'usu' => [
+            'name' => 'Universitas Sumatera Utara (USU) & Padang Bulan',
+            'lat' => 3.5651,
+            'lng' => 98.6572,
+            'desc' => 'Kawasan Kampus USU, Jl. Dr. Mansyur, dan Padang Bulan',
+        ],
+        'padang bulan' => [
+            'name' => 'Padang Bulan & Sekitar USU',
+            'lat' => 3.5651,
+            'lng' => 98.6572,
+            'desc' => 'Kawasan Padang Bulan, Medan Baru',
+        ],
+        'dr mansyur' => [
+            'name' => 'Jalan Dr. Mansyur (USU)',
+            'lat' => 3.5651,
+            'lng' => 98.6572,
+            'desc' => 'Pusat kuliner mahasiswa dan gerbang utama USU',
+        ],
+        'unimed' => [
+            'name' => 'Universitas Negeri Medan (UNIMED)',
+            'lat' => 3.5932,
+            'lng' => 98.7188,
+            'desc' => 'Kawasan Jl. Willem Iskandar & Kampus UNIMED',
+        ],
+        'kualanamu' => [
+            'name' => 'Bandara Internasional Kualanamu (KNO)',
+            'lat' => 3.5995,
+            'lng' => 98.8330,
+            'desc' => 'Akses transit bandara & kereta bandara',
+        ],
+        'stasiun' => [
+            'name' => 'Stasiun Kereta Api Medan (KM 0)',
+            'lat' => 3.5928,
+            'lng' => 98.6748,
+            'desc' => 'Pusat kota Medan, Lapangan Merdeka & Kereta Bandara',
+        ],
+        'lapangan merdeka' => [
+            'name' => 'Lapangan Merdeka (Titik Nol Medan)',
+            'lat' => 3.5928,
+            'lng' => 98.6748,
+            'desc' => 'Pusat kota Medan bersejarah',
+        ],
+        'ringroad' => [
+            'name' => 'Ring Road / Jl. Gagak Hitam',
+            'lat' => 3.5685,
+            'lng' => 98.6250,
+            'desc' => 'Kawasan Ring Road Medan Sunggal / Selayang',
+        ],
+        'setiabudi' => [
+            'name' => 'Jalan Setia Budi',
+            'lat' => 3.5510,
+            'lng' => 98.6420,
+            'desc' => 'Kawasan kuliner & hunian Setia Budi',
+        ],
+        'manhattan' => [
+            'name' => 'Manhattan Times Square & Gatot Subroto',
+            'lat' => 3.5890,
+            'lng' => 98.6360,
+            'desc' => 'Pusat perbelanjaan Jl. Gatot Subroto Medan',
+        ],
+        'gatot subroto' => [
+            'name' => 'Jalan Gatot Subroto Medan',
+            'lat' => 3.5890,
+            'lng' => 98.6360,
+            'desc' => 'Akses arteri utama Medan - Binjai',
+        ],
+        'cambridge' => [
+            'name' => 'Cambridge City Square & Jl. S. Parman',
+            'lat' => 3.5855,
+            'lng' => 98.6650,
+            'desc' => 'Kawasan bisnis Medan Petisah / Medan Baru',
+        ],
+        'sun plaza' => [
+            'name' => 'Sun Plaza Medan & Jl. KH Zainul Arifin',
+            'lat' => 3.5857,
+            'lng' => 98.6722,
+            'desc' => 'Pusat perbelanjaan utama & Kampung Keling / Madras',
+        ],
+        'podomoro' => [
+            'name' => 'Podomoro City Deli Park & Jl. Putri Hijau',
+            'lat' => 3.5990,
+            'lng' => 98.6745,
+            'desc' => 'Pusat gaya hidup & hotel mewah Jl. Putri Hijau',
+        ],
+        'istana maimun' => [
+            'name' => 'Istana Maimun',
+            'lat' => 3.5752,
+            'lng' => 98.6836,
+            'desc' => 'Ikon warisan Kesultanan Deli di Medan Maimun',
+        ],
+        'masjid raya' => [
+            'name' => 'Masjid Raya Al-Mashun',
+            'lat' => 3.5746,
+            'lng' => 98.6875,
+            'desc' => 'Masjid bersejarah ikonik Kota Medan',
+        ],
+        'kesawan' => [
+            'name' => 'Kawasan Bersejarah Kesawan & Tjong A Fie',
+            'lat' => 3.5905,
+            'lng' => 98.6782,
+            'desc' => 'Pusat kota tua Kesawan & Jl. Ahmad Yani',
+        ],
+        'tjong a fie' => [
+            'name' => 'Tjong A Fie Mansion',
+            'lat' => 3.5905,
+            'lng' => 98.6782,
+            'desc' => 'Rumah cagar budaya di Kesawan',
+        ],
+        'ucok durian' => [
+            'name' => 'Ucok Durian Medan (Jl. KH Wahid Hasyim)',
+            'lat' => 3.5768,
+            'lng' => 98.6575,
+            'desc' => 'Destinasi kuliner durian paling populer di Medan',
+        ],
+        'velangkanni' => [
+            'name' => 'Graha Maria Annai Velangkanni',
+            'lat' => 3.5492,
+            'lng' => 98.5992,
+            'desc' => 'Gereja arsitektur Indo-Mughal di Medan Tuntungan',
+        ],
+        'cemara asri' => [
+            'name' => 'Komp. Cemara Asri & Maha Vihara Maitreya',
+            'lat' => 3.6300,
+            'lng' => 98.7050,
+            'desc' => 'Vihara terbesar dan pusat kuliner Cemara',
+        ],
+        'yamin' => [
+            'name' => 'Jalan Profesor H.M. Yamin',
+            'lat' => 3.5960,
+            'lng' => 98.6850,
+            'desc' => 'Kawasan Perintis Kemerdekaan & Stasiun Medan',
+        ],
+        'h m yamin' => [
+            'name' => 'Jalan Profesor H.M. Yamin',
+            'lat' => 3.5960,
+            'lng' => 98.6850,
+            'desc' => 'Kawasan Perintis Kemerdekaan & Grand Sakura Hotel',
+        ],
+        'hm yamin' => [
+            'name' => 'Jalan Profesor H.M. Yamin',
+            'lat' => 3.5960,
+            'lng' => 98.6850,
+            'desc' => 'Kawasan Perintis Kemerdekaan & Grand Sakura Hotel',
+        ],
+    ];
+
+    /**
      * Cache or load hotel dataset.
      */
     protected function getHotels(): array
@@ -27,13 +177,28 @@ class ChatbotController extends Controller
     }
 
     /**
+     * Calculate Haversine distance between two coordinates in kilometers.
+     */
+    protected function haversineKm(float $lat1, float $lng1, float $lat2, float $lng2): float
+    {
+        $earthRadius = 6371; // km
+        $dLat = deg2rad($lat2 - $lat1);
+        $dLng = deg2rad($lng2 - $lng1);
+        $a = sin($dLat / 2) * sin($dLat / 2) +
+             cos(deg2rad($lat1)) * cos(deg2rad($lat2)) *
+             sin($dLng / 2) * sin($dLng / 2);
+        $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
+        return $earthRadius * $c;
+    }
+
+    /**
      * Format a hotel array item into a standard card.
      */
-    protected function formatHotelCard(array $hotel): array
+    protected function formatHotelCard(array $hotel, ?float $distanceKm = null): array
     {
         $id = $hotel['id'] ?? '1';
         $priceVal = $hotel['start_price'] ?? ($hotel['price_from'] ?? 0);
-        return [
+        $card = [
             'id' => $id,
             'nama' => $hotel['name'] ?? 'Hotel',
             'alamat' => $hotel['address'] ?? 'Kota Medan',
@@ -42,6 +207,10 @@ class ChatbotController extends Controller
             'foto' => $hotel['image_url'] ?? '/images/placeholder.svg',
             'detail_url' => url("/hotel/{$id}"),
         ];
+        if ($distanceKm !== null) {
+            $card['jarak'] = $distanceKm < 1 ? round($distanceKm * 1000) . ' meter' : number_format($distanceKm, 1, ',', '.') . ' km';
+        }
+        return $card;
     }
 
     /**
@@ -60,17 +229,13 @@ class ChatbotController extends Controller
         $message = trim((string) $request->input('message', ''));
         if ($message === '') {
             return response()->json([
-                'reply' => "Halo! Ada yang bisa Roomify AI bantu terkait pemesanan hotel, informasi check-in, atau navigasi lokasi di Medan?",
+                'reply' => "Halo! Saya **Roomify AI Concierge** siap membantu Anda menemukan hotel terdekat, cek jadwal check-in, atau melacak kode pesanan di Medan.",
                 'hotels' => [],
-                'suggestions' => ['Cek pesanan saya', 'Hotel terdekat', 'Rekomendasi hotel murah', 'Waktu check-in'],
+                'suggestions' => ['Hotel dekat USU', 'Hotel di jalan h.m yamin', 'Cek pesanan saya', 'Hotel bintang 5'],
             ]);
         }
 
         $lower = mb_strtolower($message);
-
-        // Normalize text for easier matching (e.g. h.m. yamin -> hm yamin)
-        $cleanText = str_replace(['.', ',', '-', '/', 'jalan ', 'jl '], [' ', ' ', ' ', ' ', ' ', ' '], $lower);
-        $cleanText = preg_replace('/\s+/', ' ', $cleanText);
 
         // 1. Check for booking code query (e.g. RMF-20261114-ABCD)
         if (preg_match('/(rmf-[a-z0-9\-]+)/i', $message, $matches)) {
@@ -92,7 +257,7 @@ class ChatbotController extends Controller
                     . "• **Identitas Resmi:** Wajib membawa e-KTP fisik 16 digit asli (atau Paspor) saat proses verifikasi resepsionis.\n"
                     . "• *Catatan:* Early check-in atau late check-out bergantung pada ketersediaan kamar di masing-masing hotel mitra.",
                 'hotels' => [],
-                'suggestions' => ['Cek pesanan saya', 'Hotel terdekat', 'Rekomendasi hotel murah'],
+                'suggestions' => ['Cek pesanan saya', 'Hotel dekat USU', 'Rekomendasi hotel murah'],
             ]);
         }
 
@@ -117,7 +282,7 @@ class ChatbotController extends Controller
                     . "• **Kartu Kredit/Debit:** Visa, Mastercard, JCB.\n"
                     . "• **Konfirmasi:** Tiket e-Voucher langsung terbit otomatis setelah pembayaran lunas tanpa perlu konfirmasi manual.",
                 'hotels' => [],
-                'suggestions' => ['Cek pesanan saya', 'Rekomendasi hotel keluarga', 'Hotel dekat Stasiun Medan'],
+                'suggestions' => ['Cek pesanan saya', 'Hotel dekat USU', 'Hotel dekat Stasiun Medan'],
             ]);
         }
 
@@ -128,59 +293,74 @@ class ChatbotController extends Controller
                     . "• Di halaman **Cari Hotel** dan **Detail Hotel**, klik tombol hijau **'Petunjuk Belokan'** atau **'Mulai Navigasi'**.\n"
                     . "• Roomify akan mendeteksi GPS lokasi Anda dan menampilkan rute belokan demi belokan (turn-by-turn navigation), estimasi waktu tempuh, dan jarak akurat secara real-time ke hotel tujuan!",
                 'hotels' => [],
-                'suggestions' => ['Hotel dekat Stasiun Medan', 'Hotel dekat Istana Maimun', 'Cari hotel termurah'],
+                'suggestions' => ['Hotel dekat USU', 'Hotel dekat Stasiun Medan', 'Cari hotel termurah'],
             ]);
         }
 
-        // 7. Landmark query (e.g. Istana Maimun, Stasiun Medan, Sun Plaza, dll)
-        $landmarks = [
-            'istana maimun' => ['name' => 'Istana Maimun', 'area' => 'Medan Maimun'],
-            'masjid raya' => ['name' => 'Masjid Raya Al-Mashun', 'area' => 'Medan Kota'],
-            'stasiun medan' => ['name' => 'Stasiun Kereta Api Medan', 'area' => 'Medan Barat / Lapangan Merdeka'],
-            'stasiun' => ['name' => 'Stasiun Kereta Api Medan', 'area' => 'Medan Barat / Lapangan Merdeka'],
-            'lapangan merdeka' => ['name' => 'Lapangan Merdeka Medan', 'area' => 'Pusat Kota (KM 0)'],
-            'sun plaza' => ['name' => 'Sun Plaza', 'area' => 'Zainul Arifin / Medan Petisah'],
-            'podomoro' => ['name' => 'Podomoro City Deli Park', 'area' => 'Putri Hijau'],
-            'kesawan' => ['name' => 'Kawasan Bersejarah Kesawan', 'area' => 'Ahmad Yani'],
-            'tjong a fie' => ['name' => 'Tjong A Fie Mansion', 'area' => 'Kesawan'],
-            'ucok durian' => ['name' => 'Ucok Durian', 'area' => 'Iskandar Muda'],
-            'velangkanni' => ['name' => 'Graha Maria Annai Velangkanni', 'area' => 'Tuntungan'],
-        ];
+        $hotels = $this->getHotels();
 
-        foreach ($landmarks as $key => $lm) {
-            if (Str::contains($lower, $key)) {
-                $lmName = $lm['name'];
-                $lmArea = $lm['area'];
-                return response()->json([
-                    'reply' => "📍 **Rekomendasi Hotel dekat {$lmName} ({$lmArea}):**\n\n"
-                        . "Kami memiliki pilihan hotel terbaik di sekitar {$lmName} dengan akses mudah, harga terjangkau, dan navigasi langsung ke lokasi.\n\n"
-                        . "Silakan klik tombol di bawah untuk melihat hotel terdekat dari kawasan ini.",
-                    'hotels' => [],
-                    'action' => [
-                        'label' => "Lihat Hotel di Sekitar {$lmName}",
-                        'url' => url("/search?landmark=" . urlencode($key)),
-                    ],
-                    'suggestions' => ["Hotel dekat Stasiun Medan", "Hotel termurah", "Cek pesanan saya"],
-                ]);
+        // 7. Spatial / Proximity Intelligence: check if user asks for ANY known area or landmark
+        $matchedLocKey = null;
+        foreach (self::KNOWN_LOCATIONS as $locKey => $locData) {
+            if (Str::contains($lower, $locKey)) {
+                $matchedLocKey = $locKey;
+                break;
             }
         }
 
-        // 8. Search hotel dataset by specific hotel name or street/address
-        $hotels = $this->getHotels();
+        if ($matchedLocKey) {
+            $loc = self::KNOWN_LOCATIONS[$matchedLocKey];
+            $locLat = (float) $loc['lat'];
+            $locLng = (float) $loc['lng'];
+            $locName = $loc['name'];
+
+            // Calculate distance to all hotels from this location
+            $nearby = [];
+            foreach ($hotels as $h) {
+                $hLat = (float) ($h['latitude'] ?? 0);
+                $hLng = (float) ($h['longitude'] ?? 0);
+                if (! $hLat || ! $hLng) continue;
+
+                $dist = $this->haversineKm($locLat, $locLng, $hLat, $hLng);
+                $nearby[] = [
+                    'hotel' => $h,
+                    'dist' => $dist,
+                ];
+            }
+
+            usort($nearby, fn($a, $b) => $a['dist'] <=> $b['dist']);
+            $topNearby = array_slice($nearby, 0, 3);
+            $cards = array_map(fn($item) => $this->formatHotelCard($item['hotel'], $item['dist']), $topNearby);
+
+            $replyList = "📍 **Rekomendasi Hotel Terdekat dari {$locName}:**\n\n";
+            foreach ($topNearby as $idx => $item) {
+                $num = $idx + 1;
+                $h = $item['hotel'];
+                $distText = $item['dist'] < 1 ? round($item['dist'] * 1000) . ' m' : number_format($item['dist'], 1, ',', '.') . ' km';
+                $price = isset($h['start_price']) ? 'Rp ' . number_format($h['start_price'], 0, ',', '.') : 'Terjangkau';
+                $replyList .= "{$num}. **{$h['name']}** (⭐ {$h['rating']})\n"
+                    . "   • Jarak: **{$distText}** dari lokasi\n"
+                    . "   • Alamat: {$h['address']}\n"
+                    . "   • Mulai dari: **{$price}** / malam\n\n";
+            }
+            $replyList .= "Gunakan tombol di bawah untuk melihat rute peta atau detail hotel.";
+
+            return response()->json([
+                'reply' => $replyList,
+                'hotels' => $cards,
+                'action' => [
+                    'label' => "Lihat Semua Hotel di Sekitar {$locName}",
+                    'url' => url('/search?q=' . urlencode($matchedLocKey)),
+                ],
+                'suggestions' => ["Hotel dekat Stasiun Medan", "Hotel termurah", "Cek pesanan saya"],
+            ]);
+        }
+
+        // 8. Search hotel dataset by specific hotel name
         $matchedHotel = null;
 
-        // Special street matching: "jalan h.m yamin" / "yamin" -> Grand Sakura Hotel
-        if (Str::contains($lower, ['yamin', 'h m yamin', 'h.m yamin', 'hm yamin'])) {
-            foreach ($hotels as $h) {
-                if (Str::contains(mb_strtolower($h['name'] ?? ''), 'sakura')) {
-                    $matchedHotel = $h;
-                    break;
-                }
-            }
-        }
-
         // Cambridge query: "hotel yang cambridge itu" or "cambridge"
-        if (! $matchedHotel && Str::contains($lower, 'cambridge')) {
+        if (Str::contains($lower, 'cambridge')) {
             foreach ($hotels as $h) {
                 if (Str::contains(mb_strtolower($h['name'] ?? ''), 'cambridge')) {
                     $matchedHotel = $h;
@@ -202,9 +382,9 @@ class ChatbotController extends Controller
 
         // Search by address / street name in dataset
         if (! $matchedHotel) {
+            $words = array_filter(explode(' ', str_replace(['.', ',', '-', '/'], ' ', $lower)), fn($w) => strlen($w) > 4);
             foreach ($hotels as $hotel) {
                 $addr = mb_strtolower($hotel['address'] ?? '');
-                $words = array_filter(explode(' ', $cleanText), fn($w) => strlen($w) > 4);
                 foreach ($words as $w) {
                     if (Str::contains($addr, $w)) {
                         $matchedHotel = $hotel;
@@ -250,7 +430,6 @@ class ChatbotController extends Controller
 
         // 9. Search recommendations by price or luxury category
         if (Str::contains($lower, ['murah', 'hemat', 'budget', 'promo', 'diskon', 'terjangkau'])) {
-            // Find top 3 cheap hotels
             $sortedHotels = $hotels;
             usort($sortedHotels, fn($a, $b) => ($a['start_price'] ?? 9999999) <=> ($b['start_price'] ?? 9999999));
             $cheapCards = array_map(fn($h) => $this->formatHotelCard($h), array_slice($sortedHotels, 0, 3));
@@ -292,13 +471,13 @@ class ChatbotController extends Controller
         return response()->json([
             'reply' => "Halo! Saya **Roomify AI Concierge** siap membantu Anda 24/7 di Kota Medan 🛎️\n\n"
                 . "Anda bisa bertanya mengenai:\n"
+                . "• **Lokasi & Kampus:** Tanya hotel daerah USU, Stasiun Medan, Ringroad, Bandara, dll\n"
+                . "• **Nama Hotel:** Tanyakan nama hotel (misal *hotel yang cambridge itu* atau *hotel di jl h.m yamin*)\n"
                 . "• **Status Pesanan:** Ketik kode booking Anda (misal `RMF-20261114-XXXX`) atau `cek pesanan saya`\n"
-                . "• **Rekomendasi Hotel:** Tanyakan nama hotel (misal *hotel yang cambridge itu* atau *hotel di jl h.m yamin*)\n"
-                . "• **Lokasi & Landmark:** Tanya hotel dekat Stasiun Medan, Istana Maimun, Sun Plaza, dll\n"
                 . "• **Waktu Menginap:** Aturan Check-in (14:00 WIB) & Check-out (12:00 WIB)\n"
                 . "• **Metode Pembayaran:** QRIS, Virtual Account, dan Kartu Kredit",
             'hotels' => [],
-            'suggestions' => ['Cek pesanan saya', 'Hotel di jalan h.m yamin', 'Hotel yang cambridge itu', 'Waktu check-in resmi'],
+            'suggestions' => ['Hotel daerah USU', 'Hotel di jalan h.m yamin', 'Hotel yang cambridge itu', 'Cek pesanan saya'],
         ]);
     }
 
@@ -384,7 +563,7 @@ class ChatbotController extends Controller
                     'label' => 'Jelajahi Hotel Sekarang',
                     'url' => url('/search'),
                 ],
-                'suggestions' => ['Hotel dekat Stasiun Medan', 'Hotel bintang 5', 'Promo hemat'],
+                'suggestions' => ['Hotel dekat USU', 'Hotel dekat Stasiun Medan', 'Promo hemat'],
             ]);
         }
 

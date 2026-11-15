@@ -30,12 +30,21 @@
                 }
             }
         }
-        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        function getAutoTimeTheme() {
+            const hour = new Date().getHours();
+            return (hour >= 6 && hour < 18) ? 'light' : 'dark';
+        }
+        const hasManualOverride = localStorage.getItem('theme_user_override') === 'true';
+        const savedTheme = localStorage.getItem('theme');
+        const effectiveTheme = hasManualOverride && savedTheme ? savedTheme : getAutoTimeTheme();
+
+        if (effectiveTheme === 'dark') {
             document.documentElement.classList.add('dark');
         } else {
             document.documentElement.classList.remove('dark');
         }
         function toggleTheme() {
+            localStorage.setItem('theme_user_override', 'true');
             if (document.documentElement.classList.contains('dark')) {
                 document.documentElement.classList.remove('dark');
                 localStorage.setItem('theme', 'light');

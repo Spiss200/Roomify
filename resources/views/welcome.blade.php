@@ -61,28 +61,54 @@
                 }
             }
         }
-        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
+        function getAutoTimeTheme() {
+            const hour = new Date().getHours();
+            // Jam 06:00 sampai 17:59 = mode terang, Jam 18:00 sampai 05:59 = mode gelap
+            return (hour >= 6 && hour < 18) ? 'light' : 'dark';
         }
-        function toggleTheme() {
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-            } else {
+        function initTheme() {
+            const userOverride = localStorage.getItem('theme_user_override');
+            let theme = userOverride ? localStorage.getItem('theme') : getAutoTimeTheme();
+            if (!theme) theme = getAutoTimeTheme();
+            applyTheme(theme);
+        }
+        function applyTheme(theme) {
+            if (theme === 'dark') {
                 document.documentElement.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
             }
         }
+        function toggleTheme() {
+            const isDark = document.documentElement.classList.contains('dark');
+            const newTheme = isDark ? 'light' : 'dark';
+            localStorage.setItem('theme', newTheme);
+            localStorage.setItem('theme_user_override', 'true');
+            applyTheme(newTheme);
+        }
+        initTheme();
     </script>
 
     <style>
         * { font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; }
-        body { scroll-behavior: smooth; background-color: #0b0f19; color: #f1f5f9; }
+        body {
+            scroll-behavior: smooth;
+            background-color: #f8fafc;
+            color: #0f172a;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        html.dark body {
+            background-color: #0b0f19;
+            color: #f1f5f9;
+        }
 
         /* ─── Hero Ambient Mesh with Authentic Landmark Backdrop ─── */
         .hero-mesh {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(241, 245, 249, 0.96) 60%, #f8fafc 100%),
+                        url('/images/landmarks/masjid-raya.jpg') center/cover no-repeat;
+            background-attachment: fixed;
+        }
+        html.dark .hero-mesh {
             background: linear-gradient(180deg, rgba(11, 15, 25, 0.72) 0%, rgba(11, 15, 25, 0.85) 60%, #0b0f19 100%),
                         url('/images/landmarks/masjid-raya.jpg') center/cover no-repeat;
             background-attachment: fixed;
@@ -90,37 +116,50 @@
 
         /* ─── Glassmorphism ─── */
         .glass-nav {
-            background: rgba(11, 15, 25, 0.9);
+            background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            color: #0f172a;
+        }
+        html.dark .glass-nav {
+            background: rgba(11, 15, 25, 0.92);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: #f1f5f9;
         }
 
         .glass-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1.5px solid rgba(226, 232, 240, 0.9);
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+            color: #0f172a;
+        }
+        html.dark .glass-card {
             background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            color: #f1f5f9;
         }
 
         .glass-card-light {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(226, 232, 240, 0.9);
             box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.07);
         }
 
         /* ─── Gradients & Typography ─── */
         .text-gradient {
-            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #ec4899 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .text-gradient-gold {
-            background: linear-gradient(135deg, #fcd34d 0%, #f59e0b 100%);
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -140,7 +179,18 @@
         .landmark-card {
             border-radius: 22px;
             overflow: hidden;
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+        }
+        html.dark .landmark-card {
             background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: none;
+        }
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -242,7 +292,7 @@
         }
     </style>
 </head>
-<body class="text-slate-100 antialiased overflow-x-hidden">
+<body class="text-slate-800 dark:text-slate-100 antialiased overflow-x-hidden">
 
 {{-- ═══════════════════════════════════════════════════════════
      TOP LIVE SYSTEM CLOCK & STICKY GLASS NAVBAR
@@ -278,39 +328,39 @@
                     </div>
                     <div class="flex flex-col">
                         <div class="flex items-center gap-2">
-                            <span class="text-2xl font-black tracking-tight text-white group-hover:text-indigo-200 transition">
+                            <span class="text-2xl font-black tracking-tight text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-200 transition">
                                 Roomify
                             </span>
                         </div>
-                        <span class="text-[10px] font-semibold text-slate-400 tracking-wider uppercase">Pemesanan Hotel Medan</span>
+                        <span class="text-[10px] font-semibold text-slate-500 dark:text-slate-400 tracking-wider uppercase">Pemesanan Hotel Medan</span>
                     </div>
                 </a>
 
                 {{-- NAV LINKS --}}
-                <nav class="hidden md:flex items-center gap-1 bg-white/5 p-1.5 rounded-2xl border border-white/10 backdrop-blur-md">
-                    <a href="#destinasi" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition">
-                        <i class="fa-solid fa-map-location-dot mr-1.5 text-indigo-400"></i>Landmark Medan
+                <nav class="hidden md:flex items-center gap-1 bg-slate-100/90 dark:bg-white/5 p-1.5 rounded-2xl border border-slate-200/80 dark:border-white/10 backdrop-blur-md">
+                    <a href="#destinasi" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-white/10 transition">
+                        <i class="fa-solid fa-map-location-dot mr-1.5 text-indigo-500"></i>Landmark Medan
                     </a>
-                    <a href="{{ url('/search') }}" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition">
-                        <i class="fa-solid fa-magnifying-glass mr-1.5 text-indigo-400"></i>Cari Hotel
+                    <a href="{{ url('/search') }}" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-white/10 transition">
+                        <i class="fa-solid fa-magnifying-glass mr-1.5 text-indigo-500"></i>Cari Hotel
                     </a>
-                    <a href="#hotel-pilihan" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition">
-                        <i class="fa-solid fa-hotel mr-1.5 text-indigo-400"></i>Hotel Pilihan
+                    <a href="#hotel-pilihan" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-white/10 transition">
+                        <i class="fa-solid fa-hotel mr-1.5 text-indigo-500"></i>Hotel Pilihan
                     </a>
-                    <a href="#keunggulan" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/10 transition">
-                        <i class="fa-solid fa-shield-halved mr-1.5 text-indigo-400"></i>Keunggulan
+                    <a href="#keunggulan" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-white/10 transition">
+                        <i class="fa-solid fa-shield-halved mr-1.5 text-indigo-500"></i>Keunggulan
                     </a>
                 </nav>
 
                 {{-- ACTION BUTTONS --}}
                 <div class="flex items-center gap-3">
-                    <button onclick="toggleTheme()" type="button" class="p-2.5 rounded-xl text-slate-300 hover:text-white bg-white/10 hover:bg-white/20 border border-white/10 transition" aria-label="Toggle theme">
+                    <button onclick="toggleTheme()" type="button" class="p-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white bg-slate-100 hover:bg-slate-200 dark:bg-white/10 dark:hover:bg-white/20 border border-slate-200 dark:border-white/10 transition" aria-label="Toggle theme">
                         <i class="fa-solid fa-moon hidden dark:inline text-amber-300"></i>
-                        <i class="fa-solid fa-sun inline dark:hidden text-amber-400"></i>
+                        <i class="fa-solid fa-sun inline dark:hidden text-amber-500"></i>
                     </button>
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm font-semibold text-slate-300 hover:text-white px-3 py-2 rounded-xl hover:bg-white/5 transition flex items-center gap-2">
-                            <i class="fa-solid fa-user-circle text-indigo-400 text-lg"></i>
+                        <a href="{{ url('/dashboard') }}" class="text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-white/5 transition flex items-center gap-2">
+                            <i class="fa-solid fa-user-circle text-indigo-500 text-lg"></i>
                             <span class="hidden sm:inline">{{ Auth::user()->name }}</span>
                         </a>
                         <a href="{{ url('/search') }}" class="btn-gradient text-white text-sm font-bold px-5 py-2.5 rounded-xl flex items-center gap-2">
@@ -318,15 +368,15 @@
                             <span>Jelajahi</span>
                         </a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm font-semibold text-slate-300 hover:text-white px-4 py-2 rounded-xl hover:bg-white/10 transition hidden sm:inline-flex items-center gap-1.5">
-                            <i class="fa-solid fa-right-to-bracket text-indigo-400"></i> Masuk
+                        <a href="{{ route('login') }}" class="text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white px-4 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 transition hidden sm:inline-flex items-center gap-1.5">
+                            <i class="fa-solid fa-right-to-bracket text-indigo-500"></i> Masuk
                         </a>
                         <a href="{{ route('register') }}" class="btn-gradient text-white text-sm font-bold px-5 py-2.5 rounded-xl flex items-center gap-1.5">
                             <i class="fa-solid fa-user-plus"></i> Daftar
                         </a>
                     @endauth
                     <!-- Mobile menu toggle -->
-                    <button type="button" class="md:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 transition" onclick="document.getElementById('mobile-nav-welcome').classList.toggle('hidden')">
+                    <button type="button" class="md:hidden p-2 rounded-xl text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 transition" onclick="document.getElementById('mobile-nav-welcome').classList.toggle('hidden')">
                         <i class="fa-solid fa-bars text-lg"></i>
                     </button>
                 </div>
@@ -334,18 +384,18 @@
             </div>
         </div>
         <!-- Mobile dropdown menu -->
-        <div id="mobile-nav-welcome" class="hidden md:hidden px-4 py-3 bg-slate-900/95 border-b border-white/10 space-y-2 backdrop-blur-xl">
-            <a href="{{ url('/search') }}" class="block px-3 py-2 rounded-xl text-sm font-bold text-white bg-indigo-600/30 border border-indigo-500/40">
-                <i class="fa-solid fa-hotel mr-2 text-indigo-400"></i>Cari Seluruh 187 Hotel
+        <div id="mobile-nav-welcome" class="hidden md:hidden px-4 py-3 bg-white/95 dark:bg-slate-900/95 border-b border-slate-200 dark:border-white/10 space-y-2 backdrop-blur-xl shadow-lg">
+            <a href="{{ url('/search') }}" class="block px-3 py-2 rounded-xl text-sm font-bold text-indigo-600 dark:text-white bg-indigo-50 dark:bg-indigo-600/30 border border-indigo-200 dark:border-indigo-500/40">
+                <i class="fa-solid fa-hotel mr-2 text-indigo-500"></i>Cari Seluruh 187 Hotel
             </a>
-            <a href="#destinasi" class="block px-3 py-2 rounded-xl text-sm text-slate-300 hover:text-white">
-                <i class="fa-solid fa-map-location-dot mr-2 text-indigo-400"></i>13 Landmark Medan
+            <a href="#destinasi" class="block px-3 py-2 rounded-xl text-sm text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white">
+                <i class="fa-solid fa-map-location-dot mr-2 text-indigo-500"></i>13 Landmark Medan
             </a>
-            <a href="#hotel-pilihan" class="block px-3 py-2 rounded-xl text-sm text-slate-300 hover:text-white">
-                <i class="fa-solid fa-star mr-2 text-amber-400"></i>Hotel Pilihan
+            <a href="#hotel-pilihan" class="block px-3 py-2 rounded-xl text-sm text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white">
+                <i class="fa-solid fa-star mr-2 text-amber-500"></i>Hotel Pilihan
             </a>
-            <a href="#keunggulan" class="block px-3 py-2 rounded-xl text-sm text-slate-300 hover:text-white">
-                <i class="fa-solid fa-shield-halved mr-2 text-indigo-400"></i>Keunggulan Roomify
+            <a href="#keunggulan" class="block px-3 py-2 rounded-xl text-sm text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white">
+                <i class="fa-solid fa-shield-halved mr-2 text-indigo-500"></i>Keunggulan Roomify
             </a>
         </div>
     </header>
@@ -356,24 +406,24 @@
 ═══════════════════════════════════════════════════════════ --}}
 <section class="hero-mesh pt-44 pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-[92vh] flex items-center">
     <!-- Ambient Glowing Orbs -->
-    <div class="absolute top-1/4 left-10 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none animate-pulse-glow"></div>
-    <div class="absolute bottom-10 right-10 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl pointer-events-none animate-pulse-glow" style="animation-delay: 2s;"></div>
+    <div class="absolute top-1/4 left-10 w-96 h-96 bg-indigo-500/15 dark:bg-indigo-600/20 rounded-full blur-3xl pointer-events-none animate-pulse-glow"></div>
+    <div class="absolute bottom-10 right-10 w-96 h-96 bg-purple-500/15 dark:bg-purple-600/20 rounded-full blur-3xl pointer-events-none animate-pulse-glow" style="animation-delay: 2s;"></div>
 
     <div class="max-w-7xl mx-auto w-full relative z-10">
 
         <!-- Hero Header -->
         <div class="text-center max-w-4xl mx-auto mb-12">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 backdrop-blur-md mb-6 shadow-sm">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span class="text-xs font-bold uppercase tracking-wider text-indigo-200">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 dark:bg-white/10 border border-indigo-200 dark:border-white/15 backdrop-blur-md mb-6 shadow-xs">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span class="text-xs font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-200">
                     Platform Pemesanan Hotel & Penginapan Resmi di Kota Medan
                 </span>
             </div>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-white mb-6">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-slate-900 dark:text-white mb-6">
                 Pesan Kamar Hotel Nyaman di <br class="hidden sm:inline">
                 <span class="text-gradient">Kota Medan</span> Dekat Landmark Favorit
             </h1>
-            <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
                 Pilihan akomodasi terlengkap mulai hotel hemat hingga bintang lima mewah dengan garansi harga terbaik, konfirmasi instan, dan navigasi rute Google Maps langsung.
             </p>
         </div>
@@ -381,20 +431,20 @@
         <!-- Live Stats Floating Badges -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-10">
             <div class="glass-card rounded-2xl p-4 text-center transform transition-transform hover:-translate-y-1">
-                <div class="text-2xl sm:text-3xl font-black text-indigo-400">187+</div>
-                <div class="text-xs text-slate-300 font-semibold uppercase tracking-wider mt-1">Hotel Pilihan</div>
+                <div class="text-2xl sm:text-3xl font-black text-indigo-600 dark:text-indigo-400">187+</div>
+                <div class="text-xs text-slate-600 dark:text-slate-300 font-semibold uppercase tracking-wider mt-1">Hotel Pilihan</div>
             </div>
             <div class="glass-card rounded-2xl p-4 text-center transform transition-transform hover:-translate-y-1">
-                <div class="text-2xl sm:text-3xl font-black text-purple-400">13</div>
-                <div class="text-xs text-slate-300 font-semibold uppercase tracking-wider mt-1">Landmark Ikonik</div>
+                <div class="text-2xl sm:text-3xl font-black text-purple-600 dark:text-purple-400">13</div>
+                <div class="text-xs text-slate-600 dark:text-slate-300 font-semibold uppercase tracking-wider mt-1">Landmark Ikonik</div>
             </div>
             <div class="glass-card rounded-2xl p-4 text-center transform transition-transform hover:-translate-y-1">
                 <div class="text-2xl sm:text-3xl font-black text-gradient-gold">4.8★</div>
-                <div class="text-xs text-slate-300 font-semibold uppercase tracking-wider mt-1">Rating Kepuasan</div>
+                <div class="text-xs text-slate-600 dark:text-slate-300 font-semibold uppercase tracking-wider mt-1">Rating Kepuasan</div>
             </div>
             <div class="glass-card rounded-2xl p-4 text-center transform transition-transform hover:-translate-y-1">
-                <div class="text-2xl sm:text-3xl font-black text-emerald-400">100%</div>
-                <div class="text-xs text-slate-300 font-semibold uppercase tracking-wider mt-1">Konfirmasi Instan</div>
+                <div class="text-2xl sm:text-3xl font-black text-emerald-600 dark:text-emerald-400">100%</div>
+                <div class="text-xs text-slate-600 dark:text-slate-300 font-semibold uppercase tracking-wider mt-1">Konfirmasi Instan</div>
             </div>
         </div>
 
