@@ -34,25 +34,31 @@
             const hour = new Date().getHours();
             return (hour >= 6 && hour < 18) ? 'light' : 'dark';
         }
-        const hasManualOverride = localStorage.getItem('theme_user_override') === 'true';
-        const savedTheme = localStorage.getItem('theme');
-        const effectiveTheme = hasManualOverride && savedTheme ? savedTheme : getAutoTimeTheme();
-
-        if (effectiveTheme === 'dark') {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-        function toggleTheme() {
-            localStorage.setItem('theme_user_override', 'true');
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-            } else {
+        function initTheme() {
+            if (localStorage.getItem('theme_user_override') === 'true' && !localStorage.getItem('theme_mode')) {
+                localStorage.removeItem('theme_user_override');
+                localStorage.setItem('theme_mode', 'auto');
+            }
+            const mode = localStorage.getItem('theme_mode') || 'auto';
+            const effectiveTheme = (mode === 'auto') ? getAutoTimeTheme() : mode;
+            if (effectiveTheme === 'dark') {
                 document.documentElement.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
             }
         }
+        function toggleTheme() {
+            if (typeof window.cycleThemeMode === 'function') {
+                window.cycleThemeMode();
+            } else {
+                const isDark = document.documentElement.classList.contains('dark');
+                const nextMode = isDark ? 'light' : 'dark';
+                localStorage.setItem('theme_mode', nextMode);
+                if (nextMode === 'dark') document.documentElement.classList.add('dark');
+                else document.documentElement.classList.remove('dark');
+            }
+        }
+        initTheme();
     </script>
 
     <style>

@@ -21,32 +21,50 @@
                 }
             }
         }
-        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
+        function getAutoTimeTheme() {
+            const hour = new Date().getHours();
+            return (hour >= 6 && hour < 18) ? 'light' : 'dark';
         }
-        function toggleTheme() {
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-            } else {
+        function initTheme() {
+            if (localStorage.getItem('theme_user_override') === 'true' && !localStorage.getItem('theme_mode')) {
+                localStorage.removeItem('theme_user_override');
+                localStorage.setItem('theme_mode', 'auto');
+            }
+            const mode = localStorage.getItem('theme_mode') || 'auto';
+            const effectiveTheme = (mode === 'auto') ? getAutoTimeTheme() : mode;
+            if (effectiveTheme === 'dark') {
                 document.documentElement.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
             }
         }
+        function toggleTheme() {
+            if (typeof window.cycleThemeMode === 'function') {
+                window.cycleThemeMode();
+            } else {
+                const isDark = document.documentElement.classList.contains('dark');
+                const nextMode = isDark ? 'light' : 'dark';
+                localStorage.setItem('theme_mode', nextMode);
+                if (nextMode === 'dark') document.documentElement.classList.add('dark');
+                else document.documentElement.classList.remove('dark');
+            }
+        }
+        initTheme();
     </script>
     <style>
         body { font-family: 'Inter', sans-serif; }
         .glass { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
         .gradient-hero { background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 50%, #EC4899 100%); }
-        input:focus, select:focus, textarea:focus { outline: none; box-shadow: 0 0 0 3px rgba(79,70,229,0.2); }
+        input:focus, select:focus, textarea:focus { outline: none; box-shadow: 0 0 0 3px rgba(79,70,229,0.25); }
     </style>
 </head>
 <body class="min-h-screen bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-100 transition-colors duration-200">
 
+{{-- TOP LIVE BAR --}}
+<x-live-clock-bar />
+
 {{-- NAVBAR --}}
-<nav class="sticky top-0 z-50 glass bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors duration-200">
+<nav class="sticky top-0 z-40 glass bg-white/90 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors duration-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
             <a href="{{ url('/') }}" class="flex items-center gap-2.5 group no-underline">
@@ -72,19 +90,19 @@
                     </svg>
                 </div>
                 <div class="leading-tight">
-                    <span class="font-black text-xl bg-gradient-to-r from-indigo-700 via-purple-600 to-pink-500 bg-clip-text text-transparent tracking-tight">Roomify</span>
+                    <span class="font-black text-xl bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent tracking-tight">Roomify</span>
                 </div>
             </a>
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-3">
                 <button onclick="toggleTheme()" type="button" class="p-2 rounded-xl text-slate-500 hover:text-slate-700 dark:text-slate-300 dark:hover:text-white bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition" aria-label="Toggle theme">
                     <i class="fa-solid fa-moon hidden dark:inline text-amber-300"></i>
                     <i class="fa-solid fa-sun inline dark:hidden text-amber-500"></i>
                 </button>
-                <a href="{{ url('/search') }}" class="text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 font-medium transition-colors">
-                    <i class="fa fa-search mr-1"></i> Cari Hotel
+                <a href="{{ url('/search') }}" class="text-sm text-slate-600 dark:text-slate-300 hover:text-indigo-600 font-semibold transition-colors hidden sm:inline-flex items-center">
+                    <i class="fa fa-search mr-1.5 text-indigo-500"></i> Cari Hotel
                 </a>
-                <a href="{{ url('/') }}" class="text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 font-medium transition-colors">
-                    <i class="fa fa-home mr-1"></i> Beranda
+                <a href="{{ url('/') }}" class="text-sm text-slate-600 dark:text-slate-300 hover:text-indigo-600 font-semibold transition-colors hidden sm:inline-flex items-center">
+                    <i class="fa fa-home mr-1.5 text-indigo-500"></i> Beranda
                 </a>
             </div>
         </div>
@@ -145,71 +163,74 @@
         <div class="lg:col-span-1 space-y-6">
 
             {{-- Hotel Card --}}
-            <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
+            <div class="bg-white dark:bg-slate-800 rounded-3xl shadow-xl overflow-hidden border border-slate-200 dark:border-slate-700 transition-colors">
                 <div class="relative h-52 overflow-hidden">
                     <img src="{{ $hotel['foto'] }}" alt="{{ $hotel['nama'] }}"
                          class="w-full h-full object-cover"
                          onerror="this.src='/images/placeholder.svg'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-4 left-4 right-4">
                         @if($hotel['starRating'])
                         <div class="flex gap-0.5 mb-1">
                             @for ($s = 1; $s <= 5; $s++)
-                                <i class="fa fa-star text-xs {{ $s <= $hotel['starRating'] ? 'text-yellow-400' : 'text-gray-400' }}"></i>
+                                <i class="fa fa-star text-xs {{ $s <= $hotel['starRating'] ? 'text-yellow-400' : 'text-slate-400' }}"></i>
                             @endfor
                         </div>
                         @endif
-                        <h2 class="text-white font-bold text-lg leading-tight">{{ $hotel['nama'] }}</h2>
+                        <h2 class="text-white font-extrabold text-lg leading-tight">{{ $hotel['nama'] }}</h2>
                     </div>
                 </div>
                 <div class="p-5 space-y-3">
-                    <div class="flex items-start gap-2 text-gray-600">
+                    <div class="flex items-start gap-2 text-slate-600 dark:text-slate-300">
                         <i class="fa fa-location-dot text-indigo-500 mt-0.5 flex-shrink-0"></i>
                         <span class="text-sm">{{ $hotel['alamat'] }}</span>
                     </div>
-                    <div class="flex items-center gap-2 text-sm text-green-600 font-medium">
+                    <div class="flex items-center gap-2 text-sm text-emerald-600 dark:text-emerald-400 font-semibold">
                         <i class="fa fa-shield-check"></i>
-                        <span>Pembayaran aman & terjamin</span>
+                        <span>Pembayaran aman & terverifikasi</span>
                     </div>
-                    <div class="flex items-center gap-2 text-sm text-indigo-600 font-medium">
+                    <div class="flex items-center gap-2 text-sm text-indigo-600 dark:text-indigo-400 font-semibold">
                         <i class="fa fa-clock-rotate-left"></i>
-                        <span>Pembatalan gratis hingga 24 jam</span>
+                        <span>Check-in 14:00 WIB · Check-out 12:00 WIB</span>
                     </div>
                 </div>
             </div>
 
             {{-- Price Summary --}}
-            <div class="bg-white rounded-3xl shadow-xl p-6 sticky top-24">
-                <h3 class="font-bold text-gray-800 text-lg mb-4 flex items-center gap-2">
+            <div class="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-6 sticky top-24 border border-slate-200 dark:border-slate-700 transition-colors">
+                <h3 class="font-extrabold text-slate-900 dark:text-white text-lg mb-4 flex items-center gap-2">
                     <i class="fa fa-receipt text-indigo-500"></i> Ringkasan Harga
                 </h3>
                 <div class="space-y-3">
                     <div class="flex justify-between items-center text-sm">
-                        <span class="text-gray-600">Tipe Kamar</span>
-                        <span class="font-semibold text-gray-800" id="summary-room-type">–</span>
+                        <span class="text-slate-600 dark:text-slate-400">Tipe Kamar</span>
+                        <span class="font-bold text-slate-900 dark:text-white" id="summary-room-type">–</span>
                     </div>
                     <div class="flex justify-between items-center text-sm">
-                        <span class="text-gray-600">Harga per malam</span>
-                        <span class="font-semibold text-gray-800" id="summary-price-night">Rp 0</span>
+                        <span class="text-slate-600 dark:text-slate-400">Harga per malam</span>
+                        <span class="font-bold text-slate-900 dark:text-white" id="summary-price-night">Rp 0</span>
                     </div>
                     <div class="flex justify-between items-center text-sm">
-                        <span class="text-gray-600">Jumlah malam</span>
-                        <span class="font-semibold text-gray-800" id="summary-nights">0 malam</span>
+                        <span class="text-slate-600 dark:text-slate-400">Jumlah malam</span>
+                        <span class="font-bold text-slate-900 dark:text-white" id="summary-nights">0 malam</span>
                     </div>
-                    <div class="border-t border-dashed border-gray-200 pt-3 mt-2 flex justify-between items-center">
-                        <span class="font-bold text-gray-800">Subtotal</span>
-                        <span class="font-extrabold text-indigo-600 text-xl" id="summary-total">Rp 0</span>
+                    <div class="border-t border-dashed border-slate-200 dark:border-slate-700 pt-3 mt-2 flex justify-between items-center">
+                        <span class="font-extrabold text-slate-900 dark:text-white">Subtotal</span>
+                        <span class="font-black text-indigo-600 dark:text-indigo-400 text-xl" id="summary-total">Rp 0</span>
                     </div>
                 </div>
-                <p class="text-xs text-gray-400 mt-3"><i class="fa fa-info-circle mr-1"></i>Harga belum termasuk pajak 10%</p>
+                <p class="text-xs text-slate-400 dark:text-slate-400 mt-3 flex items-center gap-1.5">
+                    <i class="fa fa-info-circle text-indigo-400"></i>
+                    <span>Harga belum termasuk pajak 10% (dihitung saat pembayaran)</span>
+                </p>
             </div>
         </div>
 
         {{-- RIGHT: Booking Form --}}
         <div class="lg:col-span-2">
-            <div class="bg-white rounded-3xl shadow-xl p-8">
-                <h1 class="text-2xl font-extrabold text-gray-900 mb-1">Detail Pemesanan</h1>
-                <p class="text-gray-500 text-sm mb-8">Lengkapi data berikut untuk melanjutkan ke pembayaran</p>
+            <div class="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-6 sm:p-8 border border-slate-200 dark:border-slate-700 transition-colors">
+                <h1 class="text-2xl font-black text-slate-900 dark:text-white mb-1">Detail Pemesanan Kamar</h1>
+                <p class="text-slate-500 dark:text-slate-400 text-sm mb-8">Lengkapi data identitas resmi sesuai e-KTP untuk melanjutkan reservasi</p>
 
                 <form action="{{ route('booking.store') }}" method="POST" id="bookingForm">
                     @csrf
@@ -220,30 +241,32 @@
 
                     {{-- Room Type --}}
                     <div class="mb-6">
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">
-                            <i class="fa fa-bed text-indigo-400 mr-1"></i> Tipe Kamar <span class="text-red-500">*</span>
+                        <label class="block text-sm font-bold text-slate-800 dark:text-slate-200 mb-2">
+                            <i class="fa fa-bed text-indigo-500 mr-1"></i> Tipe Kamar <span class="text-red-500">*</span>
                         </label>
                         @if(!empty($hotel['kamar']))
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="room-cards">
                             @foreach($hotel['kamar'] as $kamar)
-                            <label class="room-card cursor-pointer border-2 border-gray-200 rounded-2xl p-4 hover:border-indigo-400 transition-all"
+                            <label class="room-card cursor-pointer border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900/60 rounded-2xl p-4 hover:border-indigo-400 dark:hover:border-indigo-500 transition-all block"
                                    data-price="{{ $kamar['harga'] }}" data-type="{{ $kamar['tipe'] }}">
                                 <input type="radio" name="room_type" value="{{ $kamar['tipe'] }}"
                                        class="sr-only" {{ old('room_type') == $kamar['tipe'] ? 'checked' : '' }}>
                                 <div class="flex justify-between items-start">
                                     <div>
-                                        <p class="font-semibold text-gray-800">{{ $kamar['tipe'] }}</p>
-                                        <p class="text-xs text-gray-500 mt-0.5">
-                                            <i class="fa fa-user mr-1"></i> Maks {{ $kamar['kapasitas'] }} tamu
+                                        <p class="font-extrabold text-slate-900 dark:text-white text-sm">{{ $kamar['tipe'] }}</p>
+                                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                                            <i class="fa fa-user mr-1 text-indigo-400"></i> Maks {{ $kamar['kapasitas'] }} tamu
                                         </p>
                                     </div>
                                     <div class="text-right">
-                                        <p class="text-indigo-600 font-bold text-sm">Rp {{ number_format($kamar['harga'], 0, ',', '.') }}</p>
-                                        <p class="text-xs text-gray-400">/malam</p>
+                                        <p class="text-indigo-600 dark:text-indigo-400 font-black text-sm">Rp {{ number_format($kamar['harga'], 0, ',', '.') }}</p>
+                                        <p class="text-[10px] text-slate-400">/malam</p>
                                     </div>
                                 </div>
                                 <div class="mt-2 hidden check-mark">
-                                    <span class="text-xs text-indigo-600 font-semibold"><i class="fa fa-check-circle mr-1"></i>Dipilih</span>
+                                    <span class="text-xs text-indigo-600 dark:text-indigo-400 font-bold flex items-center gap-1">
+                                        <i class="fa fa-check-circle"></i> Kamar Dipilih
+                                    </span>
                                 </div>
                             </label>
                             @endforeach
@@ -251,7 +274,7 @@
                         @else
                         <input type="text" name="room_type" value="{{ old('room_type') }}"
                                placeholder="Contoh: Deluxe Room"
-                               class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:border-indigo-500 transition-colors"
+                               class="w-full border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 rounded-xl px-4 py-3 text-sm focus:border-indigo-500 dark:text-white transition-colors"
                                required>
                         @endif
                     </div>
@@ -299,79 +322,79 @@
                     </div>
 
                     {{-- Guest Data with KTP/NIK Requirement --}}
-                    <div class="border-t border-gray-100 dark:border-slate-800 pt-6 mb-6">
+                    <div class="border-t border-slate-200 dark:border-slate-700 pt-6 mb-6">
                         <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-base font-bold text-gray-800 dark:text-white flex items-center gap-2">
-                                <i class="fa fa-user-circle text-indigo-500"></i> Data Pemesan (Identitas KTP/NIK)
+                            <h3 class="text-base font-black text-slate-900 dark:text-white flex items-center gap-2">
+                                <i class="fa fa-user-circle text-indigo-500"></i> Data Pemesan (Identitas e-KTP / NIK)
                             </h3>
-                            <span class="text-xs text-indigo-600 dark:text-indigo-400 font-semibold bg-indigo-50 dark:bg-indigo-950/50 px-2.5 py-1 rounded-full border border-indigo-200 dark:border-indigo-800">
+                            <span class="text-xs text-indigo-600 dark:text-indigo-400 font-bold bg-indigo-50 dark:bg-indigo-950/70 px-2.5 py-1 rounded-full border border-indigo-200 dark:border-indigo-800">
                                 <i class="fa-solid fa-lock mr-1"></i> Data Terenkripsi
                             </span>
                         </div>
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div class="sm:col-span-2">
-                                <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                                <label class="block text-sm font-bold text-slate-800 dark:text-slate-200 mb-2">
                                     Nama Lengkap (Sesuai KTP) <span class="text-red-500">*</span>
                                 </label>
                                 <input type="text" name="name" value="{{ old('name', Auth::user()?->name ?? '') }}"
                                        placeholder="Masukkan nama lengkap sesuai kartu identitas"
-                                       class="w-full border border-gray-300 dark:border-slate-700 rounded-xl px-4 py-3 text-sm focus:border-indigo-500 transition-colors dark:bg-slate-800 dark:text-white" required>
+                                       class="w-full border-2 border-slate-300 dark:border-slate-700 rounded-xl px-4 py-3 text-sm focus:border-indigo-600 transition-colors bg-white dark:bg-slate-900 text-slate-900 dark:text-white" required>
                             </div>
 
                             <div class="sm:col-span-2">
-                                <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">
+                                <label class="block text-sm font-bold text-slate-800 dark:text-slate-200 mb-1">
                                     <i class="fa-solid fa-id-card text-indigo-500 mr-1"></i> Nomor KTP / NIK (16 Digit) <span class="text-red-500">*</span>
                                 </label>
                                 <input type="text" name="no_ktp" id="no_ktp" value="{{ old('no_ktp') }}" maxlength="16" minlength="16" pattern="[0-9]{16}"
                                        placeholder="Contoh: 1271012345678901"
-                                       class="w-full border border-gray-300 dark:border-slate-700 rounded-xl px-4 py-3 text-sm focus:border-indigo-500 transition-colors font-mono tracking-wider dark:bg-slate-800 dark:text-white" required>
-                                <p class="text-[11px] text-gray-500 dark:text-gray-400 mt-1 flex items-center gap-1">
+                                       class="w-full border-2 border-slate-300 dark:border-slate-700 rounded-xl px-4 py-3 text-sm focus:border-indigo-600 transition-colors font-mono tracking-wider bg-white dark:bg-slate-900 text-slate-900 dark:text-white" required>
+                                <p class="text-[11px] text-slate-500 dark:text-slate-400 mt-1 flex items-center gap-1">
                                     <i class="fa-solid fa-info-circle text-indigo-400"></i> Wajib 16 digit angka NIK KTP untuk verifikasi identitas resmi saat check-in di resepsionis hotel.
                                 </p>
                             </div>
 
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Email Aktif <span class="text-red-500">*</span></label>
+                                <label class="block text-sm font-bold text-slate-800 dark:text-slate-200 mb-2">Email Aktif <span class="text-red-500">*</span></label>
                                 <input type="email" name="email" value="{{ old('email', Auth::user()?->email ?? '') }}"
                                        placeholder="email@contoh.com"
-                                       class="w-full border border-gray-300 dark:border-slate-700 rounded-xl px-4 py-3 text-sm focus:border-indigo-500 transition-colors dark:bg-slate-800 dark:text-white" required>
-                                <span class="text-[11px] text-gray-400">E-tiket & bukti pemesanan dikirim ke sini</span>
+                                       class="w-full border-2 border-slate-300 dark:border-slate-700 rounded-xl px-4 py-3 text-sm focus:border-indigo-600 transition-colors bg-white dark:bg-slate-900 text-slate-900 dark:text-white" required>
+                                <span class="text-[11px] text-slate-400">E-tiket & bukti pemesanan dikirim ke sini</span>
                             </div>
 
                             <div>
-                                <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Nomor Telepon / WhatsApp <span class="text-red-500">*</span></label>
+                                <label class="block text-sm font-bold text-slate-800 dark:text-slate-200 mb-2">Nomor Telepon / WhatsApp <span class="text-red-500">*</span></label>
                                 <input type="tel" name="phone" value="{{ old('phone') }}"
                                        placeholder="08xxxxxxxxxx"
-                                       class="w-full border border-gray-300 dark:border-slate-700 rounded-xl px-4 py-3 text-sm focus:border-indigo-500 transition-colors dark:bg-slate-800 dark:text-white" required>
-                                <span class="text-[11px] text-gray-400">Untuk koordinasi check-in cepat</span>
+                                       class="w-full border-2 border-slate-300 dark:border-slate-700 rounded-xl px-4 py-3 text-sm focus:border-indigo-600 transition-colors bg-white dark:bg-slate-900 text-slate-900 dark:text-white" required>
+                                <span class="text-[11px] text-slate-400">Untuk koordinasi check-in cepat</span>
                             </div>
 
                             <div class="sm:col-span-2">
-                                <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">Permintaan Khusus <span class="text-gray-400 font-normal">(opsional)</span></label>
+                                <label class="block text-sm font-bold text-slate-800 dark:text-slate-200 mb-2">Permintaan Khusus <span class="text-slate-400 font-normal">(opsional)</span></label>
                                 <textarea name="special_requests" rows="3"
                                           placeholder="Contoh: Kamar bebas asap rokok, lantai tinggi, check-in lebih awal jika tersedia, dsb."
-                                          class="w-full border border-gray-300 dark:border-slate-700 rounded-xl px-4 py-3 text-sm focus:border-indigo-500 transition-colors resize-none dark:bg-slate-800 dark:text-white">{{ old('special_requests') }}</textarea>
+                                          class="w-full border-2 border-slate-300 dark:border-slate-700 rounded-xl px-4 py-3 text-sm focus:border-indigo-600 transition-colors resize-none bg-white dark:bg-slate-900 text-slate-900 dark:text-white">{{ old('special_requests') }}</textarea>
                             </div>
                         </div>
                     </div>
 
                     {{-- Terms --}}
-                    <div class="border-t border-gray-100 pt-6 mb-8">
+                    <div class="border-t border-slate-200 dark:border-slate-700 pt-6 mb-8">
                         <label class="flex items-start gap-3 cursor-pointer group">
                             <input type="checkbox" name="terms" id="terms" required
                                    class="mt-0.5 w-5 h-5 accent-indigo-600 cursor-pointer">
-                            <span class="text-sm text-gray-600 group-hover:text-gray-800 transition-colors">
-                                Saya menyetujui <a href="#" class="text-indigo-600 hover:underline font-medium">Syarat & Ketentuan</a>
-                                dan <a href="#" class="text-indigo-600 hover:underline font-medium">Kebijakan Privasi</a> Roomify.
-                                Saya memahami kebijakan pembatalan yang berlaku.
+                            <span class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
+                                Saya menyetujui <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:underline font-bold">Syarat & Ketentuan</a>
+                                dan <a href="#" class="text-indigo-600 dark:text-indigo-400 hover:underline font-bold">Kebijakan Privasi</a> Roomify.
+                                Saya memahami kebijakan check-in (14.00 WIB) dan check-out (12.00 WIB).
                             </span>
                         </label>
                     </div>
 
                     {{-- Submit --}}
                     <button type="submit" id="submitBtn"
-                            class="w-full gradient-hero text-white font-bold py-4 rounded-2xl text-base shadow-xl hover:opacity-90 hover:shadow-2xl transition-all duration-200 flex items-center justify-center gap-2">
+                            class="w-full gradient-hero text-white font-black py-4 rounded-2xl text-base shadow-xl hover:opacity-95 hover:shadow-2xl transition-all duration-200 flex items-center justify-center gap-2">
                         <i class="fa fa-credit-card"></i>
                         Lanjut ke Pembayaran
                         <i class="fa fa-arrow-right ml-1"></i>
@@ -414,13 +437,13 @@
     roomCards.forEach(card => {
         card.addEventListener('click', () => {
             roomCards.forEach(c => {
-                c.classList.remove('selected', 'border-indigo-500', 'bg-indigo-50');
-                c.classList.add('border-gray-200');
+                c.classList.remove('selected', 'border-indigo-600', 'bg-indigo-50', 'dark:bg-indigo-950/60', 'dark:border-indigo-500');
+                c.classList.add('border-slate-200', 'dark:border-slate-700');
                 c.querySelector('.check-mark')?.classList.add('hidden');
                 c.querySelector('input[type=radio]').checked = false;
             });
-            card.classList.add('selected', 'border-indigo-500', 'bg-indigo-50');
-            card.classList.remove('border-gray-200');
+            card.classList.add('selected', 'border-indigo-600', 'bg-indigo-50', 'dark:bg-indigo-950/60', 'dark:border-indigo-500');
+            card.classList.remove('border-slate-200', 'dark:border-slate-700');
             card.querySelector('.check-mark')?.classList.remove('hidden');
             card.querySelector('input[type=radio]').checked = true;
             updatePrice();

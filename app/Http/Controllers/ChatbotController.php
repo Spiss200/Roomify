@@ -162,6 +162,132 @@ class ChatbotController extends Controller
     ];
 
     /**
+     * Dictionary mapping for abbreviations, acronyms, and slang.
+     */
+    protected const ABBREVIATION_MAP = [
+        // Landmarks & Kampus
+        'usu' => 'usu',
+        'unimed' => 'unimed',
+        'umsu' => 'umsu',
+        'kno' => 'kualanamu',
+        'bandara' => 'kualanamu',
+        'stas' => 'stasiun medan',
+        'stasiun' => 'stasiun medan',
+        'rr' => 'ringroad',
+        'ring road' => 'ringroad',
+        'gatsu' => 'gatot subroto',
+        'setbud' => 'setia budi',
+        'setbudi' => 'setia budi',
+        'pb' => 'padang bulan',
+        'mw' => 'merdeka walk',
+        'poci' => 'podomoro',
+        'deli park' => 'podomoro',
+        'delipark' => 'podomoro',
+        'sp' => 'sun plaza',
+        'mts' => 'manhattan',
+        'adam malik' => 'adam malik',
+        'rs adam malik' => 'adam malik',
+        'murni teguh' => 'murni teguh',
+        'columbia' => 'columbia',
+        'hm yamin' => 'yamin',
+        'h.m. yamin' => 'yamin',
+        'h m yamin' => 'yamin',
+        'prof yamin' => 'yamin',
+        'maimun' => 'istana maimun',
+
+        // Hotel Acronyms & Nicknames
+        'jw' => 'jw marriott',
+        'marriott' => 'jw marriott',
+        'gch' => 'grand city hall',
+        'city hall' => 'grand city hall',
+        'santika' => 'santika premiere',
+        'cembrij' => 'cambridge',
+        'kembrid' => 'cambridge',
+        'sakura' => 'grand sakura',
+
+        // Attributes, Slang & Shorthands
+        'b5' => 'bintang 5',
+        'b4' => 'bintang 4',
+        'b3' => 'bintang 3',
+        'bintang lima' => 'bintang 5',
+        'bintang empat' => 'bintang 4',
+        'bintang tiga' => 'bintang 3',
+        'ci' => 'check-in',
+        'co' => 'check-out',
+        'in' => 'check-in',
+        'out' => 'check-out',
+        'rek' => 'rekening',
+        'norek' => 'rekening',
+        'tf' => 'transfer',
+        'dkt' => 'dekat',
+        'yg' => 'yang',
+        'jl' => 'jalan',
+        'jln' => 'jalan',
+        'dr' => 'dari',
+        'sm' => 'sama',
+        'krg' => 'kurang',
+        'bgs' => 'bagus',
+    ];
+
+    /**
+     * Normalize and expand abbreviations / acronyms / slang into standardized terms using single-pass tokenization.
+     */
+    protected function expandAbbreviations(string $text): string
+    {
+        $normalized = mb_strtolower($text);
+        // Clean special characters
+        $clean = preg_replace('/[.,\-_]/', ' ', $normalized);
+        $words = preg_split('/\s+/', $clean, -1, PREG_SPLIT_NO_EMPTY);
+
+        $expandedWords = [];
+        $i = 0;
+        $count = count($words);
+
+        while ($i < $count) {
+            // Check 2-word phrase first
+            if ($i + 1 < $count) {
+                $phrase = $words[$i] . ' ' . $words[$i + 1];
+                if (isset(self::ABBREVIATION_MAP[$phrase])) {
+                    $expandedWords[] = self::ABBREVIATION_MAP[$phrase];
+                    $i += 2;
+                    continue;
+                }
+            }
+
+            // Check single word
+            $word = $words[$i];
+            if (isset(self::ABBREVIATION_MAP[$word])) {
+                $expandedWords[] = self::ABBREVIATION_MAP[$word];
+            } else {
+                $expandedWords[] = $word;
+            }
+            $i++;
+        }
+
+        return trim(implode(' ', $expandedWords));
+    }
+
+    /**
+     * Fuzzy matching helper for hotel names.
+     */
+    protected function findHotelByFuzzy(string $query, array $hotels, int $minPercent = 65): ?array
+    {
+        $bestMatch = null;
+        $highest = 0;
+
+        foreach ($hotels as $hotel) {
+            $name = mb_strtolower($hotel['name'] ?? '');
+            similar_text($query, $name, $percent);
+            if ($percent > $highest && $percent >= $minPercent) {
+                $highest = $percent;
+                $bestMatch = $hotel;
+            }
+        }
+
+        return $bestMatch;
+    }
+
+    /**
      * Cache or load hotel dataset.
      */
     protected function getHotels(): array
@@ -198,14 +324,30 @@ class ChatbotController extends Controller
     {
         $id = $hotel['id'] ?? '1';
         $priceVal = $hotel['start_price'] ?? ($hotel['price_from'] ?? 0);
+        $name = $hotel['name'] ?? 'Hotel';
+        $addr = $hotel['address'] ?? 'Kota Medan';
+        $lat = isset($hotel['latitude']) ? (float) $hotel['latitude'] : null;
+        $lng = isset($hotel['longitude']) ? (float) $hotel['longitude'] : null;
+
+        $mapsQuery = urlencode($name . ' ' . $addr);
+        $mapsUrl = "https://www.google.com/maps/search/?api=1&query={$mapsQuery}";
+        $directionsUrl = ($lat && $lng)
+            ? "https://www.google.com/maps/dir/?api=1&destination={$lat},{$lng}"
+            : $mapsUrl;
+
         $card = [
             'id' => $id,
-            'nama' => $hotel['name'] ?? 'Hotel',
-            'alamat' => $hotel['address'] ?? 'Kota Medan',
+            'nama' => $name,
+            'alamat' => $addr,
             'harga' => $priceVal > 0 ? 'Rp ' . number_format($priceVal, 0, ',', '.') : 'Harga terjangkau',
             'rating' => (string) ($hotel['rating'] ?? '4.5'),
             'foto' => $hotel['image_url'] ?? '/images/placeholder.svg',
             'detail_url' => url("/hotel/{$id}"),
+            'lat' => $lat,
+            'lng' => $lng,
+            'maps_url' => $mapsUrl,
+            'directions_url' => $directionsUrl,
+            'search_url' => url("/search?q=" . urlencode($name)),
         ];
         if ($distanceKm !== null) {
             $card['jarak'] = $distanceKm < 1 ? round($distanceKm * 1000) . ' meter' : number_format($distanceKm, 1, ',', '.') . ' km';
@@ -236,6 +378,7 @@ class ChatbotController extends Controller
         }
 
         $lower = mb_strtolower($message);
+        $expanded = $this->expandAbbreviations($message);
 
         // 1. Check for booking code query (e.g. RMF-20261114-ABCD)
         if (preg_match('/(rmf-[a-z0-9\-]+)/i', $message, $matches)) {
@@ -244,12 +387,12 @@ class ChatbotController extends Controller
         }
 
         // 2. User asking to check their orders / bookings
-        if (Str::contains($lower, ['pesanan saya', 'booking saya', 'cek pesanan', 'riwayat booking', 'status booking', 'tiket saya', 'pesanan'])) {
+        if (Str::contains($lower, ['pesanan saya', 'booking saya', 'cek pesanan', 'riwayat booking', 'status booking', 'tiket saya', 'pesanan']) || Str::contains($expanded, ['pesanan saya', 'tiket saya'])) {
             return $this->lookupUserBookings();
         }
 
         // 3. Check-in / Check-out time questions (ensure 14.00 and 14:00 are present for tests & users)
-        if (Str::contains($lower, ['check in', 'check-in', 'checkin', 'jam masuk', 'waktu masuk', 'check out', 'check-out', 'checkout', 'jam keluar', 'waktu keluar'])) {
+        if (Str::contains($lower, ['check in', 'check-in', 'checkin', 'jam masuk', 'waktu masuk', 'check out', 'check-out', 'checkout', 'jam keluar', 'waktu keluar']) || Str::contains($expanded, ['check-in', 'check-out'])) {
             return response()->json([
                 'reply' => "⏰ **Ketentuan Waktu Menginap Resmi Roomify:**\n\n"
                     . "• **Waktu Check-In:** Pukul **14:00 WIB** (14.00 WIB)\n"
@@ -262,7 +405,7 @@ class ChatbotController extends Controller
         }
 
         // 4. Syarat KTP / Dokumen
-        if (Str::contains($lower, ['ktp', 'dokumen', 'identitas', 'paspor', 'syarat booking', 'syarat reservasi'])) {
+        if (Str::contains($lower, ['ktp', 'dokumen', 'identitas', 'paspor', 'syarat booking', 'syarat reservasi']) || Str::contains($expanded, ['ktp', 'identitas'])) {
             return response()->json([
                 'reply' => "🪪 **Syarat Identitas Pemesanan:**\n\n"
                     . "1. Setiap tamu utama wajib menginputkan **Nomor KTP (NIK) 16 digit** saat pemesanan kamar.\n"
@@ -274,7 +417,7 @@ class ChatbotController extends Controller
         }
 
         // 5. Pembayaran / Payment methods
-        if (Str::contains($lower, ['bayar', 'metode pembayaran', 'qris', 'transfer', 'kartu kredit', 'rekening'])) {
+        if (Str::contains($lower, ['bayar', 'metode pembayaran', 'qris', 'transfer', 'kartu kredit', 'rekening']) || Str::contains($expanded, ['rekening', 'transfer'])) {
             return response()->json([
                 'reply' => "💳 **Metode Pembayaran Resmi Roomify:**\n\n"
                     . "• **QRIS Instan:** BCA, Mandiri, BRI, BNI, GoPay, OVO, Dana, ShopeePay (Verifikasi instan otomatis).\n"
@@ -302,7 +445,7 @@ class ChatbotController extends Controller
         // 7. Spatial / Proximity Intelligence: check if user asks for ANY known area or landmark
         $matchedLocKey = null;
         foreach (self::KNOWN_LOCATIONS as $locKey => $locData) {
-            if (Str::contains($lower, $locKey)) {
+            if (Str::contains($lower, $locKey) || Str::contains($expanded, $locKey)) {
                 $matchedLocKey = $locKey;
                 break;
             }
@@ -313,6 +456,16 @@ class ChatbotController extends Controller
             $locLat = (float) $loc['lat'];
             $locLng = (float) $loc['lng'];
             $locName = $loc['name'];
+
+            $locationData = [
+                'name' => $locName,
+                'desc' => $loc['desc'] ?? 'Titik penting di Kota Medan',
+                'lat' => $locLat,
+                'lng' => $locLng,
+                'maps_url' => "https://www.google.com/maps/search/?api=1&query=" . urlencode($locName . " Medan"),
+                'directions_url' => "https://www.google.com/maps/dir/?api=1&destination={$locLat},{$locLng}",
+                'search_url' => url('/search?q=' . urlencode($matchedLocKey)),
+            ];
 
             // Calculate distance to all hotels from this location
             $nearby = [];
@@ -343,24 +496,30 @@ class ChatbotController extends Controller
                     . "   • Alamat: {$h['address']}\n"
                     . "   • Mulai dari: **{$price}** / malam\n\n";
             }
-            $replyList .= "Gunakan tombol di bawah untuk melihat rute peta atau detail hotel.";
+            $replyList .= "Gunakan tombol di bawah untuk melihat rute Google Maps atau membuka halaman pencarian.";
 
             return response()->json([
                 'reply' => $replyList,
+                'location' => $locationData,
                 'hotels' => $cards,
                 'action' => [
-                    'label' => "Lihat Semua Hotel di Sekitar {$locName}",
+                    'label' => "Buka Peta Hotel Sekitar {$locName}",
                     'url' => url('/search?q=' . urlencode($matchedLocKey)),
                 ],
-                'suggestions' => ["Hotel dekat Stasiun Medan", "Hotel termurah", "Cek pesanan saya"],
+                'suggestions' => [
+                    "Rute ke {$locName}",
+                    "Hotel murah dekat {$locName}",
+                    "Hotel bintang 5 di Medan",
+                    "Cek pesanan saya"
+                ],
             ]);
         }
 
         // 8. Search hotel dataset by specific hotel name
         $matchedHotel = null;
 
-        // Cambridge query: "hotel yang cambridge itu" or "cambridge"
-        if (Str::contains($lower, 'cambridge')) {
+        // Cambridge query: "hotel yang cambridge itu", "cambridge", "cembrij", "kembrid"
+        if (Str::contains($lower, 'cambridge') || Str::contains($expanded, 'cambridge')) {
             foreach ($hotels as $h) {
                 if (Str::contains(mb_strtolower($h['name'] ?? ''), 'cambridge')) {
                     $matchedHotel = $h;
@@ -369,11 +528,25 @@ class ChatbotController extends Controller
             }
         }
 
-        // Search by hotel name in dataset
+        // Search by hotel name in dataset using clean keywords or expanded acronyms
+        if (! $matchedHotel) {
+            $cleanTerms = trim(preg_replace('/\b(hotel|penginapan|inap|yang|itu|di|daerah)\b/i', '', $expanded));
+            if (strlen($cleanTerms) >= 3) {
+                foreach ($hotels as $hotel) {
+                    $hotelName = mb_strtolower($hotel['name'] ?? '');
+                    if (Str::contains($hotelName, $cleanTerms)) {
+                        $matchedHotel = $hotel;
+                        break;
+                    }
+                }
+            }
+        }
+
+        // Search by hotel name in dataset using raw query or expanded acronyms
         if (! $matchedHotel) {
             foreach ($hotels as $hotel) {
                 $hotelName = mb_strtolower($hotel['name'] ?? '');
-                if (strlen($hotelName) >= 4 && Str::contains($lower, $hotelName)) {
+                if (strlen($hotelName) >= 4 && (Str::contains($lower, $hotelName) || Str::contains($expanded, $hotelName))) {
                     $matchedHotel = $hotel;
                     break;
                 }
@@ -382,7 +555,7 @@ class ChatbotController extends Controller
 
         // Search by address / street name in dataset
         if (! $matchedHotel) {
-            $words = array_filter(explode(' ', str_replace(['.', ',', '-', '/'], ' ', $lower)), fn($w) => strlen($w) > 4);
+            $words = array_filter(explode(' ', str_replace(['.', ',', '-', '/'], ' ', $expanded)), fn($w) => strlen($w) > 4);
             foreach ($hotels as $hotel) {
                 $addr = mb_strtolower($hotel['address'] ?? '');
                 foreach ($words as $w) {
@@ -392,6 +565,11 @@ class ChatbotController extends Controller
                     }
                 }
             }
+        }
+
+        // Search by fuzzy string similarity if still not found
+        if (! $matchedHotel && strlen($expanded) >= 4) {
+            $matchedHotel = $this->findHotelByFuzzy($expanded, $hotels, 70);
         }
 
         // If specific hotel matched
@@ -411,20 +589,42 @@ class ChatbotController extends Controller
 
             $hotelCard = $this->formatHotelCard($matchedHotel);
 
+            $hLat = isset($matchedHotel['latitude']) ? (float) $matchedHotel['latitude'] : null;
+            $hLng = isset($matchedHotel['longitude']) ? (float) $matchedHotel['longitude'] : null;
+
+            $locationData = null;
+            if ($hLat && $hLng) {
+                $locationData = [
+                    'name' => $name,
+                    'desc' => $addr,
+                    'lat' => $hLat,
+                    'lng' => $hLng,
+                    'maps_url' => "https://www.google.com/maps/search/?api=1&query=" . urlencode($name . " " . $addr),
+                    'directions_url' => "https://www.google.com/maps/dir/?api=1&destination={$hLat},{$hLng}",
+                    'search_url' => url("/hotel/{$id}"),
+                ];
+            }
+
             return response()->json([
-                'reply' => "🏨 **Informasi {$name}:**\n\n"
+                'reply' => "🏨 **Informasi & Lokasi {$name}:**\n\n"
                     . "• **Kelas Hotel:** Bintang {$star} (⭐ {$rating}/5.0)\n"
                     . "• **Harga Mulai:** **{$price}** / malam\n"
                     . "• **Alamat:** {$addr}\n"
                     . "• **Fasilitas:** {$facilities}\n"
                     . "• **Deskripsi:** {$desc}\n\n"
-                    . "Ingin melihat foto kamar, ulasan, atau navigasi peta ke {$name}?",
+                    . "Klik tombol rute peta untuk navigasi langsung di Google Maps atau telusuri detail kamar.",
+                'location' => $locationData,
                 'hotels' => [$hotelCard],
                 'action' => [
                     'label' => "Lihat Detail {$name}",
                     'url' => url("/hotel/{$id}"),
                 ],
-                'suggestions' => ["Pesan {$name}", "Rute peta ke {$name}", "Hotel lainnya"],
+                'suggestions' => [
+                    "Pesan {$name}",
+                    "Navigasi rute ke {$name}",
+                    "Hotel lain dekat {$name}",
+                    "Ketentuan check-in"
+                ],
             ]);
         }
 
@@ -447,7 +647,7 @@ class ChatbotController extends Controller
             ]);
         }
 
-        if (Str::contains($lower, ['bintang 5', 'bintang lima', 'mewah', 'luxury'])) {
+        if (Str::contains($lower, ['bintang 5', 'bintang lima', 'mewah', 'luxury']) || Str::contains($expanded, ['bintang 5', 'luxury'])) {
             $luxuryHotels = array_filter($hotels, fn($h) => ($h['star'] ?? 0) >= 5);
             $luxuryCards = array_map(fn($h) => $this->formatHotelCard($h), array_slice($luxuryHotels, 0, 3));
 

@@ -63,13 +63,16 @@
         }
         function getAutoTimeTheme() {
             const hour = new Date().getHours();
-            // Jam 06:00 sampai 17:59 = mode terang, Jam 18:00 sampai 05:59 = mode gelap
             return (hour >= 6 && hour < 18) ? 'light' : 'dark';
         }
         function initTheme() {
-            const userOverride = localStorage.getItem('theme_user_override');
-            let theme = userOverride ? localStorage.getItem('theme') : getAutoTimeTheme();
-            if (!theme) theme = getAutoTimeTheme();
+            // Clear legacy lock
+            if (localStorage.getItem('theme_user_override') === 'true' && !localStorage.getItem('theme_mode')) {
+                localStorage.removeItem('theme_user_override');
+                localStorage.setItem('theme_mode', 'auto');
+            }
+            const mode = localStorage.getItem('theme_mode') || 'auto';
+            let theme = mode === 'auto' ? getAutoTimeTheme() : mode;
             applyTheme(theme);
         }
         function applyTheme(theme) {
@@ -80,11 +83,14 @@
             }
         }
         function toggleTheme() {
-            const isDark = document.documentElement.classList.contains('dark');
-            const newTheme = isDark ? 'light' : 'dark';
-            localStorage.setItem('theme', newTheme);
-            localStorage.setItem('theme_user_override', 'true');
-            applyTheme(newTheme);
+            if (typeof window.cycleThemeMode === 'function') {
+                window.cycleThemeMode();
+            } else {
+                const isDark = document.documentElement.classList.contains('dark');
+                const nextMode = isDark ? 'light' : 'dark';
+                localStorage.setItem('theme_mode', nextMode);
+                applyTheme(nextMode);
+            }
         }
         initTheme();
     </script>
@@ -104,51 +110,51 @@
 
         /* ─── Hero Ambient Mesh with Authentic Landmark Backdrop ─── */
         .hero-mesh {
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(241, 245, 249, 0.96) 60%, #f8fafc 100%),
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(241, 245, 249, 0.96) 60%, #f8fafc 100%),
                         url('/images/landmarks/masjid-raya.jpg') center/cover no-repeat;
             background-attachment: fixed;
         }
         html.dark .hero-mesh {
-            background: linear-gradient(180deg, rgba(11, 15, 25, 0.72) 0%, rgba(11, 15, 25, 0.85) 60%, #0b0f19 100%),
+            background: linear-gradient(180deg, rgba(11, 15, 25, 0.82) 0%, rgba(11, 15, 25, 0.92) 60%, #0b0f19 100%),
                         url('/images/landmarks/masjid-raya.jpg') center/cover no-repeat;
             background-attachment: fixed;
         }
 
         /* ─── Glassmorphism ─── */
         .glass-nav {
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(226, 232, 240, 0.8);
             color: #0f172a;
         }
         html.dark .glass-nav {
-            background: rgba(11, 15, 25, 0.92);
+            background: rgba(11, 15, 25, 0.95);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             color: #f1f5f9;
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1.5px solid rgba(226, 232, 240, 0.9);
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
             box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
             color: #0f172a;
         }
         html.dark .glass-card {
-            background: rgba(255, 255, 255, 0.04);
+            background: #111827;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
             color: #f1f5f9;
         }
 
         .glass-card-light {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(226, 232, 240, 0.9);
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
             box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.07);
+        }
+        html.dark .glass-card-light {
+            background: #111827;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         /* ─── Gradients & Typography ─── */
@@ -187,22 +193,18 @@
             flex-direction: column;
         }
         html.dark .landmark-card {
-            background: rgba(255, 255, 255, 0.04);
+            background: #111827;
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: none;
         }
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            display: flex;
-            flex-direction: column;
-        }
         .landmark-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 22px 45px -10px rgba(99, 102, 241, 0.35);
+            box-shadow: 0 22px 45px -10px rgba(99, 102, 241, 0.25);
+            border-color: #818cf8;
+        }
+        html.dark .landmark-card:hover {
             border-color: rgba(165, 180, 252, 0.4);
-            background: rgba(255, 255, 255, 0.07);
+            background: #1e293b;
         }
         .landmark-img-wrap {
             position: relative;
@@ -221,8 +223,8 @@
 
         /* ─── Form Inputs ─── */
         .search-input {
-            background: rgba(255, 255, 255, 0.95);
-            border: 1.5px solid #e2e8f0;
+            background: #ffffff;
+            border: 1.5px solid #cbd5e1;
             border-radius: 14px;
             color: #0f172a;
             font-size: 14px;
@@ -236,6 +238,16 @@
             box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
             background: #ffffff;
         }
+        html.dark .search-input {
+            background: #1e293b;
+            border-color: #334155;
+            color: #f1f5f9;
+        }
+        html.dark .search-input:focus {
+            background: #0f172a;
+            border-color: #818cf8;
+            box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.2);
+        }
 
         /* ─── Facility Chips ─── */
         .fac-chip {
@@ -247,17 +259,22 @@
             font-size: 12px;
             font-weight: 600;
             cursor: pointer;
-            border: 1.5px solid rgba(255, 255, 255, 0.15);
-            background: rgba(255, 255, 255, 0.06);
-            color: #e2e8f0;
+            border: 1.5px solid #cbd5e1;
+            background: #f1f5f9;
+            color: #334155;
             transition: all 0.2s ease;
             user-select: none;
         }
+        html.dark .fac-chip {
+            border-color: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.06);
+            color: #cbd5e1;
+        }
         .fac-chip input { display: none; }
         .fac-chip.active {
-            background: linear-gradient(135deg, #4f46e5, #7c3aed);
-            border-color: #818cf8;
-            color: #ffffff;
+            background: linear-gradient(135deg, #4f46e5, #7c3aed) !important;
+            border-color: #818cf8 !important;
+            color: #ffffff !important;
             box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
         }
 
@@ -270,11 +287,16 @@
             margin-top: 6px;
             background: #ffffff;
             border-radius: 14px;
-            border: 1px solid #e2e8f0;
+            border: 1px solid #cbd5e1;
             box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.18);
             z-index: 60;
             overflow: hidden;
             display: none;
+        }
+        html.dark #suggest-box {
+            background: #1e293b;
+            border-color: #334155;
+            box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.6);
         }
         .suggest-item {
             padding: 12px 16px;
@@ -286,9 +308,16 @@
             gap: 10px;
             transition: background 0.15s ease;
         }
+        html.dark .suggest-item {
+            color: #f1f5f9;
+        }
         .suggest-item:hover {
             background: #f1f5f9;
             color: #4f46e5;
+        }
+        html.dark .suggest-item:hover {
+            background: #334155;
+            color: #818cf8;
         }
     </style>
 </head>
@@ -456,8 +485,8 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <!-- Keyword Autocomplete Input -->
                     <div class="relative">
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
-                            <i class="fa-solid fa-magnifying-glass text-indigo-400 mr-1.5"></i> Nama Hotel / Lokasi
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+                            <i class="fa-solid fa-magnifying-glass text-indigo-500 dark:text-indigo-400 mr-1.5"></i> Nama Hotel / Lokasi
                         </label>
                         <div class="relative">
                             <input type="text"
@@ -474,8 +503,8 @@
 
                     <!-- Landmark Dropdown (All 13 Iconic Landmarks) -->
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
-                            <i class="fa-solid fa-landmark text-indigo-400 mr-1.5"></i> Dekat Landmark Medan
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+                            <i class="fa-solid fa-landmark text-indigo-500 dark:text-indigo-400 mr-1.5"></i> Dekat Landmark Medan
                         </label>
                         <div class="relative">
                             <select name="landmark" class="search-input pl-11 appearance-none cursor-pointer">
@@ -503,8 +532,8 @@
                 <!-- Row 2: Star Rating, Max Price, Dates -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-5">
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
-                            <i class="fa-solid fa-star text-amber-400 mr-1"></i> Bintang
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+                            <i class="fa-solid fa-star text-amber-500 mr-1"></i> Bintang
                         </label>
                         <select name="star" class="search-input">
                             <option value="">Semua Bintang</option>
@@ -515,8 +544,8 @@
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
-                            <i class="fa-solid fa-tag text-emerald-400 mr-1"></i> Harga Maks.
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+                            <i class="fa-solid fa-tag text-emerald-500 mr-1"></i> Harga Maks.
                         </label>
                         <input type="number"
                                name="max_price"
@@ -527,8 +556,8 @@
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
-                            <i class="fa-solid fa-calendar-check text-indigo-400 mr-1"></i> Check-in
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+                            <i class="fa-solid fa-calendar-check text-indigo-500 dark:text-indigo-400 mr-1"></i> Check-in
                         </label>
                         <input type="date"
                                name="checkin"
@@ -537,8 +566,8 @@
                     </div>
 
                     <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
-                            <i class="fa-solid fa-calendar-xmark text-pink-400 mr-1"></i> Check-out
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
+                            <i class="fa-solid fa-calendar-xmark text-pink-500 dark:text-pink-400 mr-1"></i> Check-out
                         </label>
                         <input type="date"
                                name="checkout"
@@ -549,8 +578,8 @@
 
                 <!-- Row 3: Facilities Toggles -->
                 <div class="mb-6">
-                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2.5">
-                        <i class="fa-solid fa-sliders text-indigo-400 mr-1"></i> Fasilitas Populer
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2.5">
+                        <i class="fa-solid fa-sliders text-indigo-500 dark:text-indigo-400 mr-1"></i> Fasilitas Populer
                     </label>
                     <div class="flex flex-wrap gap-2">
                         @php
@@ -590,18 +619,18 @@
 {{-- ═══════════════════════════════════════════════════════════
      DESTINASI LANDMARK MEDAN (13 ICONIC LANDMARKS)
 ═══════════════════════════════════════════════════════════ --}}
-<section id="destinasi" class="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900/60 border-t border-b border-white/5 relative">
+<section id="destinasi" class="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-900/60 border-t border-b border-slate-200 dark:border-white/5 relative">
     <div class="max-w-7xl mx-auto">
 
         <!-- Section Title -->
         <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-200 dark:border-indigo-500/20">
                 Pusat Daya Tarik Kota Medan
             </span>
-            <h2 class="text-3xl sm:text-4xl font-black text-white mt-3 mb-4 tracking-tight">
+            <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white mt-3 mb-4 tracking-tight">
                 Jelajahi Hotel Berdasarkan <span class="text-gradient">Landmark Ikonik</span>
             </h2>
-            <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+            <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
                 Pilih landmark favorit Anda di Kota Medan dan temukan puluhan akomodasi terbaik di sekitarnya dengan jarak tempuh terdekat.
             </p>
         </div>
@@ -619,15 +648,15 @@
                 </div>
                 <div class="p-5 flex-1 flex flex-col justify-between">
                     <div>
-                        <h3 class="font-extrabold text-white text-lg group-hover:text-indigo-300 transition">Istana Maimun</h3>
+                        <h3 class="font-extrabold text-slate-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">Istana Maimun</h3>
                         <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
                             <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. Brigjend Katamso, Medan Maimun
                         </p>
-                        <p class="text-xs text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
                             Istana megah Kesultanan Deli peninggalan Sultan Ma'mun Al Rasyid (1888) dengan perpaduan arsitektur Melayu & Timur Tengah.
                         </p>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-indigo-400">
+                    <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
                         <span>Lihat Hotel Terdekat</span>
                         <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
                     </div>
@@ -644,15 +673,15 @@
                 </div>
                 <div class="p-5 flex-1 flex flex-col justify-between">
                     <div>
-                        <h3 class="font-extrabold text-white text-lg group-hover:text-indigo-300 transition">Tjong A Fie Mansion</h3>
+                        <h3 class="font-extrabold text-slate-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">Tjong A Fie Mansion</h3>
                         <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
                             <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. Ahmad Yani, Kesawan
                         </p>
-                        <p class="text-xs text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
                             Manor megah bergaya Tionghoa-Eropa abad ke-19 milik tokoh terkemuka Medan di jantung heritage Kesawan.
                         </p>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-indigo-400">
+                    <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
                         <span>Lihat Hotel Terdekat</span>
                         <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
                     </div>
@@ -669,15 +698,15 @@
                 </div>
                 <div class="p-5 flex-1 flex flex-col justify-between">
                     <div>
-                        <h3 class="font-extrabold text-white text-lg group-hover:text-indigo-300 transition">Masjid Raya Al-Mashun</h3>
+                        <h3 class="font-extrabold text-slate-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">Masjid Raya Al-Mashun</h3>
                         <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
                             <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. Mahkamah, Medan Kota
                         </p>
-                        <p class="text-xs text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
                             Mahakarya arsitektur Islam bernuansa Maroko dan Timur Tengah yang berdiri megah sejak tahun 1909.
                         </p>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-indigo-400">
+                    <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
                         <span>Lihat Hotel Terdekat</span>
                         <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
                     </div>
@@ -694,15 +723,15 @@
                 </div>
                 <div class="p-5 flex-1 flex flex-col justify-between">
                     <div>
-                        <h3 class="font-extrabold text-white text-lg group-hover:text-indigo-300 transition">Lapangan Merdeka</h3>
+                        <h3 class="font-extrabold text-slate-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">Lapangan Merdeka</h3>
                         <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
                             <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. Balai Kota, Kesawan
                         </p>
-                        <p class="text-xs text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
                             Alun-alun bersejarah titik nol Kota Medan, dikelilingi cagar budaya kolonial dan stasiun utama kota.
                         </p>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-indigo-400">
+                    <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
                         <span>Lihat Hotel Terdekat</span>
                         <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
                     </div>
@@ -719,15 +748,15 @@
                 </div>
                 <div class="p-5 flex-1 flex flex-col justify-between">
                     <div>
-                        <h3 class="font-extrabold text-white text-lg group-hover:text-indigo-300 transition">Graha Maria Velangkanni</h3>
+                        <h3 class="font-extrabold text-slate-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">Graha Maria Velangkanni</h3>
                         <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
                             <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. Sakura III, Tanjung Selamat
                         </p>
-                        <p class="text-xs text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
                             Gereja Katolik berarsitektur kuil Indo-Mogul yang spektakuler, destinasi religi internasional unik di Medan.
                         </p>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-indigo-400">
+                    <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
                         <span>Lihat Hotel Terdekat</span>
                         <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
                     </div>
@@ -744,15 +773,15 @@
                 </div>
                 <div class="p-5 flex-1 flex flex-col justify-between">
                     <div>
-                        <h3 class="font-extrabold text-white text-lg group-hover:text-indigo-300 transition">Sun Plaza Medan</h3>
+                        <h3 class="font-extrabold text-slate-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">Sun Plaza Medan</h3>
                         <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
                             <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. KH. Zainul Arifin, Medan Petisah
                         </p>
-                        <p class="text-xs text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
                             Pusat belanja mewah paling bergengsi di Medan dengan tenant internasional, bioskop premier, dan kuliner modern.
                         </p>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-indigo-400">
+                    <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
                         <span>Lihat Hotel Terdekat</span>
                         <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
                     </div>
@@ -769,15 +798,15 @@
                 </div>
                 <div class="p-5 flex-1 flex flex-col justify-between">
                     <div>
-                        <h3 class="font-extrabold text-white text-lg group-hover:text-indigo-300 transition">Maha Vihara Maitreya</h3>
+                        <h3 class="font-extrabold text-slate-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">Maha Vihara Maitreya</h3>
                         <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
                             <i class="fa-solid fa-location-dot text-indigo-500"></i> Kompleks Cemara Asri, Medan
                         </p>
-                        <p class="text-xs text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
                             Salah satu vihara Buddha terbesar di Indonesia dengan danau bangau alami, pagoda megah, dan lingkungan asri.
                         </p>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-indigo-400">
+                    <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
                         <span>Lihat Hotel Terdekat</span>
                         <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
                     </div>
@@ -794,15 +823,15 @@
                 </div>
                 <div class="p-5 flex-1 flex flex-col justify-between">
                     <div>
-                        <h3 class="font-extrabold text-white text-lg group-hover:text-indigo-300 transition">Museum Rahmat</h3>
+                        <h3 class="font-extrabold text-slate-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">Museum Rahmat</h3>
                         <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
                             <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. S. Parman No. 217, Petisah
                         </p>
-                        <p class="text-xs text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
                             Museum satwa liar internasional pertama di Asia Tenggara dengan koleksi ribuan spesimen fauna dari seluruh penjuru dunia.
                         </p>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-indigo-400">
+                    <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
                         <span>Lihat Hotel Terdekat</span>
                         <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
                     </div>
@@ -819,15 +848,15 @@
                 </div>
                 <div class="p-5 flex-1 flex flex-col justify-between">
                     <div>
-                        <h3 class="font-extrabold text-white text-lg group-hover:text-indigo-300 transition">Merdeka Walk Kesawan</h3>
+                        <h3 class="font-extrabold text-slate-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">Merdeka Walk Kesawan</h3>
                         <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
                             <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. Pos No. 1, Medan Barat
                         </p>
-                        <p class="text-xs text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
                             Kawasan kuliner legendaris bernuansa heritage di pusat kota Medan, tempat berkumpul dan mencicipi aneka sajian khas.
                         </p>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-indigo-400">
+                    <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
                         <span>Lihat Hotel Terdekat</span>
                         <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
                     </div>
@@ -844,15 +873,15 @@
                 </div>
                 <div class="p-5 flex-1 flex flex-col justify-between">
                     <div>
-                        <h3 class="font-extrabold text-white text-lg group-hover:text-indigo-300 transition">Menara Air Tirtanadi</h3>
+                        <h3 class="font-extrabold text-slate-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">Menara Air Tirtanadi</h3>
                         <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
                             <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. SM Raja No. 1, Medan Kota
                         </p>
-                        <p class="text-xs text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
                             Menara air ikonik peninggalan era kolonial Belanda tahun 1908 yang menjadi simbol identitas visual Kota Medan.
                         </p>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-indigo-400">
+                    <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
                         <span>Lihat Hotel Terdekat</span>
                         <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
                     </div>
@@ -869,15 +898,15 @@
                 </div>
                 <div class="p-5 flex-1 flex flex-col justify-between">
                     <div>
-                        <h3 class="font-extrabold text-white text-lg group-hover:text-indigo-300 transition">Centre Point Mall</h3>
+                        <h3 class="font-extrabold text-slate-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">Centre Point Mall</h3>
                         <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
                             <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. Jawa No. 8, Gang Buntu
                         </p>
-                        <p class="text-xs text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
                             Pusat perbelanjaan terpadu yang terhubung dengan akses Kereta Api Bandara Kualanamu Railink dan kawasan bisnis.
                         </p>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-indigo-400">
+                    <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
                         <span>Lihat Hotel Terdekat</span>
                         <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
                     </div>
@@ -894,15 +923,15 @@
                 </div>
                 <div class="p-5 flex-1 flex flex-col justify-between">
                     <div>
-                        <h3 class="font-extrabold text-white text-lg group-hover:text-indigo-300 transition">Medan Zoo</h3>
+                        <h3 class="font-extrabold text-slate-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">Medan Zoo</h3>
                         <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
                             <i class="fa-solid fa-location-dot text-indigo-500"></i> Simalingkar, Medan Tuntungan
                         </p>
-                        <p class="text-xs text-slate-300 mt-2 line-clamp-2 leading-relaxed">
+                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
                             Kebun binatang seluas 30 hektar dengan koleksi satwa Harimau Sumatera dan kawasan rekreasi keluarga yang hijau.
                         </p>
                     </div>
-                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-indigo-400">
+                    <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
                         <span>Lihat Hotel Terdekat</span>
                         <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
                     </div>
@@ -926,22 +955,22 @@
 {{-- ═══════════════════════════════════════════════════════════
      HOTEL PILIHAN PREMIUM MEDAN (CURATED SHOWCASE)
 ═══════════════════════════════════════════════════════════ --}}
-<section id="hotel-pilihan" class="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900 relative">
+<section id="hotel-pilihan" class="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-900 relative">
     <div class="max-w-7xl mx-auto">
 
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
-                <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">
+                <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-200 dark:border-indigo-500/20">
                     Akomodasi Unggulan
                 </span>
-                <h2 class="text-3xl sm:text-4xl font-black text-white mt-3 tracking-tight">
+                <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white mt-3 tracking-tight">
                     Rekomendasi Hotel <span class="text-gradient">Terbaik di Medan</span>
                 </h2>
-                <p class="text-slate-400 text-sm sm:text-base mt-2">
+                <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base mt-2">
                     Koleksi hotel berbintang dengan fasilitas lengkap dan rating tertinggi dari wisatawan.
                 </p>
             </div>
-            <a href="{{ url('/search') }}" class="mt-4 md:mt-0 inline-flex items-center gap-2 text-indigo-400 hover:text-indigo-300 font-bold text-sm">
+            <a href="{{ url('/search') }}" class="mt-4 md:mt-0 inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 font-bold text-sm">
                 Lihat Semua Hotel <i class="fa-solid fa-arrow-right text-xs"></i>
             </a>
         </div>
@@ -1018,26 +1047,26 @@
 
                     <div class="p-5 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="font-extrabold text-white text-base leading-snug group-hover:text-indigo-300 transition">
+                            <h3 class="font-extrabold text-slate-900 dark:text-white text-base leading-snug group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">
                                 <a href="{{ route('hotel.detail', ['id' => $hotel['id']]) }}" class="no-underline text-inherit">
                                     {{ $hotel['nama'] }}
                                 </a>
                             </h3>
-                            <p class="text-xs text-slate-500 mt-1 line-clamp-1">
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 line-clamp-1">
                                 <i class="fa-solid fa-location-dot text-indigo-500 mr-1"></i> {{ $hotel['alamat'] }}
                             </p>
 
                             <!-- Facility Chips -->
                             <div class="flex flex-wrap gap-1 mt-3">
                                 @foreach(array_slice($hotel['facilities'], 0, 3) as $f)
-                                    <span class="text-[10px] font-semibold bg-white/10 text-slate-300 px-2 py-0.5 rounded-md">
+                                    <span class="text-[10px] font-semibold bg-slate-100 dark:bg-white/10 text-slate-700 dark:text-slate-300 px-2 py-0.5 rounded-md border border-slate-200 dark:border-white/5">
                                         {{ $f }}
                                     </span>
                                 @endforeach
                             </div>
                         </div>
 
-                        <div class="mt-5 pt-4 border-t border-white/10 flex items-center justify-between">
+                        <div class="mt-5 pt-4 border-t border-slate-200 dark:border-white/10 flex items-center justify-between">
                             <div>
                                 <span class="text-[10px] text-slate-400 block font-medium">Mulai dari</span>
                                 <span class="text-base font-black text-indigo-600">Rp {{ number_format($hotel['harga'], 0, ',', '.') }}</span>
@@ -1058,17 +1087,17 @@
 {{-- ═══════════════════════════════════════════════════════════
      KEUNGGULAN MEMESAN DI ROOMIFY
 ═══════════════════════════════════════════════════════════ --}}
-<section id="keunggulan" class="py-24 px-4 sm:px-6 lg:px-8 bg-slate-950 border-t border-white/5 relative">
+<section id="keunggulan" class="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-white/5 relative">
     <div class="max-w-7xl mx-auto">
 
         <div class="text-center max-w-3xl mx-auto mb-16">
-            <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20">
+            <span class="text-xs font-extrabold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-200 dark:border-indigo-500/20">
                 Pengalaman Menginap Nyaman & Pasti
             </span>
-            <h2 class="text-3xl sm:text-4xl font-black text-white mt-3 mb-4 tracking-tight">
+            <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white mt-3 mb-4 tracking-tight">
                 Kenapa Memesan di <span class="text-gradient">Roomify</span>?
             </h2>
-            <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+            <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
                 Nikmati kemudahan reservasi hotel dengan harga transparan, navigasi rute Google Maps langsung dari ponsel Anda, serta jaminan check-in tepat waktu.
             </p>
         </div>
@@ -1078,19 +1107,19 @@
             <!-- Card 1: Garansi Harga Hemat & Transparan -->
             <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
                 <div>
-                    <div class="w-12 h-12 rounded-2xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl mb-5 border border-indigo-500/30">
+                    <div class="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xl mb-5 border border-indigo-200 dark:border-indigo-500/30">
                         <i class="fa-solid fa-tags"></i>
                     </div>
-                    <h3 class="text-xl font-black text-white mb-2">Garansi Harga Transparan</h3>
-                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+                    <h3 class="text-xl font-black text-slate-900 dark:text-white mb-2">Garansi Harga Transparan</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
                         Harga final tanpa biaya siluman. Pilihan metode pembayaran instan terlengkap via QRIS (BCA, Mandiri, BRI, GoPay, OVO), Transfer Virtual Account, dan Kartu Kredit.
                     </p>
-                    <div class="bg-black/40 rounded-xl p-3 border border-white/10 text-xs text-emerald-400 font-semibold flex items-center gap-2">
+                    <div class="bg-emerald-50 dark:bg-black/40 rounded-xl p-3 border border-emerald-200 dark:border-white/10 text-xs text-emerald-700 dark:text-emerald-400 font-semibold flex items-center gap-2">
                         <i class="fa-solid fa-circle-check"></i>
                         <span>E-Voucher & Bukti Pemesanan Terbit Instan</span>
                     </div>
                 </div>
-                <div class="mt-6 pt-4 border-t border-white/10 flex items-center gap-2 text-xs text-indigo-400 font-semibold">
+                <div class="mt-6 pt-4 border-t border-slate-200 dark:border-white/10 flex items-center gap-2 text-xs text-indigo-600 dark:text-indigo-400 font-semibold">
                     <i class="fa-solid fa-shield-check"></i>
                     <span>Pembayaran 100% Aman & Terverifikasi</span>
                 </div>
@@ -1099,19 +1128,19 @@
             <!-- Card 2: Navigasi Google Maps Presisi -->
             <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
                 <div>
-                    <div class="w-12 h-12 rounded-2xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-xl mb-5 border border-pink-500/30">
+                    <div class="w-12 h-12 rounded-2xl bg-pink-50 dark:bg-pink-500/20 text-pink-600 dark:text-pink-400 flex items-center justify-center text-xl mb-5 border border-pink-200 dark:border-pink-500/30">
                         <i class="fa-solid fa-route"></i>
                     </div>
-                    <h3 class="text-xl font-black text-white mb-2">Navigasi Google Maps Presisi</h3>
-                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+                    <h3 class="text-xl font-black text-slate-900 dark:text-white mb-2">Navigasi Google Maps Presisi</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
                         Tak perlu tersesat mencari lobi hotel. Roomify dilengkapi panduan navigasi real-time langsung dari lokasi GPS Anda ke hotel yang Anda tuju di Kota Medan.
                     </p>
-                    <div class="bg-black/40 rounded-xl p-3 border border-white/10 text-xs text-pink-300 font-semibold flex items-center gap-2">
+                    <div class="bg-pink-50 dark:bg-black/40 rounded-xl p-3 border border-pink-200 dark:border-white/10 text-xs text-pink-700 dark:text-pink-300 font-semibold flex items-center gap-2">
                         <i class="fa-solid fa-diamond-turn-right"></i>
                         <span>Turn-by-turn Navigation & Estimasi Waktu</span>
                     </div>
                 </div>
-                <div class="mt-6 pt-4 border-t border-white/10 flex items-center gap-2 text-xs text-pink-400 font-semibold">
+                <div class="mt-6 pt-4 border-t border-slate-200 dark:border-white/10 flex items-center gap-2 text-xs text-pink-600 dark:text-pink-400 font-semibold">
                     <i class="fa-solid fa-location-dot"></i>
                     <span>Terintegrasi 13 Landmark Populer Medan</span>
                 </div>
@@ -1120,19 +1149,19 @@
             <!-- Card 3: Waktu Pasti & AI Concierge -->
             <div class="glass-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
                 <div>
-                    <div class="w-12 h-12 rounded-2xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl mb-5 border border-purple-500/30">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-50 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl mb-5 border border-purple-200 dark:border-purple-500/30">
                         <i class="fa-solid fa-bell-concierge"></i>
                     </div>
-                    <h3 class="text-xl font-black text-white mb-2">Waktu Pasti & AI Concierge</h3>
-                    <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+                    <h3 class="text-xl font-black text-slate-900 dark:text-white mb-2">Waktu Pasti & AI Concierge</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
                         Waktu Check-In resmi pukul 14:00 WIB dan Check-Out pukul 12:00 WIB. Didampingi asisten cerdas Roomify AI untuk memantau status e-tiket pesanan Anda 24 jam nonstop.
                     </p>
-                    <div class="bg-black/40 rounded-xl p-3 border border-white/10 text-xs text-purple-300 font-semibold flex items-center gap-2">
+                    <div class="bg-purple-50 dark:bg-black/40 rounded-xl p-3 border border-purple-200 dark:border-white/10 text-xs text-purple-700 dark:text-purple-300 font-semibold flex items-center gap-2">
                         <i class="fa-solid fa-id-card"></i>
                         <span>Verifikasi NIK e-KTP 16 Digit Terenkripsi</span>
                     </div>
                 </div>
-                <div class="mt-6 pt-4 border-t border-white/10 flex items-center gap-2 text-xs text-purple-400 font-semibold">
+                <div class="mt-6 pt-4 border-t border-slate-200 dark:border-white/10 flex items-center gap-2 text-xs text-purple-600 dark:text-purple-400 font-semibold">
                     <i class="fa-solid fa-robot"></i>
                     <span>Layanan AI Concierge Siap 24 Jam</span>
                 </div>

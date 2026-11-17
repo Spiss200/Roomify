@@ -45,25 +45,31 @@
             const hour = new Date().getHours();
             return (hour >= 6 && hour < 18) ? 'light' : 'dark';
         }
-        const hasManualOverride = localStorage.getItem('theme_user_override') === 'true';
-        const savedTheme = localStorage.getItem('theme');
-        const effectiveTheme = hasManualOverride && savedTheme ? savedTheme : getAutoTimeTheme();
-
-        if (effectiveTheme === 'dark') {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-        function toggleTheme() {
-            localStorage.setItem('theme_user_override', 'true');
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-            } else {
+        function initTheme() {
+            if (localStorage.getItem('theme_user_override') === 'true' && !localStorage.getItem('theme_mode')) {
+                localStorage.removeItem('theme_user_override');
+                localStorage.setItem('theme_mode', 'auto');
+            }
+            const mode = localStorage.getItem('theme_mode') || 'auto';
+            const effectiveTheme = (mode === 'auto') ? getAutoTimeTheme() : mode;
+            if (effectiveTheme === 'dark') {
                 document.documentElement.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
             }
         }
+        function toggleTheme() {
+            if (typeof window.cycleThemeMode === 'function') {
+                window.cycleThemeMode();
+            } else {
+                const isDark = document.documentElement.classList.contains('dark');
+                const nextMode = isDark ? 'light' : 'dark';
+                localStorage.setItem('theme_mode', nextMode);
+                if (nextMode === 'dark') document.documentElement.classList.add('dark');
+                else document.documentElement.classList.remove('dark');
+            }
+        }
+        initTheme();
     </script>
 
     <style>
@@ -300,13 +306,13 @@
         html.dark .hotel-card h3 a:hover {
             color: #60a5fa !important;
         }
-        html.dark .text-slate-900,
-        html.dark .text-slate-800,
-        html.dark .text-slate-700 {
+        html.dark main .text-slate-900:not(.gm-style *),
+        html.dark main .text-slate-800:not(.gm-style *),
+        html.dark main .text-slate-700:not(.gm-style *) {
             color: #f8fafc !important;
         }
-        html.dark .text-slate-600,
-        html.dark .text-slate-500 {
+        html.dark main .text-slate-600:not(.gm-style *),
+        html.dark main .text-slate-500:not(.gm-style *) {
             color: #94a3b8 !important;
         }
         html.dark .bg-slate-50 {
