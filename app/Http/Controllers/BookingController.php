@@ -19,8 +19,8 @@ class BookingController extends Controller
             SELECT ?nama ?alamat ?bintang ?harga ?foto WHERE {
               roomify:$id a roomify:Hotel ;
                 roomify:name ?nama ;
-                roomify:address ?alamat ;
-                roomify:startPrice ?harga .
+                roomify:address ?alamat .
+              OPTIONAL { roomify:$id roomify:startPrice ?harga }
               OPTIONAL { roomify:$id roomify:starRating ?bintang }
               OPTIONAL { roomify:$id roomify:hasPhoto ?ph . ?ph roomify:photoUrl ?foto }
             } LIMIT 1");
@@ -37,11 +37,16 @@ class BookingController extends Controller
                  roomify:maxGuests ?kapasitas .
             } ORDER BY ASC(?harga)");
 
+        if (empty($kamar)) {
+            return redirect()->route('hotel.detail', ['id' => $id])
+                ->with('error', 'Data kamar belum tersedia untuk reservasi online.');
+        }
+
         $hotel = [
             'nama'       => $h['nama'],
             'alamat'     => $h['alamat'],
             'starRating' => $h['bintang'] ?? null,
-            'startPrice' => (int) $h['harga'],
+            'startPrice' => !empty($h['harga']) ? (int) $h['harga'] : 0,
             'foto'       => $h['foto'] ?? '/images/placeholder.svg',
             'kamar'      => $kamar,
         ];

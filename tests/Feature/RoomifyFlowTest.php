@@ -95,11 +95,13 @@ class RoomifyFlowTest extends TestCase
         $postPayment->assertSee('Pembayaran Berhasil');
         $postPayment->assertSee('RMF-');
 
-        // 4. Verify persisted in SQLite database
+        // 4. Verify persisted in SQLite database (with encrypted NIK)
         $this->assertDatabaseHas('bookings', [
-            'hotel_id' => 'hotel-001',
-            'no_ktp'   => '1271012345678901',
+            'hotel_id'   => 'hotel-001',
             'guest_name' => 'Budi Santoso',
         ]);
+        $savedBooking = Booking::where('hotel_id', 'hotel-001')->first();
+        $this->assertNotNull($savedBooking);
+        $this->assertEquals('1271012345678901', $savedBooking->no_ktp);
     }
 }

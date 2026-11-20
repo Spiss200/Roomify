@@ -8,6 +8,13 @@
     <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
     <link rel="alternate icon" href="{{ asset('favicon.ico') }}">
 
+    <!-- Open Graph / RDFa Metadata -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Hasil Pencarian Hotel — Roomify Medan">
+    <meta property="og:description" content="Temukan dan jelajahi 312 hotel di Medan dengan integrasi SPARQL, RDFa semantik, dan navigasi Google Maps.">
+    <meta property="og:image" content="{{ asset('favicon.svg') }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -796,11 +803,17 @@
                             >
                                 <!-- Hotel Photo -->
                                 <div class="relative overflow-hidden h-48 bg-gradient-to-br from-blue-100 to-indigo-100">
-                                    <img src="{{ asset($item['foto'] ?? 'images/placeholder.svg') }}"
+                                    @php
+                                        $rawImg = $item['foto'] ?? '';
+                                        $displayImg = (!empty($rawImg) && $rawImg !== '/images/placeholder.svg')
+                                            ? (str_starts_with($rawImg, 'http') || str_starts_with($rawImg, '/') ? $rawImg : asset($rawImg))
+                                            : asset('images/placeholder.svg');
+                                    @endphp
+                                    <img src="{{ $displayImg }}"
                                          property="schema:image"
                                          alt="{{ $item['nama'] ?? 'Hotel' }}"
                                          class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                         onerror="this.src='{{ asset('images/placeholder.svg') }}'; this.onerror=null;">
                                     <!-- Fallback gradient placeholder -->
                                     <div class="absolute inset-0 items-center justify-center hidden"
                                          style="background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%);">
@@ -927,13 +940,23 @@
                                     <!-- Price + CTA -->
                                     <div class="pt-3 mt-2 border-t border-slate-100 dark:border-slate-800 flex items-end justify-between gap-2">
                                         <div>
-                                            <span class="text-[10px] text-slate-400 font-semibold uppercase block tracking-wide">Mulai dari</span>
-                                            <span property="roomify:startPrice"
-                                                  content="{{ $item['harga'] ?? $item['startPrice'] ?? 0 }}"
-                                                  class="text-lg font-black text-blue-600 dark:text-blue-400">
-                                                Rp&nbsp;{{ number_format((int)($item['harga'] ?? $item['startPrice'] ?? 0), 0, ',', '.') }}
-                                            </span>
-                                            <span class="text-[10px] text-slate-400">/malam</span>
+                                            @php
+                                                $cardPrice = (int)($item['harga'] ?? $item['startPrice'] ?? 0);
+                                            @endphp
+                                            @if($cardPrice > 0)
+                                                <span class="text-[10px] text-slate-400 font-semibold uppercase block tracking-wide">Mulai dari</span>
+                                                <span property="roomify:startPrice"
+                                                      content="{{ $cardPrice }}"
+                                                      class="text-lg font-black text-blue-600 dark:text-blue-400">
+                                                    Rp&nbsp;{{ number_format($cardPrice, 0, ',', '.') }}
+                                                </span>
+                                                <span class="text-[10px] text-slate-400">/malam</span>
+                                            @else
+                                                <span class="text-[10px] text-slate-400 font-semibold uppercase block tracking-wide">Tarif Kamar</span>
+                                                <span class="inline-flex items-center gap-1 text-xs font-bold px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+                                                    <i class="fa-solid fa-circle-info text-amber-500 text-[10px]"></i> Hubungi Properti
+                                                </span>
+                                            @endif
                                         </div>
                                         <a href="{{ route('hotel.detail', ['id' => $item['id'] ?? 1]) }}"
                                            onclick="event.stopPropagation()"

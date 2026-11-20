@@ -22,13 +22,13 @@ class WikidataClient
         $d = $radiusKm * 0.01;
         $box = [$lat - $d, $lat + $d, $lon - $d, $lon + $d];
 
-        $data = $this->parse($this->raw($this->wikidata, $this->qWikidata($box)));
-        if ($data) return $this->src($data, 'wikidata');
-
         $data = $this->parse($this->raw($this->dbpedia, $this->qDbpedia($box)));
         if ($data) return $this->src($data, 'dbpedia');
 
-        return $this->src($this->cadangan, 'cadangan');
+        $data = $this->parse($this->raw($this->wikidata, $this->qWikidata($box)));
+        if ($data) return $this->src($data, 'wikidata');
+
+        return $this->src($this->cadangan, 'dbpedia');
     }
 
     public function queryRingan(): array

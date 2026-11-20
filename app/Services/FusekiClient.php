@@ -259,11 +259,16 @@ class FusekiClient
         } elseif (str_contains($sparql, 'ORDER BY ASC(?nama)')) {
             usort($filtered, fn ($a, $b) => strcasecmp($a['name'] ?? '', $b['name'] ?? ''));
         } else {
-            usort($filtered, fn ($a, $b) => ($a['start_price'] ?? 0) <=> ($b['start_price'] ?? 0));
+            // ASC(?harga): hotels with start_price sorted asc, hotels without price go last
+            usort($filtered, function ($a, $b) {
+                $pA = !empty($a['start_price']) ? (int)$a['start_price'] : PHP_INT_MAX;
+                $pB = !empty($b['start_price']) ? (int)$b['start_price'] : PHP_INT_MAX;
+                return $pA <=> $pB;
+            });
         }
 
-        // Limit (default 200 to cover all 187 hotels in Medan)
-        $limit = 200;
+        // Limit (default 400 to cover all 312 hotels in Medan)
+        $limit = 400;
         if (preg_match('/LIMIT\s+([0-9]+)/i', $sparql, $limMatch)) {
             $limit = (int)$limMatch[1];
         }

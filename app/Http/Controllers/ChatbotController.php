@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Services\FusekiClient;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,6 +12,10 @@ use Illuminate\Support\Str;
 
 class ChatbotController extends Controller
 {
+    public function __construct(
+        protected FusekiClient $fuseki
+    ) {}
+
     /**
      * Geographic database of Medan areas, campuses, landmarks and streets.
      */
@@ -81,7 +86,7 @@ class ChatbotController extends Controller
             'lng' => 98.6360,
             'desc' => 'Akses arteri utama Medan - Binjai',
         ],
-        'cambridge' => [
+        'cambridge city square' => [
             'name' => 'Cambridge City Square & Jl. S. Parman',
             'lat' => 3.5855,
             'lng' => 98.6650,
@@ -288,10 +293,43 @@ class ChatbotController extends Controller
     }
 
     /**
-     * Cache or load hotel dataset.
+     * Load hotel dataset via SPARQL Triplestore (FusekiClient).
      */
     protected function getHotels(): array
     {
+        $sparql = 'PREFIX roomify: <https://roomify.example/ontology#>
+SELECT ?id ?nama ?alamat ?harga ?rating ?star ?foto ?lat ?lon ?desc WHERE {
+  ?h a roomify:Hotel ;
+     roomify:name ?nama ;
+     roomify:address ?alamat .
+  OPTIONAL { ?h roomify:startPrice ?harga }
+  OPTIONAL { ?h roomify:rating ?rating }
+  OPTIONAL { ?h roomify:starRating ?star }
+  OPTIONAL { ?h roomify:description ?desc }
+  OPTIONAL { ?h roomify:latitude ?lat }
+  OPTIONAL { ?h roomify:longitude ?lon }
+  OPTIONAL { ?h roomify:hasPhoto ?p . ?p roomify:photoUrl ?foto }
+  BIND(STRAFTER(STR(?h), "#") AS ?id)
+} ORDER BY ASC(?nama)';
+
+        $rows = $this->fuseki->select($sparql);
+        if (!empty($rows)) {
+            return array_map(function ($r) {
+                return [
+                    'id'          => $r['id'] ?? '',
+                    'name'        => $r['nama'] ?? 'Hotel',
+                    'address'     => $r['alamat'] ?? 'Kota Medan',
+                    'start_price' => !empty($r['harga']) ? (int)$r['harga'] : null,
+                    'rating'      => !empty($r['rating']) ? (float)$r['rating'] : 4.5,
+                    'star'        => !empty($r['star']) ? (int)$r['star'] : 3,
+                    'image_url'   => $r['foto'] ?? '/images/placeholder.svg',
+                    'latitude'    => !empty($r['lat']) ? (float)$r['lat'] : null,
+                    'longitude'   => !empty($r['lon']) ? (float)$r['lon'] : null,
+                    'description' => $r['desc'] ?? null,
+                ];
+            }, $rows);
+        }
+
         $path = base_path('semantic/scrape/hotels_complete.json');
         if (File::exists($path)) {
             $data = json_decode(File::get($path), true);

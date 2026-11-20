@@ -6240,7 +6240,6 @@ roomify:hotel-103 a roomify:Hotel, schema:Hotel ;
     roomify:hasRoom roomify:hotel-103-room1 ;
     roomify:hasRoom roomify:hotel-103-room2 ;
     roomify:hasRoom roomify:hotel-103-room3 ;
-    roomify:hasReview roomify:hotel-103-rev1 ;
     roomify:hasPhoto roomify:hotel-103-photo1 .
 
 roomify:hotel-103-room1 a roomify:Room, schema:HotelRoom ;
@@ -6267,13 +6266,6 @@ roomify:hotel-103-room3 a roomify:Room, schema:HotelRoom ;
     roomify:roomOf roomify:hotel-103 ;
     roomify:hasFeature roomify:fac-ac ;
     roomify:hasFeature roomify:fac-wifi .
-
-roomify:hotel-103-rev1 a roomify:Review, schema:Review ;
-    roomify:reviewerName "Tamu Roomify" ;
-    roomify:reviewRating 4.0 ;
-    roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Penginapan nyaman di ACIRASA Hotel Medan, dekat Lapangan Merdeka." ;
-    roomify:reviewAbout roomify:hotel-103 .
 
 roomify:hotel-103-photo1 a roomify:Photo, schema:ImageObject ;
     roomify:photoUrl "/images/hotels/acirasahotelmedan/1.jpg" ;
@@ -9379,7 +9371,6 @@ roomify:hotel-157 a roomify:Hotel, schema:Hotel ;
     roomify:hasRoom roomify:hotel-157-room1 ;
     roomify:hasRoom roomify:hotel-157-room2 ;
     roomify:hasRoom roomify:hotel-157-room3 ;
-    roomify:hasReview roomify:hotel-157-rev1 ;
     roomify:hasPhoto roomify:hotel-157-photo1 .
 
 roomify:hotel-157-room1 a roomify:Room, schema:HotelRoom ;
@@ -9406,13 +9397,6 @@ roomify:hotel-157-room3 a roomify:Room, schema:HotelRoom ;
     roomify:roomOf roomify:hotel-157 ;
     roomify:hasFeature roomify:fac-ac ;
     roomify:hasFeature roomify:fac-wifi .
-
-roomify:hotel-157-rev1 a roomify:Review, schema:Review ;
-    roomify:reviewerName "Tamu Roomify" ;
-    roomify:reviewRating 4.0 ;
-    roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Penginapan nyaman di Hotel 0 Graha Aisyah, dekat Lapangan Merdeka." ;
-    roomify:reviewAbout roomify:hotel-157 .
 
 roomify:hotel-157-photo1 a roomify:Photo, schema:ImageObject ;
     roomify:photoUrl "/images/hotels/hotel0grahaaisyah/1.jpg" ;
@@ -11167,3 +11151,1131 @@ roomify:hotel-187-photo1 a roomify:Photo, schema:ImageObject ;
     roomify:photoUrl "/images/hotels/grahaaisyah/1.jpg" ;
     roomify:photoCaption "Foto Graha Aisyah" ;
     roomify:photoOf roomify:hotel-187 .
+
+roomify:hotel-188 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Hotel Delta" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5721501 ;
+    roomify:longitude 98.683227 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-mashun .
+
+roomify:hotel-189 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Dharma Deli" ;
+    roomify:address "Balaikota, Medan" ;
+    roomify:latitude 3.5911366 ;
+    roomify:longitude 98.676846 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-tjong .
+
+roomify:hotel-190 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Hotel Semarak" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5665554 ;
+    roomify:longitude 98.6915131 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-menaraair .
+
+roomify:hotel-191 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Pardede Hotel" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5720828 ;
+    roomify:longitude 98.672438 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-mashun .
+
+roomify:hotel-192 a roomify:Hotel, schema:Hotel ;
+    roomify:name "The Heroes Hotel" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5686826 ;
+    roomify:longitude 98.6920221 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-menaraair .
+
+roomify:hotel-193 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Miyana" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.6337466 ;
+    roomify:longitude 98.7084336 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-maitreya .
+
+roomify:hotel-194 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Aryaduta Hotel" ;
+    roomify:address "Kapten Maulana Lubis, 8, Medan" ;
+    roomify:latitude 3.5899197 ;
+    roomify:longitude 98.6741791 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-tjong .
+
+roomify:hotel-195 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Hotel Suani" ;
+    roomify:address "Jalan Letjen. Djamin Ginting" ;
+    roomify:latitude 3.4540281 ;
+    roomify:longitude 98.6026764 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-medanzoo .
+
+roomify:hotel-196 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Hotel Maharani" ;
+    roomify:address "Letjend Jamin Ginting" ;
+    roomify:latitude 3.4564501 ;
+    roomify:longitude 98.6015859 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-medanzoo .
+
+roomify:hotel-197 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Bpk. Dodi" ;
+    roomify:address "Jalan Kuala Lau Bicik, Namorih" ;
+    roomify:latitude 3.4765821 ;
+    roomify:longitude 98.578102 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-velangkanni .
+
+roomify:hotel-198 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Hotel Sehati" ;
+    roomify:address "Jalan Letjen. Djamin Ginting, Pancur Batu" ;
+    roomify:latitude 3.4928113 ;
+    roomify:longitude 98.603264 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-medanzoo .
+
+roomify:hotel-199 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Amir Hamza 123" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.6051232 ;
+    roomify:longitude 98.6457197 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-merdeka .
+
+roomify:hotel-200 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Hotel Petisah" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5910044 ;
+    roomify:longitude 98.6641638 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-shrimariamman .
+
+roomify:hotel-201 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Dhaksina Hotel" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5780836 ;
+    roomify:longitude 98.6864484 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-menaraair .
+
+roomify:hotel-202 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Garuda Citra Hotel" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5774492 ;
+    roomify:longitude 98.6871941 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-menaraair .
+
+roomify:hotel-203 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Grand Sri Intan" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5771012 ;
+    roomify:longitude 98.687347 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-menaraair .
+
+roomify:hotel-204 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Hotel Sumatera" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5777517 ;
+    roomify:longitude 98.6866 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-menaraair .
+
+roomify:hotel-205 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Prudential" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5860576 ;
+    roomify:longitude 98.6699822 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-shrimariamman .
+
+roomify:hotel-206 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Hotel Zakia" ;
+    roomify:address "Jalan Sipiso Piso" ;
+    roomify:latitude 3.5743718 ;
+    roomify:longitude 98.6868522 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-menaraair .
+
+roomify:hotel-207 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Roemah Moesi" ;
+    roomify:address "Jalan Sei Musi, 93" ;
+    roomify:latitude 3.5779193 ;
+    roomify:longitude 98.6459218 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat ;
+    roomify:hasFacility roomify:fac-wifi .
+
+roomify:hotel-208 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Royal Perintis Hotel" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5979588 ;
+    roomify:longitude 98.6800985 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-merdekawalk .
+
+roomify:hotel-209 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Wesly House" ;
+    roomify:address "Jalan Sei Bengal, 12, Medan" ;
+    roomify:latitude 3.5875413 ;
+    roomify:longitude 98.6606315 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-210 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Kanasha Hotel" ;
+    roomify:address "Jalan Dolok Sanggul, 8, Medan" ;
+    roomify:latitude 3.5786261 ;
+    roomify:longitude 98.6854291 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-menaraair .
+
+roomify:hotel-211 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Airy Hotel Medan Petisah Waringin" ;
+    roomify:address "Jalan Darussalam, 6, Medan" ;
+    roomify:latitude 3.5880336 ;
+    roomify:longitude 98.6528064 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-212 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Hanlis Hotel" ;
+    roomify:address "Jalan Sei Kapuas, 6, Medan" ;
+    roomify:latitude 3.5842096 ;
+    roomify:longitude 98.6520406 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-213 a roomify:Hotel, schema:Hotel ;
+    roomify:name "K77 Guest House" ;
+    roomify:address "Jalan Seto, 6B, Medan" ;
+    roomify:latitude 3.5735957 ;
+    roomify:longitude 98.7042649 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-menaraair .
+
+roomify:hotel-214 a roomify:Hotel, schema:Hotel ;
+    roomify:name "GM House" ;
+    roomify:address "Jalan Setia Budi, 57, Medan" ;
+    roomify:latitude 3.5799152 ;
+    roomify:longitude 98.6432214 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-215 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Hotel Syariah Al Jayri," ;
+    roomify:address "Jalan K. H. Wahid Hasyim, 102, Medan" ;
+    roomify:latitude 3.5868782 ;
+    roomify:longitude 98.6573613 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-216 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Deal Guest House" ;
+    roomify:address "Jalan Kenanga Raya, 3, Medan" ;
+    roomify:latitude 3.5625561 ;
+    roomify:longitude 98.6414469 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-velangkanni .
+
+roomify:hotel-217 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Medan Hostel" ;
+    roomify:address "Jalan Setia Luhur, 28, Medan" ;
+    roomify:latitude 3.6018288 ;
+    roomify:longitude 98.633486 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-218 a roomify:Hotel, schema:Hotel ;
+    roomify:name "PURI STREET" ;
+    roomify:address "Jalan Puri" ;
+    roomify:latitude 3.5780535 ;
+    roomify:longitude 98.6884535 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-menaraair .
+
+roomify:hotel-219 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Le Polonia Hotel & Convention" ;
+    roomify:address "Jend. Sudirman, 14" ;
+    roomify:latitude 3.5766388 ;
+    roomify:longitude 98.6750953 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-mashun ;
+    roomify:hasFacility roomify:fac-wifi .
+
+roomify:hotel-220 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Perumahan Pertamina no 6H" ;
+    roomify:address "jalan yos sudarso, 6H" ;
+    roomify:latitude 3.602738 ;
+    roomify:longitude 98.6750537 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-merdekawalk ;
+    roomify:hasFacility roomify:fac-wifi .
+
+roomify:hotel-221 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Vivo Hotel" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5861759 ;
+    roomify:longitude 98.6840389 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-menaraair .
+
+roomify:hotel-222 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Grand Sirao Hotel" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5832165 ;
+    roomify:longitude 98.6861911 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-menaraair .
+
+roomify:hotel-223 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Grand Swiss-Bel" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5849747 ;
+    roomify:longitude 98.6673268 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-shrimariamman .
+
+roomify:hotel-224 a roomify:Hotel, schema:Hotel ;
+    roomify:name "OYO 1030 Hotel Buni Asih" ;
+    roomify:address "Jln. Sei Bahorok Baru, 20" ;
+    roomify:latitude 3.5784193 ;
+    roomify:longitude 98.6563621 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-225 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Aero Hotel" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5210231 ;
+    roomify:longitude 98.7848981 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-menaraair .
+
+roomify:hotel-226 a roomify:Hotel, schema:Hotel ;
+    roomify:name "OYO 1009 Hotel Bumi Malaya" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5905794 ;
+    roomify:longitude 98.6406332 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-227 a roomify:Hotel, schema:Hotel ;
+    roomify:name "D'Prima Hotel Stasiun Kereta Api Medan" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5910948 ;
+    roomify:longitude 98.6796304 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-centrepoint .
+
+roomify:hotel-228 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Blue Hostel Pandau Hulu I" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5878128 ;
+    roomify:longitude 98.6930668 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-menaraair .
+
+roomify:hotel-229 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Moumou Hostel" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5864024 ;
+    roomify:longitude 98.7046698 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-menaraair .
+
+roomify:hotel-230 a roomify:Hotel, schema:Hotel ;
+    roomify:name "OYO 839 Royal Guest House" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5835022 ;
+    roomify:longitude 98.6785658 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-maimun .
+
+roomify:hotel-231 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Hotel Palace Inn" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5862561 ;
+    roomify:longitude 98.6662736 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-shrimariamman .
+
+roomify:hotel-232 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Cambridge Condominium" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5843195 ;
+    roomify:longitude 98.6675468 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-shrimariamman .
+
+roomify:hotel-233 a roomify:Hotel, schema:Hotel ;
+    roomify:name "OYO 687 Residence Hotel Syariah" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5745394 ;
+    roomify:longitude 98.6878039 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-menaraair .
+
+roomify:hotel-234 a roomify:Hotel, schema:Hotel ;
+    roomify:name "OYO 1183 Papakoel" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5645253 ;
+    roomify:longitude 98.6523508 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-235 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Red Doorz STM Medan Sitirejo II" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5479556 ;
+    roomify:longitude 98.6922478 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-mashun .
+
+roomify:hotel-236 a roomify:Hotel, schema:Hotel ;
+    roomify:name "OYO 1940 Cendana Homestay Syariah" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.6119613 ;
+    roomify:longitude 98.7069801 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-maitreya .
+
+roomify:hotel-237 a roomify:Hotel, schema:Hotel ;
+    roomify:name "RedDoorz Sumarsono Inn Helvetia" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.6223009 ;
+    roomify:longitude 98.658786 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-merdeka .
+
+roomify:hotel-238 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Romeah 28" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5722778 ;
+    roomify:longitude 98.6556137 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-239 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Bua Guesthouse" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5188654 ;
+    roomify:longitude 98.7276661 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-medanzoo .
+
+roomify:hotel-240 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Dazhong Backpacker's hostel" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5824944 ;
+    roomify:longitude 98.6690434 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-shrimariamman .
+
+roomify:hotel-241 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Merak Bestari" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5846895 ;
+    roomify:longitude 98.6324573 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-242 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Tiara Hotel & Convention Centre" ;
+    roomify:address "Jalan Cut Meutia, Medan" ;
+    roomify:latitude 3.5805063 ;
+    roomify:longitude 98.6752369 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-sunplaza .
+
+roomify:hotel-243 a roomify:Hotel, schema:Hotel ;
+    roomify:name "OYO Festive Inn" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5879867 ;
+    roomify:longitude 98.6826563 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-centrepoint .
+
+roomify:hotel-244 a roomify:Hotel, schema:Hotel ;
+    roomify:name "OYO 741 Hotel Labuhan Raya" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5844423 ;
+    roomify:longitude 98.6599069 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-245 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Hotel Melati" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5758745 ;
+    roomify:longitude 98.6892478 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-menaraair .
+
+roomify:hotel-246 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Grand Inna Hotel Medan" ;
+    roomify:address "Jl. Balai Kota, 2, Medan" ;
+    roomify:latitude 3.5911821 ;
+    roomify:longitude 98.676805 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-tjong .
+
+roomify:hotel-247 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Amaliun Hotel" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.576382 ;
+    roomify:longitude 98.6898909 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-menaraair .
+
+roomify:hotel-248 a roomify:Hotel, schema:Hotel ;
+    roomify:name "OYO 447 Hutasimo Residence" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5814426 ;
+    roomify:longitude 98.6606791 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-249 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Reddoorz Near Jalan Gatot Subroto Medan No.29A" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5836067 ;
+    roomify:longitude 98.6540185 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-250 a roomify:Hotel, schema:Hotel ;
+    roomify:name "OYO 1371 Carofin Guest House" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5828481 ;
+    roomify:longitude 98.655163 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-251 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Jangga House" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5803967 ;
+    roomify:longitude 98.654135 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-252 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Citi International Palang Merah" ;
+    roomify:address "Palang Merah, 112A, Medan" ;
+    roomify:latitude 3.5844401 ;
+    roomify:longitude 98.675892 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-sunplaza .
+
+roomify:hotel-253 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Nusa Hotel" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5975704 ;
+    roomify:longitude 98.706744 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-centrepoint .
+
+roomify:hotel-254 a roomify:Hotel, schema:Hotel ;
+    roomify:name "hotel garuda plaza" ;
+    roomify:address "Jalan Sisingamangaraja, 18, Medan" ;
+    roomify:latitude 3.5785871 ;
+    roomify:longitude 98.6861175 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-menaraair .
+
+roomify:hotel-255 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Hotel Soechi International" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5828181 ;
+    roomify:longitude 98.6837805 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-menaraair .
+
+roomify:hotel-256 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Saka Hotel Medan" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5885447 ;
+    roomify:longitude 98.6265418 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-velangkanni .
+
+roomify:hotel-257 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Wisma Sudirman" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5740484 ;
+    roomify:longitude 98.664026 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-258 a roomify:Hotel, schema:Hotel ;
+    roomify:name "The Green Alam Indah Hotel" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5305161 ;
+    roomify:longitude 98.642775 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-velangkanni .
+
+roomify:hotel-259 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Ibis Styles Medan Patimura" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5738286 ;
+    roomify:longitude 98.663665 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-260 a roomify:Hotel, schema:Hotel ;
+    roomify:name "King Palace Medan" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5768784 ;
+    roomify:longitude 98.6615959 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-261 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Aresidencia Sei Putih Baru" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5789718 ;
+    roomify:longitude 98.6534869 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-262 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Gereja Katolik Santo Mikael Medan Tembung" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.6088495 ;
+    roomify:longitude 98.7053018 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-maitreya .
+
+roomify:hotel-263 a roomify:Hotel, schema:Hotel ;
+    roomify:name "OYO 623 MMTC Guest House" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.6029985 ;
+    roomify:longitude 98.7076236 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-maitreya .
+
+roomify:hotel-264 a roomify:Hotel, schema:Hotel ;
+    roomify:name "RedDoorz De Natio Cottage" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.6091255 ;
+    roomify:longitude 98.7002385 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-maitreya .
+
+roomify:hotel-265 a roomify:Hotel, schema:Hotel ;
+    roomify:name "OYO 359 The Executive Inn" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5980749 ;
+    roomify:longitude 98.7094103 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-maitreya .
+
+roomify:hotel-266 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Medan City Homestay" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5672276 ;
+    roomify:longitude 98.6470607 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-267 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Mind Hostel" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5679765 ;
+    roomify:longitude 98.6495692 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-268 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Reddoorz Premium De Natio" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5529736 ;
+    roomify:longitude 98.634464 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-velangkanni .
+
+roomify:hotel-269 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Star Inn" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.587075 ;
+    roomify:longitude 98.7024948 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-menaraair .
+
+roomify:hotel-270 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Hotel Gintas Tanjung Sari" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5380146 ;
+    roomify:longitude 98.6219555 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-velangkanni .
+
+roomify:hotel-271 a roomify:Hotel, schema:Hotel ;
+    roomify:name "OYO 1457 Tmj Guest House" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5961023 ;
+    roomify:longitude 98.6875362 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-centrepoint .
+
+roomify:hotel-272 a roomify:Hotel, schema:Hotel ;
+    roomify:name "OYO WBS Residence" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.593491 ;
+    roomify:longitude 98.6583719 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-shrimariamman .
+
+roomify:hotel-273 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Prime Inn" ;
+    roomify:address "Jalan Waru" ;
+    roomify:latitude 3.5956944 ;
+    roomify:longitude 98.6663387 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-merdeka .
+
+roomify:hotel-274 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Hotel Transit Syariah" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5849383 ;
+    roomify:longitude 98.6591125 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-275 a roomify:Hotel, schema:Hotel ;
+    roomify:name "OYO 723 Penginapan Nia Mandiri Syariah" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5781682 ;
+    roomify:longitude 98.6902632 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-menaraair .
+
+roomify:hotel-276 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Wisma Tiga Raja" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5797334 ;
+    roomify:longitude 98.6469777 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-277 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Hotel Cempaka Medan" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5297437 ;
+    roomify:longitude 98.6399799 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-velangkanni .
+
+roomify:hotel-278 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Hotel Lonari Medan" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5301433 ;
+    roomify:longitude 98.6415003 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-velangkanni .
+
+roomify:hotel-279 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Hotel Hawaii" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5305129 ;
+    roomify:longitude 98.6419778 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-velangkanni .
+
+roomify:hotel-280 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Hotel Alam Indah" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5316626 ;
+    roomify:longitude 98.6419166 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-velangkanni .
+
+roomify:hotel-281 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Orinko City Hotel" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5850664 ;
+    roomify:longitude 98.6529479 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-282 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Lewi House" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5858581 ;
+    roomify:longitude 98.6563592 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-283 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Serena Anggrek Syariah Hotel Sei Sikambing B" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5913232 ;
+    roomify:longitude 98.6247299 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-velangkanni .
+
+roomify:hotel-284 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Depari Hotel Sei Sikambing B" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5851849 ;
+    roomify:longitude 98.6302247 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-velangkanni .
+
+roomify:hotel-285 a roomify:Hotel, schema:Hotel ;
+    roomify:name "OYO 692 Hotel Graha Buana" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5866592 ;
+    roomify:longitude 98.6570166 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-286 a roomify:Hotel, schema:Hotel ;
+    roomify:name "OYO 2345 HOMESTAY JAYA" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5889188 ;
+    roomify:longitude 98.6921053 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-menaraair .
+
+roomify:hotel-287 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Hotel Istana" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5727643 ;
+    roomify:longitude 98.685063 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-mashun .
+
+roomify:hotel-288 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Reddoorz Tritura Inn Suka Maju" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5377484 ;
+    roomify:longitude 98.6924919 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-mashun .
+
+roomify:hotel-289 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Jabutta Guest House" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5887365 ;
+    roomify:longitude 98.6982937 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-menaraair .
+
+roomify:hotel-290 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Hotel Cherry Garden" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5834677 ;
+    roomify:longitude 98.6573444 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-291 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Guest House Michael & Agnesh Babura" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5841408 ;
+    roomify:longitude 98.6455195 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-292 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Grand Nusantara Hotel" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5847432 ;
+    roomify:longitude 98.6247056 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-velangkanni .
+
+roomify:hotel-293 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Wisma Syailendra" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5794881 ;
+    roomify:longitude 98.6614395 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-294 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Hotel Wisma Yuli" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5753542 ;
+    roomify:longitude 98.6890061 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-menaraair .
+
+roomify:hotel-295 a roomify:Hotel, schema:Hotel ;
+    roomify:name "OYO 436 Raz Residence" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.569575 ;
+    roomify:longitude 98.644525 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-rahmat .
+
+roomify:hotel-296 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Bukit Toedjoeh Residence" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.6142815 ;
+    roomify:longitude 98.6774293 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-merdekawalk .
+
+roomify:hotel-297 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Novena Home Stay" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5572965 ;
+    roomify:longitude 98.6295959 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-velangkanni .
+
+roomify:hotel-298 a roomify:Hotel, schema:Hotel ;
+    roomify:name "OYO 1377 Os Residence" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5686978 ;
+    roomify:longitude 98.6868578 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-mashun .
+
+roomify:hotel-299 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Amelia Guest House" ;
+    roomify:address "Jalan Arteri Bandara Kuananamu No. 10A, Medan" ;
+    roomify:latitude 3.5650888 ;
+    roomify:longitude 98.806138 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-maitreya .
+
+roomify:hotel-300 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Hotel Binjai" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.6048744 ;
+    roomify:longitude 98.5299768 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-velangkanni .
+
+roomify:hotel-301 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Wing Hotel" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5986849 ;
+    roomify:longitude 98.8304704 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-maitreya .
+
+roomify:hotel-302 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Zen hostel" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5977726 ;
+    roomify:longitude 98.8318821 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-maitreya .
+
+roomify:hotel-303 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Reddoorz Plus near Kualanamu Airport" ;
+    roomify:address "Jalan Stasiun Dusun Masjid Desa Aras Kabu, Medan" ;
+    roomify:latitude 3.6131091 ;
+    roomify:longitude 98.8462601 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-maitreya .
+
+roomify:hotel-304 a roomify:Hotel, schema:Hotel ;
+    roomify:name "KNO hotel" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5870061 ;
+    roomify:longitude 98.8044136 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-maitreya .
+
+roomify:hotel-305 a roomify:Hotel, schema:Hotel ;
+    roomify:name "My studio Hotel" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5979283 ;
+    roomify:longitude 98.8318025 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-maitreya .
+
+roomify:hotel-306 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Anara Sky Kualanamu" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.6355651 ;
+    roomify:longitude 98.87913 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-maitreya .
+
+roomify:hotel-307 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Hotel Anita" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.6013715 ;
+    roomify:longitude 98.5425522 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-velangkanni .
+
+roomify:hotel-308 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Hotel Mulia Tiza" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.6067146 ;
+    roomify:longitude 98.527025 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-velangkanni .
+
+roomify:hotel-309 a roomify:Hotel, schema:Hotel ;
+    roomify:name "T HOTEL KUALANAMU" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.5850178 ;
+    roomify:longitude 98.8612092 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-maitreya .
+
+roomify:hotel-310 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Siba Island Resort" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.770427 ;
+    roomify:longitude 98.6332134 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-maitreya .
+
+roomify:hotel-311 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Danau Toba International Cottage Belawan" ;
+    roomify:address "Kota Medan" ;
+    roomify:latitude 3.7796644 ;
+    roomify:longitude 98.6900892 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-maitreya .
+
+roomify:hotel-312 a roomify:Hotel, schema:Hotel ;
+    roomify:name "Sinurat Residence - Premium Kost" ;
+    roomify:address "Jalan Antara, Deli Serdang, Lubuk Pakam, Medan" ;
+    roomify:latitude 3.5561678 ;
+    roomify:longitude 98.8720567 ;
+    roomify:dataSource "osm" ;
+    roomify:locatedInCity roomify:city-medan ;
+    roomify:nearLandmark roomify:lm-maitreya .

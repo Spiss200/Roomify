@@ -44,6 +44,7 @@ class Booking extends Model
         'subtotal' => 'integer',
         'tax' => 'integer',
         'total_price' => 'integer',
+        'no_ktp' => 'encrypted',
     ];
 
     public function user()

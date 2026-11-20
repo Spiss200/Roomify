@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $hotel['nama'] ?? 'Detail Hotel' }} – Roomify</title>
 
+    <!-- Open Graph Metadata -->
+    <meta property="og:type" content="hotel">
+    <meta property="og:title" content="{{ $hotel['nama'] ?? 'Hotel' }} – Roomify">
+    <meta property="og:description" content="{{ \Illuminate\Support\Str::limit($hotel['deskripsi'] ?? 'Pesan kamar nyaman di ' . ($hotel['nama'] ?? 'Hotel') . ' Medan dengan Roomify.', 150) }}">
+    <meta property="og:image" content="{{ asset($hotel['foto'] ?? 'images/placeholder.svg') }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:site_name" content="Roomify Medan">
+
     <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
     <link rel="alternate icon" href="{{ asset('favicon.ico') }}">
 
@@ -250,7 +258,8 @@
              src="{{ asset($hotel['galeri'][0]) }}"
              property="schema:image"
              alt="{{ $hotel['nama'] ?? 'Hotel' }}"
-             class="w-full h-72 sm:h-96 md:h-[480px] object-cover transition-transform duration-500 group-hover:scale-[1.02]">
+             class="w-full h-72 sm:h-96 md:h-[480px] object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+             onerror="this.src='{{ asset('images/placeholder.svg') }}'; this.onerror=null;">
         <!-- Gradient overlay -->
         <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
         <!-- Photo count badge -->
@@ -273,7 +282,8 @@
             <img src="{{ asset($g) }}" alt="Foto {{ $gi + 1 }}"
                  onclick="switchPhoto('{{ asset($g) }}', {{ $gi }})"
                  id="thumb-{{ $gi }}"
-                 class="flex-shrink-0 h-16 w-24 sm:h-20 sm:w-28 object-cover rounded-xl border-2 border-transparent cursor-pointer hover:border-indigo-500 transition-all {{ $gi === 0 ? 'border-indigo-500' : '' }}">
+                 class="flex-shrink-0 h-16 w-24 sm:h-20 sm:w-28 object-cover rounded-xl border-2 border-transparent cursor-pointer hover:border-indigo-500 transition-all {{ $gi === 0 ? 'border-indigo-500' : '' }}"
+                 onerror="this.src='{{ asset('images/placeholder.svg') }}'; this.onerror=null;">
         @endforeach
     </div>
     @endif
@@ -493,9 +503,14 @@
                     @endforeach
                 </div>
                 @else
-                <div class="text-center py-8 text-slate-400">
-                    <i class="fa-solid fa-bed text-3xl mb-2"></i>
-                    <p class="text-sm">Informasi kamar belum tersedia.</p>
+                <div class="rounded-2xl p-6 sm:p-8 text-center border-2 border-dashed border-amber-200 dark:border-amber-800/60 bg-amber-50/60 dark:bg-amber-950/30">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400 flex items-center justify-center mx-auto mb-3">
+                        <i class="fa-solid fa-triangle-exclamation text-xl"></i>
+                    </div>
+                    <h3 class="font-extrabold text-slate-800 dark:text-white text-base mb-1">Data Kamar Belum Tersedia</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 max-w-md mx-auto leading-relaxed">
+                        Data kamar belum tersedia untuk reservasi online instan (sumber data OpenStreetMap / direktori hotel). Silakan hubungi langsung resepsionis properti untuk reservasi dan tarif terkini.
+                    </p>
                 </div>
                 @endif
             </div>
@@ -629,6 +644,49 @@
                 <div class="text-center py-6 text-slate-400">
                     <i class="fa-solid fa-map-location-dot text-3xl mb-2"></i>
                     <p class="text-sm">Dekat pusat kota Medan</p>
+                </div>
+                @endif
+            </div>
+
+            <!-- ── LANDMARK EKSTERNAL (SPARQL DBpedia / Wikidata) ── -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
+                <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+                    <h2 class="section-title mb-0">
+                        <i class="fa-solid fa-globe text-emerald-500"></i>
+                        Landmark sekitar — sumber: {{ strtolower($hotel['external_source'] ?? 'dbpedia') }}
+                    </h2>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                        <i class="fa-solid fa-network-wired text-xs"></i>
+                        SPARQL Federated: {{ ($hotel['external_source'] ?? '') === 'wikidata' ? 'query.wikidata.org' : 'dbpedia.org/sparql' }}
+                    </span>
+                </div>
+                <p class="text-xs text-slate-500 mb-4">
+                    Data titik menarik di sekitar hotel ini diambil langsung secara federasi melalui endpoint SPARQL eksternal (<strong class="text-slate-700">{{ strtoupper($hotel['external_source'] ?? 'DBpedia') }}</strong>).
+                </p>
+                @if(!empty($hotel['external_landmarks']))
+                <ul class="divide-y divide-slate-50">
+                    @foreach($hotel['external_landmarks'] as $elm)
+                    <li class="landmark-item py-2.5 flex items-center justify-between gap-3">
+                        <div class="flex items-center gap-3 min-w-0">
+                            <div class="w-8 h-8 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600 shrink-0">
+                                <i class="fa-solid fa-landmark-dome text-xs"></i>
+                            </div>
+                            <div class="min-w-0">
+                                <p class="text-sm font-semibold text-slate-800 truncate">{{ $elm['nama'] ?? 'Landmark' }}</p>
+                                <p class="text-[11px] text-slate-400">Koordinat: {{ number_format((float)($elm['lat'] ?? 0), 4) }}, {{ number_format((float)($elm['lon'] ?? 0), 4) }}</p>
+                            </div>
+                        </div>
+                        @if(!empty($elm['jarak']))
+                        <span class="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full shrink-0">
+                            {{ $elm['jarak'] }}
+                        </span>
+                        @endif
+                    </li>
+                    @endforeach
+                </ul>
+                @else
+                <div class="text-center py-6 text-slate-400">
+                    <p class="text-xs">Data titik penting sekitar terhubung dengan basis pengetahuan DBpedia.</p>
                 </div>
                 @endif
             </div>
@@ -768,12 +826,23 @@
                             </div>
                         </div>
 
+                        @if(!empty($hotel['kamar']))
                         <!-- Big CTA Button to Booking Form -->
                         <a href="{{ route('booking.form', ['id' => $id]) }}"
                            class="btn-gradient w-full py-4 rounded-2xl text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow-xl hover:shadow-2xl transition transform hover:-translate-y-0.5 no-underline">
                             <span>Lanjut ke Formulir Pemesanan</span>
                             <i class="fa-solid fa-arrow-right text-xs"></i>
                         </a>
+                        @else
+                        <div class="p-3.5 rounded-2xl bg-amber-50 dark:bg-amber-950/50 border border-amber-200 dark:border-amber-800/60 text-xs text-amber-800 dark:text-amber-300 font-semibold text-center mb-2">
+                            <i class="fa-solid fa-circle-info mr-1 text-amber-600"></i> Data kamar belum tersedia untuk reservasi online
+                        </div>
+                        <button type="button" disabled
+                                class="w-full py-3.5 rounded-2xl bg-slate-200 dark:bg-slate-700 text-slate-400 dark:text-slate-500 font-bold text-sm flex items-center justify-center gap-2 cursor-not-allowed">
+                            <i class="fa-solid fa-lock text-xs"></i>
+                            <span>Pemesanan Belum Tersedia</span>
+                        </button>
+                        @endif
 
                         <!-- AI Concierge Quick Trigger & Support -->
                         <div class="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-3">

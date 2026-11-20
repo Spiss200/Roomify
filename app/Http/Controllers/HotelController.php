@@ -20,8 +20,8 @@ class HotelController extends Controller
             SELECT ?nama ?alamat ?deskripsi ?bintang ?rating ?jumlahReview ?harga ?lat ?lon ?foto WHERE {
               roomify:$id a roomify:Hotel ;
                 roomify:name ?nama ;
-                roomify:address ?alamat ;
-                roomify:startPrice ?harga .
+                roomify:address ?alamat .
+              OPTIONAL { roomify:$id roomify:startPrice ?harga }
               OPTIONAL { roomify:$id roomify:description ?deskripsi }
               OPTIONAL { roomify:$id roomify:starRating ?bintang }
               OPTIONAL { roomify:$id roomify:rating ?rating }
@@ -51,27 +51,45 @@ class HotelController extends Controller
         $lat = $h['lat'] ?? null;
         $lon = $h['lon'] ?? null;
 
-        // Optimalisasi: Gunakan perhitungan lokal berkecepatan tinggi dari 13 Landmark Medan
-        // Menggantikan pemanggilan lambat eksternal Wikidata/DBpedia (memotong waktu muat dari 5-10s ke <20ms)
+        // 1. Landmark Lokal (13 Landmark Medan via ontologi Fuseki)
         $nearbyLandmarks = ($lat && $lon)
             ? $this->getNearbyLandmarks((float) $lat, (float) $lon, 5)
             : [];
 
+        // 2. Landmark Eksternal (Federated SPARQL Endpoint: DBpedia / Wikidata)
+        $extRaw = ($lat && $lon)
+            ? $this->wikidata->landmarksNear((float) $lat, (float) $lon, 4)
+            : $this->wikidata->landmarksNear(3.5952, 98.6722, 4);
+
+        $externalSource = !empty($extRaw[0]['sumber']) ? $extRaw[0]['sumber'] : 'dbpedia';
+
+        $externalLandmarks = array_map(function ($elm) use ($lat, $lon) {
+            $distKm = ($lat && $lon && !empty($elm['lat']) && !empty($elm['lon']))
+                ? $this->haversineKm((float)$lat, (float)$lon, (float)$elm['lat'], (float)$elm['lon'])
+                : null;
+            $distStr = $distKm !== null
+                ? ($distKm < 1 ? round($distKm * 1000) . ' m' : number_format($distKm, 1, ',', '.') . ' km')
+                : null;
+            return $elm + ['jarak' => $distStr, 'jarak_km' => $distKm];
+        }, $extRaw);
+
         $hotel = [
-            'nama'             => $h['nama'],
-            'alamat'           => $h['alamat'],
-            'deskripsi'        => $h['deskripsi'] ?? null,
-            'starRating'       => $h['bintang'] ?? null,
-            'startPrice'       => (int) $h['harga'],
-            'rating'           => $h['rating'] ?? null,
-            'foto'             => $h['foto'] ?? '/images/placeholder.svg',
-            'galeri'           => $this->galeri($h['foto'] ?? null),
-            'latitude'         => $lat ? (float)$lat : 3.5952,
-            'longitude'        => $lon ? (float)$lon : 98.6722,
-            'fasilitas'        => array_column($fasilitas, 'namaFasilitas'),
-            'kamar'            => $kamar,
-            'landmarks'        => array_column($nearbyLandmarks, 'nama'),
-            'nearby_landmarks' => $nearbyLandmarks,
+            'nama'               => $h['nama'],
+            'alamat'             => $h['alamat'],
+            'deskripsi'          => $h['deskripsi'] ?? null,
+            'starRating'         => $h['bintang'] ?? null,
+            'startPrice'         => !empty($h['harga']) ? (int) $h['harga'] : null,
+            'rating'             => $h['rating'] ?? null,
+            'foto'               => $h['foto'] ?? '/images/placeholder.svg',
+            'galeri'             => $this->galeri($h['foto'] ?? null),
+            'latitude'           => $lat ? (float)$lat : 3.5952,
+            'longitude'          => $lon ? (float)$lon : 98.6722,
+            'fasilitas'          => array_column($fasilitas, 'namaFasilitas'),
+            'kamar'              => $kamar,
+            'landmarks'          => array_column($nearbyLandmarks, 'nama'),
+            'nearby_landmarks'   => $nearbyLandmarks,
+            'external_landmarks' => $externalLandmarks,
+            'external_source'    => $externalSource,
         ];
 
         return view('hotel.show', [

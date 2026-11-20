@@ -51,8 +51,8 @@ class SearchController extends Controller
             $b->facility('fac-' . \Illuminate\Support\Str::slug($f));
         }
 
-        // Retrieve up to 200 hotels (entire Medan database of 187 hotels)
-        $rows = $this->fuseki->select($b->build(200));
+        // Retrieve up to 400 hotels (entire Medan database of 312 hotels)
+        $rows = $this->fuseki->select($b->build(400));
 
         $p = 'PREFIX roomify: <https://roomify.example/ontology#>';
         $fac = $this->grouped("$p SELECT ?id (GROUP_CONCAT(DISTINCT ?n; separator='|') AS ?v) WHERE {
@@ -78,16 +78,18 @@ class SearchController extends Controller
                     : number_format($distanceKm, 1, ',', '.') . ' km';
             }
 
+            $rawPrice = (!empty($r['harga']) && (int)$r['harga'] > 0) ? (int)$r['harga'] : null;
+
             return [
                 'id'         => $r['id'],
                 'nama'       => $r['nama'],
                 'alamat'     => $r['alamat'],
                 'bintang'    => $r['star'] ?? null,
                 'starRating' => $r['star'] ?? null,
-                'harga'      => (int) $r['harga'],
-                'startPrice' => (int) $r['harga'],
+                'harga'      => $rawPrice,
+                'startPrice' => $rawPrice,
                 'rating'     => $r['rating'] ?? null,
-                'foto'       => $r['foto'] ?? '/images/placeholder.svg',
+                'foto'       => (!empty($r['foto']) && $r['foto'] !== '') ? $r['foto'] : '/images/placeholder.svg',
                 'latitude'   => $lat,
                 'longitude'  => $lon,
                 'fasilitas'  => $fac[$r['id']] ?? [],

@@ -64,7 +64,7 @@ class SparqlBuilder
         return $this;
     }
 
-    public function build(int $limit = 200): string
+    public function build(int $limit = 400): string
     {
         $extra = implode("\n  ", $this->patterns);
 
@@ -96,8 +96,8 @@ class SparqlBuilder
 SELECT ?id ?nama ?alamat ?harga ?rating ?star ?foto ?lat ?lon WHERE {
   ?h a roomify:Hotel ;
      roomify:name ?nama ;
-     roomify:address ?alamat ;
-     roomify:startPrice ?harga .
+     roomify:address ?alamat .
+  OPTIONAL { ?h roomify:startPrice ?harga }
   OPTIONAL { ?h roomify:rating ?rating }
   OPTIONAL { ?h roomify:starRating ?star }
   OPTIONAL { ?h roomify:description ?desc }
