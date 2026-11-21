@@ -1,0 +1,255 @@
+@prefix roomify: <https://roomify.example/ontology#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+roomify:lm-maimun a roomify:Landmark, schema:TouristAttraction ;
+    roomify:name "Istana Maimun" ;
+    roomify:latitude 3.5793 ;
+    roomify:longitude 98.682 ;
+    roomify:address "Jl. Brigjend Katamso, Medan Maimun" ;
+    roomify:category "Museum" ;
+    roomify:landmarkInCity roomify:city-medan ;
+    roomify:rating 4.2 ;
+    roomify:reviewCount 2000 ;
+    roomify:photoUrl "/images/landmarks/lm-maimun.jpg" .
+
+roomify:lm-mashun a roomify:Landmark, schema:TouristAttraction ;
+    roomify:name "Masjid Raya Al-Mashun" ;
+    roomify:latitude 3.5786 ;
+    roomify:longitude 98.6812 ;
+    roomify:address "Jl. Sisingamangaraja, Medan Kota" ;
+    roomify:category "Masjid" ;
+    roomify:landmarkInCity roomify:city-medan ;
+    roomify:rating 4.8 ;
+    roomify:reviewCount 2200 ;
+    roomify:photoUrl "/images/landmarks/lm-mashun.jpg" .
+
+roomify:lm-tjong a roomify:Landmark, schema:TouristAttraction ;
+    roomify:name "Tjong A Fie Mansion" ;
+    roomify:latitude 3.592 ;
+    roomify:longitude 98.6755 ;
+    roomify:address "Jl. Ahmad Yani No. 105, Kesawan" ;
+    roomify:category "Bangunan Bersejarah" ;
+    roomify:landmarkInCity roomify:city-medan ;
+    roomify:rating 4.6 ;
+    roomify:reviewCount 3700 ;
+    roomify:photoUrl "/images/landmarks/lm-tjong.jpg" .
+
+roomify:lm-merdeka a roomify:Landmark, schema:TouristAttraction ;
+    roomify:name "Lapangan Merdeka" ;
+    roomify:latitude 3.5928 ;
+    roomify:longitude 98.6748 ;
+    roomify:address "Jl. Balai Kota, Kesawan" ;
+    roomify:category "KM 0 Medan" ;
+    roomify:landmarkInCity roomify:city-medan ;
+    roomify:photoUrl "/images/landmarks/lm-merdeka.jpg" .
+
+roomify:lm-merdekawalk a roomify:Landmark, schema:TouristAttraction ;
+    roomify:name "Merdeka Walk" ;
+    roomify:latitude 3.5924 ;
+    roomify:longitude 98.6762 ;
+    roomify:address "Jl. Pos No. 1, Medan Barat" ;
+    roomify:category "Taman" ;
+    roomify:landmarkInCity roomify:city-medan ;
+    roomify:rating 4.5 ;
+    roomify:reviewCount 19000 ;
+    roomify:photoUrl "/images/landmarks/lm-merdekawalk.jpg" .
+
+roomify:lm-tirtanadi a roomify:Landmark, schema:TouristAttraction ;
+    roomify:name "Menara Air Tirtanadi" ;
+    roomify:latitude 3.5889 ;
+    roomify:longitude 98.6788 ;
+    roomify:address "Jl. S.M. Raja No. 1, Medan Kota" ;
+    roomify:category "Kolonial 1908" ;
+    roomify:landmarkInCity roomify:city-medan ;
+    roomify:photoUrl "/images/landmarks/lm-tirtanadi.jpg" .
+
+roomify:lm-mariamman a roomify:Landmark, schema:TouristAttraction ;
+    roomify:name "Kuil Shri Mariamman" ;
+    roomify:latitude 3.5896 ;
+    roomify:longitude 98.6784 ;
+    roomify:address "Jl. Teuku Umar, Kampung Madras" ;
+    roomify:category "Pura" ;
+    roomify:landmarkInCity roomify:city-medan ;
+    roomify:rating 4.6 ;
+    roomify:reviewCount 1000 ;
+    roomify:photoUrl "/images/landmarks/lm-mariamman.jpg" .
+
+roomify:lm-velangkanni a roomify:Landmark, schema:TouristAttraction ;
+    roomify:name "Graha Maria Annai Velangkanni" ;
+    roomify:latitude 3.5536 ;
+    roomify:longitude 98.6229 ;
+    roomify:address "Jl. Sakura III, Tanjung Selamat" ;
+    roomify:category "Gereja Katolik" ;
+    roomify:landmarkInCity roomify:city-medan ;
+    roomify:rating 4.8 ;
+    roomify:reviewCount 5000 ;
+    roomify:photoUrl "/images/landmarks/lm-velangkanni.jpg" .
+
+roomify:lm-vihara a roomify:Landmark, schema:TouristAttraction ;
+    roomify:name "Maha Vihara Maitreya" ;
+    roomify:latitude 3.5424 ;
+    roomify:longitude 98.7106 ;
+    roomify:address "Cemara Asri, Medan Estate" ;
+    roomify:category "Vihara Megah" ;
+    roomify:landmarkInCity roomify:city-medan ;
+    roomify:photoUrl "/images/landmarks/lm-vihara.jpg" .
+
+roomify:lm-sunplaza a roomify:Landmark, schema:TouristAttraction ;
+    roomify:name "Sun Plaza Medan" ;
+    roomify:latitude 3.5836 ;
+    roomify:longitude 98.6684 ;
+    roomify:address "Jl. Zainul Arifin, Madras Hulu" ;
+    roomify:category "Mall & Lifestyle" ;
+    roomify:landmarkInCity roomify:city-medan ;
+    roomify:photoUrl "/images/landmarks/lm-sunplaza.jpg" .
+
+roomify:lm-centrepoint a roomify:Landmark, schema:TouristAttraction ;
+    roomify:name "Centre Point Mall" ;
+    roomify:latitude 3.591 ;
+    roomify:longitude 98.6782 ;
+    roomify:address "Jl. Jawa No. 8, Gang Buntu" ;
+    roomify:category "Railink KA" ;
+    roomify:landmarkInCity roomify:city-medan ;
+    roomify:photoUrl "/images/landmarks/lm-centrepoint.jpg" .
+
+roomify:lm-zoo a roomify:Landmark, schema:TouristAttraction ;
+    roomify:name "Medan Zoo" ;
+    roomify:latitude 3.529 ;
+    roomify:longitude 98.722 ;
+    roomify:address "Simalingkar, Medan Tuntungan" ;
+    roomify:category "Wisata Alam" ;
+    roomify:landmarkInCity roomify:city-medan ;
+    roomify:photoUrl "/images/landmarks/lm-zoo.jpg" .
+
+roomify:lm-rahmat a roomify:Landmark, schema:TouristAttraction ;
+    roomify:name "Rahmat Wildlife Museum" ;
+    roomify:latitude 3.5872 ;
+    roomify:longitude 98.665 ;
+    roomify:address "Jl. S. Parman No. 409, Medan" ;
+    roomify:category "Museum" ;
+    roomify:landmarkInCity roomify:city-medan ;
+    roomify:rating 4.6 ;
+    roomify:reviewCount 3000 ;
+    roomify:photoUrl "/images/landmarks/lm-rahmat.jpg" .
+
+roomify:lm-museumsumut a roomify:Landmark, schema:TouristAttraction ;
+    roomify:name "Museum Negeri Sumatera Utara" ;
+    roomify:latitude 3.5787 ;
+    roomify:longitude 98.6874 ;
+    roomify:address "Jl. H.M. Joni, Teladan" ;
+    roomify:category "Museum" ;
+    roomify:landmarkInCity roomify:city-medan ;
+    roomify:rating 4.5 ;
+    roomify:reviewCount 3000 ;
+    roomify:photoUrl "/images/landmarks/lm-museumsumut.jpg" .
+
+roomify:lm-gunungtimur a roomify:Landmark, schema:TouristAttraction ;
+    roomify:name "Vihara Gunung Timur" ;
+    roomify:latitude 3.5878 ;
+    roomify:longitude 98.6798 ;
+    roomify:address "Jl. Hang Tuah, Madras Hulu" ;
+    roomify:category "Vihara" ;
+    roomify:landmarkInCity roomify:city-medan ;
+    roomify:rating 4.7 ;
+    roomify:reviewCount 586 ;
+    roomify:photoUrl "/images/landmarks/lm-gunungtimur.jpg" .
+
+roomify:lm-meriampungtung a roomify:Landmark, schema:TouristAttraction ;
+    roomify:name "Meriam Puntung" ;
+    roomify:latitude 3.5794 ;
+    roomify:longitude 98.6819 ;
+    roomify:address "Kompleks Istana Maimun" ;
+    roomify:category "Museum Pusaka" ;
+    roomify:landmarkInCity roomify:city-medan ;
+    roomify:rating 4.5 ;
+    roomify:reviewCount 110 ;
+    roomify:photoUrl "/images/landmarks/lm-meriampungtung.jpg" .
+
+roomify:lm-sib a roomify:Landmark, schema:TouristAttraction ;
+    roomify:name "Bundaran SIB / Majestik" ;
+    roomify:latitude 3.5905 ;
+    roomify:longitude 98.6772 ;
+    roomify:address "Jl. Balai Kota, Medan Barat" ;
+    roomify:category "Tengara budaya" ;
+    roomify:landmarkInCity roomify:city-medan ;
+    roomify:rating 4.2 ;
+    roomify:reviewCount 424 ;
+    roomify:photoUrl "/images/landmarks/lm-sib.jpg" .
+
+roomify:lm-cadika a roomify:Landmark, schema:TouristAttraction ;
+    roomify:name "Taman Cadika" ;
+    roomify:latitude 3.5661 ;
+    roomify:longitude 98.6633 ;
+    roomify:address "Jl. Karya Wisata, Pangkalan Masyhur" ;
+    roomify:category "Taman" ;
+    roomify:landmarkInCity roomify:city-medan ;
+    roomify:rating 4.4 ;
+    roomify:reviewCount 6000 ;
+    roomify:photoUrl "/images/landmarks/lm-cadika.jpg" .
+
+roomify:lm-alosmani a roomify:Landmark, schema:TouristAttraction ;
+    roomify:name "Masjid Raya Al-Osmani" ;
+    roomify:latitude 3.6607 ;
+    roomify:longitude 98.6743 ;
+    roomify:address "Medan Labuhan" ;
+    roomify:category "Masjid" ;
+    roomify:landmarkInCity roomify:city-medan ;
+    roomify:rating 4.8 ;
+    roomify:reviewCount 1100 ;
+    roomify:photoUrl "/images/landmarks/lm-alosmani.jpg" .
+
+roomify:lm-musperin a roomify:Landmark, schema:TouristAttraction ;
+    roomify:name "Museum Perkebunan Indonesia" ;
+    roomify:latitude 3.5921 ;
+    roomify:longitude 98.6776 ;
+    roomify:address "Jl. Ahmad Yani, Kesawan" ;
+    roomify:category "Museum tempat bersejarah" ;
+    roomify:landmarkInCity roomify:city-medan ;
+    roomify:rating 4.6 ;
+    roomify:reviewCount 529 ;
+    roomify:photoUrl "/images/landmarks/lm-musperin.jpg" .
+
+roomify:lm-posbloc a roomify:Landmark, schema:TouristAttraction ;
+    roomify:name "Pos Bloc Medan" ;
+    roomify:latitude 3.5926 ;
+    roomify:longitude 98.6767 ;
+    roomify:address "Jl. Pos No. 1, Kesawan" ;
+    roomify:category "Tujuan Wisata" ;
+    roomify:landmarkInCity roomify:city-medan ;
+    roomify:rating 4.6 ;
+    roomify:reviewCount 1700 ;
+    roomify:photoUrl "/images/landmarks/lm-posbloc.jpg" .
+
+roomify:lm-buaya a roomify:Landmark, schema:TouristAttraction ;
+    roomify:name "Penangkaran Buaya Asam Kumbang" ;
+    roomify:latitude 3.5397 ;
+    roomify:longitude 98.6386 ;
+    roomify:address "Asam Kumbang, Medan Selayang" ;
+    roomify:category "Kebun Binatang" ;
+    roomify:landmarkInCity roomify:city-medan ;
+    roomify:rating 4.2 ;
+    roomify:reviewCount 2700 ;
+    roomify:photoUrl "/images/landmarks/lm-buaya.jpg" .
+
+roomify:lm-pubbarama a roomify:Landmark, schema:TouristAttraction ;
+    roomify:name "Pubbarama Buddhist Centre" ;
+    roomify:latitude 3.5289 ;
+    roomify:longitude 98.6103 ;
+    roomify:address "Simalingkar, Medan Tuntungan" ;
+    roomify:category "Vihara" ;
+    roomify:landmarkInCity roomify:city-medan ;
+    roomify:rating 4.7 ;
+    roomify:reviewCount 352 ;
+    roomify:photoUrl "/images/landmarks/lm-pubbarama.jpg" .
+
+roomify:lm-titi a roomify:Landmark, schema:TouristAttraction ;
+    roomify:name "Titi Gantung Kesawan" ;
+    roomify:latitude 3.5928 ;
+    roomify:longitude 98.6779 ;
+    roomify:address "Jl. Stasiun, Medan Barat" ;
+    roomify:category "Toko Buku" ;
+    roomify:landmarkInCity roomify:city-medan ;
+    roomify:rating 4.5 ;
+    roomify:reviewCount 190 ;
+    roomify:photoUrl "/images/landmarks/lm-titi.jpg" .

@@ -1,0 +1,36 @@
+=== GIT ===
+10c17fe test
+e7f6928 Update tampilan
+b2204d2 Tambahan
+fc1eaee Maps sama design sama admin dan waktu real time udah ya
+7ceac28 docs: README proyek Roomify
+?? cek.txt
+data-osm
+=== SPARQL: startPrice & ORDER BY ===
+89:            'harga_desc' => 'ORDER BY DESC(?harga)',
+90:            'rating'     => 'ORDER BY DESC(?rating)',
+91:            'nama'       => 'ORDER BY ASC(?nama)',
+92:            default      => 'ORDER BY ASC(?harga)',
+100:  OPTIONAL { ?h roomify:startPrice ?harga }
+=== ROUTE dobel? ===
+0
+=== WIKIDATA versi mana? ===
+10:    protected string $dbpedia  = 'https://dbpedia.org/sparql';
+12:    protected array $cadangan = [
+25:        $data = $this->parse($this->raw($this->dbpedia, $this->qDbpedia($box)));
+26:        if ($data) return $this->src($data, 'dbpedia');
+31:        return $this->src($this->cadangan, 'dbpedia');
+36:        $w = 'PREFIX wd: <http://www.wikidata.org/entity/>
+52:  <http://dbpedia.org/resource/Medan> rdfs:label ?nama ; geo:lat ?lat ; geo:long ?lon .
+55:        $data = $this->parse($this->raw($this->dbpedia, $d));
+56:        if ($data) return $this->src($data, 'dbpedia');
+58:        return $this->src($this->cadangan, 'cadangan');
+70:        return "PREFIX wd: <http://www.wikidata.org/entity/>
+128:            ])->connectTimeout(3)->timeout(5)->get($endpoint, ['query' => $sparql, 'format' => 'json']);
+=== CHATBOT baca apa? ===
+6:use App\Services\FusekiClient;
+16:        protected FusekiClient $fuseki
+296:     * Load hotel dataset via SPARQL Triplestore (FusekiClient).
+333:        $path = base_path('semantic/scrape/hotels_complete.json');
+=== JUMLAH HOTEL ===
+312 hotel
