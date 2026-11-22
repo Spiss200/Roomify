@@ -89,7 +89,7 @@ class SparqlBuilder
             'harga_desc' => 'ORDER BY DESC(?harga)',
             'rating'     => 'ORDER BY DESC(?rating)',
             'nama'       => 'ORDER BY ASC(?nama)',
-            default      => 'ORDER BY ASC(?harga)',
+            default      => 'ORDER BY ASC(COALESCE(?harga, 999999999))',
         };
 
         return "PREFIX roomify: <https://roomify.example/ontology#>

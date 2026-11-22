@@ -28,7 +28,7 @@ class WikidataClient
         $data = $this->parse($this->raw($this->wikidata, $this->qWikidata($box)));
         if ($data) return $this->src($data, 'wikidata');
 
-        return $this->src($this->cadangan, 'dbpedia');
+        return $this->src($this->cadangan, 'cadangan');
     }
 
     public function queryRingan(): array
