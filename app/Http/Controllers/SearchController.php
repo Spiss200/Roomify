@@ -47,6 +47,9 @@ class SearchController extends Controller
         if ($request->filled('star'))       $b->minStar((int) $request->input('star'));
         if ($request->filled('rating'))     $b->minStar((int) $request->input('rating'));
         if ($request->filled('landmark'))   $b->landmark((string) $request->input('landmark'));
+        if ($request->boolean('with_price') || $request->input('has_price') === '1') {
+            $b->onlyWithPrice();
+        }
         foreach ((array) $request->input('facilities', []) as $f) {
             $b->facility('fac-' . \Illuminate\Support\Str::slug($f));
         }
@@ -61,6 +64,20 @@ class SearchController extends Controller
         $lm = $this->grouped("$p SELECT ?id (GROUP_CONCAT(DISTINCT ?n; separator='|') AS ?v) WHERE {
             ?h roomify:nearLandmark ?l . ?l roomify:name ?n .
             BIND(STRAFTER(STR(?h), '#') AS ?id) } GROUP BY ?id");
+
+        // Retrieve all 24 landmarks via SPARQL
+        $landmarks = $this->fuseki->select("$p
+            SELECT ?id ?nama ?lat ?lon ?kat ?foto ?rating ?ulasan WHERE {
+              ?lm a roomify:Landmark ;
+                  roomify:name ?nama ;
+                  roomify:latitude ?lat ;
+                  roomify:longitude ?lon ;
+                  roomify:category ?kat .
+              OPTIONAL { ?lm roomify:photoUrl ?foto }
+              OPTIONAL { ?lm roomify:rating ?rating }
+              OPTIONAL { ?lm roomify:reviewCount ?ulasan }
+              BIND(STRAFTER(STR(?lm), '#') AS ?id)
+            } ORDER BY DESC(?ulasan)");
 
         $userLat = $request->filled('user_lat') ? (float)$request->input('user_lat') : null;
         $userLng = $request->filled('user_lng') ? (float)$request->input('user_lng') : null;
@@ -96,6 +113,7 @@ class SearchController extends Controller
                 'landmarks'  => $lm[$r['id']] ?? [],
                 'jarak_km'   => $distanceKm,
                 'jarak'      => $distFormatted,
+                'dataSource' => $r['dataSource'] ?? (!empty($rawPrice) ? 'google_maps' : 'osm'),
             ];
         }, $rows);
 
@@ -129,7 +147,7 @@ class SearchController extends Controller
             }
         }
 
-        return view('search.index', compact('hotels', 'q', 'query', 'selectedLandmark', 'landmarkInfo', 'userLat', 'userLng', 'sort'));
+        return view('search.index', compact('hotels', 'landmarks', 'q', 'query', 'selectedLandmark', 'landmarkInfo', 'userLat', 'userLng', 'sort'));
     }
 
     protected function extractTermsAndFilters(string $q): array

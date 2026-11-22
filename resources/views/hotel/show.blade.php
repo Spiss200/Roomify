@@ -126,8 +126,8 @@
         .review-card { background:white; border:1px solid #e5e7eb; border-radius:16px; padding:20px; }
 
         /* ── Gradient button ── */
-        .btn-gradient { background:linear-gradient(135deg,#4338ca,#6366f1); color:white; font-weight:700; border-radius:12px; transition:all .2s; }
-        .btn-gradient:hover { background:linear-gradient(135deg,#3730a3,#4f46e5); box-shadow:0 4px 20px rgba(99,102,241,.4); transform:translateY(-1px); }
+        .btn-gradient { background:linear-gradient(135deg,#1d4ed8,#2563eb); color:white; font-weight:700; border-radius:12px; transition:all .2s; }
+        .btn-gradient:hover { background:linear-gradient(135deg,#1e40af,#1d4ed8); box-shadow:0 4px 14px rgba(37,99,235,.35); transform:translateY(-1px); }
 
         /* ── Section header underline ── */
         .section-title { font-size:1.25rem; font-weight:800; color:#1e1b4b; display:flex; align-items:center; gap:8px; margin-bottom:1.25rem; }
@@ -172,68 +172,8 @@
      STICKY TOP BAR: LIVE CLOCK & NAVBAR
 ════════════════════════════════════════════════════════ -->
 <div class="sticky top-0 z-50">
-<x-live-clock-bar />
-<nav class="navbar-glass shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-        <!-- Logo -->
-        <a href="{{ url('/') }}" class="flex items-center gap-2.5 group no-underline">
-            <div class="w-9 h-9 relative transform transition-transform group-hover:scale-105">
-                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow">
-                    <defs>
-                        <linearGradient id="hotel-nb-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#4F46E5"/>
-                            <stop offset="50%" stop-color="#7C3AED"/>
-                            <stop offset="100%" stop-color="#EC4899"/>
-                        </linearGradient>
-                        <linearGradient id="hotel-nb-gold" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#FCD34D"/>
-                            <stop offset="100%" stop-color="#F59E0B"/>
-                        </linearGradient>
-                    </defs>
-                    <rect width="48" height="48" rx="14" fill="url(#hotel-nb-grad)"/>
-                    <rect x="0.75" y="0.75" width="46.5" height="46.5" rx="13.25" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-                    <path d="M12 36V22C12 15.3726 17.3726 10 24 10C30.6274 10 36 15.3726 36 22V36" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
-                    <path d="M18 36V18H25.5C28 18 29.5 19.5 29.5 22C29.5 24.5 28 26 25.5 26H18M24 26L30 36" stroke="#FFFFFF" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M34 11L35.2 13.8L38 15L35.2 16.2L34 19L32.8 16.2L30 15L32.8 13.8L34 11Z" fill="url(#hotel-nb-gold)"/>
-                    <circle cx="24" cy="31" r="1.5" fill="#FCD34D"/>
-                </svg>
-            </div>
-            <div class="leading-tight">
-                <span class="font-black text-xl bg-gradient-to-r from-indigo-700 via-purple-600 to-pink-500 bg-clip-text text-transparent tracking-tight">Roomify</span>
-            </div>
-        </a>
-
-        <!-- Nav links -->
-        <div class="hidden md:flex items-center gap-6">
-            <a href="{{ url('/') }}" class="text-sm font-medium text-slate-600 hover:text-indigo-700 transition">Beranda</a>
-            <a href="{{ url('/search') }}" class="text-sm font-medium text-slate-600 hover:text-indigo-700 transition">Cari Hotel</a>
-            <a href="{{ url('/search') }}" class="text-sm font-medium text-slate-600 hover:text-indigo-700 transition">Landmark Medan</a>
-        </div>
-
-        <!-- Right CTA -->
-        <div class="flex items-center gap-3">
-            <button onclick="toggleTheme()" type="button" class="p-2 rounded-xl text-slate-500 hover:text-slate-700 dark:text-slate-300 dark:hover:text-white bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition" aria-label="Toggle theme">
-                <i class="fa-solid fa-moon hidden dark:inline text-amber-300"></i>
-                <i class="fa-solid fa-sun inline dark:hidden text-amber-500"></i>
-            </button>
-            <a href="{{ url('/search') }}" class="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-700 hover:text-indigo-900 transition">
-                <i class="fa-solid fa-magnifying-glass text-xs"></i> Cari Hotel
-            </a>
-            <button onclick="scrollToBooking()" class="btn-gradient text-sm px-4 py-2 shadow-md hidden sm:block">
-                <i class="fa-solid fa-calendar-check mr-1.5"></i>Pesan Sekarang
-            </button>
-            <!-- Mobile menu -->
-            <button class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100" onclick="document.getElementById('mobile-nav').classList.toggle('hidden')">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </div>
-    </div>
-    <!-- Mobile Nav -->
-    <div id="mobile-nav" class="hidden md:hidden border-t border-slate-100 px-4 py-3 space-y-2">
-        <a href="{{ url('/') }}" class="block text-sm font-medium text-slate-700 py-2">Beranda</a>
-        <a href="{{ url('/search') }}" class="block text-sm font-medium text-slate-700 py-2">Cari Hotel</a>
-    </div>
-</nav>
+    <x-live-clock-bar />
+    <x-navbar active="search" />
 </div>
 
 <!-- Breadcrumb -->
@@ -385,19 +325,38 @@
 
         <!-- Price highlight bar -->
         <div class="mt-5 pt-4 border-t border-slate-100 flex flex-wrap items-baseline gap-3">
-            <div class="flex items-baseline gap-1.5">
-                <span class="text-slate-400 text-sm">Harga mulai:</span>
-                <span class="text-3xl font-black text-indigo-600" property="roomify:startPrice" content="{{ $hotel['startPrice'] ?? 0 }}">
-                    Rp {{ number_format($hotel['startPrice'] ?? 0, 0, ',', '.') }}
+            @if(!empty($hotel['startPrice']) && (int)$hotel['startPrice'] > 0)
+                <div class="flex items-baseline gap-1.5">
+                    <span class="text-slate-400 text-sm">Harga mulai:</span>
+                    <span class="text-3xl font-black text-indigo-600" property="roomify:startPrice" content="{{ $hotel['startPrice'] }}">
+                        Rp {{ number_format($hotel['startPrice'], 0, ',', '.') }}
+                    </span>
+                    <span class="text-slate-400 text-xs font-medium">/ malam</span>
+                </div>
+                <span class="text-xs text-emerald-600 bg-emerald-50 border border-emerald-200 px-2 py-1 rounded-full font-semibold">
+                    <span class="pulse-dot inline-block w-1.5 h-1.5 bg-emerald-500 rounded-full mr-1"></span>Tersedia
                 </span>
-                <span class="text-slate-400 text-xs font-medium">/ malam</span>
-            </div>
-            <span class="text-xs text-emerald-600 bg-emerald-50 border border-emerald-200 px-2 py-1 rounded-full font-semibold">
-                <span class="pulse-dot inline-block w-1.5 h-1.5 bg-emerald-500 rounded-full mr-1"></span>Tersedia
-            </span>
-            <button onclick="scrollToBooking()" class="ml-auto btn-gradient text-sm px-5 py-2.5 shadow-md">
-                <i class="fa-solid fa-calendar-check mr-1.5"></i>Pesan Sekarang
-            </button>
+                @if(!empty($hotel['kamar']))
+                <button onclick="scrollToBooking()" class="ml-auto btn-gradient text-sm px-5 py-2.5 shadow-md">
+                    <i class="fa-solid fa-calendar-check mr-1.5"></i>Pesan Sekarang
+                </button>
+                @else
+                <button disabled class="ml-auto bg-slate-200 text-slate-400 text-xs font-bold px-4 py-2.5 rounded-xl cursor-not-allowed">
+                    Kamar Belum Tersedia
+                </button>
+                @endif
+            @else
+                <div>
+                    <span class="text-slate-400 text-[10px] block uppercase font-semibold">Tarif Kamar</span>
+                    <span class="text-base font-bold text-slate-700">Harga belum tersedia</span>
+                </div>
+                <span class="text-xs text-sky-700 bg-sky-50 border border-sky-200 px-2.5 py-1 rounded-full font-semibold">
+                    Sumber OpenStreetMap
+                </span>
+                <button disabled class="ml-auto bg-slate-200 text-slate-400 text-xs font-bold px-4 py-2.5 rounded-xl cursor-not-allowed">
+                    Pemesanan Online Belum Tersedia
+                </button>
+            @endif
         </div>
     </div>
 
@@ -530,10 +489,10 @@
                 </div>
 
                 <!-- ── LIVE ROUTE & DIRECTIONS CONTROLS ── -->
-                <div class="mb-4 p-4 rounded-2xl bg-gradient-to-r from-indigo-50/70 via-purple-50/50 to-slate-50 border border-indigo-100">
+                <div class="mb-4 p-4 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-purple-600 text-white flex items-center justify-center text-sm shadow-md shrink-0">
+                            <div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center text-sm shadow-sm shrink-0">
                                 <i class="fa-solid fa-route"></i>
                             </div>
                             <div>
@@ -864,53 +823,151 @@
 </main>
 
 <!-- ══════════════════════════════════════════════════════
-     RDFa METADATA MODAL (preserved from original)
+     RDF METADATA MODAL (RDFa, JSON-LD, Turtle, SPARQL)
 ════════════════════════════════════════════════════════ -->
 <div id="rdf-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl border border-slate-200 space-y-4 relative">
+    <div class="bg-white dark:bg-slate-900 rounded-3xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 dark:border-slate-800 space-y-5 relative max-h-[90vh] flex flex-col">
 
         <!-- Header Modal -->
-        <div class="flex justify-between items-center border-b border-slate-100 pb-3">
+        <div class="flex justify-between items-center border-b border-slate-100 dark:border-slate-800 pb-3">
             <div>
-                <h3 class="font-bold text-slate-900 text-lg">Metadata Ontologi Semantik</h3>
-                <p class="text-xs text-slate-500">Pemetaan Entitas RDFa & Namespace (.ttl)</p>
+                <h3 class="font-black text-slate-900 dark:text-white text-lg flex items-center gap-2">
+                    <i class="fa-solid fa-code text-blue-500"></i>
+                    Metadata Semantik & RDF Triples
+                </h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Representasi ontologi formal properti {{ $hotel['nama'] ?? 'Hotel' }}</p>
             </div>
-            <button onclick="document.getElementById('rdf-modal').classList.add('hidden')" class="text-slate-400 hover:text-slate-600 font-bold text-xl">&times;</button>
+            <button onclick="document.getElementById('rdf-modal').classList.add('hidden')" class="text-slate-400 hover:text-slate-600 dark:hover:text-white font-bold text-2xl leading-none">&times;</button>
         </div>
 
-        <!-- Tabel Namespace Semantik -->
-        <div>
-            <h4 class="text-xs font-bold uppercase text-slate-400 mb-2">Namespace yang Digunakan</h4>
-            <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs font-mono space-y-1 text-slate-600">
-                <p><span class="text-blue-600 font-bold">roomify:</span> http://roomify.example.org/ontology#</p>
-                <p><span class="text-blue-600 font-bold">schema:</span> https://schema.org/</p>
-                <p><span class="text-blue-600 font-bold">rdfs:</span> http://www.w3.org/2000/01/rdf-schema#</p>
-            </div>
+        <!-- 4 Format Tabs -->
+        <div class="flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-2 overflow-x-auto text-xs">
+            <button onclick="switchMetaTab('jsonld')" id="tab-meta-jsonld" class="px-4 py-2 rounded-xl font-bold bg-blue-600 text-white transition">JSON-LD</button>
+            <button onclick="switchMetaTab('turtle')" id="tab-meta-turtle" class="px-4 py-2 rounded-xl font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">Turtle (.ttl)</button>
+            <button onclick="switchMetaTab('rdfa')" id="tab-meta-rdfa" class="px-4 py-2 rounded-xl font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">RDFa (HTML)</button>
+            <button onclick="switchMetaTab('sparql')" id="tab-meta-sparql" class="px-4 py-2 rounded-xl font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">SPARQL Query</button>
         </div>
 
-        <!-- Raw Data Snippet (JSON-LD / Turtle Format) -->
-        <div>
-            <h4 class="text-xs font-bold uppercase text-slate-400 mb-2">Struktur Graf Entitas (JSON-LD)</h4>
-            <pre class="bg-slate-900 text-emerald-400 p-4 rounded-xl text-xs overflow-x-auto font-mono max-h-60 leading-relaxed">
-{
-"@@context": {
-    "roomify": "http://roomify.example.org/ontology#",
+        <!-- Tab 1: JSON-LD -->
+        <div id="meta-panel-jsonld" class="meta-panel flex-1 overflow-hidden flex flex-col">
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+                <span>Schema.org + Roomify Ontology Linked Data</span>
+                <div class="flex gap-2">
+                    <button onclick="copySnippet('code-jsonld')" class="hover:text-blue-500"><i class="fa-regular fa-copy"></i> Salin</button>
+                    <button onclick="downloadSnippet('code-jsonld', 'hotel-{{ $id }}.json', 'application/ld+json')" class="hover:text-blue-500"><i class="fa-solid fa-download"></i> Unduh</button>
+                </div>
+            </div>
+            <pre id="code-jsonld" class="bg-slate-900 text-emerald-400 p-4 rounded-2xl text-xs overflow-auto font-mono flex-1 leading-relaxed border border-slate-800">{
+  "@@context": {
+    "roomify": "https://roomify.example/ontology#",
     "schema": "https://schema.org/",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
-},
-"@id": "http://roomify.example.org/ontology#{{ $id ?? 1 }}",
-"@type": ["schema:Hotel", "roomify:Hotel"],
-"rdfs:label": "{{ $hotel['nama'] ?? 'Hotel' }}",
-"roomify:address": "{{ $hotel['alamat'] ?? '' }}",
-"roomify:starRating": {{ $hotel['starRating'] ?? 5 }},
-"roomify:startPrice": {{ $hotel['startPrice'] ?? 0 }}
-}
-            </pre>
+  },
+  "@id": "https://roomify.example/ontology#{{ $id }}",
+  "@type": ["schema:Hotel", "roomify:Hotel"],
+  "schema:name": "{{ addslashes($hotel['nama'] ?? '') }}",
+  "schema:address": "{{ addslashes($hotel['alamat'] ?? '') }}",
+  "roomify:dataSource": "{{ $hotel['dataSource'] ?? 'google_maps' }}",
+  @if(!empty($hotel['startPrice']))"roomify:startPrice": {{ $hotel['startPrice'] }},@endif
+  @if(!empty($hotel['starRating']))"roomify:starRating": {{ $hotel['starRating'] }},@endif
+  @if(!empty($hotel['rating']))"roomify:rating": {{ $hotel['rating'] }},@endif
+  "schema:geo": {
+    "@type": "schema:GeoCoordinates",
+    "schema:latitude": {{ $hotel['latitude'] ?? 3.5952 }},
+    "schema:longitude": {{ $hotel['longitude'] ?? 98.6722 }}
+  },
+  "schema:amenityFeature": [
+    @foreach(array_slice($hotel['fasilitas'] ?? [], 0, 8) as $fi => $f)
+    "{{ addslashes($f) }}"{{ $fi < count(array_slice($hotel['fasilitas'] ?? [], 0, 8)) - 1 ? ',' : '' }}
+    @endforeach
+  ]
+}</pre>
+        </div>
+
+        <!-- Tab 2: Turtle -->
+        <div id="meta-panel-turtle" class="meta-panel hidden flex-1 overflow-hidden flex flex-col">
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+                <span>W3C Turtle Triples RDF</span>
+                <div class="flex gap-2">
+                    <button onclick="copySnippet('code-turtle')" class="hover:text-blue-500"><i class="fa-regular fa-copy"></i> Salin</button>
+                    <button onclick="downloadSnippet('code-turtle', 'hotel-{{ $id }}.ttl', 'text/turtle')" class="hover:text-blue-500"><i class="fa-solid fa-download"></i> Unduh</button>
+                </div>
+            </div>
+            <pre id="code-turtle" class="bg-slate-900 text-sky-300 p-4 rounded-2xl text-xs overflow-auto font-mono flex-1 leading-relaxed border border-slate-800">@prefix roomify: &lt;https://roomify.example/ontology#&gt; .
+@prefix schema: &lt;https://schema.org/&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+
+roomify:{{ $id }} a roomify:Hotel, schema:Hotel ;
+    roomify:name "{{ addslashes($hotel['nama'] ?? '') }}" ;
+    roomify:address "{{ addslashes($hotel['alamat'] ?? '') }}" ;
+    roomify:dataSource "{{ $hotel['dataSource'] ?? 'google_maps' }}" ;
+    @if(!empty($hotel['startPrice']))roomify:startPrice {{ $hotel['startPrice'] }} ;@endif
+    @if(!empty($hotel['starRating']))roomify:starRating {{ $hotel['starRating'] }} ;@endif
+    @if(!empty($hotel['rating']))roomify:rating {{ $hotel['rating'] }} ;@endif
+    roomify:latitude {{ $hotel['latitude'] ?? 3.5952 }} ;
+    roomify:longitude {{ $hotel['longitude'] ?? 98.6722 }} .</pre>
+        </div>
+
+        <!-- Tab 3: RDFa -->
+        <div id="meta-panel-rdfa" class="meta-panel hidden flex-1 overflow-hidden flex flex-col">
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+                <span>Snippet HTML5 + RDFa Markup</span>
+                <div class="flex gap-2">
+                    <button onclick="copySnippet('code-rdfa')" class="hover:text-blue-500"><i class="fa-regular fa-copy"></i> Salin</button>
+                    <button onclick="downloadSnippet('code-rdfa', 'hotel-{{ $id }}.html', 'text/html')" class="hover:text-blue-500"><i class="fa-solid fa-download"></i> Unduh</button>
+                </div>
+            </div>
+            <pre id="code-rdfa" class="bg-slate-900 text-amber-300 p-4 rounded-2xl text-xs overflow-auto font-mono flex-1 leading-relaxed border border-slate-800">&lt;div typeof="roomify:Hotel schema:Hotel" about="https://roomify.example/ontology#{{ $id }}"&gt;
+  &lt;h1 property="schema:name roomify:name"&gt;{{ $hotel['nama'] ?? '' }}&lt;/h1&gt;
+  &lt;p property="schema:address roomify:address"&gt;{{ $hotel['alamat'] ?? '' }}&lt;/p&gt;
+  &lt;span property="roomify:dataSource" content="{{ $hotel['dataSource'] ?? 'google_maps' }}"&gt;&lt;/span&gt;
+  @if(!empty($hotel['startPrice']))
+  &lt;span property="roomify:startPrice" content="{{ $hotel['startPrice'] }}"&gt;Rp {{ number_format($hotel['startPrice'], 0, ',', '.') }}&lt;/span&gt;
+  @endif
+  @if(!empty($hotel['starRating']))
+  &lt;span property="roomify:starRating schema:starRating"&gt;{{ $hotel['starRating'] }}&lt;/span&gt;
+  @endif
+  &lt;div property="schema:geo" typeof="schema:GeoCoordinates"&gt;
+    &lt;meta property="schema:latitude" content="{{ $hotel['latitude'] ?? 3.5952 }}" /&gt;
+    &lt;meta property="schema:longitude" content="{{ $hotel['longitude'] ?? 98.6722 }}" /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+        </div>
+
+        <!-- Tab 4: SPARQL -->
+        <div id="meta-panel-sparql" class="meta-panel hidden flex-1 overflow-hidden flex flex-col">
+            <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+                <span>SPARQL Query yang Digunakan</span>
+                <div class="flex gap-2">
+                    <button onclick="copySnippet('code-sparql')" class="hover:text-blue-500"><i class="fa-regular fa-copy"></i> Salin</button>
+                    <button onclick="downloadSnippet('code-sparql', 'hotel-{{ $id }}.sparql', 'application/sparql-query')" class="hover:text-blue-500"><i class="fa-solid fa-download"></i> Unduh</button>
+                </div>
+            </div>
+            <pre id="code-sparql" class="bg-slate-900 text-indigo-300 p-4 rounded-2xl text-xs overflow-auto font-mono flex-1 leading-relaxed border border-slate-800">PREFIX roomify: &lt;https://roomify.example/ontology#&gt;
+
+SELECT ?nama ?alamat ?deskripsi ?bintang ?rating ?jumlahReview ?harga ?lat ?lon ?foto ?dataSource WHERE {
+  roomify:{{ $id }} a roomify:Hotel ;
+    roomify:name ?nama ;
+    roomify:address ?alamat .
+  OPTIONAL { roomify:{{ $id }} roomify:dataSource ?dataSource }
+  OPTIONAL { roomify:{{ $id }} roomify:startPrice ?harga }
+  OPTIONAL { roomify:{{ $id }} roomify:description ?deskripsi }
+  OPTIONAL { roomify:{{ $id }} roomify:starRating ?bintang }
+  OPTIONAL { roomify:{{ $id }} roomify:rating ?rating }
+  OPTIONAL { roomify:{{ $id }} roomify:reviewCount ?jumlahReview }
+  OPTIONAL { roomify:{{ $id }} roomify:latitude ?lat }
+  OPTIONAL { roomify:{{ $id }} roomify:longitude ?lon }
+  OPTIONAL { roomify:{{ $id }} roomify:hasPhoto ?ph . ?ph roomify:photoUrl ?foto }
+} LIMIT 1</pre>
         </div>
 
         <!-- Footer Modal -->
-        <div class="text-right pt-2">
-            <button onclick="document.getElementById('rdf-modal').classList.add('hidden')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs px-4 py-2 rounded-lg transition">
+        <div class="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-800">
+            <a href="{{ url('/semantik') }}" class="text-xs font-bold text-blue-600 hover:underline">
+                Buka SPARQL Playground & Ontologi Lengkap &rarr;
+            </a>
+            <button onclick="document.getElementById('rdf-modal').classList.add('hidden')" class="bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs px-5 py-2.5 rounded-xl transition">
                 Tutup
             </button>
         </div>
@@ -1323,9 +1380,96 @@
 
     // ── Init on load ──
     document.addEventListener('DOMContentLoaded', () => {
-        // Pre-fill dates from query string if any
+        // Fetch SPARQL Eksternal via vanilla JS
+        const hotelId = "{{ $id }}";
+
+        if (hotelId) {
+            fetch(`/api/landmark-eksternal/${encodeURIComponent(hotelId)}`)
+                .then(res => res.json())
+                .then(data => {
+                    const badge = document.getElementById('ext-source-badge');
+                    const endpointText = document.getElementById('ext-endpoint-text');
+                    const listContainer = document.getElementById('ext-landmarks-list');
+                    const loadingEl = document.getElementById('ext-loading');
+
+                    if (loadingEl) loadingEl.style.display = 'none';
+
+                    if (badge && data.sumber) {
+                        badge.textContent = data.sumber;
+                        if (data.sumber === 'local-fuseki') {
+                            badge.className = 'px-3 py-1 rounded-md text-xs font-semibold bg-amber-50 text-amber-800 border border-amber-200';
+                        } else {
+                            badge.className = 'px-3 py-1 rounded-md text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200';
+                        }
+                    }
+
+                    if (endpointText && data.endpoint) {
+                        endpointText.textContent = data.endpoint;
+                    }
+
+                    if (listContainer && data.items && data.items.length > 0) {
+                        listContainer.innerHTML = data.items.map(item => `
+                            <div class="p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/60 flex items-center justify-between gap-3">
+                                <div class="min-w-0">
+                                    <h4 class="font-bold text-sm text-slate-900 dark:text-white truncate">${item.nama}</h4>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                                        Koordinat: ${item.lat.toFixed(4)}, ${item.lon.toFixed(4)}
+                                    </p>
+                                </div>
+                                <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-indigo-50 dark:bg-indigo-950/70 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 shrink-0">
+                                    ${item.jarak}
+                                </span>
+                            </div>
+                        `).join('');
+                    } else if (listContainer) {
+                        listContainer.innerHTML = '<p class="text-xs text-slate-400 py-3 text-center">Tidak ada landmark eksternal dalam radius pencarian.</p>';
+                    }
+                })
+                .catch(() => {
+                    const loadingEl = document.getElementById('ext-loading');
+                    if (loadingEl) {
+                        loadingEl.textContent = 'Gagal memuat landmark eksternal.';
+                    }
+                });
+        }
     });
 </script>
+
+<!-- ══════════════════════════════════════════════════════
+     SECTION: LANDMARK SEKITAR (SPARQL EKSTERNAL)
+════════════════════════════════════════════════════════ -->
+<section id="section-landmark-eksternal" class="max-w-7xl mx-auto px-4 sm:px-6 mb-12">
+    <div class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 mb-4 border-b border-slate-100 dark:border-slate-700">
+            <div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                    <i class="fa-solid fa-network-wired text-indigo-600 dark:text-indigo-400"></i>
+                    <span>Landmark Sekitar (SPARQL Eksternal)</span>
+                </h3>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                    Titik penting di sekitar hotel dikueri langsung via SPARQL federasi dari basis pengetahuan web semantik.
+                </p>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-xs text-slate-500 dark:text-slate-400">Sumber:</span>
+                <span id="ext-source-badge" class="px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">
+                    Memuat...
+                </span>
+            </div>
+        </div>
+
+        <div class="text-[11px] font-mono text-slate-400 mb-4 truncate">
+            Endpoint: <span id="ext-endpoint-text" class="text-slate-600 dark:text-slate-300">Menghubungkan...</span>
+        </div>
+
+        <div id="ext-loading" class="text-xs text-slate-400 py-4 text-center">
+            <i class="fa-solid fa-spinner fa-spin mr-1.5 text-indigo-500"></i>
+            Mengambil data landmark dari SPARQL endpoint...
+        </div>
+
+        <div id="ext-landmarks-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3"></div>
+    </div>
+</section>
 
 <x-ai-chat-widget />
 

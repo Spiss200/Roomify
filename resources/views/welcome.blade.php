@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roomify – Pesan Hotel Nyaman & Murah di Kota Medan</title>
-    <meta name="description" content="Temukan 187+ hotel terbaik di Medan dekat landmark populer seperti Istana Maimun, Sun Plaza, dan Stasiun Kereta Api. Garansi harga hemat, check-in instan, dan navigasi Google Maps.">
+    <meta name="description" content="Temukan 312 hotel terbaik di Medan dekat landmark populer seperti Istana Maimun, Sun Plaza, dan Stasiun Kereta Api. Garansi harga hemat, check-in instan, dan navigasi Google Maps.">
 
     <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
     <link rel="alternate icon" href="{{ asset('favicon.ico') }}">
@@ -159,7 +159,7 @@
 
         /* ─── Gradients & Typography ─── */
         .text-gradient {
-            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #ec4899 100%);
+            background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -171,14 +171,14 @@
         }
 
         .btn-gradient {
-            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #ec4899 100%);
-            box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+            box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.25);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .btn-gradient:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 16px 32px -5px rgba(99, 102, 241, 0.6);
-            filter: brightness(1.08);
+            background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px 0 rgba(37, 99, 235, 0.35);
         }
 
         /* ─── Landmark Card ─── */
@@ -272,10 +272,10 @@
         }
         .fac-chip input { display: none; }
         .fac-chip.active {
-            background: linear-gradient(135deg, #4f46e5, #7c3aed) !important;
-            border-color: #818cf8 !important;
+            background: #2563eb !important;
+            border-color: #2563eb !important;
             color: #ffffff !important;
-            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
         }
 
         /* ─── Autocomplete Dropdown ─── */
@@ -328,116 +328,13 @@
 ═══════════════════════════════════════════════════════════ --}}
 <div class="fixed top-0 left-0 right-0 z-50">
     <x-live-clock-bar />
-    <header class="glass-nav transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-
-                {{-- BRAND LOGO --}}
-                <a href="{{ url('/') }}" class="flex items-center gap-3 group no-underline">
-                    <div class="w-11 h-11 relative transform transition-transform duration-300 group-hover:scale-105">
-                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-lg">
-                            <defs>
-                                <linearGradient id="nb-bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#4F46E5"/>
-                                    <stop offset="50%" stop-color="#7C3AED"/>
-                                    <stop offset="100%" stop-color="#EC4899"/>
-                                </linearGradient>
-                                <linearGradient id="nb-gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#FCD34D"/>
-                                    <stop offset="100%" stop-color="#F59E0B"/>
-                                </linearGradient>
-                            </defs>
-                            <rect width="48" height="48" rx="14" fill="url(#nb-bg-grad)"/>
-                            <rect x="0.75" y="0.75" width="46.5" height="46.5" rx="13.25" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-                            <path d="M12 36V22C12 15.3726 17.3726 10 24 10C30.6274 10 36 15.3726 36 22V36" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
-                            <path d="M18 36V18H25.5C28 18 29.5 19.5 29.5 22C29.5 24.5 28 26 25.5 26H18M24 26L30 36" stroke="#FFFFFF" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M34 11L35.2 13.8L38 15L35.2 16.2L34 19L32.8 16.2L30 15L32.8 13.8L34 11Z" fill="url(#nb-gold-grad)"/>
-                            <circle cx="24" cy="31" r="1.5" fill="#FCD34D"/>
-                        </svg>
-                    </div>
-                    <div class="flex flex-col">
-                        <div class="flex items-center gap-2">
-                            <span class="text-2xl font-black tracking-tight text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-200 transition">
-                                Roomify
-                            </span>
-                        </div>
-                        <span class="text-[10px] font-semibold text-slate-500 dark:text-slate-400 tracking-wider uppercase">Pemesanan Hotel Medan</span>
-                    </div>
-                </a>
-
-                {{-- NAV LINKS --}}
-                <nav class="hidden md:flex items-center gap-1 bg-slate-100/90 dark:bg-white/5 p-1.5 rounded-2xl border border-slate-200/80 dark:border-white/10 backdrop-blur-md">
-                    <a href="#destinasi" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-white/10 transition">
-                        <i class="fa-solid fa-map-location-dot mr-1.5 text-indigo-500"></i>Landmark Medan
-                    </a>
-                    <a href="{{ url('/search') }}" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-white/10 transition">
-                        <i class="fa-solid fa-magnifying-glass mr-1.5 text-indigo-500"></i>Cari Hotel
-                    </a>
-                    <a href="#hotel-pilihan" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-white/10 transition">
-                        <i class="fa-solid fa-hotel mr-1.5 text-indigo-500"></i>Hotel Pilihan
-                    </a>
-                    <a href="#keunggulan" class="px-4 py-2 rounded-xl text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-white/10 transition">
-                        <i class="fa-solid fa-shield-halved mr-1.5 text-indigo-500"></i>Keunggulan
-                    </a>
-                </nav>
-
-                {{-- ACTION BUTTONS --}}
-                <div class="flex items-center gap-3">
-                    <button onclick="toggleTheme()" type="button" class="p-2.5 rounded-xl text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white bg-slate-100 hover:bg-slate-200 dark:bg-white/10 dark:hover:bg-white/20 border border-slate-200 dark:border-white/10 transition" aria-label="Toggle theme">
-                        <i class="fa-solid fa-moon hidden dark:inline text-amber-300"></i>
-                        <i class="fa-solid fa-sun inline dark:hidden text-amber-500"></i>
-                    </button>
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-white/5 transition flex items-center gap-2">
-                            <i class="fa-solid fa-user-circle text-indigo-500 text-lg"></i>
-                            <span class="hidden sm:inline">{{ Auth::user()->name }}</span>
-                        </a>
-                        <a href="{{ url('/search') }}" class="btn-gradient text-white text-sm font-bold px-5 py-2.5 rounded-xl flex items-center gap-2">
-                            <i class="fa-solid fa-compass"></i>
-                            <span>Jelajahi</span>
-                        </a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white px-4 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-white/10 transition hidden sm:inline-flex items-center gap-1.5">
-                            <i class="fa-solid fa-right-to-bracket text-indigo-500"></i> Masuk
-                        </a>
-                        <a href="{{ route('register') }}" class="btn-gradient text-white text-sm font-bold px-5 py-2.5 rounded-xl flex items-center gap-1.5">
-                            <i class="fa-solid fa-user-plus"></i> Daftar
-                        </a>
-                    @endauth
-                    <!-- Mobile menu toggle -->
-                    <button type="button" class="md:hidden p-2 rounded-xl text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 transition" onclick="document.getElementById('mobile-nav-welcome').classList.toggle('hidden')">
-                        <i class="fa-solid fa-bars text-lg"></i>
-                    </button>
-                </div>
-
-            </div>
-        </div>
-        <!-- Mobile dropdown menu -->
-        <div id="mobile-nav-welcome" class="hidden md:hidden px-4 py-3 bg-white/95 dark:bg-slate-900/95 border-b border-slate-200 dark:border-white/10 space-y-2 backdrop-blur-xl shadow-lg">
-            <a href="{{ url('/search') }}" class="block px-3 py-2 rounded-xl text-sm font-bold text-indigo-600 dark:text-white bg-indigo-50 dark:bg-indigo-600/30 border border-indigo-200 dark:border-indigo-500/40">
-                <i class="fa-solid fa-hotel mr-2 text-indigo-500"></i>Cari Seluruh 187 Hotel
-            </a>
-            <a href="#destinasi" class="block px-3 py-2 rounded-xl text-sm text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white">
-                <i class="fa-solid fa-map-location-dot mr-2 text-indigo-500"></i>13 Landmark Medan
-            </a>
-            <a href="#hotel-pilihan" class="block px-3 py-2 rounded-xl text-sm text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white">
-                <i class="fa-solid fa-star mr-2 text-amber-500"></i>Hotel Pilihan
-            </a>
-            <a href="#keunggulan" class="block px-3 py-2 rounded-xl text-sm text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white">
-                <i class="fa-solid fa-shield-halved mr-2 text-indigo-500"></i>Keunggulan Roomify
-            </a>
-        </div>
-    </header>
+    <x-navbar active="home" />
 </div>
 
 {{-- ═══════════════════════════════════════════════════════════
      HERO SECTION WITH GLOWING MESH & COMPREHENSIVE SEARCH
 ═══════════════════════════════════════════════════════════ --}}
-<section class="hero-mesh pt-44 pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-[92vh] flex items-center">
-    <!-- Ambient Glowing Orbs -->
-    <div class="absolute top-1/4 left-10 w-96 h-96 bg-indigo-500/15 dark:bg-indigo-600/20 rounded-full blur-3xl pointer-events-none animate-pulse-glow"></div>
-    <div class="absolute bottom-10 right-10 w-96 h-96 bg-purple-500/15 dark:bg-purple-600/20 rounded-full blur-3xl pointer-events-none animate-pulse-glow" style="animation-delay: 2s;"></div>
-
+<section class="hero-mesh pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-[85vh] flex items-center">
     <div class="max-w-7xl mx-auto w-full relative z-10">
 
         <!-- Hero Header -->
@@ -460,11 +357,11 @@
         <!-- Live Stats Floating Badges -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-10">
             <div class="glass-card rounded-2xl p-4 text-center transform transition-transform hover:-translate-y-1">
-                <div class="text-2xl sm:text-3xl font-black text-indigo-600 dark:text-indigo-400">187+</div>
-                <div class="text-xs text-slate-600 dark:text-slate-300 font-semibold uppercase tracking-wider mt-1">Hotel Pilihan</div>
+                <div class="text-2xl sm:text-3xl font-black text-indigo-600 dark:text-indigo-400">312</div>
+                <div class="text-xs text-slate-600 dark:text-slate-300 font-semibold uppercase tracking-wider mt-1">Hotel Terdaftar</div>
             </div>
             <div class="glass-card rounded-2xl p-4 text-center transform transition-transform hover:-translate-y-1">
-                <div class="text-2xl sm:text-3xl font-black text-purple-600 dark:text-purple-400">13</div>
+                <div class="text-2xl sm:text-3xl font-black text-slate-800 dark:text-slate-200">24</div>
                 <div class="text-xs text-slate-600 dark:text-slate-300 font-semibold uppercase tracking-wider mt-1">Landmark Ikonik</div>
             </div>
             <div class="glass-card rounded-2xl p-4 text-center transform transition-transform hover:-translate-y-1">
@@ -501,27 +398,19 @@
                         <div id="suggest-box"></div>
                     </div>
 
-                    <!-- Landmark Dropdown (All 13 Iconic Landmarks) -->
+                    <!-- Landmark Dropdown (All 24 Iconic Landmarks) -->
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-2">
                             <i class="fa-solid fa-landmark text-indigo-500 dark:text-indigo-400 mr-1.5"></i> Dekat Landmark Medan
                         </label>
                         <div class="relative">
                             <select name="landmark" class="search-input pl-11 appearance-none cursor-pointer">
-                                <option value="">Semua Landmark Medan</option>
-                                <option value="Istana Maimun" {{ request('landmark') == 'Istana Maimun' ? 'selected' : '' }}>🏛️ Istana Maimun (Medan Maimun)</option>
-                                <option value="Tjong A Fie Mansion" {{ request('landmark') == 'Tjong A Fie Mansion' ? 'selected' : '' }}>🏮 Tjong A Fie Mansion (Kesawan)</option>
-                                <option value="Masjid Raya Al Mashun" {{ request('landmark') == 'Masjid Raya Al Mashun' ? 'selected' : '' }}>🕌 Masjid Raya Al-Mashun (Medan Kota)</option>
-                                <option value="Lapangan Merdeka" {{ request('landmark') == 'Lapangan Merdeka' ? 'selected' : '' }}>🌳 Lapangan Merdeka & KM 0</option>
-                                <option value="Graha Maria Annai Velangkanni" {{ request('landmark') == 'Graha Maria Annai Velangkanni' ? 'selected' : '' }}>⛪ Graha Maria Annai Velangkanni</option>
-                                <option value="Sun Plaza" {{ request('landmark') == 'Sun Plaza' ? 'selected' : '' }}>🛍️ Sun Plaza Medan (Petisah)</option>
-                                <option value="Maha Vihara Maitreya" {{ request('landmark') == 'Maha Vihara Maitreya' ? 'selected' : '' }}>🪷 Maha Vihara Maitreya (Cemara Asri)</option>
-                                <option value="Museum Rahmat" {{ request('landmark') == 'Museum Rahmat' ? 'selected' : '' }}>🦁 Museum Rahmat International Gallery</option>
-                                <option value="Merdeka Walk" {{ request('landmark') == 'Merdeka Walk' ? 'selected' : '' }}>🍜 Merdeka Walk & Kesawan Heritage</option>
-                                <option value="Menara Air Tirtanadi" {{ request('landmark') == 'Menara Air Tirtanadi' ? 'selected' : '' }}>🗼 Menara Air Tirtanadi 1908</option>
-                                <option value="Centre Point Mall" {{ request('landmark') == 'Centre Point Mall' ? 'selected' : '' }}>🚆 Centre Point Mall & Stasiun KAI</option>
-                                <option value="Kebun Binatang Medan" {{ request('landmark') == 'Kebun Binatang Medan' ? 'selected' : '' }}>🐯 Medan Zoo (Simalingkar)</option>
-                                <option value="Kuil Shri Mariamman" {{ request('landmark') == 'Kuil Shri Mariamman' ? 'selected' : '' }}>🕉️ Kuil Shri Mariamman (Kampung Madras)</option>
+                                <option value="">Semua Landmark Medan (24 Lokasi)</option>
+                                @foreach($landmarks ?? [] as $lm)
+                                    <option value="{{ $lm['nama'] }}" {{ request('landmark') == $lm['nama'] ? 'selected' : '' }}>
+                                        📍 {{ $lm['nama'] }} ({{ $lm['kat'] ?? 'Landmark' }})
+                                    </option>
+                                @endforeach
                             </select>
                             <i class="fa-solid fa-location-dot absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
                             <i class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-xs pointer-events-none"></i>
@@ -635,316 +524,59 @@
             </p>
         </div>
 
-        <!-- Landmarks Grid (13 Cards) -->
+        <!-- Landmarks Grid (24 Cards) -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            @foreach($landmarks ?? [] as $lm)
+            <div class="landmark-card group flex flex-col justify-between">
+                <div>
+                    <a href="{{ route('landmark.show', ['id' => $lm['id']]) }}" class="block landmark-img-wrap relative">
+                        <img src="{{ asset($lm['foto'] ?? 'images/placeholder.svg') }}"
+                             alt="{{ $lm['nama'] }}"
+                             loading="lazy"
+                             onerror="this.src='{{ asset('images/placeholder.svg') }}'">
+                        <span class="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-slate-900/80 text-white backdrop-blur-md">
+                            <i class="fa-solid fa-landmark text-amber-400 mr-1"></i> {{ $lm['kat'] ?? 'Landmark' }}
+                        </span>
+                    </a>
+                    <div class="p-5 pb-3">
+                        <div class="flex items-center justify-between gap-2 mb-1.5">
+                            <h3 class="font-extrabold text-slate-900 dark:text-white text-base group-hover:text-blue-600 dark:group-hover:text-blue-400 transition line-clamp-1">
+                                <a href="{{ route('landmark.show', ['id' => $lm['id']]) }}">
+                                    {{ $lm['nama'] }}
+                                </a>
+                            </h3>
+                            @if(!empty($lm['rating']))
+                            <span class="inline-flex items-center gap-1 text-[11px] font-bold text-amber-600 bg-amber-50 dark:bg-amber-950/60 px-2 py-0.5 rounded-md border border-amber-200 dark:border-amber-900">
+                                <i class="fa-solid fa-star text-[9px]"></i> {{ $lm['rating'] }}
+                            </span>
+                            @endif
+                        </div>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 flex items-start gap-1.5 mb-2 line-clamp-1">
+                            <i class="fa-solid fa-location-dot text-blue-500 shrink-0 mt-0.5"></i>
+                            <span>{{ $lm['alamat'] ?? 'Kota Medan' }}</span>
+                        </p>
+                    </div>
+                </div>
 
-            <!-- 1. Istana Maimun -->
-            <a href="{{ url('/search?landmark=Istana+Maimun') }}" class="landmark-card group no-underline">
-                <div class="landmark-img-wrap">
-                    <img src="{{ asset('images/landmarks/istana-maimun.jpg') }}" alt="Istana Maimun Medan" loading="lazy">
-                    <span class="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-indigo-600/90 text-white backdrop-blur-md">
-                        <i class="fa-solid fa-crown mr-1"></i> Ikon Utama
-                    </span>
+                <div class="px-5 pb-5 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
+                    <a href="{{ route('landmark.show', ['id' => $lm['id']]) }}"
+                       class="text-xs font-bold text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition flex items-center gap-1">
+                        Profil <i class="fa-solid fa-circle-info text-[10px]"></i>
+                    </a>
+                    <a href="{{ route('search', ['landmark' => $lm['nama']]) }}"
+                       class="btn-gradient text-white text-xs font-bold px-3 py-1.5 rounded-xl shadow-sm flex items-center gap-1 hover:brightness-105 transition">
+                        Hotel Terdekat <i class="fa-solid fa-arrow-right text-[9px]"></i>
+                    </a>
                 </div>
-                <div class="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                        <h3 class="font-extrabold text-slate-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">Istana Maimun</h3>
-                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
-                            <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. Brigjend Katamso, Medan Maimun
-                        </p>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
-                            Istana megah Kesultanan Deli peninggalan Sultan Ma'mun Al Rasyid (1888) dengan perpaduan arsitektur Melayu & Timur Tengah.
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
-                        <span>Lihat Hotel Terdekat</span>
-                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 2. Tjong A Fie Mansion -->
-            <a href="{{ url('/search?landmark=Tjong+A+Fie+Mansion') }}" class="landmark-card group no-underline">
-                <div class="landmark-img-wrap">
-                    <img src="{{ asset('images/landmarks/tjong-a-fie.jpg') }}" alt="Tjong A Fie Mansion" loading="lazy">
-                    <span class="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-amber-600/90 text-white backdrop-blur-md">
-                        <i class="fa-solid fa-landmark mr-1"></i> Cagar Budaya
-                    </span>
-                </div>
-                <div class="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                        <h3 class="font-extrabold text-slate-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">Tjong A Fie Mansion</h3>
-                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
-                            <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. Ahmad Yani, Kesawan
-                        </p>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
-                            Manor megah bergaya Tionghoa-Eropa abad ke-19 milik tokoh terkemuka Medan di jantung heritage Kesawan.
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
-                        <span>Lihat Hotel Terdekat</span>
-                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 3. Masjid Raya Al-Mashun -->
-            <a href="{{ url('/search?landmark=Masjid+Raya+Al+Mashun') }}" class="landmark-card group no-underline">
-                <div class="landmark-img-wrap">
-                    <img src="{{ asset('images/landmarks/masjid-raya.jpg') }}" alt="Masjid Raya Al Mashun" loading="lazy">
-                    <span class="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-600/90 text-white backdrop-blur-md">
-                        <i class="fa-solid fa-mosque mr-1"></i> Wisata Religi
-                    </span>
-                </div>
-                <div class="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                        <h3 class="font-extrabold text-slate-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">Masjid Raya Al-Mashun</h3>
-                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
-                            <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. Mahkamah, Medan Kota
-                        </p>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
-                            Mahakarya arsitektur Islam bernuansa Maroko dan Timur Tengah yang berdiri megah sejak tahun 1909.
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
-                        <span>Lihat Hotel Terdekat</span>
-                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 4. Lapangan Merdeka & KM 0 -->
-            <a href="{{ url('/search?landmark=Lapangan+Merdeka') }}" class="landmark-card group no-underline">
-                <div class="landmark-img-wrap">
-                    <img src="{{ asset('images/landmarks/lapangan-merdeka.jpg') }}" alt="Lapangan Merdeka Medan" loading="lazy">
-                    <span class="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-blue-600/90 text-white backdrop-blur-md">
-                        <i class="fa-solid fa-map-pin mr-1"></i> KM 0 Medan
-                    </span>
-                </div>
-                <div class="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                        <h3 class="font-extrabold text-slate-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">Lapangan Merdeka</h3>
-                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
-                            <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. Balai Kota, Kesawan
-                        </p>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
-                            Alun-alun bersejarah titik nol Kota Medan, dikelilingi cagar budaya kolonial dan stasiun utama kota.
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
-                        <span>Lihat Hotel Terdekat</span>
-                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 5. Graha Maria Annai Velangkanni -->
-            <a href="{{ url('/search?landmark=Graha+Maria+Annai+Velangkanni') }}" class="landmark-card group no-underline">
-                <div class="landmark-img-wrap">
-                    <img src="{{ asset('images/landmarks/graha-maria.jpg') }}" alt="Graha Maria Annai Velangkanni" loading="lazy">
-                    <span class="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-purple-600/90 text-white backdrop-blur-md">
-                        <i class="fa-solid fa-church mr-1"></i> Indo-Mogul
-                    </span>
-                </div>
-                <div class="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                        <h3 class="font-extrabold text-slate-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">Graha Maria Velangkanni</h3>
-                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
-                            <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. Sakura III, Tanjung Selamat
-                        </p>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
-                            Gereja Katolik berarsitektur kuil Indo-Mogul yang spektakuler, destinasi religi internasional unik di Medan.
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
-                        <span>Lihat Hotel Terdekat</span>
-                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 6. Sun Plaza Medan -->
-            <a href="{{ url('/search?landmark=Sun+Plaza') }}" class="landmark-card group no-underline">
-                <div class="landmark-img-wrap">
-                    <img src="{{ asset('images/landmarks/sun-plaza.jpg') }}" alt="Sun Plaza Medan" loading="lazy">
-                    <span class="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-pink-600/90 text-white backdrop-blur-md">
-                        <i class="fa-solid fa-bag-shopping mr-1"></i> Mall & Lifestyle
-                    </span>
-                </div>
-                <div class="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                        <h3 class="font-extrabold text-slate-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">Sun Plaza Medan</h3>
-                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
-                            <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. KH. Zainul Arifin, Medan Petisah
-                        </p>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
-                            Pusat belanja mewah paling bergengsi di Medan dengan tenant internasional, bioskop premier, dan kuliner modern.
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
-                        <span>Lihat Hotel Terdekat</span>
-                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 7. Maha Vihara Maitreya -->
-            <a href="{{ url('/search?landmark=Maha+Vihara+Maitreya') }}" class="landmark-card group no-underline">
-                <div class="landmark-img-wrap">
-                    <img src="{{ asset('images/landmarks/maha-vihara-maitreya.jpg') }}" alt="Maha Vihara Maitreya" loading="lazy">
-                    <span class="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-fuchsia-600/90 text-white backdrop-blur-md">
-                        <i class="fa-solid fa-spa mr-1"></i> Vihara Megah
-                    </span>
-                </div>
-                <div class="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                        <h3 class="font-extrabold text-slate-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">Maha Vihara Maitreya</h3>
-                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
-                            <i class="fa-solid fa-location-dot text-indigo-500"></i> Kompleks Cemara Asri, Medan
-                        </p>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
-                            Salah satu vihara Buddha terbesar di Indonesia dengan danau bangau alami, pagoda megah, dan lingkungan asri.
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
-                        <span>Lihat Hotel Terdekat</span>
-                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 8. Museum Rahmat International Gallery -->
-            <a href="{{ url('/search?landmark=Museum+Rahmat') }}" class="landmark-card group no-underline">
-                <div class="landmark-img-wrap">
-                    <img src="{{ asset('images/landmarks/museum-rahmat.jpg') }}" alt="Museum Rahmat Medan" loading="lazy">
-                    <span class="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-amber-700/90 text-white backdrop-blur-md">
-                        <i class="fa-solid fa-paw mr-1"></i> Galeri Satwa
-                    </span>
-                </div>
-                <div class="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                        <h3 class="font-extrabold text-slate-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">Museum Rahmat</h3>
-                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
-                            <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. S. Parman No. 217, Petisah
-                        </p>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
-                            Museum satwa liar internasional pertama di Asia Tenggara dengan koleksi ribuan spesimen fauna dari seluruh penjuru dunia.
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
-                        <span>Lihat Hotel Terdekat</span>
-                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 9. Merdeka Walk & Kesawan -->
-            <a href="{{ url('/search?landmark=Merdeka+Walk') }}" class="landmark-card group no-underline">
-                <div class="landmark-img-wrap">
-                    <img src="{{ asset('images/landmarks/merdeka-walk.jpg') }}" alt="Merdeka Walk Medan" loading="lazy">
-                    <span class="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-cyan-600/90 text-white backdrop-blur-md">
-                        <i class="fa-solid fa-utensils mr-1"></i> Kuliner Heritage
-                    </span>
-                </div>
-                <div class="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                        <h3 class="font-extrabold text-slate-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">Merdeka Walk Kesawan</h3>
-                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
-                            <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. Pos No. 1, Medan Barat
-                        </p>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
-                            Kawasan kuliner legendaris bernuansa heritage di pusat kota Medan, tempat berkumpul dan mencicipi aneka sajian khas.
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
-                        <span>Lihat Hotel Terdekat</span>
-                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 10. Menara Air Tirtanadi -->
-            <a href="{{ url('/search?landmark=Menara+Air+Tirtanadi') }}" class="landmark-card group no-underline">
-                <div class="landmark-img-wrap">
-                    <img src="{{ asset('images/landmarks/menara-air.jpg') }}" alt="Menara Air Tirtanadi" loading="lazy">
-                    <span class="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-teal-600/90 text-white backdrop-blur-md">
-                        <i class="fa-solid fa-tower-observation mr-1"></i> Kolonial 1908
-                    </span>
-                </div>
-                <div class="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                        <h3 class="font-extrabold text-slate-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">Menara Air Tirtanadi</h3>
-                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
-                            <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. SM Raja No. 1, Medan Kota
-                        </p>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
-                            Menara air ikonik peninggalan era kolonial Belanda tahun 1908 yang menjadi simbol identitas visual Kota Medan.
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
-                        <span>Lihat Hotel Terdekat</span>
-                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 11. Centre Point Mall -->
-            <a href="{{ url('/search?landmark=Centre+Point+Mall') }}" class="landmark-card group no-underline">
-                <div class="landmark-img-wrap">
-                    <img src="{{ asset('images/landmarks/centre-point.jpg') }}" alt="Centre Point Mall Medan" loading="lazy">
-                    <span class="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-violet-600/90 text-white backdrop-blur-md">
-                        <i class="fa-solid fa-train mr-1"></i> Railink KAI
-                    </span>
-                </div>
-                <div class="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                        <h3 class="font-extrabold text-slate-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">Centre Point Mall</h3>
-                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
-                            <i class="fa-solid fa-location-dot text-indigo-500"></i> Jl. Jawa No. 8, Gang Buntu
-                        </p>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
-                            Pusat perbelanjaan terpadu yang terhubung dengan akses Kereta Api Bandara Kualanamu Railink dan kawasan bisnis.
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
-                        <span>Lihat Hotel Terdekat</span>
-                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 12. Medan Zoo -->
-            <a href="{{ url('/search?landmark=Kebun+Binatang+Medan') }}" class="landmark-card group no-underline">
-                <div class="landmark-img-wrap">
-                    <img src="{{ asset('images/landmarks/kebun-binatang.jpg') }}" alt="Medan Zoo" loading="lazy">
-                    <span class="absolute top-3 right-3 text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-700/90 text-white backdrop-blur-md">
-                        <i class="fa-solid fa-tree mr-1"></i> Wisata Alam
-                    </span>
-                </div>
-                <div class="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                        <h3 class="font-extrabold text-slate-900 dark:text-white text-lg group-hover:text-indigo-600 dark:group-hover:text-indigo-300 transition">Medan Zoo</h3>
-                        <p class="text-xs text-slate-400 mt-1 flex items-center gap-1.5">
-                            <i class="fa-solid fa-location-dot text-indigo-500"></i> Simalingkar, Medan Tuntungan
-                        </p>
-                        <p class="text-xs text-slate-600 dark:text-slate-300 mt-2 line-clamp-2 leading-relaxed">
-                            Kebun binatang seluas 30 hektar dengan koleksi satwa Harimau Sumatera dan kawasan rekreasi keluarga yang hijau.
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
-                        <span>Lihat Hotel Terdekat</span>
-                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
-                    </div>
-                </div>
-            </a>
-
+            </div>
+            @endforeach
         </div>
 
         <!-- View All Destinations CTA -->
         <div class="mt-12 text-center">
             <a href="{{ url('/search') }}" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-white/10 hover:bg-white/15 text-white font-bold text-sm border border-white/20 transition-all hover:scale-105">
                 <i class="fa-solid fa-compass text-indigo-400"></i>
-                <span>Jelajahi Seluruh 187 Hotel di Kota Medan</span>
+                <span>Jelajahi Seluruh 312 Hotel di Kota Medan</span>
                 <i class="fa-solid fa-chevron-right text-xs"></i>
             </a>
         </div>

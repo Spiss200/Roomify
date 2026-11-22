@@ -86,6 +86,22 @@ class BookingController extends Controller
             'no_ktp.min'      => 'Nomor KTP harus terdiri dari minimal 16 digit.',
         ]);
 
+        if ((float) $validated['room_price'] <= 0) {
+            return redirect()->route('hotel.detail', ['id' => $validated['hotel_id']])
+                ->with('error', 'Hotel ini belum memiliki tarif kamar yang valid untuk reservasi online.');
+        }
+
+        $kamar = $this->fuseki->select("
+            PREFIX roomify: <https://roomify.example/ontology#>
+            SELECT ?tipe WHERE {
+              roomify:{$validated['hotel_id']} roomify:hasRoom ?r .
+            } LIMIT 1");
+
+        if (empty($kamar)) {
+            return redirect()->route('hotel.detail', ['id' => $validated['hotel_id']])
+                ->with('error', 'Data kamar belum tersedia untuk reservasi online.');
+        }
+
         $checkin  = \Carbon\Carbon::parse($validated['checkin']);
         $checkout = \Carbon\Carbon::parse($validated['checkout']);
         $nights   = max(1, $checkin->diffInDays($checkout));
