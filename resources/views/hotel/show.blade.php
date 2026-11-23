@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="id" prefix="schema: https://schema.org/ roomify: http://roomify.example.org/ontology# rdfs: http://www.w3.org/2000/01/rdf-schema#">
+<html lang="id" prefix="schema: https://schema.org/ roomify: https://roomify.example/ontology# rdfs: http://www.w3.org/2000/01/rdf-schema#">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -166,7 +166,7 @@
         html.dark .border-slate-100, html.dark .border-slate-200 { border-color: rgba(255, 255, 255, 0.1) !important; }
     </style>
 </head>
-<body class="bg-slate-50 antialiased min-h-screen" typeof="schema:Hotel roomify:Hotel" about="http://roomify.example.org/ontology#{{ $id }}">
+<body class="bg-slate-50 antialiased min-h-screen" typeof="schema:Hotel roomify:Hotel" about="https://roomify.example/ontology#{{ $id }}">
 
 <!-- ══════════════════════════════════════════════════════
      STICKY TOP BAR: LIVE CLOCK & NAVBAR

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="id" prefix="schema: https://schema.org/ roomify: http://roomify.example.org/ontology# rdfs: http://www.w3.org/2000/01/rdf-schema#">
+<html lang="id" prefix="schema: https://schema.org/ roomify: https://roomify.example/ontology# rdfs: http://www.w3.org/2000/01/rdf-schema#">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -770,7 +770,7 @@
                             {{-- RDFa: roomify:Hotel & schema:Hotel --}}
                             <article
                                 typeof="roomify:Hotel schema:Hotel"
-                                about="http://roomify.example.org/ontology#{{ $item['id'] ?? $loop->index }}"
+                                about="https://roomify.example/ontology#{{ $item['id'] ?? $loop->index }}"
                                 id="hotel-card-{{ $item['id'] ?? $loop->index }}"
                                 data-lat="{{ $item['latitude'] ?? '' }}"
                                 data-lng="{{ $item['longitude'] ?? '' }}"
