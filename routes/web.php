@@ -103,6 +103,3 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 });
 
 require __DIR__ . '/auth.php';
-
-// Integrasi SPARQL endpoint eksternal (DBpedia) + graceful degradation ke Fuseki lokal
-Route::get('/api/landmark-eksternal/{id}', [\App\Http\Controllers\LandmarkEksternalController::class, 'show']);

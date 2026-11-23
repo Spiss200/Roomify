@@ -16,7 +16,8 @@ class LandmarkEksternalController extends Controller
 
         $rows = $this->fuseki->select("$p
             SELECT ?nama ?lat ?lon WHERE {
-              roomify:$id roomify:name ?nama ;
+              roomify:$id a roomify:Hotel ;
+                          roomify:name ?nama ;
                           roomify:latitude ?lat ;
                           roomify:longitude ?lon .
             } LIMIT 1");
@@ -35,7 +36,9 @@ class LandmarkEksternalController extends Controller
         }
 
         foreach ($items as &$it) {
-            $it['jarak_km'] = round($this->hav($lat, $lon, (float) $it['lat'], (float) $it['lon']), 2);
+            $km = round($this->hav($lat, $lon, (float) $it['lat'], (float) $it['lon']), 2);
+            $it['jarak_km'] = $km;
+            $it['jarak'] = $km < 1 ? round($km * 1000) . ' m' : number_format($km, 1, ',', '.') . ' km';
         }
         unset($it);
 

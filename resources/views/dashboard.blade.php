@@ -67,7 +67,7 @@
                     <i class="fa-solid fa-hotel"></i>
                 </div>
                 <div>
-                    <div class="text-2xl font-black text-slate-800 dark:text-white">187</div>
+                    <div class="text-2xl font-black text-slate-800 dark:text-white">312</div>
                     <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold uppercase">Hotel Terdaftar</div>
                 </div>
             </div>
@@ -77,7 +77,7 @@
                     <i class="fa-solid fa-landmark"></i>
                 </div>
                 <div>
-                    <div class="text-2xl font-black text-slate-800 dark:text-white">13</div>
+                    <div class="text-2xl font-black text-slate-800 dark:text-white">24</div>
                     <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold uppercase">Landmark Ikonik</div>
                 </div>
             </div>
@@ -170,7 +170,9 @@
                                         </div>
                                         <div class="bg-white dark:bg-slate-800 p-2.5 rounded-xl border border-slate-100 dark:border-slate-700">
                                             <span class="text-slate-400 dark:text-slate-400 block text-[10px] uppercase font-bold">NIK KTP Pemesan</span>
-                                            <span class="font-mono font-bold text-slate-800 dark:text-white text-[11px]">{{ substr($item->no_ktp, 0, 6) }}******{{ substr($item->no_ktp, -4) }}</span>
+                                            <span class="font-mono font-bold text-slate-800 dark:text-white text-[11px]">
+                                                {{ strlen($item->no_ktp ?? '') >= 10 ? substr($item->no_ktp, 0, 6) . '******' . substr($item->no_ktp, -4) : ($item->no_ktp ?? 'Terdaftar') }}
+                                            </span>
                                             <span class="text-[10px] text-emerald-600 dark:text-emerald-400 block font-semibold">Terverifikasi</span>
                                         </div>
                                         <div class="bg-white dark:bg-slate-800 p-2.5 rounded-xl border border-slate-100 dark:border-slate-700 flex flex-col justify-center">
@@ -326,7 +328,7 @@
                         <h3 class="font-black text-slate-800 dark:text-white text-sm uppercase tracking-wider flex items-center gap-2">
                             <i class="fa-solid fa-location-dot text-indigo-500"></i> Landmark Medan
                         </h3>
-                        <span class="text-[10px] font-bold text-slate-400">13 Lokasi</span>
+                        <span class="text-[10px] font-bold text-slate-400">24 Lokasi</span>
                     </div>
                     <div class="space-y-2">
                         <a href="{{ url('/search?landmark=Istana+Maimun') }}" class="flex items-center justify-between p-2.5 rounded-xl hover:bg-indigo-50 dark:hover:bg-slate-700 transition text-xs font-semibold text-slate-700 dark:text-slate-200 group no-underline">

@@ -53,7 +53,11 @@
       "AC"
     ],
     "description": "d'primahotel Kualanamu Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/d-primahotel-kualanamu-medan.jpg",
+    "foto": "/images/hotels/d-primahotel-kualanamu-medan.jpg",
+    "photo": "/images/hotels/d-primahotel-kualanamu-medan.jpg",
+    "photoUrl": "/images/hotels/d-primahotel-kualanamu-medan.jpg"
   },
   {
     "id": "gmaps-4",
@@ -75,7 +79,11 @@
       "Sarapan"
     ],
     "description": "Hotel dengan restoran & kolam di atap",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/adimulia-hotel-medan.jpg",
+    "foto": "/images/hotels/adimulia-hotel-medan.jpg",
+    "photo": "/images/hotels/adimulia-hotel-medan.jpg",
+    "photoUrl": "/images/hotels/adimulia-hotel-medan.jpg"
   },
   {
     "id": "gmaps-5",
@@ -96,7 +104,11 @@
       "Sarapan"
     ],
     "description": "Grand Central Premier Hotel Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/grand-central-premier-hotel-medan.jpg",
+    "foto": "/images/hotels/grand-central-premier-hotel-medan.jpg",
+    "photo": "/images/hotels/grand-central-premier-hotel-medan.jpg",
+    "photoUrl": "/images/hotels/grand-central-premier-hotel-medan.jpg"
   },
   {
     "id": "gmaps-6",
@@ -114,7 +126,11 @@
       "AC"
     ],
     "description": "Hotel O Kapten Muslim Residence adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-o-kapten-muslim-residence.jpg",
+    "foto": "/images/hotels/hotel-o-kapten-muslim-residence.jpg",
+    "photo": "/images/hotels/hotel-o-kapten-muslim-residence.jpg",
+    "photoUrl": "/images/hotels/hotel-o-kapten-muslim-residence.jpg"
   },
   {
     "id": "gmaps-7",
@@ -135,7 +151,11 @@
       "Sarapan"
     ],
     "description": "Hotel mewah dengan resto, gym, dan spa",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/grand-sakura-hotel.jpg",
+    "foto": "/images/hotels/grand-sakura-hotel.jpg",
+    "photo": "/images/hotels/grand-sakura-hotel.jpg",
+    "photoUrl": "/images/hotels/grand-sakura-hotel.jpg"
   },
   {
     "id": "gmaps-8",
@@ -156,7 +176,11 @@
       "Sarapan"
     ],
     "description": "Hotel mewah dengan restoran & spa",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/grand-city-hall-medan.jpg",
+    "foto": "/images/hotels/grand-city-hall-medan.jpg",
+    "photo": "/images/hotels/grand-city-hall-medan.jpg",
+    "photoUrl": "/images/hotels/grand-city-hall-medan.jpg"
   },
   {
     "id": "gmaps-9",
@@ -178,7 +202,11 @@
       "Parkir"
     ],
     "description": "Hotel mewah dengan spa dan restoran",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-santika-premiere-dyandra-medan.jpg",
+    "foto": "/images/hotels/hotel-santika-premiere-dyandra-medan.jpg",
+    "photo": "/images/hotels/hotel-santika-premiere-dyandra-medan.jpg",
+    "photoUrl": "/images/hotels/hotel-santika-premiere-dyandra-medan.jpg"
   },
   {
     "id": "gmaps-10",
@@ -195,7 +223,11 @@
       "WiFi"
     ],
     "description": "SUPER OYO 91120 D'ritz Homestay adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/super-oyo-91120-d-ritz-homestay.jpg",
+    "foto": "/images/hotels/super-oyo-91120-d-ritz-homestay.jpg",
+    "photo": "/images/hotels/super-oyo-91120-d-ritz-homestay.jpg",
+    "photoUrl": "/images/hotels/super-oyo-91120-d-ritz-homestay.jpg"
   },
   {
     "id": "gmaps-11",
@@ -215,7 +247,11 @@
       "Sarapan"
     ],
     "description": "Hotel simpel dengan resto dan Wi-Fi",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/griya-hotel.jpg",
+    "foto": "/images/hotels/griya-hotel.jpg",
+    "photo": "/images/hotels/griya-hotel.jpg",
+    "photoUrl": "/images/hotels/griya-hotel.jpg"
   },
   {
     "id": "gmaps-12",
@@ -235,7 +271,11 @@
       "AC"
     ],
     "description": "Hotel santai dengan resto & Wi-Fi gratis",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/harper-wahid-hasyim-medan.jpg",
+    "foto": "/images/hotels/harper-wahid-hasyim-medan.jpg",
+    "photo": "/images/hotels/harper-wahid-hasyim-medan.jpg",
+    "photoUrl": "/images/hotels/harper-wahid-hasyim-medan.jpg"
   },
   {
     "id": "gmaps-13",
@@ -255,7 +295,11 @@
       "AC"
     ],
     "description": "QINARA INN adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/qinara-inn.jpg",
+    "foto": "/images/hotels/qinara-inn.jpg",
+    "photo": "/images/hotels/qinara-inn.jpg",
+    "photoUrl": "/images/hotels/qinara-inn.jpg"
   },
   {
     "id": "gmaps-14",
@@ -274,7 +318,11 @@
       "AC"
     ],
     "description": "Hotel bujet simpel dengan Wi-Fi & parkir",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel.jpg",
+    "foto": "/images/hotels/hotel.jpg",
+    "photo": "/images/hotels/hotel.jpg",
+    "photoUrl": "/images/hotels/hotel.jpg"
   },
   {
     "id": "gmaps-15",
@@ -293,7 +341,11 @@
       "AC"
     ],
     "description": "RedDoorz @ Sekip Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-sekip-medan.jpg",
+    "foto": "/images/hotels/reddoorz-sekip-medan.jpg",
+    "photo": "/images/hotels/reddoorz-sekip-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-sekip-medan.jpg"
   },
   {
     "id": "gmaps-16",
@@ -313,7 +365,11 @@
       "AC"
     ],
     "description": "Hotel nyaman dengan restoran & spa",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/swiss-belinn-medan.jpg",
+    "foto": "/images/hotels/swiss-belinn-medan.jpg",
+    "photo": "/images/hotels/swiss-belinn-medan.jpg",
+    "photoUrl": "/images/hotels/swiss-belinn-medan.jpg"
   },
   {
     "id": "gmaps-17",
@@ -335,7 +391,11 @@
       "Parkir"
     ],
     "description": "Hotel urban mewah dengan spa & restoran",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/jw-marriott-hotel-medan.jpg",
+    "foto": "/images/hotels/jw-marriott-hotel-medan.jpg",
+    "photo": "/images/hotels/jw-marriott-hotel-medan.jpg",
+    "photoUrl": "/images/hotels/jw-marriott-hotel-medan.jpg"
   },
   {
     "id": "gmaps-18",
@@ -356,7 +416,11 @@
       "Parkir"
     ],
     "description": "NEW DETONGA HOTEL adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/new-detonga-hotel.jpg",
+    "foto": "/images/hotels/new-detonga-hotel.jpg",
+    "photo": "/images/hotels/new-detonga-hotel.jpg",
+    "photoUrl": "/images/hotels/new-detonga-hotel.jpg"
   },
   {
     "id": "gmaps-19",
@@ -376,7 +440,11 @@
       "Parkir"
     ],
     "description": "Hotel santai dengan sarapan gratis",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/aiho-hotel-medan.jpg",
+    "foto": "/images/hotels/aiho-hotel-medan.jpg",
+    "photo": "/images/hotels/aiho-hotel-medan.jpg",
+    "photoUrl": "/images/hotels/aiho-hotel-medan.jpg"
   },
   {
     "id": "gmaps-20",
@@ -416,7 +484,11 @@
       "Sarapan"
     ],
     "description": "Hotel informal dengan restoran dan spa",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/batik-hotel-medan.jpg",
+    "foto": "/images/hotels/batik-hotel-medan.jpg",
+    "photo": "/images/hotels/batik-hotel-medan.jpg",
+    "photoUrl": "/images/hotels/batik-hotel-medan.jpg"
   },
   {
     "id": "gmaps-22",
@@ -438,7 +510,11 @@
       "Parkir"
     ],
     "description": "Hotel santai dengan kolam renang & resto",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-grandhika-setiabudi-medan.jpg",
+    "foto": "/images/hotels/hotel-grandhika-setiabudi-medan.jpg",
+    "photo": "/images/hotels/hotel-grandhika-setiabudi-medan.jpg",
+    "photoUrl": "/images/hotels/hotel-grandhika-setiabudi-medan.jpg"
   },
   {
     "id": "gmaps-23",
@@ -478,7 +554,11 @@
       "AC"
     ],
     "description": "Swasana Hotel Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/swasana-hotel-medan.jpg",
+    "foto": "/images/hotels/swasana-hotel-medan.jpg",
+    "photo": "/images/hotels/swasana-hotel-medan.jpg",
+    "photoUrl": "/images/hotels/swasana-hotel-medan.jpg"
   },
   {
     "id": "gmaps-25",
@@ -518,7 +598,11 @@
       "Sarapan"
     ],
     "description": "Deli Hotel adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/deli-hotel.jpg",
+    "foto": "/images/hotels/deli-hotel.jpg",
+    "photo": "/images/hotels/deli-hotel.jpg",
+    "photoUrl": "/images/hotels/deli-hotel.jpg"
   },
   {
     "id": "gmaps-27",
@@ -538,7 +622,11 @@
       "Sarapan"
     ],
     "description": "Hotel kasual dengan restoran dan karaoke",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-grand-antares.jpg",
+    "foto": "/images/hotels/hotel-grand-antares.jpg",
+    "photo": "/images/hotels/hotel-grand-antares.jpg",
+    "photoUrl": "/images/hotels/hotel-grand-antares.jpg"
   },
   {
     "id": "gmaps-28",
@@ -558,7 +646,11 @@
       "AC"
     ],
     "description": "Hotel santai dengan gym dan restoran",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/grand-central-hotel.jpg",
+    "foto": "/images/hotels/grand-central-hotel.jpg",
+    "photo": "/images/hotels/grand-central-hotel.jpg",
+    "photoUrl": "/images/hotels/grand-central-hotel.jpg"
   },
   {
     "id": "gmaps-29",
@@ -577,7 +669,11 @@
       "AC"
     ],
     "description": "CordelaInn Millennium Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/cordelainn-millennium-medan.jpg",
+    "foto": "/images/hotels/cordelainn-millennium-medan.jpg",
+    "photo": "/images/hotels/cordelainn-millennium-medan.jpg",
+    "photoUrl": "/images/hotels/cordelainn-millennium-medan.jpg"
   },
   {
     "id": "gmaps-30",
@@ -597,7 +693,11 @@
       "AC"
     ],
     "description": "Hotel simpel dengan kafe dan restoran",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/antares-hotel.jpg",
+    "foto": "/images/hotels/antares-hotel.jpg",
+    "photo": "/images/hotels/antares-hotel.jpg",
+    "photoUrl": "/images/hotels/antares-hotel.jpg"
   },
   {
     "id": "gmaps-31",
@@ -617,7 +717,11 @@
       "Sarapan"
     ],
     "description": "The Reiz Suites, ARTOTEL Curated - Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/the-reiz-suites-artotel-curated-medan.jpg",
+    "foto": "/images/hotels/the-reiz-suites-artotel-curated-medan.jpg",
+    "photo": "/images/hotels/the-reiz-suites-artotel-curated-medan.jpg",
+    "photoUrl": "/images/hotels/the-reiz-suites-artotel-curated-medan.jpg"
   },
   {
     "id": "gmaps-32",
@@ -638,7 +742,11 @@
       "Parkir"
     ],
     "description": "Hotel mewah dengan kolam dan bar atap",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/swiss-belinn-gajah-mada-medan.jpg",
+    "foto": "/images/hotels/swiss-belinn-gajah-mada-medan.jpg",
+    "photo": "/images/hotels/swiss-belinn-gajah-mada-medan.jpg",
+    "photoUrl": "/images/hotels/swiss-belinn-gajah-mada-medan.jpg"
   },
   {
     "id": "gmaps-33",
@@ -658,7 +766,11 @@
       "Sarapan"
     ],
     "description": "Wisma Sederhana Medan Mitra RedDoorz adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/wisma-sederhana-medan-mitra-reddoorz.jpg",
+    "foto": "/images/hotels/wisma-sederhana-medan-mitra-reddoorz.jpg",
+    "photo": "/images/hotels/wisma-sederhana-medan-mitra-reddoorz.jpg",
+    "photoUrl": "/images/hotels/wisma-sederhana-medan-mitra-reddoorz.jpg"
   },
   {
     "id": "gmaps-34",
@@ -678,7 +790,11 @@
       "AC"
     ],
     "description": "Fasilitas Hotel Huber Medan: Wi-Fi gratis, Parkir gratis, Kolam renang luar, Ber-AC, Restoran, Cocok untuk anak,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-huber-medan.jpg",
+    "foto": "/images/hotels/hotel-huber-medan.jpg",
+    "photo": "/images/hotels/hotel-huber-medan.jpg",
+    "photoUrl": "/images/hotels/hotel-huber-medan.jpg"
   },
   {
     "id": "gmaps-35",
@@ -698,7 +814,11 @@
       "Gym"
     ],
     "description": "E Hotel Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/e-hotel-medan.jpg",
+    "foto": "/images/hotels/e-hotel-medan.jpg",
+    "photo": "/images/hotels/e-hotel-medan.jpg",
+    "photoUrl": "/images/hotels/e-hotel-medan.jpg"
   },
   {
     "id": "gmaps-36",
@@ -718,7 +838,11 @@
       "Parkir"
     ],
     "description": "NIVIA HOTEL adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/nivia-hotel.jpg",
+    "foto": "/images/hotels/nivia-hotel.jpg",
+    "photo": "/images/hotels/nivia-hotel.jpg",
+    "photoUrl": "/images/hotels/nivia-hotel.jpg"
   },
   {
     "id": "gmaps-37",
@@ -738,7 +862,11 @@
       "Sarapan"
     ],
     "description": "M Hotel Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/m-hotel-medan.jpg",
+    "foto": "/images/hotels/m-hotel-medan.jpg",
+    "photo": "/images/hotels/m-hotel-medan.jpg",
+    "photoUrl": "/images/hotels/m-hotel-medan.jpg"
   },
   {
     "id": "gmaps-38",
@@ -759,7 +887,11 @@
       "Parkir"
     ],
     "description": "Hotel modern dengan restoran di atap",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hermes-palace-hotel-medan.jpg",
+    "foto": "/images/hotels/hermes-palace-hotel-medan.jpg",
+    "photo": "/images/hotels/hermes-palace-hotel-medan.jpg",
+    "photoUrl": "/images/hotels/hermes-palace-hotel-medan.jpg"
   },
   {
     "id": "gmaps-39",
@@ -799,7 +931,11 @@
       "Parkir"
     ],
     "description": "Hotel bujet modern dengan Wi-Fi gratis",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/bobotel-gatot-subroto-medan.jpg",
+    "foto": "/images/hotels/bobotel-gatot-subroto-medan.jpg",
+    "photo": "/images/hotels/bobotel-gatot-subroto-medan.jpg",
+    "photoUrl": "/images/hotels/bobotel-gatot-subroto-medan.jpg"
   },
   {
     "id": "gmaps-41",
@@ -819,7 +955,11 @@
       "Sarapan"
     ],
     "description": "Penginapan sederhana dengan restoran/bar",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-menara-lexus.jpg",
+    "foto": "/images/hotels/hotel-menara-lexus.jpg",
+    "photo": "/images/hotels/hotel-menara-lexus.jpg",
+    "photoUrl": "/images/hotels/hotel-menara-lexus.jpg"
   },
   {
     "id": "gmaps-42",
@@ -839,7 +979,11 @@
       "Sarapan"
     ],
     "description": "Hotel simpel dengan restoran santai",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/cordela-hotel-medan.jpg",
+    "foto": "/images/hotels/cordela-hotel-medan.jpg",
+    "photo": "/images/hotels/cordela-hotel-medan.jpg",
+    "photoUrl": "/images/hotels/cordela-hotel-medan.jpg"
   },
   {
     "id": "gmaps-43",
@@ -859,7 +1003,11 @@
       "Sarapan"
     ],
     "description": "Odua Golden Mansyur Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/odua-golden-mansyur-medan.jpg",
+    "foto": "/images/hotels/odua-golden-mansyur-medan.jpg",
+    "photo": "/images/hotels/odua-golden-mansyur-medan.jpg",
+    "photoUrl": "/images/hotels/odua-golden-mansyur-medan.jpg"
   },
   {
     "id": "gmaps-44",
@@ -881,7 +1029,11 @@
       "Parkir"
     ],
     "description": "Hotel mewah dengan restoran dan spa",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-emerald-garden.jpg",
+    "foto": "/images/hotels/hotel-emerald-garden.jpg",
+    "photo": "/images/hotels/hotel-emerald-garden.jpg",
+    "photoUrl": "/images/hotels/hotel-emerald-garden.jpg"
   },
   {
     "id": "gmaps-45",
@@ -900,7 +1052,11 @@
       "AC"
     ],
     "description": "Hotel bujet simpel dengan Wi-Fi",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/residence-anugrah.jpg",
+    "foto": "/images/hotels/residence-anugrah.jpg",
+    "photo": "/images/hotels/residence-anugrah.jpg",
+    "photoUrl": "/images/hotels/residence-anugrah.jpg"
   },
   {
     "id": "gmaps-46",
@@ -919,7 +1075,11 @@
       "Parkir"
     ],
     "description": "Hotel simpel dengan restoran dan gym",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/putra-mulia-hotel.jpg",
+    "foto": "/images/hotels/putra-mulia-hotel.jpg",
+    "photo": "/images/hotels/putra-mulia-hotel.jpg",
+    "photoUrl": "/images/hotels/putra-mulia-hotel.jpg"
   },
   {
     "id": "gmaps-47",
@@ -939,7 +1099,11 @@
       "Sarapan"
     ],
     "description": "Hotel kasual dengan restoran 24 jam",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/raz-hotel-and-convention.jpg",
+    "foto": "/images/hotels/raz-hotel-and-convention.jpg",
+    "photo": "/images/hotels/raz-hotel-and-convention.jpg",
+    "photoUrl": "/images/hotels/raz-hotel-and-convention.jpg"
   },
   {
     "id": "gmaps-48",
@@ -958,7 +1122,11 @@
       "Sarapan"
     ],
     "description": "Hotel santai dengan restoran",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/desatu-hotel-medan.jpg",
+    "foto": "/images/hotels/desatu-hotel-medan.jpg",
+    "photo": "/images/hotels/desatu-hotel-medan.jpg",
+    "photoUrl": "/images/hotels/desatu-hotel-medan.jpg"
   },
   {
     "id": "gmaps-49",
@@ -978,7 +1146,11 @@
       "Sarapan"
     ],
     "description": "Hotel santai dengan ruang acara",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/alam-hotel-by-cordela.jpg",
+    "foto": "/images/hotels/alam-hotel-by-cordela.jpg",
+    "photo": "/images/hotels/alam-hotel-by-cordela.jpg",
+    "photoUrl": "/images/hotels/alam-hotel-by-cordela.jpg"
   },
   {
     "id": "gmaps-50",
@@ -998,7 +1170,11 @@
       "Sarapan"
     ],
     "description": "RedDoorz Hostel @ Capsule Inn Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-hostel-capsule-inn-medan.jpg",
+    "foto": "/images/hotels/reddoorz-hostel-capsule-inn-medan.jpg",
+    "photo": "/images/hotels/reddoorz-hostel-capsule-inn-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-hostel-capsule-inn-medan.jpg"
   },
   {
     "id": "gmaps-51",
@@ -1016,7 +1192,11 @@
       "AC"
     ],
     "description": "OYO 92881 Nany Ayahanda Syariah adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/oyo-92881-nany-ayahanda-syariah.jpg",
+    "foto": "/images/hotels/oyo-92881-nany-ayahanda-syariah.jpg",
+    "photo": "/images/hotels/oyo-92881-nany-ayahanda-syariah.jpg",
+    "photoUrl": "/images/hotels/oyo-92881-nany-ayahanda-syariah.jpg"
   },
   {
     "id": "gmaps-52",
@@ -1034,7 +1214,11 @@
       "AC"
     ],
     "description": "MBS HOTEL MEDAN adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/mbs-hotel-medan.jpg",
+    "foto": "/images/hotels/mbs-hotel-medan.jpg",
+    "photo": "/images/hotels/mbs-hotel-medan.jpg",
+    "photoUrl": "/images/hotels/mbs-hotel-medan.jpg"
   },
   {
     "id": "gmaps-53",
@@ -1054,7 +1238,11 @@
       "Sarapan"
     ],
     "description": "Penginapan elegan dengan kafe & restoran",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/madani-hotel-medan.jpg",
+    "foto": "/images/hotels/madani-hotel-medan.jpg",
+    "photo": "/images/hotels/madani-hotel-medan.jpg",
+    "photoUrl": "/images/hotels/madani-hotel-medan.jpg"
   },
   {
     "id": "gmaps-54",
@@ -1072,7 +1260,11 @@
       "Parkir"
     ],
     "description": "Fasilitas RedDoorz Plus @ Simpang USU Medan: Wi-Fi gratis, Parkir gratis,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-plus-simpang-usu-medan.jpg",
+    "foto": "/images/hotels/reddoorz-plus-simpang-usu-medan.jpg",
+    "photo": "/images/hotels/reddoorz-plus-simpang-usu-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-plus-simpang-usu-medan.jpg"
   },
   {
     "id": "gmaps-55",
@@ -1092,7 +1284,11 @@
       "Sarapan"
     ],
     "description": "Hotel santai dengan restoran",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/alpha-inn-hotel-medan.jpg",
+    "foto": "/images/hotels/alpha-inn-hotel-medan.jpg",
+    "photo": "/images/hotels/alpha-inn-hotel-medan.jpg",
+    "photoUrl": "/images/hotels/alpha-inn-hotel-medan.jpg"
   },
   {
     "id": "gmaps-56",
@@ -1110,7 +1306,11 @@
       "Parkir"
     ],
     "description": "Fasilitas Cordex Hotel Medan: Wi-Fi gratis, Parkir gratis,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/cordex-hotel-medan.jpg",
+    "foto": "/images/hotels/cordex-hotel-medan.jpg",
+    "photo": "/images/hotels/cordex-hotel-medan.jpg",
+    "photoUrl": "/images/hotels/cordex-hotel-medan.jpg"
   },
   {
     "id": "gmaps-57",
@@ -1127,7 +1327,11 @@
       "WiFi"
     ],
     "description": "Travelbiz hotel adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/travelbiz-hotel.jpg",
+    "foto": "/images/hotels/travelbiz-hotel.jpg",
+    "photo": "/images/hotels/travelbiz-hotel.jpg",
+    "photoUrl": "/images/hotels/travelbiz-hotel.jpg"
   },
   {
     "id": "gmaps-58",
@@ -1166,7 +1370,11 @@
       "Sarapan"
     ],
     "description": "Hotel modern dengan restoran",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/kama-hotel.jpg",
+    "foto": "/images/hotels/kama-hotel.jpg",
+    "photo": "/images/hotels/kama-hotel.jpg",
+    "photoUrl": "/images/hotels/kama-hotel.jpg"
   },
   {
     "id": "gmaps-60",
@@ -1186,7 +1394,11 @@
       "WiFi"
     ],
     "description": "OYO 90245 TRIDASA adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/oyo-90245-tridasa.jpg",
+    "foto": "/images/hotels/oyo-90245-tridasa.jpg",
+    "photo": "/images/hotels/oyo-90245-tridasa.jpg",
+    "photoUrl": "/images/hotels/oyo-90245-tridasa.jpg"
   },
   {
     "id": "gmaps-61",
@@ -1206,7 +1418,11 @@
       "AC"
     ],
     "description": "Hotel simpel dengan sarapan gratis",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-61-medan.jpg",
+    "foto": "/images/hotels/hotel-61-medan.jpg",
+    "photo": "/images/hotels/hotel-61-medan.jpg",
+    "photoUrl": "/images/hotels/hotel-61-medan.jpg"
   },
   {
     "id": "gmaps-62",
@@ -1225,7 +1441,11 @@
       "AC"
     ],
     "description": "HOTEL GRAND BANDARA adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-grand-bandara.jpg",
+    "foto": "/images/hotels/hotel-grand-bandara.jpg",
+    "photo": "/images/hotels/hotel-grand-bandara.jpg",
+    "photoUrl": "/images/hotels/hotel-grand-bandara.jpg"
   },
   {
     "id": "gmaps-63",
@@ -1243,7 +1463,11 @@
       "AC"
     ],
     "description": "Motel Danau toba international adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/motel-danau-toba-international.jpg",
+    "foto": "/images/hotels/motel-danau-toba-international.jpg",
+    "photo": "/images/hotels/motel-danau-toba-international.jpg",
+    "photoUrl": "/images/hotels/motel-danau-toba-international.jpg"
   },
   {
     "id": "gmaps-64",
@@ -1261,7 +1485,11 @@
       "Parkir"
     ],
     "description": "Cherry pink hotel adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/cherry-pink-hotel.jpg",
+    "foto": "/images/hotels/cherry-pink-hotel.jpg",
+    "photo": "/images/hotels/cherry-pink-hotel.jpg",
+    "photoUrl": "/images/hotels/cherry-pink-hotel.jpg"
   },
   {
     "id": "gmaps-65",
@@ -1279,7 +1507,11 @@
       "AC"
     ],
     "description": "Hotel O Juma Ciger Hotel adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-o-juma-ciger-hotel.jpg",
+    "foto": "/images/hotels/hotel-o-juma-ciger-hotel.jpg",
+    "photo": "/images/hotels/hotel-o-juma-ciger-hotel.jpg",
+    "photoUrl": "/images/hotels/hotel-o-juma-ciger-hotel.jpg"
   },
   {
     "id": "gmaps-66",
@@ -1299,7 +1531,11 @@
       "Sarapan"
     ],
     "description": "Hotel bujet simpel dengan Wi-Fi",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/new-gentala-hotel-redpartner.jpg",
+    "foto": "/images/hotels/new-gentala-hotel-redpartner.jpg",
+    "photo": "/images/hotels/new-gentala-hotel-redpartner.jpg",
+    "photoUrl": "/images/hotels/new-gentala-hotel-redpartner.jpg"
   },
   {
     "id": "gmaps-67",
@@ -1321,7 +1557,11 @@
       "Parkir"
     ],
     "description": "Hotel kontemporer dengan kolam di atap",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/cambridge-hotel-medan.jpg",
+    "foto": "/images/hotels/cambridge-hotel-medan.jpg",
+    "photo": "/images/hotels/cambridge-hotel-medan.jpg",
+    "photoUrl": "/images/hotels/cambridge-hotel-medan.jpg"
   },
   {
     "id": "gmaps-68",
@@ -1378,7 +1618,11 @@
       "Parkir"
     ],
     "description": "Grand Impression Hotel adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/grand-impression-hotel.jpg",
+    "foto": "/images/hotels/grand-impression-hotel.jpg",
+    "photo": "/images/hotels/grand-impression-hotel.jpg",
+    "photoUrl": "/images/hotels/grand-impression-hotel.jpg"
   },
   {
     "id": "gmaps-71",
@@ -1416,7 +1660,11 @@
       "Parkir"
     ],
     "description": "favehotel S. Parman - Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/favehotel-s-parman-medan.jpg",
+    "foto": "/images/hotels/favehotel-s-parman-medan.jpg",
+    "photo": "/images/hotels/favehotel-s-parman-medan.jpg",
+    "photoUrl": "/images/hotels/favehotel-s-parman-medan.jpg"
   },
   {
     "id": "gmaps-73",
@@ -1454,7 +1702,11 @@
       "AC"
     ],
     "description": "Fasilitas Studio unit Deprima Apartemen: Apartemen, 2 orang, 1 kamar tidur, 1 kamar mandi, 2 tempat tidur, 24 m², Ber-AC, Elevator, Bebas asap rokok,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/apartemen-1-kamar-berkapasitas-2-orang.jpg",
+    "foto": "/images/hotels/apartemen-1-kamar-berkapasitas-2-orang.jpg",
+    "photo": "/images/hotels/apartemen-1-kamar-berkapasitas-2-orang.jpg",
+    "photoUrl": "/images/hotels/apartemen-1-kamar-berkapasitas-2-orang.jpg"
   },
   {
     "id": "gmaps-75",
@@ -1490,7 +1742,11 @@
       "WiFi"
     ],
     "description": "Fasilitas CBD Studio3 next to Sun Plaza Real City Center! - One-Bedroom Apartment: Apartemen, 2 orang, 1 kamar tidur, 1 kamar mandi, 1 tempat tidur, 80 m², Ber-AC, Papan setrika, Dapur,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/apartemen-1-kamar-berkapasitas-4-orang.jpg",
+    "foto": "/images/hotels/apartemen-1-kamar-berkapasitas-4-orang.jpg",
+    "photo": "/images/hotels/apartemen-1-kamar-berkapasitas-4-orang.jpg",
+    "photoUrl": "/images/hotels/apartemen-1-kamar-berkapasitas-4-orang.jpg"
   },
   {
     "id": "gmaps-77",
@@ -1546,7 +1802,11 @@
       "Parkir"
     ],
     "description": "SANS FINEST HOTEL adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/sans-finest-hotel.jpg",
+    "foto": "/images/hotels/sans-finest-hotel.jpg",
+    "photo": "/images/hotels/sans-finest-hotel.jpg",
+    "photoUrl": "/images/hotels/sans-finest-hotel.jpg"
   },
   {
     "id": "gmaps-80",
@@ -1605,7 +1865,11 @@
       "AC"
     ],
     "description": "Fasilitas CBD Studio1 Next to Sun Plaza City Center!: Apartemen, 2 orang, 1 kamar tidur, 1 kamar mandi, 1 tempat tidur, 60 m², Ber-AC, Papan setrika, Dapur,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/apartemen-ramah-hewan-peliharaan.jpg",
+    "foto": "/images/hotels/apartemen-ramah-hewan-peliharaan.jpg",
+    "photo": "/images/hotels/apartemen-ramah-hewan-peliharaan.jpg",
+    "photoUrl": "/images/hotels/apartemen-ramah-hewan-peliharaan.jpg"
   },
   {
     "id": "gmaps-83",
@@ -1662,7 +1926,11 @@
       "Parkir"
     ],
     "description": "Fasilitas Staigo at SG Premium: Wi-Fi gratis, Parkir gratis, Ber-AC,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/staigo-at-sg-premium.jpg",
+    "foto": "/images/hotels/staigo-at-sg-premium.jpg",
+    "photo": "/images/hotels/staigo-at-sg-premium.jpg",
+    "photoUrl": "/images/hotels/staigo-at-sg-premium.jpg"
   },
   {
     "id": "gmaps-86",
@@ -1680,7 +1948,11 @@
       "AC"
     ],
     "description": "Urbanview Hotel MD Residence adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/urbanview-hotel-md-residence.jpg",
+    "foto": "/images/hotels/urbanview-hotel-md-residence.jpg",
+    "photo": "/images/hotels/urbanview-hotel-md-residence.jpg",
+    "photoUrl": "/images/hotels/urbanview-hotel-md-residence.jpg"
   },
   {
     "id": "gmaps-87",
@@ -1718,7 +1990,11 @@
       "Spa"
     ],
     "description": "LePolonia Hotel & Convention adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/lepolonia-hotel-convention.jpg",
+    "foto": "/images/hotels/lepolonia-hotel-convention.jpg",
+    "photo": "/images/hotels/lepolonia-hotel-convention.jpg",
+    "photoUrl": "/images/hotels/lepolonia-hotel-convention.jpg"
   },
   {
     "id": "gmaps-89",
@@ -1737,7 +2013,11 @@
       "Spa"
     ],
     "description": "Karibia Boutique Hotel adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/karibia-boutique-hotel.jpg",
+    "foto": "/images/hotels/karibia-boutique-hotel.jpg",
+    "photo": "/images/hotels/karibia-boutique-hotel.jpg",
+    "photoUrl": "/images/hotels/karibia-boutique-hotel.jpg"
   },
   {
     "id": "gmaps-90",
@@ -1755,7 +2035,11 @@
       "AC"
     ],
     "description": "Fasilitas The Reiz Private Suite, Premium Condo Medan - No Pets Allowed: Apartemen, 3 orang, 1 kamar tidur, 1 kamar mandi, 2 tempat tidur, Ber-AC, Dapur, Bebas asap rokok, Tidak ada ranjang bayi,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/apartemen-1-kamar-berkapasitas-3-orang.jpg",
+    "foto": "/images/hotels/apartemen-1-kamar-berkapasitas-3-orang.jpg",
+    "photo": "/images/hotels/apartemen-1-kamar-berkapasitas-3-orang.jpg",
+    "photoUrl": "/images/hotels/apartemen-1-kamar-berkapasitas-3-orang.jpg"
   },
   {
     "id": "gmaps-91",
@@ -1774,7 +2058,11 @@
       "Parkir"
     ],
     "description": "Kanasha Hotel Islami adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/kanasha-hotel-islami.jpg",
+    "foto": "/images/hotels/kanasha-hotel-islami.jpg",
+    "photo": "/images/hotels/kanasha-hotel-islami.jpg",
+    "photoUrl": "/images/hotels/kanasha-hotel-islami.jpg"
   },
   {
     "id": "gmaps-92",
@@ -1792,7 +2080,11 @@
       "AC"
     ],
     "description": "Medan Baru Guest House adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/medan-baru-guest-house.jpg",
+    "foto": "/images/hotels/medan-baru-guest-house.jpg",
+    "photo": "/images/hotels/medan-baru-guest-house.jpg",
+    "photoUrl": "/images/hotels/medan-baru-guest-house.jpg"
   },
   {
     "id": "gmaps-93",
@@ -1810,7 +2102,11 @@
       "AC"
     ],
     "description": "Adi Inn Homestay RedPartner adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/adi-inn-homestay-redpartner.jpg",
+    "foto": "/images/hotels/adi-inn-homestay-redpartner.jpg",
+    "photo": "/images/hotels/adi-inn-homestay-redpartner.jpg",
+    "photoUrl": "/images/hotels/adi-inn-homestay-redpartner.jpg"
   },
   {
     "id": "gmaps-94",
@@ -1828,7 +2124,11 @@
       "AC"
     ],
     "description": "Altair Hotel Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/altair-hotel-medan.jpg",
+    "foto": "/images/hotels/altair-hotel-medan.jpg",
+    "photo": "/images/hotels/altair-hotel-medan.jpg",
+    "photoUrl": "/images/hotels/altair-hotel-medan.jpg"
   },
   {
     "id": "gmaps-95",
@@ -1847,7 +2147,11 @@
       "Sarapan"
     ],
     "description": "Sapadia Wisma Sei Silau adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/sapadia-wisma-sei-silau.jpg",
+    "foto": "/images/hotels/sapadia-wisma-sei-silau.jpg",
+    "photo": "/images/hotels/sapadia-wisma-sei-silau.jpg",
+    "photoUrl": "/images/hotels/sapadia-wisma-sei-silau.jpg"
   },
   {
     "id": "gmaps-96",
@@ -1866,7 +2170,11 @@
       "Kolam Renang"
     ],
     "description": "Fasilitas RedDoorz Plus @ Cemara Asri Medan: Wi-Fi gratis, Parkir gratis, Kolam renang,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-plus-cemara-asri-medan.jpg",
+    "foto": "/images/hotels/reddoorz-plus-cemara-asri-medan.jpg",
+    "photo": "/images/hotels/reddoorz-plus-cemara-asri-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-plus-cemara-asri-medan.jpg"
   },
   {
     "id": "gmaps-97",
@@ -1884,7 +2192,11 @@
       "Parkir"
     ],
     "description": "RedDoorz @ Jalan Krakatau Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-jalan-krakatau-medan.jpg",
+    "foto": "/images/hotels/reddoorz-jalan-krakatau-medan.jpg",
+    "photo": "/images/hotels/reddoorz-jalan-krakatau-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-jalan-krakatau-medan.jpg"
   },
   {
     "id": "gmaps-98",
@@ -1902,7 +2214,11 @@
       "Parkir"
     ],
     "description": "RedDoorz Plus near RS USU Medan 2 adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-plus-near-rs-usu-medan-2.jpg",
+    "foto": "/images/hotels/reddoorz-plus-near-rs-usu-medan-2.jpg",
+    "photo": "/images/hotels/reddoorz-plus-near-rs-usu-medan-2.jpg",
+    "photoUrl": "/images/hotels/reddoorz-plus-near-rs-usu-medan-2.jpg"
   },
   {
     "id": "gmaps-99",
@@ -1920,7 +2236,11 @@
       "Parkir"
     ],
     "description": "Wisma Syariah UINSU Medan RedPartner adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/wisma-syariah-uinsu-medan-redpartner.jpg",
+    "foto": "/images/hotels/wisma-syariah-uinsu-medan-redpartner.jpg",
+    "photo": "/images/hotels/wisma-syariah-uinsu-medan-redpartner.jpg",
+    "photoUrl": "/images/hotels/wisma-syariah-uinsu-medan-redpartner.jpg"
   },
   {
     "id": "gmaps-100",
@@ -1938,7 +2258,11 @@
       "Parkir"
     ],
     "description": "Fasilitas OYO 1274 Prime Inn: Wi-Fi, Parkir gratis, Ber-AC,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/oyo-1274-prime-inn.jpg",
+    "foto": "/images/hotels/oyo-1274-prime-inn.jpg",
+    "photo": "/images/hotels/oyo-1274-prime-inn.jpg",
+    "photoUrl": "/images/hotels/oyo-1274-prime-inn.jpg"
   },
   {
     "id": "gmaps-101",
@@ -1956,7 +2280,11 @@
       "AC"
     ],
     "description": "Lexus Guest House Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/lexus-guest-house-medan.jpg",
+    "foto": "/images/hotels/lexus-guest-house-medan.jpg",
+    "photo": "/images/hotels/lexus-guest-house-medan.jpg",
+    "photoUrl": "/images/hotels/lexus-guest-house-medan.jpg"
   },
   {
     "id": "gmaps-102",
@@ -1975,7 +2303,11 @@
       "Sarapan"
     ],
     "description": "Fasilitas Nonie's Huis Guest House: Wi-Fi gratis, Parkir gratis, Ber-AC, Sarapan, Restoran, Ramah difabel,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/nonie-s-huis-guest-house.jpg",
+    "foto": "/images/hotels/nonie-s-huis-guest-house.jpg",
+    "photo": "/images/hotels/nonie-s-huis-guest-house.jpg",
+    "photoUrl": "/images/hotels/nonie-s-huis-guest-house.jpg"
   },
   {
     "id": "gmaps-103",
@@ -1993,7 +2325,11 @@
       "WiFi"
     ],
     "description": "Fasilitas d'primahotel Medan: Sarapan, Wi-Fi gratis, Tempat parkir, Ber-AC, Restoran, Room service, Cocok untuk anak,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/d-primahotel-medan.jpg",
+    "foto": "/images/hotels/d-primahotel-medan.jpg",
+    "photo": "/images/hotels/d-primahotel-medan.jpg",
+    "photoUrl": "/images/hotels/d-primahotel-medan.jpg"
   },
   {
     "id": "gmaps-104",
@@ -2011,7 +2347,11 @@
       "Parkir"
     ],
     "description": "RedDoorz near Hermes Place Polonia Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-near-hermes-place-polonia-medan.jpg",
+    "foto": "/images/hotels/reddoorz-near-hermes-place-polonia-medan.jpg",
+    "photo": "/images/hotels/reddoorz-near-hermes-place-polonia-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-near-hermes-place-polonia-medan.jpg"
   },
   {
     "id": "gmaps-105",
@@ -2029,7 +2369,11 @@
       "Parkir"
     ],
     "description": "RedDoorz Plus @ Jalan Letda Sujono Medan 2 adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-plus-jalan-letda-sujono-medan-2.jpg",
+    "foto": "/images/hotels/reddoorz-plus-jalan-letda-sujono-medan-2.jpg",
+    "photo": "/images/hotels/reddoorz-plus-jalan-letda-sujono-medan-2.jpg",
+    "photoUrl": "/images/hotels/reddoorz-plus-jalan-letda-sujono-medan-2.jpg"
   },
   {
     "id": "gmaps-106",
@@ -2048,7 +2392,11 @@
       "Parkir"
     ],
     "description": "Travellers Suites Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/travellers-suites-medan.jpg",
+    "foto": "/images/hotels/travellers-suites-medan.jpg",
+    "photo": "/images/hotels/travellers-suites-medan.jpg",
+    "photoUrl": "/images/hotels/travellers-suites-medan.jpg"
   },
   {
     "id": "gmaps-107",
@@ -2065,7 +2413,11 @@
       "Sarapan"
     ],
     "description": "Hotel Citi International Sun Yat Sen adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-citi-international-sun-yat-sen.jpg",
+    "foto": "/images/hotels/hotel-citi-international-sun-yat-sen.jpg",
+    "photo": "/images/hotels/hotel-citi-international-sun-yat-sen.jpg",
+    "photoUrl": "/images/hotels/hotel-citi-international-sun-yat-sen.jpg"
   },
   {
     "id": "gmaps-108",
@@ -2083,7 +2435,11 @@
       "Parkir"
     ],
     "description": "Fasilitas RedDoorz Premium near Centre Point Mall Medan: Wi-Fi, Parkir gratis, Ber-AC,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-premium-near-centre-point-mall-medan.jpg",
+    "foto": "/images/hotels/reddoorz-premium-near-centre-point-mall-medan.jpg",
+    "photo": "/images/hotels/reddoorz-premium-near-centre-point-mall-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-premium-near-centre-point-mall-medan.jpg"
   },
   {
     "id": "gmaps-109",
@@ -2101,7 +2457,11 @@
       "Parkir"
     ],
     "description": "RedDoorz @ Medan Johor adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-medan-johor.jpg",
+    "foto": "/images/hotels/reddoorz-medan-johor.jpg",
+    "photo": "/images/hotels/reddoorz-medan-johor.jpg",
+    "photoUrl": "/images/hotels/reddoorz-medan-johor.jpg"
   },
   {
     "id": "gmaps-110",
@@ -2119,7 +2479,11 @@
       "AC"
     ],
     "description": "MB Apartments & Hotel adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/mb-apartments-hotel.jpg",
+    "foto": "/images/hotels/mb-apartments-hotel.jpg",
+    "photo": "/images/hotels/mb-apartments-hotel.jpg",
+    "photoUrl": "/images/hotels/mb-apartments-hotel.jpg"
   },
   {
     "id": "gmaps-111",
@@ -2155,7 +2519,11 @@
       "AC"
     ],
     "description": "Collection O Millenium Inn 2 adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/collection-o-millenium-inn-2.jpg",
+    "foto": "/images/hotels/collection-o-millenium-inn-2.jpg",
+    "photo": "/images/hotels/collection-o-millenium-inn-2.jpg",
+    "photoUrl": "/images/hotels/collection-o-millenium-inn-2.jpg"
   },
   {
     "id": "gmaps-113",
@@ -2173,7 +2541,11 @@
       "Parkir"
     ],
     "description": "OYO 92075 Sky Residence Mawar adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/oyo-92075-sky-residence-mawar.jpg",
+    "foto": "/images/hotels/oyo-92075-sky-residence-mawar.jpg",
+    "photo": "/images/hotels/oyo-92075-sky-residence-mawar.jpg",
+    "photoUrl": "/images/hotels/oyo-92075-sky-residence-mawar.jpg"
   },
   {
     "id": "gmaps-114",
@@ -2191,7 +2563,11 @@
       "AC"
     ],
     "description": "Fasilitas Casapedian 004 ( Mansyur Residence 2BR): Apartemen, 4 orang, 2 kamar tidur, 1 kamar mandi, 56 m², Balkon, Elevator, Dapur, Microwave,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/apartemen-2-kamar-berkapasitas-4-orang.jpg",
+    "foto": "/images/hotels/apartemen-2-kamar-berkapasitas-4-orang.jpg",
+    "photo": "/images/hotels/apartemen-2-kamar-berkapasitas-4-orang.jpg",
+    "photoUrl": "/images/hotels/apartemen-2-kamar-berkapasitas-4-orang.jpg"
   },
   {
     "id": "gmaps-115",
@@ -2209,7 +2585,11 @@
       "AC"
     ],
     "description": "Hotel O near Ringroad City Walk XXI adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-o-near-ringroad-city-walk-xxi.jpg",
+    "foto": "/images/hotels/hotel-o-near-ringroad-city-walk-xxi.jpg",
+    "photo": "/images/hotels/hotel-o-near-ringroad-city-walk-xxi.jpg",
+    "photoUrl": "/images/hotels/hotel-o-near-ringroad-city-walk-xxi.jpg"
   },
   {
     "id": "gmaps-116",
@@ -2227,7 +2607,11 @@
       "Parkir"
     ],
     "description": "RedDoorz @ Jalan Japaris Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-jalan-japaris-medan.jpg",
+    "foto": "/images/hotels/reddoorz-jalan-japaris-medan.jpg",
+    "photo": "/images/hotels/reddoorz-jalan-japaris-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-jalan-japaris-medan.jpg"
   },
   {
     "id": "gmaps-117",
@@ -2245,7 +2629,11 @@
       "AC"
     ],
     "description": "Skyview Setiabudi Apartment adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/skyview-setiabudi-apartment.jpg",
+    "foto": "/images/hotels/skyview-setiabudi-apartment.jpg",
+    "photo": "/images/hotels/skyview-setiabudi-apartment.jpg",
+    "photoUrl": "/images/hotels/skyview-setiabudi-apartment.jpg"
   },
   {
     "id": "gmaps-118",
@@ -2262,7 +2650,11 @@
       "WiFi"
     ],
     "description": "EXPRESS O 91979 Penginapan Tondong Ta adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/express-o-91979-penginapan-tondong-ta.jpg",
+    "foto": "/images/hotels/express-o-91979-penginapan-tondong-ta.jpg",
+    "photo": "/images/hotels/express-o-91979-penginapan-tondong-ta.jpg",
+    "photoUrl": "/images/hotels/express-o-91979-penginapan-tondong-ta.jpg"
   },
   {
     "id": "gmaps-119",
@@ -2281,7 +2673,11 @@
       "Kolam Renang"
     ],
     "description": "Residence Puri Hotel Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/residence-puri-hotel-medan.jpg",
+    "foto": "/images/hotels/residence-puri-hotel-medan.jpg",
+    "photo": "/images/hotels/residence-puri-hotel-medan.jpg",
+    "photoUrl": "/images/hotels/residence-puri-hotel-medan.jpg"
   },
   {
     "id": "gmaps-120",
@@ -2300,7 +2696,11 @@
       "Parkir"
     ],
     "description": "Fasilitas Hotel Cahaya: Sarapan, Wi-Fi gratis, Parkir gratis, Ber-AC,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-cahaya.jpg",
+    "foto": "/images/hotels/hotel-cahaya.jpg",
+    "photo": "/images/hotels/hotel-cahaya.jpg",
+    "photoUrl": "/images/hotels/hotel-cahaya.jpg"
   },
   {
     "id": "gmaps-121",
@@ -2317,7 +2717,11 @@
       "Sarapan"
     ],
     "description": "Hotel Grand Lubuk Raya adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-grand-lubuk-raya.jpg",
+    "foto": "/images/hotels/hotel-grand-lubuk-raya.jpg",
+    "photo": "/images/hotels/hotel-grand-lubuk-raya.jpg",
+    "photoUrl": "/images/hotels/hotel-grand-lubuk-raya.jpg"
   },
   {
     "id": "gmaps-122",
@@ -2335,7 +2739,11 @@
       "Parkir"
     ],
     "description": "Kamani Homestay Syariah adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/kamani-homestay-syariah.jpg",
+    "foto": "/images/hotels/kamani-homestay-syariah.jpg",
+    "photo": "/images/hotels/kamani-homestay-syariah.jpg",
+    "photoUrl": "/images/hotels/kamani-homestay-syariah.jpg"
   },
   {
     "id": "gmaps-123",
@@ -2353,7 +2761,11 @@
       "AC"
     ],
     "description": "Emerald Residence adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/emerald-residence.jpg",
+    "foto": "/images/hotels/emerald-residence.jpg",
+    "photo": "/images/hotels/emerald-residence.jpg",
+    "photoUrl": "/images/hotels/emerald-residence.jpg"
   },
   {
     "id": "gmaps-124",
@@ -2371,7 +2783,11 @@
       "Parkir"
     ],
     "description": "RedDoorz near Manhattan Times Square Medan 2 adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-near-manhattan-times-square-medan-2.jpg",
+    "foto": "/images/hotels/reddoorz-near-manhattan-times-square-medan-2.jpg",
+    "photo": "/images/hotels/reddoorz-near-manhattan-times-square-medan-2.jpg",
+    "photoUrl": "/images/hotels/reddoorz-near-manhattan-times-square-medan-2.jpg"
   },
   {
     "id": "gmaps-125",
@@ -2389,7 +2805,11 @@
       "AC"
     ],
     "description": "Saudara Risidence adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/saudara-risidence.jpg",
+    "foto": "/images/hotels/saudara-risidence.jpg",
+    "photo": "/images/hotels/saudara-risidence.jpg",
+    "photoUrl": "/images/hotels/saudara-risidence.jpg"
   },
   {
     "id": "gmaps-126",
@@ -2407,7 +2827,11 @@
       "AC"
     ],
     "description": "Fasilitas Maria Apartement Dr. Mansyur residence diamond: Vila, 3 orang,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/vila-berkapasitas-3-orang.jpg",
+    "foto": "/images/hotels/vila-berkapasitas-3-orang.jpg",
+    "photo": "/images/hotels/vila-berkapasitas-3-orang.jpg",
+    "photoUrl": "/images/hotels/vila-berkapasitas-3-orang.jpg"
   },
   {
     "id": "gmaps-127",
@@ -2425,7 +2849,11 @@
       "Parkir"
     ],
     "description": "RedDoorz @ Seindo Hotel Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-seindo-hotel-medan.jpg",
+    "foto": "/images/hotels/reddoorz-seindo-hotel-medan.jpg",
+    "photo": "/images/hotels/reddoorz-seindo-hotel-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-seindo-hotel-medan.jpg"
   },
   {
     "id": "gmaps-128",
@@ -2443,7 +2871,11 @@
       "Parkir"
     ],
     "description": "RedDoorz @ Medan Johor 2 adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-medan-johor-2.jpg",
+    "foto": "/images/hotels/reddoorz-medan-johor-2.jpg",
+    "photo": "/images/hotels/reddoorz-medan-johor-2.jpg",
+    "photoUrl": "/images/hotels/reddoorz-medan-johor-2.jpg"
   },
   {
     "id": "gmaps-129",
@@ -2461,7 +2893,11 @@
       "Parkir"
     ],
     "description": "John’s Pardede Residence adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/john-s-pardede-residence.jpg",
+    "foto": "/images/hotels/john-s-pardede-residence.jpg",
+    "photo": "/images/hotels/john-s-pardede-residence.jpg",
+    "photoUrl": "/images/hotels/john-s-pardede-residence.jpg"
   },
   {
     "id": "gmaps-130",
@@ -2479,7 +2915,11 @@
       "Parkir"
     ],
     "description": "RedDoorz near UIN Sumatera Utara adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-near-uin-sumatera-utara.jpg",
+    "foto": "/images/hotels/reddoorz-near-uin-sumatera-utara.jpg",
+    "photo": "/images/hotels/reddoorz-near-uin-sumatera-utara.jpg",
+    "photoUrl": "/images/hotels/reddoorz-near-uin-sumatera-utara.jpg"
   },
   {
     "id": "gmaps-131",
@@ -2497,7 +2937,11 @@
       "Parkir"
     ],
     "description": "Fasilitas RedDoorz @ Teratai Homestay Medan Amplas: Wi-Fi gratis, Parkir gratis, Ber-AC,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-teratai-homestay-medan-amplas.jpg",
+    "foto": "/images/hotels/reddoorz-teratai-homestay-medan-amplas.jpg",
+    "photo": "/images/hotels/reddoorz-teratai-homestay-medan-amplas.jpg",
+    "photoUrl": "/images/hotels/reddoorz-teratai-homestay-medan-amplas.jpg"
   },
   {
     "id": "gmaps-132",
@@ -2514,7 +2958,11 @@
       "WiFi"
     ],
     "description": "RedDoorz near RS USU Medan 3 adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-near-rs-usu-medan-3.jpg",
+    "foto": "/images/hotels/reddoorz-near-rs-usu-medan-3.jpg",
+    "photo": "/images/hotels/reddoorz-near-rs-usu-medan-3.jpg",
+    "photoUrl": "/images/hotels/reddoorz-near-rs-usu-medan-3.jpg"
   },
   {
     "id": "gmaps-133",
@@ -2533,7 +2981,11 @@
       "Sarapan"
     ],
     "description": "RedDoorz @ Sentosa Jaya Helvetia adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-sentosa-jaya-helvetia.jpg",
+    "foto": "/images/hotels/reddoorz-sentosa-jaya-helvetia.jpg",
+    "photo": "/images/hotels/reddoorz-sentosa-jaya-helvetia.jpg",
+    "photoUrl": "/images/hotels/reddoorz-sentosa-jaya-helvetia.jpg"
   },
   {
     "id": "gmaps-134",
@@ -2550,7 +3002,11 @@
       "WiFi"
     ],
     "description": "Capital O 1585 Ring Road Residence adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/capital-o-1585-ring-road-residence.jpg",
+    "foto": "/images/hotels/capital-o-1585-ring-road-residence.jpg",
+    "photo": "/images/hotels/capital-o-1585-ring-road-residence.jpg",
+    "photoUrl": "/images/hotels/capital-o-1585-ring-road-residence.jpg"
   },
   {
     "id": "gmaps-135",
@@ -2568,7 +3024,11 @@
       "Parkir"
     ],
     "description": "RedDoorz near UISU teladan Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-near-uisu-teladan-medan.jpg",
+    "foto": "/images/hotels/reddoorz-near-uisu-teladan-medan.jpg",
+    "photo": "/images/hotels/reddoorz-near-uisu-teladan-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-near-uisu-teladan-medan.jpg"
   },
   {
     "id": "gmaps-136",
@@ -2586,7 +3046,11 @@
       "AC"
     ],
     "description": "ACIRASA Hotel Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/acirasa-hotel-medan.jpg",
+    "foto": "/images/hotels/acirasa-hotel-medan.jpg",
+    "photo": "/images/hotels/acirasa-hotel-medan.jpg",
+    "photoUrl": "/images/hotels/acirasa-hotel-medan.jpg"
   },
   {
     "id": "gmaps-137",
@@ -2604,7 +3068,11 @@
       "AC"
     ],
     "description": "RedDoorz Plus @ Jalan Adam Malik Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-plus-jalan-adam-malik-medan.jpg",
+    "foto": "/images/hotels/reddoorz-plus-jalan-adam-malik-medan.jpg",
+    "photo": "/images/hotels/reddoorz-plus-jalan-adam-malik-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-plus-jalan-adam-malik-medan.jpg"
   },
   {
     "id": "gmaps-138",
@@ -2622,7 +3090,11 @@
       "AC"
     ],
     "description": "Deli Homestay Medan City adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/deli-homestay-medan-city.jpg",
+    "foto": "/images/hotels/deli-homestay-medan-city.jpg",
+    "photo": "/images/hotels/deli-homestay-medan-city.jpg",
+    "photoUrl": "/images/hotels/deli-homestay-medan-city.jpg"
   },
   {
     "id": "gmaps-139",
@@ -2658,7 +3130,11 @@
       "AC"
     ],
     "description": "Fasilitas Apartemen Podomoro Type Lexington.Dm.081536734912: Apartemen, 7 orang, 4 kamar tidur, 3 kamar mandi, 92 m², Ber-AC, Balkon, Elevator, Gym,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/apartemen-4-kamar-berkapasitas-7-orang.jpg",
+    "foto": "/images/hotels/apartemen-4-kamar-berkapasitas-7-orang.jpg",
+    "photo": "/images/hotels/apartemen-4-kamar-berkapasitas-7-orang.jpg",
+    "photoUrl": "/images/hotels/apartemen-4-kamar-berkapasitas-7-orang.jpg"
   },
   {
     "id": "gmaps-141",
@@ -2676,7 +3152,11 @@
       "Parkir"
     ],
     "description": "Hotel Nidia Nugraha adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-nidia-nugraha.jpg",
+    "foto": "/images/hotels/hotel-nidia-nugraha.jpg",
+    "photo": "/images/hotels/hotel-nidia-nugraha.jpg",
+    "photoUrl": "/images/hotels/hotel-nidia-nugraha.jpg"
   },
   {
     "id": "gmaps-142",
@@ -2694,7 +3174,11 @@
       "AC"
     ],
     "description": "Banana Homestay Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/banana-homestay-medan.jpg",
+    "foto": "/images/hotels/banana-homestay-medan.jpg",
+    "photo": "/images/hotels/banana-homestay-medan.jpg",
+    "photoUrl": "/images/hotels/banana-homestay-medan.jpg"
   },
   {
     "id": "gmaps-143",
@@ -2712,7 +3196,11 @@
       "Parkir"
     ],
     "description": "Rose House RedPartner adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/rose-house-redpartner.jpg",
+    "foto": "/images/hotels/rose-house-redpartner.jpg",
+    "photo": "/images/hotels/rose-house-redpartner.jpg",
+    "photoUrl": "/images/hotels/rose-house-redpartner.jpg"
   },
   {
     "id": "gmaps-144",
@@ -2730,7 +3218,11 @@
       "Parkir"
     ],
     "description": "Wisma Hari Kota adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/wisma-hari-kota.jpg",
+    "foto": "/images/hotels/wisma-hari-kota.jpg",
+    "photo": "/images/hotels/wisma-hari-kota.jpg",
+    "photoUrl": "/images/hotels/wisma-hari-kota.jpg"
   },
   {
     "id": "gmaps-145",
@@ -2748,7 +3240,11 @@
       "AC"
     ],
     "description": "Nisura Homestay adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/nisura-homestay.jpg",
+    "foto": "/images/hotels/nisura-homestay.jpg",
+    "photo": "/images/hotels/nisura-homestay.jpg",
+    "photoUrl": "/images/hotels/nisura-homestay.jpg"
   },
   {
     "id": "gmaps-146",
@@ -2766,7 +3262,11 @@
       "Parkir"
     ],
     "description": "Fasilitas RedDoorz @ Jamin Ginting Medan: Wi-Fi gratis, Parkir gratis, Kolam renang luar, Ber-AC, Restoran, Cocok untuk anak,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-jamin-ginting-medan.jpg",
+    "foto": "/images/hotels/reddoorz-jamin-ginting-medan.jpg",
+    "photo": "/images/hotels/reddoorz-jamin-ginting-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-jamin-ginting-medan.jpg"
   },
   {
     "id": "gmaps-147",
@@ -2784,7 +3284,11 @@
       "AC"
     ],
     "description": "Palem Mas Garden RedPartner adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/palem-mas-garden-redpartner.jpg",
+    "foto": "/images/hotels/palem-mas-garden-redpartner.jpg",
+    "photo": "/images/hotels/palem-mas-garden-redpartner.jpg",
+    "photoUrl": "/images/hotels/palem-mas-garden-redpartner.jpg"
   },
   {
     "id": "gmaps-148",
@@ -2803,7 +3307,11 @@
       "Sarapan"
     ],
     "description": "Hotel Syariah Grand Jamee adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-syariah-grand-jamee.jpg",
+    "foto": "/images/hotels/hotel-syariah-grand-jamee.jpg",
+    "photo": "/images/hotels/hotel-syariah-grand-jamee.jpg",
+    "photoUrl": "/images/hotels/hotel-syariah-grand-jamee.jpg"
   },
   {
     "id": "gmaps-149",
@@ -2821,7 +3329,11 @@
       "Parkir"
     ],
     "description": "OYO 1811 Citra Anggrek adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/oyo-1811-citra-anggrek.jpg",
+    "foto": "/images/hotels/oyo-1811-citra-anggrek.jpg",
+    "photo": "/images/hotels/oyo-1811-citra-anggrek.jpg",
+    "photoUrl": "/images/hotels/oyo-1811-citra-anggrek.jpg"
   },
   {
     "id": "gmaps-150",
@@ -2858,7 +3370,11 @@
       "Parkir"
     ],
     "description": "Cendana Homestay Syari'ah Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/cendana-homestay-syari-ah-medan.jpg",
+    "foto": "/images/hotels/cendana-homestay-syari-ah-medan.jpg",
+    "photo": "/images/hotels/cendana-homestay-syari-ah-medan.jpg",
+    "photoUrl": "/images/hotels/cendana-homestay-syari-ah-medan.jpg"
   },
   {
     "id": "gmaps-152",
@@ -2893,7 +3409,11 @@
       "WiFi"
     ],
     "description": "Fasilitas Airy Medan Sunggal Sepakat 19: Wi-Fi gratis, Ber-AC, Cocok untuk anak, Properti bebas rokok,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/airy-medan-sunggal-sepakat-19.jpg",
+    "foto": "/images/hotels/airy-medan-sunggal-sepakat-19.jpg",
+    "photo": "/images/hotels/airy-medan-sunggal-sepakat-19.jpg",
+    "photoUrl": "/images/hotels/airy-medan-sunggal-sepakat-19.jpg"
   },
   {
     "id": "gmaps-154",
@@ -2911,7 +3431,11 @@
       "Kolam Renang"
     ],
     "description": "RedDoorz Hotel JIMART @ Komplek MMTC adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-hotel-jimart-komplek-mmtc.jpg",
+    "foto": "/images/hotels/reddoorz-hotel-jimart-komplek-mmtc.jpg",
+    "photo": "/images/hotels/reddoorz-hotel-jimart-komplek-mmtc.jpg",
+    "photoUrl": "/images/hotels/reddoorz-hotel-jimart-komplek-mmtc.jpg"
   },
   {
     "id": "gmaps-155",
@@ -2929,7 +3453,11 @@
       "Parkir"
     ],
     "description": "RedDoorz Syariah near Stadion Teladan Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-syariah-near-stadion-teladan-medan.jpg",
+    "foto": "/images/hotels/reddoorz-syariah-near-stadion-teladan-medan.jpg",
+    "photo": "/images/hotels/reddoorz-syariah-near-stadion-teladan-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-syariah-near-stadion-teladan-medan.jpg"
   },
   {
     "id": "gmaps-156",
@@ -2948,7 +3476,11 @@
       "Sarapan"
     ],
     "description": "Fasilitas RedDoorz near Waterpark Citra Garden Medan: Wi-Fi gratis, Parkir gratis, Ber-AC, Sarapan, Cocok untuk anak, Properti bebas rokok,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-near-waterpark-citra-garden-medan.jpg",
+    "foto": "/images/hotels/reddoorz-near-waterpark-citra-garden-medan.jpg",
+    "photo": "/images/hotels/reddoorz-near-waterpark-citra-garden-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-near-waterpark-citra-garden-medan.jpg"
   },
   {
     "id": "gmaps-157",
@@ -2966,7 +3498,11 @@
       "Parkir"
     ],
     "description": "RedDoorz near RS Setiabudi Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-near-rs-setiabudi-medan.jpg",
+    "foto": "/images/hotels/reddoorz-near-rs-setiabudi-medan.jpg",
+    "photo": "/images/hotels/reddoorz-near-rs-setiabudi-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-near-rs-setiabudi-medan.jpg"
   },
   {
     "id": "gmaps-158",
@@ -2984,7 +3520,11 @@
       "Parkir"
     ],
     "description": "RedDoorz Plus near UNIMED Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-plus-near-unimed-medan.jpg",
+    "foto": "/images/hotels/reddoorz-plus-near-unimed-medan.jpg",
+    "photo": "/images/hotels/reddoorz-plus-near-unimed-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-plus-near-unimed-medan.jpg"
   },
   {
     "id": "gmaps-159",
@@ -3002,7 +3542,11 @@
       "Parkir"
     ],
     "description": "Hotel Binaka Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-binaka-medan.jpg",
+    "foto": "/images/hotels/hotel-binaka-medan.jpg",
+    "photo": "/images/hotels/hotel-binaka-medan.jpg",
+    "photoUrl": "/images/hotels/hotel-binaka-medan.jpg"
   },
   {
     "id": "gmaps-160",
@@ -3020,7 +3564,11 @@
       "Parkir"
     ],
     "description": "Fasilitas Capital O 90447 Kardopa Hotel Megapark: Wi-Fi gratis, Parkir gratis,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/capital-o-90447-kardopa-hotel-megapark.jpg",
+    "foto": "/images/hotels/capital-o-90447-kardopa-hotel-megapark.jpg",
+    "photo": "/images/hotels/capital-o-90447-kardopa-hotel-megapark.jpg",
+    "photoUrl": "/images/hotels/capital-o-90447-kardopa-hotel-megapark.jpg"
   },
   {
     "id": "gmaps-161",
@@ -3038,7 +3586,11 @@
       "AC"
     ],
     "description": "Hallo bisa daptkam nomor WA adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hallo-bisa-daptkam-nomor-wa.jpg",
+    "foto": "/images/hotels/hallo-bisa-daptkam-nomor-wa.jpg",
+    "photo": "/images/hotels/hallo-bisa-daptkam-nomor-wa.jpg",
+    "photoUrl": "/images/hotels/hallo-bisa-daptkam-nomor-wa.jpg"
   },
   {
     "id": "gmaps-162",
@@ -3056,7 +3608,11 @@
       "AC"
     ],
     "description": "Dancenter Clove Nari Homestay adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/dancenter-clove-nari-homestay.jpg",
+    "foto": "/images/hotels/dancenter-clove-nari-homestay.jpg",
+    "photo": "/images/hotels/dancenter-clove-nari-homestay.jpg",
+    "photoUrl": "/images/hotels/dancenter-clove-nari-homestay.jpg"
   },
   {
     "id": "gmaps-163",
@@ -3074,7 +3630,11 @@
       "AC"
     ],
     "description": "RedDoorz @ Theodore Homestay Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-theodore-homestay-medan.jpg",
+    "foto": "/images/hotels/reddoorz-theodore-homestay-medan.jpg",
+    "photo": "/images/hotels/reddoorz-theodore-homestay-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-theodore-homestay-medan.jpg"
   },
   {
     "id": "gmaps-164",
@@ -3092,7 +3652,11 @@
       "Parkir"
     ],
     "description": "RedDoorz @ Jotel Guest House adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-jotel-guest-house.jpg",
+    "foto": "/images/hotels/reddoorz-jotel-guest-house.jpg",
+    "photo": "/images/hotels/reddoorz-jotel-guest-house.jpg",
+    "photoUrl": "/images/hotels/reddoorz-jotel-guest-house.jpg"
   },
   {
     "id": "gmaps-165",
@@ -3110,7 +3674,11 @@
       "Parkir"
     ],
     "description": "RESIDENCE MOJOPAHIT adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/residence-mojopahit.jpg",
+    "foto": "/images/hotels/residence-mojopahit.jpg",
+    "photo": "/images/hotels/residence-mojopahit.jpg",
+    "photoUrl": "/images/hotels/residence-mojopahit.jpg"
   },
   {
     "id": "gmaps-166",
@@ -3128,7 +3696,11 @@
       "AC"
     ],
     "description": "Fasilitas RedDoorz at Golden Cempaka Medan - Standard Double Room: Rumah, 2 orang, 1 kamar tidur, 1 kamar mandi, 1 tempat tidur, Ber-AC, Ranjang bayi, Elevator, Bebas asap rokok,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/rumah-1-kamar-berkapasitas-2-orang.jpg",
+    "foto": "/images/hotels/rumah-1-kamar-berkapasitas-2-orang.jpg",
+    "photo": "/images/hotels/rumah-1-kamar-berkapasitas-2-orang.jpg",
+    "photoUrl": "/images/hotels/rumah-1-kamar-berkapasitas-2-orang.jpg"
   },
   {
     "id": "gmaps-167",
@@ -3146,7 +3718,11 @@
       "Parkir"
     ],
     "description": "Urbanview Os Residence Medan By RedDoorz adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/urbanview-os-residence-medan-by-reddoorz.jpg",
+    "foto": "/images/hotels/urbanview-os-residence-medan-by-reddoorz.jpg",
+    "photo": "/images/hotels/urbanview-os-residence-medan-by-reddoorz.jpg",
+    "photoUrl": "/images/hotels/urbanview-os-residence-medan-by-reddoorz.jpg"
   },
   {
     "id": "gmaps-168",
@@ -3164,7 +3740,11 @@
       "AC"
     ],
     "description": "RedDoorz @ Jalan Wahidin Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-jalan-wahidin-medan.jpg",
+    "foto": "/images/hotels/reddoorz-jalan-wahidin-medan.jpg",
+    "photo": "/images/hotels/reddoorz-jalan-wahidin-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-jalan-wahidin-medan.jpg"
   },
   {
     "id": "gmaps-169",
@@ -3199,7 +3779,11 @@
       "AC"
     ],
     "description": "Aceh House Hotel Setia Budi adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/aceh-house-hotel-setia-budi.jpg",
+    "foto": "/images/hotels/aceh-house-hotel-setia-budi.jpg",
+    "photo": "/images/hotels/aceh-house-hotel-setia-budi.jpg",
+    "photoUrl": "/images/hotels/aceh-house-hotel-setia-budi.jpg"
   },
   {
     "id": "gmaps-171",
@@ -3217,7 +3801,11 @@
       "AC"
     ],
     "description": "DELTO GUEST HOUSE adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/delto-guest-house.jpg",
+    "foto": "/images/hotels/delto-guest-house.jpg",
+    "photo": "/images/hotels/delto-guest-house.jpg",
+    "photoUrl": "/images/hotels/delto-guest-house.jpg"
   },
   {
     "id": "gmaps-172",
@@ -3235,7 +3823,11 @@
       "AC"
     ],
     "description": "RedDoorz @ Golden Cempaka Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-golden-cempaka-medan.jpg",
+    "foto": "/images/hotels/reddoorz-golden-cempaka-medan.jpg",
+    "photo": "/images/hotels/reddoorz-golden-cempaka-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-golden-cempaka-medan.jpg"
   },
   {
     "id": "gmaps-173",
@@ -3252,7 +3844,11 @@
       "WiFi"
     ],
     "description": "RedDoorz @ CBD Polonia Medan. adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-cbd-polonia-medan.jpg",
+    "foto": "/images/hotels/reddoorz-cbd-polonia-medan.jpg",
+    "photo": "/images/hotels/reddoorz-cbd-polonia-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-cbd-polonia-medan.jpg"
   },
   {
     "id": "gmaps-174",
@@ -3270,7 +3866,11 @@
       "Parkir"
     ],
     "description": "RedDoorz @ Jalan Brigjend Katamso Medan 2 adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-jalan-brigjend-katamso-medan-2.jpg",
+    "foto": "/images/hotels/reddoorz-jalan-brigjend-katamso-medan-2.jpg",
+    "photo": "/images/hotels/reddoorz-jalan-brigjend-katamso-medan-2.jpg",
+    "photoUrl": "/images/hotels/reddoorz-jalan-brigjend-katamso-medan-2.jpg"
   },
   {
     "id": "gmaps-175",
@@ -3288,7 +3888,11 @@
       "Parkir"
     ],
     "description": "Fasilitas DnD Cafe and Guest House: Wi-Fi gratis, Parkir gratis, Ber-AC, Restoran,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/dnd-cafe-and-guest-house.jpg",
+    "foto": "/images/hotels/dnd-cafe-and-guest-house.jpg",
+    "photo": "/images/hotels/dnd-cafe-and-guest-house.jpg",
+    "photoUrl": "/images/hotels/dnd-cafe-and-guest-house.jpg"
   },
   {
     "id": "gmaps-176",
@@ -3307,7 +3911,11 @@
       "Parkir"
     ],
     "description": "Hotel Halim Perdana adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-halim-perdana.jpg",
+    "foto": "/images/hotels/hotel-halim-perdana.jpg",
+    "photo": "/images/hotels/hotel-halim-perdana.jpg",
+    "photoUrl": "/images/hotels/hotel-halim-perdana.jpg"
   },
   {
     "id": "gmaps-177",
@@ -3324,7 +3932,11 @@
       "WiFi"
     ],
     "description": "Pondok Wisata Istana XI adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/pondok-wisata-istana-xi.jpg",
+    "foto": "/images/hotels/pondok-wisata-istana-xi.jpg",
+    "photo": "/images/hotels/pondok-wisata-istana-xi.jpg",
+    "photoUrl": "/images/hotels/pondok-wisata-istana-xi.jpg"
   },
   {
     "id": "gmaps-178",
@@ -3342,7 +3954,11 @@
       "WiFi"
     ],
     "description": "Fasilitas Green Village Kost Medan: Sarapan, Wi-Fi gratis, Restoran, Jemputan bandara, Properti bebas rokok,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/green-village-kost-medan.jpg",
+    "foto": "/images/hotels/green-village-kost-medan.jpg",
+    "photo": "/images/hotels/green-village-kost-medan.jpg",
+    "photoUrl": "/images/hotels/green-village-kost-medan.jpg"
   },
   {
     "id": "gmaps-179",
@@ -3360,7 +3976,11 @@
       "AC"
     ],
     "description": "Fasilitas RedDoorz @ Jalan HM Yamin Medan: Ber-AC,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-jalan-hm-yamin-medan.jpg",
+    "foto": "/images/hotels/reddoorz-jalan-hm-yamin-medan.jpg",
+    "photo": "/images/hotels/reddoorz-jalan-hm-yamin-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-jalan-hm-yamin-medan.jpg"
   },
   {
     "id": "gmaps-180",
@@ -3378,7 +3998,11 @@
       "AC"
     ],
     "description": "Batik Setia Budi adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/batik-setia-budi.jpg",
+    "foto": "/images/hotels/batik-setia-budi.jpg",
+    "photo": "/images/hotels/batik-setia-budi.jpg",
+    "photoUrl": "/images/hotels/batik-setia-budi.jpg"
   },
   {
     "id": "gmaps-181",
@@ -3395,7 +4019,11 @@
       "WiFi"
     ],
     "description": "RedDoorz near RS Royal Prima Medan 2 adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-near-rs-royal-prima-medan-2.jpg",
+    "foto": "/images/hotels/reddoorz-near-rs-royal-prima-medan-2.jpg",
+    "photo": "/images/hotels/reddoorz-near-rs-royal-prima-medan-2.jpg",
+    "photoUrl": "/images/hotels/reddoorz-near-rs-royal-prima-medan-2.jpg"
   },
   {
     "id": "gmaps-182",
@@ -3413,7 +4041,11 @@
       "AC"
     ],
     "description": "Fasilitas SheepDream Empire 28J DeliparkMall 3Bedroom: Apartemen, 6 orang, 3 kamar tidur, 3 kamar mandi, 4 tempat tidur, 90 m², Ber-AC, Elevator, Papan setrika,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/apartemen-3-kamar-berkapasitas-6-orang.jpg",
+    "foto": "/images/hotels/apartemen-3-kamar-berkapasitas-6-orang.jpg",
+    "photo": "/images/hotels/apartemen-3-kamar-berkapasitas-6-orang.jpg",
+    "photoUrl": "/images/hotels/apartemen-3-kamar-berkapasitas-6-orang.jpg"
   },
   {
     "id": "gmaps-183",
@@ -3431,7 +4063,11 @@
       "Parkir"
     ],
     "description": "Fasilitas Penginapan roemah_54: Wi-Fi gratis, Parkir gratis, Ber-AC,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/penginapan-roemah-54.jpg",
+    "foto": "/images/hotels/penginapan-roemah-54.jpg",
+    "photo": "/images/hotels/penginapan-roemah-54.jpg",
+    "photoUrl": "/images/hotels/penginapan-roemah-54.jpg"
   },
   {
     "id": "gmaps-184",
@@ -3449,7 +4085,11 @@
       "AC"
     ],
     "description": "Kost Teratai adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/kost-teratai.jpg",
+    "foto": "/images/hotels/kost-teratai.jpg",
+    "photo": "/images/hotels/kost-teratai.jpg",
+    "photoUrl": "/images/hotels/kost-teratai.jpg"
   },
   {
     "id": "gmaps-185",
@@ -3467,7 +4107,11 @@
       "AC"
     ],
     "description": "GINTSUKA Hostel adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/gintsuka-hostel.jpg",
+    "foto": "/images/hotels/gintsuka-hostel.jpg",
+    "photo": "/images/hotels/gintsuka-hostel.jpg",
+    "photoUrl": "/images/hotels/gintsuka-hostel.jpg"
   },
   {
     "id": "gmaps-186",
@@ -3485,7 +4129,11 @@
       "Parkir"
     ],
     "description": "Barat Residence adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/barat-residence.jpg",
+    "foto": "/images/hotels/barat-residence.jpg",
+    "photo": "/images/hotels/barat-residence.jpg",
+    "photoUrl": "/images/hotels/barat-residence.jpg"
   },
   {
     "id": "gmaps-187",
@@ -3503,7 +4151,11 @@
       "Parkir"
     ],
     "description": "RedDoorz near Grand Palladium adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-near-grand-palladium.jpg",
+    "foto": "/images/hotels/reddoorz-near-grand-palladium.jpg",
+    "photo": "/images/hotels/reddoorz-near-grand-palladium.jpg",
+    "photoUrl": "/images/hotels/reddoorz-near-grand-palladium.jpg"
   },
   {
     "id": "gmaps-188",
@@ -3521,7 +4173,11 @@
       "Parkir"
     ],
     "description": "OYO 849 Palem Mas Garden adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/oyo-849-palem-mas-garden.jpg",
+    "foto": "/images/hotels/oyo-849-palem-mas-garden.jpg",
+    "photo": "/images/hotels/oyo-849-palem-mas-garden.jpg",
+    "photoUrl": "/images/hotels/oyo-849-palem-mas-garden.jpg"
   },
   {
     "id": "gmaps-189",
@@ -3538,7 +4194,11 @@
       "WiFi"
     ],
     "description": "RedDoorz near Medan Amplas adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-near-medan-amplas.jpg",
+    "foto": "/images/hotels/reddoorz-near-medan-amplas.jpg",
+    "photo": "/images/hotels/reddoorz-near-medan-amplas.jpg",
+    "photoUrl": "/images/hotels/reddoorz-near-medan-amplas.jpg"
   },
   {
     "id": "gmaps-190",
@@ -3557,7 +4217,11 @@
       "Parkir"
     ],
     "description": "Fasilitas Kenanga City Hotel: Sarapan, Wi-Fi gratis, Parkir gratis, Ber-AC, Cocok untuk anak,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/kenanga-city-hotel.jpg",
+    "foto": "/images/hotels/kenanga-city-hotel.jpg",
+    "photo": "/images/hotels/kenanga-city-hotel.jpg",
+    "photoUrl": "/images/hotels/kenanga-city-hotel.jpg"
   },
   {
     "id": "gmaps-191",
@@ -3575,7 +4239,11 @@
       "Parkir"
     ],
     "description": "GUEST HOUSE RESTU IBU adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/guest-house-restu-ibu.jpg",
+    "foto": "/images/hotels/guest-house-restu-ibu.jpg",
+    "photo": "/images/hotels/guest-house-restu-ibu.jpg",
+    "photoUrl": "/images/hotels/guest-house-restu-ibu.jpg"
   },
   {
     "id": "gmaps-192",
@@ -3593,7 +4261,11 @@
       "AC"
     ],
     "description": "511 Ideal Stay adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/511-ideal-stay.jpg",
+    "foto": "/images/hotels/511-ideal-stay.jpg",
+    "photo": "/images/hotels/511-ideal-stay.jpg",
+    "photoUrl": "/images/hotels/511-ideal-stay.jpg"
   },
   {
     "id": "gmaps-193",
@@ -3611,7 +4283,11 @@
       "AC"
     ],
     "description": "OYO 94712 Surau Guest House adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/oyo-94712-surau-guest-house.jpg",
+    "foto": "/images/hotels/oyo-94712-surau-guest-house.jpg",
+    "photo": "/images/hotels/oyo-94712-surau-guest-house.jpg",
+    "photoUrl": "/images/hotels/oyo-94712-surau-guest-house.jpg"
   },
   {
     "id": "gmaps-194",
@@ -3629,7 +4305,11 @@
       "Parkir"
     ],
     "description": "Prime Inn near Jalan Sekip Mitra RedDoorz adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/prime-inn-near-jalan-sekip-mitra-reddoorz.jpg",
+    "foto": "/images/hotels/prime-inn-near-jalan-sekip-mitra-reddoorz.jpg",
+    "photo": "/images/hotels/prime-inn-near-jalan-sekip-mitra-reddoorz.jpg",
+    "photoUrl": "/images/hotels/prime-inn-near-jalan-sekip-mitra-reddoorz.jpg"
   },
   {
     "id": "gmaps-195",
@@ -3647,7 +4327,11 @@
       "Parkir"
     ],
     "description": "Fasilitas Hotel Mutiara Hawaii: Wi-Fi, Parkir gratis,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-mutiara-hawaii.jpg",
+    "foto": "/images/hotels/hotel-mutiara-hawaii.jpg",
+    "photo": "/images/hotels/hotel-mutiara-hawaii.jpg",
+    "photoUrl": "/images/hotels/hotel-mutiara-hawaii.jpg"
   },
   {
     "id": "gmaps-196",
@@ -3665,7 +4349,11 @@
       "WiFi"
     ],
     "description": "Fasilitas OYO 99 Residence: Rumah, 15 orang, 10 kamar tidur, Ber-AC, Cocok untuk anak, Bebas asap rokok, TV Kabel, Parkir gratis, Wi-Fi gratis,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/rumah-10-kamar-yang-luas.jpg",
+    "foto": "/images/hotels/rumah-10-kamar-yang-luas.jpg",
+    "photo": "/images/hotels/rumah-10-kamar-yang-luas.jpg",
+    "photoUrl": "/images/hotels/rumah-10-kamar-yang-luas.jpg"
   },
   {
     "id": "gmaps-197",
@@ -3686,7 +4374,11 @@
       "Spa"
     ],
     "description": "Hotel Danau Toba International adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-danau-toba-international.jpg",
+    "foto": "/images/hotels/hotel-danau-toba-international.jpg",
+    "photo": "/images/hotels/hotel-danau-toba-international.jpg",
+    "photoUrl": "/images/hotels/hotel-danau-toba-international.jpg"
   },
   {
     "id": "gmaps-198",
@@ -3705,7 +4397,11 @@
       "Parkir"
     ],
     "description": "Grand Mercure Maha Cipta Medan Angkasa adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/grand-mercure-maha-cipta-medan-angkasa.jpg",
+    "foto": "/images/hotels/grand-mercure-maha-cipta-medan-angkasa.jpg",
+    "photo": "/images/hotels/grand-mercure-maha-cipta-medan-angkasa.jpg",
+    "photoUrl": "/images/hotels/grand-mercure-maha-cipta-medan-angkasa.jpg"
   },
   {
     "id": "gmaps-199",
@@ -3740,7 +4436,11 @@
       "WiFi"
     ],
     "description": "Four Points by Sheraton Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/four-points-by-sheraton-medan.jpg",
+    "foto": "/images/hotels/four-points-by-sheraton-medan.jpg",
+    "photo": "/images/hotels/four-points-by-sheraton-medan.jpg",
+    "photoUrl": "/images/hotels/four-points-by-sheraton-medan.jpg"
   },
   {
     "id": "gmaps-201",
@@ -3779,7 +4479,11 @@
       "Parkir"
     ],
     "description": "Hotel Grand Darussalam Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-grand-darussalam-medan.jpg",
+    "foto": "/images/hotels/hotel-grand-darussalam-medan.jpg",
+    "photo": "/images/hotels/hotel-grand-darussalam-medan.jpg",
+    "photoUrl": "/images/hotels/hotel-grand-darussalam-medan.jpg"
   },
   {
     "id": "gmaps-203",
@@ -3797,7 +4501,11 @@
       "AC"
     ],
     "description": "Hotel 0 Graha Aisyah adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-0-graha-aisyah.jpg",
+    "foto": "/images/hotels/hotel-0-graha-aisyah.jpg",
+    "photo": "/images/hotels/hotel-0-graha-aisyah.jpg",
+    "photoUrl": "/images/hotels/hotel-0-graha-aisyah.jpg"
   },
   {
     "id": "gmaps-204",
@@ -3815,7 +4523,11 @@
       "AC"
     ],
     "description": "Tobali Guest House adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/tobali-guest-house.jpg",
+    "foto": "/images/hotels/tobali-guest-house.jpg",
+    "photo": "/images/hotels/tobali-guest-house.jpg",
+    "photoUrl": "/images/hotels/tobali-guest-house.jpg"
   },
   {
     "id": "gmaps-205",
@@ -3834,7 +4546,11 @@
       "Sarapan"
     ],
     "description": "Pia Hotel Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/pia-hotel-medan.jpg",
+    "foto": "/images/hotels/pia-hotel-medan.jpg",
+    "photo": "/images/hotels/pia-hotel-medan.jpg",
+    "photoUrl": "/images/hotels/pia-hotel-medan.jpg"
   },
   {
     "id": "gmaps-206",
@@ -3852,7 +4568,11 @@
       "AC"
     ],
     "description": "RedDoorz @ Wika Wiki Homestay adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-wika-wiki-homestay.jpg",
+    "foto": "/images/hotels/reddoorz-wika-wiki-homestay.jpg",
+    "photo": "/images/hotels/reddoorz-wika-wiki-homestay.jpg",
+    "photoUrl": "/images/hotels/reddoorz-wika-wiki-homestay.jpg"
   },
   {
     "id": "gmaps-207",
@@ -3890,7 +4610,11 @@
       "Parkir"
     ],
     "description": "Grand Kanaya Hotel adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/grand-kanaya-hotel.jpg",
+    "foto": "/images/hotels/grand-kanaya-hotel.jpg",
+    "photo": "/images/hotels/grand-kanaya-hotel.jpg",
+    "photoUrl": "/images/hotels/grand-kanaya-hotel.jpg"
   },
   {
     "id": "gmaps-209",
@@ -3909,7 +4633,11 @@
       "Sarapan"
     ],
     "description": "Sapadia Guest House HM Joni adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/sapadia-guest-house-hm-joni.jpg",
+    "foto": "/images/hotels/sapadia-guest-house-hm-joni.jpg",
+    "photo": "/images/hotels/sapadia-guest-house-hm-joni.jpg",
+    "photoUrl": "/images/hotels/sapadia-guest-house-hm-joni.jpg"
   },
   {
     "id": "gmaps-210",
@@ -3927,7 +4655,11 @@
       "Parkir"
     ],
     "description": "Fasilitas OYO 727 Merlion Hotel: Wi-Fi gratis, Parkir gratis, Ber-AC,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/oyo-727-merlion-hotel.jpg",
+    "foto": "/images/hotels/oyo-727-merlion-hotel.jpg",
+    "photo": "/images/hotels/oyo-727-merlion-hotel.jpg",
+    "photoUrl": "/images/hotels/oyo-727-merlion-hotel.jpg"
   },
   {
     "id": "gmaps-211",
@@ -3945,7 +4677,11 @@
       "AC"
     ],
     "description": "HOTEL MUTIARA HIJAU SUITES adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-mutiara-hijau-suites.jpg",
+    "foto": "/images/hotels/hotel-mutiara-hijau-suites.jpg",
+    "photo": "/images/hotels/hotel-mutiara-hijau-suites.jpg",
+    "photoUrl": "/images/hotels/hotel-mutiara-hijau-suites.jpg"
   },
   {
     "id": "gmaps-212",
@@ -3963,7 +4699,11 @@
       "Parkir"
     ],
     "description": "Hotel Bumi Malaya RedPartner adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-bumi-malaya-redpartner.jpg",
+    "foto": "/images/hotels/hotel-bumi-malaya-redpartner.jpg",
+    "photo": "/images/hotels/hotel-bumi-malaya-redpartner.jpg",
+    "photoUrl": "/images/hotels/hotel-bumi-malaya-redpartner.jpg"
   },
   {
     "id": "gmaps-213",
@@ -3981,7 +4721,11 @@
       "AC"
     ],
     "description": "Urbanview Hotel Bilal Medan by RedDoorz adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/urbanview-hotel-bilal-medan-by-reddoorz.jpg",
+    "foto": "/images/hotels/urbanview-hotel-bilal-medan-by-reddoorz.jpg",
+    "photo": "/images/hotels/urbanview-hotel-bilal-medan-by-reddoorz.jpg",
+    "photoUrl": "/images/hotels/urbanview-hotel-bilal-medan-by-reddoorz.jpg"
   },
   {
     "id": "gmaps-214",
@@ -3999,7 +4743,11 @@
       "AC"
     ],
     "description": "Arabia Style Hotel Sriwijaya adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/arabia-style-hotel-sriwijaya.jpg",
+    "foto": "/images/hotels/arabia-style-hotel-sriwijaya.jpg",
+    "photo": "/images/hotels/arabia-style-hotel-sriwijaya.jpg",
+    "photoUrl": "/images/hotels/arabia-style-hotel-sriwijaya.jpg"
   },
   {
     "id": "gmaps-215",
@@ -4016,7 +4764,11 @@
       "WiFi"
     ],
     "description": "King's Palace Medan RedPartner adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/king-s-palace-medan-redpartner.jpg",
+    "foto": "/images/hotels/king-s-palace-medan-redpartner.jpg",
+    "photo": "/images/hotels/king-s-palace-medan-redpartner.jpg",
+    "photoUrl": "/images/hotels/king-s-palace-medan-redpartner.jpg"
   },
   {
     "id": "gmaps-216",
@@ -4034,7 +4786,11 @@
       "Parkir"
     ],
     "description": "Tokidoki x Amir Hamzah Residence 123 adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/tokidoki-x-amir-hamzah-residence-123.jpg",
+    "foto": "/images/hotels/tokidoki-x-amir-hamzah-residence-123.jpg",
+    "photo": "/images/hotels/tokidoki-x-amir-hamzah-residence-123.jpg",
+    "photoUrl": "/images/hotels/tokidoki-x-amir-hamzah-residence-123.jpg"
   },
   {
     "id": "gmaps-217",
@@ -4052,7 +4808,11 @@
       "AC"
     ],
     "description": "Hotel O near Ring Road City Walks adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-o-near-ring-road-city-walks.jpg",
+    "foto": "/images/hotels/hotel-o-near-ring-road-city-walks.jpg",
+    "photo": "/images/hotels/hotel-o-near-ring-road-city-walks.jpg",
+    "photoUrl": "/images/hotels/hotel-o-near-ring-road-city-walks.jpg"
   },
   {
     "id": "gmaps-218",
@@ -4071,7 +4831,11 @@
       "Kolam Renang"
     ],
     "description": "RedDoorz Premium @ Setiabudi Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-premium-setiabudi-medan.jpg",
+    "foto": "/images/hotels/reddoorz-premium-setiabudi-medan.jpg",
+    "photo": "/images/hotels/reddoorz-premium-setiabudi-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-premium-setiabudi-medan.jpg"
   },
   {
     "id": "gmaps-219",
@@ -4090,7 +4854,11 @@
       "Sarapan"
     ],
     "description": "Premium Inn Cemara Asri adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/premium-inn-cemara-asri.jpg",
+    "foto": "/images/hotels/premium-inn-cemara-asri.jpg",
+    "photo": "/images/hotels/premium-inn-cemara-asri.jpg",
+    "photoUrl": "/images/hotels/premium-inn-cemara-asri.jpg"
   },
   {
     "id": "gmaps-220",
@@ -4108,7 +4876,11 @@
       "AC"
     ],
     "description": "Sapadia Guest House Sindoro adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/sapadia-guest-house-sindoro.jpg",
+    "foto": "/images/hotels/sapadia-guest-house-sindoro.jpg",
+    "photo": "/images/hotels/sapadia-guest-house-sindoro.jpg",
+    "photoUrl": "/images/hotels/sapadia-guest-house-sindoro.jpg"
   },
   {
     "id": "gmaps-221",
@@ -4127,7 +4899,11 @@
       "Parkir"
     ],
     "description": "Fasilitas Aresidencia - Sei Padang: Sarapan gratis, Wi-Fi gratis, Parkir gratis, Ber-AC, Cocok untuk anak,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/aresidencia-sei-padang.jpg",
+    "foto": "/images/hotels/aresidencia-sei-padang.jpg",
+    "photo": "/images/hotels/aresidencia-sei-padang.jpg",
+    "photoUrl": "/images/hotels/aresidencia-sei-padang.jpg"
   },
   {
     "id": "gmaps-222",
@@ -4146,7 +4922,11 @@
       "Kolam Renang"
     ],
     "description": "Fasilitas Golden Eleven Hotel Medan: Sarapan ($), Wi-Fi gratis, Parkir gratis, Kolam renang, Ber-AC, Bar, Restoran, Room service, Cocok untuk anak,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/golden-eleven-hotel-medan.jpg",
+    "foto": "/images/hotels/golden-eleven-hotel-medan.jpg",
+    "photo": "/images/hotels/golden-eleven-hotel-medan.jpg",
+    "photoUrl": "/images/hotels/golden-eleven-hotel-medan.jpg"
   },
   {
     "id": "gmaps-223",
@@ -4164,7 +4944,11 @@
       "AC"
     ],
     "description": "The Castle Medan - Villa adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/the-castle-medan-villa.jpg",
+    "foto": "/images/hotels/the-castle-medan-villa.jpg",
+    "photo": "/images/hotels/the-castle-medan-villa.jpg",
+    "photoUrl": "/images/hotels/the-castle-medan-villa.jpg"
   },
   {
     "id": "gmaps-224",
@@ -4182,7 +4966,11 @@
       "Parkir"
     ],
     "description": "SUPER OYO 283 Helvetia Residence adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/super-oyo-283-helvetia-residence.jpg",
+    "foto": "/images/hotels/super-oyo-283-helvetia-residence.jpg",
+    "photo": "/images/hotels/super-oyo-283-helvetia-residence.jpg",
+    "photoUrl": "/images/hotels/super-oyo-283-helvetia-residence.jpg"
   },
   {
     "id": "gmaps-225",
@@ -4200,7 +4988,11 @@
       "Parkir"
     ],
     "description": "RedDoorz Plus @ Setiabudi Medan 4 adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-plus-setiabudi-medan-4.jpg",
+    "foto": "/images/hotels/reddoorz-plus-setiabudi-medan-4.jpg",
+    "photo": "/images/hotels/reddoorz-plus-setiabudi-medan-4.jpg",
+    "photoUrl": "/images/hotels/reddoorz-plus-setiabudi-medan-4.jpg"
   },
   {
     "id": "gmaps-226",
@@ -4217,7 +5009,11 @@
       "WiFi"
     ],
     "description": "RedDoorz Plus @ Sempurna Inn Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-plus-sempurna-inn-medan.jpg",
+    "foto": "/images/hotels/reddoorz-plus-sempurna-inn-medan.jpg",
+    "photo": "/images/hotels/reddoorz-plus-sempurna-inn-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-plus-sempurna-inn-medan.jpg"
   },
   {
     "id": "gmaps-227",
@@ -4235,7 +5031,11 @@
       "Parkir"
     ],
     "description": "RedDoorz Plus @ Centrium Katamso Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-plus-centrium-katamso-medan.jpg",
+    "foto": "/images/hotels/reddoorz-plus-centrium-katamso-medan.jpg",
+    "photo": "/images/hotels/reddoorz-plus-centrium-katamso-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-plus-centrium-katamso-medan.jpg"
   },
   {
     "id": "gmaps-228",
@@ -4253,7 +5053,11 @@
       "AC"
     ],
     "description": "Sapadia Clubhouse Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/sapadia-clubhouse-medan.jpg",
+    "foto": "/images/hotels/sapadia-clubhouse-medan.jpg",
+    "photo": "/images/hotels/sapadia-clubhouse-medan.jpg",
+    "photoUrl": "/images/hotels/sapadia-clubhouse-medan.jpg"
   },
   {
     "id": "gmaps-229",
@@ -4271,7 +5075,11 @@
       "AC"
     ],
     "description": "Strategic Apartment adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/strategic-apartment.jpg",
+    "foto": "/images/hotels/strategic-apartment.jpg",
+    "photo": "/images/hotels/strategic-apartment.jpg",
+    "photoUrl": "/images/hotels/strategic-apartment.jpg"
   },
   {
     "id": "gmaps-230",
@@ -4290,7 +5098,11 @@
       "Parkir"
     ],
     "description": "Royal Suite Condotel adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/royal-suite-condotel.jpg",
+    "foto": "/images/hotels/royal-suite-condotel.jpg",
+    "photo": "/images/hotels/royal-suite-condotel.jpg",
+    "photoUrl": "/images/hotels/royal-suite-condotel.jpg"
   },
   {
     "id": "gmaps-231",
@@ -4308,7 +5120,11 @@
       "AC"
     ],
     "description": "Fasilitas MB Apartments Hotel Medan - Large Double Room: Apartemen, 4 orang, 12 kamar tidur, 12 kamar mandi, 2 tempat tidur, Ber-AC, Cocok untuk anak, Papan setrika, Dapur,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/apartemen-12-kamar-berkapasitas-4-orang.jpg",
+    "foto": "/images/hotels/apartemen-12-kamar-berkapasitas-4-orang.jpg",
+    "photo": "/images/hotels/apartemen-12-kamar-berkapasitas-4-orang.jpg",
+    "photoUrl": "/images/hotels/apartemen-12-kamar-berkapasitas-4-orang.jpg"
   },
   {
     "id": "gmaps-232",
@@ -4326,7 +5142,11 @@
       "Parkir"
     ],
     "description": "Vandolia Guest House Medan RedPartner adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/vandolia-guest-house-medan-redpartner.jpg",
+    "foto": "/images/hotels/vandolia-guest-house-medan-redpartner.jpg",
+    "photo": "/images/hotels/vandolia-guest-house-medan-redpartner.jpg",
+    "photoUrl": "/images/hotels/vandolia-guest-house-medan-redpartner.jpg"
   },
   {
     "id": "gmaps-233",
@@ -4344,7 +5164,11 @@
       "Parkir"
     ],
     "description": "Fasilitas RedDoorz Plus near Thamrin Plaza Medan: Wi-Fi gratis, Parkir gratis, Ber-AC,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-plus-near-thamrin-plaza-medan.jpg",
+    "foto": "/images/hotels/reddoorz-plus-near-thamrin-plaza-medan.jpg",
+    "photo": "/images/hotels/reddoorz-plus-near-thamrin-plaza-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-plus-near-thamrin-plaza-medan.jpg"
   },
   {
     "id": "gmaps-234",
@@ -4362,7 +5186,11 @@
       "AC"
     ],
     "description": "RedDoorz near Gajah Mada Park Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-near-gajah-mada-park-medan.jpg",
+    "foto": "/images/hotels/reddoorz-near-gajah-mada-park-medan.jpg",
+    "photo": "/images/hotels/reddoorz-near-gajah-mada-park-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-near-gajah-mada-park-medan.jpg"
   },
   {
     "id": "gmaps-235",
@@ -4381,7 +5209,11 @@
       "Parkir"
     ],
     "description": "Hotel Islami Aceh House adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-islami-aceh-house.jpg",
+    "foto": "/images/hotels/hotel-islami-aceh-house.jpg",
+    "photo": "/images/hotels/hotel-islami-aceh-house.jpg",
+    "photoUrl": "/images/hotels/hotel-islami-aceh-house.jpg"
   },
   {
     "id": "gmaps-236",
@@ -4399,7 +5231,11 @@
       "AC"
     ],
     "description": "RedDoorz @ Vania Residence Medan adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/reddoorz-vania-residence-medan.jpg",
+    "foto": "/images/hotels/reddoorz-vania-residence-medan.jpg",
+    "photo": "/images/hotels/reddoorz-vania-residence-medan.jpg",
+    "photoUrl": "/images/hotels/reddoorz-vania-residence-medan.jpg"
   },
   {
     "id": "gmaps-237",
@@ -4417,7 +5253,11 @@
       "AC"
     ],
     "description": "Hotel O Medan Timur Near Rsu Madani adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/hotel-o-medan-timur-near-rsu-madani.jpg",
+    "foto": "/images/hotels/hotel-o-medan-timur-near-rsu-madani.jpg",
+    "photo": "/images/hotels/hotel-o-medan-timur-near-rsu-madani.jpg",
+    "photoUrl": "/images/hotels/hotel-o-medan-timur-near-rsu-madani.jpg"
   },
   {
     "id": "gmaps-238",
@@ -4436,7 +5276,11 @@
       "Sarapan"
     ],
     "description": "Sapadia Guest House Syailendra adalah pilihan menginap di Medan.",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/sapadia-guest-house-syailendra.jpg",
+    "foto": "/images/hotels/sapadia-guest-house-syailendra.jpg",
+    "photo": "/images/hotels/sapadia-guest-house-syailendra.jpg",
+    "photoUrl": "/images/hotels/sapadia-guest-house-syailendra.jpg"
   },
   {
     "id": "gmaps-239",
@@ -4454,6 +5298,10 @@
       "Parkir"
     ],
     "description": "Fasilitas Graha Aisyah: Wi-Fi gratis, Parkir gratis, Ber-AC,",
-    "source": "google_maps"
+    "source": "google_maps",
+    "image_url": "/images/hotels/graha-aisyah.jpg",
+    "foto": "/images/hotels/graha-aisyah.jpg",
+    "photo": "/images/hotels/graha-aisyah.jpg",
+    "photoUrl": "/images/hotels/graha-aisyah.jpg"
   }
 ]

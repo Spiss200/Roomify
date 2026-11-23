@@ -1180,6 +1180,10 @@ SELECT ?nama ?alamat ?deskripsi ?bintang ?rating ?jumlahReview ?harga ?lat ?lon 
             travelMode: mode
         }, function(result, status) {
             if (status === google.maps.DirectionsStatus.OK) {
+                if (window.hotelPolyline) {
+                    window.hotelPolyline.setMap(null);
+                    window.hotelPolyline = null;
+                }
                 directionsRenderer.setDirections(result);
                 const leg = result.routes[0].legs[0];
 
@@ -1220,9 +1224,110 @@ SELECT ?nama ?alamat ?deskripsi ?bintang ?rating ?jumlahReview ?harga ?lat ?lon 
                     `).join('');
                 }
             } else {
-                console.error('Directions request failed due to ' + status);
+                console.warn('Google Directions failed (' + status + '), switching to OpenStreetMap OSRM...');
+                drawRouteWithOSRM(originCoords, originName, modeVal);
             }
         });
+    }
+
+    async function drawRouteWithOSRM(originCoords, originName, modeVal) {
+        try {
+            const profile = modeVal === 'WALKING' ? 'foot' : 'driving';
+            const url = `https://router.project-osrm.org/route/v1/${profile}/${originCoords.lng},${originCoords.lat};${HOTEL_LNG},${HOTEL_LAT}?overview=full&geometries=geojson&steps=true`;
+            const res = await fetch(url);
+            if (!res.ok) throw new Error('OSRM failed');
+            const data = await res.json();
+            if (data.code === 'Ok' && data.routes && data.routes.length > 0) {
+                const route = data.routes[0];
+                const coords = route.geometry.coordinates.map(c => ({ lat: c[1], lng: c[0] }));
+                const km = (route.distance / 1000).toFixed(1) + ' km';
+                const mins = Math.max(1, Math.round(route.duration / 60)) + ' mnt';
+
+                if (directionsRenderer) directionsRenderer.setDirections({ routes: [] });
+                if (window.hotelPolyline) window.hotelPolyline.setMap(null);
+
+                window.hotelPolyline = new google.maps.Polyline({
+                    path: coords,
+                    strokeColor: '#2563eb',
+                    strokeWeight: 6,
+                    strokeOpacity: 0.85,
+                    map: map
+                });
+
+                const bounds = new google.maps.LatLngBounds();
+                coords.forEach(pt => bounds.extend(pt));
+                map.fitBounds(bounds, { top: 40, right: 40, bottom: 40, left: 40 });
+
+                const banner = document.getElementById('route-result-banner');
+                if (banner) banner.classList.remove('hidden');
+
+                const summaryEl = document.getElementById('route-summary-text');
+                if (summaryEl) {
+                    summaryEl.innerHTML = `
+                        Rute ${modeVal === 'WALKING' ? 'Jalan Kaki' : 'Berkendara'} (OpenStreetMap): Jarak <strong>${km}</strong> (Estimasi <strong>${mins}</strong>)
+                    `;
+                }
+
+                const originEl = document.getElementById('route-origin-text');
+                if (originEl) {
+                    originEl.innerText = `Dari: ${originName} → Menuju ${HOTEL_NAME}`;
+                }
+
+                const gmapsBtn = document.getElementById('btn-open-gmaps-nav');
+                if (gmapsBtn) {
+                    gmapsBtn.href = `https://www.google.com/maps/dir/?api=1&origin=${originCoords.lat},${originCoords.lng}&destination=${HOTEL_LAT},${HOTEL_LNG}&travelmode=${modeVal.toLowerCase()}`;
+                }
+
+                const stepsList = document.getElementById('hotel-steps-list');
+                const stepsCount = document.getElementById('hotel-steps-count');
+                const steps = route.legs[0]?.steps || [];
+                if (stepsList && steps.length > 0) {
+                    if (stepsCount) stepsCount.innerText = `${steps.length} Belokan`;
+                    stepsList.innerHTML = steps.map((st, i) => {
+                        let inst = st.maneuver.type;
+                        if (st.maneuver.modifier) inst += ' ' + st.maneuver.modifier;
+                        if (st.name) inst += ' ke ' + st.name;
+                        const distStr = st.distance < 1000 ? Math.round(st.distance) + ' m' : (st.distance/1000).toFixed(1) + ' km';
+                        return `
+                            <div class="p-2 rounded-lg bg-slate-800/80 border border-slate-700/60 flex items-start gap-2.5">
+                                <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-[10px] flex items-center justify-center shrink-0 border border-emerald-500/30">
+                                    ${i + 1}
+                                </span>
+                                <div class="flex-1">
+                                    <div class="text-white font-medium">${inst.charAt(0).toUpperCase() + inst.slice(1)}</div>
+                                    <div class="text-[10px] text-slate-400 mt-0.5">${distStr}</div>
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+                }
+                return;
+            }
+        } catch (e) {
+            console.warn('OSRM error, drawing direct line', e);
+        }
+
+        // Direct fallback
+        if (directionsRenderer) directionsRenderer.setDirections({ routes: [] });
+        if (window.hotelPolyline) window.hotelPolyline.setMap(null);
+        window.hotelPolyline = new google.maps.Polyline({
+            path: [originCoords, { lat: HOTEL_LAT, lng: HOTEL_LNG }],
+            strokeColor: '#2563eb',
+            strokeWeight: 6,
+            strokeOpacity: 0.85,
+            map: map
+        });
+        const bounds = new google.maps.LatLngBounds();
+        bounds.extend(originCoords);
+        bounds.extend({ lat: HOTEL_LAT, lng: HOTEL_LNG });
+        map.fitBounds(bounds, { top: 40, right: 40, bottom: 40, left: 40 });
+
+        const banner = document.getElementById('route-result-banner');
+        if (banner) banner.classList.remove('hidden');
+        const summaryEl = document.getElementById('route-summary-text');
+        if (summaryEl) summaryEl.innerHTML = `Navigasi Jalur Langsung`;
+        const originEl = document.getElementById('route-origin-text');
+        if (originEl) originEl.innerText = `Dari: ${originName} → Menuju ${HOTEL_NAME}`;
     }
 
     function switchToMap() {

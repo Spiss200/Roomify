@@ -421,51 +421,60 @@
         <!-- Two-Panel Layout -->
         <div class="flex flex-col lg:flex-row gap-7">
 
+            <!-- Backdrop for Mobile Offcanvas Filter -->
+            <div id="filter-backdrop" onclick="toggleMobileFilter(true)"
+                 class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-40 hidden transition-opacity lg:hidden"></div>
+
             <!-- =====================================================
-                 LEFT: FILTER SIDEBAR (SCROLLABLE INDEPENDENTLY)
+                 LEFT: FILTER SIDEBAR (MOBILE OFFCANVAS & DESKTOP STICKY)
             ===================================================== -->
-            <aside id="filter-aside" class="w-full lg:w-72 xl:w-80 shrink-0 hidden lg:block">
+            <aside id="filter-aside" class="fixed inset-y-0 right-0 z-50 w-full sm:w-96 max-w-[88vw] translate-x-full transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:z-10 lg:w-72 xl:w-80 lg:shrink-0 lg:block bg-white dark:bg-slate-900 shadow-2xl lg:shadow-none">
                 <form action="{{ url('/search') }}" method="GET" id="search-filter-form"
-                      class="filter-card rounded-2xl p-5 space-y-5 lg:sticky lg:top-20 lg:max-h-[calc(100vh-5.5rem)] lg:overflow-y-auto custom-scrollbar">
+                      class="filter-card h-full lg:h-auto rounded-none lg:rounded-2xl p-4 space-y-3.5 overflow-y-auto lg:sticky lg:top-20 lg:max-h-[calc(100vh-5.5rem)] custom-scrollbar">
 
                     <!-- Hidden Geolocation Coordinates for Real-Time Distance Filter -->
                     <input type="hidden" name="user_lat" id="filter-user-lat" value="{{ request('user_lat', $userLat ?? '') }}">
                     <input type="hidden" name="user_lng" id="filter-user-lng" value="{{ request('user_lng', $userLng ?? '') }}">
 
                     <!-- Sidebar Header -->
-                    <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+                    <div class="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-slate-800">
                         <div class="flex items-center gap-2">
-                            <div class="w-7 h-7 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #2563eb, #7c3aed);">
-                                <i class="fa-solid fa-sliders text-white text-xs"></i>
+                            <div class="w-6 h-6 rounded-lg flex items-center justify-center bg-blue-600 text-white shadow-xs">
+                                <i class="fa-solid fa-sliders text-[11px]"></i>
                             </div>
-                            <h2 class="font-bold text-slate-900 text-sm">Filter Pencarian</h2>
+                            <h2 class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm">Filter Pencarian</h2>
                         </div>
-                        <a href="{{ url('/search') }}" class="text-xs text-blue-600 hover:text-blue-800 font-medium flex items-center gap-1 hover:underline">
-                            <i class="fa-solid fa-rotate-left text-[10px]"></i> Reset
-                        </a>
+                        <div class="flex items-center gap-2">
+                            <a href="{{ url('/search') }}" class="text-[11px] text-blue-600 hover:text-blue-800 dark:text-blue-400 font-semibold flex items-center gap-1 hover:underline">
+                                <i class="fa-solid fa-rotate-left text-[9px]"></i> Reset
+                            </a>
+                            <button type="button" onclick="toggleMobileFilter(true)" class="lg:hidden text-slate-400 hover:text-slate-600 dark:hover:text-white p-1 rounded-lg" aria-label="Tutup Filter">
+                                <i class="fa-solid fa-xmark text-base"></i>
+                            </button>
+                        </div>
                     </div>
 
                     <!-- Filter 1: Keyword -->
-                    <div class="space-y-1.5">
-                        <label for="q" class="flex items-center gap-1.5 text-xs font-bold text-slate-500 uppercase tracking-wider">
-                            <i class="fa-solid fa-magnifying-glass text-blue-400"></i> Kata Kunci
+                    <div class="space-y-1">
+                        <label for="q" class="flex items-center gap-1 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
+                            <i class="fa-solid fa-magnifying-glass text-blue-500 text-[10px]"></i> Kata Kunci
                         </label>
                         <div class="relative">
                             <input type="text" id="q" name="q" value="{{ request('q') }}"
-                                   placeholder="Nama hotel, lokasi..."
-                                   class="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-3 py-2.5 pl-9 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition">
-                            <i class="fa-solid fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                                   placeholder="Nama hotel, jalan, area..."
+                                   class="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-2.5 py-1.5 pl-8 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition">
+                            <i class="fa-solid fa-search absolute left-2.5 top-1/2 -translate-y-1/2 text-slate-400 text-[11px]"></i>
                         </div>
                     </div>
 
-                    <!-- Filter 2: Landmark -->
-                    <div class="space-y-1.5">
-                        <label for="landmark" class="flex items-center gap-1.5 text-xs font-bold text-slate-500 uppercase tracking-wider">
-                            <i class="fa-solid fa-map-pin text-blue-400"></i> Dekat Landmark
+                    <!-- Filter 2: Landmark (with instant map pan) -->
+                    <div class="space-y-1">
+                        <label for="landmark" class="flex items-center gap-1 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
+                            <i class="fa-solid fa-map-pin text-amber-500 text-[10px]"></i> Dekat Landmark
                         </label>
                         <div class="relative">
-                            <select id="landmark" name="landmark"
-                                    class="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-3 py-2.5 pr-8 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition appearance-none">
+                            <select id="landmark" name="landmark" onchange="focusLandmarkDropdown(this.value)"
+                                    class="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-2.5 py-1.5 pr-7 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition appearance-none">
                                 <option value="">Semua Landmark Medan (24 Lokasi)</option>
                                 @foreach($landmarks ?? [] as $lm)
                                     <option value="{{ $lm['nama'] }}" {{ request('landmark') == $lm['nama'] ? 'selected' : '' }}>
@@ -473,103 +482,101 @@
                                     </option>
                                 @endforeach
                             </select>
-                            <i class="fa-solid fa-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs pointer-events-none"></i>
+                            <i class="fa-solid fa-chevron-down absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 text-[10px] pointer-events-none"></i>
                         </div>
                     </div>
 
-                    <!-- Filter 3: Star Rating -->
-                    <div class="space-y-1.5">
-                        <label for="rating" class="flex items-center gap-1.5 text-xs font-bold text-slate-500 uppercase tracking-wider">
-                            <i class="fa-solid fa-star text-amber-400"></i> Rating Bintang
-                        </label>
-                        <div class="grid grid-cols-5 gap-1.5">
+                    <!-- Filter 3: Star Rating (Compact Segment) -->
+                    <div class="space-y-1">
+                        <div class="flex items-center justify-between">
+                            <label class="flex items-center gap-1 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
+                                <i class="fa-solid fa-star text-amber-400 text-[10px]"></i> Bintang
+                            </label>
+                            @if(request('rating'))
+                                <a href="{{ route('search', request()->except('rating')) }}" class="text-[10px] text-blue-600 hover:underline">Semua</a>
+                            @endif
+                        </div>
+                        <div class="grid grid-cols-5 gap-1">
                             @foreach([1,2,3,4,5] as $star)
                                 <label class="cursor-pointer">
                                     <input type="radio" name="rating" value="{{ $star }}" class="sr-only peer" {{ request('rating') == $star ? 'checked' : '' }}>
-                                    <div class="text-center py-2 rounded-xl border-2 border-slate-200 text-xs font-bold text-slate-500 peer-checked:border-amber-400 peer-checked:bg-amber-50 peer-checked:text-amber-700 hover:border-amber-300 transition cursor-pointer">
+                                    <div class="text-center py-1 rounded-lg border border-slate-200 text-xs font-bold text-slate-600 peer-checked:border-amber-500 peer-checked:bg-amber-50 peer-checked:text-amber-800 hover:border-amber-300 transition">
                                         {{ $star }}★
                                     </div>
                                 </label>
                             @endforeach
                         </div>
-                        <div class="text-center">
-                            <label class="inline-flex items-center gap-1 cursor-pointer text-xs text-slate-400 hover:text-slate-600">
-                                <input type="radio" name="rating" value="" {{ !request('rating') ? 'checked' : '' }} class="sr-only"> Semua bintang
-                            </label>
-                        </div>
                     </div>
 
-                    <!-- Filter 4: Price Range -->
-                    <div class="space-y-2">
-                        <label class="flex items-center gap-1.5 text-xs font-bold text-slate-500 uppercase tracking-wider">
-                            <i class="fa-solid fa-tag text-blue-400"></i> Rentang Harga
+                    <!-- Filter 4: Price Range (Compact Inline) -->
+                    <div class="space-y-1">
+                        <label class="flex items-center gap-1 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
+                            <i class="fa-solid fa-tag text-blue-500 text-[10px]"></i> Rentang Harga (Rp)
                         </label>
-                        <div class="grid grid-cols-2 gap-2">
-                            <div>
-                                <label class="text-[10px] text-slate-400 font-medium block mb-1">Min (Rp)</label>
-                                <input type="number" name="price_min" value="{{ request('price_min') }}"
-                                       placeholder="0"
-                                       class="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
-                            </div>
-                            <div>
-                                <label class="text-[10px] text-slate-400 font-medium block mb-1">Max (Rp)</label>
-                                <input type="number" name="price_max" value="{{ request('price_max') }}"
-                                       placeholder="∞"
-                                       class="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
-                            </div>
+                        <div class="grid grid-cols-2 gap-1.5">
+                            <input type="number" name="price_min" value="{{ request('price_min') }}"
+                                   placeholder="Min (Rp)"
+                                   class="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-2.5 py-1.5 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
+                            <input type="number" name="price_max" value="{{ request('price_max') }}"
+                                   placeholder="Maks (Rp)"
+                                   class="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-2.5 py-1.5 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
                         </div>
                     </div>
 
                     <!-- Filter 4b: Hanya Hotel dengan Harga -->
-                    <div class="pt-1">
-                        <label class="flex items-center gap-2 cursor-pointer text-xs font-semibold text-slate-700 dark:text-slate-300">
+                    <div>
+                        <label class="flex items-center gap-2 cursor-pointer text-[11px] font-medium text-slate-700 dark:text-slate-300">
                             <input type="checkbox" name="with_price" value="1" {{ request('with_price') || request('has_price') == '1' ? 'checked' : '' }}
                                    class="rounded border-slate-300 text-blue-600 focus:ring-blue-400">
-                            <span>Hanya hotel dengan harga (Google Maps)</span>
+                            <span>Hanya hotel dengan harga</span>
                         </label>
                     </div>
 
-                    <!-- Filter 5: Facilities -->
-                    <div class="space-y-2">
-                        <label class="flex items-center gap-1.5 text-xs font-bold text-slate-500 uppercase tracking-wider">
-                            <i class="fa-solid fa-concierge-bell text-blue-400"></i> Fasilitas
-                        </label>
-                        @php $selectedFacilities = request('facilities', []); @endphp
-                        <div class="grid grid-cols-2 gap-1.5">
+                    <!-- Filter 5: Facilities (Accordion / Collapsible) -->
+                    @php $selectedFacilities = request('facilities', []); @endphp
+                    <details class="group text-xs" {{ count($selectedFacilities) ? 'open' : '' }}>
+                        <summary class="flex items-center justify-between font-bold text-slate-500 uppercase tracking-wider text-[11px] cursor-pointer py-1 select-none">
+                            <span class="flex items-center gap-1">
+                                <i class="fa-solid fa-concierge-bell text-blue-400 text-[10px]"></i>
+                                Fasilitas {{ count($selectedFacilities) ? '('.count($selectedFacilities).')' : '' }}
+                            </span>
+                            <i class="fa-solid fa-chevron-down text-[9px] text-slate-400 group-open:rotate-180 transition"></i>
+                        </summary>
+                        <div class="grid grid-cols-2 gap-1 pt-1.5">
                             @php
                                 $facilityList = [
-                                    ['WiFi',         'fa-wifi',          'WiFi Gratis'],
-                                    ['Kolam Renang', 'fa-water-ladder',   'Kolam Renang'],
+                                    ['WiFi',         'fa-wifi',          'WiFi'],
+                                    ['Kolam Renang', 'fa-water-ladder',   'Kolam'],
                                     ['AC',           'fa-snowflake',      'AC'],
                                     ['Sarapan',      'fa-utensils',       'Sarapan'],
                                     ['Gym',          'fa-dumbbell',       'Gym'],
                                     ['Parkir',       'fa-square-parking', 'Parkir'],
                                     ['Spa',          'fa-spa',            'Spa'],
-                                    ['Restaurant',   'fa-fork-knife',     'Restoran'],
+                                    ['Restaurant',   'fa-fork-knife',     'Resto'],
                                 ];
                             @endphp
                             @foreach($facilityList as [$val, $icon, $label])
-                                <label class="facility-option flex items-center gap-2 px-2.5 py-2 rounded-xl border border-slate-200 cursor-pointer hover:border-blue-300 hover:bg-blue-50 transition {{ in_array($val, $selectedFacilities) ? 'border-blue-400 bg-blue-50' : '' }}">
+                                <label class="facility-option flex items-center gap-1.5 px-2 py-1 rounded-lg border border-slate-200 cursor-pointer hover:border-blue-300 hover:bg-blue-50 transition {{ in_array($val, $selectedFacilities) ? 'border-blue-400 bg-blue-50' : '' }}">
                                     <input type="checkbox" name="facilities[]" value="{{ $val }}"
                                            {{ in_array($val, $selectedFacilities) ? 'checked' : '' }}
-                                           class="shrink-0">
-                                    <span class="flex items-center gap-1.5 text-xs text-slate-700 font-medium">
-                                        <i class="fa-solid {{ $icon }} text-blue-500 w-3.5 text-center"></i>
+                                           class="shrink-0 w-3 h-3">
+                                    <span class="flex items-center gap-1 text-[11px] text-slate-700 font-medium truncate">
+                                        <i class="fa-solid {{ $icon }} text-blue-500 text-[10px]"></i>
                                         {{ $label }}
                                     </span>
                                 </label>
                             @endforeach
                         </div>
-                    </div>
+                    </details>
 
                     <!-- Filter 6: Sort -->
-                    <div class="space-y-1.5">
-                        <label for="sort" class="flex items-center gap-1.5 text-xs font-bold text-slate-500 uppercase tracking-wider">
-                            <i class="fa-solid fa-arrow-up-wide-short text-blue-400"></i> Urutkan
+                    <div class="space-y-1">
+                        <label for="sort" class="flex items-center gap-1 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
+                            <i class="fa-solid fa-arrow-up-wide-short text-blue-400 text-[10px]"></i> Urutkan
                         </label>
                         <div class="relative">
                             <select id="sort" name="sort"
-                                    class="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-3 py-2.5 pr-8 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 transition appearance-none">
+                                    class="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-2.5 py-1.5 pr-7 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 transition appearance-none">
                                 <option value=""          {{ !request('sort') ? 'selected' : '' }}>Relevansi</option>
                                 <option value="terdekat"  {{ request('sort') == 'terdekat' ? 'selected' : '' }}>📍 Terdekat dari Lokasi Saya</option>
                                 <option value="harga_asc" {{ request('sort') == 'harga_asc' ? 'selected' : '' }}>💲 Harga Terendah</option>
@@ -577,28 +584,30 @@
                                 <option value="rating"    {{ request('sort') == 'rating' ? 'selected' : '' }}>⭐ Rating Tertinggi</option>
                                 <option value="nama"      {{ request('sort') == 'nama' ? 'selected' : '' }}>🔤 Nama A–Z</option>
                             </select>
-                            <i class="fa-solid fa-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs pointer-events-none"></i>
+                            <i class="fa-solid fa-chevron-down absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 text-[10px] pointer-events-none"></i>
                         </div>
                     </div>
 
-                    <!-- Apply Button -->
-                    <button type="submit"
-                            class="btn-gradient w-full text-white font-bold py-3 px-4 rounded-xl text-sm shadow-lg flex items-center justify-center gap-2 pulse-btn">
-                        <i class="fa-solid fa-filter"></i>
-                        Terapkan Filter
-                    </button>
+                    <!-- Apply Button (Always within reach) -->
+                    <div class="pt-1">
+                        <button type="submit"
+                                class="btn-gradient w-full text-white font-bold py-2.5 px-4 rounded-xl text-xs shadow-md flex items-center justify-center gap-2 transition">
+                            <i class="fa-solid fa-filter text-[11px]"></i>
+                            Terapkan Filter
+                        </button>
+                    </div>
 
-                    <!-- Saved Presets / Tampilan Tersimpan -->
-                    <div class="pt-3 border-t border-slate-200/80 dark:border-slate-800 space-y-2">
+                    <!-- Saved Presets (Compact) -->
+                    <div class="pt-2 border-t border-slate-200/80 dark:border-slate-800 space-y-1.5">
                         <div class="flex items-center justify-between text-xs">
-                            <span class="font-bold text-slate-500 uppercase tracking-wider text-[10px] flex items-center gap-1">
-                                <i class="fa-regular fa-bookmark text-blue-500"></i> Preset Tersimpan
+                            <span class="font-bold text-slate-400 uppercase tracking-wider text-[10px] flex items-center gap-1">
+                                <i class="fa-regular fa-bookmark text-blue-500"></i> Preset
                             </span>
                             <button type="button" onclick="saveCurrentFilterPreset()" class="text-[10px] font-bold text-blue-600 hover:text-blue-700">
-                                + Simpan Saat Ini
+                                + Simpan
                             </button>
                         </div>
-                        <div id="saved-presets-list" class="flex flex-wrap gap-1.5 text-xs">
+                        <div id="saved-presets-list" class="flex flex-wrap gap-1 text-xs">
                             <!-- Populated from localStorage -->
                         </div>
                     </div>
@@ -663,13 +672,17 @@
                             <span class="font-extrabold text-indigo-200">Rute Aktif:</span>
                             <span id="map-route-destination" class="font-bold text-white truncate max-w-[160px] sm:max-w-xs">Hotel Tujuan</span>
                             <span id="map-route-stats" class="px-2 py-0.5 rounded-full bg-indigo-800 text-[11px] font-semibold text-emerald-300">0 km · 0 mnt</span>
+                            <span id="map-route-engine-badge" class="px-2 py-0.5 rounded-full bg-blue-900 text-[10px] font-bold text-blue-200">OSRM Engine</span>
                         </div>
                         <div class="flex items-center gap-2">
                             <button type="button" onclick="toggleRouteSteps()" class="px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-[10px] font-bold transition flex items-center gap-1 shadow-sm">
                                 <i class="fa-solid fa-diamond-turn-right"></i> <span id="btn-steps-label">Petunjuk Belokan</span>
                             </button>
                             <a id="btn-open-gmaps" href="#" target="_blank" rel="noopener" class="px-2.5 py-1 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-[10px] font-bold transition flex items-center gap-1">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Buka Google Maps
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Google Maps
+                            </a>
+                            <a id="btn-open-osm" href="#" target="_blank" rel="noopener" class="px-2.5 py-1 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white text-[10px] font-bold transition flex items-center gap-1">
+                                <i class="fa-solid fa-map"></i> OpenStreetMap
                             </a>
                             <button type="button" onclick="clearNavigationRoute()" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white text-[10px] font-bold transition">
                                 <i class="fa-solid fa-xmark mr-1"></i>Tutup Rute
@@ -1016,6 +1029,25 @@
                 </div>
             </div>
         </div>
+
+        <!-- Floating Mobile Quick Actions Bar (Bootstrap/App Style) -->
+        <div class="lg:hidden fixed bottom-6 inset-x-0 z-30 flex justify-center pointer-events-none px-4">
+            <div class="pointer-events-auto bg-slate-900/95 dark:bg-slate-800/95 backdrop-blur-md text-white rounded-full p-1.5 shadow-2xl border border-white/20 dark:border-slate-700 flex items-center gap-1">
+                <button type="button" onclick="toggleMobileFilter()" class="px-4 py-2 rounded-full text-xs font-bold hover:bg-white/10 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-sliders text-blue-400"></i>
+                    <span>Filter</span>
+                </button>
+                <div class="h-4 w-px bg-white/20"></div>
+                <button type="button" onclick="toggleMap()" class="px-4 py-2 rounded-full text-xs font-bold hover:bg-white/10 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-map-location-dot text-indigo-400"></i>
+                    <span id="mobile-map-toggle-label">Peta</span>
+                </button>
+                <div class="h-4 w-px bg-white/20"></div>
+                <button type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="w-8 h-8 rounded-full flex items-center justify-center text-xs hover:bg-white/10 transition" title="Ke Atas">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </button>
+            </div>
+        </div>
     </main>
 
     <!-- ============================================================
@@ -1187,11 +1219,11 @@
                 }
             }
 
-            // Place Landmark Pin if landmark is selected
+            // Place Landmark Pin & Center Map on Landmark if landmark is selected
             const landmarkInfo = @json($landmarkInfo ?? null);
             if (landmarkInfo && landmarkInfo.lat && landmarkInfo.lon) {
                 const lmMarkerSvg = `
-                    <svg xmlns="http://www.w3.org/2000/svg" width="44" height="56" viewBox="0 0 44 56">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="46" height="58" viewBox="0 0 44 56">
                         <defs>
                             <linearGradient id="lmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                                 <stop offset="0%" style="stop-color:#f59e0b"/>
@@ -1202,7 +1234,7 @@
                             </filter>
                         </defs>
                         <path d="M22 2C12.06 2 4 10.06 4 20c0 13.5 18 34 18 34s18-20.5 18-34c0-9.94-8.06-18-18-18z"
-                              fill="url(#lmGrad)" filter="url(#lmShadow)"/>
+                              fill="url(#lmGrad)" filter="url(#lmShadow)" stroke="#ffffff" stroke-width="2"/>
                         <circle cx="22" cy="20" r="9" fill="white"/>
                         <text x="22" y="24" text-anchor="middle" font-size="11">🏛️</text>
                     </svg>`;
@@ -1211,21 +1243,22 @@
                 const lmMarker = new google.maps.Marker({
                     position: lmPos,
                     map: map,
-                    title: landmarkInfo.name,
+                    title: landmarkInfo.name + ' (Pusat Landmark)',
                     icon: {
                         url: 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(lmMarkerSvg),
-                        scaledSize: new google.maps.Size(44, 56),
-                        anchor: new google.maps.Point(22, 56),
+                        scaledSize: new google.maps.Size(46, 58),
+                        anchor: new google.maps.Point(23, 58),
                     },
-                    zIndex: 9999
+                    zIndex: 9999,
+                    animation: google.maps.Animation.DROP
                 });
 
                 const lmInfoWindow = new google.maps.InfoWindow({
                     content: `
-                        <div style="font-family:Inter,sans-serif;padding:6px;min-width:180px;">
-                            <span style="font-size:10px;font-weight:800;color:#b45309;text-transform:uppercase;background:#fef3c7;padding:2px 6px;border-radius:4px;">Landmark Acuan</span>
+                        <div style="font-family:Inter,sans-serif;padding:6px;min-width:190px;">
+                            <span style="font-size:10px;font-weight:800;color:#b45309;text-transform:uppercase;background:#fef3c7;padding:2px 6px;border-radius:4px;">🏛️ Landmark Pencarian</span>
                             <div style="font-size:13px;font-weight:800;color:#0f172a;margin-top:4px;">${landmarkInfo.name}</div>
-                            <div style="font-size:11px;color:#64748b;margin-top:2px;">Pusat radius pencarian hotel terdekat</div>
+                            <div style="font-size:11px;color:#64748b;margin-top:2px;">Pusat koordinat pencarian hotel sekitar</div>
                         </div>`,
                 });
                 lmMarker.addListener('click', () => {
@@ -1234,10 +1267,24 @@
                     activeInfoWindow = lmInfoWindow;
                 });
 
-                if (markers.length === 0) {
-                    map.setCenter(lmPos);
-                    map.setZoom(15);
-                }
+                // Follow & Center Map on the requested landmark
+                map.setCenter(lmPos);
+                map.setZoom(15);
+                setTimeout(() => {
+                    lmInfoWindow.open({ anchor: lmMarker, map });
+                    activeInfoWindow = lmInfoWindow;
+                }, 600);
+            }
+        }
+
+        const ALL_LANDMARKS = @json($landmarks ?? []);
+        function focusLandmarkDropdown(name) {
+            if (!name || !map) return;
+            const target = ALL_LANDMARKS.find(lm => (lm.nama || '').toLowerCase() === name.toLowerCase());
+            if (target && target.lat && target.lon) {
+                const pos = { lat: parseFloat(target.lat), lng: parseFloat(target.lon) };
+                map.panTo(pos);
+                map.setZoom(15);
             }
         }
 
@@ -1256,64 +1303,151 @@
             }
         }
 
-        // Live Route Navigation to Selected Hotel
-        function startNavigationToHotel(destLat, destLng, destName) {
-            if (!map || !directionsService || !directionsRenderer) return;
+        // Dual-Engine Live Route Navigation to Selected Hotel
+        async function startNavigationToHotel(destLat, destLng, destName) {
+            if (!map) return;
 
             // Make map visible if hidden
             if (!mapVisible) toggleMap();
             document.getElementById('map-section')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
             const origin = currentUserCoords || { lat: 3.5928, lng: 98.6748 }; // Default Stasiun Medan KM 0
+            const destination = { lat: parseFloat(destLat), lng: parseFloat(destLng) };
 
-            directionsService.route(
-                {
-                    origin: origin,
-                    destination: { lat: parseFloat(destLat), lng: parseFloat(destLng) },
-                    travelMode: google.maps.TravelMode.DRIVING
-                },
-                function(result, status) {
-                    if (status === google.maps.DirectionsStatus.OK) {
-                        directionsRenderer.setDirections(result);
+            // Attempt Google Directions first
+            if (directionsService && directionsRenderer) {
+                directionsService.route(
+                    {
+                        origin: origin,
+                        destination: destination,
+                        travelMode: google.maps.TravelMode.DRIVING
+                    },
+                    function(result, status) {
+                        if (status === google.maps.DirectionsStatus.OK) {
+                            if (window.activePolyline) {
+                                window.activePolyline.setMap(null);
+                                window.activePolyline = null;
+                            }
+                            directionsRenderer.setDirections(result);
 
-                        const route = result.routes[0].legs[0];
-                        const routeBar = document.getElementById('map-route-bar');
-                        const destText = document.getElementById('map-route-destination');
-                        const statsText = document.getElementById('map-route-stats');
-                        const gmapsBtn = document.getElementById('btn-open-gmaps');
-
-                        if (routeBar) routeBar.classList.remove('hidden');
-                        if (destText) destText.innerText = destName;
-                        if (statsText) statsText.innerText = `${route.distance.text} · ${route.duration.text}`;
-                        if (gmapsBtn) {
-                            gmapsBtn.href = `https://www.google.com/maps/dir/?api=1&destination=${destLat},${destLng}&travelmode=driving`;
+                            const route = result.routes[0].legs[0];
+                            const steps = (route.steps || []).map(st => ({
+                                instruction: st.instructions.replace(/<[^>]+>/g, ' '),
+                                distance: st.distance.text
+                            }));
+                            updateNavigationUI(destName, route.distance.text, route.duration.text, 'Google Maps', steps, origin, destination);
+                        } else {
+                            console.warn('Google Directions failed (' + status + '), switching to OpenStreetMap OSRM...');
+                            routeWithOSRM(origin, destination, destName);
                         }
-
-                        // Populate Turn-by-Turn Steps
-                        const stepsList = document.getElementById('route-steps-list');
-                        const stepsCount = document.getElementById('route-steps-count');
-                        if (stepsList && route.steps) {
-                            if (stepsCount) stepsCount.innerText = `${route.steps.length} Belokan`;
-                            stepsList.innerHTML = route.steps.map((st, i) => `
-                                <div class="p-2 rounded-lg bg-slate-800/80 border border-slate-700/60 flex items-start gap-2.5">
-                                    <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-[10px] flex items-center justify-center shrink-0 border border-emerald-500/30">
-                                        ${i + 1}
-                                    </span>
-                                    <div class="flex-1">
-                                        <div class="text-white font-medium">${st.instructions}</div>
-                                        <div class="text-[10px] text-slate-400 mt-0.5">${st.distance.text} · ${st.duration.text}</div>
-                                    </div>
-                                </div>
-                            `).join('');
-                        }
-                    } else {
-                        alert('Tidak dapat membuat rute navigasi: ' + status);
                     }
+                );
+            } else {
+                routeWithOSRM(origin, destination, destName);
+            }
+        }
+
+        async function routeWithOSRM(origin, destination, destName) {
+            try {
+                const url = `https://router.project-osrm.org/route/v1/driving/${origin.lng},${origin.lat};${destination.lng},${destination.lat}?overview=full&geometries=geojson&steps=true`;
+                const res = await fetch(url);
+                if (!res.ok) throw new Error('OSRM network error');
+                const data = await res.json();
+                if (data.code === 'Ok' && data.routes && data.routes.length > 0) {
+                    const route = data.routes[0];
+                    const coords = route.geometry.coordinates.map(c => ({ lat: c[1], lng: c[0] }));
+                    const km = (route.distance / 1000).toFixed(1) + ' km';
+                    const mins = Math.max(1, Math.round(route.duration / 60)) + ' mnt';
+                    const steps = (route.legs[0]?.steps || []).map(st => {
+                        let inst = st.maneuver.type;
+                        if (st.maneuver.modifier) inst += ' ' + st.maneuver.modifier;
+                        if (st.name) inst += ' ke ' + st.name;
+                        return {
+                            instruction: inst.charAt(0).toUpperCase() + inst.slice(1),
+                            distance: st.distance < 1000 ? Math.round(st.distance) + ' m' : (st.distance/1000).toFixed(1) + ' km'
+                        };
+                    });
+                    renderPolylineOnMap(coords);
+                    updateNavigationUI(destName, km, mins, 'OpenStreetMap (OSRM)', steps, origin, destination);
+                    return;
                 }
-            );
+            } catch (e) {
+                console.warn('OSRM route fetch failed, falling back to geodesic path', e);
+            }
+
+            // Fallback direct smooth route
+            const distKm = calcDistanceKm(origin.lat, origin.lng, destination.lat, destination.lng);
+            const kmStr = distKm.toFixed(1) + ' km';
+            const minsStr = Math.max(1, Math.round((distKm / 35) * 60)) + ' mnt';
+            const steps = [
+                { instruction: `Mulai dari posisi awal menuju arah ${destName}`, distance: '0 m' },
+                { instruction: `Ikuti rute panduan jalan utama sepanjang ${(distKm * 0.8).toFixed(1)} km`, distance: `${(distKm * 0.8).toFixed(1)} km` },
+                { instruction: `Tiba di tujuan: ${destName}`, distance: `${distKm.toFixed(1)} km` }
+            ];
+            renderPolylineOnMap([origin, destination]);
+            updateNavigationUI(destName, kmStr, minsStr, 'Navigasi Langsung', steps, origin, destination);
+        }
+
+        function renderPolylineOnMap(coords) {
+            if (directionsRenderer) directionsRenderer.setDirections({ routes: [] });
+            if (window.activePolyline) window.activePolyline.setMap(null);
+
+            window.activePolyline = new google.maps.Polyline({
+                path: coords,
+                strokeColor: '#2563eb',
+                strokeWeight: 5,
+                strokeOpacity: 0.9,
+                map: map
+            });
+
+            const bounds = new google.maps.LatLngBounds();
+            coords.forEach(pt => bounds.extend(pt));
+            map.fitBounds(bounds, { top: 40, right: 40, bottom: 40, left: 40 });
+        }
+
+        function updateNavigationUI(destName, distText, durText, engineName, steps, origin, destination) {
+            const routeBar = document.getElementById('map-route-bar');
+            const destTextEl = document.getElementById('map-route-destination');
+            const statsText = document.getElementById('map-route-stats');
+            const engineBadge = document.getElementById('map-route-engine-badge');
+            const gmapsBtn = document.getElementById('btn-open-gmaps');
+            const osmBtn = document.getElementById('btn-open-osm');
+
+            if (routeBar) routeBar.classList.remove('hidden');
+            if (destTextEl) destTextEl.innerText = destName;
+            if (statsText) statsText.innerText = `${distText} · ${durText}`;
+            if (engineBadge) engineBadge.innerText = engineName;
+
+            if (gmapsBtn) {
+                gmapsBtn.href = `https://www.google.com/maps/dir/?api=1&origin=${origin.lat},${origin.lng}&destination=${destination.lat},${destination.lng}&travelmode=driving`;
+            }
+            if (osmBtn) {
+                osmBtn.href = `https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=${origin.lat}%2C${origin.lng}%3B${destination.lat}%2C${destination.lng}`;
+            }
+
+            const stepsList = document.getElementById('route-steps-list');
+            const stepsCount = document.getElementById('route-steps-count');
+            if (stepsList) {
+                if (stepsCount) stepsCount.innerText = `${steps.length} Belokan`;
+                stepsList.innerHTML = steps.map((st, i) => `
+                    <div class="p-2 rounded-lg bg-slate-800/80 border border-slate-700/60 flex items-start gap-2.5">
+                        <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-[10px] flex items-center justify-center shrink-0 border border-emerald-500/30">
+                            ${i + 1}
+                        </span>
+                        <div class="flex-1 min-w-0">
+                            <div class="text-white font-medium">${st.instruction}</div>
+                            ${st.distance ? `<div class="text-[10px] text-slate-400 mt-0.5">${st.distance}</div>` : ''}
+                        </div>
+                    </div>
+                `).join('');
+            }
         }
 
         function clearNavigationRoute() {
+            if (window.activePolyline) {
+                window.activePolyline.setMap(null);
+                window.activePolyline = null;
+            }
             if (directionsRenderer) {
                 directionsRenderer.setDirections({ routes: [] });
             }
@@ -1475,13 +1609,20 @@
             }
         }
 
-        function toggleMobileFilter() {
+        function toggleMobileFilter(forceClose = false) {
             const aside = document.getElementById('filter-aside');
-            if (aside) {
-                aside.classList.toggle('hidden');
-                if (!aside.classList.contains('hidden')) {
-                    aside.scrollIntoView({ behavior: 'smooth' });
-                }
+            const backdrop = document.getElementById('filter-backdrop');
+            if (!aside) return;
+
+            const isCurrentlyOpen = !aside.classList.contains('translate-x-full');
+            if (forceClose || isCurrentlyOpen) {
+                aside.classList.add('translate-x-full');
+                if (backdrop) backdrop.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            } else {
+                aside.classList.remove('translate-x-full');
+                if (backdrop) backdrop.classList.remove('hidden');
+                document.body.classList.add('overflow-hidden');
             }
         }
 
@@ -1537,13 +1678,16 @@
         function toggleMap() {
             const section = document.getElementById('map-section');
             const label   = document.getElementById('map-toggle-label');
+            const mobileLabel = document.getElementById('mobile-map-toggle-label');
             mapVisible = !mapVisible;
             if (mapVisible) {
                 section.style.display = '';
-                label.textContent = 'Sembunyikan Peta';
+                if (label) label.textContent = 'Sembunyikan Peta';
+                if (mobileLabel) mobileLabel.textContent = 'Peta';
             } else {
                 section.style.display = 'none';
-                label.textContent = 'Tampilkan Peta';
+                if (label) label.textContent = 'Tampilkan Peta';
+                if (mobileLabel) mobileLabel.textContent = 'Buka Peta';
             }
         }
 

@@ -165,7 +165,7 @@ class FusekiClient
         }
 
         // 3. Single hotel detail query
-        if (preg_match('/roomify:(hotel-[0-9a-zA-Z_-]+)\s+a\s+roomify:Hotel/i', $sparql, $m)) {
+        if (!str_contains($sparql, 'hasRoom') && !str_contains($sparql, 'hasFacility') && preg_match('/roomify:(hotel-[0-9a-zA-Z_-]+)(?:\s+a\s+roomify:Hotel|\s+roomify:name)/i', $sparql, $m)) {
             $targetId = $m[1];
             foreach ($data as $h) {
                 if ($h['id'] === $targetId) {

@@ -44,8 +44,25 @@ class Booking extends Model
         'subtotal' => 'integer',
         'tax' => 'integer',
         'total_price' => 'integer',
-        'no_ktp' => 'encrypted',
     ];
+
+    public function getNoKtpAttribute($value)
+    {
+        if (empty($value)) {
+            return $value;
+        }
+
+        try {
+            return \Illuminate\Support\Facades\Crypt::decryptString($value);
+        } catch (\Throwable $e) {
+            return $value;
+        }
+    }
+
+    public function setNoKtpAttribute($value)
+    {
+        $this->attributes['no_ktp'] = !empty($value) ? \Illuminate\Support\Facades\Crypt::encryptString($value) : $value;
+    }
 
     public function user()
     {

@@ -5,7 +5,7 @@
         <div class="flex items-center gap-2">
             <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 font-bold text-[10px] tracking-wider border border-emerald-500/25">
                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>LIVE</span>
+                <span>WAKTU SISTEM</span>
             </span>
             <div class="flex items-center gap-1.5 text-slate-200 font-mono text-[11px] tracking-tight">
                 <i class="fa-regular fa-clock text-blue-400 text-[10px]"></i>
