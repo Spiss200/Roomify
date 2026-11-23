@@ -116,4 +116,20 @@ class AdminAndChatbotTest extends TestCase
         $resJw->assertStatus(200);
         $this->assertStringContainsString('JW Marriott', $resJw->json('reply'));
     }
+
+    public function test_landmark_eksternal_api_returns_landmarks_and_source(): void
+    {
+        $response = $this->getJson('/api/landmark-eksternal/hotel-014');
+        $response->assertStatus(200);
+        $response->assertJsonStructure([
+            'hotel',
+            'sumber',
+            'endpoint',
+            'items' => [
+                '*' => ['nama', 'lat', 'lon', 'jarak_km', 'jarak']
+            ]
+        ]);
+        $this->assertEquals('JW Marriott Hotel Medan', $response->json('hotel'));
+        $this->assertNotEmpty($response->json('items'));
+    }
 }

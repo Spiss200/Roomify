@@ -8,6 +8,10 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ChatbotController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LandmarkEksternalController;
+use App\Http\Controllers\LandmarkController;
+use App\Http\Controllers\SemantikController;
+use App\Services\FusekiClient;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +19,47 @@ use App\Http\Controllers\AdminController;
 |--------------------------------------------------------------------------
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function (FusekiClient $fuseki) {
+    $landmarks = $fuseki->select("
+        PREFIX roomify: <https://roomify.example/ontology#>
+        SELECT ?id ?nama ?lat ?lon ?kat ?foto ?rating ?ulasan WHERE {
+          ?lm a roomify:Landmark ;
+              roomify:name ?nama ;
+              roomify:latitude ?lat ;
+              roomify:longitude ?lon ;
+              roomify:category ?kat .
+          OPTIONAL { ?lm roomify:photoUrl ?foto }
+          OPTIONAL { ?lm roomify:rating ?rating }
+          OPTIONAL { ?lm roomify:reviewCount ?ulasan }
+          BIND(STRAFTER(STR(?lm), '#') AS ?id)
+        } ORDER BY DESC(?ulasan)");
+
+    if (empty($landmarks)) {
+        $landmarks = array_map(function ($lm) {
+            return [
+                'id'     => $lm['id'],
+                'nama'   => $lm['name'],
+                'lat'    => (string)$lm['lat'],
+                'lon'    => (string)$lm['lon'],
+                'kat'    => $lm['category'] ?? 'Landmark',
+                'alamat' => $lm['address'] ?? '',
+                'foto'   => $lm['image'] ?? '/images/placeholder.svg',
+                'rating' => isset($lm['rating']) ? (string)$lm['rating'] : '4.5',
+                'ulasan' => isset($lm['reviews']) ? (string)$lm['reviews'] : '100',
+            ];
+        }, FusekiClient::LANDMARKS);
+    }
+
+    return view('welcome', compact('landmarks'));
 })->name('home');
+
+// Landmark Detail Page
+Route::get('/landmark/{id}', [LandmarkController::class, 'show'])->name('landmark.show');
+
+// Semantic Web & SPARQL Playground
+Route::get('/semantik', [SemantikController::class, 'index'])->name('semantik.index');
+Route::post('/api/semantik/query', [SemantikController::class, 'executeQuery'])->name('semantik.query');
+Route::get('/semantik/download/{file}', [SemantikController::class, 'downloadFile'])->name('semantik.download');
 
 // Search & Autocomplete
 Route::get('/search', [SearchController::class, 'index'])->name('search');
@@ -26,6 +68,7 @@ Route::post('/api/ai-chat', [ChatbotController::class, 'respond'])->name('ai.cha
 
 // Detail Hotel
 Route::get('/hotel/{id}', [HotelController::class, 'show'])->name('hotel.detail');
+Route::get('/api/landmark-eksternal/{id}', [LandmarkEksternalController::class, 'show'])->name('api.landmark-eksternal');
 
 // Booking Flow
 Route::get('/hotel/{id}/book', [BookingController::class, 'showForm'])->name('booking.form');
@@ -60,3 +103,6 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 });
 
 require __DIR__ . '/auth.php';
+
+// Integrasi SPARQL endpoint eksternal (DBpedia) + graceful degradation ke Fuseki lokal
+Route::get('/api/landmark-eksternal/{id}', [\App\Http\Controllers\LandmarkEksternalController::class, 'show']);

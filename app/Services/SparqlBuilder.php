@@ -64,6 +64,12 @@ class SparqlBuilder
         return $this;
     }
 
+    public function onlyWithPrice(): self
+    {
+        $this->patterns[] = "FILTER(BOUND(?harga) && ?harga > 0)";
+        return $this;
+    }
+
     public function build(int $limit = 400): string
     {
         $extra = implode("\n  ", $this->patterns);
@@ -93,10 +99,11 @@ class SparqlBuilder
         };
 
         return "PREFIX roomify: <https://roomify.example/ontology#>
-SELECT ?id ?nama ?alamat ?harga ?rating ?star ?foto ?lat ?lon WHERE {
+SELECT ?id ?nama ?alamat ?harga ?rating ?star ?foto ?lat ?lon ?dataSource WHERE {
   ?h a roomify:Hotel ;
      roomify:name ?nama ;
      roomify:address ?alamat .
+  OPTIONAL { ?h roomify:dataSource ?dataSource }
   OPTIONAL { ?h roomify:startPrice ?harga }
   OPTIONAL { ?h roomify:rating ?rating }
   OPTIONAL { ?h roomify:starRating ?star }

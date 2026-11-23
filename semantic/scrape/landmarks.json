@@ -310,5 +310,18 @@
     "reviews": 190,
     "ticket": null,
     "source": "google_maps"
+  },
+  {
+    "id": "lm-manhattan",
+    "name": "Manhattan Times Square",
+    "lat": 3.5905,
+    "lon": 98.644,
+    "category": "Mall & Lifestyle",
+    "address": "Jl. Gatot Subroto No. 217, Sei Sikambing B, Medan Sunggal",
+    "image": "/images/landmarks/manhattan.jpg",
+    "rating": null,
+    "reviews": null,
+    "ticket": null,
+    "source": "foto_tim"
   }
 ]

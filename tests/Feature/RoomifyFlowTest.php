@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Booking;
 use Tests\TestCase;
 
 class RoomifyFlowTest extends TestCase

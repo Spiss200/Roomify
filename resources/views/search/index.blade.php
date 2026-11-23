@@ -90,10 +90,15 @@
             border-bottom: 1px solid rgba(255,255,255,0.3);
         }
 
-        /* Page gradient background */
+        /* Page clean background */
         body {
-            background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 30%, #f5f3ff 60%, #faf5ff 100%);
+            background-color: #f8fafc;
+            color: #0f172a;
             min-height: 100vh;
+        }
+        html.dark body {
+            background-color: #0b0f19;
+            color: #f1f5f9;
         }
 
         /* Sidebar glass card */
@@ -353,79 +358,7 @@
     ============================================================ -->
     <div class="sticky top-0 z-50">
         <x-live-clock-bar />
-        <nav class="glass-nav">
-        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
-
-            <!-- Logo -->
-            <a href="{{ url('/') }}" class="flex items-center gap-2.5 shrink-0 group no-underline">
-                <div class="w-9 h-9 relative transform transition-transform group-hover:scale-105">
-                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow">
-                        <defs>
-                            <linearGradient id="nb-search-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#4F46E5"/>
-                                <stop offset="50%" stop-color="#7C3AED"/>
-                                <stop offset="100%" stop-color="#EC4899"/>
-                            </linearGradient>
-                            <linearGradient id="nb-gold-search" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#FCD34D"/>
-                                <stop offset="100%" stop-color="#F59E0B"/>
-                            </linearGradient>
-                        </defs>
-                        <rect width="48" height="48" rx="14" fill="url(#nb-search-grad)"/>
-                        <rect x="0.75" y="0.75" width="46.5" height="46.5" rx="13.25" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-                        <path d="M12 36V22C12 15.3726 17.3726 10 24 10C30.6274 10 36 15.3726 36 22V36" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
-                        <path d="M18 36V18H25.5C28 18 29.5 19.5 29.5 22C29.5 24.5 28 26 25.5 26H18M24 26L30 36" stroke="#FFFFFF" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M34 11L35.2 13.8L38 15L35.2 16.2L34 19L32.8 16.2L30 15L32.8 13.8L34 11Z" fill="url(#nb-gold-search)"/>
-                        <circle cx="24" cy="31" r="1.5" fill="#FCD34D"/>
-                    </svg>
-                </div>
-                <div class="flex items-center gap-1.5">
-                    <span class="text-xl font-black bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent tracking-tight">Roomify</span>
-                </div>
-            </a>
-
-            <!-- Nav Links -->
-            <div class="hidden md:flex items-center gap-6">
-                <a href="{{ url('/') }}" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors flex items-center gap-1.5">
-                    <i class="fa-solid fa-house text-xs"></i> Beranda
-                </a>
-                <a href="{{ url('/search') }}" class="text-sm font-semibold text-blue-600 flex items-center gap-1.5">
-                    <i class="fa-solid fa-magnifying-glass text-xs"></i> Cari Hotel
-                </a>
-                <a href="{{ url('/') }}#destinasi" class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors flex items-center gap-1.5">
-                    <i class="fa-solid fa-map-pin text-xs"></i> Landmark Medan
-                </a>
-            </div>
-
-            <!-- Right Actions -->
-            <div class="flex items-center gap-3">
-                <button onclick="toggleTheme()" type="button" class="p-2 rounded-xl text-slate-500 hover:text-slate-700 dark:text-slate-300 dark:hover:text-white bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition" aria-label="Toggle theme">
-                    <i class="fa-solid fa-moon hidden dark:inline text-amber-300"></i>
-                    <i class="fa-solid fa-sun inline dark:hidden text-amber-500"></i>
-                </button>
-                @auth
-                    <a href="{{ url('/dashboard') }}" class="text-sm font-medium text-slate-700 hover:text-blue-600 px-3 py-1.5 rounded-lg transition hidden sm:flex items-center gap-1.5">
-                        <i class="fa-solid fa-user-circle"></i>
-                        <span>Akun</span>
-                    </a>
-                @else
-                    <a href="{{ route('login') }}" class="text-sm font-medium text-slate-700 hover:text-blue-600 px-3 py-1.5 rounded-lg transition hidden sm:block">Masuk</a>
-                    <a href="{{ route('register') }}" class="btn-gradient text-white text-sm font-semibold px-4 py-1.5 rounded-xl hidden sm:block">Daftar</a>
-                @endauth
-                <!-- Mobile menu btn -->
-                <button class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 px-4 py-3 space-y-1 bg-white/95">
-            <a href="{{ url('/') }}" class="block px-3 py-2 rounded-lg text-sm text-slate-700 hover:bg-slate-50">🏠 Beranda</a>
-            <a href="{{ url('/search') }}" class="block px-3 py-2 rounded-lg text-sm text-blue-600 font-semibold bg-blue-50">🔍 Cari Hotel</a>
-            <a href="{{ url('/') }}#landmarks" class="block px-3 py-2 rounded-lg text-sm text-slate-700 hover:bg-slate-50">📍 Landmark Medan</a>
-        </div>
-    </nav>
+        <x-navbar active="search" />
     </div>
 
     <!-- ============================================================
@@ -466,6 +399,23 @@
                     <span id="map-toggle-label">Sembunyikan Peta</span>
                 </button>
             </div>
+        </div>
+
+        <!-- Landmark Quick Filter Rail (All 24 Landmarks) -->
+        <div class="mb-6 overflow-x-auto pb-2 flex items-center gap-2 scrollbar-none">
+            <span class="text-xs font-bold text-slate-400 shrink-0 uppercase tracking-wider mr-1">
+                <i class="fa-solid fa-location-dot text-blue-500 mr-1"></i> Landmark:
+            </span>
+            <a href="{{ route('search', array_merge(request()->except('landmark', 'page'), ['landmark' => ''])) }}"
+               class="px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition {{ !request('landmark') ? 'bg-blue-600 text-white shadow-sm' : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-blue-400' }}">
+                Semua (24)
+            </a>
+            @foreach($landmarks ?? [] as $lm)
+            <a href="{{ route('search', array_merge(request()->except('landmark', 'page'), ['landmark' => $lm['nama']])) }}"
+               class="px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition {{ request('landmark') == $lm['nama'] ? 'bg-blue-600 text-white shadow-sm' : 'bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-blue-400' }}">
+                {{ $lm['nama'] }}
+            </a>
+            @endforeach
         </div>
 
         <!-- Two-Panel Layout -->
@@ -516,20 +466,12 @@
                         <div class="relative">
                             <select id="landmark" name="landmark"
                                     class="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-3 py-2.5 pr-8 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition appearance-none">
-                                <option value="">Semua Landmark Medan</option>
-                                <option value="Istana Maimun"             {{ request('landmark') == 'Istana Maimun' ? 'selected' : '' }}>🏛️ Istana Maimun</option>
-                                <option value="Tjong A Fie Mansion"       {{ request('landmark') == 'Tjong A Fie Mansion' ? 'selected' : '' }}>🏮 Tjong A Fie Mansion</option>
-                                <option value="Masjid Raya Al Mashun"     {{ request('landmark') == 'Masjid Raya Al Mashun' ? 'selected' : '' }}>🕌 Masjid Raya Al-Mashun</option>
-                                <option value="Lapangan Merdeka"          {{ request('landmark') == 'Lapangan Merdeka' ? 'selected' : '' }}>🌳 Lapangan Merdeka (KM 0)</option>
-                                <option value="Graha Maria Annai Velangkanni" {{ request('landmark') == 'Graha Maria Annai Velangkanni' ? 'selected' : '' }}>⛪ Graha Maria Annai Velangkanni</option>
-                                <option value="Sun Plaza"                 {{ request('landmark') == 'Sun Plaza' ? 'selected' : '' }}>🛍️ Sun Plaza Medan</option>
-                                <option value="Maha Vihara Maitreya"      {{ request('landmark') == 'Maha Vihara Maitreya' ? 'selected' : '' }}>🪷 Maha Vihara Maitreya (Cemara Asri)</option>
-                                <option value="Museum Rahmat"             {{ request('landmark') == 'Museum Rahmat' ? 'selected' : '' }}>🦁 Museum Rahmat International Gallery</option>
-                                <option value="Merdeka Walk"              {{ request('landmark') == 'Merdeka Walk' ? 'selected' : '' }}>🍜 Merdeka Walk Kesawan</option>
-                                <option value="Menara Air Tirtanadi"      {{ request('landmark') == 'Menara Air Tirtanadi' ? 'selected' : '' }}>🗼 Menara Air Tirtanadi 1908</option>
-                                <option value="Centre Point Mall"         {{ request('landmark') == 'Centre Point Mall' ? 'selected' : '' }}>🚆 Centre Point Mall & Railink</option>
-                                <option value="Kebun Binatang Medan"      {{ request('landmark') == 'Kebun Binatang Medan' ? 'selected' : '' }}>🐯 Medan Zoo (Simalingkar)</option>
-                                <option value="Kuil Shri Mariamman"       {{ request('landmark') == 'Kuil Shri Mariamman' ? 'selected' : '' }}>🕉️ Kuil Shri Mariamman</option>
+                                <option value="">Semua Landmark Medan (24 Lokasi)</option>
+                                @foreach($landmarks ?? [] as $lm)
+                                    <option value="{{ $lm['nama'] }}" {{ request('landmark') == $lm['nama'] ? 'selected' : '' }}>
+                                        {{ $lm['nama'] }} ({{ $lm['kat'] ?? 'Landmark' }})
+                                    </option>
+                                @endforeach
                             </select>
                             <i class="fa-solid fa-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs pointer-events-none"></i>
                         </div>
@@ -576,6 +518,15 @@
                                        class="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 transition">
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Filter 4b: Hanya Hotel dengan Harga -->
+                    <div class="pt-1">
+                        <label class="flex items-center gap-2 cursor-pointer text-xs font-semibold text-slate-700 dark:text-slate-300">
+                            <input type="checkbox" name="with_price" value="1" {{ request('with_price') || request('has_price') == '1' ? 'checked' : '' }}
+                                   class="rounded border-slate-300 text-blue-600 focus:ring-blue-400">
+                            <span>Hanya hotel dengan harga (Google Maps)</span>
+                        </label>
                     </div>
 
                     <!-- Filter 5: Facilities -->
@@ -636,6 +587,21 @@
                         <i class="fa-solid fa-filter"></i>
                         Terapkan Filter
                     </button>
+
+                    <!-- Saved Presets / Tampilan Tersimpan -->
+                    <div class="pt-3 border-t border-slate-200/80 dark:border-slate-800 space-y-2">
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="font-bold text-slate-500 uppercase tracking-wider text-[10px] flex items-center gap-1">
+                                <i class="fa-regular fa-bookmark text-blue-500"></i> Preset Tersimpan
+                            </span>
+                            <button type="button" onclick="saveCurrentFilterPreset()" class="text-[10px] font-bold text-blue-600 hover:text-blue-700">
+                                + Simpan Saat Ini
+                            </button>
+                        </div>
+                        <div id="saved-presets-list" class="flex flex-wrap gap-1.5 text-xs">
+                            <!-- Populated from localStorage -->
+                        </div>
+                    </div>
                 </form>
             </aside>
 
@@ -871,6 +837,19 @@
                                 <!-- Card Body -->
                                 <div class="p-4 flex-1 flex flex-col">
 
+                                    <!-- Provenance / Data Source Badge -->
+                                    <div class="mb-1.5 flex items-center gap-1.5">
+                                        @if(($item['dataSource'] ?? '') === 'osm' || empty($item['harga']))
+                                            <span property="roomify:dataSource" content="osm" class="text-[10px] font-semibold px-2 py-0.5 rounded bg-sky-50 text-sky-700 border border-sky-200 dark:bg-sky-950/60 dark:text-sky-300 dark:border-sky-800 inline-flex items-center gap-1">
+                                                <i class="fa-solid fa-globe text-[9px]"></i> OpenStreetMap
+                                            </span>
+                                        @else
+                                            <span property="roomify:dataSource" content="google_maps" class="text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 dark:bg-emerald-950/60 dark:text-emerald-300 dark:border-emerald-800 inline-flex items-center gap-1">
+                                                <i class="fa-solid fa-circle-check text-[9px]"></i> Terverifikasi (Google)
+                                            </span>
+                                        @endif
+                                    </div>
+
                                     <!-- Hotel Name -->
                                     <h3 property="rdfs:label schema:name"
                                         class="font-bold text-slate-900 dark:text-white text-base leading-tight mb-1.5 line-clamp-1">
@@ -954,7 +933,7 @@
                                             @else
                                                 <span class="text-[10px] text-slate-400 font-semibold uppercase block tracking-wide">Tarif Kamar</span>
                                                 <span class="inline-flex items-center gap-1 text-xs font-bold px-2 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
-                                                    <i class="fa-solid fa-circle-info text-amber-500 text-[10px]"></i> Hubungi Properti
+                                                    <i class="fa-solid fa-circle-info text-amber-500 text-[10px]"></i> Harga belum tersedia
                                                 </span>
                                             @endif
                                         </div>
@@ -1590,6 +1569,49 @@
                 results.classList.add('opacity-30');
             }
         });
+
+        // Saved Filter Presets (localStorage)
+        function renderSavedPresets() {
+            const listEl = document.getElementById('saved-presets-list');
+            if (!listEl) return;
+            const presets = JSON.parse(localStorage.getItem('roomify_filter_presets') || '[]');
+            if (presets.length === 0) {
+                listEl.innerHTML = '<span class="text-[10px] text-slate-400 italic">Belum ada preset tersimpan.</span>';
+                return;
+            }
+            listEl.innerHTML = presets.map((p, idx) => `
+                <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800 text-[10px]">
+                    <a href="${p.url}" class="font-semibold hover:underline">${p.name}</a>
+                    <button type="button" onclick="deletePreset(${idx})" class="text-slate-400 hover:text-rose-500 ml-0.5">&times;</button>
+                </span>
+            `).join('');
+        }
+
+        function saveCurrentFilterPreset() {
+            const currentUrl = window.location.pathname + window.location.search;
+            const params = new URLSearchParams(window.location.search);
+            let label = [];
+            if (params.get('landmark')) label.push(params.get('landmark'));
+            if (params.get('rating')) label.push(params.get('rating') + '★');
+            if (params.get('price_max')) label.push('≤' + (parseInt(params.get('price_max'))/1000) + 'k');
+            if (params.get('with_price') === '1') label.push('Ada Harga');
+            const name = label.length > 0 ? label.join(' · ') : 'Filter ' + new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+
+            const presets = JSON.parse(localStorage.getItem('roomify_filter_presets') || '[]');
+            presets.unshift({ name, url: currentUrl });
+            if (presets.length > 5) presets.pop();
+            localStorage.setItem('roomify_filter_presets', JSON.stringify(presets));
+            renderSavedPresets();
+        }
+
+        function deletePreset(idx) {
+            const presets = JSON.parse(localStorage.getItem('roomify_filter_presets') || '[]');
+            presets.splice(idx, 1);
+            localStorage.setItem('roomify_filter_presets', JSON.stringify(presets));
+            renderSavedPresets();
+        }
+
+        document.addEventListener('DOMContentLoaded', renderSavedPresets);
     </script>
 
     <!-- Load Google Maps JS API -->

@@ -17,10 +17,11 @@ class HotelController extends Controller
         $p = 'PREFIX roomify: <https://roomify.example/ontology#>';
 
         $rows = $this->fuseki->select("$p
-            SELECT ?nama ?alamat ?deskripsi ?bintang ?rating ?jumlahReview ?harga ?lat ?lon ?foto WHERE {
+            SELECT ?nama ?alamat ?deskripsi ?bintang ?rating ?jumlahReview ?harga ?lat ?lon ?foto ?dataSource WHERE {
               roomify:$id a roomify:Hotel ;
                 roomify:name ?nama ;
                 roomify:address ?alamat .
+              OPTIONAL { roomify:$id roomify:dataSource ?dataSource }
               OPTIONAL { roomify:$id roomify:startPrice ?harga }
               OPTIONAL { roomify:$id roomify:description ?deskripsi }
               OPTIONAL { roomify:$id roomify:starRating ?bintang }
@@ -84,6 +85,7 @@ class HotelController extends Controller
             'galeri'             => $this->galeri($h['foto'] ?? null),
             'latitude'           => $lat ? (float)$lat : 3.5952,
             'longitude'          => $lon ? (float)$lon : 98.6722,
+            'dataSource'         => $h['dataSource'] ?? (!empty($h['harga']) ? 'google_maps' : 'osm'),
             'fasilitas'          => array_column($fasilitas, 'namaFasilitas'),
             'kamar'              => $kamar,
             'landmarks'          => array_column($nearbyLandmarks, 'nama'),

@@ -284,7 +284,7 @@ roomify:hotel-004 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.6455855 ;
     roomify:dataSource "google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-rahmat ;
+    roomify:nearLandmark roomify:lm-manhattan ;
     roomify:hasFacility roomify:fac-wifi ;
     roomify:hasFacility roomify:fac-ac ;
     roomify:hasRoom roomify:hotel-004-room1 ;
@@ -322,7 +322,7 @@ roomify:hotel-004-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.6 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Penginapan nyaman di Hotel O Kapten Muslim Residence, dekat Rahmat Wildlife Museum." ;
+    roomify:reviewText "Penginapan nyaman di Hotel O Kapten Muslim Residence, dekat Manhattan Times Square." ;
     roomify:reviewAbout roomify:hotel-004 .
 
 roomify:hotel-004-photo1 a roomify:Photo, schema:ImageObject ;
@@ -532,7 +532,7 @@ roomify:hotel-008 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.6452775 ;
     roomify:dataSource "google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-rahmat ;
+    roomify:nearLandmark roomify:lm-manhattan ;
     roomify:hasFacility roomify:fac-wifi ;
     roomify:hasRoom roomify:hotel-008-room1 ;
     roomify:hasRoom roomify:hotel-008-room2 ;
@@ -569,7 +569,7 @@ roomify:hotel-008-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.4 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Penginapan nyaman di SUPER OYO 91120 D'ritz Homestay, dekat Rahmat Wildlife Museum." ;
+    roomify:reviewText "Penginapan nyaman di SUPER OYO 91120 D'ritz Homestay, dekat Manhattan Times Square." ;
     roomify:reviewAbout roomify:hotel-008 .
 
 roomify:hotel-008-photo1 a roomify:Photo, schema:ImageObject ;
@@ -589,7 +589,7 @@ roomify:hotel-009 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.645492 ;
     roomify:dataSource "google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-rahmat ;
+    roomify:nearLandmark roomify:lm-manhattan ;
     roomify:hasFacility roomify:fac-wifi ;
     roomify:hasFacility roomify:fac-parkir ;
     roomify:hasFacility roomify:fac-ac ;
@@ -629,7 +629,7 @@ roomify:hotel-009-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.0 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Penginapan nyaman di Griya Hotel, dekat Rahmat Wildlife Museum." ;
+    roomify:reviewText "Penginapan nyaman di Griya Hotel, dekat Manhattan Times Square." ;
     roomify:reviewAbout roomify:hotel-009 .
 
 roomify:hotel-009-photo1 a roomify:Photo, schema:ImageObject ;
@@ -1441,7 +1441,7 @@ roomify:hotel-023 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.644482 ;
     roomify:dataSource "google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-rahmat ;
+    roomify:nearLandmark roomify:lm-manhattan ;
     roomify:hasFacility roomify:fac-wifi ;
     roomify:hasFacility roomify:fac-parkir ;
     roomify:hasFacility roomify:fac-ac ;
@@ -1480,7 +1480,7 @@ roomify:hotel-023-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.5 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Penginapan nyaman di CordelaInn Millennium Medan, dekat Rahmat Wildlife Museum." ;
+    roomify:reviewText "Penginapan nyaman di CordelaInn Millennium Medan, dekat Manhattan Times Square." ;
     roomify:reviewAbout roomify:hotel-023 .
 
 roomify:hotel-023-photo1 a roomify:Photo, schema:ImageObject ;
@@ -2411,7 +2411,7 @@ roomify:hotel-039 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.6539677 ;
     roomify:dataSource "google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-rahmat ;
+    roomify:nearLandmark roomify:lm-manhattan ;
     roomify:hasFacility roomify:fac-sarapan ;
     roomify:hasFacility roomify:fac-wifi ;
     roomify:hasFacility roomify:fac-parkir ;
@@ -2450,7 +2450,7 @@ roomify:hotel-039-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.0 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Penginapan nyaman di Putra Mulia Hotel, dekat Rahmat Wildlife Museum." ;
+    roomify:reviewText "Penginapan nyaman di Putra Mulia Hotel, dekat Manhattan Times Square." ;
     roomify:reviewAbout roomify:hotel-039 .
 
 roomify:hotel-039-photo1 a roomify:Photo, schema:ImageObject ;
@@ -2709,7 +2709,7 @@ roomify:hotel-044 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.6481622 ;
     roomify:dataSource "google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-rahmat ;
+    roomify:nearLandmark roomify:lm-manhattan ;
     roomify:hasFacility roomify:fac-wifi ;
     roomify:hasFacility roomify:fac-ac ;
     roomify:hasRoom roomify:hotel-044-room1 ;
@@ -2747,7 +2747,7 @@ roomify:hotel-044-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.0 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Penginapan nyaman di OYO 92881 Nany Ayahanda Syariah, dekat Rahmat Wildlife Museum." ;
+    roomify:reviewText "Penginapan nyaman di OYO 92881 Nany Ayahanda Syariah, dekat Manhattan Times Square." ;
     roomify:reviewAbout roomify:hotel-044 .
 
 roomify:hotel-044-photo1 a roomify:Photo, schema:ImageObject ;
@@ -4593,7 +4593,7 @@ roomify:hotel-076 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.6048671074269 ;
     roomify:dataSource "google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-velangkanni ;
+    roomify:nearLandmark roomify:lm-manhattan ;
     roomify:hasFacility roomify:fac-wifi ;
     roomify:hasFacility roomify:fac-parkir ;
     roomify:hasRoom roomify:hotel-076-room1 ;
@@ -4631,7 +4631,7 @@ roomify:hotel-076-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.2 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Penginapan nyaman di RedDoorz near Hermes Place Polonia Medan, dekat Graha Maria Annai Velangkanni." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz near Hermes Place Polonia Medan, dekat Manhattan Times Square." ;
     roomify:reviewAbout roomify:hotel-076 .
 
 roomify:hotel-076-photo1 a roomify:Photo, schema:ImageObject ;
@@ -5001,7 +5001,7 @@ roomify:hotel-083 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.60169128881412 ;
     roomify:dataSource "google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-velangkanni ;
+    roomify:nearLandmark roomify:lm-manhattan ;
     roomify:hasFacility roomify:fac-wifi ;
     roomify:hasFacility roomify:fac-ac ;
     roomify:hasRoom roomify:hotel-083-room1 ;
@@ -5039,7 +5039,7 @@ roomify:hotel-083-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 2.3 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Penginapan nyaman di Hotel O near Ringroad City Walk XXI, dekat Graha Maria Annai Velangkanni." ;
+    roomify:reviewText "Penginapan nyaman di Hotel O near Ringroad City Walk XXI, dekat Manhattan Times Square." ;
     roomify:reviewAbout roomify:hotel-083 .
 
 roomify:hotel-083-photo1 a roomify:Photo, schema:ImageObject ;
@@ -6045,7 +6045,7 @@ roomify:hotel-101 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.60063920262489 ;
     roomify:dataSource "google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-velangkanni ;
+    roomify:nearLandmark roomify:lm-manhattan ;
     roomify:hasFacility roomify:fac-wifi ;
     roomify:hasRoom roomify:hotel-101-room1 ;
     roomify:hasRoom roomify:hotel-101-room2 ;
@@ -6082,7 +6082,7 @@ roomify:hotel-101-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.2 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Penginapan nyaman di Capital O 1585 Ring Road Residence, dekat Graha Maria Annai Velangkanni." ;
+    roomify:reviewText "Penginapan nyaman di Capital O 1585 Ring Road Residence, dekat Manhattan Times Square." ;
     roomify:reviewAbout roomify:hotel-101 .
 
 roomify:hotel-101-photo1 a roomify:Photo, schema:ImageObject ;
@@ -6672,7 +6672,7 @@ roomify:hotel-112 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.6273025 ;
     roomify:dataSource "google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-velangkanni ;
+    roomify:nearLandmark roomify:lm-manhattan ;
     roomify:hasFacility roomify:fac-wifi ;
     roomify:hasFacility roomify:fac-parkir ;
     roomify:hasFacility roomify:fac-sarapan ;
@@ -6711,7 +6711,7 @@ roomify:hotel-112-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.1 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Penginapan nyaman di Hotel Syariah Grand Jamee, dekat Graha Maria Annai Velangkanni." ;
+    roomify:reviewText "Penginapan nyaman di Hotel Syariah Grand Jamee, dekat Manhattan Times Square." ;
     roomify:reviewAbout roomify:hotel-112 .
 
 roomify:hotel-112-photo1 a roomify:Photo, schema:ImageObject ;
@@ -7601,7 +7601,7 @@ roomify:hotel-128 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.6396313 ;
     roomify:dataSource "google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-cadika ;
+    roomify:nearLandmark roomify:lm-manhattan ;
     roomify:hasFacility roomify:fac-wifi ;
     roomify:hasFacility roomify:fac-ac ;
     roomify:hasRoom roomify:hotel-128-room1 ;
@@ -7639,7 +7639,7 @@ roomify:hotel-128-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.2 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Penginapan nyaman di Aceh House Hotel Setia Budi, dekat Taman Cadika." ;
+    roomify:reviewText "Penginapan nyaman di Aceh House Hotel Setia Budi, dekat Manhattan Times Square." ;
     roomify:reviewAbout roomify:hotel-128 .
 
 roomify:hotel-128-photo1 a roomify:Photo, schema:ImageObject ;
@@ -7775,7 +7775,7 @@ roomify:hotel-131 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.60180523449814 ;
     roomify:dataSource "google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-velangkanni ;
+    roomify:nearLandmark roomify:lm-manhattan ;
     roomify:hasFacility roomify:fac-wifi ;
     roomify:hasRoom roomify:hotel-131-room1 ;
     roomify:hasRoom roomify:hotel-131-room2 ;
@@ -7812,7 +7812,7 @@ roomify:hotel-131-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.9 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Penginapan nyaman di RedDoorz @ CBD Polonia Medan., dekat Graha Maria Annai Velangkanni." ;
+    roomify:reviewText "Penginapan nyaman di RedDoorz @ CBD Polonia Medan., dekat Manhattan Times Square." ;
     roomify:reviewAbout roomify:hotel-131 .
 
 roomify:hotel-131-photo1 a roomify:Photo, schema:ImageObject ;
@@ -8295,7 +8295,7 @@ roomify:hotel-140 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.6499797 ;
     roomify:dataSource "google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-rahmat ;
+    roomify:nearLandmark roomify:lm-manhattan ;
     roomify:hasFacility roomify:fac-wifi ;
     roomify:hasFacility roomify:fac-parkir ;
     roomify:hasRoom roomify:hotel-140-room1 ;
@@ -8333,7 +8333,7 @@ roomify:hotel-140-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.6 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Penginapan nyaman di Penginapan roemah_54, dekat Rahmat Wildlife Museum." ;
+    roomify:reviewText "Penginapan nyaman di Penginapan roemah_54, dekat Manhattan Times Square." ;
     roomify:reviewAbout roomify:hotel-140 .
 
 roomify:hotel-140-photo1 a roomify:Photo, schema:ImageObject ;
@@ -9173,7 +9173,7 @@ roomify:hotel-155 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.6513443 ;
     roomify:dataSource "google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-rahmat ;
+    roomify:nearLandmark roomify:lm-manhattan ;
     roomify:hasFacility roomify:fac-wifi ;
     roomify:hasRoom roomify:hotel-155-room1 ;
     roomify:hasRoom roomify:hotel-155-room2 ;
@@ -9212,7 +9212,7 @@ roomify:hotel-155-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.5 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Penginapan nyaman di Four Points by Sheraton Medan, dekat Rahmat Wildlife Museum." ;
+    roomify:reviewText "Penginapan nyaman di Four Points by Sheraton Medan, dekat Manhattan Times Square." ;
     roomify:reviewAbout roomify:hotel-155 .
 
 roomify:hotel-155-photo1 a roomify:Photo, schema:ImageObject ;
@@ -9232,7 +9232,7 @@ roomify:hotel-156 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.6530323 ;
     roomify:dataSource "google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-rahmat ;
+    roomify:nearLandmark roomify:lm-manhattan ;
     roomify:hasFacility roomify:fac-sarapan ;
     roomify:hasFacility roomify:fac-wifi ;
     roomify:hasFacility roomify:fac-parkir ;
@@ -9271,7 +9271,7 @@ roomify:hotel-156-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 3.9 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Penginapan nyaman di Hotel Grand Darussalam Medan, dekat Rahmat Wildlife Museum." ;
+    roomify:reviewText "Penginapan nyaman di Hotel Grand Darussalam Medan, dekat Manhattan Times Square." ;
     roomify:reviewAbout roomify:hotel-156 .
 
 roomify:hotel-156-photo1 a roomify:Photo, schema:ImageObject ;
@@ -9514,7 +9514,7 @@ roomify:hotel-161 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.6530323 ;
     roomify:dataSource "google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-rahmat ;
+    roomify:nearLandmark roomify:lm-manhattan ;
     roomify:hasFacility roomify:fac-sarapan ;
     roomify:hasFacility roomify:fac-wifi ;
     roomify:hasFacility roomify:fac-parkir ;
@@ -9553,7 +9553,7 @@ roomify:hotel-161-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.1 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Penginapan nyaman di Grand Kanaya Hotel, dekat Rahmat Wildlife Museum." ;
+    roomify:reviewText "Penginapan nyaman di Grand Kanaya Hotel, dekat Manhattan Times Square." ;
     roomify:reviewAbout roomify:hotel-161 .
 
 roomify:hotel-161-photo1 a roomify:Photo, schema:ImageObject ;
@@ -10037,7 +10037,7 @@ roomify:hotel-170 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.60357651006852 ;
     roomify:dataSource "google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-velangkanni ;
+    roomify:nearLandmark roomify:lm-manhattan ;
     roomify:hasFacility roomify:fac-wifi ;
     roomify:hasFacility roomify:fac-ac ;
     roomify:hasRoom roomify:hotel-170-room1 ;
@@ -10075,7 +10075,7 @@ roomify:hotel-170-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
     roomify:reviewRating 4.1 ;
     roomify:reviewDate "2026-11-01"^^xsd:date ;
-    roomify:reviewText "Penginapan nyaman di Hotel O near Ring Road City Walks, dekat Graha Maria Annai Velangkanni." ;
+    roomify:reviewText "Penginapan nyaman di Hotel O near Ring Road City Walks, dekat Manhattan Times Square." ;
     roomify:reviewAbout roomify:hotel-170 .
 
 roomify:hotel-170-photo1 a roomify:Photo, schema:ImageObject ;
@@ -11133,11 +11133,36 @@ roomify:hotel-193 a roomify:Hotel, schema:Hotel ;
 roomify:hotel-194 a roomify:Hotel, schema:Hotel ;
     roomify:name "Aryaduta Hotel" ;
     roomify:address "Kapten Maulana Lubis, 8, Medan" ;
+    roomify:starRating 4 ;
+    roomify:rating 4.5 ;
+    roomify:reviewCount 5931 ;
+    roomify:startPrice 841000 ;
     roomify:latitude 3.5899197 ;
     roomify:longitude 98.6741791 ;
-    roomify:dataSource "osm" ;
+    roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-tjong .
+    roomify:nearLandmark roomify:lm-tjong ;
+    roomify:hasRoom roomify:hotel-194-room1 ;
+    roomify:hasReview roomify:hotel-194-rev1 ;
+    roomify:hasPhoto roomify:hotel-194-photo1 .
+
+roomify:hotel-194-room1 a roomify:Room, schema:HotelRoom ;
+    roomify:roomType "Standard" ;
+    roomify:pricePerNight 841000 ;
+    roomify:maxGuests 2 ;
+    roomify:roomOf roomify:hotel-194 .
+
+roomify:hotel-194-rev1 a roomify:Review, schema:Review ;
+    roomify:reviewerName "Tamu Roomify" ;
+    roomify:reviewRating 4.5 ;
+    roomify:reviewDate "2026-11-01"^^xsd:date ;
+    roomify:reviewText "Penginapan nyaman di Aryaduta Hotel, dekat Tjong A Fie Mansion." ;
+    roomify:reviewAbout roomify:hotel-194 .
+
+roomify:hotel-194-photo1 a roomify:Photo, schema:ImageObject ;
+    roomify:photoUrl "/images/hotels/_csv/hotel-194.jpg" ;
+    roomify:photoCaption "Foto Aryaduta Hotel" ;
+    roomify:photoOf roomify:hotel-194 .
 
 roomify:hotel-195 a roomify:Hotel, schema:Hotel ;
     roomify:name "Hotel Suani" ;
@@ -11182,7 +11207,7 @@ roomify:hotel-199 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.6457197 ;
     roomify:dataSource "osm" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-rahmat .
+    roomify:nearLandmark roomify:lm-manhattan .
 
 roomify:hotel-200 a roomify:Hotel, schema:Hotel ;
     roomify:name "Hotel Petisah" ;
@@ -11196,11 +11221,28 @@ roomify:hotel-200 a roomify:Hotel, schema:Hotel ;
 roomify:hotel-201 a roomify:Hotel, schema:Hotel ;
     roomify:name "Dhaksina Hotel" ;
     roomify:address "Kota Medan" ;
+    roomify:starRating 3 ;
+    roomify:rating 3.8 ;
+    roomify:reviewCount 179 ;
     roomify:latitude 3.5780836 ;
     roomify:longitude 98.6864484 ;
-    roomify:dataSource "osm" ;
+    roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-museumsumut .
+    roomify:nearLandmark roomify:lm-museumsumut ;
+    roomify:hasReview roomify:hotel-201-rev1 ;
+    roomify:hasPhoto roomify:hotel-201-photo1 .
+
+roomify:hotel-201-rev1 a roomify:Review, schema:Review ;
+    roomify:reviewerName "Tamu Roomify" ;
+    roomify:reviewRating 3.8 ;
+    roomify:reviewDate "2026-11-01"^^xsd:date ;
+    roomify:reviewText "Penginapan nyaman di Dhaksina Hotel, dekat Museum Negeri Sumatera Utara." ;
+    roomify:reviewAbout roomify:hotel-201 .
+
+roomify:hotel-201-photo1 a roomify:Photo, schema:ImageObject ;
+    roomify:photoUrl "/images/hotels/_csv/hotel-201.jpg" ;
+    roomify:photoCaption "Foto Dhaksina Hotel" ;
+    roomify:photoOf roomify:hotel-201 .
 
 roomify:hotel-202 a roomify:Hotel, schema:Hotel ;
     roomify:name "Garuda Citra Hotel" ;
@@ -11241,21 +11283,63 @@ roomify:hotel-205 a roomify:Hotel, schema:Hotel ;
 roomify:hotel-206 a roomify:Hotel, schema:Hotel ;
     roomify:name "Hotel Zakia" ;
     roomify:address "Jalan Sipiso Piso" ;
+    roomify:rating 3.9 ;
+    roomify:reviewCount 153 ;
     roomify:latitude 3.5743718 ;
     roomify:longitude 98.6868522 ;
-    roomify:dataSource "osm" ;
+    roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-museumsumut .
+    roomify:nearLandmark roomify:lm-museumsumut ;
+    roomify:hasReview roomify:hotel-206-rev1 ;
+    roomify:hasPhoto roomify:hotel-206-photo1 .
+
+roomify:hotel-206-rev1 a roomify:Review, schema:Review ;
+    roomify:reviewerName "Tamu Roomify" ;
+    roomify:reviewRating 3.9 ;
+    roomify:reviewDate "2026-11-01"^^xsd:date ;
+    roomify:reviewText "Penginapan nyaman di Hotel Zakia, dekat Museum Negeri Sumatera Utara." ;
+    roomify:reviewAbout roomify:hotel-206 .
+
+roomify:hotel-206-photo1 a roomify:Photo, schema:ImageObject ;
+    roomify:photoUrl "/images/hotels/_csv/hotel-206.jpg" ;
+    roomify:photoCaption "Foto Hotel Zakia" ;
+    roomify:photoOf roomify:hotel-206 .
 
 roomify:hotel-207 a roomify:Hotel, schema:Hotel ;
     roomify:name "Roemah Moesi" ;
     roomify:address "Jalan Sei Musi, 93" ;
+    roomify:starRating 3 ;
+    roomify:rating 4.5 ;
+    roomify:reviewCount 176 ;
+    roomify:startPrice 2696832 ;
     roomify:latitude 3.5779193 ;
     roomify:longitude 98.6459218 ;
-    roomify:dataSource "osm" ;
+    roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-cadika ;
-    roomify:hasFacility roomify:fac-wifi .
+    roomify:nearLandmark roomify:lm-manhattan ;
+    roomify:hasFacility roomify:fac-wifi ;
+    roomify:hasRoom roomify:hotel-207-room1 ;
+    roomify:hasReview roomify:hotel-207-rev1 ;
+    roomify:hasPhoto roomify:hotel-207-photo1 .
+
+roomify:hotel-207-room1 a roomify:Room, schema:HotelRoom ;
+    roomify:roomType "Standard" ;
+    roomify:pricePerNight 2696832 ;
+    roomify:maxGuests 2 ;
+    roomify:roomOf roomify:hotel-207 ;
+    roomify:hasFeature roomify:fac-wifi .
+
+roomify:hotel-207-rev1 a roomify:Review, schema:Review ;
+    roomify:reviewerName "Tamu Roomify" ;
+    roomify:reviewRating 4.5 ;
+    roomify:reviewDate "2026-11-01"^^xsd:date ;
+    roomify:reviewText "Penginapan nyaman di Roemah Moesi, dekat Manhattan Times Square." ;
+    roomify:reviewAbout roomify:hotel-207 .
+
+roomify:hotel-207-photo1 a roomify:Photo, schema:ImageObject ;
+    roomify:photoUrl "/images/hotels/_csv/hotel-207.jpg" ;
+    roomify:photoCaption "Foto Roemah Moesi" ;
+    roomify:photoOf roomify:hotel-207 .
 
 roomify:hotel-208 a roomify:Hotel, schema:Hotel ;
     roomify:name "Royal Perintis Hotel" ;
@@ -11269,11 +11353,35 @@ roomify:hotel-208 a roomify:Hotel, schema:Hotel ;
 roomify:hotel-209 a roomify:Hotel, schema:Hotel ;
     roomify:name "Wesly House" ;
     roomify:address "Jalan Sei Bengal, 12, Medan" ;
+    roomify:rating 3.9 ;
+    roomify:reviewCount 329 ;
+    roomify:startPrice 113688 ;
     roomify:latitude 3.5875413 ;
     roomify:longitude 98.6606315 ;
-    roomify:dataSource "osm" ;
+    roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-rahmat .
+    roomify:nearLandmark roomify:lm-rahmat ;
+    roomify:hasRoom roomify:hotel-209-room1 ;
+    roomify:hasReview roomify:hotel-209-rev1 ;
+    roomify:hasPhoto roomify:hotel-209-photo1 .
+
+roomify:hotel-209-room1 a roomify:Room, schema:HotelRoom ;
+    roomify:roomType "Standard" ;
+    roomify:pricePerNight 113688 ;
+    roomify:maxGuests 2 ;
+    roomify:roomOf roomify:hotel-209 .
+
+roomify:hotel-209-rev1 a roomify:Review, schema:Review ;
+    roomify:reviewerName "Tamu Roomify" ;
+    roomify:reviewRating 3.9 ;
+    roomify:reviewDate "2026-11-01"^^xsd:date ;
+    roomify:reviewText "Penginapan nyaman di Wesly House, dekat Rahmat Wildlife Museum." ;
+    roomify:reviewAbout roomify:hotel-209 .
+
+roomify:hotel-209-photo1 a roomify:Photo, schema:ImageObject ;
+    roomify:photoUrl "/images/hotels/_csv/hotel-209.jpg" ;
+    roomify:photoCaption "Foto Wesly House" ;
+    roomify:photoOf roomify:hotel-209 .
 
 roomify:hotel-210 a roomify:Hotel, schema:Hotel ;
     roomify:name "Kanasha Hotel" ;
@@ -11291,16 +11399,33 @@ roomify:hotel-211 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.6528064 ;
     roomify:dataSource "osm" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-rahmat .
+    roomify:nearLandmark roomify:lm-manhattan .
 
 roomify:hotel-212 a roomify:Hotel, schema:Hotel ;
     roomify:name "Hanlis Hotel" ;
     roomify:address "Jalan Sei Kapuas, 6, Medan" ;
+    roomify:starRating 2 ;
+    roomify:rating 4.2 ;
+    roomify:reviewCount 274 ;
     roomify:latitude 3.5842096 ;
     roomify:longitude 98.6520406 ;
-    roomify:dataSource "osm" ;
+    roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-rahmat .
+    roomify:nearLandmark roomify:lm-manhattan ;
+    roomify:hasReview roomify:hotel-212-rev1 ;
+    roomify:hasPhoto roomify:hotel-212-photo1 .
+
+roomify:hotel-212-rev1 a roomify:Review, schema:Review ;
+    roomify:reviewerName "Tamu Roomify" ;
+    roomify:reviewRating 4.2 ;
+    roomify:reviewDate "2026-11-01"^^xsd:date ;
+    roomify:reviewText "Penginapan nyaman di Hanlis Hotel, dekat Manhattan Times Square." ;
+    roomify:reviewAbout roomify:hotel-212 .
+
+roomify:hotel-212-photo1 a roomify:Photo, schema:ImageObject ;
+    roomify:photoUrl "/images/hotels/_csv/hotel-212.jpg" ;
+    roomify:photoCaption "Foto Hanlis Hotel" ;
+    roomify:photoOf roomify:hotel-212 .
 
 roomify:hotel-213 a roomify:Hotel, schema:Hotel ;
     roomify:name "K77 Guest House" ;
@@ -11318,7 +11443,7 @@ roomify:hotel-214 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.6432214 ;
     roomify:dataSource "osm" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-rahmat .
+    roomify:nearLandmark roomify:lm-manhattan .
 
 roomify:hotel-215 a roomify:Hotel, schema:Hotel ;
     roomify:name "Hotel Syariah Al Jayri," ;
@@ -11345,7 +11470,7 @@ roomify:hotel-217 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.633486 ;
     roomify:dataSource "osm" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-rahmat .
+    roomify:nearLandmark roomify:lm-manhattan .
 
 roomify:hotel-218 a roomify:Hotel, schema:Hotel ;
     roomify:name "PURI STREET" ;
@@ -11359,12 +11484,38 @@ roomify:hotel-218 a roomify:Hotel, schema:Hotel ;
 roomify:hotel-219 a roomify:Hotel, schema:Hotel ;
     roomify:name "Le Polonia Hotel & Convention" ;
     roomify:address "Jend. Sudirman, 14" ;
+    roomify:starRating 4 ;
+    roomify:rating 4.3 ;
+    roomify:reviewCount 6500 ;
+    roomify:startPrice 464592 ;
     roomify:latitude 3.5766388 ;
     roomify:longitude 98.6750953 ;
-    roomify:dataSource "osm" ;
+    roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
     roomify:nearLandmark roomify:lm-mashun ;
-    roomify:hasFacility roomify:fac-wifi .
+    roomify:hasFacility roomify:fac-wifi ;
+    roomify:hasRoom roomify:hotel-219-room1 ;
+    roomify:hasReview roomify:hotel-219-rev1 ;
+    roomify:hasPhoto roomify:hotel-219-photo1 .
+
+roomify:hotel-219-room1 a roomify:Room, schema:HotelRoom ;
+    roomify:roomType "Standard" ;
+    roomify:pricePerNight 464592 ;
+    roomify:maxGuests 2 ;
+    roomify:roomOf roomify:hotel-219 ;
+    roomify:hasFeature roomify:fac-wifi .
+
+roomify:hotel-219-rev1 a roomify:Review, schema:Review ;
+    roomify:reviewerName "Tamu Roomify" ;
+    roomify:reviewRating 4.3 ;
+    roomify:reviewDate "2026-11-01"^^xsd:date ;
+    roomify:reviewText "Penginapan nyaman di Le Polonia Hotel & Convention, dekat Masjid Raya Al-Mashun." ;
+    roomify:reviewAbout roomify:hotel-219 .
+
+roomify:hotel-219-photo1 a roomify:Photo, schema:ImageObject ;
+    roomify:photoUrl "/images/hotels/_csv/hotel-219.jpg" ;
+    roomify:photoCaption "Foto Le Polonia Hotel & Convention" ;
+    roomify:photoOf roomify:hotel-219 .
 
 roomify:hotel-220 a roomify:Hotel, schema:Hotel ;
     roomify:name "Perumahan Pertamina no 6H" ;
@@ -11388,11 +11539,28 @@ roomify:hotel-221 a roomify:Hotel, schema:Hotel ;
 roomify:hotel-222 a roomify:Hotel, schema:Hotel ;
     roomify:name "Grand Sirao Hotel" ;
     roomify:address "Kota Medan" ;
+    roomify:starRating 2 ;
+    roomify:rating 3.6 ;
+    roomify:reviewCount 250 ;
     roomify:latitude 3.5832165 ;
     roomify:longitude 98.6861911 ;
-    roomify:dataSource "osm" ;
+    roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-museumsumut .
+    roomify:nearLandmark roomify:lm-museumsumut ;
+    roomify:hasReview roomify:hotel-222-rev1 ;
+    roomify:hasPhoto roomify:hotel-222-photo1 .
+
+roomify:hotel-222-rev1 a roomify:Review, schema:Review ;
+    roomify:reviewerName "Tamu Roomify" ;
+    roomify:reviewRating 3.6 ;
+    roomify:reviewDate "2026-11-01"^^xsd:date ;
+    roomify:reviewText "Penginapan nyaman di Grand Sirao Hotel, dekat Museum Negeri Sumatera Utara." ;
+    roomify:reviewAbout roomify:hotel-222 .
+
+roomify:hotel-222-photo1 a roomify:Photo, schema:ImageObject ;
+    roomify:photoUrl "/images/hotels/_csv/hotel-222.jpg" ;
+    roomify:photoCaption "Foto Grand Sirao Hotel" ;
+    roomify:photoOf roomify:hotel-222 .
 
 roomify:hotel-223 a roomify:Hotel, schema:Hotel ;
     roomify:name "Grand Swiss-Bel" ;
@@ -11428,7 +11596,7 @@ roomify:hotel-226 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.6406332 ;
     roomify:dataSource "osm" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-rahmat .
+    roomify:nearLandmark roomify:lm-manhattan .
 
 roomify:hotel-227 a roomify:Hotel, schema:Hotel ;
     roomify:name "D'Prima Hotel Stasiun Kereta Api Medan" ;
@@ -11469,11 +11637,36 @@ roomify:hotel-230 a roomify:Hotel, schema:Hotel ;
 roomify:hotel-231 a roomify:Hotel, schema:Hotel ;
     roomify:name "Hotel Palace Inn" ;
     roomify:address "Kota Medan" ;
+    roomify:starRating 3 ;
+    roomify:rating 4.1 ;
+    roomify:reviewCount 354 ;
+    roomify:startPrice 308992 ;
     roomify:latitude 3.5862561 ;
     roomify:longitude 98.6662736 ;
-    roomify:dataSource "osm" ;
+    roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-rahmat .
+    roomify:nearLandmark roomify:lm-rahmat ;
+    roomify:hasRoom roomify:hotel-231-room1 ;
+    roomify:hasReview roomify:hotel-231-rev1 ;
+    roomify:hasPhoto roomify:hotel-231-photo1 .
+
+roomify:hotel-231-room1 a roomify:Room, schema:HotelRoom ;
+    roomify:roomType "Standard" ;
+    roomify:pricePerNight 308992 ;
+    roomify:maxGuests 2 ;
+    roomify:roomOf roomify:hotel-231 .
+
+roomify:hotel-231-rev1 a roomify:Review, schema:Review ;
+    roomify:reviewerName "Tamu Roomify" ;
+    roomify:reviewRating 4.1 ;
+    roomify:reviewDate "2026-11-01"^^xsd:date ;
+    roomify:reviewText "Penginapan nyaman di Hotel Palace Inn, dekat Rahmat Wildlife Museum." ;
+    roomify:reviewAbout roomify:hotel-231 .
+
+roomify:hotel-231-photo1 a roomify:Photo, schema:ImageObject ;
+    roomify:photoUrl "/images/hotels/_csv/hotel-231.jpg" ;
+    roomify:photoCaption "Foto Hotel Palace Inn" ;
+    roomify:photoOf roomify:hotel-231 .
 
 roomify:hotel-232 a roomify:Hotel, schema:Hotel ;
     roomify:name "Cambridge Condominium" ;
@@ -11563,7 +11756,7 @@ roomify:hotel-241 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.6324573 ;
     roomify:dataSource "osm" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-velangkanni .
+    roomify:nearLandmark roomify:lm-manhattan .
 
 roomify:hotel-242 a roomify:Hotel, schema:Hotel ;
     roomify:name "Tiara Hotel & Convention Centre" ;
@@ -11604,20 +11797,62 @@ roomify:hotel-245 a roomify:Hotel, schema:Hotel ;
 roomify:hotel-246 a roomify:Hotel, schema:Hotel ;
     roomify:name "Grand Inna Hotel Medan" ;
     roomify:address "Jl. Balai Kota, 2, Medan" ;
+    roomify:starRating 4 ;
+    roomify:rating 4.2 ;
+    roomify:reviewCount 2600 ;
+    roomify:startPrice 1748032 ;
     roomify:latitude 3.5911821 ;
     roomify:longitude 98.676805 ;
-    roomify:dataSource "osm" ;
+    roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-sib .
+    roomify:nearLandmark roomify:lm-sib ;
+    roomify:hasRoom roomify:hotel-246-room1 ;
+    roomify:hasReview roomify:hotel-246-rev1 ;
+    roomify:hasPhoto roomify:hotel-246-photo1 .
+
+roomify:hotel-246-room1 a roomify:Room, schema:HotelRoom ;
+    roomify:roomType "Standard" ;
+    roomify:pricePerNight 1748032 ;
+    roomify:maxGuests 2 ;
+    roomify:roomOf roomify:hotel-246 .
+
+roomify:hotel-246-rev1 a roomify:Review, schema:Review ;
+    roomify:reviewerName "Tamu Roomify" ;
+    roomify:reviewRating 4.2 ;
+    roomify:reviewDate "2026-11-01"^^xsd:date ;
+    roomify:reviewText "Penginapan nyaman di Grand Inna Hotel Medan, dekat Bundaran SIB / Majestik." ;
+    roomify:reviewAbout roomify:hotel-246 .
+
+roomify:hotel-246-photo1 a roomify:Photo, schema:ImageObject ;
+    roomify:photoUrl "/images/hotels/_csv/hotel-246.jpg" ;
+    roomify:photoCaption "Foto Grand Inna Hotel Medan" ;
+    roomify:photoOf roomify:hotel-246 .
 
 roomify:hotel-247 a roomify:Hotel, schema:Hotel ;
     roomify:name "Amaliun Hotel" ;
     roomify:address "Kota Medan" ;
+    roomify:starRating 3 ;
+    roomify:rating 4.1 ;
+    roomify:reviewCount 563 ;
     roomify:latitude 3.576382 ;
     roomify:longitude 98.6898909 ;
-    roomify:dataSource "osm" ;
+    roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-museumsumut .
+    roomify:nearLandmark roomify:lm-museumsumut ;
+    roomify:hasReview roomify:hotel-247-rev1 ;
+    roomify:hasPhoto roomify:hotel-247-photo1 .
+
+roomify:hotel-247-rev1 a roomify:Review, schema:Review ;
+    roomify:reviewerName "Tamu Roomify" ;
+    roomify:reviewRating 4.1 ;
+    roomify:reviewDate "2026-11-01"^^xsd:date ;
+    roomify:reviewText "Penginapan nyaman di Amaliun Hotel, dekat Museum Negeri Sumatera Utara." ;
+    roomify:reviewAbout roomify:hotel-247 .
+
+roomify:hotel-247-photo1 a roomify:Photo, schema:ImageObject ;
+    roomify:photoUrl "/images/hotels/_csv/hotel-247.jpg" ;
+    roomify:photoCaption "Foto Amaliun Hotel" ;
+    roomify:photoOf roomify:hotel-247 .
 
 roomify:hotel-248 a roomify:Hotel, schema:Hotel ;
     roomify:name "OYO 447 Hutasimo Residence" ;
@@ -11649,11 +11884,36 @@ roomify:hotel-250 a roomify:Hotel, schema:Hotel ;
 roomify:hotel-251 a roomify:Hotel, schema:Hotel ;
     roomify:name "Jangga House" ;
     roomify:address "Kota Medan" ;
+    roomify:starRating 2 ;
+    roomify:rating 4.3 ;
+    roomify:reviewCount 471 ;
+    roomify:startPrice 217000 ;
     roomify:latitude 3.5803967 ;
     roomify:longitude 98.654135 ;
-    roomify:dataSource "osm" ;
+    roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-rahmat .
+    roomify:nearLandmark roomify:lm-rahmat ;
+    roomify:hasRoom roomify:hotel-251-room1 ;
+    roomify:hasReview roomify:hotel-251-rev1 ;
+    roomify:hasPhoto roomify:hotel-251-photo1 .
+
+roomify:hotel-251-room1 a roomify:Room, schema:HotelRoom ;
+    roomify:roomType "Standard" ;
+    roomify:pricePerNight 217000 ;
+    roomify:maxGuests 2 ;
+    roomify:roomOf roomify:hotel-251 .
+
+roomify:hotel-251-rev1 a roomify:Review, schema:Review ;
+    roomify:reviewerName "Tamu Roomify" ;
+    roomify:reviewRating 4.3 ;
+    roomify:reviewDate "2026-11-01"^^xsd:date ;
+    roomify:reviewText "Penginapan nyaman di Jangga House, dekat Rahmat Wildlife Museum." ;
+    roomify:reviewAbout roomify:hotel-251 .
+
+roomify:hotel-251-photo1 a roomify:Photo, schema:ImageObject ;
+    roomify:photoUrl "/images/hotels/_csv/hotel-251.jpg" ;
+    roomify:photoCaption "Foto Jangga House" ;
+    roomify:photoOf roomify:hotel-251 .
 
 roomify:hotel-252 a roomify:Hotel, schema:Hotel ;
     roomify:name "Citi International Palang Merah" ;
@@ -11667,11 +11927,36 @@ roomify:hotel-252 a roomify:Hotel, schema:Hotel ;
 roomify:hotel-253 a roomify:Hotel, schema:Hotel ;
     roomify:name "Nusa Hotel" ;
     roomify:address "Kota Medan" ;
+    roomify:starRating 2 ;
+    roomify:rating 4.2 ;
+    roomify:reviewCount 181 ;
+    roomify:startPrice 206000 ;
     roomify:latitude 3.5975704 ;
     roomify:longitude 98.706744 ;
-    roomify:dataSource "osm" ;
+    roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-museumsumut .
+    roomify:nearLandmark roomify:lm-museumsumut ;
+    roomify:hasRoom roomify:hotel-253-room1 ;
+    roomify:hasReview roomify:hotel-253-rev1 ;
+    roomify:hasPhoto roomify:hotel-253-photo1 .
+
+roomify:hotel-253-room1 a roomify:Room, schema:HotelRoom ;
+    roomify:roomType "Standard" ;
+    roomify:pricePerNight 206000 ;
+    roomify:maxGuests 2 ;
+    roomify:roomOf roomify:hotel-253 .
+
+roomify:hotel-253-rev1 a roomify:Review, schema:Review ;
+    roomify:reviewerName "Tamu Roomify" ;
+    roomify:reviewRating 4.2 ;
+    roomify:reviewDate "2026-11-01"^^xsd:date ;
+    roomify:reviewText "Penginapan nyaman di Nusa Hotel, dekat Museum Negeri Sumatera Utara." ;
+    roomify:reviewAbout roomify:hotel-253 .
+
+roomify:hotel-253-photo1 a roomify:Photo, schema:ImageObject ;
+    roomify:photoUrl "/images/hotels/_csv/hotel-253.jpg" ;
+    roomify:photoCaption "Foto Nusa Hotel" ;
+    roomify:photoOf roomify:hotel-253 .
 
 roomify:hotel-254 a roomify:Hotel, schema:Hotel ;
     roomify:name "hotel garuda plaza" ;
@@ -11694,20 +11979,62 @@ roomify:hotel-255 a roomify:Hotel, schema:Hotel ;
 roomify:hotel-256 a roomify:Hotel, schema:Hotel ;
     roomify:name "Saka Hotel Medan" ;
     roomify:address "Kota Medan" ;
+    roomify:starRating 3 ;
+    roomify:rating 4.0 ;
+    roomify:reviewCount 2800 ;
+    roomify:startPrice 350608 ;
     roomify:latitude 3.5885447 ;
     roomify:longitude 98.6265418 ;
-    roomify:dataSource "osm" ;
+    roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-velangkanni .
+    roomify:nearLandmark roomify:lm-manhattan ;
+    roomify:hasRoom roomify:hotel-256-room1 ;
+    roomify:hasReview roomify:hotel-256-rev1 ;
+    roomify:hasPhoto roomify:hotel-256-photo1 .
+
+roomify:hotel-256-room1 a roomify:Room, schema:HotelRoom ;
+    roomify:roomType "Standard" ;
+    roomify:pricePerNight 350608 ;
+    roomify:maxGuests 2 ;
+    roomify:roomOf roomify:hotel-256 .
+
+roomify:hotel-256-rev1 a roomify:Review, schema:Review ;
+    roomify:reviewerName "Tamu Roomify" ;
+    roomify:reviewRating 4.0 ;
+    roomify:reviewDate "2026-11-01"^^xsd:date ;
+    roomify:reviewText "Penginapan nyaman di Saka Hotel Medan, dekat Manhattan Times Square." ;
+    roomify:reviewAbout roomify:hotel-256 .
+
+roomify:hotel-256-photo1 a roomify:Photo, schema:ImageObject ;
+    roomify:photoUrl "/images/hotels/_csv/hotel-256.jpg" ;
+    roomify:photoCaption "Foto Saka Hotel Medan" ;
+    roomify:photoOf roomify:hotel-256 .
 
 roomify:hotel-257 a roomify:Hotel, schema:Hotel ;
     roomify:name "Wisma Sudirman" ;
     roomify:address "Kota Medan" ;
+    roomify:starRating 2 ;
+    roomify:rating 4.3 ;
+    roomify:reviewCount 270 ;
     roomify:latitude 3.5740484 ;
     roomify:longitude 98.664026 ;
-    roomify:dataSource "osm" ;
+    roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-cadika .
+    roomify:nearLandmark roomify:lm-cadika ;
+    roomify:hasReview roomify:hotel-257-rev1 ;
+    roomify:hasPhoto roomify:hotel-257-photo1 .
+
+roomify:hotel-257-rev1 a roomify:Review, schema:Review ;
+    roomify:reviewerName "Tamu Roomify" ;
+    roomify:reviewRating 4.3 ;
+    roomify:reviewDate "2026-11-01"^^xsd:date ;
+    roomify:reviewText "Penginapan nyaman di Wisma Sudirman, dekat Taman Cadika." ;
+    roomify:reviewAbout roomify:hotel-257 .
+
+roomify:hotel-257-photo1 a roomify:Photo, schema:ImageObject ;
+    roomify:photoUrl "/images/hotels/_csv/hotel-257.jpg" ;
+    roomify:photoCaption "Foto Wisma Sudirman" ;
+    roomify:photoOf roomify:hotel-257 .
 
 roomify:hotel-258 a roomify:Hotel, schema:Hotel ;
     roomify:name "The Green Alam Indah Hotel" ;
@@ -11721,11 +12048,36 @@ roomify:hotel-258 a roomify:Hotel, schema:Hotel ;
 roomify:hotel-259 a roomify:Hotel, schema:Hotel ;
     roomify:name "Ibis Styles Medan Patimura" ;
     roomify:address "Kota Medan" ;
+    roomify:starRating 3 ;
+    roomify:rating 4.4 ;
+    roomify:reviewCount 3244 ;
+    roomify:startPrice 623000 ;
     roomify:latitude 3.5738286 ;
     roomify:longitude 98.663665 ;
-    roomify:dataSource "osm" ;
+    roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-cadika .
+    roomify:nearLandmark roomify:lm-cadika ;
+    roomify:hasRoom roomify:hotel-259-room1 ;
+    roomify:hasReview roomify:hotel-259-rev1 ;
+    roomify:hasPhoto roomify:hotel-259-photo1 .
+
+roomify:hotel-259-room1 a roomify:Room, schema:HotelRoom ;
+    roomify:roomType "Standard" ;
+    roomify:pricePerNight 623000 ;
+    roomify:maxGuests 2 ;
+    roomify:roomOf roomify:hotel-259 .
+
+roomify:hotel-259-rev1 a roomify:Review, schema:Review ;
+    roomify:reviewerName "Tamu Roomify" ;
+    roomify:reviewRating 4.4 ;
+    roomify:reviewDate "2026-11-01"^^xsd:date ;
+    roomify:reviewText "Penginapan nyaman di Ibis Styles Medan Patimura, dekat Taman Cadika." ;
+    roomify:reviewAbout roomify:hotel-259 .
+
+roomify:hotel-259-photo1 a roomify:Photo, schema:ImageObject ;
+    roomify:photoUrl "/images/hotels/_csv/hotel-259.jpg" ;
+    roomify:photoCaption "Foto Ibis Styles Medan Patimura" ;
+    roomify:photoOf roomify:hotel-259 .
 
 roomify:hotel-260 a roomify:Hotel, schema:Hotel ;
     roomify:name "King Palace Medan" ;
@@ -11811,11 +12163,35 @@ roomify:hotel-268 a roomify:Hotel, schema:Hotel ;
 roomify:hotel-269 a roomify:Hotel, schema:Hotel ;
     roomify:name "Star Inn" ;
     roomify:address "Kota Medan" ;
+    roomify:rating 4.5 ;
+    roomify:reviewCount 68 ;
+    roomify:startPrice 146336 ;
     roomify:latitude 3.587075 ;
     roomify:longitude 98.7024948 ;
-    roomify:dataSource "osm" ;
+    roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-museumsumut .
+    roomify:nearLandmark roomify:lm-museumsumut ;
+    roomify:hasRoom roomify:hotel-269-room1 ;
+    roomify:hasReview roomify:hotel-269-rev1 ;
+    roomify:hasPhoto roomify:hotel-269-photo1 .
+
+roomify:hotel-269-room1 a roomify:Room, schema:HotelRoom ;
+    roomify:roomType "Standard" ;
+    roomify:pricePerNight 146336 ;
+    roomify:maxGuests 2 ;
+    roomify:roomOf roomify:hotel-269 .
+
+roomify:hotel-269-rev1 a roomify:Review, schema:Review ;
+    roomify:reviewerName "Tamu Roomify" ;
+    roomify:reviewRating 4.5 ;
+    roomify:reviewDate "2026-11-01"^^xsd:date ;
+    roomify:reviewText "Penginapan nyaman di Star Inn, dekat Museum Negeri Sumatera Utara." ;
+    roomify:reviewAbout roomify:hotel-269 .
+
+roomify:hotel-269-photo1 a roomify:Photo, schema:ImageObject ;
+    roomify:photoUrl "/images/hotels/_csv/hotel-269.jpg" ;
+    roomify:photoCaption "Foto Star Inn" ;
+    roomify:photoOf roomify:hotel-269 .
 
 roomify:hotel-270 a roomify:Hotel, schema:Hotel ;
     roomify:name "Hotel Gintas Tanjung Sari" ;
@@ -11878,7 +12254,7 @@ roomify:hotel-276 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.6469777 ;
     roomify:dataSource "osm" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-rahmat .
+    roomify:nearLandmark roomify:lm-manhattan .
 
 roomify:hotel-277 a roomify:Hotel, schema:Hotel ;
     roomify:name "Hotel Cempaka Medan" ;
@@ -11919,11 +12295,36 @@ roomify:hotel-280 a roomify:Hotel, schema:Hotel ;
 roomify:hotel-281 a roomify:Hotel, schema:Hotel ;
     roomify:name "Orinko City Hotel" ;
     roomify:address "Kota Medan" ;
+    roomify:starRating 3 ;
+    roomify:rating 4.5 ;
+    roomify:reviewCount 223 ;
+    roomify:startPrice 336912 ;
     roomify:latitude 3.5850664 ;
     roomify:longitude 98.6529479 ;
-    roomify:dataSource "osm" ;
+    roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-rahmat .
+    roomify:nearLandmark roomify:lm-manhattan ;
+    roomify:hasRoom roomify:hotel-281-room1 ;
+    roomify:hasReview roomify:hotel-281-rev1 ;
+    roomify:hasPhoto roomify:hotel-281-photo1 .
+
+roomify:hotel-281-room1 a roomify:Room, schema:HotelRoom ;
+    roomify:roomType "Standard" ;
+    roomify:pricePerNight 336912 ;
+    roomify:maxGuests 2 ;
+    roomify:roomOf roomify:hotel-281 .
+
+roomify:hotel-281-rev1 a roomify:Review, schema:Review ;
+    roomify:reviewerName "Tamu Roomify" ;
+    roomify:reviewRating 4.5 ;
+    roomify:reviewDate "2026-11-01"^^xsd:date ;
+    roomify:reviewText "Penginapan nyaman di Orinko City Hotel, dekat Manhattan Times Square." ;
+    roomify:reviewAbout roomify:hotel-281 .
+
+roomify:hotel-281-photo1 a roomify:Photo, schema:ImageObject ;
+    roomify:photoUrl "/images/hotels/_csv/hotel-281.jpg" ;
+    roomify:photoCaption "Foto Orinko City Hotel" ;
+    roomify:photoOf roomify:hotel-281 .
 
 roomify:hotel-282 a roomify:Hotel, schema:Hotel ;
     roomify:name "Lewi House" ;
@@ -11941,7 +12342,7 @@ roomify:hotel-283 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.6247299 ;
     roomify:dataSource "osm" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-velangkanni .
+    roomify:nearLandmark roomify:lm-manhattan .
 
 roomify:hotel-284 a roomify:Hotel, schema:Hotel ;
     roomify:name "Depari Hotel Sei Sikambing B" ;
@@ -11950,7 +12351,7 @@ roomify:hotel-284 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.6302247 ;
     roomify:dataSource "osm" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-velangkanni .
+    roomify:nearLandmark roomify:lm-manhattan .
 
 roomify:hotel-285 a roomify:Hotel, schema:Hotel ;
     roomify:name "OYO 692 Hotel Graha Buana" ;
@@ -12013,16 +12414,33 @@ roomify:hotel-291 a roomify:Hotel, schema:Hotel ;
     roomify:longitude 98.6455195 ;
     roomify:dataSource "osm" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-rahmat .
+    roomify:nearLandmark roomify:lm-manhattan .
 
 roomify:hotel-292 a roomify:Hotel, schema:Hotel ;
     roomify:name "Grand Nusantara Hotel" ;
     roomify:address "Kota Medan" ;
+    roomify:starRating 3 ;
+    roomify:rating 4.0 ;
+    roomify:reviewCount 244 ;
     roomify:latitude 3.5847432 ;
     roomify:longitude 98.6247056 ;
-    roomify:dataSource "osm" ;
+    roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
-    roomify:nearLandmark roomify:lm-velangkanni .
+    roomify:nearLandmark roomify:lm-manhattan ;
+    roomify:hasReview roomify:hotel-292-rev1 ;
+    roomify:hasPhoto roomify:hotel-292-photo1 .
+
+roomify:hotel-292-rev1 a roomify:Review, schema:Review ;
+    roomify:reviewerName "Tamu Roomify" ;
+    roomify:reviewRating 4.0 ;
+    roomify:reviewDate "2026-11-01"^^xsd:date ;
+    roomify:reviewText "Penginapan nyaman di Grand Nusantara Hotel, dekat Manhattan Times Square." ;
+    roomify:reviewAbout roomify:hotel-292 .
+
+roomify:hotel-292-photo1 a roomify:Photo, schema:ImageObject ;
+    roomify:photoUrl "/images/hotels/_csv/hotel-292.jpg" ;
+    roomify:photoCaption "Foto Grand Nusantara Hotel" ;
+    roomify:photoOf roomify:hotel-292 .
 
 roomify:hotel-293 a roomify:Hotel, schema:Hotel ;
     roomify:name "Wisma Syailendra" ;
