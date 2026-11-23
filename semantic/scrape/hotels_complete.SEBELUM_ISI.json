@@ -10457,16 +10457,23 @@
     "name": "Aryaduta Hotel",
     "address": "Kapten Maulana Lubis, 8, Medan",
     "description": null,
-    "star": null,
-    "rating": null,
-    "review_count": null,
-    "start_price": null,
+    "star": 4,
+    "rating": 4.5,
+    "review_count": 5931,
+    "start_price": 841000,
     "latitude": 3.5899197,
     "longitude": 98.6741791,
     "facilities": [],
-    "rooms": [],
-    "image_url": null,
-    "source": "osm"
+    "rooms": [
+      {
+        "room_type": "Standard",
+        "price": 841000,
+        "max_guests": 2,
+        "features": []
+      }
+    ],
+    "image_url": "/images/hotels/_csv/hotel-194.jpg",
+    "source": "osm+google_maps"
   },
   {
     "id": "hotel-195",
@@ -10569,16 +10576,16 @@
     "name": "Dhaksina Hotel",
     "address": "Kota Medan",
     "description": null,
-    "star": null,
-    "rating": null,
-    "review_count": null,
+    "star": 3,
+    "rating": 3.8,
+    "review_count": 179,
     "start_price": null,
     "latitude": 3.5780836,
     "longitude": 98.6864484,
     "facilities": [],
     "rooms": [],
-    "image_url": null,
-    "source": "osm"
+    "image_url": "/images/hotels/_csv/hotel-201.jpg",
+    "source": "osm+google_maps"
   },
   {
     "id": "hotel-202",
@@ -10650,33 +10657,42 @@
     "address": "Jalan Sipiso Piso",
     "description": null,
     "star": null,
-    "rating": null,
-    "review_count": null,
+    "rating": 3.9,
+    "review_count": 153,
     "start_price": null,
     "latitude": 3.5743718,
     "longitude": 98.6868522,
     "facilities": [],
     "rooms": [],
-    "image_url": null,
-    "source": "osm"
+    "image_url": "/images/hotels/_csv/hotel-206.jpg",
+    "source": "osm+google_maps"
   },
   {
     "id": "hotel-207",
     "name": "Roemah Moesi",
     "address": "Jalan Sei Musi, 93",
     "description": null,
-    "star": null,
-    "rating": null,
-    "review_count": null,
-    "start_price": null,
+    "star": 3,
+    "rating": 4.5,
+    "review_count": 176,
+    "start_price": 2696832,
     "latitude": 3.5779193,
     "longitude": 98.6459218,
     "facilities": [
       "WiFi"
     ],
-    "rooms": [],
-    "image_url": null,
-    "source": "osm"
+    "rooms": [
+      {
+        "room_type": "Standard",
+        "price": 2696832,
+        "max_guests": 2,
+        "features": [
+          "WiFi"
+        ]
+      }
+    ],
+    "image_url": "/images/hotels/_csv/hotel-207.jpg",
+    "source": "osm+google_maps"
   },
   {
     "id": "hotel-208",
@@ -10700,15 +10716,22 @@
     "address": "Jalan Sei Bengal, 12, Medan",
     "description": null,
     "star": null,
-    "rating": null,
-    "review_count": null,
-    "start_price": null,
+    "rating": 3.9,
+    "review_count": 329,
+    "start_price": 113688,
     "latitude": 3.5875413,
     "longitude": 98.6606315,
     "facilities": [],
-    "rooms": [],
-    "image_url": null,
-    "source": "osm"
+    "rooms": [
+      {
+        "room_type": "Standard",
+        "price": 113688,
+        "max_guests": 2,
+        "features": []
+      }
+    ],
+    "image_url": "/images/hotels/_csv/hotel-209.jpg",
+    "source": "osm+google_maps"
   },
   {
     "id": "hotel-210",
@@ -10747,16 +10770,16 @@
     "name": "Hanlis Hotel",
     "address": "Jalan Sei Kapuas, 6, Medan",
     "description": null,
-    "star": null,
-    "rating": null,
-    "review_count": null,
+    "star": 2,
+    "rating": 4.2,
+    "review_count": 274,
     "start_price": null,
     "latitude": 3.5842096,
     "longitude": 98.6520406,
     "facilities": [],
     "rooms": [],
-    "image_url": null,
-    "source": "osm"
+    "image_url": "/images/hotels/_csv/hotel-212.jpg",
+    "source": "osm+google_maps"
   },
   {
     "id": "hotel-213",
@@ -10859,18 +10882,27 @@
     "name": "Le Polonia Hotel & Convention",
     "address": "Jend. Sudirman, 14",
     "description": null,
-    "star": null,
-    "rating": null,
-    "review_count": null,
-    "start_price": null,
+    "star": 4,
+    "rating": 4.3,
+    "review_count": 6500,
+    "start_price": 464592,
     "latitude": 3.5766388,
     "longitude": 98.6750953,
     "facilities": [
       "WiFi"
     ],
-    "rooms": [],
-    "image_url": null,
-    "source": "osm"
+    "rooms": [
+      {
+        "room_type": "Standard",
+        "price": 464592,
+        "max_guests": 2,
+        "features": [
+          "WiFi"
+        ]
+      }
+    ],
+    "image_url": "/images/hotels/_csv/hotel-219.jpg",
+    "source": "osm+google_maps"
   },
   {
     "id": "hotel-220",
@@ -10911,16 +10943,16 @@
     "name": "Grand Sirao Hotel",
     "address": "Kota Medan",
     "description": null,
-    "star": null,
-    "rating": null,
-    "review_count": null,
+    "star": 2,
+    "rating": 3.6,
+    "review_count": 250,
     "start_price": null,
     "latitude": 3.5832165,
     "longitude": 98.6861911,
     "facilities": [],
     "rooms": [],
-    "image_url": null,
-    "source": "osm"
+    "image_url": "/images/hotels/_csv/hotel-222.jpg",
+    "source": "osm+google_maps"
   },
   {
     "id": "hotel-223",
@@ -11055,16 +11087,23 @@
     "name": "Hotel Palace Inn",
     "address": "Kota Medan",
     "description": null,
-    "star": null,
-    "rating": null,
-    "review_count": null,
-    "start_price": null,
+    "star": 3,
+    "rating": 4.1,
+    "review_count": 354,
+    "start_price": 308992,
     "latitude": 3.5862561,
     "longitude": 98.6662736,
     "facilities": [],
-    "rooms": [],
-    "image_url": null,
-    "source": "osm"
+    "rooms": [
+      {
+        "room_type": "Standard",
+        "price": 308992,
+        "max_guests": 2,
+        "features": []
+      }
+    ],
+    "image_url": "/images/hotels/_csv/hotel-231.jpg",
+    "source": "osm+google_maps"
   },
   {
     "id": "hotel-232",
@@ -11295,32 +11334,39 @@
     "name": "Grand Inna Hotel Medan",
     "address": "Jl. Balai Kota, 2, Medan",
     "description": null,
-    "star": null,
-    "rating": null,
-    "review_count": null,
-    "start_price": null,
+    "star": 4,
+    "rating": 4.2,
+    "review_count": 2600,
+    "start_price": 1748032,
     "latitude": 3.5911821,
     "longitude": 98.676805,
     "facilities": [],
-    "rooms": [],
-    "image_url": null,
-    "source": "osm"
+    "rooms": [
+      {
+        "room_type": "Standard",
+        "price": 1748032,
+        "max_guests": 2,
+        "features": []
+      }
+    ],
+    "image_url": "/images/hotels/_csv/hotel-246.jpg",
+    "source": "osm+google_maps"
   },
   {
     "id": "hotel-247",
     "name": "Amaliun Hotel",
     "address": "Kota Medan",
     "description": null,
-    "star": null,
-    "rating": null,
-    "review_count": null,
+    "star": 3,
+    "rating": 4.1,
+    "review_count": 563,
     "start_price": null,
     "latitude": 3.576382,
     "longitude": 98.6898909,
     "facilities": [],
     "rooms": [],
-    "image_url": null,
-    "source": "osm"
+    "image_url": "/images/hotels/_csv/hotel-247.jpg",
+    "source": "osm+google_maps"
   },
   {
     "id": "hotel-248",
@@ -11375,16 +11421,23 @@
     "name": "Jangga House",
     "address": "Kota Medan",
     "description": null,
-    "star": null,
-    "rating": null,
-    "review_count": null,
-    "start_price": null,
+    "star": 2,
+    "rating": 4.3,
+    "review_count": 471,
+    "start_price": 217000,
     "latitude": 3.5803967,
     "longitude": 98.654135,
     "facilities": [],
-    "rooms": [],
-    "image_url": null,
-    "source": "osm"
+    "rooms": [
+      {
+        "room_type": "Standard",
+        "price": 217000,
+        "max_guests": 2,
+        "features": []
+      }
+    ],
+    "image_url": "/images/hotels/_csv/hotel-251.jpg",
+    "source": "osm+google_maps"
   },
   {
     "id": "hotel-252",
@@ -11407,16 +11460,23 @@
     "name": "Nusa Hotel",
     "address": "Kota Medan",
     "description": null,
-    "star": null,
-    "rating": null,
-    "review_count": null,
-    "start_price": null,
+    "star": 2,
+    "rating": 4.2,
+    "review_count": 181,
+    "start_price": 206000,
     "latitude": 3.5975704,
     "longitude": 98.706744,
     "facilities": [],
-    "rooms": [],
-    "image_url": null,
-    "source": "osm"
+    "rooms": [
+      {
+        "room_type": "Standard",
+        "price": 206000,
+        "max_guests": 2,
+        "features": []
+      }
+    ],
+    "image_url": "/images/hotels/_csv/hotel-253.jpg",
+    "source": "osm+google_maps"
   },
   {
     "id": "hotel-254",
@@ -11455,32 +11515,39 @@
     "name": "Saka Hotel Medan",
     "address": "Kota Medan",
     "description": null,
-    "star": null,
-    "rating": null,
-    "review_count": null,
-    "start_price": null,
+    "star": 3,
+    "rating": 4.0,
+    "review_count": 2800,
+    "start_price": 350608,
     "latitude": 3.5885447,
     "longitude": 98.6265418,
     "facilities": [],
-    "rooms": [],
-    "image_url": null,
-    "source": "osm"
+    "rooms": [
+      {
+        "room_type": "Standard",
+        "price": 350608,
+        "max_guests": 2,
+        "features": []
+      }
+    ],
+    "image_url": "/images/hotels/_csv/hotel-256.jpg",
+    "source": "osm+google_maps"
   },
   {
     "id": "hotel-257",
     "name": "Wisma Sudirman",
     "address": "Kota Medan",
     "description": null,
-    "star": null,
-    "rating": null,
-    "review_count": null,
+    "star": 2,
+    "rating": 4.3,
+    "review_count": 270,
     "start_price": null,
     "latitude": 3.5740484,
     "longitude": 98.664026,
     "facilities": [],
     "rooms": [],
-    "image_url": null,
-    "source": "osm"
+    "image_url": "/images/hotels/_csv/hotel-257.jpg",
+    "source": "osm+google_maps"
   },
   {
     "id": "hotel-258",
@@ -11503,16 +11570,23 @@
     "name": "Ibis Styles Medan Patimura",
     "address": "Kota Medan",
     "description": null,
-    "star": null,
-    "rating": null,
-    "review_count": null,
-    "start_price": null,
+    "star": 3,
+    "rating": 4.4,
+    "review_count": 3244,
+    "start_price": 623000,
     "latitude": 3.5738286,
     "longitude": 98.663665,
     "facilities": [],
-    "rooms": [],
-    "image_url": null,
-    "source": "osm"
+    "rooms": [
+      {
+        "room_type": "Standard",
+        "price": 623000,
+        "max_guests": 2,
+        "features": []
+      }
+    ],
+    "image_url": "/images/hotels/_csv/hotel-259.jpg",
+    "source": "osm+google_maps"
   },
   {
     "id": "hotel-260",
@@ -11664,15 +11738,22 @@
     "address": "Kota Medan",
     "description": null,
     "star": null,
-    "rating": null,
-    "review_count": null,
-    "start_price": null,
+    "rating": 4.5,
+    "review_count": 68,
+    "start_price": 146336,
     "latitude": 3.587075,
     "longitude": 98.7024948,
     "facilities": [],
-    "rooms": [],
-    "image_url": null,
-    "source": "osm"
+    "rooms": [
+      {
+        "room_type": "Standard",
+        "price": 146336,
+        "max_guests": 2,
+        "features": []
+      }
+    ],
+    "image_url": "/images/hotels/_csv/hotel-269.jpg",
+    "source": "osm+google_maps"
   },
   {
     "id": "hotel-270",
@@ -11855,16 +11936,23 @@
     "name": "Orinko City Hotel",
     "address": "Kota Medan",
     "description": null,
-    "star": null,
-    "rating": null,
-    "review_count": null,
-    "start_price": null,
+    "star": 3,
+    "rating": 4.5,
+    "review_count": 223,
+    "start_price": 336912,
     "latitude": 3.5850664,
     "longitude": 98.6529479,
     "facilities": [],
-    "rooms": [],
-    "image_url": null,
-    "source": "osm"
+    "rooms": [
+      {
+        "room_type": "Standard",
+        "price": 336912,
+        "max_guests": 2,
+        "features": []
+      }
+    ],
+    "image_url": "/images/hotels/_csv/hotel-281.jpg",
+    "source": "osm+google_maps"
   },
   {
     "id": "hotel-282",
@@ -12031,16 +12119,16 @@
     "name": "Grand Nusantara Hotel",
     "address": "Kota Medan",
     "description": null,
-    "star": null,
-    "rating": null,
-    "review_count": null,
+    "star": 3,
+    "rating": 4.0,
+    "review_count": 244,
     "start_price": null,
     "latitude": 3.5847432,
     "longitude": 98.6247056,
     "facilities": [],
     "rooms": [],
-    "image_url": null,
-    "source": "osm"
+    "image_url": "/images/hotels/_csv/hotel-292.jpg",
+    "source": "osm+google_maps"
   },
   {
     "id": "hotel-293",
