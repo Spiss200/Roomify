@@ -1,0 +1,210 @@
+no,nama,sumber,harga,bintang,rating,ulasan,jml_kamar,jml_fasilitas,foto,alamat,lat,lon,yang_kurang
+1,511 Ideal Stay,google_maps,259192,3,4.5,54,3,2,ada,"Jl. Diponegoro, Medan Baru No. 17, Medan",3.5958600765319186,98.66938475028455,LENGKAP
+2,Aceh House Hotel Setia Budi,google_maps,109805,1,4.2,72,3,2,ada,"Jalan Murni III, Tanjung Rejo, Medan",3.5757026,98.6396313,LENGKAP
+3,ACIRASA Hotel Medan,google_maps,300669,3,,,3,2,ada,"Jl. Diponegoro, Medan Baru No. 70, Medan",3.5934278181117167,98.6720833159932,rating; ulasan
+4,Adi Inn Homestay RedPartner,google_maps,142272,1,3.3,12,3,2,ada,"Jl. Diponegoro, Medan Baru No. 52, Medan",3.597774420752055,98.67464036640618,LENGKAP
+5,Adimulia Hotel Medan,google_maps,1050000,4,4.7,11223,3,6,ada,"Jalan Candi Biara, Petisah Tengah, Medan",3.5852243,98.6725896,LENGKAP
+6,AIHO Hotel Medan,google_maps,452000,4,4.7,8025,3,4,ada,"Jalan Haji Adam Malik No. 5, Sekip, Medan",3.594058,98.6683957,LENGKAP
+7,Airy Medan Sunggal Sepakat 19,google_maps,116952,3,4.5,128,3,1,ada,"Jl. Diponegoro, Medan Baru No. 22, Medan",3.598117203152242,98.67541954292409,LENGKAP
+8,Alam Hotel by Cordela,google_maps,282000,3,4.4,336,3,4,ada,"Jalan Arif Rahman Hakim, Pasar Merah Timur, Medan",3.5698532,98.7033543,LENGKAP
+9,Alpha Inn Hotel Medan,google_maps,240000,3,3.7,1151,3,4,ada,"Jalan Sekip, Sekip, Medan",3.5932135,98.6677794,LENGKAP
+10,Altair Hotel Medan,google_maps,284144,3,3.8,70,3,2,ada,"Jl. Diponegoro, Medan Baru No. 73, Medan",3.5933419270078057,98.6698878627487,LENGKAP
+11,Amaliun Hotel,osm+google_maps,193395,3,4.1,564,0,8,ada,"Jl. Amaliun No.21, Medan Kota",3.576382,98.6898909,kamar
+12,Antares Hotel,google_maps,341000,3,4.0,1151,3,4,ada,"Jalan Sisingamangaraja, Mesjid, Medan",3.5739806,98.6882629,LENGKAP
+13,Arabia Style Hotel Sriwijaya,google_maps,3636352,3,4.0,85,3,2,ada,"Jl. Diponegoro, Medan Baru No. 4, Medan",3.5990491974975862,98.67248972585983,LENGKAP
+14,Aresidencia - Sei Padang,google_maps,362672,3,4.5,141,3,3,ada,"Jalan Sei Padang, Padang Bulan Selayang I, Medan",3.5701047,98.64899,LENGKAP
+15,Aryaduta Hotel,osm+google_maps,841000,4,4.5,5931,1,0,ada,"Kapten Maulana Lubis, 8, Medan",3.5899197,98.6741791,fasilitas
+16,Banana Homestay Medan,google_maps,141888,2,4.2,11,3,2,ada,"Jl. Diponegoro, Medan Baru No. 94, Medan",3.5945886289841598,98.6719361973443,LENGKAP
+17,Barat Residence,google_maps,290701,3,3.8,166,3,2,ada,"Jalan Abdul Hakim, Padang Bulan Selayang I, Medan",3.5589447,98.649401,LENGKAP
+18,Batik Hotel Medan,google_maps,288000,3,4.1,1714,3,4,ada,"Jalan Iskandar Muda, Merdeka, Medan",3.5739846,98.6606051,LENGKAP
+19,Batik Setia Budi,google_maps,340293,3,2.5,13,3,2,ada,"Jl. Diponegoro, Medan Baru No. 20, Medan",3.598317701656046,98.67413933347186,LENGKAP
+20,Bobotel Gatot Subroto Medan,google_maps,248000,2,4.5,499,3,4,ada,"Jalan Waringin No. 2, Sekip, Medan",3.5937661,98.6680178,LENGKAP
+21,Cambridge Hotel Medan,google_maps,1040000,5,4.6,5593,3,6,ada,"Jalan S. Parman, Petisah Tengah, Medan",3.5851913,98.6672929,LENGKAP
+22,Capital O 1585 Ring Road Residence,google_maps,99664,2,3.2,124,3,1,ada,"Jl. Ring Road, Medan Polonia No. 5, Medan",3.6084709901350105,98.60063920262489,LENGKAP
+23,Capital O 90447 Kardopa Hotel Megapark,google_maps,261286,3,3.4,78,3,2,ada,"Jl. Diponegoro, Medan Baru No. 41, Medan",3.5970858974303126,98.66868766057182,LENGKAP
+24,Cendana Homestay Syari'ah Medan,google_maps,158000,2,4.5,171,3,2,ada,"Jl. Diponegoro, Medan Baru No. 31, Medan",3.598951970058278,98.67561093586407,LENGKAP
+25,Cherry pink hotel,google_maps,105000,2,3.9,263,3,2,ada,"Jalan K. Haji Wahid Hasyim, Merdeka, Medan",3.5726522,98.6597405,LENGKAP
+26,Collection O Millenium Inn 2,google_maps,130056,3,4.0,5,3,2,ada,"Jl. Diponegoro, Medan Baru No. 65, Medan",3.5982068235230256,98.67030711240601,LENGKAP
+27,Cordela Hotel Medan,google_maps,263000,2,4.2,1439,3,4,ada,"Jalan Asahan, Sidodadi, Medan",3.5965051,98.6868982,LENGKAP
+28,CordelaInn Millennium Medan,google_maps,276000,1,4.5,273,3,3,ada,"Jalan Kapten Muslim, Dwi Kora, Medan",3.599752,98.644482,LENGKAP
+29,Cordex Hotel Medan,google_maps,269000,3,4.5,202,3,2,ada,"Jalan Guru Patimpus, Kesawan, Medan",3.5948366,98.6732504,LENGKAP
+30,d'primahotel Kualanamu Medan,google_maps,514240,4,4.5,2880,3,4,ada,"Jalan Sultan Serdang No. 88, Medan",3.599515,98.833088,LENGKAP
+31,d'primahotel Medan,google_maps,268576,3,4.1,12,3,2,ada,"Jalan Sultan Serdang No. 88, Medan",3.5994811,98.8331033,LENGKAP
+32,Dancenter Clove Nari Homestay,google_maps,113508,1,3.1,12,3,2,ada,"Jl. Diponegoro, Medan Baru No. 24, Medan",3.5916550366378295,98.67226262797595,LENGKAP
+33,Dazhong Backpacker's hostel,osm+booking,315000,,4.0,59,1,0,ada,"Jalan Muara Takus, Madras Hulu, Kota Medan",3.5824944,98.6690434,bintang; fasilitas
+34,Deli Homestay Medan City,google_maps,192424,2,4.0,67,3,2,ada,"Jalan Sei Deli, Silalas, Medan",3.5927084,98.6720498,LENGKAP
+35,Deli Hotel,google_maps,307000,3,4.3,1231,3,4,ada,"Jalan Abdullah Lubis No. 79A, Merdeka, Medan",3.5768386,98.653444,LENGKAP
+36,DELTO GUEST HOUSE,google_maps,133071,2,4.9,12,3,2,ada,"Jl. Diponegoro, Medan Baru No. 10, Medan",3.594857796580564,98.67563214665365,LENGKAP
+37,deSatu Hotel Medan,google_maps,409000,3,4.3,714,3,3,ada,"Jalan Timor, Gang Buntu, Medan",3.5927777,98.6811048,LENGKAP
+38,Dhaksina Hotel,osm+google_maps,,3,3.8,180,0,8,ada,"Jl. Sisingamangaraja No.20, Medan Kota",3.5780836,98.6864484,harga; kamar
+39,DnD Cafe and Guest House,google_maps,224408,1,4.1,569,3,2,ada,"Jl. Diponegoro, Medan Baru No. 70, Medan",3.5941562167099113,98.66946197465886,LENGKAP
+40,E Hotel Medan,google_maps,446000,4,4.2,209,3,4,ada,"Jalan Insinyur Haji Juanda, Sukaraja, Medan",3.5719975,98.6831859,LENGKAP
+41,Emerald Residence,google_maps,260219,3,4.2,82,3,2,ada,"Jl. Diponegoro, Medan Baru No. 63, Medan",3.598775595562384,98.66888522761654,LENGKAP
+42,EXPRESS O 91979 Penginapan Tondong Ta,google_maps,61226,2,3.3,8,3,1,ada,"Jl. Diponegoro, Medan Baru No. 40, Medan",3.591355813939087,98.67563278893012,LENGKAP
+43,favehotel S. Parman - Medan,google_maps,399136,3,4.7,92,3,3,ada,"Gang Langgar, Petisah Hulu, Medan",3.5796116,98.6678137,LENGKAP
+44,Four Points by Sheraton Medan,google_maps,988545,4,4.5,60,3,1,ada,"Gang Sekata No. 395, Sei Sikambing D, Medan",3.5899012,98.6513443,LENGKAP
+45,GINTSUKA Hostel,google_maps,250343,3,4.2,13,3,2,ada,"Jl. Diponegoro, Medan Baru No. 36, Medan",3.591938387741702,98.6715886061805,LENGKAP
+46,Golden Eleven Hotel Medan,google_maps,271265,3,4.8,13,3,3,ada,"Jalan Jamin Ginting, Simpang Selayang, Medan",3.5246285,98.630583,LENGKAP
+47,Graha Aisyah,google_maps,94164,3,3.3,27,3,2,ada,"Jl. Diponegoro, Medan Baru No. 61, Medan",3.5923788316979666,98.66856970974474,LENGKAP
+48,Grand Central Hotel,google_maps,377000,3,4.4,1413,3,4,ada,"Jalan Sei Belutu, Padang Bulan Selayang I, Medan",3.5750078,98.653414,LENGKAP
+49,Grand Central Premier Hotel Medan,google_maps,742000,4,4.5,796,3,5,ada,"Jalan Merak Jingga, Kesawan, Medan",3.59423,98.6777915,LENGKAP
+50,Grand City Hall Medan,google_maps,1060000,5,4.7,11295,3,5,ada,"Jalan Raden Saleh, Kesawan, Medan",3.5902822,98.6766576,LENGKAP
+51,Grand Impression Hotel,google_maps,324848,3,4.3,12,3,3,ada,"Jl. Diponegoro, Medan Baru No. 28, Medan",3.594575374557482,98.6684383777555,LENGKAP
+52,Grand Inna Hotel Medan,osm+google_maps,1748032,4,4.2,2600,1,0,ada,"Jl. Balai Kota, 2, Medan",3.5911821,98.676805,fasilitas
+53,Grand Kanaya Hotel,google_maps,281064,3,4.1,922,3,3,ada,"Jalan Darussalam, Sei Sikambing D, Medan",3.5891771,98.6530323,LENGKAP
+54,Grand Mercure Maha Cipta Medan Angkasa,google_maps,865658,5,4.6,96,3,3,ada,"Jalan Sutomo No. 1, Perintis, Medan",3.597982,98.6821792,LENGKAP
+55,Grand Nusantara Hotel,osm+google_maps,100000,3,4.0,244,0,7,ada,"Jl. Amal No.1, Medan Sunggal",3.5847432,98.6247056,kamar
+56,Grand Sakura Hotel,google_maps,360000,4,4.1,2552,3,5,ada,"Jalan Profesor H.M. Yamin No. 41, Perintis, Medan",3.5965554,98.6858052,LENGKAP
+57,Grand Sirao Hotel,osm+google_maps,144561,2,3.6,250,0,7,ada,"Jl. Semarang No.4-6, Medan Kota",3.5832165,98.6861911,kamar
+58,Green Village Kost Medan,google_maps,103822,1,4.8,61,3,2,ada,"Jl. Diponegoro, Medan Baru No. 85, Medan",3.596542905629701,98.67263681825992,LENGKAP
+59,Griya Hotel,google_maps,280000,3,4.0,1292,3,4,ada,"Helvetia Timur, Medan",3.6071696,98.645492,LENGKAP
+60,GUEST HOUSE RESTU IBU,google_maps,314992,2,4.8,561,3,2,ada,"Jl. Diponegoro, Medan Baru No. 48, Medan",3.5984314285724794,98.67256472231365,LENGKAP
+61,Hanlis Hotel,osm+google_maps,191531,2,4.2,274,0,5,ada,"Jl. Sei Kapuas No.6, Medan Sunggal",3.5842096,98.6520406,kamar
+62,Harper Wahid Hasyim Medan,google_maps,679000,3,4.9,6316,3,4,ada,"Jalan Sei Mencirim, Babura, Medan",3.5805201,98.6573282,LENGKAP
+63,Hermes Palace Hotel Medan,google_maps,520000,4,4.3,4062,3,5,ada,"Jalan Pemuda, Aur, Medan",3.5820144,98.6818614,LENGKAP
+64,Hotel 0 Graha Aisyah,google_maps,74664,3,,,3,2,ada,"Jl. Diponegoro, Medan Baru No. 95, Medan",3.5982513296373067,98.66839829089518,rating; ulasan
+65,Hotel 61 Medan,google_maps,381000,3,4.3,1049,3,4,ada,"Jalan Iskandar Muda No. 145, Sei Sikambing D, Medan",3.5896121,98.661214,LENGKAP
+66,Hotel Binaka Medan,google_maps,147014,2,4.1,53,3,2,ada,"Jalan Brigjen Katamso, Sukaraja, Medan",3.571763,98.6852373,LENGKAP
+67,Hotel Bumi Malaya RedPartner,google_maps,160056,2,3.9,480,3,2,ada,"Jl. Diponegoro, Medan Baru No. 99, Medan",3.5934288244881842,98.6687553660373,LENGKAP
+68,Hotel Cahaya,google_maps,303229,3,3.8,228,3,3,ada,"Jalan Panglima Denai, Timbang Deli, Medan",3.5405591,98.7175241,LENGKAP
+69,Hotel Citi International Sun Yat Sen,google_maps,313584,3,4.1,438,3,1,ada,"Jalan Lebong No. 77, Sei Rengas I, Medan",3.5831548,98.6907601,LENGKAP
+70,Hotel Danau Toba International,google_maps,468640,4,4.3,72,3,5,ada,"Jalan Teuku Daud, Hamdan, Medan",3.5831387,98.6764571,LENGKAP
+71,Hotel Emerald Garden,google_maps,523000,4,4.4,4419,3,6,ada,"Jalan Bandar Negri, Silalas, Medan",3.6025134,98.6728257,LENGKAP
+72,Hotel Grand Antares,google_maps,369000,4,4.2,3900,3,4,ada,"Jalan Sisingamangaraja No. 328, Sitirejo I, Medan",3.5570411,98.6943634,LENGKAP
+73,HOTEL GRAND BANDARA,google_maps,224000,3,4.7,355,3,3,ada,"Jalan Sei Putih, Merdeka, Medan",3.5765781,98.6565429,LENGKAP
+74,Hotel Grand Darussalam Medan,google_maps,196328,3,3.9,767,3,3,ada,"Jalan Darussalam, Sei Sikambing D, Medan",3.5891771,98.6530323,LENGKAP
+75,Hotel Grand Lubuk Raya,google_maps,143956,2,4.1,129,3,1,ada,"Jl. Diponegoro, Medan Baru No. 73, Medan",3.5931156184827047,98.67012697273958,LENGKAP
+76,Hotel Grandhika Setiabudi Medan,google_maps,529000,4,4.4,4974,3,6,ada,"Jalan Dokter Mansyur, Tanjung Rejo, Medan",3.5672036,98.6428984,LENGKAP
+77,Hotel Halim Perdana,google_maps,137545,2,4.0,153,3,3,ada,"Jalan Laksana, Kotamatsum I, Medan",3.5801341,98.691226,LENGKAP
+78,Hotel Huber Medan,google_maps,160000,3,4.0,96,3,4,ada,"Jalan Sei Asahan, Padang Bulan Selayang I, Medan",3.5721847,98.6485573,LENGKAP
+79,Hotel Islami Aceh House,google_maps,116964,2,3.9,374,3,3,ada,"Jl. Diponegoro, Medan Baru No. 95, Medan",3.595289391974997,98.67454988319285,LENGKAP
+80,Hotel Menara Lexus,google_maps,248000,2,3.8,832,3,4,ada,"Jalan Sisingamangaraja, Sudirejo II, Medan",3.55712,98.6948725,LENGKAP
+81,Hotel Mutiara Hawaii,google_maps,332262,3,4.0,335,3,2,ada,"Jl. Diponegoro, Medan Baru No. 72, Medan",3.5965354672850847,98.67102942907692,LENGKAP
+82,HOTEL MUTIARA HIJAU SUITES,google_maps,265601,3,4.4,102,3,2,ada,"Jl. Diponegoro, Medan Baru No. 43, Medan",3.591389315477612,98.66974503830663,LENGKAP
+83,Hotel Nidia Nugraha,google_maps,258374,3,3.9,139,3,2,ada,"Jalan Puri, Kotamatsum III, Medan",3.5781206,98.6881765,LENGKAP
+84,Hotel O Juma Ciger Hotel,google_maps,61000,3,4.7,31,3,2,ada,"Padang Bulan Selayang I, Medan",3.5588911,98.6458249,LENGKAP
+85,Hotel O Kapten Muslim Residence,google_maps,86700,3,4.6,78,3,2,ada,"Jalan Kapten Muslim, Helvetia Timur, Medan",3.6031232,98.6455855,LENGKAP
+86,Hotel O Medan Timur Near Rsu Madani,google_maps,84476,3,2.3,28,3,2,ada,"Jl. Diponegoro, Medan Baru No. 97, Medan",3.5962635268461267,98.67088150604329,LENGKAP
+87,Hotel O near Ring Road City Walks,google_maps,61758,3,4.1,48,3,2,ada,"Jl. Ring Road, Medan Polonia No. 94, Medan",3.608867220377718,98.60357651006852,LENGKAP
+88,Hotel O near Ringroad City Walk XXI,google_maps,72924,3,2.3,8,3,2,ada,"Jl. Ring Road, Medan Polonia No. 48, Medan",3.612061303055821,98.60169128881412,LENGKAP
+89,Hotel Palace Inn,osm+google_maps,308992,3,4.1,354,1,0,ada,"Jalan Mojopahit, Petisah Tengah, Kota Medan",3.5862561,98.6662736,fasilitas
+90,Hotel Santika Premiere Dyandra - Medan,google_maps,833000,4,4.6,15048,3,6,ada,"Jalan Candi Prambanan, Petisah Tengah, Medan",3.589124,98.6726951,LENGKAP
+91,Hotel Syariah Grand Jamee,google_maps,278288,3,4.1,15,3,3,ada,"Jalan Merpati, Sei Sikambing B, Medan",3.5867498,98.6273025,LENGKAP
+92,Hotel Zakia,osm+google_maps,180000,,3.9,154,3,5,ada,"Jl. Sipiso Piso No.10-12, Medan Kota",3.5743718,98.6868522,bintang
+93,Ibis Styles Medan Patimura,osm+google_maps,623000,3,4.4,3244,1,0,ada,"Jalan Kapten Pattimura, Darat, Kota Medan",3.5738286,98.663665,fasilitas
+94,Jangga House,osm+google_maps,217000,2,4.3,471,1,0,ada,"Jalan Sei Tuan, Babura, Kota Medan",3.5803967,98.654135,fasilitas
+95,John’s Pardede Residence,google_maps,133496,2,3.7,17,3,2,ada,"Jl. Diponegoro, Medan Baru No. 86, Medan",3.5928092085071177,98.67069373033041,LENGKAP
+96,JW Marriott Hotel Medan,google_maps,1920000,5,4.6,13297,3,6,ada,"Jalan Putri Hijau No. 10, Kesawan, Medan",3.5966004,98.675827,LENGKAP
+97,Kama Hotel,google_maps,345000,2,4.2,2304,3,3,ada,"Jalan Ahmad Yani, Kesawan, Medan",3.5861486,98.6798717,LENGKAP
+98,Kamani Homestay Syariah,google_maps,79045,2,4.3,451,3,2,ada,"Jalan Perjuangan, Tanjung Rejo, Medan",3.571978,98.628403,LENGKAP
+99,Kanasha Hotel Islami,google_maps,237424,3,4.3,398,3,3,ada,"Jl. Diponegoro, Medan Baru No. 35, Medan",3.5931584874012117,98.6718980816948,LENGKAP
+100,Karibia Boutique Hotel,google_maps,603616,4,4.4,57,3,3,ada,"Jalan Timor No. I-IV, Gang Buntu, Medan",3.5909369,98.6824064,LENGKAP
+101,Kenanga City Hotel,google_maps,342862,3,3.7,95,3,3,ada,"Jl. Diponegoro, Medan Baru No. 89, Medan",3.591277357596867,98.66880195088059,LENGKAP
+102,King's Palace Medan RedPartner,google_maps,268464,2,4.4,101,3,1,ada,"Jl. Diponegoro, Medan Baru No. 23, Medan",3.5921227340148114,98.67596320488818,LENGKAP
+103,Kost Teratai,google_maps,185222,2,4.4,135,3,2,ada,"Jl. Diponegoro, Medan Baru No. 7, Medan",3.5932089700165593,98.67546527236975,LENGKAP
+104,Le Polonia Hotel & Convention,osm+google_maps,464592,4,4.3,6500,1,1,ada,"Jend. Sudirman, 14",3.5766388,98.6750953,LENGKAP
+105,Lexus Guest House Medan,google_maps,179984,1,4.5,101,3,2,ada,"Jl. Diponegoro, Medan Baru No. 20, Medan",3.59724625726027,98.67508882327733,LENGKAP
+106,M Hotel Medan,google_maps,381000,2,4.1,321,3,4,ada,"Kesawan, Medan",3.5896848,98.6762813,LENGKAP
+107,Madani Hotel Medan,google_maps,388000,4,4.2,3365,3,4,ada,"Jalan Medan Putera, Kotamatsum III, Medan",3.57645,98.687863,LENGKAP
+108,MBS HOTEL MEDAN,google_maps,457000,3,4.3,120,3,2,ada,"Silalas, Medan",3.5933503,98.6695628,LENGKAP
+109,Medan Baru Guest House,google_maps,70544,1,5.0,3,3,2,ada,"Jl. Diponegoro, Medan Baru No. 8, Medan",3.596676914007919,98.67494281536152,LENGKAP
+110,Motel Danau toba international,google_maps,201000,2,4.4,21,3,2,ada,"Jalan Hayam Wuruk, Petisah Hulu, Medan",3.581662,98.666326,LENGKAP
+111,NEW DETONGA HOTEL,google_maps,121000,3,3.0,643,3,5,ada,"Jalan Sei Belutu, Padang Bulan Selayang I, Medan",3.575689,98.652389,LENGKAP
+112,New Gentala Hotel RedPartner,google_maps,143000,2,4.0,281,3,4,ada,"Jalan Rahmadsyah, Kotamatsum I, Medan",3.5795948,98.6912824,LENGKAP
+113,Nisura Homestay,google_maps,114716,1,4.5,61,3,2,ada,"Jl. Diponegoro, Medan Baru No. 58, Medan",3.5931892506713625,98.66972167126752,LENGKAP
+114,NIVIA HOTEL,google_maps,356000,3,4.3,367,3,4,ada,"Jalan Letda Sujono, Bandar Selamat, Medan",3.5980731,98.7091621,LENGKAP
+115,Nonie's Huis Guest House,google_maps,380704,1,4.5,108,3,3,ada,"Jl. Diponegoro, Medan Baru No. 9, Medan",3.597536634914904,98.67157727973441,LENGKAP
+116,Nusa Hotel,osm+google_maps,206000,2,4.2,181,1,0,ada,"Jalan Arif Rahman Hakim, Bantan Timur, Percut Sei Tuan",3.5975704,98.706744,fasilitas
+117,Odua Golden Mansyur Medan,google_maps,255000,2,3.8,167,3,4,ada,"Merdeka, Medan",3.5675835,98.6561846,LENGKAP
+118,Orinko City Hotel,osm+google_maps,336912,3,4.5,223,1,0,ada,"Jalan Darussalam, Sei Sikambing D, Kota Medan",3.5850664,98.6529479,fasilitas
+119,OYO 1274 Prime Inn,google_maps,193944,1,3.9,38,3,2,ada,"Jl. Diponegoro, Medan Baru No. 64, Medan",3.5991786062239135,98.66930665395913,LENGKAP
+120,OYO 1811 Citra Anggrek,google_maps,75180,2,3.1,244,3,2,ada,"Jl. Diponegoro, Medan Baru No. 13, Medan",3.5976641779578538,98.67504773513976,LENGKAP
+121,OYO 727 Merlion Hotel,google_maps,89327,1,4.3,254,3,2,ada,"Jalan Bayu, Tanjung Rejo, Medan",3.5751003,98.6271778,LENGKAP
+122,OYO 849 Palem Mas Garden,google_maps,128984,2,3.3,79,3,2,ada,"Jl. Diponegoro, Medan Baru No. 95, Medan",3.596296907018411,98.67029564209948,LENGKAP
+123,OYO 90245 TRIDASA,google_maps,120000,2,3.3,60,3,4,ada,"Jalan Abdul Hakim, Padang Bulan Selayang I, Medan",3.5579605,98.6443256,LENGKAP
+124,OYO 92075 Sky Residence Mawar,google_maps,63129,2,3.7,65,3,2,ada,"Jl. Diponegoro, Medan Baru No. 14, Medan",3.5972956975924166,98.67226145339684,LENGKAP
+125,OYO 92881 Nany Ayahanda Syariah,google_maps,80200,2,3.0,2,3,2,ada,"Jalan Jenderal Gatot Subroto, Sei Putih Barat, Medan",3.5906161,98.6481622,LENGKAP
+126,OYO 94712 Surau Guest House,google_maps,85144,1,2.3,7,3,2,ada,"Jl. Diponegoro, Medan Baru No. 6, Medan",3.5936660667994413,98.67539185190995,LENGKAP
+127,OYO Festive Inn,osm+booking,152700,,1.8,28,1,0,ada,"Jalan Sambu, Gang Buntu, Kota Medan",3.5879867,98.6826563,bintang; fasilitas
+128,Palem Mas Garden RedPartner,google_maps,138567,3,2.0,17,3,2,ada,"Jl. Diponegoro, Medan Baru No. 57, Medan",3.593198451583057,98.67558612479421,LENGKAP
+129,Penginapan roemah_54,google_maps,306939,3,4.6,70,3,2,ada,"Jalan Sei Batang Hari, Babura Sunggal, Medan",3.5852732,98.6499797,LENGKAP
+130,Pia Hotel Medan,google_maps,414016,3,4.6,28,3,3,ada,"Jl. Diponegoro, Medan Baru No. 35, Medan",3.5981125122270026,98.6746859945326,LENGKAP
+131,Pondok Wisata Istana XI,google_maps,272720,2,3.6,222,3,1,ada,"Jl. Diponegoro, Medan Baru No. 84, Medan",3.596828319400699,98.67309342212582,LENGKAP
+132,Premium Inn Cemara Asri,google_maps,328451,3,4.3,26,3,3,ada,"Jl. Diponegoro, Medan Baru No. 25, Medan",3.592125166272235,98.6753960378633,LENGKAP
+133,Prime Inn near Jalan Sekip Mitra RedDoorz,google_maps,179071,2,4.6,153,3,2,ada,"Jl. Diponegoro, Medan Baru No. 32, Medan",3.598391397092212,98.66988061230673,LENGKAP
+134,Putra Mulia Hotel,google_maps,234000,2,4.0,1059,3,3,ada,"Jalan Jenderal Gatot Subroto, Sei Putih Tengah, Medan",3.5905293,98.6539677,LENGKAP
+135,QINARA INN,google_maps,135000,2,3.5,82,3,4,ada,"Gang Pinang II, Bandar Selamat, Medan",3.5973472,98.7168123,LENGKAP
+136,Raz Hotel and Convention,google_maps,159000,3,3.9,1117,3,4,ada,"Jalan Dokter Mansyur, Tanjung Rejo, Medan",3.5679823,98.6433793,LENGKAP
+137,RedDoorz @ CBD Polonia Medan.,google_maps,104652,2,3.9,107,3,1,ada,"Jl. Ring Road, Medan Polonia No. 34, Medan",3.6085860857687972,98.60180523449814,LENGKAP
+138,RedDoorz @ Golden Cempaka Medan,google_maps,111672,1,3.7,3,3,2,ada,"Jl. Diponegoro, Medan Baru No. 13, Medan",3.5948662841809487,98.67618763552684,LENGKAP
+139,RedDoorz @ Jalan Brigjend Katamso Medan 2,google_maps,105815,2,3.7,59,3,2,ada,"Jl. Diponegoro, Medan Baru No. 9, Medan",3.592259652562932,98.67099207067972,LENGKAP
+140,RedDoorz @ Jalan HM Yamin Medan,google_maps,106252,1,4.2,29,3,2,ada,"Jl. Diponegoro, Medan Baru No. 15, Medan",3.598711440031417,98.66927432891515,LENGKAP
+141,RedDoorz @ Jalan Japaris Medan,google_maps,104975,2,3.8,77,3,2,ada,"Jl. Diponegoro, Medan Baru No. 68, Medan",3.5973000864006015,98.67251503224097,LENGKAP
+142,RedDoorz @ Jalan Krakatau Medan,google_maps,148428,2,3.8,200,3,2,ada,"Jl. Diponegoro, Medan Baru No. 96, Medan",3.5923429727235368,98.6693170425562,LENGKAP
+143,RedDoorz @ Jalan Wahidin Medan,google_maps,146603,2,4.2,54,3,2,ada,"Jl. Diponegoro, Medan Baru No. 92, Medan",3.5986776500618918,98.6698340735954,LENGKAP
+144,RedDoorz @ Jamin Ginting Medan,google_maps,175091,2,5.0,1,3,2,ada,"Jl. Diponegoro, Medan Baru No. 60, Medan",3.5923214583767584,98.6696679042863,LENGKAP
+145,RedDoorz @ Jotel Guest House,google_maps,120042,2,4.3,156,3,2,ada,"Jl. Diponegoro, Medan Baru No. 73, Medan",3.5944302044105463,98.67573276901784,LENGKAP
+146,RedDoorz @ Medan Johor,google_maps,145350,2,3.6,88,3,2,ada,"Jalan Abdul Haris Nasution, Suka Maju, Medan",3.5377484,98.6924919,LENGKAP
+147,RedDoorz @ Medan Johor 2,google_maps,122424,2,3.5,55,3,2,ada,"Jl. Karya Wisata, Medan Johor No. 89, Medan",3.5411313079440174,98.69444212157309,LENGKAP
+148,RedDoorz @ Seindo Hotel Medan,google_maps,139536,2,4.2,182,3,2,ada,"Jl. Diponegoro, Medan Baru No. 28, Medan",3.598179464328682,98.67158510352161,LENGKAP
+149,RedDoorz @ Sekip Medan,google_maps,196000,2,4.6,189,3,3,ada,"Jalan Ketapang, Sekip, Medan",3.5963576,98.6660721,LENGKAP
+150,RedDoorz @ Sentosa Jaya Helvetia,google_maps,108528,2,4.7,112,3,3,ada,"Jl. Helvetia, Medan Helvetia No. 81, Medan",3.5867617390756124,98.65656794468806,LENGKAP
+151,RedDoorz @ Teratai Homestay Medan Amplas,google_maps,159752,2,3.9,14,3,2,ada,"Jl. Sisingamangaraja, Medan Amplas No. 44, Medan",3.525368033566946,98.70829757869625,LENGKAP
+152,RedDoorz @ Theodore Homestay Medan,google_maps,142766,1,2.2,10,3,2,ada,"Jl. Diponegoro, Medan Baru No. 31, Medan",3.5959602808516005,98.67360170042883,LENGKAP
+153,RedDoorz @ Vania Residence Medan,google_maps,158004,1,4.4,24,3,2,ada,"Jl. Diponegoro, Medan Baru No. 85, Medan",3.5964708059599877,98.67047029123995,LENGKAP
+154,RedDoorz @ Wika Wiki Homestay,google_maps,114450,1,4.8,52,3,2,ada,"Jl. Diponegoro, Medan Baru No. 5, Medan",3.597498996073084,98.66906476501123,LENGKAP
+155,RedDoorz Hostel @ Capsule Inn Medan,google_maps,262000,2,4.4,279,3,4,ada,"Jalan Taruma No. 80-82, Petisah Tengah, Medan",3.5840878,98.6690191,LENGKAP
+156,RedDoorz Hotel JIMART @ Komplek MMTC,google_maps,138852,2,3.9,30,3,2,ada,"Jl. Diponegoro, Medan Baru No. 34, Medan",3.5942317849518157,98.67608247075025,LENGKAP
+157,RedDoorz near Gajah Mada Park Medan,google_maps,98257,2,4.8,156,3,2,ada,"Jl. Gajah Mada, Medan Baru No. 28, Medan",3.5807199055219763,98.65453727839444,LENGKAP
+158,RedDoorz near Grand Palladium,google_maps,102017,2,3.8,147,3,2,ada,"Jl. Diponegoro, Medan Baru No. 17, Medan",3.5915526940943927,98.67086845230884,LENGKAP
+159,RedDoorz near Hermes Place Polonia Medan,google_maps,194940,2,4.2,209,3,2,ada,"Jl. Ring Road, Medan Polonia No. 60, Medan",3.6110781384933963,98.6048671074269,LENGKAP
+160,RedDoorz near Manhattan Times Square Medan 2,google_maps,128104,2,3.6,103,3,2,ada,"Jl. Diponegoro, Medan Baru No. 69, Medan",3.5977281860273607,98.67602387594943,LENGKAP
+161,RedDoorz near Medan Amplas,google_maps,144704,2,3.8,173,3,1,ada,"Jl. Sisingamangaraja, Medan Amplas No. 72, Medan",3.5279346840948866,98.71214533957408,LENGKAP
+162,RedDoorz near RS Royal Prima Medan 2,google_maps,133488,2,3.6,68,3,1,ada,"Jl. Diponegoro, Medan Baru No. 92, Medan",3.5933787856985187,98.67303863861625,LENGKAP
+163,RedDoorz near RS Setiabudi Medan,google_maps,117572,2,4.3,73,3,2,ada,"Jl. Dr. Mansyur, Medan Baru No. 25, Medan",3.588894970495606,98.65829337129324,LENGKAP
+164,RedDoorz near RS USU Medan 3,google_maps,181944,2,4.1,16,3,1,ada,"Jl. Dr. Mansyur, Medan Baru No. 76, Medan",3.5837682740800565,98.65883137217939,LENGKAP
+165,RedDoorz near UIN Sumatera Utara,google_maps,124488,2,3.6,361,3,2,ada,"Jl. Diponegoro, Medan Baru No. 67, Medan",3.5963990244611157,98.67170480067132,LENGKAP
+166,RedDoorz near UISU teladan Medan,google_maps,108528,2,3.3,29,3,2,ada,"Jl. Diponegoro, Medan Baru No. 31, Medan",3.59807708320203,98.66876685879912,LENGKAP
+167,RedDoorz near Waterpark Citra Garden Medan,google_maps,140182,2,3.9,26,3,3,ada,"Jl. Diponegoro, Medan Baru No. 72, Medan",3.5967727320288017,98.67404404253932,LENGKAP
+168,Reddoorz Plus near Kualanamu Airport,osm+booking,281600,,2.2,55,1,0,ada,"Jalan Stasiun Dusun Masjid Desa Aras Kabu, Medan",3.6131091,98.8462601,bintang; fasilitas
+169,RedDoorz Premium @ Setiabudi Medan,google_maps,171836,3,3.9,484,3,3,ada,"Jl. Dr. Mansyur, Medan Baru No. 66, Medan",3.5898914254256296,98.65789115107097,LENGKAP
+170,RedDoorz Premium near Centre Point Mall Medan,google_maps,181944,1,3.3,144,3,2,ada,"Jl. Diponegoro, Medan Baru No. 35, Medan",3.596653682952213,98.67249576264328,LENGKAP
+171,RedDoorz Syariah near Stadion Teladan Medan,google_maps,153216,2,4.4,144,3,2,ada,"Jl. Diponegoro, Medan Baru No. 37, Medan",3.5986121445884747,98.67448103485435,LENGKAP
+172,Residence Anugrah,google_maps,90500,3,3.7,158,3,3,ada,"Jalan Mojopahit, Darat, Medan",3.576161,98.6651508,LENGKAP
+173,RESIDENCE MOJOPAHIT,google_maps,131582,2,4.2,202,3,2,ada,"Jalan Mojopahit, Darat, Medan",3.5760011,98.6652149,LENGKAP
+174,Residence Puri Hotel Medan,google_maps,130759,2,4.0,630,3,3,ada,"Jalan Puri, Kotamatsum III, Medan",3.5778214,98.6886388,LENGKAP
+175,Roemah Moesi,osm+google_maps,2696832,3,4.5,176,1,1,ada,"Jalan Sei Musi, 93",3.5779193,98.6459218,LENGKAP
+176,Rose House RedPartner,google_maps,125970,2,5.0,3,3,2,ada,"Jl. Diponegoro, Medan Baru No. 83, Medan",3.5916333694978575,98.67342764390612,LENGKAP
+177,Royal Suite Condotel,google_maps,691322,3,4.4,19,3,3,ada,"Jl. Diponegoro, Medan Baru No. 49, Medan",3.5927347207439215,98.67351943547371,LENGKAP
+178,Saka Hotel Medan,osm+google_maps,350608,3,4.0,2800,1,0,ada,"Jalan Pungguk, Sei Sikambing B, Kota Medan",3.5885447,98.6265418,fasilitas
+179,SANS FINEST HOTEL,google_maps,172831,3,4.1,452,3,3,ada,"Jl. Diponegoro, Medan Baru No. 94, Medan",3.596029808250935,98.6746570261862,LENGKAP
+180,Sapadia Clubhouse Medan,google_maps,216700,3,4.1,11,3,2,ada,"Jl. Diponegoro, Medan Baru No. 42, Medan",3.5952569800322824,98.67353514323285,LENGKAP
+181,Sapadia Guest House HM Joni,google_maps,190808,1,4.2,526,3,3,ada,"Jl. Diponegoro, Medan Baru No. 30, Medan",3.5939972673955674,98.67476429104778,LENGKAP
+182,Sapadia Guest House Sindoro,google_maps,172080,2,4.6,78,3,2,ada,"Jl. Diponegoro, Medan Baru No. 67, Medan",3.591555092269706,98.67168846012365,LENGKAP
+183,Sapadia Guest House Syailendra,google_maps,150712,1,4.3,258,3,3,ada,"Jl. Diponegoro, Medan Baru No. 26, Medan",3.5930789487882135,98.67068335571436,LENGKAP
+184,Sapadia Wisma Sei Silau,google_maps,149544,2,4.5,211,3,3,ada,"Jl. Diponegoro, Medan Baru No. 84, Medan",3.5982109410117817,98.6707174230464,LENGKAP
+185,Saudara Risidence,google_maps,154654,3,4.7,11,3,2,ada,"Jl. Diponegoro, Medan Baru No. 61, Medan",3.597326675434456,98.669227131716,LENGKAP
+186,Skyview Setiabudi Apartment,google_maps,226896,3,4.1,601,3,2,ada,"Jl. Dr. Mansyur, Medan Baru No. 63, Medan",3.590947947955166,98.65919155667568,LENGKAP
+187,Staigo at SG Premium,google_maps,85104,3,4.8,8,3,2,ada,"Jl. Diponegoro, Medan Baru No. 49, Medan",3.5980425417681214,98.67513186933405,LENGKAP
+188,Star Inn,osm+google_maps,146336,,4.5,68,1,0,ada,"Jalan Kapten Jumhana, Sukaramai II, Kota Medan",3.587075,98.7024948,bintang; fasilitas
+189,Strategic Apartment,google_maps,470976,3,4.7,29,3,2,ada,"Jl. Diponegoro, Medan Baru No. 17, Medan",3.594419203096462,98.67056524162021,LENGKAP
+190,SUPER OYO 283 Helvetia Residence,google_maps,153672,2,3.8,231,3,2,ada,"Jl. Helvetia, Medan Helvetia No. 26, Medan",3.5925221049631806,98.66189630154791,LENGKAP
+191,SUPER OYO 91120 D'ritz Homestay,google_maps,126000,2,3.4,59,3,1,ada,"Jalan Kapten Muslim, Helvetia Tengah, Medan",3.6040595,98.6452775,LENGKAP
+192,Swasana Hotel Medan,google_maps,321000,1,3.8,360,3,4,ada,"Merbau, Sekip, Medan",3.5933034,98.6649679,LENGKAP
+193,Swiss-Belinn Gajah Mada Medan,google_maps,656000,3,4.7,10034,3,5,ada,"Jalan Gajah Mada No. 49, Babura, Medan",3.5844712,98.658061,LENGKAP
+194,Swiss-Belinn Medan,google_maps,457000,3,4.5,9366,3,4,ada,"Jalan Surabaya No. 88, Pasar Baru, Medan",3.5833579,98.6849911,LENGKAP
+195,The Castle Medan - Villa,google_maps,636352,3,4.4,12,3,2,ada,"Jl. Diponegoro, Medan Baru No. 93, Medan",3.5986046013239927,98.67250761597674,LENGKAP
+196,"The Reiz Suites, ARTOTEL Curated - Medan",google_maps,662000,4,4.9,6030,3,4,ada,"Jalan Tembakau Raya No. 1, Kesawan, Medan",3.5920736,98.6760792,LENGKAP
+197,Tobali Guest House,google_maps,219392,2,3.8,50,3,2,ada,"Jl. Diponegoro, Medan Baru No. 86, Medan",3.5974590919691813,98.67149370533241,LENGKAP
+198,Tokidoki x Amir Hamzah Residence 123,google_maps,141381,2,4.0,291,3,2,ada,"Jl. Diponegoro, Medan Baru No. 5, Medan",3.59584471786991,98.67606840458306,LENGKAP
+199,Travelbiz hotel,google_maps,305000,3,3.9,249,3,1,ada,"Jalan Sutrisno, Kotamatsum I, Medan",3.5821999,98.7006066,LENGKAP
+200,Travellers Suites Medan,google_maps,781760,4,4.6,16,3,3,ada,"Jalan Imam Bonjol, Petisah Tengah, Medan",3.585645,98.6744384,LENGKAP
+201,Urbanview Hotel Bilal Medan by RedDoorz,google_maps,134064,2,3.8,24,3,2,ada,"Jl. Diponegoro, Medan Baru No. 87, Medan",3.5940091690326623,98.67227524540422,LENGKAP
+202,Urbanview Hotel MD Residence,google_maps,145808,2,4.9,15,3,2,ada,"Jl. Diponegoro, Medan Baru No. 21, Medan",3.594827282418948,98.67487288341313,LENGKAP
+203,Urbanview Os Residence Medan By RedDoorz,google_maps,96528,2,3.4,149,3,2,ada,"Jl. Diponegoro, Medan Baru No. 73, Medan",3.591855867243959,98.67345898531579,LENGKAP
+204,Vandolia Guest House Medan RedPartner,google_maps,134368,2,4.1,57,3,2,ada,"Jl. Diponegoro, Medan Baru No. 1, Medan",3.5957528420389266,98.67144860135006,LENGKAP
+205,Wesly House,osm+google_maps,113688,,3.9,329,1,0,ada,"Jalan Sei Bengal, 12, Medan",3.5875413,98.6606315,bintang; fasilitas
+206,Wisma Hari Kota,google_maps,127072,3,4.0,13,3,2,ada,"Jl. Diponegoro, Medan Baru No. 44, Medan",3.5919873429692157,98.67142097025682,LENGKAP
+207,Wisma Sederhana Medan Mitra RedDoorz,google_maps,133000,2,4.1,779,3,4,ada,"Jalan Surabaya No. 88, Pasar Baru, Medan",3.5830366,98.6849339,LENGKAP
+208,Wisma Sudirman,osm+google_maps,233279,2,4.3,272,0,7,ada,"Jl. Pattimura, Medan Baru",3.5740484,98.664026,kamar
+209,Wisma Syariah UINSU Medan RedPartner,google_maps,109174,2,4.6,76,3,2,ada,"Jl. Diponegoro, Medan Baru No. 47, Medan",3.5946274706183567,98.67286826339956,LENGKAP
