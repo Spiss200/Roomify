@@ -479,7 +479,7 @@
                         <div class="relative">
                             <select id="landmark" name="landmark" onchange="focusLandmarkDropdown(this.value)"
                                     class="w-full bg-slate-50/80 border border-slate-200 rounded-xl px-2.5 py-1.5 pr-7 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition appearance-none">
-                                <option value="">Semua Landmark Medan (24 Lokasi)</option>
+                                <option value="">Semua Landmark Medan (25 Lokasi)</option>
                                 @foreach($landmarks ?? [] as $lm)
                                     <option value="{{ $lm['nama'] }}" {{ request('landmark') == $lm['nama'] ? 'selected' : '' }}>
                                         {{ $lm['nama'] }} ({{ $lm['kat'] ?? 'Landmark' }})
@@ -856,15 +856,18 @@
 
                                     <!-- Provenance / Data Source Badge -->
                                     <div class="mb-1.5 flex items-center gap-1.5">
-                                        @if(($item['dataSource'] ?? '') === 'osm' || empty($item['harga']))
-                                            <span property="roomify:dataSource" content="osm" class="text-[10px] font-semibold px-2 py-0.5 rounded bg-sky-50 text-sky-700 border border-sky-200 dark:bg-sky-950/60 dark:text-sky-300 dark:border-sky-800 inline-flex items-center gap-1">
-                                                <i class="fa-solid fa-globe text-[9px]"></i> OpenStreetMap
-                                            </span>
-                                        @else
-                                            <span property="roomify:dataSource" content="google_maps" class="text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 dark:bg-emerald-950/60 dark:text-emerald-300 dark:border-emerald-800 inline-flex items-center gap-1">
-                                                <i class="fa-solid fa-circle-check text-[9px]"></i> Terverifikasi (Google)
-                                            </span>
-                                        @endif
+                                        @php
+    $src = $item['dataSource'] ?? 'google_maps';
+    $badge = match($src) {
+        'osm' => ['OpenStreetMap','osm','bg-sky-50 text-sky-700 border-sky-200 dark:bg-sky-950/60 dark:text-sky-300 dark:border-sky-800','fa-globe'],
+        'osm+google_maps' => ['OSM + Google','osm+google_maps','bg-teal-50 text-teal-700 border-teal-200 dark:bg-teal-950/60 dark:text-teal-300 dark:border-teal-800','fa-circle-check'],
+        'osm+booking' => ['Terverifikasi (Booking)','osm+booking','bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950/60 dark:text-blue-300 dark:border-blue-800','fa-circle-check'],
+        default => ['Terverifikasi (Google)','google_maps','bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/60 dark:text-emerald-300 dark:border-emerald-800','fa-circle-check'],
+    };
+@endphp
+<span property="roomify:dataSource" content="{{ $badge[1] }}" class="text-[10px] font-semibold px-2 py-0.5 rounded border {{ $badge[2] }} inline-flex items-center gap-1">
+    <i class="fa-solid {{ $badge[3] }} text-[9px]"></i> {{ $badge[0] }}
+</span>
                                     </div>
 
                                     <!-- Hotel Name -->

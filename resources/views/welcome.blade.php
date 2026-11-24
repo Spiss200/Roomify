@@ -405,7 +405,7 @@
                         </label>
                         <div class="relative">
                             <select name="landmark" class="search-input pl-11 appearance-none cursor-pointer">
-                                <option value="">Semua Landmark Medan (24 Lokasi)</option>
+                                <option value="">Semua Landmark Medan (25 Lokasi)</option>
                                 @foreach($landmarks ?? [] as $lm)
                                     <option value="{{ $lm['nama'] }}" {{ request('landmark') == $lm['nama'] ? 'selected' : '' }}>
                                         📍 {{ $lm['nama'] }} ({{ $lm['kat'] ?? 'Landmark' }})

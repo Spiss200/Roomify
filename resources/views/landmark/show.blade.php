@@ -402,7 +402,7 @@
         <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-200/90 dark:border-slate-800 shadow-sm">
             <h2 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
                 <i class="fa-solid fa-compass text-blue-600 dark:text-blue-400"></i>
-                Jelajahi Landmark Medan Lainnya (24 Titik Lokasi)
+                Jelajahi Landmark Medan Lainnya (25 Titik Lokasi)
             </h2>
             <div class="flex flex-wrap gap-2">
                 @foreach($allLandmarks as $alm)

@@ -59,17 +59,50 @@ roomify:city-medan a roomify:City, schema:City ;
 roomify:fac-ac a roomify:Facility ;
     roomify:name "AC" .
 
+roomify:fac-akses-kursi-roda a roomify:Facility ;
+    roomify:name "Akses Kursi Roda" .
+
+roomify:fac-antar-jemput-bandara a roomify:Facility ;
+    roomify:name "Antar-jemput Bandara" .
+
 roomify:fac-gym a roomify:Facility ;
     roomify:name "Gym" .
+
+roomify:fac-hewan-peliharaan a roomify:Facility ;
+    roomify:name "Hewan Peliharaan" .
 
 roomify:fac-hot-tub a roomify:Facility ;
     roomify:name "Hot Tub" .
 
+roomify:fac-kedai-kopi a roomify:Facility ;
+    roomify:name "Kedai Kopi" .
+
 roomify:fac-kolam-renang a roomify:Facility ;
     roomify:name "Kolam Renang" .
 
+roomify:fac-laundry a roomify:Facility ;
+    roomify:name "Laundry" .
+
+roomify:fac-layanan-kamar a roomify:Facility ;
+    roomify:name "Layanan Kamar" .
+
+roomify:fac-lounge a roomify:Facility ;
+    roomify:name "Lounge" .
+
+roomify:fac-minimarket a roomify:Facility ;
+    roomify:name "Minimarket" .
+
 roomify:fac-parkir a roomify:Facility ;
     roomify:name "Parkir" .
+
+roomify:fac-ramah-anak a roomify:Facility ;
+    roomify:name "Ramah Anak" .
+
+roomify:fac-resepsionis-24-jam a roomify:Facility ;
+    roomify:name "Resepsionis 24 Jam" .
+
+roomify:fac-restoran a roomify:Facility ;
+    roomify:name "Restoran" .
 
 roomify:fac-sarapan a roomify:Facility ;
     roomify:name "Sarapan" .
@@ -11112,15 +11145,23 @@ roomify:hotel-194-photo1 a roomify:Photo, schema:ImageObject ;
 
 roomify:hotel-201 a roomify:Hotel, schema:Hotel ;
     roomify:name "Dhaksina Hotel" ;
-    roomify:address "Jalan Sisingamangaraja, Mesjid, Kota Medan" ;
+    roomify:address "Jl. Sisingamangaraja No.20, Medan Kota" ;
     roomify:starRating 3 ;
     roomify:rating 3.8 ;
-    roomify:reviewCount 179 ;
+    roomify:reviewCount 180 ;
     roomify:latitude 3.5780836 ;
     roomify:longitude 98.6864484 ;
     roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
     roomify:nearLandmark roomify:lm-museumsumut ;
+    roomify:hasFacility roomify:fac-wifi ;
+    roomify:hasFacility roomify:fac-parkir ;
+    roomify:hasFacility roomify:fac-ac ;
+    roomify:hasFacility roomify:fac-restoran ;
+    roomify:hasFacility roomify:fac-layanan-kamar ;
+    roomify:hasFacility roomify:fac-laundry ;
+    roomify:hasFacility roomify:fac-sarapan ;
+    roomify:hasFacility roomify:fac-akses-kursi-roda ;
     roomify:hasReview roomify:hotel-201-rev1 ;
     roomify:hasPhoto roomify:hotel-201-photo1 .
 
@@ -11138,14 +11179,19 @@ roomify:hotel-201-photo1 a roomify:Photo, schema:ImageObject ;
 
 roomify:hotel-206 a roomify:Hotel, schema:Hotel ;
     roomify:name "Hotel Zakia" ;
-    roomify:address "Jalan Sipiso Piso" ;
+    roomify:address "Jl. Sipiso Piso No.10-12, Medan Kota" ;
     roomify:rating 3.9 ;
-    roomify:reviewCount 153 ;
+    roomify:reviewCount 154 ;
     roomify:latitude 3.5743718 ;
     roomify:longitude 98.6868522 ;
     roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
     roomify:nearLandmark roomify:lm-museumsumut ;
+    roomify:hasFacility roomify:fac-wifi ;
+    roomify:hasFacility roomify:fac-parkir ;
+    roomify:hasFacility roomify:fac-ac ;
+    roomify:hasFacility roomify:fac-ramah-anak ;
+    roomify:hasFacility roomify:fac-hewan-peliharaan ;
     roomify:hasReview roomify:hotel-206-rev1 ;
     roomify:hasPhoto roomify:hotel-206-photo1 .
 
@@ -11232,15 +11278,21 @@ roomify:hotel-209-photo1 a roomify:Photo, schema:ImageObject ;
 
 roomify:hotel-212 a roomify:Hotel, schema:Hotel ;
     roomify:name "Hanlis Hotel" ;
-    roomify:address "Jalan Sei Kapuas, 6, Medan" ;
+    roomify:address "Jl. Sei Kapuas No.6, Medan Sunggal" ;
     roomify:starRating 2 ;
     roomify:rating 4.2 ;
     roomify:reviewCount 274 ;
+    roomify:startPrice 191531 ;
     roomify:latitude 3.5842096 ;
     roomify:longitude 98.6520406 ;
     roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
     roomify:nearLandmark roomify:lm-manhattan ;
+    roomify:hasFacility roomify:fac-wifi ;
+    roomify:hasFacility roomify:fac-parkir ;
+    roomify:hasFacility roomify:fac-resepsionis-24-jam ;
+    roomify:hasFacility roomify:fac-ramah-anak ;
+    roomify:hasFacility roomify:fac-hewan-peliharaan ;
     roomify:hasReview roomify:hotel-212-rev1 ;
     roomify:hasPhoto roomify:hotel-212-photo1 .
 
@@ -11294,15 +11346,23 @@ roomify:hotel-219-photo1 a roomify:Photo, schema:ImageObject ;
 
 roomify:hotel-222 a roomify:Hotel, schema:Hotel ;
     roomify:name "Grand Sirao Hotel" ;
-    roomify:address "Jalan Semarang, Pasar Baru, Kota Medan" ;
+    roomify:address "Jl. Semarang No.4-6, Medan Kota" ;
     roomify:starRating 2 ;
     roomify:rating 3.6 ;
     roomify:reviewCount 250 ;
+    roomify:startPrice 144561 ;
     roomify:latitude 3.5832165 ;
     roomify:longitude 98.6861911 ;
     roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
     roomify:nearLandmark roomify:lm-museumsumut ;
+    roomify:hasFacility roomify:fac-wifi ;
+    roomify:hasFacility roomify:fac-ac ;
+    roomify:hasFacility roomify:fac-restoran ;
+    roomify:hasFacility roomify:fac-layanan-kamar ;
+    roomify:hasFacility roomify:fac-laundry ;
+    roomify:hasFacility roomify:fac-sarapan ;
+    roomify:hasFacility roomify:fac-antar-jemput-bandara ;
     roomify:hasReview roomify:hotel-222-rev1 ;
     roomify:hasPhoto roomify:hotel-222-photo1 .
 
@@ -11454,15 +11514,24 @@ roomify:hotel-246-photo1 a roomify:Photo, schema:ImageObject ;
 
 roomify:hotel-247 a roomify:Hotel, schema:Hotel ;
     roomify:name "Amaliun Hotel" ;
-    roomify:address "Jalan Amaliun, Kotamatsum III, Kota Medan" ;
+    roomify:address "Jl. Amaliun No.21, Medan Kota" ;
     roomify:starRating 3 ;
     roomify:rating 4.1 ;
-    roomify:reviewCount 563 ;
+    roomify:reviewCount 564 ;
+    roomify:startPrice 193395 ;
     roomify:latitude 3.576382 ;
     roomify:longitude 98.6898909 ;
     roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
     roomify:nearLandmark roomify:lm-museumsumut ;
+    roomify:hasFacility roomify:fac-wifi ;
+    roomify:hasFacility roomify:fac-parkir ;
+    roomify:hasFacility roomify:fac-ac ;
+    roomify:hasFacility roomify:fac-restoran ;
+    roomify:hasFacility roomify:fac-kedai-kopi ;
+    roomify:hasFacility roomify:fac-minimarket ;
+    roomify:hasFacility roomify:fac-laundry ;
+    roomify:hasFacility roomify:fac-sarapan ;
     roomify:hasReview roomify:hotel-247-rev1 ;
     roomify:hasPhoto roomify:hotel-247-photo1 .
 
@@ -11582,15 +11651,23 @@ roomify:hotel-256-photo1 a roomify:Photo, schema:ImageObject ;
 
 roomify:hotel-257 a roomify:Hotel, schema:Hotel ;
     roomify:name "Wisma Sudirman" ;
-    roomify:address "Jalan Kapten Pattimura, Darat, Kota Medan" ;
+    roomify:address "Jl. Pattimura, Medan Baru" ;
     roomify:starRating 2 ;
     roomify:rating 4.3 ;
-    roomify:reviewCount 270 ;
+    roomify:reviewCount 272 ;
+    roomify:startPrice 233279 ;
     roomify:latitude 3.5740484 ;
     roomify:longitude 98.664026 ;
     roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
     roomify:nearLandmark roomify:lm-cadika ;
+    roomify:hasFacility roomify:fac-wifi ;
+    roomify:hasFacility roomify:fac-parkir ;
+    roomify:hasFacility roomify:fac-ac ;
+    roomify:hasFacility roomify:fac-tv ;
+    roomify:hasFacility roomify:fac-sarapan ;
+    roomify:hasFacility roomify:fac-lounge ;
+    roomify:hasFacility roomify:fac-ramah-anak ;
     roomify:hasReview roomify:hotel-257-rev1 ;
     roomify:hasPhoto roomify:hotel-257-photo1 .
 
@@ -11709,15 +11786,23 @@ roomify:hotel-281-photo1 a roomify:Photo, schema:ImageObject ;
 
 roomify:hotel-292 a roomify:Hotel, schema:Hotel ;
     roomify:name "Grand Nusantara Hotel" ;
-    roomify:address "Gang Tentram, Sunggal, Kota Medan" ;
+    roomify:address "Jl. Amal No.1, Medan Sunggal" ;
     roomify:starRating 3 ;
     roomify:rating 4.0 ;
     roomify:reviewCount 244 ;
+    roomify:startPrice 100000 ;
     roomify:latitude 3.5847432 ;
     roomify:longitude 98.6247056 ;
     roomify:dataSource "osm+google_maps" ;
     roomify:locatedInCity roomify:city-medan ;
     roomify:nearLandmark roomify:lm-manhattan ;
+    roomify:hasFacility roomify:fac-wifi ;
+    roomify:hasFacility roomify:fac-parkir ;
+    roomify:hasFacility roomify:fac-ac ;
+    roomify:hasFacility roomify:fac-restoran ;
+    roomify:hasFacility roomify:fac-sarapan ;
+    roomify:hasFacility roomify:fac-laundry ;
+    roomify:hasFacility roomify:fac-akses-kursi-roda ;
     roomify:hasReview roomify:hotel-292-rev1 ;
     roomify:hasPhoto roomify:hotel-292-photo1 .
 
