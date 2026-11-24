@@ -10405,9 +10405,10 @@
     "source": "osm+google_maps",
     "address_source": "manual_riset",
     "phone": "+62 61 7320000",
-    "price_note": "Harga tidak dipublikasikan online; hubungi hotel",
+    "price_note": "Tidak tersedia online (sold out di Traveloka/Agoda/tiket/Trip/KAYAK); harga walk-in via resepsionis",
     "rating_source": "manual_riset",
-    "facilities_source": "manual_riset"
+    "facilities_source": "manual_riset",
+    "price_checked": "2026-11-24"
   },
   {
     "id": "hotel-206",
@@ -10417,7 +10418,7 @@
     "star": null,
     "rating": 3.9,
     "review_count": 154,
-    "start_price": null,
+    "start_price": 180000,
     "latitude": 3.5743718,
     "longitude": 98.6868522,
     "facilities": [
@@ -10427,14 +10428,40 @@
       "Ramah Anak",
       "Hewan Peliharaan"
     ],
-    "rooms": [],
+    "rooms": [
+      {
+        "room_type": "Double Standar",
+        "price": 180000,
+        "max_guests": 2,
+        "features": []
+      },
+      {
+        "room_type": "Double Kamar Mandi Dalam",
+        "price": 220000,
+        "max_guests": 2,
+        "features": [
+          "Kamar Mandi Dalam"
+        ]
+      },
+      {
+        "room_type": "Double Ber-AC",
+        "price": 300000,
+        "max_guests": 2,
+        "features": [
+          "AC"
+        ]
+      }
+    ],
     "image_url": "/images/hotels/_csv/hotel-206.jpg",
     "source": "osm+google_maps",
     "phone": "+62 61 7322413",
-    "price_note": "Harga tidak dipublikasikan online; hubungi hotel",
+    "price_note": "Tarif panduan Petit Futé, bukan OTA real-time; konfirmasi +62 61 7322413",
     "rating_source": "manual_riset",
     "address_source": "manual_riset",
-    "facilities_source": "manual_riset"
+    "facilities_source": "manual_riset",
+    "price_range": "180000-300000",
+    "price_source": "Petit Futé (panduan wisata)",
+    "price_date": "2026-11-24"
   },
   {
     "id": "hotel-207",

@@ -74,6 +74,9 @@ roomify:fac-hewan-peliharaan a roomify:Facility ;
 roomify:fac-hot-tub a roomify:Facility ;
     roomify:name "Hot Tub" .
 
+roomify:fac-kamar-mandi-dalam a roomify:Facility ;
+    roomify:name "Kamar Mandi Dalam" .
+
 roomify:fac-kedai-kopi a roomify:Facility ;
     roomify:name "Kedai Kopi" .
 
@@ -11182,6 +11185,7 @@ roomify:hotel-206 a roomify:Hotel, schema:Hotel ;
     roomify:address "Jl. Sipiso Piso No.10-12, Medan Kota" ;
     roomify:rating 3.9 ;
     roomify:reviewCount 154 ;
+    roomify:startPrice 180000 ;
     roomify:latitude 3.5743718 ;
     roomify:longitude 98.6868522 ;
     roomify:dataSource "osm+google_maps" ;
@@ -11192,8 +11196,31 @@ roomify:hotel-206 a roomify:Hotel, schema:Hotel ;
     roomify:hasFacility roomify:fac-ac ;
     roomify:hasFacility roomify:fac-ramah-anak ;
     roomify:hasFacility roomify:fac-hewan-peliharaan ;
+    roomify:hasRoom roomify:hotel-206-room1 ;
+    roomify:hasRoom roomify:hotel-206-room2 ;
+    roomify:hasRoom roomify:hotel-206-room3 ;
     roomify:hasReview roomify:hotel-206-rev1 ;
     roomify:hasPhoto roomify:hotel-206-photo1 .
+
+roomify:hotel-206-room1 a roomify:Room, schema:HotelRoom ;
+    roomify:roomType "Double Standar" ;
+    roomify:pricePerNight 180000 ;
+    roomify:maxGuests 2 ;
+    roomify:roomOf roomify:hotel-206 .
+
+roomify:hotel-206-room2 a roomify:Room, schema:HotelRoom ;
+    roomify:roomType "Double Kamar Mandi Dalam" ;
+    roomify:pricePerNight 220000 ;
+    roomify:maxGuests 2 ;
+    roomify:roomOf roomify:hotel-206 ;
+    roomify:hasFeature roomify:fac-kamar-mandi-dalam .
+
+roomify:hotel-206-room3 a roomify:Room, schema:HotelRoom ;
+    roomify:roomType "Double Ber-AC" ;
+    roomify:pricePerNight 300000 ;
+    roomify:maxGuests 2 ;
+    roomify:roomOf roomify:hotel-206 ;
+    roomify:hasFeature roomify:fac-ac .
 
 roomify:hotel-206-rev1 a roomify:Review, schema:Review ;
     roomify:reviewerName "Tamu Roomify" ;
