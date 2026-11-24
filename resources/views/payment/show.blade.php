@@ -71,53 +71,11 @@
 <body class="min-h-screen bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-100 transition-colors duration-200 flex flex-col justify-between">
 
 <div>
-    {{-- LIVE SYSTEM CLOCK BAR --}}
-    <x-live-clock-bar />
-
-    {{-- NAVBAR --}}
-    <nav class="sticky top-0 z-50 glass bg-white/90 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors duration-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <a href="{{ url('/') }}" class="flex items-center gap-2.5 group no-underline">
-                    <div class="w-9 h-9 relative transform transition-transform group-hover:scale-105">
-                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow">
-                            <defs>
-                                <linearGradient id="pay-nb-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#4F46E5"/>
-                                    <stop offset="50%" stop-color="#7C3AED"/>
-                                    <stop offset="100%" stop-color="#EC4899"/>
-                                </linearGradient>
-                                <linearGradient id="pay-nb-gold" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#FCD34D"/>
-                                    <stop offset="100%" stop-color="#F59E0B"/>
-                                </linearGradient>
-                            </defs>
-                            <rect width="48" height="48" rx="14" fill="url(#pay-nb-grad)"/>
-                            <rect x="0.75" y="0.75" width="46.5" height="46.5" rx="13.25" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-                            <path d="M12 36V22C12 15.3726 17.3726 10 24 10C30.6274 10 36 15.3726 36 22V36" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
-                            <path d="M18 36V18H25.5C28 18 29.5 19.5 29.5 22C29.5 24.5 28 26 25.5 26H18M24 26L30 36" stroke="#FFFFFF" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M34 11L35.2 13.8L38 15L35.2 16.2L34 19L32.8 16.2L30 15L32.8 13.8L34 11Z" fill="url(#pay-nb-gold)"/>
-                            <circle cx="24" cy="31" r="1.5" fill="#FCD34D"/>
-                        </svg>
-                    </div>
-                    <div class="leading-tight">
-                        <span class="font-black text-xl bg-gradient-to-r from-indigo-700 via-purple-600 to-pink-500 bg-clip-text text-transparent tracking-tight">Roomify</span>
-                    </div>
-                </a>
-                <div class="flex items-center gap-3">
-                    <button onclick="cycleThemeMode()" type="button" class="p-2 sm:px-3 sm:py-1.5 rounded-xl text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition flex items-center gap-2 text-xs font-bold" aria-label="Toggle theme">
-                        <i class="fa-solid fa-moon hidden dark:inline text-amber-300"></i>
-                        <i class="fa-solid fa-sun inline dark:hidden text-amber-500"></i>
-                        <span class="hidden md:inline font-mono text-[11px] uppercase" id="nav-theme-label">Mode Auto</span>
-                    </button>
-                    <span class="text-xs text-slate-500 dark:text-slate-400 hidden sm:flex items-center gap-1.5 bg-slate-100 dark:bg-slate-800/80 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700 font-semibold">
-                        <i class="fa fa-lock text-emerald-500"></i>
-                        <span>Pembayaran Aman SSL</span>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </nav>
+    {{-- LIVE SYSTEM CLOCK BAR & NAVBAR --}}
+    <div class="sticky top-0 z-50">
+        <x-live-clock-bar />
+        <x-navbar active="search" />
+    </div>
 
     {{-- PROGRESS STEPS --}}
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -554,5 +512,21 @@
         }, 2000);
     }
 </script>
+
+    <!-- Branded Footer -->
+    <footer class="mt-20 border-t border-slate-200 dark:border-slate-800 py-10" style="background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="w-7 h-7 rounded-lg bg-blue-600 text-white flex items-center justify-center font-black text-sm">R</span>
+                <span class="font-black text-lg tracking-tight">Roomify</span>
+            </div>
+            <p class="text-xs text-blue-200 max-w-md mx-auto leading-relaxed">
+                Platform Pencarian & Navigasi Hotel Berbasis Web Semantik (Ontologi RDF, SPARQL Triplestore & Google Maps / OpenStreetMap) di Kota Medan.
+            </p>
+            <div class="mt-6 pt-4 border-t border-white/10 text-[11px] text-blue-300">
+                &copy; {{ date('Y') }} Roomify Medan. Seluruh hak cipta dilindungi undang-undang.
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

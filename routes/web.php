@@ -53,7 +53,8 @@ Route::get('/', function (FusekiClient $fuseki) {
     return view('welcome', compact('landmarks'));
 })->name('home');
 
-// Landmark Detail Page
+// Landmark Directory & Detail Pages
+Route::get('/landmark', [LandmarkController::class, 'index'])->name('landmark.index');
 Route::get('/landmark/{id}', [LandmarkController::class, 'show'])->name('landmark.show');
 
 // Semantic Web & SPARQL Playground

@@ -10382,7 +10382,7 @@
   {
     "id": "hotel-201",
     "name": "Dhaksina Hotel",
-    "address": "Kota Medan",
+    "address": "Jalan Sisingamangaraja, Mesjid, Kota Medan",
     "description": null,
     "star": 3,
     "rating": 3.8,
@@ -10393,7 +10393,8 @@
     "facilities": [],
     "rooms": [],
     "image_url": "/images/hotels/_csv/hotel-201.jpg",
-    "source": "osm+google_maps"
+    "source": "osm+google_maps",
+    "address_source": "osm_reverse"
   },
   {
     "id": "hotel-206",
@@ -10507,7 +10508,7 @@
   {
     "id": "hotel-222",
     "name": "Grand Sirao Hotel",
-    "address": "Kota Medan",
+    "address": "Jalan Semarang, Pasar Baru, Kota Medan",
     "description": null,
     "star": 2,
     "rating": 3.6,
@@ -10518,12 +10519,13 @@
     "facilities": [],
     "rooms": [],
     "image_url": "/images/hotels/_csv/hotel-222.jpg",
-    "source": "osm+google_maps"
+    "source": "osm+google_maps",
+    "address_source": "osm_reverse"
   },
   {
     "id": "hotel-231",
     "name": "Hotel Palace Inn",
-    "address": "Kota Medan",
+    "address": "Jalan Mojopahit, Petisah Tengah, Kota Medan",
     "description": null,
     "star": 3,
     "rating": 4.1,
@@ -10541,12 +10543,13 @@
       }
     ],
     "image_url": "/images/hotels/_csv/hotel-231.jpg",
-    "source": "osm+google_maps"
+    "source": "osm+google_maps",
+    "address_source": "osm_reverse"
   },
   {
     "id": "hotel-240",
     "name": "Dazhong Backpacker's hostel",
-    "address": "Kota Medan",
+    "address": "Jalan Muara Takus, Madras Hulu, Kota Medan",
     "description": null,
     "star": null,
     "rating": 4.0,
@@ -10564,12 +10567,13 @@
       }
     ],
     "image_url": "/images/hotels/_csv/hotel-240.jpg",
-    "source": "osm+booking"
+    "source": "osm+booking",
+    "address_source": "osm_reverse"
   },
   {
     "id": "hotel-243",
     "name": "OYO Festive Inn",
-    "address": "Kota Medan",
+    "address": "Jalan Sambu, Gang Buntu, Kota Medan",
     "description": null,
     "star": null,
     "rating": 1.8,
@@ -10587,7 +10591,8 @@
       }
     ],
     "image_url": "/images/hotels/_csv/hotel-243.jpg",
-    "source": "osm+booking"
+    "source": "osm+booking",
+    "address_source": "osm_reverse"
   },
   {
     "id": "hotel-246",
@@ -10615,7 +10620,7 @@
   {
     "id": "hotel-247",
     "name": "Amaliun Hotel",
-    "address": "Kota Medan",
+    "address": "Jalan Amaliun, Kotamatsum III, Kota Medan",
     "description": null,
     "star": 3,
     "rating": 4.1,
@@ -10626,12 +10631,13 @@
     "facilities": [],
     "rooms": [],
     "image_url": "/images/hotels/_csv/hotel-247.jpg",
-    "source": "osm+google_maps"
+    "source": "osm+google_maps",
+    "address_source": "osm_reverse"
   },
   {
     "id": "hotel-251",
     "name": "Jangga House",
-    "address": "Kota Medan",
+    "address": "Jalan Sei Tuan, Babura, Kota Medan",
     "description": null,
     "star": 2,
     "rating": 4.3,
@@ -10649,12 +10655,13 @@
       }
     ],
     "image_url": "/images/hotels/_csv/hotel-251.jpg",
-    "source": "osm+google_maps"
+    "source": "osm+google_maps",
+    "address_source": "osm_reverse"
   },
   {
     "id": "hotel-253",
     "name": "Nusa Hotel",
-    "address": "Kota Medan",
+    "address": "Jalan Arif Rahman Hakim, Bantan Timur, Percut Sei Tuan",
     "description": null,
     "star": 2,
     "rating": 4.2,
@@ -10672,12 +10679,13 @@
       }
     ],
     "image_url": "/images/hotels/_csv/hotel-253.jpg",
-    "source": "osm+google_maps"
+    "source": "osm+google_maps",
+    "address_source": "osm_reverse"
   },
   {
     "id": "hotel-256",
     "name": "Saka Hotel Medan",
-    "address": "Kota Medan",
+    "address": "Jalan Pungguk, Sei Sikambing B, Kota Medan",
     "description": null,
     "star": 3,
     "rating": 4.0,
@@ -10695,12 +10703,13 @@
       }
     ],
     "image_url": "/images/hotels/_csv/hotel-256.jpg",
-    "source": "osm+google_maps"
+    "source": "osm+google_maps",
+    "address_source": "osm_reverse"
   },
   {
     "id": "hotel-257",
     "name": "Wisma Sudirman",
-    "address": "Kota Medan",
+    "address": "Jalan Kapten Pattimura, Darat, Kota Medan",
     "description": null,
     "star": 2,
     "rating": 4.3,
@@ -10711,12 +10720,13 @@
     "facilities": [],
     "rooms": [],
     "image_url": "/images/hotels/_csv/hotel-257.jpg",
-    "source": "osm+google_maps"
+    "source": "osm+google_maps",
+    "address_source": "osm_reverse"
   },
   {
     "id": "hotel-259",
     "name": "Ibis Styles Medan Patimura",
-    "address": "Kota Medan",
+    "address": "Jalan Kapten Pattimura, Darat, Kota Medan",
     "description": null,
     "star": 3,
     "rating": 4.4,
@@ -10734,12 +10744,13 @@
       }
     ],
     "image_url": "/images/hotels/_csv/hotel-259.jpg",
-    "source": "osm+google_maps"
+    "source": "osm+google_maps",
+    "address_source": "osm_reverse"
   },
   {
     "id": "hotel-269",
     "name": "Star Inn",
-    "address": "Kota Medan",
+    "address": "Jalan Kapten Jumhana, Sukaramai II, Kota Medan",
     "description": null,
     "star": null,
     "rating": 4.5,
@@ -10757,12 +10768,13 @@
       }
     ],
     "image_url": "/images/hotels/_csv/hotel-269.jpg",
-    "source": "osm+google_maps"
+    "source": "osm+google_maps",
+    "address_source": "osm_reverse"
   },
   {
     "id": "hotel-281",
     "name": "Orinko City Hotel",
-    "address": "Kota Medan",
+    "address": "Jalan Darussalam, Sei Sikambing D, Kota Medan",
     "description": null,
     "star": 3,
     "rating": 4.5,
@@ -10780,12 +10792,13 @@
       }
     ],
     "image_url": "/images/hotels/_csv/hotel-281.jpg",
-    "source": "osm+google_maps"
+    "source": "osm+google_maps",
+    "address_source": "osm_reverse"
   },
   {
     "id": "hotel-292",
     "name": "Grand Nusantara Hotel",
-    "address": "Kota Medan",
+    "address": "Gang Tentram, Sunggal, Kota Medan",
     "description": null,
     "star": 3,
     "rating": 4.0,
@@ -10796,7 +10809,8 @@
     "facilities": [],
     "rooms": [],
     "image_url": "/images/hotels/_csv/hotel-292.jpg",
-    "source": "osm+google_maps"
+    "source": "osm+google_maps",
+    "address_source": "osm_reverse"
   },
   {
     "id": "hotel-303",

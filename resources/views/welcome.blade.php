@@ -573,10 +573,15 @@
         </div>
 
         <!-- View All Destinations CTA -->
-        <div class="mt-12 text-center">
-            <a href="{{ url('/search') }}" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-white/10 hover:bg-white/15 text-white font-bold text-sm border border-white/20 transition-all hover:scale-105">
-                <i class="fa-solid fa-compass text-indigo-400"></i>
-                <span>Jelajahi Seluruh 312 Hotel di Kota Medan</span>
+        <div class="mt-12 text-center flex flex-wrap items-center justify-center gap-4">
+            <a href="{{ route('landmark.index') }}" class="btn-gradient inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl text-white font-bold text-sm shadow-lg transition-all hover:scale-105">
+                <i class="fa-solid fa-landmark text-amber-300"></i>
+                <span>Buka Direktori 24 Landmark & Peta Interaktif</span>
+                <i class="fa-solid fa-chevron-right text-xs"></i>
+            </a>
+            <a href="{{ url('/search') }}" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-2xl bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-800 dark:text-white font-bold text-sm border border-slate-200 dark:border-slate-700 transition-all hover:scale-105 shadow-sm">
+                <i class="fa-solid fa-hotel text-blue-600"></i>
+                <span>Jelajahi Seluruh 312 Hotel di Medan</span>
                 <i class="fa-solid fa-chevron-right text-xs"></i>
             </a>
         </div>
@@ -831,7 +836,7 @@
                     <span class="text-xl font-black text-white">Roomify</span>
                 </div>
                 <p class="text-xs text-slate-400 leading-relaxed">
-                    Platform pemesanan hotel terbaik di Kota Medan. Temukan 187+ pilihan akomodasi nyaman dekat landmark bersejarah, pusat bisnis, dan kuliner khas Medan dengan garansi harga hemat dan navigasi Google Maps presisi.
+                    Platform pemesanan hotel terbaik di Kota Medan. Temukan 312 pilihan akomodasi nyaman dekat landmark bersejarah, pusat bisnis, dan kuliner khas Medan dengan garansi harga hemat dan navigasi Google Maps presisi.
                 </p>
                 <div class="flex items-center gap-3 text-slate-400 text-sm">
                     <a href="#" class="hover:text-white transition"><i class="fa-brands fa-github"></i></a>

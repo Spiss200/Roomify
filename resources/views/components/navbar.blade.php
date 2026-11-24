@@ -29,7 +29,7 @@
                     <i class="fa-solid fa-magnifying-glass mr-1.5 text-xs {{ $active === 'search' ? 'text-blue-600 dark:text-blue-400' : 'text-slate-400' }}"></i>
                     Cari Hotel
                 </a>
-                <a href="{{ route('home') }}#landmarks"
+                <a href="{{ route('landmark.index') }}"
                    class="px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition {{ $active === 'landmarks' ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/60 font-bold' : 'text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-white hover:bg-slate-100/70 dark:hover:bg-slate-800/60' }}">
                     <i class="fa-solid fa-landmark mr-1.5 text-xs {{ $active === 'landmarks' ? 'text-blue-600 dark:text-blue-400' : 'text-slate-400' }}"></i>
                     Landmark Medan
@@ -92,7 +92,7 @@
         <a href="{{ route('search') }}" class="block px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">
             <i class="fa-solid fa-magnifying-glass mr-2 text-blue-500"></i> Cari Hotel
         </a>
-        <a href="{{ route('home') }}#landmarks" class="block px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">
+        <a href="{{ route('landmark.index') }}" class="block px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">
             <i class="fa-solid fa-landmark mr-2 text-blue-500"></i> Landmark Medan
         </a>
         <a href="{{ route('semantik.index') }}" class="block px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">

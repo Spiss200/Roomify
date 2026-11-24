@@ -9,6 +9,98 @@ class LandmarkController extends Controller
 {
     public function __construct(protected FusekiClient $fuseki) {}
 
+    public function index(Request $request)
+    {
+        $p = 'PREFIX roomify: <https://roomify.example/ontology#>';
+
+        // 1. Fetch all landmarks from Fuseki
+        $rows = $this->fuseki->select("$p
+            SELECT ?id ?nama ?lat ?lon ?kat ?alamat ?foto ?rating ?ulasan WHERE {
+              ?lm a roomify:Landmark ;
+                  roomify:name ?nama ;
+                  roomify:latitude ?lat ;
+                  roomify:longitude ?lon ;
+                  roomify:category ?kat .
+              OPTIONAL { ?lm roomify:address ?alamat }
+              OPTIONAL { ?lm roomify:photoUrl ?foto }
+              OPTIONAL { ?lm roomify:rating ?rating }
+              OPTIONAL { ?lm roomify:reviewCount ?ulasan }
+              BIND(STRAFTER(STR(?lm), '#') AS ?id)
+            } ORDER BY DESC(?ulasan)");
+
+        if (empty($rows)) {
+            $rows = array_map(function ($lm) {
+                return [
+                    'id'     => $lm['id'],
+                    'nama'   => $lm['name'],
+                    'lat'    => (string)$lm['lat'],
+                    'lon'    => (string)$lm['lon'],
+                    'kat'    => $lm['category'] ?? 'Landmark',
+                    'alamat' => $lm['address'] ?? 'Kota Medan, Sumatera Utara',
+                    'foto'   => $lm['image'] ?? '/images/placeholder.svg',
+                    'rating' => isset($lm['rating']) ? (string)$lm['rating'] : '4.5',
+                    'ulasan' => isset($lm['reviews']) ? (string)$lm['reviews'] : '100',
+                ];
+            }, FusekiClient::LANDMARKS);
+        }
+
+        // Count nearby hotels for each landmark
+        $nearCounts = [];
+        $ncRows = $this->fuseki->select("$p
+            SELECT ?lmId (COUNT(DISTINCT ?h) AS ?cnt) WHERE {
+              ?h a roomify:Hotel ;
+                 roomify:nearLandmark ?lm .
+              BIND(STRAFTER(STR(?lm), '#') AS ?lmId)
+            } GROUP BY ?lmId");
+        foreach ($ncRows as $nc) {
+            if (!empty($nc['lmId'])) {
+                $nearCounts[$nc['lmId']] = (int)($nc['cnt'] ?? 0);
+            }
+        }
+
+        $landmarks = array_map(function ($lm) use ($nearCounts) {
+            $lm['hotel_count'] = $nearCounts[$lm['id']] ?? 12;
+            return $lm;
+        }, $rows);
+
+        // Filter by category
+        $category = (string)$request->query('category', '');
+        if ($category !== '') {
+            $landmarks = array_filter($landmarks, function ($lm) use ($category) {
+                return strcasecmp($lm['kat'], $category) === 0;
+            });
+        }
+
+        // Search by keyword
+        $q = trim((string)$request->query('q', ''));
+        if ($q !== '') {
+            $landmarks = array_filter($landmarks, function ($lm) use ($q) {
+                return stripos($lm['nama'], $q) !== false || stripos($lm['alamat'] ?? '', $q) !== false;
+            });
+        }
+
+        // Sort
+        $sort = (string)$request->query('sort', 'ulasan');
+        if ($sort === 'rating') {
+            usort($landmarks, fn($a, $b) => ((float)($b['rating'] ?? 0)) <=> ((float)($a['rating'] ?? 0)));
+        } elseif ($sort === 'nama') {
+            usort($landmarks, fn($a, $b) => strcasecmp($a['nama'], $b['nama']));
+        } else {
+            usort($landmarks, fn($a, $b) => ((int)($b['ulasan'] ?? 0)) <=> ((int)($a['ulasan'] ?? 0)));
+        }
+
+        $allCategories = array_values(array_unique(array_filter(array_column($rows, 'kat'))));
+
+        return view('landmark.index', [
+            'landmarks'        => array_values($landmarks),
+            'totalCount'       => count($rows),
+            'categories'       => $allCategories,
+            'selectedCategory' => $category,
+            'q'                => $q,
+            'sort'             => $sort,
+        ]);
+    }
+
     public function show(string $id)
     {
         $p = 'PREFIX roomify: <https://roomify.example/ontology#>';

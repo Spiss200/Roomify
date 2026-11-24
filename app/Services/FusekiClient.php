@@ -118,6 +118,24 @@ class FusekiClient
             return $out;
         }
 
+        // 2a. Landmark hotel counts query
+        if (str_contains($sparql, 'nearLandmark ?lm') && str_contains($sparql, 'COUNT(DISTINCT ?h)')) {
+            $counts = [];
+            foreach ($data as $h) {
+                $lm = $this->closestLandmark($h['latitude'] ?? null, $h['longitude'] ?? null);
+                $lmId = $lm['id'] ?? 'lm-merdeka';
+                $counts[$lmId] = ($counts[$lmId] ?? 0) + 1;
+            }
+            $out = [];
+            foreach ($counts as $lmId => $cnt) {
+                $out[] = [
+                    'lmId' => $lmId,
+                    'cnt'  => (string)$cnt,
+                ];
+            }
+            return $out;
+        }
+
         // 2b. Landmarks list & detail queries
         if (preg_match('/roomify:(lm-[a-zA-Z0-9_-]+)\s+a\s+roomify:Landmark/i', $sparql, $mLm)) {
             $targetLmId = $mLm[1];

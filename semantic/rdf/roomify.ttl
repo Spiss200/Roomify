@@ -11112,7 +11112,7 @@ roomify:hotel-194-photo1 a roomify:Photo, schema:ImageObject ;
 
 roomify:hotel-201 a roomify:Hotel, schema:Hotel ;
     roomify:name "Dhaksina Hotel" ;
-    roomify:address "Kota Medan" ;
+    roomify:address "Jalan Sisingamangaraja, Mesjid, Kota Medan" ;
     roomify:starRating 3 ;
     roomify:rating 3.8 ;
     roomify:reviewCount 179 ;
@@ -11294,7 +11294,7 @@ roomify:hotel-219-photo1 a roomify:Photo, schema:ImageObject ;
 
 roomify:hotel-222 a roomify:Hotel, schema:Hotel ;
     roomify:name "Grand Sirao Hotel" ;
-    roomify:address "Kota Medan" ;
+    roomify:address "Jalan Semarang, Pasar Baru, Kota Medan" ;
     roomify:starRating 2 ;
     roomify:rating 3.6 ;
     roomify:reviewCount 250 ;
@@ -11320,7 +11320,7 @@ roomify:hotel-222-photo1 a roomify:Photo, schema:ImageObject ;
 
 roomify:hotel-231 a roomify:Hotel, schema:Hotel ;
     roomify:name "Hotel Palace Inn" ;
-    roomify:address "Kota Medan" ;
+    roomify:address "Jalan Mojopahit, Petisah Tengah, Kota Medan" ;
     roomify:starRating 3 ;
     roomify:rating 4.1 ;
     roomify:reviewCount 354 ;
@@ -11354,7 +11354,7 @@ roomify:hotel-231-photo1 a roomify:Photo, schema:ImageObject ;
 
 roomify:hotel-240 a roomify:Hotel, schema:Hotel ;
     roomify:name "Dazhong Backpacker's hostel" ;
-    roomify:address "Kota Medan" ;
+    roomify:address "Jalan Muara Takus, Madras Hulu, Kota Medan" ;
     roomify:rating 4.0 ;
     roomify:reviewCount 59 ;
     roomify:startPrice 315000 ;
@@ -11387,7 +11387,7 @@ roomify:hotel-240-photo1 a roomify:Photo, schema:ImageObject ;
 
 roomify:hotel-243 a roomify:Hotel, schema:Hotel ;
     roomify:name "OYO Festive Inn" ;
-    roomify:address "Kota Medan" ;
+    roomify:address "Jalan Sambu, Gang Buntu, Kota Medan" ;
     roomify:rating 1.8 ;
     roomify:reviewCount 28 ;
     roomify:startPrice 152700 ;
@@ -11454,7 +11454,7 @@ roomify:hotel-246-photo1 a roomify:Photo, schema:ImageObject ;
 
 roomify:hotel-247 a roomify:Hotel, schema:Hotel ;
     roomify:name "Amaliun Hotel" ;
-    roomify:address "Kota Medan" ;
+    roomify:address "Jalan Amaliun, Kotamatsum III, Kota Medan" ;
     roomify:starRating 3 ;
     roomify:rating 4.1 ;
     roomify:reviewCount 563 ;
@@ -11480,7 +11480,7 @@ roomify:hotel-247-photo1 a roomify:Photo, schema:ImageObject ;
 
 roomify:hotel-251 a roomify:Hotel, schema:Hotel ;
     roomify:name "Jangga House" ;
-    roomify:address "Kota Medan" ;
+    roomify:address "Jalan Sei Tuan, Babura, Kota Medan" ;
     roomify:starRating 2 ;
     roomify:rating 4.3 ;
     roomify:reviewCount 471 ;
@@ -11514,7 +11514,7 @@ roomify:hotel-251-photo1 a roomify:Photo, schema:ImageObject ;
 
 roomify:hotel-253 a roomify:Hotel, schema:Hotel ;
     roomify:name "Nusa Hotel" ;
-    roomify:address "Kota Medan" ;
+    roomify:address "Jalan Arif Rahman Hakim, Bantan Timur, Percut Sei Tuan" ;
     roomify:starRating 2 ;
     roomify:rating 4.2 ;
     roomify:reviewCount 181 ;
@@ -11548,7 +11548,7 @@ roomify:hotel-253-photo1 a roomify:Photo, schema:ImageObject ;
 
 roomify:hotel-256 a roomify:Hotel, schema:Hotel ;
     roomify:name "Saka Hotel Medan" ;
-    roomify:address "Kota Medan" ;
+    roomify:address "Jalan Pungguk, Sei Sikambing B, Kota Medan" ;
     roomify:starRating 3 ;
     roomify:rating 4.0 ;
     roomify:reviewCount 2800 ;
@@ -11582,7 +11582,7 @@ roomify:hotel-256-photo1 a roomify:Photo, schema:ImageObject ;
 
 roomify:hotel-257 a roomify:Hotel, schema:Hotel ;
     roomify:name "Wisma Sudirman" ;
-    roomify:address "Kota Medan" ;
+    roomify:address "Jalan Kapten Pattimura, Darat, Kota Medan" ;
     roomify:starRating 2 ;
     roomify:rating 4.3 ;
     roomify:reviewCount 270 ;
@@ -11608,7 +11608,7 @@ roomify:hotel-257-photo1 a roomify:Photo, schema:ImageObject ;
 
 roomify:hotel-259 a roomify:Hotel, schema:Hotel ;
     roomify:name "Ibis Styles Medan Patimura" ;
-    roomify:address "Kota Medan" ;
+    roomify:address "Jalan Kapten Pattimura, Darat, Kota Medan" ;
     roomify:starRating 3 ;
     roomify:rating 4.4 ;
     roomify:reviewCount 3244 ;
@@ -11642,7 +11642,7 @@ roomify:hotel-259-photo1 a roomify:Photo, schema:ImageObject ;
 
 roomify:hotel-269 a roomify:Hotel, schema:Hotel ;
     roomify:name "Star Inn" ;
-    roomify:address "Kota Medan" ;
+    roomify:address "Jalan Kapten Jumhana, Sukaramai II, Kota Medan" ;
     roomify:rating 4.5 ;
     roomify:reviewCount 68 ;
     roomify:startPrice 146336 ;
@@ -11675,7 +11675,7 @@ roomify:hotel-269-photo1 a roomify:Photo, schema:ImageObject ;
 
 roomify:hotel-281 a roomify:Hotel, schema:Hotel ;
     roomify:name "Orinko City Hotel" ;
-    roomify:address "Kota Medan" ;
+    roomify:address "Jalan Darussalam, Sei Sikambing D, Kota Medan" ;
     roomify:starRating 3 ;
     roomify:rating 4.5 ;
     roomify:reviewCount 223 ;
@@ -11709,7 +11709,7 @@ roomify:hotel-281-photo1 a roomify:Photo, schema:ImageObject ;
 
 roomify:hotel-292 a roomify:Hotel, schema:Hotel ;
     roomify:name "Grand Nusantara Hotel" ;
-    roomify:address "Kota Medan" ;
+    roomify:address "Gang Tentram, Sunggal, Kota Medan" ;
     roomify:starRating 3 ;
     roomify:rating 4.0 ;
     roomify:reviewCount 244 ;

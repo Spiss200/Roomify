@@ -105,4 +105,21 @@ class RoomifyFlowTest extends TestCase
         $this->assertNotNull($savedBooking);
         $this->assertEquals('1271012345678901', $savedBooking->no_ktp);
     }
+
+    public function test_landmark_directory_page_renders_successfully(): void
+    {
+        $response = $this->get('/landmark');
+        $response->assertStatus(200);
+        $response->assertSee('Landmark');
+        $response->assertSee('Istana Maimun');
+        $response->assertSee('all-landmarks-map');
+    }
+
+    public function test_semantik_page_renders_with_unified_design(): void
+    {
+        $response = $this->get('/semantik');
+        $response->assertStatus(200);
+        $response->assertSee('Arsitektur Web Semantik');
+        $response->assertSee('SPARQL Playground');
+    }
 }

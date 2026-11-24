@@ -10,69 +10,95 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <!-- Tailwind CSS -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
+                    colors: {
+                        brand: {
+                            50:  '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+        function getAutoTimeTheme() {
+            const hour = new Date().getHours();
+            return (hour >= 6 && hour < 18) ? 'light' : 'dark';
+        }
+        function initTheme() {
+            if (localStorage.getItem('theme_user_override') === 'true' && !localStorage.getItem('theme_mode')) {
+                localStorage.removeItem('theme_user_override');
+                localStorage.setItem('theme_mode', 'auto');
+            }
+            const mode = localStorage.getItem('theme_mode') || 'auto';
+            const effectiveTheme = (mode === 'auto') ? getAutoTimeTheme() : mode;
+            if (effectiveTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        }
+        function toggleTheme() {
+            if (typeof window.cycleThemeMode === 'function') {
+                window.cycleThemeMode();
+            } else {
+                const isDark = document.documentElement.classList.contains('dark');
+                const nextMode = isDark ? 'light' : 'dark';
+                localStorage.setItem('theme_mode', nextMode);
+                if (nextMode === 'dark') document.documentElement.classList.add('dark');
+                else document.documentElement.classList.remove('dark');
+            }
+        }
+        initTheme();
+    </script>
 
     <!-- FontAwesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <style>
+        * { font-family: 'Inter', sans-serif; }
         .font-mono { font-family: 'JetBrains Mono', monospace; }
-    </style>
-
-    <script>
-        (function() {
-            const saved = localStorage.getItem('theme');
-            if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-            }
-        })();
-
-        function toggleTheme() {
-            const html = document.documentElement;
-            if (html.classList.contains('dark')) {
-                html.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-            } else {
-                html.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-            }
+        body {
+            background-color: #f8fafc;
+            color: #0f172a;
+            min-height: 100vh;
         }
-    </script>
+        html.dark body {
+            background-color: #0b0f19;
+            color: #f1f5f9;
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+            transition: all 0.2s;
+        }
+        .btn-gradient:hover {
+            background: linear-gradient(135deg, #1d4ed8 0%, #4338ca 100%);
+            box-shadow: 0 8px 20px rgba(37,99,235,0.35);
+            transform: translateY(-1px);
+        }
+    </style>
 </head>
-<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen font-['Inter',sans-serif] antialiased">
+<body class="antialiased min-h-screen">
 
-    <!-- Top Live System Clock -->
-    <x-live-clock-bar />
-
-    <!-- Navigation Bar -->
-    <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-6">
-                <a href="{{ route('home') }}" class="flex items-center gap-2.5">
-                    <span class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-black text-lg shadow-sm">R</span>
-                    <span class="font-extrabold text-xl tracking-tight text-slate-900 dark:text-white">Roomify</span>
-                </a>
-                <nav class="hidden md:flex items-center gap-5 text-sm font-semibold text-slate-600 dark:text-slate-300">
-                    <a href="{{ route('home') }}" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Beranda</a>
-                    <a href="{{ route('search') }}" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Cari Hotel</a>
-                    <a href="{{ route('home') }}#landmarks" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Landmark Medan</a>
-                    <a href="{{ url('/semantik') }}" class="text-blue-600 dark:text-blue-400">Web Semantik</a>
-                </nav>
-            </div>
-            <div class="flex items-center gap-3">
-                <button onclick="toggleTheme()" type="button" class="p-2 rounded-xl text-slate-500 hover:text-slate-700 dark:text-slate-300 dark:hover:text-white bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition" aria-label="Toggle theme">
-                    <i class="fa-solid fa-moon hidden dark:inline text-amber-300"></i>
-                    <i class="fa-solid fa-sun inline dark:hidden text-amber-500"></i>
-                </button>
-                <a href="{{ route('search') }}" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-sm transition">
-                    <i class="fa-solid fa-magnifying-glass text-xs"></i> Cari Hotel
-                </a>
-            </div>
-        </div>
-    </header>
+    <!-- Top Live System Clock & Unified Navbar -->
+    <div class="sticky top-0 z-50">
+        <x-live-clock-bar />
+        <x-navbar active="semantik" />
+    </div>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
 
@@ -770,5 +796,24 @@ SELECT ?nama ?kat ?rating ?ulasan WHERE {
             });
         }
     </script>
+
+    <!-- Branded Footer -->
+    <footer class="mt-20 border-t border-slate-200 dark:border-slate-800 py-10" style="background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <div class="flex items-center justify-center gap-2 mb-3">
+                <span class="w-7 h-7 rounded-lg bg-blue-600 text-white flex items-center justify-center font-black text-sm">R</span>
+                <span class="font-black text-lg tracking-tight">Roomify</span>
+            </div>
+            <p class="text-xs text-blue-200 max-w-md mx-auto leading-relaxed">
+                Platform Pencarian & Navigasi Hotel Berbasis Web Semantik (Ontologi RDF, SPARQL Triplestore & Google Maps / OpenStreetMap) di Kota Medan.
+            </p>
+            <div class="mt-6 pt-4 border-t border-white/10 text-[11px] text-blue-300">
+                &copy; 2026 Roomify Medan. Seluruh hak cipta dilindungi.
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Chatbot Widget -->
+    <x-ai-chat-widget />
 </body>
 </html>
