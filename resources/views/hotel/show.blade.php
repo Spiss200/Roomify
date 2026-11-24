@@ -989,14 +989,15 @@ SELECT ?nama ?alamat ?deskripsi ?bintang ?rating ?jumlahReview ?harga ?lat ?lon 
     // Hotel coordinates from PHP with safe parsing
     const HOTEL_LAT = parseFloat("{{ $hotel['latitude'] ?? '3.5952' }}") || 3.5952;
     const HOTEL_LNG = parseFloat("{{ $hotel['longitude'] ?? '98.6722' }}") || 98.6722;
-    const HOTEL_NAME = "{{ addslashes($hotel['nama'] ?? 'Hotel') }}";
-    const HOTEL_ADDR = "{{ addslashes($hotel['alamat'] ?? 'Medan, Sumatera Utara') }}";
+    const HOTEL_NAME = @json($hotel['nama'] ?? 'Hotel');
+    const HOTEL_ADDR = @json($hotel['alamat'] ?? 'Medan, Sumatera Utara');
     const BASE_PRICE = {{ (int)($hotel['startPrice'] ?? 0) }};
 
     let map, marker, panorama, streetViewVisible = false;
     let directionsService, directionsRenderer;
     let currentUserCoords = null;
     let currentOriginTitle = 'Stasiun Medan (KM 0)';
+    let hotelRouteStepsVisible = false;
 
     // Custom map styles (clean, modern)
     const MAP_STYLES = [
@@ -1011,9 +1012,11 @@ SELECT ?nama ?alamat ?deskripsi ?bintang ?rating ?jumlahReview ?harga ?lat ?lon 
 
     function initMap() {
         const mapEl = document.getElementById('hotel-map');
-        if (!mapEl) return;
+        if (!mapEl || !window.google || !google.maps) {
+            showRouteError('Google Maps gagal dimuat. Periksa koneksi internet dan konfigurasi API key.');
+            return;
+        }
 
-        // Map
         map = new google.maps.Map(mapEl, {
             center: { lat: HOTEL_LAT, lng: HOTEL_LNG },
             zoom: 15,
@@ -1025,7 +1028,6 @@ SELECT ?nama ?alamat ?deskripsi ?bintang ?rating ?jumlahReview ?harga ?lat ?lon 
             zoomControlOptions: { position: google.maps.ControlPosition.RIGHT_CENTER }
         });
 
-        // Initialize Directions
         directionsService = new google.maps.DirectionsService();
         directionsRenderer = new google.maps.DirectionsRenderer({
             map: map,
@@ -1037,7 +1039,6 @@ SELECT ?nama ?alamat ?deskripsi ?bintang ?rating ?jumlahReview ?harga ?lat ?lon 
             }
         });
 
-        // Custom marker SVG
         const svgMarker = {
             path: 'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z',
             fillColor: '#4338ca',
@@ -1045,7 +1046,7 @@ SELECT ?nama ?alamat ?deskripsi ?bintang ?rating ?jumlahReview ?harga ?lat ?lon 
             strokeColor: '#ffffff',
             strokeWeight: 2,
             scale: 2.2,
-            anchor: new google.maps.Point(12, 22),
+            anchor: new google.maps.Point(12, 22)
         };
 
         marker = new google.maps.Marker({
@@ -1056,14 +1057,10 @@ SELECT ?nama ?alamat ?deskripsi ?bintang ?rating ?jumlahReview ?harga ?lat ?lon 
             animation: google.maps.Animation.DROP
         });
 
-        // Info window
         const infoContent = `
             <div style="font-family:Inter,sans-serif;padding:6px;min-width:210px;">
                 <div style="font-weight:800;font-size:14px;color:#1e1b4b;margin-bottom:4px;">${HOTEL_NAME}</div>
-                <div style="font-size:12px;color:#64748b;margin-bottom:8px;display:flex;align-items:center;gap:4px;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="#6366f1"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
-                    ${HOTEL_ADDR}
-                </div>
+                <div style="font-size:12px;color:#64748b;margin-bottom:8px;">${HOTEL_ADDR}</div>
                 <div style="background:linear-gradient(135deg,#4338ca,#6366f1);color:white;text-align:center;padding:6px 12px;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;"
                      onclick="document.getElementById('booking-card').scrollIntoView({behavior:'smooth'})">
                     Pesan Sekarang
@@ -1072,72 +1069,161 @@ SELECT ?nama ?alamat ?deskripsi ?bintang ?rating ?jumlahReview ?harga ?lat ?lon 
 
         const infoWindow = new google.maps.InfoWindow({ content: infoContent, maxWidth: 260 });
         infoWindow.open(map, marker);
-
         marker.addListener('click', () => infoWindow.open(map, marker));
 
-        // Street View panorama
         const svEl = document.getElementById('hotel-sv');
         if (svEl) {
-            panorama = new google.maps.StreetViewPanorama(
-                svEl,
-                {
-                    position: { lat: HOTEL_LAT, lng: HOTEL_LNG },
-                    pov: { heading: 34, pitch: 10 },
-                    zoom: 1,
-                    addressControl: false,
-                    linksControl: true,
-                    panControl: true,
-                }
-            );
+            panorama = new google.maps.StreetViewPanorama(svEl, {
+                position: { lat: HOTEL_LAT, lng: HOTEL_LNG },
+                pov: { heading: 34, pitch: 10 },
+                zoom: 1,
+                addressControl: false,
+                linksControl: true,
+                panControl: true
+            });
         }
 
-        // Auto-draw initial route from Medan City Center (Stasiun Medan KM 0)
+        // Rute awal menggunakan titik referensi Stasiun Medan.
         calculateRouteFromCoords(3.5928, 98.6748, 'Stasiun Kereta Api Medan (KM 0)');
     }
 
-    function calculateRouteFromCurrentLocation() {
+    function stepsListExists() {
+        return !!document.getElementById('hotel-steps-list');
+    }
+
+    function setGoogleMapsNavigationLink(originCoords, modeVal) {
+        const btn = document.getElementById('btn-open-gmaps-nav');
+        if (!btn || !originCoords) return;
+
+        const params = new URLSearchParams({
+            api: '1',
+            origin: `${originCoords.lat},${originCoords.lng}`,
+            destination: `${HOTEL_LAT},${HOTEL_LNG}`,
+            travelmode: modeVal === 'WALKING' ? 'walking' : 'driving'
+        });
+
+        btn.href = `https://www.google.com/maps/dir/?${params.toString()}`;
+        btn.target = '_blank';
+        btn.rel = 'noopener noreferrer';
+    }
+
+    function clearDisplayedRoute() {
+        if (directionsRenderer) {
+            try {
+                directionsRenderer.set('directions', null);
+            } catch (error) {
+                console.warn('Tidak dapat menghapus rute Google Directions:', error);
+            }
+        }
+
+        if (window.hotelPolyline) {
+            window.hotelPolyline.setMap(null);
+            window.hotelPolyline = null;
+        }
+
+        const stepsList = document.getElementById('hotel-steps-list');
+        const stepsCount = document.getElementById('hotel-steps-count');
+        if (stepsList) stepsList.innerHTML = '';
+        if (stepsCount) stepsCount.textContent = '0 Belokan';
+    }
+
+    function showRouteError(message) {
+        const banner = document.getElementById('route-result-banner');
+        const summary = document.getElementById('route-summary-text');
+        const origin = document.getElementById('route-origin-text');
+
+        if (banner) banner.classList.remove('hidden');
+        if (summary) summary.textContent = 'Rute belum dapat ditampilkan';
+        if (origin) origin.textContent = message;
+
+        const drawer = document.getElementById('hotel-steps-drawer');
+        if (drawer) drawer.classList.add('hidden');
+        hotelRouteStepsVisible = false;
+
+        const label = document.getElementById('hotel-steps-btn-label');
+        if (label) label.textContent = 'Petunjuk Belokan';
+    }
+
+    function setLocationButtonState(isLoading, success = false) {
         const btn = document.getElementById('btn-my-loc');
-        if (btn) btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Mendeteksi GPS...';
+        if (!btn) return;
+
+        if (isLoading) {
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Mendeteksi GPS...';
+        } else {
+            btn.disabled = false;
+            btn.innerHTML = success
+                ? '<i class="fa-solid fa-check text-emerald-500"></i> Posisi Terdeteksi'
+                : '<i class="fa-solid fa-location-crosshairs"></i> Dari Posisi Saya';
+        }
+    }
+
+    function calculateRouteFromCurrentLocation() {
+        setLocationButtonState(true);
+
+        if (!window.isSecureContext) {
+            setLocationButtonState(false);
+            showRouteError('GPS browser hanya dapat digunakan melalui HTTPS atau localhost. Buka website melalui koneksi HTTPS.');
+            return;
+        }
 
         if (!navigator.geolocation) {
-            fallbackToCenterPoint('Browser tidak mendukung GPS. Mengarahkan rute dari Stasiun Medan KM 0.');
+            setLocationButtonState(false);
+            showRouteError('Browser ini tidak mendukung GPS. Aktifkan lokasi atau pilih titik awal Medan yang tersedia.');
             return;
         }
 
         navigator.geolocation.getCurrentPosition(
             function(position) {
-                if (btn) btn.innerHTML = '<i class="fa-solid fa-check text-emerald-500"></i> Posisi Terdeteksi';
-                currentUserCoords = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude
-                };
+                const lat = position.coords.latitude;
+                const lng = position.coords.longitude;
+
+                if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
+                    setLocationButtonState(false);
+                    showRouteError('Koordinat GPS tidak valid. Coba deteksi lokasi sekali lagi.');
+                    return;
+                }
+
+                currentUserCoords = { lat, lng };
                 currentOriginTitle = 'Lokasi Anda Saat Ini';
+                setLocationButtonState(false, true);
                 drawRoute(currentUserCoords, currentOriginTitle);
             },
             function(error) {
-                console.warn('Geolocation denied or unavailable:', error.message);
-                fallbackToCenterPoint('GPS tidak diizinkan atau belum aktif. Menampilkan rute dari Stasiun Medan (Pusat Kota KM 0).');
+                setLocationButtonState(false);
+
+                let message = 'Lokasi tidak dapat dideteksi.';
+                if (error.code === error.PERMISSION_DENIED) {
+                    message = 'Izin lokasi ditolak. Izinkan akses lokasi untuk website ini melalui pengaturan browser.';
+                } else if (error.code === error.POSITION_UNAVAILABLE) {
+                    message = 'Informasi lokasi tidak tersedia. Periksa GPS atau layanan lokasi perangkat Anda.';
+                } else if (error.code === error.TIMEOUT) {
+                    message = 'Deteksi GPS melewati batas waktu. Coba lagi di area dengan sinyal lebih baik.';
+                }
+
+                console.warn('Geolocation gagal:', error.message);
+                showRouteError(message);
             },
-            { enableHighAccuracy: true, timeout: 8000, maximumAge: 60000 }
+            {
+                enableHighAccuracy: true,
+                timeout: 15000,
+                maximumAge: 0
+            }
         );
     }
 
-    function fallbackToCenterPoint(msg) {
-        const btn = document.getElementById('btn-my-loc');
-        if (btn) btn.innerHTML = '<i class="fa-solid fa-location-crosshairs"></i> Dari Posisi Saya';
-        currentUserCoords = { lat: 3.5928, lng: 98.6748 };
-        currentOriginTitle = 'Stasiun Medan (KM 0)';
-        drawRoute(currentUserCoords, currentOriginTitle);
-        
-        // Show subtle notification banner
-        const originText = document.getElementById('route-origin-text');
-        if (originText) {
-            originText.innerText = msg;
-        }
-    }
-
     function calculateRouteFromCoords(lat, lng, name) {
-        currentUserCoords = { lat: lat, lng: lng };
+        const parsedLat = Number(lat);
+        const parsedLng = Number(lng);
+
+        if (!Number.isFinite(parsedLat) || !Number.isFinite(parsedLng) ||
+            parsedLat < -90 || parsedLat > 90 || parsedLng < -180 || parsedLng > 180) {
+            showRouteError('Koordinat titik awal tidak valid.');
+            return;
+        }
+
+        currentUserCoords = { lat: parsedLat, lng: parsedLng };
         currentOriginTitle = name;
         drawRoute(currentUserCoords, name);
     }
@@ -1148,11 +1234,11 @@ SELECT ?nama ?alamat ?deskripsi ?bintang ?rating ?jumlahReview ?harga ?lat ?lon 
         }
     }
 
-    let hotelRouteStepsVisible = false;
     function toggleHotelRouteSteps() {
         const drawer = document.getElementById('hotel-steps-drawer');
         const label = document.getElementById('hotel-steps-btn-label');
         if (!drawer) return;
+
         hotelRouteStepsVisible = !hotelRouteStepsVisible;
         if (hotelRouteStepsVisible) {
             drawer.classList.remove('hidden');
@@ -1164,170 +1250,181 @@ SELECT ?nama ?alamat ?deskripsi ?bintang ?rating ?jumlahReview ?harga ?lat ?lon 
     }
 
     function drawRoute(originCoords, originName) {
-        if (!map || !directionsService) return;
+        if (!map || !directionsService || !directionsRenderer) {
+            showRouteError('Peta belum siap. Muat ulang halaman dan coba kembali.');
+            return;
+        }
+
+        if (!originCoords || !Number.isFinite(Number(originCoords.lat)) ||
+            !Number.isFinite(Number(originCoords.lng))) {
+            showRouteError('Koordinat lokasi awal tidak valid.');
+            return;
+        }
 
         switchToMap();
 
         const modeSelect = document.getElementById('travel-mode-select');
         const modeVal = modeSelect ? modeSelect.value : 'DRIVING';
-        const mode = modeVal === 'WALKING' 
-            ? google.maps.TravelMode.WALKING 
+        const mode = modeVal === 'WALKING'
+            ? google.maps.TravelMode.WALKING
             : google.maps.TravelMode.DRIVING;
+
+        clearDisplayedRoute();
+        setGoogleMapsNavigationLink(originCoords, modeVal);
 
         directionsService.route({
             origin: originCoords,
             destination: { lat: HOTEL_LAT, lng: HOTEL_LNG },
             travelMode: mode
         }, function(result, status) {
-            if (status === google.maps.DirectionsStatus.OK) {
+            if (status === google.maps.DirectionsStatus.OK && result.routes && result.routes.length) {
                 if (window.hotelPolyline) {
                     window.hotelPolyline.setMap(null);
                     window.hotelPolyline = null;
                 }
+
                 directionsRenderer.setDirections(result);
                 const leg = result.routes[0].legs[0];
 
                 const banner = document.getElementById('route-result-banner');
                 if (banner) banner.classList.remove('hidden');
-                
+
                 const summaryEl = document.getElementById('route-summary-text');
                 if (summaryEl) {
                     summaryEl.innerHTML = `
-                        Rute ${modeVal === 'WALKING' ? 'Jalan Kaki' : 'Berkendara'}: Jarak <strong>${leg.distance.text}</strong> (Estimasi <strong>${leg.duration.text}</strong>)
+                        Rute ${modeVal === 'WALKING' ? 'Jalan Kaki' : 'Berkendara'}:
+                        Jarak <strong>${leg.distance.text}</strong>
+                        (Estimasi <strong>${leg.duration.text}</strong>)
                     `;
                 }
 
                 const originEl = document.getElementById('route-origin-text');
-                if (originEl) {
-                    originEl.innerText = `Dari: ${originName} → Menuju ${HOTEL_NAME}`;
-                }
+                if (originEl) originEl.textContent = `Dari: ${originName} → Menuju ${HOTEL_NAME}`;
 
-                const gmapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${originCoords.lat},${originCoords.lng}&destination=${HOTEL_LAT},${HOTEL_LNG}&travelmode=${modeVal.toLowerCase()}`;
-                const gmapsBtn = document.getElementById('btn-open-gmaps-nav');
-                if (gmapsBtn) gmapsBtn.href = gmapsUrl;
-
-                // Populate In-App Turn Steps
                 const stepsList = document.getElementById('hotel-steps-list');
                 const stepsCount = document.getElementById('hotel-steps-count');
-                if (stepsList && leg.steps) {
-                    if (stepsCount) stepsCount.innerText = `${leg.steps.length} Belokan`;
-                    stepsList.innerHTML = leg.steps.map((st, i) => `
+                if (stepsListExists() && stepsList) {
+                    const steps = leg.steps || [];
+                    if (stepsCount) stepsCount.textContent = `${steps.length} Belokan`;
+                    stepsList.innerHTML = steps.map((st, i) => `
                         <div class="p-2 rounded-lg bg-slate-800/80 border border-slate-700/60 flex items-start gap-2.5">
-                            <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-[10px] flex items-center justify-center shrink-0 border border-emerald-500/30">
-                                ${i + 1}
-                            </span>
+                            <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-[10px] flex items-center justify-center shrink-0 border border-emerald-500/30">${i + 1}</span>
                             <div class="flex-1">
-                                <div class="text-white font-medium">${st.instructions}</div>
-                                <div class="text-[10px] text-slate-400 mt-0.5">${st.distance.text} · ${st.duration.text}</div>
+                                <div class="text-white font-medium">${st.instructions || 'Lanjutkan perjalanan'}</div>
+                                <div class="text-[10px] text-slate-400 mt-0.5">${st.distance?.text || ''} · ${st.duration?.text || ''}</div>
                             </div>
                         </div>
                     `).join('');
                 }
+
+                setLocationButtonState(false, currentOriginTitle === 'Lokasi Anda Saat Ini');
             } else {
-                console.warn('Google Directions failed (' + status + '), switching to OpenStreetMap OSRM...');
-                drawRouteWithOSRM(originCoords, originName, modeVal);
+                console.warn('Google Directions gagal:', status);
+
+                // OSRM publik hanya digunakan sebagai cadangan berkendara.
+                if (modeVal === 'DRIVING') {
+                    drawRouteWithOSRM(originCoords, originName, modeVal);
+                } else {
+                    clearDisplayedRoute();
+                    showRouteError(`Google Maps tidak menemukan rute jalan kaki (${status}). Gunakan tombol Buka di Google Maps untuk mencoba navigasi.`);
+                }
             }
         });
     }
 
     async function drawRouteWithOSRM(originCoords, originName, modeVal) {
-        try {
-            const profile = modeVal === 'WALKING' ? 'foot' : 'driving';
-            const url = `https://router.project-osrm.org/route/v1/${profile}/${originCoords.lng},${originCoords.lat};${HOTEL_LNG},${HOTEL_LAT}?overview=full&geometries=geojson&steps=true`;
-            const res = await fetch(url);
-            if (!res.ok) throw new Error('OSRM failed');
-            const data = await res.json();
-            if (data.code === 'Ok' && data.routes && data.routes.length > 0) {
-                const route = data.routes[0];
-                const coords = route.geometry.coordinates.map(c => ({ lat: c[1], lng: c[0] }));
-                const km = (route.distance / 1000).toFixed(1) + ' km';
-                const mins = Math.max(1, Math.round(route.duration / 60)) + ' mnt';
-
-                if (directionsRenderer) directionsRenderer.setDirections({ routes: [] });
-                if (window.hotelPolyline) window.hotelPolyline.setMap(null);
-
-                window.hotelPolyline = new google.maps.Polyline({
-                    path: coords,
-                    strokeColor: '#2563eb',
-                    strokeWeight: 6,
-                    strokeOpacity: 0.85,
-                    map: map
-                });
-
-                const bounds = new google.maps.LatLngBounds();
-                coords.forEach(pt => bounds.extend(pt));
-                map.fitBounds(bounds, { top: 40, right: 40, bottom: 40, left: 40 });
-
-                const banner = document.getElementById('route-result-banner');
-                if (banner) banner.classList.remove('hidden');
-
-                const summaryEl = document.getElementById('route-summary-text');
-                if (summaryEl) {
-                    summaryEl.innerHTML = `
-                        Rute ${modeVal === 'WALKING' ? 'Jalan Kaki' : 'Berkendara'} (OpenStreetMap): Jarak <strong>${km}</strong> (Estimasi <strong>${mins}</strong>)
-                    `;
-                }
-
-                const originEl = document.getElementById('route-origin-text');
-                if (originEl) {
-                    originEl.innerText = `Dari: ${originName} → Menuju ${HOTEL_NAME}`;
-                }
-
-                const gmapsBtn = document.getElementById('btn-open-gmaps-nav');
-                if (gmapsBtn) {
-                    gmapsBtn.href = `https://www.google.com/maps/dir/?api=1&origin=${originCoords.lat},${originCoords.lng}&destination=${HOTEL_LAT},${HOTEL_LNG}&travelmode=${modeVal.toLowerCase()}`;
-                }
-
-                const stepsList = document.getElementById('hotel-steps-list');
-                const stepsCount = document.getElementById('hotel-steps-count');
-                const steps = route.legs[0]?.steps || [];
-                if (stepsList && steps.length > 0) {
-                    if (stepsCount) stepsCount.innerText = `${steps.length} Belokan`;
-                    stepsList.innerHTML = steps.map((st, i) => {
-                        let inst = st.maneuver.type;
-                        if (st.maneuver.modifier) inst += ' ' + st.maneuver.modifier;
-                        if (st.name) inst += ' ke ' + st.name;
-                        const distStr = st.distance < 1000 ? Math.round(st.distance) + ' m' : (st.distance/1000).toFixed(1) + ' km';
-                        return `
-                            <div class="p-2 rounded-lg bg-slate-800/80 border border-slate-700/60 flex items-start gap-2.5">
-                                <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-[10px] flex items-center justify-center shrink-0 border border-emerald-500/30">
-                                    ${i + 1}
-                                </span>
-                                <div class="flex-1">
-                                    <div class="text-white font-medium">${inst.charAt(0).toUpperCase() + inst.slice(1)}</div>
-                                    <div class="text-[10px] text-slate-400 mt-0.5">${distStr}</div>
-                                </div>
-                            </div>
-                        `;
-                    }).join('');
-                }
-                return;
-            }
-        } catch (e) {
-            console.warn('OSRM error, drawing direct line', e);
+        if (modeVal !== 'DRIVING') {
+            showRouteError('Layanan rute cadangan hanya mendukung perjalanan berkendara. Gunakan Google Maps untuk rute jalan kaki.');
+            return;
         }
 
-        // Direct fallback
-        if (directionsRenderer) directionsRenderer.setDirections({ routes: [] });
-        if (window.hotelPolyline) window.hotelPolyline.setMap(null);
-        window.hotelPolyline = new google.maps.Polyline({
-            path: [originCoords, { lat: HOTEL_LAT, lng: HOTEL_LNG }],
-            strokeColor: '#2563eb',
-            strokeWeight: 6,
-            strokeOpacity: 0.85,
-            map: map
-        });
-        const bounds = new google.maps.LatLngBounds();
-        bounds.extend(originCoords);
-        bounds.extend({ lat: HOTEL_LAT, lng: HOTEL_LNG });
-        map.fitBounds(bounds, { top: 40, right: 40, bottom: 40, left: 40 });
+        try {
+            const url = `https://router.project-osrm.org/route/v1/driving/${originCoords.lng},${originCoords.lat};${HOTEL_LNG},${HOTEL_LAT}?overview=full&geometries=geojson&steps=true`;
+            const response = await fetch(url, {
+                headers: { 'Accept': 'application/json' }
+            });
 
-        const banner = document.getElementById('route-result-banner');
-        if (banner) banner.classList.remove('hidden');
-        const summaryEl = document.getElementById('route-summary-text');
-        if (summaryEl) summaryEl.innerHTML = `Navigasi Jalur Langsung`;
-        const originEl = document.getElementById('route-origin-text');
-        if (originEl) originEl.innerText = `Dari: ${originName} → Menuju ${HOTEL_NAME}`;
+            if (!response.ok) {
+                throw new Error(`OSRM HTTP ${response.status}`);
+            }
+
+            const data = await response.json();
+            if (data.code !== 'Ok' || !data.routes || !data.routes.length) {
+                throw new Error(data.message || data.code || 'Rute tidak ditemukan');
+            }
+
+            const route = data.routes[0];
+            const coords = route.geometry.coordinates.map(coord => ({
+                lat: coord[1],
+                lng: coord[0]
+            }));
+
+            if (!coords.length) {
+                throw new Error('Geometri rute kosong');
+            }
+
+            clearDisplayedRoute();
+
+            window.hotelPolyline = new google.maps.Polyline({
+                path: coords,
+                strokeColor: '#2563eb',
+                strokeWeight: 6,
+                strokeOpacity: 0.85,
+                map: map
+            });
+
+            const bounds = new google.maps.LatLngBounds();
+            coords.forEach(point => bounds.extend(point));
+            map.fitBounds(bounds, { top: 40, right: 40, bottom: 40, left: 40 });
+
+            const km = (route.distance / 1000).toFixed(1) + ' km';
+            const mins = Math.max(1, Math.round(route.duration / 60)) + ' mnt';
+
+            const banner = document.getElementById('route-result-banner');
+            if (banner) banner.classList.remove('hidden');
+
+            const summaryEl = document.getElementById('route-summary-text');
+            if (summaryEl) {
+                summaryEl.innerHTML = `Rute Berkendara (OpenStreetMap): Jarak <strong>${km}</strong> (Estimasi <strong>${mins}</strong>)`;
+            }
+
+            const originEl = document.getElementById('route-origin-text');
+            if (originEl) originEl.textContent = `Dari: ${originName} → Menuju ${HOTEL_NAME}`;
+
+            setGoogleMapsNavigationLink(originCoords, modeVal);
+
+            const stepsList = document.getElementById('hotel-steps-list');
+            const stepsCount = document.getElementById('hotel-steps-count');
+            const steps = route.legs?.[0]?.steps || [];
+
+            if (stepsListExists() && stepsList) {
+                if (stepsCount) stepsCount.textContent = `${steps.length} Belokan`;
+                stepsList.innerHTML = steps.map((step, index) => {
+                    const maneuver = step.maneuver || {};
+                    let instruction = maneuver.type || 'Lanjutkan perjalanan';
+                    if (maneuver.modifier) instruction += ' ' + maneuver.modifier;
+                    if (step.name) instruction += ' ke ' + step.name;
+
+                    const distanceText = step.distance < 1000
+                        ? Math.round(step.distance) + ' m'
+                        : (step.distance / 1000).toFixed(1) + ' km';
+
+                    return `
+                        <div class="p-2 rounded-lg bg-slate-800/80 border border-slate-700/60 flex items-start gap-2.5">
+                            <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-[10px] flex items-center justify-center shrink-0 border border-emerald-500/30">${index + 1}</span>
+                            <div class="flex-1">
+                                <div class="text-white font-medium">${instruction.charAt(0).toUpperCase() + instruction.slice(1)}</div>
+                                <div class="text-[10px] text-slate-400 mt-0.5">${distanceText}</div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+        } catch (error) {
+            console.warn('OSRM gagal:', error);
+            clearDisplayedRoute();
+            showRouteError('Layanan rute sementara tidak tersedia. Tekan "Buka di Google Maps" untuk melanjutkan navigasi.');
+        }
     }
 
     function switchToMap() {
@@ -1354,13 +1451,20 @@ SELECT ?nama ?alamat ?deskripsi ?bintang ?rating ?jumlahReview ?harga ?lat ?lon 
         if (btnStreet) btnStreet.classList.add('active');
         if (btnMap) btnMap.classList.remove('active');
         streetViewVisible = true;
+
         if (panorama) {
             setTimeout(() => google.maps.event.trigger(panorama, 'resize'), 100);
         }
     }
+
+    // Dipanggil oleh Google Maps jika autentikasi API key gagal.
+    window.gm_authFailure = function() {
+        showRouteError('Google Maps API key tidak valid atau tidak memiliki izin yang diperlukan.');
+    };
 </script>
 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key={{ config('services.google_maps.key') }}&callback=initMap&libraries=places,geometry">
+    src="https://maps.googleapis.com/maps/api/js?key={{ config('services.google_maps.key') }}&callback=initMap&libraries=places,geometry"
+    onerror="showRouteError('Google Maps gagal dimuat. Periksa koneksi internet atau konfigurasi API key.')">
 </script>
 
 <!-- ══════════════════════════════════════════════════════
