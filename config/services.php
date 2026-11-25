@@ -38,4 +38,17 @@ return [
     'google_maps' => [
         'key' => env('GOOGLE_MAPS_KEY', 'AIzaSyDoRCXpXYCd4Zo3K8LGs7FSswbr1qImHoQ'),
     ],
+
+    'gemini' => [
+        'enabled' => filter_var(env('GEMINI_ENABLED', true), FILTER_VALIDATE_BOOL),
+        'api_key' => env('GEMINI_API_KEY'),
+        'model' => env('GEMINI_MODEL', 'gemini-3-flash-preview'),
+        'fallback_models' => array_values(array_filter(array_map(
+            'trim',
+            explode(',', (string) env('GEMINI_FALLBACK_MODELS', 'gemini-3.1-flash-lite-preview,gemini-3.8-flash'))
+        ))),
+        'base_url' => env('GEMINI_BASE_URL', 'https://generativelanguage.googleapis.com/v1beta'),
+        'timeout' => (int) env('GEMINI_TIMEOUT', 15),
+        'ca_bundle' => env('GEMINI_CA_BUNDLE'),
+    ],
 ];

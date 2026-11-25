@@ -1,0 +1,2025 @@
+Folder PATH listing for volume OS
+Volume serial number is D003-D5B2
+C:.
+|   .editorconfig
+|   .env.example
+|   .gitattributes
+|   .gitignore
+|   .npmrc
+|   AGENTS.md
+|   artisan
+|   CLAUDE.md
+|   composer.json
+|   composer.lock
+|   package-lock.json
+|   package.json
+|   phpunit.xml
+|   postcss.config.js
+|   README.md
+|   struktur.txt
+|   tailwind.config.js
+|   vite.config.js
+|   
++---app
+|   +---Http
+|   |   +---Controllers
+|   |   |   |   Controller.php
+|   |   |   |   HotelController.php
+|   |   |   |   ProfileController.php
+|   |   |   |   SearchController.php
+|   |   |   |   
+|   |   |   \---Auth
+|   |   |           AuthenticatedSessionController.php
+|   |   |           ConfirmablePasswordController.php
+|   |   |           EmailVerificationNotificationController.php
+|   |   |           EmailVerificationPromptController.php
+|   |   |           NewPasswordController.php
+|   |   |           PasswordController.php
+|   |   |           PasswordResetLinkController.php
+|   |   |           RegisteredUserController.php
+|   |   |           VerifyEmailController.php
+|   |   |           
+|   |   \---Requests
+|   |       |   ProfileUpdateRequest.php
+|   |       |   
+|   |       \---Auth
+|   |               LoginRequest.php
+|   |               
+|   +---Models
+|   |       User.php
+|   |       
+|   +---Providers
+|   |       AppServiceProvider.php
+|   |       
+|   +---Services
+|   |       FusekiClient.php
+|   |       SparqlBuilder.php
+|   |       WikidataClient.php
+|   |       
+|   \---View
+|       \---Components
+|               AppLayout.php
+|               GuestLayout.php
+|               
++---bootstrap
+|   |   app.php
+|   |   providers.php
+|   |   
+|   \---cache
+|           .gitignore
+|           
++---config
+|       app.php
+|       auth.php
+|       cache.php
+|       database.php
+|       filesystems.php
+|       logging.php
+|       mail.php
+|       queue.php
+|       services.php
+|       session.php
+|       
++---database
+|   |   .gitignore
+|   |   
+|   +---factories
+|   |       UserFactory.php
+|   |       
+|   +---migrations
+|   |       0001_01_01_000000_create_users_table.php
+|   |       0001_01_01_000001_create_cache_table.php
+|   |       0001_01_01_000002_create_jobs_table.php
+|   |       
+|   \---seeders
+|           DatabaseSeeder.php
+|           
++---public
+|   |   .htaccess
+|   |   favicon.ico
+|   |   index.php
+|   |   robots.txt
+|   |   
+|   \---images
+|       |   placeholder.svg
+|       |   
+|       \---hotels
+|           |   511-ideal-stay.jpg
+|           |   aceh-house-hotel-setia-budi.jpg
+|           |   acirasa-hotel-medan.jpg
+|           |   adi-inn-homestay-redpartner.jpg
+|           |   adimulia-hotel-medan.jpg
+|           |   aiho-hotel-medan.jpg
+|           |   airy-medan-sunggal-sepakat-19.jpg
+|           |   alam-hotel-by-cordela.jpg
+|           |   alhesa-residence.jpg
+|           |   alpha-inn-hotel-medan.jpg
+|           |   altair-hotel-medan.jpg
+|           |   amaliun-hotel.jpg
+|           |   antares-hotel.jpg
+|           |   apartemen-1-kamar-berkapasitas-2-orang.jpg
+|           |   apartemen-1-kamar-berkapasitas-3-orang.jpg
+|           |   apartemen-1-kamar-berkapasitas-4-orang.jpg
+|           |   apartemen-10-kamar-yang-luas.jpg
+|           |   apartemen-12-kamar-berkapasitas-4-orang.jpg
+|           |   apartemen-2-kamar-berkapasitas-4-orang.jpg
+|           |   apartemen-3-kamar-berkapasitas-6-orang.jpg
+|           |   apartemen-4-kamar-berkapasitas-7-orang.jpg
+|           |   apartemen-ramah-hewan-peliharaan.jpg
+|           |   apartemen.jpg
+|           |   arabia-style-hotel-sriwijaya.jpg
+|           |   aresidencia-sei-padang.jpg
+|           |   aresidencia.jpg
+|           |   aryaduta-medan.jpg
+|           |   banana-homestay-medan.jpg
+|           |   barat-residence.jpg
+|           |   batik-hotel-medan.jpg
+|           |   batik-setia-budi.jpg
+|           |   ber-ac.jpg
+|           |   bobotel-gatot-subroto-medan.jpg
+|           |   cambridge-hotel-medan.jpg
+|           |   capital-o-1585-ring-road-residence.jpg
+|           |   capital-o-90447-kardopa-hotel-megapark.jpg
+|           |   cemara-inn.jpg
+|           |   cendana-homestay-syari-ah-medan.jpg
+|           |   cherry-pink-hotel.jpg
+|           |   cirasa-hotel-cafe.jpg
+|           |   closed-prop-inactive.jpg
+|           |   collection-o-millenium-inn-2.jpg
+|           |   cordela-hotel-medan.jpg
+|           |   cordelainn-millennium-medan.jpg
+|           |   cordex-hotel-medan.jpg
+|           |   d-primahotel-kualanamu-medan.jpg
+|           |   d-primahotel-medan.jpg
+|           |   dancenter-clove-nari-homestay.jpg
+|           |   de-paris-hotel.jpg
+|           |   deli-homestay-medan-city.jpg
+|           |   deli-hotel.jpg
+|           |   delto-guest-house.jpg
+|           |   depari-hotel.jpg
+|           |   desatu-hotel-medan.jpg
+|           |   dhaksina-hotel.jpg
+|           |   dnd-cafe-and-guest-house.jpg
+|           |   e-hotel-medan.jpg
+|           |   emerald-residence.jpg
+|           |   express-o-91979-penginapan-tondong-ta.jpg
+|           |   favehotel-s-parman-medan.jpg
+|           |   four-points-by-sheraton-medan.jpg
+|           |   gandhi-inn.jpg
+|           |   gintsuka-hostel.jpg
+|           |   glamour-hotel-spa.jpg
+|           |   golden-eleven-hotel-medan.jpg
+|           |   graha-aisyah.jpg
+|           |   grand-central-hotel.jpg
+|           |   grand-central-premier-hotel-medan.jpg
+|           |   grand-city-hall-medan.jpg
+|           |   grand-impression-hotel.jpg
+|           |   grand-inna-medan.jpg
+|           |   grand-kanaya-hotel.jpg
+|           |   grand-mercure-maha-cipta-medan-angkasa.jpg
+|           |   grand-sakura-hotel.jpg
+|           |   green-village-kost-medan.jpg
+|           |   griya-hotel.jpg
+|           |   guest-house-restu-ibu.jpg
+|           |   hallo-bisa-daptkam-nomor-wa.jpg
+|           |   hanlis-house-medan.jpg
+|           |   harga-menarik.jpg
+|           |   harper-wahid-hasyim-medan.jpg
+|           |   hermes-palace-hotel-medan.jpg
+|           |   hotel-0-graha-aisyah.jpg
+|           |   hotel-61-medan.jpg
+|           |   hotel-ardina.jpg
+|           |   hotel-binaka-medan.jpg
+|           |   hotel-bumi-malaya-redpartner.jpg
+|           |   hotel-cahaya.jpg
+|           |   hotel-citi-international-sun-yat-sen.jpg
+|           |   hotel-danau-toba-international.jpg
+|           |   hotel-emerald-garden.jpg
+|           |   hotel-grand-antares.jpg
+|           |   hotel-grand-bandara.jpg
+|           |   hotel-grand-darussalam-medan.jpg
+|           |   hotel-grand-lubuk-raya.jpg
+|           |   hotel-grand-nusantara.jpg
+|           |   hotel-grand-sirao.jpg
+|           |   hotel-grandhika-setiabudi-medan.jpg
+|           |   hotel-halim-perdana.jpg
+|           |   hotel-huber-medan.jpg
+|           |   hotel-islami-aceh-house.jpg
+|           |   hotel-menara-lexus.jpg
+|           |   hotel-mutiara-hawaii.jpg
+|           |   hotel-mutiara-hijau-suites.jpg
+|           |   hotel-nidia-nugraha.jpg
+|           |   hotel-o-juma-ciger-hotel.jpg
+|           |   hotel-o-kapten-muslim-residence.jpg
+|           |   hotel-o-medan-timur-near-rsu-madani.jpg
+|           |   hotel-o-near-ring-road-city-walks.jpg
+|           |   hotel-o-near-ringroad-city-walk-xxi.jpg
+|           |   hotel-o.jpg
+|           |   hotel-palace-inn.jpg
+|           |   hotel-paninda.jpg
+|           |   hotel-robinson.jpg
+|           |   hotel-santika-premiere-dyandra-medan.jpg
+|           |   hotel-syariah-grand-jamee.jpg
+|           |   hotel.jpg
+|           |   ibis-styles-medan-pattimura.jpg
+|           |   jangga-house.jpg
+|           |   jiyo-boutique-inn.jpg
+|           |   john-s-pardede-residence.jpg
+|           |   jw-marriott-hotel-medan.jpg
+|           |   kailani-inn.jpg
+|           |   kama-hotel.jpg
+|           |   kamani-homestay-syariah.jpg
+|           |   kanasha-hotel-islami.jpg
+|           |   karibia-boutique-hotel.jpg
+|           |   kenanga-city-hotel.jpg
+|           |   king-s-palace-medan-redpartner.jpg
+|           |   kost-teratai.jpg
+|           |   lepolonia-hotel-convention.jpg
+|           |   lexus-guest-house-medan.jpg
+|           |   lexus-hotel-medan.jpg
+|           |   lonari-inn-hotel.jpg
+|           |   m-hotel-medan.jpg
+|           |   madani-hotel-medan.jpg
+|           |   mb-apartments-hotel.jpg
+|           |   mbs-hotel-medan.jpg
+|           |   medan-baru-guest-house.jpg
+|           |   motel-danau-toba-international.jpg
+|           |   new-detonga-hotel.jpg
+|           |   new-gentala-hotel-redpartner.jpg
+|           |   nisura-homestay.jpg
+|           |   nivia-hotel.jpg
+|           |   nonie-s-huis-guest-house.jpg
+|           |   nusa-hotel.jpg
+|           |   o2-residence.jpg
+|           |   odua-golden-mansyur-medan.jpg
+|           |   orinko-city-hotel.jpg
+|           |   oyo-1274-prime-inn.jpg
+|           |   oyo-1811-citra-anggrek.jpg
+|           |   oyo-727-merlion-hotel.jpg
+|           |   oyo-849-palem-mas-garden.jpg
+|           |   oyo-90245-tridasa.jpg
+|           |   oyo-92075-sky-residence-mawar.jpg
+|           |   oyo-92881-nany-ayahanda-syariah.jpg
+|           |   oyo-94712-surau-guest-house.jpg
+|           |   oyo.jpg
+|           |   palem-mas-garden-redpartner.jpg
+|           |   pandu-inn.jpg
+|           |   pasola-guest-house.jpg
+|           |   penginapan-roemah-54.jpg
+|           |   permata-inn.jpg
+|           |   pia-hotel-medan.jpg
+|           |   pondok-wisata-istana-xi.jpg
+|           |   premium-inn-cemara-asri.jpg
+|           |   prime-inn-near-jalan-sekip-mitra-reddoorz.jpg
+|           |   putra-mulia-hotel.jpg
+|           |   qinara-inn.jpg
+|           |   raz-hotel-and-convention.jpg
+|           |   red-doorz.jpg
+|           |   reddoorz-cbd-polonia-medan.jpg
+|           |   reddoorz-golden-cempaka-medan.jpg
+|           |   reddoorz-hostel-capsule-inn-medan.jpg
+|           |   reddoorz-hotel-jimart-komplek-mmtc.jpg
+|           |   reddoorz-jalan-brigjend-katamso-medan-2.jpg
+|           |   reddoorz-jalan-hm-yamin-medan.jpg
+|           |   reddoorz-jalan-japaris-medan.jpg
+|           |   reddoorz-jalan-krakatau-medan.jpg
+|           |   reddoorz-jalan-wahidin-medan.jpg
+|           |   reddoorz-jamin-ginting-medan.jpg
+|           |   reddoorz-jotel-guest-house.jpg
+|           |   reddoorz-medan-johor-2.jpg
+|           |   reddoorz-medan-johor.jpg
+|           |   reddoorz-near-gajah-mada-park-medan.jpg
+|           |   reddoorz-near-grand-palladium.jpg
+|           |   reddoorz-near-hermes-place-polonia-medan.jpg
+|           |   reddoorz-near-manhattan-times-square-medan-2.jpg
+|           |   reddoorz-near-medan-amplas.jpg
+|           |   reddoorz-near-rs-royal-prima-medan-2.jpg
+|           |   reddoorz-near-rs-setiabudi-medan.jpg
+|           |   reddoorz-near-rs-usu-medan-3.jpg
+|           |   reddoorz-near-uin-sumatera-utara.jpg
+|           |   reddoorz-near-uisu-teladan-medan.jpg
+|           |   reddoorz-near-waterpark-citra-garden-medan.jpg
+|           |   reddoorz-plus-cemara-asri-medan.jpg
+|           |   reddoorz-plus-centrium-katamso-medan.jpg
+|           |   reddoorz-plus-jalan-adam-malik-medan.jpg
+|           |   reddoorz-plus-jalan-letda-sujono-medan-2.jpg
+|           |   reddoorz-plus-near-rs-usu-medan-2.jpg
+|           |   reddoorz-plus-near-thamrin-plaza-medan.jpg
+|           |   reddoorz-plus-near-unimed-medan.jpg
+|           |   reddoorz-plus-sempurna-inn-medan.jpg
+|           |   reddoorz-plus-setiabudi-medan-4.jpg
+|           |   reddoorz-plus-simpang-usu-medan.jpg
+|           |   reddoorz-premium-near-centre-point-mall-medan.jpg
+|           |   reddoorz-premium-setiabudi-medan.jpg
+|           |   reddoorz-seindo-hotel-medan.jpg
+|           |   reddoorz-sekip-medan.jpg
+|           |   reddoorz-sentosa-jaya-helvetia.jpg
+|           |   reddoorz-syariah-near-stadion-teladan-medan.jpg
+|           |   reddoorz-teratai-homestay-medan-amplas.jpg
+|           |   reddoorz-theodore-homestay-medan.jpg
+|           |   reddoorz-vania-residence-medan.jpg
+|           |   reddoorz-wika-wiki-homestay.jpg
+|           |   rejoss-lux-kost.jpg
+|           |   residence-anugrah.jpg
+|           |   residence-mojopahit.jpg
+|           |   residence-puri-hotel-medan.jpg
+|           |   roemah-moesi.jpg
+|           |   rose-house-redpartner.jpg
+|           |   royal-suite-condotel.jpg
+|           |   rumah-1-kamar-berkapasitas-2-orang.jpg
+|           |   rumah-10-kamar-yang-luas.jpg
+|           |   rumah.jpg
+|           |   saka-hotel-medan.jpg
+|           |   sans-finest-hotel.jpg
+|           |   sapadia-clubhouse-medan.jpg
+|           |   sapadia-guest-house-hm-joni.jpg
+|           |   sapadia-guest-house-sindoro.jpg
+|           |   sapadia-guest-house-syailendra.jpg
+|           |   sapadia-wisma-sei-silau.jpg
+|           |   sarapan.jpg
+|           |   saudara-risidence.jpg
+|           |   selecta.jpg
+|           |   skyview-setiabudi-apartment.jpg
+|           |   staigo-at-sg-premium.jpg
+|           |   star-inn.jpg
+|           |   strategic-apartment.jpg
+|           |   sulthan-hotel-medan.jpg
+|           |   sunny-inn.jpg
+|           |   super-oyo-283-helvetia-residence.jpg
+|           |   super-oyo-91120-d-ritz-homestay.jpg
+|           |   swasana-hotel-medan.jpg
+|           |   swiss-belinn-gajah-mada-medan.jpg
+|           |   swiss-belinn-medan.jpg
+|           |   the-castle-medan-villa.jpg
+|           |   the-k-hotel.jpg
+|           |   the-reiz-suites-artotel-curated-medan.jpg
+|           |   tobali-guest-house.jpg
+|           |   tokidoki-x-amir-hamzah-residence-123.jpg
+|           |   travelbiz-hotel.jpg
+|           |   travellers-suites-medan.jpg
+|           |   urbanview-hotel-bilal-medan-by-reddoorz.jpg
+|           |   urbanview-hotel-md-residence.jpg
+|           |   urbanview-os-residence-medan-by-reddoorz.jpg
+|           |   vandolia-guest-house-medan-redpartner.jpg
+|           |   vila-berkapasitas-3-orang.jpg
+|           |   vivo-stay.jpg
+|           |   w-villa.jpg
+|           |   wesly-house.jpg
+|           |   wi-fi-gratis.jpg
+|           |   wira-guesthouse.jpg
+|           |   wisma-hari-kota.jpg
+|           |   wisma-sederhana-medan-mitra-reddoorz.jpg
+|           |   wisma-sudirman.jpg
+|           |   wisma-syariah-uinsu-medan-redpartner.jpg
+|           |   z-suites-hotel.jpg
+|           |   zakia-hotel.jpg
+|           |   
+|           +---511idealstay
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---acehhousehotelsetiabudi
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---acirasahotelmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---adiinnhomestayredpartner
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---adimuliahotelmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       7.jpg
+|           |       8.jpg
+|           |       
+|           +---aihohotelmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---airymedansunggalsepakat19
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---alamhotelbycordela
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       
+|           +---alhesaresidence
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---alphainnhotelmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---altairhotelmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---amaliunhotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---antareshotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---apartemen
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       7.jpg
+|           |       8.jpg
+|           |       
+|           +---apartemen10kamaryangluas
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---apartemen12kamarberkapasitas4orang
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---apartemen1kamarberkapasitas2orang
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       7.jpg
+|           |       8.jpg
+|           |       
+|           +---apartemen1kamarberkapasitas3orang
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       7.jpg
+|           |       8.jpg
+|           |       
+|           +---apartemen1kamarberkapasitas4orang
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       7.jpg
+|           |       8.jpg
+|           |       
+|           +---apartemen2kamarberkapasitas4orang
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       
+|           +---apartemen3kamarberkapasitas6orang
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---apartemen4kamarberkapasitas7orang
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---apartemenramahhewanpeliharaan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       6.jpg
+|           |       7.jpg
+|           |       8.jpg
+|           |       
+|           +---arabiastylehotelsriwijaya
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---aresidencia
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---aresidenciaseipadang
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---aryadutamedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       7.jpg
+|           |       
+|           +---bananahomestaymedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---baratresidence
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---batikhotelmedan
+|           |       1.jpg
+|           |       
+|           +---batiksetiabudi
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---berac
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---bobotelgatotsubrotomedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---cambridgehotelmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---capitalo1585ringroadresidence
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---capitalo90447kardopahotelmegapark
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---cemarainn
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---cendanahomestaysyariahmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---cherrypinkhotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---cirasahotelcafe
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---closedpropinactive
+|           |       1.jpg
+|           |       
+|           +---collectionomilleniuminn2
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---cordelahotelmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---cordelainnmillenniummedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---cordexhotelmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---dancenterclovenarihomestay
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---delihomestaymedancity
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---delihotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---deltoguesthouse
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---deparihotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---deparishotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---desatuhotelmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---dhaksinahotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---dndcafeandguesthouse
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---dprimahotelkualanamumedan
+|           |       1.jpg
+|           |       
+|           +---dprimahotelmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---ehotelmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       
+|           +---emeraldresidence
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---expresso91979penginapantondongta
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---favehotelsparmanmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---fourpointsbysheratonmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---gandhiinn
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---gintsukahostel
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---glamourhotelspa
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---goldenelevenhotelmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---grahaaisyah
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---grandcentralhotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---grandcentralpremierhotelmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       7.jpg
+|           |       
+|           +---grandcityhallmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       7.jpg
+|           |       
+|           +---grandimpressionhotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---grandinnamedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---grandkanayahotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---grandmercuremahaciptamedanangkasa
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---grandsakurahotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       7.jpg
+|           |       
+|           +---greenvillagekostmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---griyahotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---guesthouserestuibu
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---hallobisadaptkamnomorwa
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---hanlishousemedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---hargamenarik
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---harperwahidhasyimmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---hermespalacehotelmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       7.jpg
+|           |       
+|           +---hotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       
+|           +---hotel0grahaaisyah
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---hotel61medan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---hotelardina
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---hotelbinakamedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---hotelbumimalayaredpartner
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---hotelcahaya
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---hotelcitiinternationalsunyatsen
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---hoteldanautobainternational
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---hotelemeraldgarden
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       
+|           +---hotelgrandantares
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---hotelgrandbandara
+|           |       1.jpg
+|           |       
+|           +---hotelgranddarussalammedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---hotelgrandhikasetiabudimedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---hotelgrandlubukraya
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---hotelgrandnusantara
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---hotelgrandsirao
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---hotelhalimperdana
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---hotelhubermedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---hotelislamiacehhouse
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---hotelmenaralexus
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---hotelmutiarahawaii
+|           |       1.jpg
+|           |       
+|           +---hotelmutiarahijausuites
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---hotelnidianugraha
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       
+|           +---hotelo
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---hotelojumacigerhotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---hotelokaptenmuslimresidence
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       7.jpg
+|           |       8.jpg
+|           |       
+|           +---hotelomedantimurnearrsumadani
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---hotelonearringroadcitywalks
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---hotelonearringroadcitywalkxxi
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---hotelpalaceinn
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---hotelpaninda
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---hotelrobinson
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---hotelsantikapremieredyandramedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---hotelsyariahgrandjamee
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---ibisstylesmedanpattimura
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---janggahouse
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---jiyoboutiqueinn
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---johnspardederesidence
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---jwmarriotthotelmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       7.jpg
+|           |       
+|           +---kailaniinn
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---kamahotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       7.jpg
+|           |       
+|           +---kamanihomestaysyariah
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---kanashahotelislami
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---karibiaboutiquehotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---kenangacityhotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---kingspalacemedanredpartner
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---kostteratai
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---lepoloniahotelconvention
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---lexusguesthousemedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---lexushotelmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---lonariinnhotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---madanihotelmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       
+|           +---mbapartmentshotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---mbshotelmedan
+|           |       1.jpg
+|           |       
+|           +---medanbaruguesthouse
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---mhotelmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---moteldanautobainternational
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---newdetongahotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---newgentalahotelredpartner
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---nisurahomestay
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       
+|           +---niviahotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       7.jpg
+|           |       
+|           +---nonieshuisguesthouse
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---nusahotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---o2residence
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---oduagoldenmansyurmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---orinkocityhotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---oyo
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---oyo1274primeinn
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---oyo1811citraanggrek
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---oyo727merlionhotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---oyo849palemmasgarden
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---oyo90245tridasa
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---oyo92075skyresidencemawar
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---oyo92881nanyayahandasyariah
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---oyo94712surauguesthouse
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---palemmasgardenredpartner
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---panduinn
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---pasolaguesthouse
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---penginapanroemah54
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---permatainn
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---piahotelmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---pondokwisataistanaxi
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---premiuminncemaraasri
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---primeinnnearjalansekipmitrareddoorz
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---putramuliahotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---qinarainn
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---razhotelandconvention
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---reddoorz
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---reddoorzcbdpoloniamedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorzgoldencempakamedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorzhostelcapsuleinnmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---reddoorzhoteljimartkomplekmmtc
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorzjalanbrigjendkatamsomedan2
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---reddoorzjalanhmyaminmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---reddoorzjalanjaparismedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---reddoorzjalankrakataumedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorzjalanwahidinmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       
+|           +---reddoorzjamingintingmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       7.jpg
+|           |       
+|           +---reddoorzjotelguesthouse
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorzmedanjohor
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorzmedanjohor2
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---reddoorzneargajahmadaparkmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorzneargrandpalladium
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---reddoorznearhermesplacepoloniamedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorznearmanhattantimessquaremedan2
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorznearmedanamplas
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorznearrsroyalprimamedan2
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorznearrssetiabudimedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorznearrsusumedan3
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorznearuinsumaterautara
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorznearuisuteladanmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorznearwaterparkcitragardenmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---reddoorzpluscemaraasrimedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorzpluscentriumkatamsomedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorzplusjalanadammalikmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorzplusjalanletdasujonomedan2
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorzplusnearrsusumedan2
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorzplusnearthamrinplazamedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---reddoorzplusnearunimedmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorzplussempurnainnmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorzplussetiabudimedan4
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorzplussimpangusumedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       7.jpg
+|           |       
+|           +---reddoorzpremiumnearcentrepointmallmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorzpremiumsetiabudimedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorzseindohotelmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---reddoorzsekipmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       7.jpg
+|           |       
+|           +---reddoorzsentosajayahelvetia
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---reddoorzsyariahnearstadionteladanmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorzterataihomestaymedanamplas
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---reddoorztheodorehomestaymedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorzvaniaresidencemedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---reddoorzwikawikihomestay
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---rejossluxkost
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---residenceanugrah
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---residencemojopahit
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---residencepurihotelmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---roemahmoesi
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---rosehouseredpartner
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---royalsuitecondotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---rumah
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---rumah10kamaryangluas
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       7.jpg
+|           |       8.jpg
+|           |       
+|           +---rumah1kamarberkapasitas2orang
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---sakahotelmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---sansfinesthotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---sapadiaclubhousemedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---sapadiaguesthousehmjoni
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---sapadiaguesthousesindoro
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---sapadiaguesthousesyailendra
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---sapadiawismaseisilau
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---sarapan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       7.jpg
+|           |       8.jpg
+|           |       
+|           +---saudararisidence
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       
+|           +---selecta
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---skyviewsetiabudiapartment
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---staigoatsgpremium
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---starinn
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---strategicapartment
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---sulthanhotelmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---sunnyinn
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---superoyo283helvetiaresidence
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---superoyo91120dritzhomestay
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---swasanahotelmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---swissbelinngajahmadamedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---swissbelinnmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---thecastlemedanvilla
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---thekhotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---thereizsuitesartotelcuratedmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       7.jpg
+|           |       8.jpg
+|           |       
+|           +---tobaliguesthouse
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---tokidokixamirhamzahresidence123
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---travelbizhotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---travellerssuitesmedan
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---urbanviewhotelbilalmedanbyreddoorz
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---urbanviewhotelmdresidence
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---urbanviewosresidencemedanbyreddoorz
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---vandoliaguesthousemedanredpartner
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---vilaberkapasitas3orang
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---vivostay
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---weslyhouse
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---wifigratis
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       7.jpg
+|           |       8.jpg
+|           |       
+|           +---wiraguesthouse
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---wismaharikota
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       6.jpg
+|           |       
+|           +---wismasederhanamedanmitrareddoorz
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       
+|           +---wismasudirman
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---wismasyariahuinsumedanredpartner
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           +---wvilla
+|           |       1.jpg
+|           |       2.jpg
+|           |       3.jpg
+|           |       4.jpg
+|           |       5.jpg
+|           |       
+|           +---zakiahotel
+|           |       1.jpg
+|           |       2.jpg
+|           |       
+|           \---zsuiteshotel
+|                   1.jpg
+|                   2.jpg
+|                   
++---resources
+|   +---css
+|   |       app.css
+|   |       
+|   +---js
+|   |       app.js
+|   |       
+|   \---views
+|       |   dashboard.blade.php
+|       |   welcome.blade.php
+|       |   
+|       +---auth
+|       |       confirm-password.blade.php
+|       |       forgot-password.blade.php
+|       |       login.blade.php
+|       |       register.blade.php
+|       |       reset-password.blade.php
+|       |       verify-email.blade.php
+|       |       
+|       +---components
+|       |       application-logo.blade.php
+|       |       auth-session-status.blade.php
+|       |       danger-button.blade.php
+|       |       dropdown-link.blade.php
+|       |       dropdown.blade.php
+|       |       input-error.blade.php
+|       |       input-label.blade.php
+|       |       modal.blade.php
+|       |       nav-link.blade.php
+|       |       primary-button.blade.php
+|       |       responsive-nav-link.blade.php
+|       |       secondary-button.blade.php
+|       |       text-input.blade.php
+|       |       
+|       +---hotel
+|       |       show.blade.php
+|       |       
+|       +---layouts
+|       |       app.blade.php
+|       |       guest.blade.php
+|       |       navigation.blade.php
+|       |       
+|       +---profile
+|       |   |   edit.blade.php
+|       |   |   
+|       |   \---partials
+|       |           delete-user-form.blade.php
+|       |           update-password-form.blade.php
+|       |           update-profile-information-form.blade.php
+|       |           
+|       \---search
+|               index.blade.php
+|               
++---routes
+|       auth.php
+|       console.php
+|       debug.php
+|       web.php
+|       
++---semantic
+|   +---rdf
+|   |   |   roomify.ttl
+|   |   |   
+|   |   \---queries
+|   |           demo_queries.sparql
+|   |           
+|   \---scrape
+|           build_master_v2.py
+|           build_rdf.py
+|           clean-again.py
+|           clean_master.py
+|           Data_scraping_hotel-medan.zip
+|           enrich_hotels.py
+|           fetch_gallery.py
+|           fetch_images.py
+|           final_clean.py
+|           fix_data.py
+|           fix_master.py
+|           google-2026-11-04.csv
+|           google-2026-Hotelpt1.csv
+|           google-2026-Hotelpt2.csv
+|           google-2026-Hotelpt3.csv
+|           google-2026-pt10.csv
+|           google-2026-pt11.csv
+|           google-2026-pt12.csv
+|           google-2026-pt13.csv
+|           google-2026-pt14.csv
+|           google-2026-pt15.csv
+|           google-2026-pt16.csv
+|           google-2026-pt17.csv
+|           google-2026-pt18.csv
+|           google-2026-pt19.csv
+|           google-2026-pt4.csv
+|           google-2026-pt5.csv
+|           google-2026-pt6.csv
+|           google-2026-pt7.csv
+|           google-2026-pt8.csv
+|           google-2026-pt9.csv
+|           hotels_complete.json
+|           hotels_enriched.json
+|           hotels_final.json
+|           hotels_master.json
+|           hotels_master_backup.json
+|           hotels_master_clean.json
+|           hotels_master_cleaned.json
+|           hotels_master_final.json
+|           hotels_medan.csv
+|           hotels_ready.json
+|           hotels_vip.json
+|           inject_vip.py
+|           patch_master.py
+|           scrape_medan.py
+|           testdaribooking.py
+|           traveloka-2026-11-04.csv
+|           
++---storage
+|   +---app
+|   |   |   .gitignore
+|   |   |   
+|   |   +---private
+|   |   |       .gitignore
+|   |   |       
+|   |   \---public
+|   |           .gitignore
+|   |           
+|   +---framework
+|   |   |   .gitignore
+|   |   |   
+|   |   +---cache
+|   |   |   |   .gitignore
+|   |   |   |   
+|   |   |   +---data
+|   |   |   |       .gitignore
+|   |   |   |       
+|   |   |   \---locks
+|   |   |           .gitignore
+|   |   |           
+|   |   +---sessions
+|   |   |       .gitignore
+|   |   |       
+|   |   +---testing
+|   |   |       .gitignore
+|   |   |       
+|   |   \---views
+|   |           .gitignore
+|   |           
+|   \---logs
+|           .gitignore
+|           
+\---tests
+    |   TestCase.php
+    |   
+    +---Feature
+    |   |   ExampleTest.php
+    |   |   ProfileTest.php
+    |   |   
+    |   \---Auth
+    |           AuthenticationTest.php
+    |           EmailVerificationTest.php
+    |           PasswordConfirmationTest.php
+    |           PasswordResetTest.php
+    |           PasswordUpdateTest.php
+    |           RegistrationTest.php
+    |           
+    \---Unit
+            ExampleTest.php
+            
