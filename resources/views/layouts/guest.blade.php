@@ -46,8 +46,15 @@
             }
         }
         function getAutoTimeTheme() {
-            const hour = new Date().getHours();
-            return (hour >= 6 && hour < 18) ? 'light' : 'dark';
+            try {
+                const str = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Jakarta', hour: 'numeric', hour12: false }).format(new Date());
+                const h = parseInt(str, 10);
+                const hour = isNaN(h) ? new Date().getHours() : h;
+                return (hour >= 6 && hour < 18) ? 'light' : 'dark';
+            } catch (e) {
+                const hour = (new Date().getUTCHours() + 7) % 24;
+                return (hour >= 6 && hour < 18) ? 'light' : 'dark';
+            }
         }
         function initTheme() {
             if (localStorage.getItem('theme_user_override') === 'true' && !localStorage.getItem('theme_mode')) {

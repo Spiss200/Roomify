@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Pesan Hotel – Roomify</title>
     <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
     <link rel="alternate icon" href="{{ asset('favicon.ico') }}">
@@ -22,8 +23,15 @@
             }
         }
         function getAutoTimeTheme() {
-            const hour = new Date().getHours();
-            return (hour >= 6 && hour < 18) ? 'light' : 'dark';
+            try {
+                const str = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Jakarta', hour: 'numeric', hour12: false }).format(new Date());
+                const h = parseInt(str, 10);
+                const hour = isNaN(h) ? new Date().getHours() : h;
+                return (hour >= 6 && hour < 18) ? 'light' : 'dark';
+            } catch (e) {
+                const hour = (new Date().getUTCHours() + 7) % 24;
+                return (hour >= 6 && hour < 18) ? 'light' : 'dark';
+            }
         }
         function initTheme() {
             if (localStorage.getItem('theme_user_override') === 'true' && !localStorage.getItem('theme_mode')) {
@@ -427,19 +435,6 @@
 </script>
 
     <!-- Branded Footer -->
-    <footer class="mt-20 border-t border-slate-200 dark:border-slate-800 py-10" style="background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-            <div class="flex items-center justify-center gap-2 mb-3">
-                <span class="w-7 h-7 rounded-lg bg-blue-600 text-white flex items-center justify-center font-black text-sm">R</span>
-                <span class="font-black text-lg tracking-tight">Roomify</span>
-            </div>
-            <p class="text-xs text-blue-200 max-w-md mx-auto leading-relaxed">
-                Platform Pencarian & Navigasi Hotel Berbasis Web Semantik (Ontologi RDF, SPARQL Triplestore & Google Maps / OpenStreetMap) di Kota Medan.
-            </p>
-            <div class="mt-6 pt-4 border-t border-white/10 text-[11px] text-blue-300">
-                &copy; {{ date('Y') }} Roomify Medan. Seluruh hak cipta dilindungi undang-undang.
-            </div>
-        </div>
-    </footer>
+    <x-footer />
 </body>
 </html>

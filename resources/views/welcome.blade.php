@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Roomify – Pesan Hotel Nyaman & Murah di Kota Medan</title>
     <meta name="description" content="Temukan 312 hotel terbaik di Medan dekat landmark populer seperti Istana Maimun, Sun Plaza, dan Stasiun Kereta Api. Garansi harga hemat, check-in instan, dan navigasi Google Maps.">
 
@@ -62,8 +63,15 @@
             }
         }
         function getAutoTimeTheme() {
-            const hour = new Date().getHours();
-            return (hour >= 6 && hour < 18) ? 'light' : 'dark';
+            try {
+                const str = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Jakarta', hour: 'numeric', hour12: false }).format(new Date());
+                const h = parseInt(str, 10);
+                const hour = isNaN(h) ? new Date().getHours() : h;
+                return (hour >= 6 && hour < 18) ? 'light' : 'dark';
+            } catch (e) {
+                const hour = (new Date().getUTCHours() + 7) % 24;
+                return (hour >= 6 && hour < 18) ? 'light' : 'dark';
+            }
         }
         function initTheme() {
             // Clear legacy lock
@@ -812,86 +820,7 @@
 {{-- ═══════════════════════════════════════════════════════════
      FOOTER
 ═══════════════════════════════════════════════════════════ --}}
-<footer class="bg-slate-950 text-slate-400 border-t border-white/10 pt-16 pb-12 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-
-            <!-- Col 1: Brand Info -->
-            <div class="space-y-4">
-                <div class="flex items-center gap-2.5">
-                    <div class="w-9 h-9">
-                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow">
-                            <defs>
-                                <linearGradient id="ft-bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="#4F46E5"/>
-                                    <stop offset="50%" stop-color="#7C3AED"/>
-                                    <stop offset="100%" stop-color="#EC4899"/>
-                                </linearGradient>
-                            </defs>
-                            <rect width="48" height="48" rx="14" fill="url(#ft-bg-grad)"/>
-                            <path d="M12 36V22C12 15.3726 17.3726 10 24 10C30.6274 10 36 15.3726 36 22V36" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
-                            <path d="M18 36V18H25.5C28 18 29.5 19.5 29.5 22C29.5 24.5 28 26 25.5 26H18M24 26L30 36" stroke="#FFFFFF" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <span class="text-xl font-black text-white">Roomify</span>
-                </div>
-                <p class="text-xs text-slate-400 leading-relaxed">
-                    Platform pemesanan hotel terbaik di Kota Medan. Temukan 312 pilihan akomodasi nyaman dekat landmark bersejarah, pusat bisnis, dan kuliner khas Medan dengan garansi harga hemat dan navigasi Google Maps presisi.
-                </p>
-                <div class="flex items-center gap-3 text-slate-400 text-sm">
-                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="hover:text-white transition"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
-            </div>
-
-            <!-- Col 2: Landmark Populer -->
-            <div>
-                <h4 class="text-white text-xs font-black uppercase tracking-wider mb-4">Landmark Populer</h4>
-                <ul class="space-y-2 text-xs">
-                    <li><a href="{{ url('/search?landmark=Istana+Maimun') }}" class="hover:text-white transition">Istana Maimun</a></li>
-                    <li><a href="{{ url('/search?landmark=Tjong+A+Fie+Mansion') }}" class="hover:text-white transition">Tjong A Fie Mansion</a></li>
-                    <li><a href="{{ url('/search?landmark=Masjid+Raya+Al+Mashun') }}" class="hover:text-white transition">Masjid Raya Al-Mashun</a></li>
-                    <li><a href="{{ url('/search?landmark=Lapangan+Merdeka') }}" class="hover:text-white transition">Lapangan Merdeka (KM 0)</a></li>
-                    <li><a href="{{ url('/search?landmark=Sun+Plaza') }}" class="hover:text-white transition">Sun Plaza Medan</a></li>
-                    <li><a href="{{ url('/search?landmark=Graha+Maria+Annai+Velangkanni') }}" class="hover:text-white transition">Graha Maria Velangkanni</a></li>
-                </ul>
-            </div>
-
-            <!-- Col 3: Navigasi Cepat -->
-            <div>
-                <h4 class="text-white text-xs font-black uppercase tracking-wider mb-4">Navigasi Platform</h4>
-                <ul class="space-y-2 text-xs">
-                    <li><a href="{{ url('/search') }}" class="hover:text-white transition">Cari Semua Hotel (187)</a></li>
-                    <li><a href="{{ route('login') }}" class="hover:text-white transition">Masuk Akun</a></li>
-                    <li><a href="{{ route('register') }}" class="hover:text-white transition">Daftar Akun Baru</a></li>
-                    <li><a href="#destinasi" class="hover:text-white transition">13 Landmark Medan</a></li>
-                    <li><a href="#keunggulan" class="hover:text-white transition">Keunggulan Roomify</a></li>
-                </ul>
-            </div>
-
-            <!-- Col 4: Layanan & Jam Operasional -->
-            <div>
-                <h4 class="text-white text-xs font-black uppercase tracking-wider mb-4">Ketentuan & Layanan</h4>
-                <ul class="space-y-2 text-xs">
-                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Check-in: 14:00 WIB</li>
-                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-pink-400"></span> Check-out: 12:00 WIB</li>
-                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span> Wajib e-KTP 16 Digit</li>
-                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> Navigasi Google Maps Real-time</li>
-                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span> AI Concierge Siap 24/7</li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
-            <p>© {{ date('Y') }} Roomify Medan. Hak cipta dilindungi undang-undang.</p>
-            <p class="flex items-center gap-1">
-                <span>Solusi Pemesanan Hotel & Navigasi Wisata Terpercaya di Kota Medan</span>
-            </p>
-        </div>
-    </div>
-</footer>
+<x-footer />
 
 <!-- Floating AI Chatbot Widget -->
 <x-ai-chat-widget />

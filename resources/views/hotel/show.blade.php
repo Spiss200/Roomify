@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ $hotel['nama'] ?? 'Detail Hotel' }} – Roomify</title>
 
     <!-- Open Graph Metadata -->
@@ -39,8 +40,15 @@
             }
         }
         function getAutoTimeTheme() {
-            const hour = new Date().getHours();
-            return (hour >= 6 && hour < 18) ? 'light' : 'dark';
+            try {
+                const str = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Jakarta', hour: 'numeric', hour12: false }).format(new Date());
+                const h = parseInt(str, 10);
+                const hour = isNaN(h) ? new Date().getHours() : h;
+                return (hour >= 6 && hour < 18) ? 'light' : 'dark';
+            } catch (e) {
+                const hour = (new Date().getUTCHours() + 7) % 24;
+                return (hour >= 6 && hour < 18) ? 'light' : 'dark';
+            }
         }
         function initTheme() {
             if (localStorage.getItem('theme_user_override') === 'true' && !localStorage.getItem('theme_mode')) {
@@ -1184,6 +1192,10 @@ SELECT ?nama ?alamat ?deskripsi ?bintang ?rating ?jumlahReview ?harga ?lat ?lon 
                     window.hotelPolyline.setMap(null);
                     window.hotelPolyline = null;
                 }
+                if (window.hotelOriginMarker) {
+                    window.hotelOriginMarker.setMap(null);
+                    window.hotelOriginMarker = null;
+                }
                 directionsRenderer.setDirections(result);
                 const leg = result.routes[0].legs[0];
 
@@ -1243,8 +1255,29 @@ SELECT ?nama ?alamat ?deskripsi ?bintang ?rating ?jumlahReview ?harga ?lat ?lon 
                 const km = (route.distance / 1000).toFixed(1) + ' km';
                 const mins = Math.max(1, Math.round(route.duration / 60)) + ' mnt';
 
-                if (directionsRenderer) directionsRenderer.setDirections({ routes: [] });
+                if (directionsRenderer) {
+                    try { directionsRenderer.set('directions', null); } catch(e) { try { directionsRenderer.setDirections(null); } catch(e2){} }
+                }
                 if (window.hotelPolyline) window.hotelPolyline.setMap(null);
+
+                if (!window.hotelOriginMarker) {
+                    window.hotelOriginMarker = new google.maps.Marker({
+                        position: originCoords,
+                        map: map,
+                        title: originName,
+                        icon: {
+                            path: google.maps.SymbolPath.CIRCLE,
+                            scale: 7,
+                            fillColor: '#10b981',
+                            fillOpacity: 1,
+                            strokeColor: '#ffffff',
+                            strokeWeight: 2.5
+                        }
+                    });
+                } else {
+                    window.hotelOriginMarker.setPosition(originCoords);
+                    window.hotelOriginMarker.setMap(map);
+                }
 
                 window.hotelPolyline = new google.maps.Polyline({
                     path: coords,
@@ -1308,8 +1341,28 @@ SELECT ?nama ?alamat ?deskripsi ?bintang ?rating ?jumlahReview ?harga ?lat ?lon 
         }
 
         // Direct fallback
-        if (directionsRenderer) directionsRenderer.setDirections({ routes: [] });
+        if (directionsRenderer) {
+            try { directionsRenderer.set('directions', null); } catch(e) { try { directionsRenderer.setDirections(null); } catch(e2){} }
+        }
         if (window.hotelPolyline) window.hotelPolyline.setMap(null);
+        if (!window.hotelOriginMarker) {
+            window.hotelOriginMarker = new google.maps.Marker({
+                position: originCoords,
+                map: map,
+                title: originName,
+                icon: {
+                    path: google.maps.SymbolPath.CIRCLE,
+                    scale: 7,
+                    fillColor: '#10b981',
+                    fillOpacity: 1,
+                    strokeColor: '#ffffff',
+                    strokeWeight: 2.5
+                }
+            });
+        } else {
+            window.hotelOriginMarker.setPosition(originCoords);
+            window.hotelOriginMarker.setMap(map);
+        }
         window.hotelPolyline = new google.maps.Polyline({
             path: [originCoords, { lat: HOTEL_LAT, lng: HOTEL_LNG }],
             strokeColor: '#2563eb',
@@ -1518,7 +1571,7 @@ SELECT ?nama ?alamat ?deskripsi ?bintang ?rating ?jumlahReview ?harga ?lat ?lon 
                                 <div class="min-w-0">
                                     <h4 class="font-bold text-sm text-slate-900 dark:text-white truncate">${item.nama}</h4>
                                     <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                                        Koordinat: ${item.lat.toFixed(4)}, ${item.lon.toFixed(4)}
+                                        Koordinat: ${parseFloat(item.lat || 0).toFixed(4)}, ${parseFloat(item.lon || 0).toFixed(4)}
                                     </p>
                                 </div>
                                 <span class="text-xs font-bold px-2.5 py-1 rounded-md bg-indigo-50 dark:bg-indigo-950/70 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 shrink-0">
@@ -1575,6 +1628,8 @@ SELECT ?nama ?alamat ?deskripsi ?bintang ?rating ?jumlahReview ?harga ?lat ?lon 
         <div id="ext-landmarks-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3"></div>
     </div>
 </section>
+
+<x-footer />
 
 <x-ai-chat-widget />
 

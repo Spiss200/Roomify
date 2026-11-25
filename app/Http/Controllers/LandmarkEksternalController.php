@@ -82,8 +82,8 @@ SELECT DISTINCT ?nama ?lat ?lon WHERE {
 
             return array_map(fn($r) => [
                 'nama' => $r['nama']['value'] ?? '',
-                'lat'  => $r['lat']['value'] ?? 0,
-                'lon'  => $r['lon']['value'] ?? 0,
+                'lat'  => (float)($r['lat']['value'] ?? 0),
+                'lon'  => (float)($r['lon']['value'] ?? 0),
             ], $res->json()['results']['bindings'] ?? []);
         } catch (\Throwable $e) {
             return [];
@@ -94,7 +94,9 @@ SELECT DISTINCT ?nama ?lat ?lon WHERE {
     {
         $p = 'PREFIX roomify: <https://roomify.example/ontology#>';
         return array_map(fn($r) => [
-            'nama' => $r['nama'], 'lat' => $r['lat'], 'lon' => $r['lon'],
+            'nama' => $r['nama'] ?? '',
+            'lat'  => (float)($r['lat'] ?? 0),
+            'lon'  => (float)($r['lon'] ?? 0),
         ], $this->fuseki->select("$p
             SELECT ?nama ?lat ?lon WHERE {
               ?lm a roomify:Landmark ; roomify:name ?nama ;

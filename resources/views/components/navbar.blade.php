@@ -86,16 +86,16 @@
 
     <!-- Mobile Drawer Menu -->
     <div id="mobile-global-nav" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white/98 dark:bg-slate-900/98 px-4 py-3 space-y-1.5 shadow-xl backdrop-blur-md">
-        <a href="{{ route('home') }}" class="block px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">
+        <a href="{{ route('home') }}" class="block px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold {{ $active === 'home' ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/60 font-bold' : 'text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800' }}">
             <i class="fa-solid fa-house mr-2 text-blue-500"></i> Beranda
         </a>
-        <a href="{{ route('search') }}" class="block px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">
+        <a href="{{ route('search') }}" class="block px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold {{ $active === 'search' ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/60 font-bold' : 'text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800' }}">
             <i class="fa-solid fa-magnifying-glass mr-2 text-blue-500"></i> Cari Hotel
         </a>
-        <a href="{{ route('landmark.index') }}" class="block px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">
+        <a href="{{ route('landmark.index') }}" class="block px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold {{ $active === 'landmarks' ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/60 font-bold' : 'text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800' }}">
             <i class="fa-solid fa-landmark mr-2 text-blue-500"></i> Landmark Medan
         </a>
-        <a href="{{ route('semantik.index') }}" class="block px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">
+        <a href="{{ route('semantik.index') }}" class="block px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold {{ $active === 'semantik' ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/60 font-bold' : 'text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800' }}">
             <i class="fa-solid fa-diagram-project mr-2 text-blue-500"></i> Web Semantik
         </a>
         <div class="pt-2 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">

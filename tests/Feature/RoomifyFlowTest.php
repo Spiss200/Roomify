@@ -122,4 +122,44 @@ class RoomifyFlowTest extends TestCase
         $response->assertSee('Arsitektur Web Semantik');
         $response->assertSee('SPARQL Playground');
     }
+
+    public function test_ai_chat_endpoint_responds_successfully(): void
+    {
+        $response = $this->postJson('/api/ai-chat', [
+            'message' => 'Rekomendasi hotel murah di Medan'
+        ]);
+        $response->assertStatus(200);
+        $response->assertJsonStructure(['reply']);
+    }
+
+    public function test_hotel_detail_has_safe_navigation_scripts(): void
+    {
+        $response = $this->get('/hotel/hotel-001');
+        $response->assertStatus(200);
+        $content = $response->getContent();
+        // Ensure no unsafe empty route array is passed to setDirections
+        $this->assertStringNotContainsString('setDirections({ routes: [] })', $content);
+        $this->assertStringContainsString('set(\'directions\', null)', $content);
+    }
+
+    public function test_search_page_has_safe_navigation_scripts(): void
+    {
+        $response = $this->get('/search');
+        $response->assertStatus(200);
+        $content = $response->getContent();
+        $this->assertStringNotContainsString('setDirections({ routes: [] })', $content);
+        $this->assertStringContainsString('set(\'directions\', null)', $content);
+    }
+
+    public function test_pages_render_unified_footer_and_live_clock_bar(): void
+    {
+        foreach (['/', '/search', '/landmark', '/hotel/hotel-001', '/semantik'] as $uri) {
+            $res = $this->get($uri);
+            $res->assertStatus(200);
+            $res->assertSee('Otomatis (Jam)');
+            $res->assertSee('WAKTU SISTEM');
+            $res->assertSee('312 hotel');
+            $res->assertSee('24 landmark');
+        }
+    }
 }

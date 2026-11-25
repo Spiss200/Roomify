@@ -49,8 +49,15 @@
             }
         }
         function getAutoTimeTheme() {
-            const hour = new Date().getHours();
-            return (hour >= 6 && hour < 18) ? 'light' : 'dark';
+            try {
+                const str = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Jakarta', hour: 'numeric', hour12: false }).format(new Date());
+                const h = parseInt(str, 10);
+                const hour = isNaN(h) ? new Date().getHours() : h;
+                return (hour >= 6 && hour < 18) ? 'light' : 'dark';
+            } catch (e) {
+                const hour = (new Date().getUTCHours() + 7) % 24;
+                return (hour >= 6 && hour < 18) ? 'light' : 'dark';
+            }
         }
         function initTheme() {
             if (localStorage.getItem('theme_user_override') === 'true' && !localStorage.getItem('theme_mode')) {
@@ -970,7 +977,7 @@
                         @empty
                             <!-- EMPTY STATE -->
                             <div class="col-span-full">
-                                <div class="rounded-2xl p-12 text-center" style="background: rgba(255,255,255,0.9);">
+                                <div class="rounded-2xl p-12 text-center bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
                                     <!-- Illustration SVG -->
                                     <div class="w-28 h-28 mx-auto mb-6 relative">
                                         <div class="absolute inset-0 rounded-full opacity-20" style="background: linear-gradient(135deg, #2563eb, #7c3aed);"></div>
@@ -986,8 +993,8 @@
                                         </div>
                                     </div>
 
-                                    <h3 class="text-xl font-bold text-slate-800 mb-2">Hotel Tidak Ditemukan</h3>
-                                    <p class="text-slate-500 text-sm mb-6 max-w-sm mx-auto">
+                                    <h3 class="text-xl font-bold text-slate-800 dark:text-white mb-2">Hotel Tidak Ditemukan</h3>
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm mb-6 max-w-sm mx-auto">
                                         Tidak ada hotel yang cocok dengan filter pencarian Anda di Medan. Coba ubah kata kunci atau hapus beberapa filter.
                                     </p>
 
@@ -998,7 +1005,7 @@
                                             Reset Semua Filter
                                         </a>
                                         <a href="{{ url('/') }}"
-                                           class="border border-slate-200 text-slate-700 font-semibold px-6 py-2.5 rounded-xl hover:border-blue-300 hover:text-blue-600 transition flex items-center gap-2">
+                                           class="border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-semibold px-6 py-2.5 rounded-xl hover:border-blue-300 dark:hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition flex items-center gap-2">
                                             <i class="fa-solid fa-house"></i>
                                             Kembali ke Beranda
                                         </a>
@@ -1060,24 +1067,7 @@
     <!-- ============================================================
          FOOTER
     ============================================================ -->
-    <footer class="mt-16 border-t border-white/60" style="background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%);">
-        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-2.5">
-                <div class="w-7 h-7 rounded-lg flex items-center justify-center bg-white/20">
-                    <i class="fa-solid fa-hotel text-white text-sm"></i>
-                </div>
-                <span class="text-white font-black text-lg tracking-tight">Roomify</span>
-                <span class="text-blue-300 text-xs font-medium">· Medan</span>
-            </div>
-            <p class="text-blue-200 text-xs text-center">
-                © {{ date('Y') }} Roomify — Platform pencarian hotel berbasis Semantic Web di Medan, Indonesia.
-            </p>
-            <div class="flex items-center gap-4">
-                <a href="{{ url('/') }}" class="text-blue-200 hover:text-white text-xs transition">Beranda</a>
-                <a href="{{ url('/search') }}" class="text-blue-200 hover:text-white text-xs transition">Cari Hotel</a>
-            </div>
-        </div>
-    </footer>
+    <x-footer />
 
     <!-- ============================================================
          GOOGLE MAPS JAVASCRIPT API & LIVE NAVIGATION
@@ -1335,12 +1325,14 @@
                                 window.activePolyline.setMap(null);
                                 window.activePolyline = null;
                             }
+                            if (window.navOriginMarker) { window.navOriginMarker.setMap(null); window.navOriginMarker = null; }
+                            if (window.navDestMarker) { window.navDestMarker.setMap(null); window.navDestMarker = null; }
                             directionsRenderer.setDirections(result);
 
                             const route = result.routes[0].legs[0];
                             const steps = (route.steps || []).map(st => ({
-                                instruction: st.instructions.replace(/<[^>]+>/g, ' '),
-                                distance: st.distance.text
+                                instruction: (st.instructions || '').replace(/<[^>]+>/g, ' '),
+                                distance: st.distance ? st.distance.text : ''
                             }));
                             updateNavigationUI(destName, route.distance.text, route.duration.text, 'Google Maps', steps, origin, destination);
                         } else {
@@ -1374,7 +1366,7 @@
                             distance: st.distance < 1000 ? Math.round(st.distance) + ' m' : (st.distance/1000).toFixed(1) + ' km'
                         };
                     });
-                    renderPolylineOnMap(coords);
+                    renderPolylineOnMap(coords, destName);
                     updateNavigationUI(destName, km, mins, 'OpenStreetMap (OSRM)', steps, origin, destination);
                     return;
                 }
@@ -1391,12 +1383,18 @@
                 { instruction: `Ikuti rute panduan jalan utama sepanjang ${(distKm * 0.8).toFixed(1)} km`, distance: `${(distKm * 0.8).toFixed(1)} km` },
                 { instruction: `Tiba di tujuan: ${destName}`, distance: `${distKm.toFixed(1)} km` }
             ];
-            renderPolylineOnMap([origin, destination]);
+            renderPolylineOnMap([origin, destination], destName);
             updateNavigationUI(destName, kmStr, minsStr, 'Navigasi Langsung', steps, origin, destination);
         }
 
-        function renderPolylineOnMap(coords) {
-            if (directionsRenderer) directionsRenderer.setDirections({ routes: [] });
+        function renderPolylineOnMap(coords, destName) {
+            if (directionsRenderer) {
+                try {
+                    directionsRenderer.set('directions', null);
+                } catch(e) {
+                    try { directionsRenderer.setDirections(null); } catch(e2){}
+                }
+            }
             if (window.activePolyline) window.activePolyline.setMap(null);
 
             window.activePolyline = new google.maps.Polyline({
@@ -1406,6 +1404,51 @@
                 strokeOpacity: 0.9,
                 map: map
             });
+
+            if (coords && coords.length > 0) {
+                const originPt = coords[0];
+                const destPt = coords[coords.length - 1];
+
+                if (!window.navOriginMarker) {
+                    window.navOriginMarker = new google.maps.Marker({
+                        position: originPt,
+                        map: map,
+                        title: 'Titik Awal Navigasi',
+                        zIndex: 9999,
+                        icon: {
+                            path: google.maps.SymbolPath.CIRCLE,
+                            scale: 7,
+                            fillColor: '#10b981',
+                            fillOpacity: 1,
+                            strokeColor: '#ffffff',
+                            strokeWeight: 2.5
+                        }
+                    });
+                } else {
+                    window.navOriginMarker.setPosition(originPt);
+                    window.navOriginMarker.setMap(map);
+                }
+
+                if (!window.navDestMarker) {
+                    window.navDestMarker = new google.maps.Marker({
+                        position: destPt,
+                        map: map,
+                        title: 'Tujuan: ' + (destName || 'Hotel'),
+                        zIndex: 9999,
+                        icon: {
+                            path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW,
+                            scale: 5,
+                            fillColor: '#ef4444',
+                            fillOpacity: 1,
+                            strokeColor: '#ffffff',
+                            strokeWeight: 2
+                        }
+                    });
+                } else {
+                    window.navDestMarker.setPosition(destPt);
+                    window.navDestMarker.setMap(map);
+                }
+            }
 
             const bounds = new google.maps.LatLngBounds();
             coords.forEach(pt => bounds.extend(pt));
@@ -1455,8 +1498,20 @@
                 window.activePolyline.setMap(null);
                 window.activePolyline = null;
             }
+            if (window.navOriginMarker) {
+                window.navOriginMarker.setMap(null);
+                window.navOriginMarker = null;
+            }
+            if (window.navDestMarker) {
+                window.navDestMarker.setMap(null);
+                window.navDestMarker = null;
+            }
             if (directionsRenderer) {
-                directionsRenderer.setDirections({ routes: [] });
+                try {
+                    directionsRenderer.set('directions', null);
+                } catch(e) {
+                    try { directionsRenderer.setDirections(null); } catch(e2){}
+                }
             }
             const routeBar = document.getElementById('map-route-bar');
             const drawer = document.getElementById('route-steps-drawer');
@@ -1671,11 +1726,14 @@
         }
 
         function focusHotelOnMap(hotelId, lat, lng) {
-            if (!lat || !lng || !map) return;
+            if (!lat || !lng) return;
+            if (!mapVisible) toggleMap();
+            document.getElementById('map-section')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            if (!map) return;
             const target = markers.find(m => String(m.hotelId) === String(hotelId));
             if (target) {
                 map.panTo({ lat: parseFloat(lat), lng: parseFloat(lng) });
-                map.setZoom(15);
+                map.setZoom(16);
                 if (activeInfoWindow) activeInfoWindow.close();
                 google.maps.event.trigger(target.marker, 'click');
             }
@@ -1691,6 +1749,11 @@
                 section.style.display = '';
                 if (label) label.textContent = 'Sembunyikan Peta';
                 if (mobileLabel) mobileLabel.textContent = 'Peta';
+                if (map) {
+                    setTimeout(() => {
+                        google.maps.event.trigger(map, 'resize');
+                    }, 80);
+                }
             } else {
                 section.style.display = 'none';
                 if (label) label.textContent = 'Tampilkan Peta';
