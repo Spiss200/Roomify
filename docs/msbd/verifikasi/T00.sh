@@ -4,6 +4,13 @@
 
 set -euo pipefail
 
+# GUARD: migrate:fresh menghapus semua tabel. Tolak jalan kalau .env belum pgsql.
+if ! grep -q '^DB_CONNECTION=pgsql' .env; then
+  echo "STOP: .env masih $(grep '^DB_CONNECTION' .env). Set ke pgsql + nyalakan Docker dulu, atau backup SQLite."
+  exit 1
+fi
+
+
 echo "=== 1. Status container Docker Compose ==="
 docker compose ps
 # HARUS: service postgres (roomify-postgres) berstatus Up (healthy) dengan port 0.0.0.0:5433->5432/tcp (atau :::5433->5432/tcp)
