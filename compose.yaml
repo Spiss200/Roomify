@@ -1,0 +1,24 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: roomify-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: roomify
+      POSTGRES_USER: roomify
+      POSTGRES_PASSWORD: roomify_secret
+    ports:
+      # Pakai port host 5433 agar tidak bentrok dengan compose praktikum msbd-2026 (port 5432)
+      - "5433:5432"
+    volumes:
+      - roomify_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U roomify -d roomify"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+
+volumes:
+  roomify_pgdata:
+    name: roomify_pgdata
